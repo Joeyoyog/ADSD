@@ -1,0 +1,330 @@
+
+
+================================================================
+== Vivado HLS Report for 'classify'
+================================================================
+* Date:           Fri Feb  6 10:54:16 2026
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        SVM_Accelerator_HLS_Cordic_Optimized
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.480|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  391223|  391223|  391223|  391223|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |                    |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- classify_label2   |  391215|  391215|      2371|          -|          -|   165|    no    |
+        | + classify_label1  |    2352|    2352|         3|          -|          -|   784|    no    |
+        +--------------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 16
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	10  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	4  / (!exitcond)
+	6  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	3  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	2  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([784 x i8]* %x_V), !map !144"   --->   Operation 17 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double 0.000000e+00) nounwind, !map !150"   --->   Operation 18 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @classify_str) nounwind"   --->   Operation 19 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (1.76ns)   --->   "br label %1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 20 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 4.96>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i30 [ 0, %0 ], [ %sum_V, %ap_fixed_base.exit ]"   --->   Operation 21 'phi' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%i = phi i8 [ 0, %0 ], [ %i_1, %ap_fixed_base.exit ]"   --->   Operation 22 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%phi_mul = phi i17 [ 0, %0 ], [ %next_mul, %ap_fixed_base.exit ]"   --->   Operation 23 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (2.10ns)   --->   "%next_mul = add i17 %phi_mul, 784"   --->   Operation 24 'add' 'next_mul' <Predicate = true> <Delay = 2.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (1.55ns)   --->   "%exitcond1 = icmp eq i8 %i, -91" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 25 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 165, i64 165, i64 165)"   --->   Operation 26 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (1.91ns)   --->   "%i_1 = add i8 %i, 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 27 'add' 'i_1' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %_ifconv, label %2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str) nounwind" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 29 'specloopname' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_57 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 30 'specregionbegin' 'tmp_57' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.76ns)   --->   "br label %3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 31 'br' <Predicate = (!exitcond1)> <Delay = 1.76>
+ST_2 : Operation 32 [1/1] (2.49ns)   --->   "%tmp_s = add i30 %p_Val2_s, -11776" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 32 'add' 'tmp_s' <Predicate = (exitcond1)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (2.46ns)   --->   "%tmp_37 = icmp eq i30 %tmp_s, 0" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 33 'icmp' 'tmp_37' <Predicate = (exitcond1)> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.36>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%p_Val2_12 = phi i31 [ 0, %2 ], [ %l2Squared_fixed_V, %4 ]"   --->   Operation 34 'phi' 'p_Val2_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%j = phi i10 [ 0, %2 ], [ %j_1, %4 ]"   --->   Operation 35 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%j_cast2 = zext i10 %j to i17" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 36 'zext' 'j_cast2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.77ns)   --->   "%exitcond = icmp eq i10 %j, -240" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 37 'icmp' 'exitcond' <Predicate = true> <Delay = 1.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 784, i64 784, i64 784)"   --->   Operation 38 'speclooptripcount' 'empty_30' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.73ns)   --->   "%j_1 = add i10 %j, 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 39 'add' 'j_1' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %ap_fixed_base.exit, label %4" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (2.10ns)   --->   "%tmp_41 = add i17 %j_cast2, %phi_mul" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14]   --->   Operation 41 'add' 'tmp_41' <Predicate = (!exitcond)> <Delay = 2.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_42 = zext i17 %tmp_41 to i64" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14]   --->   Operation 42 'zext' 'tmp_42' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%svs_V_addr = getelementptr [129360 x i8]* @svs_V, i64 0, i64 %tmp_42" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14]   --->   Operation 43 'getelementptr' 'svs_V_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 44 [2/2] (3.25ns)   --->   "%p_Val2_10 = load i8* %svs_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14]   --->   Operation 44 'load' 'p_Val2_10' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 165> <ROM>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_43 = zext i10 %j to i64" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15]   --->   Operation 45 'zext' 'tmp_43' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%x_V_addr = getelementptr [784 x i8]* %x_V, i64 0, i64 %tmp_43" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15]   --->   Operation 46 'getelementptr' 'x_V_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 47 [2/2] (3.25ns)   --->   "%p_Val2_11 = load i8* %x_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15]   --->   Operation 47 'load' 'p_Val2_11' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 784> <RAM>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%tmp = trunc i31 %p_Val2_12 to i24" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 48 'trunc' 'tmp' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_84 = trunc i31 %p_Val2_12 to i22" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 49 'trunc' 'tmp_84' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%p_shl = call i24 @_ssdm_op_BitConcatenate.i24.i22.i2(i22 %tmp_84, i2 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 50 'bitconcatenate' 'p_shl' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_neg = sub i24 0, %p_shl" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 51 'sub' 'p_neg' <Predicate = (exitcond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.06> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 52 [1/1] (4.13ns) (root node of TernaryAdder)   --->   "%p_Val2_1 = sub i24 %p_neg, %tmp" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 52 'sub' 'p_Val2_1' <Predicate = (exitcond)> <Delay = 4.13> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.06> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%this_assign_6 = call i16 @_ssdm_op_PartSelect.i16.i24.i32.i32(i24 %p_Val2_1, i32 8, i32 23)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 53 'partselect' 'this_assign_6' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.16>
+ST_4 : Operation 54 [1/2] (3.25ns)   --->   "%p_Val2_10 = load i8* %svs_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14]   --->   Operation 54 'load' 'p_Val2_10' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 165> <ROM>
+ST_4 : Operation 55 [1/2] (3.25ns)   --->   "%p_Val2_11 = load i8* %x_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15]   --->   Operation 55 'load' 'p_Val2_11' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 784> <RAM>
+ST_4 : Operation 56 [1/1] (1.91ns)   --->   "%p_Val2_5 = sub i8 %p_Val2_10, %p_Val2_11" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15]   --->   Operation 56 'sub' 'p_Val2_5' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.69>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str4) nounwind" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 57 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%OP1_V_2 = sext i8 %p_Val2_5 to i16" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 58 'sext' 'OP1_V_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (4.17ns)   --->   "%p_Val2_8 = mul i16 %OP1_V_2, %OP1_V_2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 59 'mul' 'p_Val2_8' <Predicate = true> <Delay = 4.17> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%p_Val2_9 = call i22 @_ssdm_op_BitConcatenate.i22.i16.i6(i16 %p_Val2_8, i6 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 60 'bitconcatenate' 'p_Val2_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_45_cast = sext i22 %p_Val2_9 to i31" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 61 'sext' 'tmp_45_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (2.52ns)   --->   "%l2Squared_fixed_V = add i31 %p_Val2_12, %tmp_45_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19]   --->   Operation 62 'add' 'l2Squared_fixed_V' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "br label %3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13]   --->   Operation 63 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 8.48>
+ST_6 : Operation 64 [2/2] (8.48ns)   --->   "%p_Val2_7 = call fastcc i22 @compute_exp(i16 %this_assign_6)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 64 'call' 'p_Val2_7' <Predicate = true> <Delay = 8.48> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_40 = zext i8 %i to i64" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 65 'zext' 'tmp_40' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%alphas_V_addr = getelementptr [165 x i8]* @alphas_V, i64 0, i64 %tmp_40" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 66 'getelementptr' 'alphas_V_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [2/2] (3.25ns)   --->   "%alphas_V_load = load i8* %alphas_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 67 'load' 'alphas_V_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 165> <ROM>
+
+State 7 <SV = 4> <Delay = 6.17>
+ST_7 : Operation 68 [1/2] (6.17ns)   --->   "%p_Val2_7 = call fastcc i22 @compute_exp(i16 %this_assign_6)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24]   --->   Operation 68 'call' 'p_Val2_7' <Predicate = true> <Delay = 6.17> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 69 [1/2] (3.25ns)   --->   "%alphas_V_load = load i8* %alphas_V_addr, align 1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 69 'load' 'alphas_V_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 165> <ROM>
+
+State 8 <SV = 5> <Delay = 6.38>
+ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%OP1_V = sext i8 %alphas_V_load to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 70 'sext' 'OP1_V' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%OP2_V = sext i22 %p_Val2_7 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 71 'sext' 'OP2_V' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 72 [1/1] (6.38ns)   --->   "%p_Val2_2 = mul i30 %OP1_V, %OP2_V" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 72 'mul' 'p_Val2_2' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_58 = call i22 @_ssdm_op_PartSelect.i22.i30.i32.i32(i30 %p_Val2_2, i32 8, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 73 'partselect' 'tmp_58' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 2.49>
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "%p_Val2_3_cast = sext i22 %tmp_58 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 74 'sext' 'p_Val2_3_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 75 [1/1] (2.49ns)   --->   "%sum_V = add i30 %p_Val2_s, %p_Val2_3_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25]   --->   Operation 75 'add' 'sum_V' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 76 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str, i32 %tmp_57)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:26]   --->   Operation 76 'specregionend' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 77 [1/1] (0.00ns)   --->   "br label %1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:9]   --->   Operation 77 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 2> <Delay = 6.28>
+ST_10 : Operation 78 [1/1] (0.00ns)   --->   "%dp_s = sext i30 %tmp_s to i32" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 78 'sext' 'dp_s' <Predicate = (!tmp_37)> <Delay = 0.00>
+ST_10 : Operation 79 [6/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 79 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 3> <Delay = 6.28>
+ST_11 : Operation 80 [5/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 80 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 12 <SV = 4> <Delay = 6.28>
+ST_12 : Operation 81 [4/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 81 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 13 <SV = 5> <Delay = 6.28>
+ST_13 : Operation 82 [3/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 82 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 14 <SV = 6> <Delay = 6.28>
+ST_14 : Operation 83 [2/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 83 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 15 <SV = 7> <Delay = 6.28>
+ST_15 : Operation 84 [1/6] (6.28ns)   --->   "%dp_1 = sitofp i32 %dp_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 84 'sitodp' 'dp_1' <Predicate = (!tmp_37)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 16 <SV = 8> <Delay = 3.12>
+ST_16 : Operation 85 [1/1] (0.00ns)   --->   "%res_V_1 = bitcast double %dp_1 to i64" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 85 'bitcast' 'res_V_1' <Predicate = (!tmp_37)> <Delay = 0.00>
+ST_16 : Operation 86 [1/1] (0.00ns)   --->   "%exp_V = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %res_V_1, i32 52, i32 62)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 86 'partselect' 'exp_V' <Predicate = (!tmp_37)> <Delay = 0.00>
+ST_16 : Operation 87 [1/1] (1.63ns)   --->   "%exp_V_2 = add i11 %exp_V, -16" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 87 'add' 'exp_V_2' <Predicate = (!tmp_37)> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 88 [1/1] (0.00ns)   --->   "%p_Result_s = call i64 @llvm.part.set.i64.i11(i64 %res_V_1, i11 %exp_V_2, i32 52, i32 62) nounwind" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 88 'partset' 'p_Result_s' <Predicate = (!tmp_37)> <Delay = 0.00>
+ST_16 : Operation 89 [1/1] (0.00ns)   --->   "%dp = bitcast i64 %p_Result_s to double" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 89 'bitcast' 'dp' <Predicate = (!tmp_37)> <Delay = 0.00>
+ST_16 : Operation 90 [1/1] (1.48ns)   --->   "%p_0_i = select i1 %tmp_37, double 0.000000e+00, double %dp" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 90 'select' 'p_0_i' <Predicate = true> <Delay = 1.48> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 91 [1/1] (0.00ns)   --->   "ret double %p_0_i" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28]   --->   Operation 91 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('sum.V') with incoming values : ('sum.V', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25) [9]  (1.77 ns)
+
+ <State 2>: 4.96ns
+The critical path consists of the following:
+	'phi' operation ('sum.V') with incoming values : ('sum.V', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25) [9]  (0 ns)
+	'add' operation ('tmp_s', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [65]  (2.49 ns)
+	'icmp' operation ('tmp_37', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [66]  (2.47 ns)
+
+ <State 3>: 5.36ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:13) [23]  (0 ns)
+	'add' operation ('tmp_41', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14) [31]  (2.11 ns)
+	'getelementptr' operation ('svs_V_addr', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14) [33]  (0 ns)
+	'load' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14) on array 'svs_V' [34]  (3.25 ns)
+
+ <State 4>: 5.17ns
+The critical path consists of the following:
+	'load' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:14) on array 'svs_V' [34]  (3.25 ns)
+	'sub' operation ('p_Val2_5', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:15) [38]  (1.92 ns)
+
+ <State 5>: 6.69ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19) [40]  (4.17 ns)
+	'add' operation ('l2Squared_fixed.V', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:19) [43]  (2.52 ns)
+
+ <State 6>: 8.48ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24) to 'compute_exp' [52]  (8.48 ns)
+
+ <State 7>: 6.17ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:24) to 'compute_exp' [52]  (6.17 ns)
+
+ <State 8>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25) [58]  (6.38 ns)
+
+ <State 9>: 2.49ns
+The critical path consists of the following:
+	'add' operation ('sum.V', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:25) [61]  (2.49 ns)
+
+ <State 10>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 11>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 12>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 13>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 14>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 15>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('dp', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [68]  (6.28 ns)
+
+ <State 16>: 3.12ns
+The critical path consists of the following:
+	'add' operation ('exp.V', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [71]  (1.64 ns)
+	'select' operation ('p_0_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28) [74]  (1.48 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,91 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'josep' on host 'laptopjpeg' (Windows NT_amd64 version 6.2) on Fri Feb 06 10:50:29 +0000 2026
+INFO: [HLS 200-10] In directory 'C:/Users/josep/Documents/ADSD'
+INFO: [HLS 200-10] Opening project 'C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized'.
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/svs.h' to the project
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/model_data.h' to the project
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/bias.h' to the project
+WARNING: [HLS 200-40] Cannot find design file 'alphas.h'
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h' to the project
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h' to the project
+INFO: [HLS 200-10] Adding design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'SVM_Accelerator_HLS_Cordic_Optimized/test_data.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'SVM_Accelerator_HLS_Cordic_Optimized/test_data.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'SVM_Accelerator_HLS_Cordic_Optimized/ground_truth.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+WARNING: [HLS 200-40] Cannot find source file alphas.h; skipping it.
+INFO: [HLS 200-10] Analyzing design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:46 . Memory (MB): peak = 102.691 ; gain = 46.250
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:46 . Memory (MB): peak = 102.691 ; gain = 46.250
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 8, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 8, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 8, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 8, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<33, 17, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_double' into 'classify' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:02:12 ; elapsed = 00:03:45 . Memory (MB): peak = 703.320 ; gain = 646.879
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'floor_to_int<ap_fixed<40, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:12 ; elapsed = 00:03:45 . Memory (MB): peak = 703.320 ; gain = 646.879
+INFO: [XFORM 203-501] Unrolling loop 'compute_exp_label0' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:63) in function 'compute_exp' completely.
+INFO: [XFORM 203-602] Inlining function 'floor_to_int<ap_fixed<40, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >' into 'compute_exp' (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51:13) to (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:88:1) in function 'compute_exp'... converting 59 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28:21) to (SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp:28:21) in function 'classify'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:02:12 ; elapsed = 00:03:46 . Memory (MB): peak = 703.320 ; gain = 646.879
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:02:13 ; elapsed = 00:03:46 . Memory (MB): peak = 703.320 ; gain = 646.879
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'classify' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 226.727 seconds; current allocated memory: 264.843 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 265.839 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'classify' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.313 seconds; current allocated memory: 266.367 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.323 seconds; current allocated memory: 266.717 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_exp'.
+INFO: [HLS 200-111]  Elapsed time: 0.262 seconds; current allocated memory: 268.805 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'classify' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'classify/x_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'classify' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'classify_sitodp_32s_64_6_1' to 'classify_sitodp_3bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_mul_mul_8s_22s_30_1_1' to 'classify_mul_mul_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'classify_mul_mul_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'classify_sitodp_3bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'classify'.
+INFO: [HLS 200-111]  Elapsed time: 0.864 seconds; current allocated memory: 270.116 MB.
+INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:15 ; elapsed = 00:03:52 . Memory (MB): peak = 703.320 ; gain = 646.879
+INFO: [SYSC 207-301] Generating SystemC RTL for classify.
+INFO: [VHDL 208-304] Generating VHDL RTL for classify.
+INFO: [VLOG 209-307] Generating Verilog RTL for classify.
+INFO: [HLS 200-112] Total elapsed time: 232.513 seconds; peak allocated memory: 270.116 MB.
