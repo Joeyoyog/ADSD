@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+Starting C-Simulation with 2601 images...
+Classification Accuracy: 0.991157
+Confusion Matrix (2601 test points):
+0.449443, 0.007305
+0.001538, 0.541715
+Test Failed! Accuracy too low.
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

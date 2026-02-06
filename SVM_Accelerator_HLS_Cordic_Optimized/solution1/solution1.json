@@ -1,9 +1,0 @@
-{"sourceFile": [{
-      "name": "",
-      "directive": [{
-          "functionName": "compute_exp",
-          "label": "compute_exp_label0",
-          "functionLabel": "",
-          "pragma": {"name": "UNROLL"}
-        }]
-    }]}
