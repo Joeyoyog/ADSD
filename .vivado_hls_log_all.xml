@@ -12,8 +12,8 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [HLS 200-40] Cannot find source file alphas.h; skipping it." projectName="SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint" solutionName="solution1" date="2026-02-05T00:21:39.356+0000" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] Cannot find design file 'alphas.h'" projectName="SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint" solutionName="solution1" date="2026-02-05T00:21:38.723+0000" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find source file alphas.h; skipping it." projectName="ADSD" solutionName="solution1" date="2026-02-06T16:40:36.566+0000" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find design file 'alphas.h'" projectName="ADSD" solutionName="solution1" date="2026-02-06T16:40:36.045+0000" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>
