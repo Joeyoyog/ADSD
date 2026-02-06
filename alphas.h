@@ -1,4 +1,4 @@
-ap_fixed<8, 5> alphas[] = {
+static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
 -0.5,
