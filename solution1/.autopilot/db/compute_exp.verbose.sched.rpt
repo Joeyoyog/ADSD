@@ -1,0 +1,551 @@
+
+
+================================================================
+== Vivado HLS Report for 'compute_exp'
+================================================================
+* Date:           Fri Feb  6 10:54:16 2026
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        SVM_Accelerator_HLS_Cordic_Optimized
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.480|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   13|   13|   13|   13|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.48>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%x_V_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %x_V)"   --->   Operation 15 'read' 'x_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_1 = call i36 @_ssdm_op_BitConcatenate.i36.i16.i20(i16 %x_V_read, i20 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51]   --->   Operation 16 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i36 %tmp_1 to i69" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51]   --->   Operation 17 'sext' 'OP1_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (8.48ns)   --->   "%p_Val2_s = mul i69 6196328018, %OP1_V_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51]   --->   Operation 18 'mul' 'p_Val2_s' <Predicate = true> <Delay = 8.48> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_2 = call i37 @_ssdm_op_PartSelect.i37.i69.i32.i32(i69 %p_Val2_s, i32 32, i32 68)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51]   --->   Operation 19 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp = call i5 @_ssdm_op_PartSelect.i5.i69.i32.i32(i69 %p_Val2_s, i32 64, i32 68)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 20 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%p_Result_2_i = call i32 @_ssdm_op_PartSelect.i32.i69.i32.i32(i69 %p_Val2_s, i32 32, i32 63)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 21 'partselect' 'p_Result_2_i' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.36>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%p_Val2_1 = sext i37 %tmp_2 to i40" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51]   --->   Operation 22 'sext' 'p_Val2_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%ret_V_cast = sext i5 %tmp to i6" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 23 'sext' 'ret_V_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node p_2_i)   --->   "%tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i69.i32(i69 %p_Val2_s, i32 68)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 24 'bitselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (2.47ns)   --->   "%tmp_2_i = icmp eq i32 %p_Result_2_i, 0" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 25 'icmp' 'tmp_2_i' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.78ns)   --->   "%ret_V = add i6 1, %ret_V_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 26 'add' 'ret_V' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node p_2_i)   --->   "%p_i = select i1 %tmp_2_i, i6 %ret_V_cast, i6 %ret_V" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 27 'select' 'p_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (1.18ns) (out node of the LUT)   --->   "%p_2_i = select i1 %tmp_8, i6 %p_i, i6 %ret_V_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 28 'select' 'p_2_i' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node k)   --->   "%tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i69.i32(i69 %p_Val2_s, i32 68)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 29 'bitselect' 'tmp_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_11 = call i38 @_ssdm_op_BitConcatenate.i38.i6.i32(i6 %p_2_i, i32 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 30 'bitconcatenate' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_7_i = sext i38 %tmp_11 to i40" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 31 'sext' 'tmp_7_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (2.51ns)   --->   "%tmp_8_i = icmp eq i40 %tmp_7_i, %p_Val2_1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 32 'icmp' 'tmp_8_i' <Predicate = true> <Delay = 2.51> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (1.82ns)   --->   "%iv = add i6 -1, %p_2_i" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 33 'add' 'iv' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns) (grouped into LUT with out node k)   --->   "%p_1_i = select i1 %tmp_8_i, i6 %p_2_i, i6 %iv" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 34 'select' 'p_1_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (1.18ns) (out node of the LUT)   --->   "%k = select i1 %tmp_10, i6 %p_1_i, i6 %p_2_i" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 35 'select' 'k' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.25>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%k_cast = sext i6 %k to i8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52]   --->   Operation 36 'sext' 'k_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.42ns)   --->   "%tmp_4 = icmp slt i6 %k, -12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:53]   --->   Operation 37 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (1.18ns)   --->   "%p_s = select i1 %tmp_4, i8 -12, i8 %k_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:53]   --->   Operation 38 'select' 'p_s' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_12 = trunc i8 %p_s to i5" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:53]   --->   Operation 39 'trunc' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (1.42ns)   --->   "%tmp_5 = icmp sgt i8 %p_s, 0" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:55]   --->   Operation 40 'icmp' 'tmp_5' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (1.21ns)   --->   "%p_Val2_2 = select i1 %tmp_5, i5 0, i5 %tmp_12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:55]   --->   Operation 41 'select' 'p_Val2_2' <Predicate = true> <Delay = 1.21> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 7.71>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_7 = call i29 @_ssdm_op_BitConcatenate.i29.i5.i24(i5 %p_Val2_2, i24 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 42 'bitconcatenate' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%OP1_V_1_cast = sext i29 %tmp_7 to i53" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 43 'sext' 'OP1_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (7.71ns)   --->   "%p_Val2_3 = mul i53 11629079, %OP1_V_1_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 44 'mul' 'p_Val2_3' <Predicate = true> <Delay = 7.71> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 7.71> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.56>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "%p_Val2_3_cast = sext i53 %p_Val2_3 to i64" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 45 'sext' 'p_Val2_3_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_9 = call i52 @_ssdm_op_BitConcatenate.i52.i16.i36(i16 %x_V_read, i36 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 46 'bitconcatenate' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_9_cast = sext i52 %tmp_9 to i65" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 47 'sext' 'tmp_9_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_3 = zext i64 %p_Val2_3_cast to i65" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 48 'zext' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (3.52ns)   --->   "%p_Val2_4 = sub nsw i65 %tmp_9_cast, %tmp_3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 49 'sub' 'p_Val2_4' <Predicate = true> <Delay = 3.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%Z_V = call i32 @_ssdm_op_PartSelect.i32.i65.i32.i32(i65 %p_Val2_4, i32 24, i32 55)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 50 'partselect' 'Z_V' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i65.i32(i65 %p_Val2_4, i32 55)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 51 'bitselect' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_6 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 52 'bitconcatenate' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i65.i32(i65 %p_Val2_4, i32 55)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 53 'bitselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%Z_V_1_in_in_v_cast = select i1 %tmp_13, i46 150992123226, i46 -150992123226" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 54 'select' 'Z_V_1_in_in_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 55 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_15 = add i46 %tmp_6, %Z_V_1_in_in_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 55 'add' 'tmp_15' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_15, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 56 'bitselect' 'tmp_16' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 6.09>
+ST_6 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node tmp_20)   --->   "%Z_V_1 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_15, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 57 'partselect' 'Z_V_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node X_V_1)   --->   "%p_Val2_12_1 = select i1 %tmp_14, i25 -10763688, i25 -15828297" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 58 'select' 'p_Val2_12_1' <Predicate = (tmp_16)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 59 [1/1] (0.00ns) (grouped into LUT with out node tmp_20)   --->   "%tmp_25_1 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 59 'bitconcatenate' 'tmp_25_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node X_V_1)   --->   "%p_Val2_19_1 = select i1 %tmp_14, i25 -15828298, i25 -10763689" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 60 'select' 'p_Val2_19_1' <Predicate = (!tmp_16)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 61 [1/1] (0.73ns) (out node of the LUT)   --->   "%X_V_1 = select i1 %tmp_16, i25 %p_Val2_12_1, i25 %p_Val2_19_1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 61 'select' 'X_V_1' <Predicate = true> <Delay = 0.73> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node Y_V_1)   --->   "%tmp_17 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_15, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 62 'bitselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node Y_V_1)   --->   "%p_cast_cast = select i1 %tmp_17, i25 -10129218, i25 0" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 63 'select' 'p_cast_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node Y_V_1)   --->   "%tmp1 = select i1 %tmp_14, i25 -5064610, i25 15193828" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56]   --->   Operation 64 'select' 'tmp1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 65 [1/1] (2.34ns) (out node of the LUT)   --->   "%Y_V_1 = add i25 %p_cast_cast, %tmp1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 65 'add' 'Y_V_1' <Predicate = true> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%Y_V_1_cast = sext i25 %Y_V_1 to i27" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 66 'sext' 'Y_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node tmp_20)   --->   "%Z_V_1_in_in_1_v_cast = select i1 %tmp_16, i46 70207339137, i46 -70207339137" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 67 'select' 'Z_V_1_in_in_1_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 68 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_20 = add i46 %tmp_25_1, %Z_V_1_in_in_1_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 68 'add' 'tmp_20' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (0.00ns) (grouped into LUT with out node tmp_24)   --->   "%Z_V_1_1 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_20, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 69 'partselect' 'Z_V_1_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_21 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_20, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 70 'bitselect' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_22 = call i22 @_ssdm_op_PartSelect.i22.i25.i32.i32(i25 %Y_V_1, i32 3, i32 24)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 71 'partselect' 'tmp_22' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%r_V_cast_cast = sext i22 %tmp_22 to i25" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 72 'sext' 'r_V_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_23 = call i22 @_ssdm_op_PartSelect.i22.i25.i32.i32(i25 %X_V_1, i32 3, i32 24)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 73 'partselect' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%r_V_2_2_cast_cast = zext i22 %tmp_23 to i27" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 74 'zext' 'r_V_2_2_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (2.34ns)   --->   "%p_Val2_12_2 = sub i25 %X_V_1, %r_V_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 75 'sub' 'p_Val2_12_2' <Predicate = true> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 76 [1/1] (2.34ns)   --->   "%p_Val2_15_2 = sub i27 %Y_V_1_cast, %r_V_2_2_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 76 'sub' 'p_Val2_15_2' <Predicate = true> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node tmp_24)   --->   "%tmp_25_2 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_1, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 77 'bitconcatenate' 'tmp_25_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (2.34ns)   --->   "%p_Val2_19_2 = add i25 %r_V_cast_cast, %X_V_1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 78 'add' 'p_Val2_19_2' <Predicate = true> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 79 [1/1] (2.34ns)   --->   "%p_Val2_20_2 = add i27 %r_V_2_2_cast_cast, %Y_V_1_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 79 'add' 'p_Val2_20_2' <Predicate = true> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 80 [1/1] (0.73ns)   --->   "%X_V_2 = select i1 %tmp_21, i25 %p_Val2_12_2, i25 %p_Val2_19_2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 80 'select' 'X_V_2' <Predicate = true> <Delay = 0.73> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 81 [1/1] (0.80ns)   --->   "%Y_V_2 = select i1 %tmp_21, i27 %p_Val2_15_2, i27 %p_Val2_20_2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 81 'select' 'Y_V_2' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node tmp_24)   --->   "%Z_V_1_in_in_2_v_cast = select i1 %tmp_21, i46 34540392015, i46 -34540392015" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 82 'select' 'Z_V_1_in_in_2_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 83 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_24 = add i46 %tmp_25_2, %Z_V_1_in_in_2_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 83 'add' 'tmp_24' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_25 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_24, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 84 'bitselect' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_26 = call i23 @_ssdm_op_PartSelect.i23.i27.i32.i32(i27 %Y_V_2, i32 4, i32 26)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 85 'partselect' 'tmp_26' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_27 = call i21 @_ssdm_op_PartSelect.i21.i25.i32.i32(i25 %X_V_2, i32 4, i32 24)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 86 'partselect' 'tmp_27' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 6.47>
+ST_7 : Operation 87 [1/1] (0.00ns)   --->   "%X_V_2_cast = zext i25 %X_V_2 to i27" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 87 'zext' 'X_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "%Y_V_2_cast = sext i27 %Y_V_2 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 88 'sext' 'Y_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node tmp_28)   --->   "%Z_V_1_2 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_24, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 89 'partselect' 'Z_V_1_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%r_V_3_cast_cast = sext i23 %tmp_26 to i27" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 90 'sext' 'r_V_3_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%r_V_2_3_cast_cast_ca = zext i21 %tmp_27 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 91 'zext' 'r_V_2_3_cast_cast_ca' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (2.34ns)   --->   "%p_Val2_12_3 = sub i27 %X_V_2_cast, %r_V_3_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 92 'sub' 'p_Val2_12_3' <Predicate = (tmp_25)> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 93 [1/1] (2.40ns)   --->   "%p_Val2_15_3 = sub i29 %Y_V_2_cast, %r_V_2_3_cast_cast_ca" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 93 'sub' 'p_Val2_15_3' <Predicate = (tmp_25)> <Delay = 2.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node tmp_28)   --->   "%tmp_25_3 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_2, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 94 'bitconcatenate' 'tmp_25_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 95 [1/1] (2.34ns)   --->   "%p_Val2_19_3 = add i27 %r_V_3_cast_cast, %X_V_2_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 95 'add' 'p_Val2_19_3' <Predicate = (!tmp_25)> <Delay = 2.34> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 96 [1/1] (2.40ns)   --->   "%p_Val2_20_3 = add i29 %r_V_2_3_cast_cast_ca, %Y_V_2_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 96 'add' 'p_Val2_20_3' <Predicate = (!tmp_25)> <Delay = 2.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 97 [1/1] (0.80ns)   --->   "%X_V_3 = select i1 %tmp_25, i27 %p_Val2_12_3, i27 %p_Val2_19_3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 97 'select' 'X_V_3' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 98 [1/1] (0.00ns)   --->   "%X_V_3_cast_cast = sext i27 %X_V_3 to i28" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 98 'sext' 'X_V_3_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 99 [1/1] (0.80ns)   --->   "%Y_V_3 = select i1 %tmp_25, i29 %p_Val2_15_3, i29 %p_Val2_20_3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 99 'select' 'Y_V_3' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node tmp_28)   --->   "%Z_V_1_in_in_3_v_cast = select i1 %tmp_25, i46 17202291380, i46 -17202291380" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 100 'select' 'Z_V_1_in_in_3_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 101 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_28 = add i46 %tmp_25_3, %Z_V_1_in_in_3_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 101 'add' 'tmp_28' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node tmp_32)   --->   "%Z_V_1_3 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_28, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 102 'partselect' 'Z_V_1_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_29 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_28, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 103 'bitselect' 'tmp_29' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_30 = call i25 @_ssdm_op_PartSelect.i25.i29.i32.i32(i29 %Y_V_3, i32 4, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 104 'partselect' 'tmp_30' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 105 [1/1] (0.00ns)   --->   "%r_V_4_cast = sext i25 %tmp_30 to i28" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 105 'sext' 'r_V_4_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_31 = call i23 @_ssdm_op_PartSelect.i23.i27.i32.i32(i27 %X_V_3, i32 4, i32 26)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 106 'partselect' 'tmp_31' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 107 [1/1] (0.00ns)   --->   "%r_V_2_4_cast_cast = sext i23 %tmp_31 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 107 'sext' 'r_V_2_4_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 108 [1/1] (2.40ns)   --->   "%p_Val2_12_4 = sub i28 %X_V_3_cast_cast, %r_V_4_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 108 'sub' 'p_Val2_12_4' <Predicate = true> <Delay = 2.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 109 [1/1] (2.46ns)   --->   "%p_Val2_15_4 = sub i29 %Y_V_3, %r_V_2_4_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 109 'sub' 'p_Val2_15_4' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node tmp_32)   --->   "%tmp_25_4 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_3, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 110 'bitconcatenate' 'tmp_25_4' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 111 [1/1] (2.40ns)   --->   "%p_Val2_19_4 = add i28 %r_V_4_cast, %X_V_3_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 111 'add' 'p_Val2_19_4' <Predicate = true> <Delay = 2.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 112 [1/1] (2.46ns)   --->   "%p_Val2_20_4 = add i29 %r_V_2_4_cast_cast, %Y_V_3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 112 'add' 'p_Val2_20_4' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 113 [1/1] (0.83ns)   --->   "%X_V_4 = select i1 %tmp_29, i28 %p_Val2_12_4, i28 %p_Val2_19_4" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 113 'select' 'X_V_4' <Predicate = true> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 114 [1/1] (0.80ns)   --->   "%Y_V_4 = select i1 %tmp_29, i29 %p_Val2_15_4, i29 %p_Val2_20_4" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 114 'select' 'Y_V_4' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node tmp_32)   --->   "%Z_V_1_in_in_4_v_cast = select i1 %tmp_29, i46 17202291380, i46 -17202291380" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 115 'select' 'Z_V_1_in_in_4_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 116 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_32 = add i46 %tmp_25_4, %Z_V_1_in_in_4_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 116 'add' 'tmp_32' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_33 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_32, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 117 'bitselect' 'tmp_33' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_34 = call i24 @_ssdm_op_PartSelect.i24.i29.i32.i32(i29 %Y_V_4, i32 5, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 118 'partselect' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_35 = call i23 @_ssdm_op_PartSelect.i23.i28.i32.i32(i28 %X_V_4, i32 5, i32 27)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 119 'partselect' 'tmp_35' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 6.53>
+ST_8 : Operation 120 [1/1] (0.00ns)   --->   "%Y_V_4_cast = sext i29 %Y_V_4 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 120 'sext' 'Y_V_4_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 121 [1/1] (0.00ns) (grouped into LUT with out node tmp_36)   --->   "%Z_V_1_4 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_32, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 121 'partselect' 'Z_V_1_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "%r_V_5_cast = sext i24 %tmp_34 to i28" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 122 'sext' 'r_V_5_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 123 [1/1] (0.00ns)   --->   "%r_V_2_5_cast_cast = sext i23 %tmp_35 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 123 'sext' 'r_V_2_5_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 124 [1/1] (2.43ns)   --->   "%p_Val2_12_5 = sub i28 %X_V_4, %r_V_5_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 124 'sub' 'p_Val2_12_5' <Predicate = (tmp_33)> <Delay = 2.43> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 125 [1/1] (2.46ns)   --->   "%p_Val2_15_5 = sub i30 %Y_V_4_cast, %r_V_2_5_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 125 'sub' 'p_Val2_15_5' <Predicate = (tmp_33)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node tmp_36)   --->   "%tmp_25_5 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_4, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 126 'bitconcatenate' 'tmp_25_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 127 [1/1] (2.43ns)   --->   "%p_Val2_19_5 = add i28 %r_V_5_cast, %X_V_4" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 127 'add' 'p_Val2_19_5' <Predicate = (!tmp_33)> <Delay = 2.43> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 128 [1/1] (2.46ns)   --->   "%p_Val2_20_5 = add i30 %r_V_2_5_cast_cast, %Y_V_4_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 128 'add' 'p_Val2_20_5' <Predicate = (!tmp_33)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 129 [1/1] (0.83ns)   --->   "%X_V_5 = select i1 %tmp_33, i28 %p_Val2_12_5, i28 %p_Val2_19_5" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 129 'select' 'X_V_5' <Predicate = true> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 130 [1/1] (0.00ns)   --->   "%X_V_5_cast = sext i28 %X_V_5 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 130 'sext' 'X_V_5_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 131 [1/1] (0.76ns)   --->   "%Y_V_5 = select i1 %tmp_33, i30 %p_Val2_15_5, i30 %p_Val2_20_5" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 131 'select' 'Y_V_5' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node tmp_36)   --->   "%Z_V_1_in_in_5_v_cast = select i1 %tmp_33, i46 8592732434, i46 -8592732434" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 132 'select' 'Z_V_1_in_in_5_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 133 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_36 = add i46 %tmp_25_5, %Z_V_1_in_in_5_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 133 'add' 'tmp_36' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 134 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%Z_V_1_5 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_36, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 134 'partselect' 'Z_V_1_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_37 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_36, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 135 'bitselect' 'tmp_37' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_38 = call i24 @_ssdm_op_PartSelect.i24.i30.i32.i32(i30 %Y_V_5, i32 6, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 136 'partselect' 'tmp_38' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 137 [1/1] (0.00ns)   --->   "%r_V_6_cast = sext i24 %tmp_38 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 137 'sext' 'r_V_6_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_39 = call i22 @_ssdm_op_PartSelect.i22.i28.i32.i32(i28 %X_V_5, i32 6, i32 27)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 138 'partselect' 'tmp_39' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 139 [1/1] (0.00ns)   --->   "%r_V_2_6_cast_cast = sext i22 %tmp_39 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 139 'sext' 'r_V_2_6_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 140 [1/1] (2.43ns)   --->   "%p_Val2_12_6 = sub i29 %X_V_5_cast, %r_V_6_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 140 'sub' 'p_Val2_12_6' <Predicate = true> <Delay = 2.43> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 141 [1/1] (2.49ns)   --->   "%p_Val2_15_6 = sub i30 %Y_V_5, %r_V_2_6_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 141 'sub' 'p_Val2_15_6' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%tmp_25_6 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_5, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 142 'bitconcatenate' 'tmp_25_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 143 [1/1] (2.43ns)   --->   "%p_Val2_19_6 = add i29 %r_V_6_cast, %X_V_5_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 143 'add' 'p_Val2_19_6' <Predicate = true> <Delay = 2.43> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 144 [1/1] (2.49ns)   --->   "%p_Val2_20_6 = add i30 %r_V_2_6_cast_cast, %Y_V_5" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 144 'add' 'p_Val2_20_6' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 145 [1/1] (0.80ns)   --->   "%X_V_6 = select i1 %tmp_37, i29 %p_Val2_12_6, i29 %p_Val2_19_6" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 145 'select' 'X_V_6' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 146 [1/1] (0.76ns)   --->   "%Y_V_6 = select i1 %tmp_37, i30 %p_Val2_15_6, i30 %p_Val2_20_6" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 146 'select' 'Y_V_6' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%Z_V_1_in_in_6_v_cast = select i1 %tmp_37, i46 4295316872, i46 -4295316872" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 147 'select' 'Z_V_1_in_in_6_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 148 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_40 = add i46 %tmp_25_6, %Z_V_1_in_in_6_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 148 'add' 'tmp_40' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_41 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_40, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 149 'bitselect' 'tmp_41' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 150 [1/1] (0.00ns)   --->   "%tmp_42 = call i23 @_ssdm_op_PartSelect.i23.i30.i32.i32(i30 %Y_V_6, i32 7, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 150 'partselect' 'tmp_42' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 151 [1/1] (0.00ns)   --->   "%tmp_43 = call i22 @_ssdm_op_PartSelect.i22.i29.i32.i32(i29 %X_V_6, i32 7, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 151 'partselect' 'tmp_43' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 6.53>
+ST_9 : Operation 152 [1/1] (0.00ns) (grouped into LUT with out node tmp_44)   --->   "%Z_V_1_6 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_40, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 152 'partselect' 'Z_V_1_6' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 153 [1/1] (0.00ns)   --->   "%r_V_7_cast = sext i23 %tmp_42 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 153 'sext' 'r_V_7_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 154 [1/1] (0.00ns)   --->   "%r_V_2_7_cast_cast = sext i22 %tmp_43 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 154 'sext' 'r_V_2_7_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 155 [1/1] (2.46ns)   --->   "%p_Val2_12_7 = sub i29 %X_V_6, %r_V_7_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 155 'sub' 'p_Val2_12_7' <Predicate = (tmp_41)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 156 [1/1] (2.49ns)   --->   "%p_Val2_15_7 = sub i30 %Y_V_6, %r_V_2_7_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 156 'sub' 'p_Val2_15_7' <Predicate = (tmp_41)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 157 [1/1] (0.00ns) (grouped into LUT with out node tmp_44)   --->   "%tmp_25_7 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_6, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 157 'bitconcatenate' 'tmp_25_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 158 [1/1] (2.46ns)   --->   "%p_Val2_19_7 = add i29 %r_V_7_cast, %X_V_6" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 158 'add' 'p_Val2_19_7' <Predicate = (!tmp_41)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 159 [1/1] (2.49ns)   --->   "%p_Val2_20_7 = add i30 %r_V_2_7_cast_cast, %Y_V_6" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 159 'add' 'p_Val2_20_7' <Predicate = (!tmp_41)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 160 [1/1] (0.80ns)   --->   "%X_V_7 = select i1 %tmp_41, i29 %p_Val2_12_7, i29 %p_Val2_19_7" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 160 'select' 'X_V_7' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 161 [1/1] (0.76ns)   --->   "%Y_V_7 = select i1 %tmp_41, i30 %p_Val2_15_7, i30 %p_Val2_20_7" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 161 'select' 'Y_V_7' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 162 [1/1] (0.00ns) (grouped into LUT with out node tmp_44)   --->   "%Z_V_1_in_in_7_v_cast = select i1 %tmp_41, i46 2147527340, i46 -2147527340" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 162 'select' 'Z_V_1_in_in_7_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 163 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_44 = add i46 %tmp_25_7, %Z_V_1_in_in_7_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 163 'add' 'tmp_44' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 164 [1/1] (0.00ns) (grouped into LUT with out node tmp_48)   --->   "%Z_V_1_7 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_44, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 164 'partselect' 'Z_V_1_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_45 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_44, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 165 'bitselect' 'tmp_45' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 166 [1/1] (0.00ns)   --->   "%tmp_46 = call i22 @_ssdm_op_PartSelect.i22.i30.i32.i32(i30 %Y_V_7, i32 8, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 166 'partselect' 'tmp_46' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 167 [1/1] (0.00ns)   --->   "%r_V_8_cast = sext i22 %tmp_46 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 167 'sext' 'r_V_8_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_47 = call i21 @_ssdm_op_PartSelect.i21.i29.i32.i32(i29 %X_V_7, i32 8, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 168 'partselect' 'tmp_47' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 169 [1/1] (0.00ns)   --->   "%r_V_2_8_cast_cast = sext i21 %tmp_47 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 169 'sext' 'r_V_2_8_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 170 [1/1] (2.46ns)   --->   "%p_Val2_12_8 = sub i29 %X_V_7, %r_V_8_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 170 'sub' 'p_Val2_12_8' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 171 [1/1] (2.49ns)   --->   "%p_Val2_15_8 = sub i30 %Y_V_7, %r_V_2_8_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 171 'sub' 'p_Val2_15_8' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 172 [1/1] (0.00ns) (grouped into LUT with out node tmp_48)   --->   "%tmp_25_8 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_7, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 172 'bitconcatenate' 'tmp_25_8' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 173 [1/1] (2.46ns)   --->   "%p_Val2_19_8 = add i29 %r_V_8_cast, %X_V_7" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 173 'add' 'p_Val2_19_8' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 174 [1/1] (2.49ns)   --->   "%p_Val2_20_8 = add i30 %r_V_2_8_cast_cast, %Y_V_7" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 174 'add' 'p_Val2_20_8' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 175 [1/1] (0.80ns)   --->   "%X_V_8 = select i1 %tmp_45, i29 %p_Val2_12_8, i29 %p_Val2_19_8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 175 'select' 'X_V_8' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 176 [1/1] (0.76ns)   --->   "%Y_V_8 = select i1 %tmp_45, i30 %p_Val2_15_8, i30 %p_Val2_20_8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 176 'select' 'Y_V_8' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 177 [1/1] (0.00ns) (grouped into LUT with out node tmp_48)   --->   "%Z_V_1_in_in_8_v_cast = select i1 %tmp_45, i46 1073747285, i46 -1073747285" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 177 'select' 'Z_V_1_in_in_8_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 178 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_48 = add i46 %tmp_25_8, %Z_V_1_in_in_8_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 178 'add' 'tmp_48' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_49 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_48, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 179 'bitselect' 'tmp_49' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 180 [1/1] (0.00ns)   --->   "%tmp_50 = call i21 @_ssdm_op_PartSelect.i21.i30.i32.i32(i30 %Y_V_8, i32 9, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 180 'partselect' 'tmp_50' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_51 = call i20 @_ssdm_op_PartSelect.i20.i29.i32.i32(i29 %X_V_8, i32 9, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 181 'partselect' 'tmp_51' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 6.53>
+ST_10 : Operation 182 [1/1] (0.00ns) (grouped into LUT with out node tmp_52)   --->   "%Z_V_1_8 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_48, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 182 'partselect' 'Z_V_1_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 183 [1/1] (0.00ns)   --->   "%r_V_9_cast = sext i21 %tmp_50 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 183 'sext' 'r_V_9_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 184 [1/1] (0.00ns)   --->   "%r_V_2_9_cast_cast = sext i20 %tmp_51 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 184 'sext' 'r_V_2_9_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 185 [1/1] (2.46ns)   --->   "%p_Val2_12_9 = sub i29 %X_V_8, %r_V_9_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 185 'sub' 'p_Val2_12_9' <Predicate = (tmp_49)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 186 [1/1] (2.49ns)   --->   "%p_Val2_15_9 = sub i30 %Y_V_8, %r_V_2_9_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 186 'sub' 'p_Val2_15_9' <Predicate = (tmp_49)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 187 [1/1] (0.00ns) (grouped into LUT with out node tmp_52)   --->   "%tmp_25_9 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_8, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 187 'bitconcatenate' 'tmp_25_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 188 [1/1] (2.46ns)   --->   "%p_Val2_19_9 = add i29 %r_V_9_cast, %X_V_8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 188 'add' 'p_Val2_19_9' <Predicate = (!tmp_49)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 189 [1/1] (2.49ns)   --->   "%p_Val2_20_9 = add i30 %r_V_2_9_cast_cast, %Y_V_8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 189 'add' 'p_Val2_20_9' <Predicate = (!tmp_49)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 190 [1/1] (0.80ns)   --->   "%X_V_9 = select i1 %tmp_49, i29 %p_Val2_12_9, i29 %p_Val2_19_9" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 190 'select' 'X_V_9' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 191 [1/1] (0.76ns)   --->   "%Y_V_9 = select i1 %tmp_49, i30 %p_Val2_15_9, i30 %p_Val2_20_9" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 191 'select' 'Y_V_9' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 192 [1/1] (0.00ns) (grouped into LUT with out node tmp_52)   --->   "%Z_V_1_in_in_9_v_cast = select i1 %tmp_49, i46 536871594, i46 -536871594" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 192 'select' 'Z_V_1_in_in_9_v_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 193 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_52 = add i46 %tmp_25_9, %Z_V_1_in_in_9_v_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 193 'add' 'tmp_52' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node tmp_56)   --->   "%Z_V_1_9 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_52, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 194 'partselect' 'Z_V_1_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 195 [1/1] (0.00ns)   --->   "%tmp_53 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_52, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 195 'bitselect' 'tmp_53' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 196 [1/1] (0.00ns)   --->   "%tmp_54 = call i20 @_ssdm_op_PartSelect.i20.i30.i32.i32(i30 %Y_V_9, i32 10, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 196 'partselect' 'tmp_54' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 197 [1/1] (0.00ns)   --->   "%r_V_2_cast = sext i20 %tmp_54 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 197 'sext' 'r_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 198 [1/1] (0.00ns)   --->   "%tmp_55 = call i19 @_ssdm_op_PartSelect.i19.i29.i32.i32(i29 %X_V_9, i32 10, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 198 'partselect' 'tmp_55' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 199 [1/1] (0.00ns)   --->   "%r_V_2_cast_cast = sext i19 %tmp_55 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 199 'sext' 'r_V_2_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 200 [1/1] (2.46ns)   --->   "%p_Val2_12_s = sub i29 %X_V_9, %r_V_2_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 200 'sub' 'p_Val2_12_s' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 201 [1/1] (2.49ns)   --->   "%p_Val2_15_s = sub i30 %Y_V_9, %r_V_2_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 201 'sub' 'p_Val2_15_s' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 202 [1/1] (0.00ns) (grouped into LUT with out node tmp_56)   --->   "%tmp_25_s = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_9, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 202 'bitconcatenate' 'tmp_25_s' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 203 [1/1] (2.46ns)   --->   "%p_Val2_19_s = add i29 %r_V_2_cast, %X_V_9" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 203 'add' 'p_Val2_19_s' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 204 [1/1] (2.49ns)   --->   "%p_Val2_20_s = add i30 %r_V_2_cast_cast, %Y_V_9" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 204 'add' 'p_Val2_20_s' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 205 [1/1] (0.80ns)   --->   "%X_V_s = select i1 %tmp_53, i29 %p_Val2_12_s, i29 %p_Val2_19_s" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 205 'select' 'X_V_s' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 206 [1/1] (0.76ns)   --->   "%Y_V_s = select i1 %tmp_53, i30 %p_Val2_15_s, i30 %p_Val2_20_s" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 206 'select' 'Y_V_s' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 207 [1/1] (0.00ns) (grouped into LUT with out node tmp_56)   --->   "%Z_V_1_in_in_v_cast_29 = select i1 %tmp_53, i46 268435541, i46 -268435541" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 207 'select' 'Z_V_1_in_in_v_cast_29' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 208 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_56 = add i46 %tmp_25_s, %Z_V_1_in_in_v_cast_29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 208 'add' 'tmp_56' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 209 [1/1] (0.00ns)   --->   "%tmp_60 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_56, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 209 'bitselect' 'tmp_60' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 210 [1/1] (0.00ns)   --->   "%tmp_61 = call i19 @_ssdm_op_PartSelect.i19.i30.i32.i32(i30 %Y_V_s, i32 11, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 210 'partselect' 'tmp_61' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 211 [1/1] (0.00ns)   --->   "%tmp_62 = call i18 @_ssdm_op_PartSelect.i18.i29.i32.i32(i29 %X_V_s, i32 11, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 211 'partselect' 'tmp_62' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 6.53>
+ST_11 : Operation 212 [1/1] (0.00ns) (grouped into LUT with out node tmp_63)   --->   "%Z_V_1_s = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_56, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 212 'partselect' 'Z_V_1_s' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 213 [1/1] (0.00ns)   --->   "%r_V_cast3 = sext i19 %tmp_61 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 213 'sext' 'r_V_cast3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 214 [1/1] (0.00ns)   --->   "%r_V_2_1_cast_cast = sext i18 %tmp_62 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 214 'sext' 'r_V_2_1_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 215 [1/1] (2.46ns)   --->   "%p_Val2_12_10 = sub i29 %X_V_s, %r_V_cast3" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 215 'sub' 'p_Val2_12_10' <Predicate = (tmp_60)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 216 [1/1] (2.49ns)   --->   "%p_Val2_15_1 = sub i30 %Y_V_s, %r_V_2_1_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 216 'sub' 'p_Val2_15_1' <Predicate = (tmp_60)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 217 [1/1] (0.00ns) (grouped into LUT with out node tmp_63)   --->   "%tmp_25_10 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_s, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 217 'bitconcatenate' 'tmp_25_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 218 [1/1] (2.46ns)   --->   "%p_Val2_19_10 = add i29 %r_V_cast3, %X_V_s" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 218 'add' 'p_Val2_19_10' <Predicate = (!tmp_60)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 219 [1/1] (2.49ns)   --->   "%p_Val2_20_1 = add i30 %r_V_2_1_cast_cast, %Y_V_s" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 219 'add' 'p_Val2_20_1' <Predicate = (!tmp_60)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 220 [1/1] (0.80ns)   --->   "%X_V_10 = select i1 %tmp_60, i29 %p_Val2_12_10, i29 %p_Val2_19_10" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 220 'select' 'X_V_10' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 221 [1/1] (0.76ns)   --->   "%Y_V_10 = select i1 %tmp_60, i30 %p_Val2_15_1, i30 %p_Val2_20_1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 221 'select' 'Y_V_10' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 222 [1/1] (0.00ns) (grouped into LUT with out node tmp_63)   --->   "%Z_V_1_in_in_10_v_cas = select i1 %tmp_60, i46 134217738, i46 -134217738" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 222 'select' 'Z_V_1_in_in_10_v_cas' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 223 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_63 = add i46 %tmp_25_10, %Z_V_1_in_in_10_v_cas" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 223 'add' 'tmp_63' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 224 [1/1] (0.00ns) (grouped into LUT with out node tmp_67)   --->   "%Z_V_1_10 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_63, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 224 'partselect' 'Z_V_1_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 225 [1/1] (0.00ns)   --->   "%tmp_64 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_63, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 225 'bitselect' 'tmp_64' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 226 [1/1] (0.00ns)   --->   "%tmp_65 = call i18 @_ssdm_op_PartSelect.i18.i30.i32.i32(i30 %Y_V_10, i32 12, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 226 'partselect' 'tmp_65' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 227 [1/1] (0.00ns)   --->   "%r_V_1_cast = sext i18 %tmp_65 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 227 'sext' 'r_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 228 [1/1] (0.00ns)   --->   "%tmp_66 = call i17 @_ssdm_op_PartSelect.i17.i29.i32.i32(i29 %X_V_10, i32 12, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 228 'partselect' 'tmp_66' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 229 [1/1] (0.00ns)   --->   "%r_V_2_10_cast_cast = sext i17 %tmp_66 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 229 'sext' 'r_V_2_10_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 230 [1/1] (2.46ns)   --->   "%p_Val2_12_11 = sub i29 %X_V_10, %r_V_1_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 230 'sub' 'p_Val2_12_11' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 231 [1/1] (2.49ns)   --->   "%p_Val2_15_10 = sub i30 %Y_V_10, %r_V_2_10_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 231 'sub' 'p_Val2_15_10' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 232 [1/1] (0.00ns) (grouped into LUT with out node tmp_67)   --->   "%tmp_25_11 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_10, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 232 'bitconcatenate' 'tmp_25_11' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 233 [1/1] (2.46ns)   --->   "%p_Val2_19_11 = add i29 %r_V_1_cast, %X_V_10" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 233 'add' 'p_Val2_19_11' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 234 [1/1] (2.49ns)   --->   "%p_Val2_20_10 = add i30 %r_V_2_10_cast_cast, %Y_V_10" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 234 'add' 'p_Val2_20_10' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 235 [1/1] (0.80ns)   --->   "%X_V_11 = select i1 %tmp_64, i29 %p_Val2_12_11, i29 %p_Val2_19_11" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 235 'select' 'X_V_11' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 236 [1/1] (0.76ns)   --->   "%Y_V_11 = select i1 %tmp_64, i30 %p_Val2_15_10, i30 %p_Val2_20_10" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 236 'select' 'Y_V_11' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 237 [1/1] (0.00ns) (grouped into LUT with out node tmp_67)   --->   "%Z_V_1_in_in_11_v_cas = select i1 %tmp_64, i46 67108865, i46 -67108865" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 237 'select' 'Z_V_1_in_in_11_v_cas' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 238 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_67 = add i46 %tmp_25_11, %Z_V_1_in_in_11_v_cas" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 238 'add' 'tmp_67' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 239 [1/1] (0.00ns)   --->   "%tmp_68 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_67, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 239 'bitselect' 'tmp_68' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 240 [1/1] (0.00ns)   --->   "%tmp_69 = call i17 @_ssdm_op_PartSelect.i17.i30.i32.i32(i30 %Y_V_11, i32 13, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 240 'partselect' 'tmp_69' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 241 [1/1] (0.00ns)   --->   "%tmp_70 = call i16 @_ssdm_op_PartSelect.i16.i29.i32.i32(i29 %X_V_11, i32 13, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 241 'partselect' 'tmp_70' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 6.53>
+ST_12 : Operation 242 [1/1] (0.00ns) (grouped into LUT with out node tmp_71)   --->   "%Z_V_1_11 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_67, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 242 'partselect' 'Z_V_1_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 243 [1/1] (0.00ns)   --->   "%r_V_3_cast2 = sext i17 %tmp_69 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 243 'sext' 'r_V_3_cast2' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 244 [1/1] (0.00ns)   --->   "%r_V_2_11_cast_cast = sext i16 %tmp_70 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 244 'sext' 'r_V_2_11_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 245 [1/1] (2.46ns)   --->   "%p_Val2_12_12 = sub i29 %X_V_11, %r_V_3_cast2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 245 'sub' 'p_Val2_12_12' <Predicate = (tmp_68)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 246 [1/1] (2.49ns)   --->   "%p_Val2_15_11 = sub i30 %Y_V_11, %r_V_2_11_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 246 'sub' 'p_Val2_15_11' <Predicate = (tmp_68)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 247 [1/1] (0.00ns) (grouped into LUT with out node tmp_71)   --->   "%tmp_25_12 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_11, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 247 'bitconcatenate' 'tmp_25_12' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 248 [1/1] (2.46ns)   --->   "%p_Val2_19_12 = add i29 %r_V_3_cast2, %X_V_11" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 248 'add' 'p_Val2_19_12' <Predicate = (!tmp_68)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 249 [1/1] (2.49ns)   --->   "%p_Val2_20_11 = add i30 %r_V_2_11_cast_cast, %Y_V_11" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 249 'add' 'p_Val2_20_11' <Predicate = (!tmp_68)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 250 [1/1] (0.80ns)   --->   "%X_V_12 = select i1 %tmp_68, i29 %p_Val2_12_12, i29 %p_Val2_19_12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 250 'select' 'X_V_12' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 251 [1/1] (0.76ns)   --->   "%Y_V_12 = select i1 %tmp_68, i30 %p_Val2_15_11, i30 %p_Val2_20_11" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 251 'select' 'Y_V_12' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 252 [1/1] (0.00ns) (grouped into LUT with out node tmp_71)   --->   "%Z_V_1_in_in_12_v_cas = select i1 %tmp_68, i46 33554432, i46 -33554432" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 252 'select' 'Z_V_1_in_in_12_v_cas' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 253 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_71 = add i46 %tmp_25_12, %Z_V_1_in_in_12_v_cas" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 253 'add' 'tmp_71' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 254 [1/1] (0.00ns) (grouped into LUT with out node tmp_75)   --->   "%Z_V_1_12 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_71, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 254 'partselect' 'Z_V_1_12' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 255 [1/1] (0.00ns)   --->   "%tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_71, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 255 'bitselect' 'tmp_72' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_73 = call i17 @_ssdm_op_PartSelect.i17.i30.i32.i32(i30 %Y_V_12, i32 13, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 256 'partselect' 'tmp_73' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 257 [1/1] (0.00ns)   --->   "%r_V_10_cast = sext i17 %tmp_73 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 257 'sext' 'r_V_10_cast' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 258 [1/1] (0.00ns)   --->   "%tmp_74 = call i16 @_ssdm_op_PartSelect.i16.i29.i32.i32(i29 %X_V_12, i32 13, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 258 'partselect' 'tmp_74' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 259 [1/1] (0.00ns)   --->   "%r_V_2_12_cast_cast = sext i16 %tmp_74 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 259 'sext' 'r_V_2_12_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 260 [1/1] (2.46ns)   --->   "%p_Val2_12_13 = sub i29 %X_V_12, %r_V_10_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 260 'sub' 'p_Val2_12_13' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 261 [1/1] (2.49ns)   --->   "%p_Val2_15_12 = sub i30 %Y_V_12, %r_V_2_12_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 261 'sub' 'p_Val2_15_12' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 262 [1/1] (0.00ns) (grouped into LUT with out node tmp_75)   --->   "%tmp_25_13 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_12, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 262 'bitconcatenate' 'tmp_25_13' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 263 [1/1] (2.46ns)   --->   "%p_Val2_19_13 = add i29 %r_V_10_cast, %X_V_12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 263 'add' 'p_Val2_19_13' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 264 [1/1] (2.49ns)   --->   "%p_Val2_20_12 = add i30 %r_V_2_12_cast_cast, %Y_V_12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 264 'add' 'p_Val2_20_12' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 265 [1/1] (0.80ns)   --->   "%X_V_13 = select i1 %tmp_72, i29 %p_Val2_12_13, i29 %p_Val2_19_13" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 265 'select' 'X_V_13' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 266 [1/1] (0.76ns)   --->   "%Y_V_13 = select i1 %tmp_72, i30 %p_Val2_15_12, i30 %p_Val2_20_12" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 266 'select' 'Y_V_13' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 267 [1/1] (0.00ns) (grouped into LUT with out node tmp_75)   --->   "%Z_V_1_in_in_13_v_cas = select i1 %tmp_72, i46 33554432, i46 -33554432" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 267 'select' 'Z_V_1_in_in_13_v_cas' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 268 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_75 = add i46 %tmp_25_13, %Z_V_1_in_in_13_v_cas" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 268 'add' 'tmp_75' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_76 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_75, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 269 'bitselect' 'tmp_76' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 270 [1/1] (0.00ns)   --->   "%tmp_77 = call i16 @_ssdm_op_PartSelect.i16.i30.i32.i32(i30 %Y_V_13, i32 14, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 270 'partselect' 'tmp_77' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 271 [1/1] (0.00ns)   --->   "%tmp_78 = call i15 @_ssdm_op_PartSelect.i15.i29.i32.i32(i29 %X_V_13, i32 14, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 271 'partselect' 'tmp_78' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 12> <Delay = 8.25>
+ST_13 : Operation 272 [1/1] (0.00ns) (grouped into LUT with out node tmp_79)   --->   "%Z_V_1_13 = call i32 @_ssdm_op_PartSelect.i32.i46.i32.i32(i46 %tmp_75, i32 14, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:75]   --->   Operation 272 'partselect' 'Z_V_1_13' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 273 [1/1] (0.00ns)   --->   "%r_V_11_cast = sext i16 %tmp_77 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 273 'sext' 'r_V_11_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 274 [1/1] (0.00ns)   --->   "%r_V_2_13_cast_cast = sext i15 %tmp_78 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 274 'sext' 'r_V_2_13_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 275 [1/1] (2.46ns)   --->   "%p_Val2_12_14 = sub i29 %X_V_13, %r_V_11_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 275 'sub' 'p_Val2_12_14' <Predicate = (tmp_76)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 276 [1/1] (2.49ns)   --->   "%p_Val2_15_13 = sub i30 %Y_V_13, %r_V_2_13_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 276 'sub' 'p_Val2_15_13' <Predicate = (tmp_76)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 277 [1/1] (0.00ns) (grouped into LUT with out node tmp_79)   --->   "%tmp_25_14 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %Z_V_1_13, i14 0)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 277 'bitconcatenate' 'tmp_25_14' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 278 [1/1] (2.46ns)   --->   "%p_Val2_19_14 = add i29 %r_V_11_cast, %X_V_13" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 278 'add' 'p_Val2_19_14' <Predicate = (!tmp_76)> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 279 [1/1] (2.49ns)   --->   "%p_Val2_20_13 = add i30 %r_V_2_13_cast_cast, %Y_V_13" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 279 'add' 'p_Val2_20_13' <Predicate = (!tmp_76)> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 280 [1/1] (0.80ns)   --->   "%X_V_14 = select i1 %tmp_76, i29 %p_Val2_12_14, i29 %p_Val2_19_14" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 280 'select' 'X_V_14' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 281 [1/1] (0.76ns)   --->   "%Y_V_14 = select i1 %tmp_76, i30 %p_Val2_15_13, i30 %p_Val2_20_13" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 281 'select' 'Y_V_14' <Predicate = true> <Delay = 0.76> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 282 [1/1] (0.00ns) (grouped into LUT with out node tmp_79)   --->   "%Z_V_1_in_in_14_v_cas = select i1 %tmp_76, i46 16777216, i46 -16777216" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 282 'select' 'Z_V_1_in_in_14_v_cas' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 283 [1/1] (3.04ns) (out node of the LUT)   --->   "%tmp_79 = add i46 %tmp_25_14, %Z_V_1_in_in_14_v_cas" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80]   --->   Operation 283 'add' 'tmp_79' <Predicate = true> <Delay = 3.04> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 284 [1/1] (0.00ns)   --->   "%tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i46.i32(i46 %tmp_79, i32 45)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 284 'bitselect' 'tmp_80' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 285 [1/1] (0.00ns)   --->   "%tmp_81 = call i15 @_ssdm_op_PartSelect.i15.i30.i32.i32(i30 %Y_V_14, i32 15, i32 29)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:68]   --->   Operation 285 'partselect' 'tmp_81' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 286 [1/1] (0.00ns)   --->   "%r_V_12_cast = sext i15 %tmp_81 to i29" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 286 'sext' 'r_V_12_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 287 [1/1] (0.00ns)   --->   "%tmp_82 = call i14 @_ssdm_op_PartSelect.i14.i29.i32.i32(i29 %X_V_14, i32 15, i32 28)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:69]   --->   Operation 287 'partselect' 'tmp_82' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 288 [1/1] (0.00ns)   --->   "%r_V_2_14_cast_cast = sext i14 %tmp_82 to i30" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 288 'sext' 'r_V_2_14_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 289 [1/1] (2.46ns)   --->   "%p_Val2_12_15 = sub i29 %X_V_14, %r_V_12_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78]   --->   Operation 289 'sub' 'p_Val2_12_15' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 290 [1/1] (2.49ns)   --->   "%p_Val2_15_14 = sub i30 %Y_V_14, %r_V_2_14_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79]   --->   Operation 290 'sub' 'p_Val2_15_14' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 291 [1/1] (2.46ns)   --->   "%p_Val2_19_15 = add i29 %r_V_12_cast, %X_V_14" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72]   --->   Operation 291 'add' 'p_Val2_19_15' <Predicate = true> <Delay = 2.46> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 292 [1/1] (2.49ns)   --->   "%p_Val2_20_14 = add i30 %r_V_2_14_cast_cast, %Y_V_14" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:74]   --->   Operation 292 'add' 'p_Val2_20_14' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 293 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_9)   --->   "%X_V_15 = select i1 %tmp_80, i29 %p_Val2_12_15, i29 %p_Val2_19_15" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 293 'select' 'X_V_15' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 294 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_9)   --->   "%X_V_15_cast = sext i29 %X_V_15 to i31" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 294 'sext' 'X_V_15_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 295 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_9)   --->   "%Y_V_15 = select i1 %tmp_80, i30 %p_Val2_15_14, i30 %p_Val2_20_14" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 295 'select' 'Y_V_15' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 296 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_9)   --->   "%Y_V_15_cast1 = sext i30 %Y_V_15 to i31" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65]   --->   Operation 296 'sext' 'Y_V_15_cast1' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 297 [1/1] (2.49ns) (out node of the LUT)   --->   "%p_Val2_9 = add i31 %X_V_15_cast, %Y_V_15_cast1" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:85]   --->   Operation 297 'add' 'p_Val2_9' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.17>
+ST_14 : Operation 298 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%v_assign_cast8 = sext i5 %p_Val2_2 to i32" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:55]   --->   Operation 298 'sext' 'v_assign_cast8' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 299 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%p_Val2_9_cast = sext i31 %p_Val2_9 to i32" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:85]   --->   Operation 299 'sext' 'p_Val2_9_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_83 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %p_Val2_2, i32 4)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86]   --->   Operation 300 'bitselect' 'tmp_83' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 301 [1/1] (1.78ns)   --->   "%sh_assign = sub i5 0, %p_Val2_2" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86]   --->   Operation 301 'sub' 'sh_assign' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 302 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%sh_assign_cast_cast = zext i5 %sh_assign to i31" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86]   --->   Operation 302 'zext' 'sh_assign_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 303 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_s = ashr i31 %p_Val2_9, %sh_assign_cast_cast" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86]   --->   Operation 303 'ashr' 'tmp_s' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.39> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 304 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_18 = shl i32 %p_Val2_9_cast, %v_assign_cast8" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86]   --->   Operation 304 'shl' 'tmp_18' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.39> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 305 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_19 = call i22 @_ssdm_op_PartSelect.i22.i31.i32.i32(i31 %tmp_s, i32 3, i32 24)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:87]   --->   Operation 305 'partselect' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 306 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_57 = call i22 @_ssdm_op_PartSelect.i22.i32.i32.i32(i32 %tmp_18, i32 3, i32 24)" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:87]   --->   Operation 306 'partselect' 'tmp_57' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 307 [1/1] (4.39ns) (out node of the LUT)   --->   "%tmp_58 = select i1 %tmp_83, i22 %tmp_19, i22 %tmp_57" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:87]   --->   Operation 307 'select' 'tmp_58' <Predicate = true> <Delay = 4.39> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 308 [1/1] (0.00ns)   --->   "ret i22 %tmp_58" [SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:88]   --->   Operation 308 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.48ns
+The critical path consists of the following:
+	wire read on port 'x_V' [2]  (0 ns)
+	'mul' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:51) [5]  (8.48 ns)
+
+ <State 2>: 7.37ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_2_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [12]  (2.47 ns)
+	'select' operation ('p_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [14]  (0 ns)
+	'select' operation ('p_2_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:42->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [15]  (1.19 ns)
+	'icmp' operation ('tmp_8_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [19]  (2.52 ns)
+	'select' operation ('p_1_i', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:43->SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [21]  (0 ns)
+	'select' operation ('k', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:52) [22]  (1.19 ns)
+
+ <State 3>: 5.26ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_4', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:53) [24]  (1.43 ns)
+	'select' operation ('p_s', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:53) [25]  (1.19 ns)
+	'icmp' operation ('tmp_5', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:55) [27]  (1.43 ns)
+	'select' operation ('v', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:55) [28]  (1.22 ns)
+
+ <State 4>: 7.71ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56) [32]  (7.71 ns)
+
+ <State 5>: 6.57ns
+The critical path consists of the following:
+	'sub' operation ('__Val2__', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:56) [37]  (3.52 ns)
+	'select' operation ('Z_V_1_in_in_v_cast', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [42]  (0 ns)
+	'add' operation ('tmp_15', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80) [43]  (3.05 ns)
+
+ <State 6>: 6.09ns
+The critical path consists of the following:
+	'add' operation ('tmp_20', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80) [56]  (3.05 ns)
+	'add' operation ('tmp_24', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:80) [73]  (3.05 ns)
+
+ <State 7>: 6.47ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_15_3', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79) [81]  (2.4 ns)
+	'select' operation ('Y_V_3', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [87]  (0.804 ns)
+	'sub' operation ('p_Val2_15_4', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79) [97]  (2.46 ns)
+	'select' operation ('Y_V_4', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [102]  (0.804 ns)
+
+ <State 8>: 6.53ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_12_5', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [112]  (2.43 ns)
+	'select' operation ('X_V_5', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [117]  (0.839 ns)
+	'sub' operation ('p_Val2_15_6', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79) [129]  (2.49 ns)
+	'select' operation ('Y_V_6', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [134]  (0.768 ns)
+
+ <State 9>: 6.53ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_19_7', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72) [146]  (2.46 ns)
+	'select' operation ('X_V_7', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [148]  (0.804 ns)
+	'add' operation ('p_Val2_19_8', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72) [161]  (2.46 ns)
+	'select' operation ('X_V_8', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [163]  (0.804 ns)
+
+ <State 10>: 6.53ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_12_9', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [173]  (2.46 ns)
+	'select' operation ('X_V_9', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [178]  (0.804 ns)
+	'sub' operation ('p_Val2_12_s', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [188]  (2.46 ns)
+	'select' operation ('X_V_s', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [193]  (0.804 ns)
+
+ <State 11>: 6.53ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_19_10', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72) [206]  (2.46 ns)
+	'select' operation ('X_V_10', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [208]  (0.804 ns)
+	'sub' operation ('p_Val2_12_11', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [218]  (2.46 ns)
+	'select' operation ('X_V_11', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [223]  (0.804 ns)
+
+ <State 12>: 6.53ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_19_12', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:72) [236]  (2.46 ns)
+	'select' operation ('X_V_12', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [238]  (0.804 ns)
+	'sub' operation ('p_Val2_12_13', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [248]  (2.46 ns)
+	'select' operation ('X_V_13', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [253]  (0.804 ns)
+
+ <State 13>: 8.25ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_12_14', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:78) [263]  (2.46 ns)
+	'select' operation ('X_V_14', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [268]  (0.804 ns)
+	'sub' operation ('p_Val2_15_14', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:79) [278]  (2.49 ns)
+	'select' operation ('Y_V_15', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:65) [283]  (0 ns)
+	'add' operation ('p_Val2_9', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:85) [285]  (2.49 ns)
+
+ <State 14>: 6.17ns
+The critical path consists of the following:
+	'sub' operation ('sh', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86) [288]  (1.78 ns)
+	'ashr' operation ('tmp_s', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:86) [290]  (0 ns)
+	'select' operation ('tmp_58', SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp:87) [294]  (4.39 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
