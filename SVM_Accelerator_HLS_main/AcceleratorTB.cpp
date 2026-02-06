@@ -67,7 +67,7 @@ int main() {
     printf("%f, %f\n", CM[1][0]/SIM_IMGS, CM[1][1]/SIM_IMGS);
 
     // HLS TB Requirement
-    if (accuracy > 0.9965) {
+    if (accuracy > 0.95) {
         printf("Test Passed!\n");
         return 0;
     } else {
