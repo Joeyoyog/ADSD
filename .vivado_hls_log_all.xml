@@ -12,8 +12,9 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [HLS 200-40] Cannot find source file alphas.h; skipping it." projectName="SVM_Accelerator_HLS_Cordic_Optimized" solutionName="solution1" date="2026-02-06T10:50:30.817+0000" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] Cannot find design file 'alphas.h'" projectName="SVM_Accelerator_HLS_Cordic_Optimized" solutionName="solution1" date="2026-02-06T10:50:30.140+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:27:49) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-07T14:28:45.951+0000" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find source file alphas.h; skipping it." projectName="ADSD" solutionName="solution1" date="2026-02-07T14:12:32.164+0000" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find design file 'alphas.h'" projectName="ADSD" solutionName="solution1" date="2026-02-07T14:12:31.264+0000" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

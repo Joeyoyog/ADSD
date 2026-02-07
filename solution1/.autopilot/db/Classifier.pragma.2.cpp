@@ -1,5 +1,5 @@
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp"
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
+# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp"
+# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,9 +145,9 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp"
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 1
+# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
+# 1 "ADSD/Classifier.cpp"
+# 1 "ADSD/Classifier.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -293,8 +293,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 1
+# 1 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/Classifier.h" 1
 
 
 
@@ -24527,8 +24527,9 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 1
+# 4 "ADSD/Classifier.h" 2
+
+# 1 "ADSD/Exp.h" 1
 
 
 
@@ -24538,19 +24539,20 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<22,1> out_t;
 
 out_t compute_exp(x_t x);
-# 6 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
+# 5 "ADSD/Classifier.h" 2
+
 
 
 
 
 
 double classify(ap_fixed<8,7> x[784]);
-# 2 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./svs.h" 1
+# 2 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./svs.h" 1
 
 
 
-ap_fixed<8,7> svs[] = {
+static const ap_fixed<8,7> svs[] = {
 0.0,
 0.0,
 0.0,
@@ -153912,14 +153914,14 @@ ap_fixed<8,7> svs[] = {
 0.0,
 0.0,
 };
-# 3 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./bias.h" 1
-ap_fixed<8, 1> bias[] = {
+# 3 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./bias.h" 1
+static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./alphas.h" 1
-ap_fixed<8, 5> alphas[] = {
+# 4 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./alphas.h" 1
+static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
 -0.5,
@@ -154086,18 +154088,40 @@ ap_fixed<8, 5> alphas[] = {
 0.5,
 1.25,
 };
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
+# 5 "ADSD/Classifier.cpp" 2
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
+
+_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 784, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+
  ap_fixed<32,16> sum = 0.0;
 
-    classify_label2:for (int i = 0; i < 165; i++) {
+
+
+
+ ap_fixed<8,7> x_local[784];
+_ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 4, "");
+
+ load_image_loop: for (int i = 0; i < 784; i++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ x_local[i] = x[i];
+     }
+
+
+_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 4, "");
+
+ classify_label2:for (int i = 0; i < 165; i++) {
 
         ap_fixed<32,24> l2Squared_fixed = 0;
 
         classify_label1:for (int j = 0; j < 784; j++) {
-            ap_fixed<8,7> xi = svs[i * 784 + j];
-            ap_fixed<8,7> diff = xi - x[j];
+_ssdm_Unroll(1, 0, 4, "");
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+
+ ap_fixed<8,7> xi = svs[i * 784 + j];
+            ap_fixed<8,7> xj = x_local[j];
+            ap_fixed<8,7> diff = xi - xj;
 
 
 

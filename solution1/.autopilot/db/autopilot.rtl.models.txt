@@ -1,6 +1,13 @@
-classify_sitodp_3bkb
-classify_mul_mul_cud
-classify_svs_V
+classify_sitodp_3hbi
+classify_mul_mul_ibs
+classify_svs_V_0
+classify_svs_V_1
+classify_svs_V_2
+classify_svs_V_3
+classify_Iteratiobkb
+classify_ATANH_LUcud
 classify_alphas_V
-compute_exp
+classify_x_local_dEe
+classify_control_s_axi
+classify_gmem_m_axi
 classify

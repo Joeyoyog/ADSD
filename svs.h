@@ -1,7 +1,7 @@
 #ifndef SVS_H
 #define SVS_H
 #include "ap_fixed.h"
-ap_fixed<8,7> svs[] = {
+static const ap_fixed<8,7> svs[] = {
 0.0,
 0.0,
 0.0,

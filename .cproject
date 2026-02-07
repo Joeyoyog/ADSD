@@ -29,6 +29,7 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1554791840" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -46,6 +47,7 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1171284472" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -86,11 +88,11 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.1804872491" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<option id="gnu.cpp.compiler.option.other.other.1804872491" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0" valueType="string"/>
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1797597914" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
@@ -103,11 +105,11 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.998756178" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<option id="gnu.cpp.compiler.option.other.other.998756178" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0" valueType="string"/>
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1179333091" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
@@ -118,8 +120,8 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
 							<option id="gnu.cpp.compiler.option.other.other.25784671" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
@@ -161,6 +163,7 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1843068182" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -173,6 +176,7 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.270976167" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -208,11 +212,11 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.521699891" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<option id="gnu.cpp.compiler.option.other.other.521699891" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0" valueType="string"/>
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.223734500" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
@@ -225,11 +229,11 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.1223184883" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<option id="gnu.cpp.compiler.option.other.other.1223184883" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0" valueType="string"/>
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.124949065" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
@@ -240,8 +244,8 @@
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
-								<listOptionValue builtIn="false" value="C:/Users/josep/Documents/ADSD"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/mathi/Documents/ADSD_ICL"/>
 								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
 							</option>
 							<option id="gnu.cpp.compiler.option.other.other.775150475" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
@@ -265,10 +269,10 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.433889301;cdt.managedbuild.config.gnu.exe.release.433889301.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.1421309683;cdt.managedbuild.tool.gnu.c.compiler.input.270976167">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.603083779;cdt.managedbuild.config.gnu.exe.debug.603083779.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.420087888;cdt.managedbuild.tool.gnu.c.compiler.input.1802995606">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.433889301;cdt.managedbuild.config.gnu.exe.release.433889301.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.321454080;cdt.managedbuild.tool.gnu.cpp.compiler.input.1843068182">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.433889301;cdt.managedbuild.config.gnu.exe.release.433889301.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.321454080;cdt.managedbuild.tool.gnu.cpp.compiler.input.1843068182">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.603083779;cdt.managedbuild.config.gnu.exe.debug.603083779.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.420087888;cdt.managedbuild.tool.gnu.c.compiler.input.1802995606">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.603083779;cdt.managedbuild.config.gnu.exe.debug.603083779.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.580088521;cdt.managedbuild.tool.gnu.cpp.compiler.input.1401630687">

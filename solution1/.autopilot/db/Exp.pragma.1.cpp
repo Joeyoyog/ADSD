@@ -1,5 +1,5 @@
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp"
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 1
+# 1 "ADSD/Exp.cpp"
+# 1 "ADSD/Exp.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,8 +145,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 1
+# 1 "ADSD/Exp.cpp" 2
+# 1 "ADSD/Exp.h" 1
 
 
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 1
@@ -24366,14 +24366,15 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 4 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 2
+# 4 "ADSD/Exp.h" 2
 
 
 typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<22,1> out_t;
 
 out_t compute_exp(x_t x);
-# 2 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 2
+# 1 "ADSD/Exp.cpp" 2
+
 
 
 typedef ap_fixed<32,8> acc_t;
@@ -24435,10 +24436,7 @@ out_t compute_exp(x_t x){
  acc_t Y = 0.0;
  acc_t Z = r;
 
-  compute_exp_label0:for (int n = 0; n < Num_Iterations; n++){
-_ssdm_Unroll(0,0,0, "");
-# 63 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp"
-
+ for (int n = 0; n < Num_Iterations; n++){
   int i = Iteration_Schedule[n];
   bool z_nonneg = (Z >= 0);
 
@@ -24447,8 +24445,8 @@ _ssdm_Unroll(0,0,0, "");
   acc_t Xsh = (X >> i);
 
   acc_t Xn, Yn, Zn;
-  if(z_nonneg) { Xn = X + Ysh;
-
+  if(z_nonneg) {
+   Xn = X + Ysh;
    Yn = Y + Xsh;
    Zn = Z - ATANH_LUT[n];
 

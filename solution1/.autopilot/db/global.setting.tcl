@@ -15,7 +15,7 @@ set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
 set HasDSPModule 1
-set ResetLevelFlag 1
+set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
 set ResetRegisterFlag 0
@@ -41,15 +41,15 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp}}
+set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
 set SourceFlags {sc {} c {{} {}}}
-set DirectiveFile {C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/solution1.directive}
-set TBFiles {verilog {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} bc {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} vhdl {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} sc {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} cas {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} c {}}
+set DirectiveFile {C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.directive}
+set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} c {} cas {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}
