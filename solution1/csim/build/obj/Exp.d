@@ -1,6 +1,4 @@
-obj/Exp.o: \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h \
+obj/Exp.o: ../../../Exp.cpp ../../../Exp.h \
  C:/Xilinx/Vivado/2018.2/include/ap_fixed.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_sim.h \

@@ -1,6 +1,4 @@
-obj/Classifier.o: \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h \
+obj/Classifier.o: ../../../Classifier.cpp ../../../Classifier.h \
  C:/Xilinx/Vivado/2018.2/include/ap_fixed.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_sim.h \
@@ -16,8 +14,6 @@ obj/Classifier.o: \
  C:/Xilinx/Vivado/2018.2/include/hls_half.h \
  C:/Xilinx/Vivado/2018.2/include/ap_common.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_special.h \
- C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./svs.h \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./bias.h \
- ../../../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./alphas.h
+ C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h ../../../Exp.h \
+ ../../.././svs.h ../../.././Classifier.h ../../.././bias.h \
+ ../../.././alphas.h

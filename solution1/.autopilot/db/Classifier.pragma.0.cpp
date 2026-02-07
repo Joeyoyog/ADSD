@@ -24392,7 +24392,9 @@ double classify(ap_fixed<8,7> x[784]);
 
 
 
-static const ap_fixed<8,7> svs[] = {
+
+
+static const ap_fixed<8,7> svs[165][784] = {
 0.0,
 0.0,
 0.0,
@@ -153932,46 +153934,73 @@ static const ap_fixed<8, 5> alphas[] = {
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
 
-#pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=784
-#pragma HLS INTERFACE s_axilite port=return bundle=control
-
- ap_fixed<32,16> sum = 0.0;
 
 
 
 
- ap_fixed<8,7> x_local[784];
-#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=4 dim=1
+    ap_fixed<32,16> sum = 0.0;
+
+
+    ap_fixed<32,16> partial_sum[8];
+#pragma HLS ARRAY_PARTITION variable=&partial_sum complete dim=1
+
+
+ for (int k = 0; k < 8; k++) {
+#pragma HLS UNROLL
+ partial_sum[k] = 0;
+    }
+
+    ap_fixed<8,7> x_local[784];
+#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=8 dim=1
+
+
+#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=8 dim=1
+#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=4 dim=2
+#pragma HLS ARRAY_PARTITION variable=&alphas cyclic factor=8 dim=1
+
 
  load_image_loop: for (int i = 0; i < 784; i++) {
 #pragma HLS PIPELINE
  x_local[i] = x[i];
-     }
+    }
 
 
-#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=4 dim=1
+    classify_label2:for (int i = 0; i < 165; i += 8) {
 
- classify_label2:for (int i = 0; i < 165; i++) {
 
-        ap_fixed<32,24> l2Squared_fixed = 0;
 
-        classify_label1:for (int j = 0; j < 784; j++) {
+        for (int k = 0; k < 8; k++) {
+#pragma HLS UNROLL
+
+ if (i + k < 165) {
+                ap_fixed<32,24> l2Squared_fixed = 0;
+
+
+                classify_label1:for (int j = 0; j < 784; j++) {
 #pragma HLS UNROLL factor=4
+
 #pragma HLS PIPELINE II=1
 
- ap_fixed<8,7> xi = svs[i * 784 + j];
-            ap_fixed<8,7> xj = x_local[j];
-            ap_fixed<8,7> diff = xi - xj;
+ ap_fixed<8,7> xi = svs[i+k][j];
+                    ap_fixed<8,7> xj = x_local[j];
+                    ap_fixed<8,7> diff = xi - xj;
+                    l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+                }
+
+                const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
 
 
+                ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
 
-            l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+                partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+            }
         }
+    }
 
 
-        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
-        sum += (ap_fixed<32,16>)(alphas[i] * K);
+    for (int k = 0; k < 8; k++) {
+#pragma HLS UNROLL
+ sum += partial_sum[k];
     }
 
     return (double)(sum + bias[0]);

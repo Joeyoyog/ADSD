@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Sat Feb  7 14:28:48 2026
+<item name = "Date">Sat Feb  7 20:12:25 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -24,21 +24,28 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">43867, 43867, 43867, 43867, none</column>
+<column name="">5500, 37105, 5500, 37105, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_floor_to_int_fu_1788">floor_to_int, 0, 0, 0, 0, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- load_image_loop">785, 785, 3, 1, 1, 784, yes</column>
-<column name="- classify_label2">43065, 43065, 261, -, -, 165, no</column>
+<column name="- load_image_loop">784, 784, 2, 1, 1, 784, yes</column>
+<column name="- classify_label2">4704, 36309, 224 ~ 1729, -, -, 21, no</column>
 <column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
-<column name=" + classify_label2.2">51, 51, 3, -, -, 17, no</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
+<column name=" + classify_label1">198, 198, 4, 1, 1, 196, yes</column>
 </table>
 </item>
 </section>

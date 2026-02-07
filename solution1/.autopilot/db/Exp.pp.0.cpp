@@ -24373,8 +24373,7 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<22,1> out_t;
 
 out_t compute_exp(x_t x);
-# 1 "ADSD/Exp.cpp" 2
-
+# 2 "ADSD/Exp.cpp" 2
 
 
 typedef ap_fixed<32,8> acc_t;
@@ -24421,6 +24420,11 @@ static int floor_to_int(T v) {
 }
 
 out_t compute_exp(x_t x){
+
+
+
+#pragma HLS INLINE
+
  if (x < x_t(-8.0)) return out_t(0.0);
 
 
@@ -24436,7 +24440,12 @@ out_t compute_exp(x_t x){
  acc_t Y = 0.0;
  acc_t Z = r;
 
- for (int n = 0; n < Num_Iterations; n++){
+ compute_exp_label0: for (int n = 0; n < Num_Iterations; n++){
+#pragma HLS UNROLL
+# 68 "ADSD/Exp.cpp"
+
+
+
   int i = Iteration_Schedule[n];
   bool z_nonneg = (Z >= 0);
 

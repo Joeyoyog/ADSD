@@ -2,7 +2,7 @@
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim" clean="true" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
         <file name="../test_data.txt" sc="0" tb="1" cflags=" -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"/>
@@ -11,7 +11,7 @@
         <file name="../AcceleratorTB.cpp" sc="0" tb="1" cflags="  -Wno-unknown-pragmas"/>
         <file name="ADSD/svs.h" sc="0" tb="false" cflags=""/>
         <file name="ADSD/bias.h" sc="0" tb="false" cflags=""/>
-        <file name="alphas.h" sc="0" tb="false" cflags=""/>
+        <file name="ADSD/alphas.h" sc="0" tb="false" cflags=""/>
         <file name="ADSD/Exp.h" sc="0" tb="false" cflags=""/>
         <file name="ADSD/Exp.cpp" sc="0" tb="false" cflags=""/>
         <file name="ADSD/Classifier.h" sc="0" tb="false" cflags=""/>

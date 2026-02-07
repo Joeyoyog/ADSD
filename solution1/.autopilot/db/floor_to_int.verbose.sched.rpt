@@ -1,0 +1,128 @@
+
+
+================================================================
+== Vivado HLS Report for 'floor_to_int'
+================================================================
+* Date:           Sat Feb  7 20:11:55 2026
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        ADSD
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.247|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.24>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%v_V_read = call i37 @_ssdm_op_Read.ap_auto.i37(i37 %v_V)"   --->   Operation 2 'read' 'v_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%v_V_cast1 = sext i37 %v_V_read to i40"   --->   Operation 3 'sext' 'v_V_cast1' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%tmp = call i5 @_ssdm_op_PartSelect.i5.i37.i32.i32(i37 %v_V_read, i32 32, i32 36)" [ADSD/Exp.cpp:42]   --->   Operation 4 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%ret_V = sext i5 %tmp to i8" [ADSD/Exp.cpp:42]   --->   Operation 5 'sext' 'ret_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns) (grouped into LUT with out node p_2)   --->   "%tmp_1 = call i1 @_ssdm_op_BitSelect.i1.i37.i32(i37 %v_V_read, i32 36)" [ADSD/Exp.cpp:42]   --->   Operation 6 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_3 = trunc i37 %v_V_read to i32" [ADSD/Exp.cpp:42]   --->   Operation 7 'trunc' 'tmp_3' <Predicate = (tmp_1)> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (2.47ns)   --->   "%tmp_2 = icmp eq i32 %tmp_3, 0" [ADSD/Exp.cpp:42]   --->   Operation 8 'icmp' 'tmp_2' <Predicate = (tmp_1)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (1.78ns)   --->   "%ret_V_1 = add i8 1, %ret_V" [ADSD/Exp.cpp:42]   --->   Operation 9 'add' 'ret_V_1' <Predicate = (!tmp_2 & tmp_1)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node p_2)   --->   "%p_s = select i1 %tmp_2, i8 %ret_V, i8 %ret_V_1" [ADSD/Exp.cpp:42]   --->   Operation 10 'select' 'p_s' <Predicate = (tmp_1)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.99ns) (out node of the LUT)   --->   "%p_2 = select i1 %tmp_1, i8 %p_s, i8 %ret_V" [ADSD/Exp.cpp:42]   --->   Operation 11 'select' 'p_2' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%iv_2_cast = sext i8 %p_2 to i9" [ADSD/Exp.cpp:42]   --->   Operation 12 'sext' 'iv_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node UnifiedRetVal)   --->   "%tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i37.i32(i37 %v_V_read, i32 36)" [ADSD/Exp.cpp:43]   --->   Operation 13 'bitselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_7 = call i40 @_ssdm_op_BitConcatenate.i40.i8.i32(i8 %p_2, i32 0)" [ADSD/Exp.cpp:43]   --->   Operation 14 'bitconcatenate' 'tmp_7' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (2.53ns)   --->   "%tmp_8 = icmp eq i40 %tmp_7, %v_V_cast1" [ADSD/Exp.cpp:43]   --->   Operation 15 'icmp' 'tmp_8' <Predicate = (tmp_4)> <Delay = 2.53> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (1.87ns)   --->   "%iv = add i9 -1, %iv_2_cast" [ADSD/Exp.cpp:43]   --->   Operation 16 'add' 'iv' <Predicate = (!tmp_8 & tmp_4)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node UnifiedRetVal)   --->   "%p_1 = select i1 %tmp_8, i9 %iv_2_cast, i9 %iv" [ADSD/Exp.cpp:43]   --->   Operation 17 'select' 'p_1' <Predicate = (tmp_4)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (1.24ns) (out node of the LUT)   --->   "%UnifiedRetVal = select i1 %tmp_4, i9 %p_1, i9 %iv_2_cast" [ADSD/Exp.cpp:43]   --->   Operation 18 'select' 'UnifiedRetVal' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "ret i9 %UnifiedRetVal" [ADSD/Exp.cpp:44]   --->   Operation 19 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 7.25ns
+The critical path consists of the following:
+	wire read on port 'v_V' [2]  (0 ns)
+	'icmp' operation ('tmp_2', ADSD/Exp.cpp:42) [8]  (2.47 ns)
+	'select' operation ('p_s', ADSD/Exp.cpp:42) [10]  (0 ns)
+	'select' operation ('p_2', ADSD/Exp.cpp:42) [11]  (0.993 ns)
+	'icmp' operation ('tmp_8', ADSD/Exp.cpp:43) [15]  (2.53 ns)
+	'select' operation ('p_1', ADSD/Exp.cpp:43) [17]  (0 ns)
+	'select' operation ('UnifiedRetVal', ADSD/Exp.cpp:43) [18]  (1.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

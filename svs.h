@@ -1,7 +1,9 @@
 #ifndef SVS_H
 #define SVS_H
 #include "ap_fixed.h"
-static const ap_fixed<8,7> svs[] = {
+#include "Classifier.h"
+
+static const ap_fixed<8,7> svs[NSV][IMG_SIZE] = {
 0.0,
 0.0,
 0.0,

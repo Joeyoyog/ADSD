@@ -45,6 +45,11 @@ static int floor_to_int(T v) {
 }
 
 out_t compute_exp(x_t x){
+
+	//#pragma HLS ARRAY_PARTITION variable=ATANH_LUT complete dim=1
+	//#pragma HLS ARRAY_PARTITION variable=Iteration_Schedule complete dim=1
+	#pragma HLS INLINE
+
 	if (x < x_t(-8.0)) return out_t(0.0); //catch statement
 
 	// range reduction: x = k*ln2 + r, exp(x) = 2^k*exp(r)
@@ -60,7 +65,9 @@ out_t compute_exp(x_t x){
 	acc_t Y = 0.0;
 	acc_t Z = r;
 
-	for (int n = 0; n < Num_Iterations; n++){
+	compute_exp_label0: for (int n = 0; n < Num_Iterations; n++){//compute_exp_label0:
+		//#pragma HLS UNROLL
+
 		int i = Iteration_Schedule[n];
 		bool z_nonneg = (Z >= 0); //direction to move is based on the sign of Z
 // if z is positive subtract a positive atanh step to bring it down toward 0, if negative do the opposite to bring up towards 0

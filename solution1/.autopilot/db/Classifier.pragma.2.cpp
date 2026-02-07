@@ -24552,7 +24552,9 @@ double classify(ap_fixed<8,7> x[784]);
 
 
 
-static const ap_fixed<8,7> svs[] = {
+
+
+static const ap_fixed<8,7> svs[165][784] = {
 0.0,
 0.0,
 0.0,
@@ -154092,46 +154094,73 @@ static const ap_fixed<8, 5> alphas[] = {
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
 
-_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 784, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
-
- ap_fixed<32,16> sum = 0.0;
 
 
 
 
- ap_fixed<8,7> x_local[784];
-_ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 4, "");
+    ap_fixed<32,16> sum = 0.0;
+
+
+    ap_fixed<32,16> partial_sum[8];
+_ssdm_SpecArrayPartition( partial_sum, 1, "COMPLETE", 0, "");
+
+
+ for (int k = 0; k < 8; k++) {
+_ssdm_Unroll(0,0,0, "");
+ partial_sum[k] = 0;
+    }
+
+    ap_fixed<8,7> x_local[784];
+_ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 8, "");
+
+
+_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 8, "");
+_ssdm_SpecArrayPartition( &svs, 2, "CYCLIC", 4, "");
+_ssdm_SpecArrayPartition( &alphas, 1, "CYCLIC", 8, "");
+
 
  load_image_loop: for (int i = 0; i < 784; i++) {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  x_local[i] = x[i];
-     }
+    }
 
 
-_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 4, "");
+    classify_label2:for (int i = 0; i < 165; i += 8) {
 
- classify_label2:for (int i = 0; i < 165; i++) {
 
-        ap_fixed<32,24> l2Squared_fixed = 0;
 
-        classify_label1:for (int j = 0; j < 784; j++) {
+        for (int k = 0; k < 8; k++) {
+_ssdm_Unroll(0,0,0, "");
+
+ if (i + k < 165) {
+                ap_fixed<32,24> l2Squared_fixed = 0;
+
+
+                classify_label1:for (int j = 0; j < 784; j++) {
 _ssdm_Unroll(1, 0, 4, "");
+
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
- ap_fixed<8,7> xi = svs[i * 784 + j];
-            ap_fixed<8,7> xj = x_local[j];
-            ap_fixed<8,7> diff = xi - xj;
+ ap_fixed<8,7> xi = svs[i+k][j];
+                    ap_fixed<8,7> xj = x_local[j];
+                    ap_fixed<8,7> diff = xi - xj;
+                    l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+                }
+
+                const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
 
 
+                ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
 
-            l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+                partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+            }
         }
+    }
 
 
-        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
-        sum += (ap_fixed<32,16>)(alphas[i] * K);
+    for (int k = 0; k < 8; k++) {
+_ssdm_Unroll(0,0,0, "");
+ sum += partial_sum[k];
     }
 
     return (double)(sum + bias[0]);
