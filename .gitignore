@@ -1,7 +1,4 @@
 /.apc
-.cproject
-.project
-/.settings
 /.settings
 *.app
 *.tcl
