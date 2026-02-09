@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1794",
+    "Latency": "1109",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -244,7 +244,7 @@
       "is_adaptor": "true",
       "mode": "master",
       "port_prefix": "m_axi_gmem",
-      "data_width": "32",
+      "data_width": "64",
       "param_prefix": "C_M_AXI_GMEM",
       "ctype": {
         "AWLEN": {
@@ -344,12 +344,12 @@
           "Width": "1"
         },
         "WDATA": {
-          "Type": "real fixed signed 1",
-          "Width": "8"
+          "Type": "integer unsigned",
+          "Width": "64"
         },
         "WSTRB": {
           "Type": "integer unsigned",
-          "Width": "4"
+          "Width": "8"
         },
         "WID": {
           "Type": "integer unsigned",
@@ -372,8 +372,8 @@
           "Width": "1"
         },
         "RDATA": {
-          "Type": "real fixed signed 1",
-          "Width": "8"
+          "Type": "integer unsigned",
+          "Width": "64"
         },
         "RID": {
           "Type": "integer unsigned",
@@ -409,12 +409,12 @@
         "AWUSER": "1",
         "BID": "1",
         "BUSER": "1",
-        "RDATA": "32",
+        "RDATA": "64",
         "RID": "1",
         "RUSER": "1",
-        "WDATA": "32",
+        "WDATA": "64",
         "WID": "1",
-        "WSTRB": "4",
+        "WSTRB": "8",
         "WUSER": "1"
       }
     },
@@ -825,11 +825,11 @@
     },
     "m_axi_gmem_WDATA": {
       "dir": "out",
-      "width": "32"
+      "width": "64"
     },
     "m_axi_gmem_WSTRB": {
       "dir": "out",
-      "width": "4"
+      "width": "8"
     },
     "m_axi_gmem_WLAST": {
       "dir": "out",
@@ -909,7 +909,7 @@
     },
     "m_axi_gmem_RDATA": {
       "dir": "in",
-      "width": "32"
+      "width": "64"
     },
     "m_axi_gmem_RLAST": {
       "dir": "in",
@@ -985,10 +985,10 @@
     "Hierarchy": {"ModuleName": "classify"},
     "Metrics": {"classify": {
         "Latency": {
-          "LatencyBest": "1794",
-          "LatencyAvg": "1794",
-          "LatencyWorst": "1794",
-          "PipelineII": "1795",
+          "LatencyBest": "1109",
+          "LatencyAvg": "1109",
+          "LatencyWorst": "1109",
+          "PipelineII": "1110",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1000,10 +1000,10 @@
         "Loops": [
           {
             "Name": "load_image_loop",
-            "TripCount": "784",
-            "Latency": "785",
+            "TripCount": "98",
+            "Latency": "100",
             "PipelineII": "1",
-            "PipelineDepth": "3"
+            "PipelineDepth": "4"
           },
           {
             "Name": "classify_label2",
@@ -1030,10 +1030,10 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "118",
+          "BRAM_18K": "120",
           "DSP48E": "1",
-          "FF": "10147",
-          "LUT": "28274"
+          "FF": "10369",
+          "LUT": "28881"
         }
       }}
   },
@@ -1044,7 +1044,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-02-09 20:59:50 +0000",
+    "Time": "2026-02-09 22:14:49 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

@@ -11,9 +11,9 @@ set Const1 "0"
 set Volatile1 "0"
 set Pointer1 "0"
 set Reference1 "0"
-set Dims1 [list 784]
+set Dims1 [list 98]
 set Interface1 "wire"
-set DataType1 "[list ap_fixed 8 7 5 3 0 ]"
+set DataType1 "[list ap_uint 64 ]"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set PortName0 "return"
@@ -30,9 +30,9 @@ set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Vola
 lappend PortList $Port0
 set globalAPint "" 
 set returnAPInt "" 
-set hasCPPAPInt 0 
+set hasCPPAPInt 1 
 set argAPInt "" 
-set hasCPPAPFix 1 
+set hasCPPAPFix 0 
 set hasSCFix 0 
 set hasCBool 0 
 set hasCPPComplex 0 

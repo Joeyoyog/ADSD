@@ -24386,7 +24386,7 @@ out_t compute_exp(x_t x);
 
 
 
-double classify(ap_fixed<8,7> x[784]);
+double classify(ap_uint<64> x[784/8]);
 # 2 "ADSD/Classifier.cpp" 2
 # 1 "ADSD/./svs.h" 1
 
@@ -153975,8 +153975,10 @@ const ap_fixed<32,16> sv_norms[165] = {
 };
 # 6 "ADSD/Classifier.cpp" 2
 
-double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
-#pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=784
+
+
+double classify(ap_uint<64> x[784/8]) {_ssdm_SpecArrayDimSize(x, 98);
+#pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=98
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
  ap_fixed<32,16> sum = 0.0;
@@ -153999,31 +154001,31 @@ double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
 #pragma HLS UNROLL
  partial_sum[k] = 0;
     }
-
-
-
-
+# 41 "ADSD/Classifier.cpp"
     ap_fixed<24,14> x_norm = 0;
 
-    load_image_loop: for (int i = 0; i < 784; i++) {
-
-
+    load_image_loop: for (int i = 0; i < 784 / 8; i++) {
 #pragma HLS PIPELINE II=1
 
- ap_fixed<8,7> val = x[i];
-        x_local[i] = val;
+ ap_uint<64> packet = x[i];
 
-        ap_fixed<16,14> sq;
-#pragma 
- 
-{ _ssdm_RegionBegin("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2");
-# 47 "ADSD/Classifier.cpp"
-sq = val * val;
-_ssdm_op_SpecResource(&sq, "?DSP48_sq_Region_ADSD/Classifier.cpp:47:2", "", "DSP48", "", -1, "", "", "", "", "");
-_ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2"); }
-# 47 "ADSD/Classifier.cpp"
+        for (int p = 0; p < 8; p++) {
+#pragma HLS UNROLL
 
-        x_norm += sq;
+
+
+
+ ap_fixed<8,7> val;
+            val(7, 0) = packet.range(p*8 + 7, p*8);
+
+            x_local[i*8 + p] = val;
+
+
+
+            ap_fixed<16,14> sq;
+            sq = val * val;
+            x_norm += sq;
+        }
     }
 
 
@@ -154039,8 +154041,6 @@ _ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2"); }
  dot_products[init] = 0;
         }
 
-
-
         classify_label1: for (int j = 0; j < 784; j++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS UNROLL factor=16
@@ -154051,23 +154051,14 @@ _ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2"); }
                 ap_fixed<8,7> xj = x_local[j];
 
 
-                ap_fixed<16,14> prod;
-#pragma 
- 
-{ _ssdm_RegionBegin("?DSP48_prod_Region_ADSD/Classifier.cpp:78:2");
-# 78 "ADSD/Classifier.cpp"
-prod = xi * xj;
-_ssdm_op_SpecResource(&prod, "?DSP48_prod_Region_ADSD/Classifier.cpp:78:2", "", "DSP48", "", -1, "", "", "", "", "");
-_ssdm_RegionEnd("?DSP48_prod_Region_ADSD/Classifier.cpp:78:2"); }
-# 78 "ADSD/Classifier.cpp"
 
+
+                ap_fixed<16,14> prod;
+                prod = xi * xj;
 
                 dot_products[k] += prod;
             }
         }
-
-
-
 
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
 #pragma HLS PIPELINE II=1

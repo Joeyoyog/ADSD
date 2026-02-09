@@ -15,4 +15,4 @@ obj/AcceleratorTB.o: ../../../AcceleratorTB.cpp ../../../Classifier.h \
  C:/Xilinx/Vivado/2018.2/include/ap_common.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_special.h \
  C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h ../../../Exp.h \
- ../../../ground_truth.h
+ C:/Xilinx/Vivado/2018.2/include/ap_int.h ../../../ground_truth.h

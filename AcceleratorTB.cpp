@@ -2,11 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstdio>
+#include <ap_int.h>      // <--- NEW: Required for ap_uint
 
 // REMOVED: #include "test_data.h" to prevent "out of memory" compiler error
 #include "ground_truth.h"
 
-#define SIM_IMGS 2601 //2601 // Set to 100 for faster simulation
+#define SIM_IMGS 2601
 
 int main() {
     std::ofstream scoresF("scores.txt");
@@ -18,23 +19,41 @@ int main() {
         return 1;
     }
 
-    ap_fixed<8,7> x[IMG_SIZE];
+    // UPDATED: Allocate memory for packed data (98 words instead of 784 pixels)
+    ap_uint<64> x_packed[IMG_SIZE/8];
+
     int predictions[SIM_IMGS];
     int correct = 0;
-    ap_fixed<8,7> temp_val;
+
+    // Temp variable to read raw numbers from the file
+    double temp_val_read;
 
     printf("Starting C-Simulation with %d images...\n", SIM_IMGS);
 
     for (int i = 0; i < SIM_IMGS; i++) {
-        // Load image from text file instead of header array
-        for (int j = 0; j < IMG_SIZE; j++) {
-            if (inputFile >> temp_val) {
-                x[j] = (double)temp_val;
+
+        // --- NEW DATA LOADING LOGIC (PACKING) ---
+        // Iterate through the 98 packets
+        for (int j = 0; j < IMG_SIZE / 8; j++) {
+            ap_uint<64> packet = 0;
+
+            // For each packet, read 8 pixels from the file
+            for (int p = 0; p < 8; p++) {
+                if (inputFile >> temp_val_read) {
+                    // Convert file data to fixed point
+                    ap_fixed<8,7> pixel = (ap_fixed<8,7>)temp_val_read;
+
+                    // Pack bits: Pixel 0 goes to bits [7:0], Pixel 1 to [15:8], etc.
+                    // This matches the 'unpacking' logic in the hardware.
+                    packet.range(p*8 + 7, p*8) = pixel(7, 0);
+                }
             }
+            // Store the packed 64-bit integer
+            x_packed[j] = packet;
         }
 
-        // Call the HLS Top Function
-        double score = classify(x);
+        // Call the HLS Top Function with the PACKED array
+        double score = classify(x_packed);
         scoresF << score << std::endl;
 
         // Thresholding
@@ -44,8 +63,6 @@ int main() {
         if (predictions[i] == ground_truth[i]) {
             correct++;
         }
-
-        //if (i % 10 == 0) printf("Processed %d images...\n", i);
     }
 
     inputFile.close();
@@ -74,4 +91,3 @@ int main() {
         return 1;
     }
 }
-
