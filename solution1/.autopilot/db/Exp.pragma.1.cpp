@@ -1,5 +1,5 @@
-# 1 "ADSD-Github-M/Exp.cpp"
-# 1 "ADSD-Github-M/Exp.cpp" 1
+# 1 "ADSD/Exp.cpp"
+# 1 "ADSD/Exp.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,8 +145,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "ADSD-Github-M/Exp.cpp" 2
-# 1 "ADSD-Github-M/Exp.h" 1
+# 1 "ADSD/Exp.cpp" 2
+# 1 "ADSD/Exp.h" 1
 
 
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 1
@@ -24366,14 +24366,15 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 4 "ADSD-Github-M/Exp.h" 2
+# 3 "ADSD/Exp.h" 2
+
 
 
 typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 2 "ADSD-Github-M/Exp.cpp" 2
+# 2 "ADSD/Exp.cpp" 2
 
 
 typedef ap_fixed<26,5> acc_t;
@@ -24403,7 +24404,7 @@ _ssdm_InlineSelf(0, "");
 
  const int Iteration_Schedule[17] = {1,2,3,4,4,5,6,7,8,9,10,11,12,13,13,14,15};
 _ssdm_SpecConstant(Iteration_Schedule);
-# 29 "ADSD-Github-M/Exp.cpp"
+# 29 "ADSD/Exp.cpp"
 
     const lut_t ATANH_LUT[17] = {
         lut_t(0.54930614433405489), lut_t(0.25541281188299536), lut_t(0.12565721414045303),
@@ -24414,10 +24415,10 @@ _ssdm_SpecConstant(Iteration_Schedule);
         lut_t(0.000061035156325791221), lut_t(0.000030517578134473901)
     };
 _ssdm_SpecConstant(ATANH_LUT);
-# 30 "ADSD-Github-M/Exp.cpp"
+# 30 "ADSD/Exp.cpp"
 
 
-    static const coef_t MLN2[13] = {
+    const coef_t MLN2[13] = {
       coef_t(0.0),
       coef_t(0.6931471805599453),
       coef_t(1.3862943611198906),
@@ -24433,11 +24434,11 @@ _ssdm_SpecConstant(ATANH_LUT);
       coef_t(8.3177661667193436)
     };
 _ssdm_SpecConstant(MLN2);
-# 39 "ADSD-Github-M/Exp.cpp"
+# 39 "ADSD/Exp.cpp"
 
 
 
-_ssdm_SpecArrayPartition( &MLN2, 1, "COMPLETE", 0, "");
+_ssdm_SpecArrayPartition( MLN2, 1, "COMPLETE", 0, "");
 _ssdm_SpecArrayPartition( ATANH_LUT, 1, "COMPLETE", 0, "");
 _ssdm_SpecArrayPartition( Iteration_Schedule, 1, "COMPLETE", 0, "");
 
@@ -24468,7 +24469,7 @@ _ssdm_SpecArrayPartition( Iteration_Schedule, 1, "COMPLETE", 0, "");
 
 
     bool is_small = (x < x_t(-8.0));
-# 96 "ADSD-Github-M/Exp.cpp"
+# 96 "ADSD/Exp.cpp"
     acc_t r = acc_t(x) + acc_t(MLN2[m]);
 
 

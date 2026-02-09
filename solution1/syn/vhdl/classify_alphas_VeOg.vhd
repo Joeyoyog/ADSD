@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 
 entity classify_alphas_VeOg_rom is 
     generic(
-             DWIDTH     : integer := 5; 
+             DWIDTH     : integer := 6; 
              AWIDTH     : integer := 4; 
              MEM_SIZE    : integer := 11
     ); 
@@ -29,9 +29,9 @@ architecture rtl of classify_alphas_VeOg_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "11111", 1 => "11010", 2 => "11110", 3 => "11111", 4 => "00000", 
-    5 => "11110", 6 => "00111", 7 => "00011", 8 => "01110", 9 => "01100", 
-    10 => "00000" );
+    0 => "111000", 1 => "111110", 2 => "111111", 3 => "000000", 4 => "111110", 
+    5 => "111111", 6 => "000100", 7 => "000001", 8 => "010001", 9 => "000001", 
+    10 => "000000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -70,7 +70,7 @@ use IEEE.std_logic_1164.all;
 
 entity classify_alphas_VeOg is
     generic (
-        DataWidth : INTEGER := 5;
+        DataWidth : INTEGER := 6;
         AddressRange : INTEGER := 11;
         AddressWidth : INTEGER := 4);
     port (

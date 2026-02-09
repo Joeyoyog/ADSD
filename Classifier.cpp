@@ -2,11 +2,9 @@
 #include "./svs.h"
 #include "./bias.h"
 #include "./alphas.h"
+#include "./sv_norms.h"
 
 double classify(ap_fixed<8,7> x[IMG_SIZE]) {
-    // --------------------------------------------------------
-    // INTERFACES
-    // --------------------------------------------------------
     #pragma HLS INTERFACE m_axi port=x offset=slave bundle=gmem depth=784
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
@@ -15,91 +13,100 @@ double classify(ap_fixed<8,7> x[IMG_SIZE]) {
     #pragma HLS ARRAY_PARTITION variable=partial_sum complete dim=1
 
     // --------------------------------------------------------
-    // SOLUTION 1: MEMORY REPLICATION (Fixes LUT Overflow)
+    // OPTIMIZATION 1: RESHAPE vs PARTITION
     // --------------------------------------------------------
-    // Create 16 copies of the image, one for each machine.
-    // Dim 1 (16 copies): Complete -> 16 separate BRAMs
-    // Dim 2 (Pixels): Cyclic 8 -> Allows reading 8 pixels/cycle
-    ap_fixed<8,7> x_local[16][IMG_SIZE];
-    #pragma HLS ARRAY_PARTITION variable=x_local complete dim=1
-    #pragma HLS ARRAY_PARTITION variable=x_local cyclic factor=8 dim=2
-
-    // SVS: Cyclic 16 (Machines) and Cyclic 8 (Pixels) matches the unroll
+    // RESHAPE allows reading 16 values in one clock cycle by making the
+    // memory word 16x wider, rather than using 16x more RAM blocks.
+    // This solves the 92% BRAM issue.
+    #pragma HLS ARRAY_RESHAPE variable=svs cyclic factor=16 dim=2
     #pragma HLS ARRAY_PARTITION variable=svs cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=svs cyclic factor=8 dim=2
-    #pragma HLS ARRAY_PARTITION variable=alphas cyclic factor=16 dim=1
 
-    // Init Partial Sums
+    // x_local needs partitioning because we write to it individually
+    ap_fixed<8,7> x_local[IMG_SIZE];
+    #pragma HLS ARRAY_PARTITION variable=x_local cyclic factor=16 dim=1
+
+    #pragma HLS ARRAY_PARTITION variable=alphas cyclic factor=16 dim=1
+    #pragma HLS ARRAY_PARTITION variable=sv_norms cyclic factor=16 dim=1
+
+    // Initialize partial sums
     for (int k = 0; k < 16; k++) {
         #pragma HLS UNROLL
         partial_sum[k] = 0;
     }
 
     // --------------------------------------------------------
-    // LOAD & BROADCAST IMAGE
+    // STEP 1: Load Image & Calculate ||x||^2
     // --------------------------------------------------------
-    // Fills all 16 copies simultaneously.
+    ap_fixed<24,14> x_norm = 0;
+
     load_image_loop: for (int i = 0; i < IMG_SIZE; i++) {
-        #pragma HLS PIPELINE
-        ap_fixed<8,7> temp = x[i];
-        for (int k = 0; k < 16; k++) {
-            #pragma HLS UNROLL
-            x_local[k][i] = temp;
-        }
+        #pragma HLS PIPELINE II=1
+
+        ap_fixed<8,7> val = x[i];
+        x_local[i] = val;
+
+        // Force this square operation to DSP to save LUTs
+        ap_fixed<16,14> sq;
+        #pragma HLS RESOURCE variable=sq core=DSP48
+        sq = val * val;
+        x_norm += sq;
     }
 
     // --------------------------------------------------------
-    // CLASSIFICATION LOOP
+    // STEP 2: Main Classification Loop
     // --------------------------------------------------------
-    // Step by 16 (11 Batches)
-    classify_label2: for (int i = 0; i < 176; i += 16) {
+    classify_label2: for (int i = 0; i < 165; i += 16) { // NOTE: adjusted limit to 165 based on sv_norms
 
-        ap_fixed<32,24> l2_acc[16];
-        #pragma HLS ARRAY_PARTITION variable=l2_acc complete dim=1
+        ap_fixed<32,16> dot_products[16];
+        #pragma HLS ARRAY_PARTITION variable=dot_products complete dim=1
 
         for(int init=0; init<16; init++) {
             #pragma HLS UNROLL
-            l2_acc[init] = 0;
+            dot_products[init] = 0;
         }
 
-        // ----------------------------------------------------
-        // PIXEL PIPELINE (Unroll 8)
-        // ----------------------------------------------------
-        // Takes ~98 cycles per batch
         classify_label1: for (int j = 0; j < IMG_SIZE; j++) {
             #pragma HLS PIPELINE II=1
-            #pragma HLS UNROLL factor=8
+            #pragma HLS UNROLL factor=16
 
             for (int k = 0; k < 16; k++) {
                 #pragma HLS UNROLL
-                // Read from the PRIVATE copy of x_local
                 ap_fixed<8,7> xi = svs[i+k][j];
-                ap_fixed<8,7> xj = x_local[k][j];
-                ap_fixed<8,7> diff = xi - xj;
+                ap_fixed<8,7> xj = x_local[j];
 
-                // SOLUTION 2: FORCE LUT MULTIPLIER (Fixes Sequential CORDIC)
-                // Using 'Mul_LUT' saves DSPs, allowing CORDIC to parallelize
-                ap_fixed<16,14> sq;
-                #pragma HLS RESOURCE variable=sq core=Mul_LUT
-                sq = diff * diff;
+                // OPTIMIZATION 2: FORCE DSP USAGE
+                // By default, 8-bit mults go to LUTs. We force them to DSPs.
+                // This will use ~16 DSPs, but drastically lower LUT usage.
+                ap_fixed<16,14> prod;
+                #pragma HLS RESOURCE variable=prod core=DSP48
+                prod = xi * xj;
 
-                l2_acc[k] += sq;
+                dot_products[k] += prod;
             }
         }
 
-        // ----------------------------------------------------
-        // CORDIC ENGINE (Parallel)
-        // ----------------------------------------------------
-        // With DSPs freed up, this loop will now unroll physically
-        for (int k = 0; k < 16; k++) {
-            #pragma HLS UNROLL
-            const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2_acc[k]);
-            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+        // STEP 3: Reconstruct
+        Reconstruct_Loop: for (int k = 0; k < 16; k++) {
+            #pragma HLS UNROLL factor=8 // Factor 4 is the sweet spot for area/speed
+
+            // Check boundary to avoid reading garbage beyond 165th vector
+            //if (i+k < 165) {
+                ap_fixed<32,16> term1 = x_norm;
+                ap_fixed<32,16> term2 = sv_norms[i+k];
+                ap_fixed<32,16> term3 = dot_products[k];
+
+                // ||x - sv||^2 = ||x||^2 + ||sv||^2 - 2(x . sv)
+                ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
+
+                const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+                if(dist_sq < 0) dist_sq = 0;
+
+                ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+                partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+            //}
         }
     }
 
-    // Final Reduction
     for (int k = 0; k < 16; k++) {
         #pragma HLS UNROLL
         sum += partial_sum[k];

@@ -1,5 +1,5 @@
-# 1 "ADSD-Github-M/Classifier.cpp"
-# 1 "ADSD-Github-M/Classifier.cpp" 1
+# 1 "ADSD/Classifier.cpp"
+# 1 "ADSD/Classifier.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,8 +145,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "ADSD-Github-M/Classifier.cpp" 2
-# 1 "ADSD-Github-M/Classifier.h" 1
+# 1 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/Classifier.h" 1
 
 
 
@@ -24367,8 +24367,9 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 5 "ADSD-Github-M/Classifier.h" 2
-# 1 "ADSD-Github-M/Exp.h" 1
+# 4 "ADSD/Classifier.h" 2
+
+# 1 "ADSD/Exp.h" 1
 
 
 
@@ -24378,22 +24379,22 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 6 "ADSD-Github-M/Classifier.h" 2
+# 5 "ADSD/Classifier.h" 2
+
 
 
 
 
 
 double classify(ap_fixed<8,7> x[784]);
-# 2 "ADSD-Github-M/Classifier.cpp" 2
-# 1 "ADSD-Github-M/./svs.h" 1
+# 2 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./svs.h" 1
 
 
 
 
 
 static const ap_fixed<8,7> svs[176][784] = {
-
 0.0,
 0.0,
 0.0,
@@ -153755,13 +153756,13 @@ static const ap_fixed<8,7> svs[176][784] = {
 0.0,
 0.0,
 };
-# 3 "ADSD-Github-M/Classifier.cpp" 2
-# 1 "ADSD-Github-M/./bias.h" 1
+# 3 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./bias.h" 1
 static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "ADSD-Github-M/Classifier.cpp" 2
-# 1 "ADSD-Github-M/./alphas.h" 1
+# 4 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./alphas.h" 1
 static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
@@ -153940,12 +153941,41 @@ static const ap_fixed<8, 5> alphas[] = {
 0,
 0
 };
-# 5 "ADSD-Github-M/Classifier.cpp" 2
+# 5 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/./sv_norms.h" 1
+
+
+
+
+
+
+
+const ap_fixed<32,16> sv_norms[165] = {
+    1171.000000, 1822.000000, 318.750000, 2081.500000, 494.750000, 1490.500000, 372.750000, 1210.750000,
+    969.000000, 257.250000, 435.500000, 15070.000000, 2213.500000, 1326.000000, 1823.250000, 4280.000000,
+    265.000000, 1855.750000, 9246.750000, 2071.000000, 787.500000, 585.250000, 2008.250000, 1233.500000,
+    2960.000000, 834.000000, 697.000000, 1468.250000, 388.250000, 3661.000000, 495.000000, 615.250000,
+    247.250000, 1003.250000, 520.250000, 2975.000000, 1237.000000, 2224.250000, 4350.750000, 894.250000,
+    5886.500000, 2469.000000, 271.500000, 313.500000, 1491.750000, 858.250000, 1075.750000, 342.000000,
+    3401.500000, 262.000000, 351.250000, 2450.000000, 1498.500000, 686.000000, 2567.250000, 362.250000,
+    909.250000, 5553.000000, 998.750000, 215.000000, 1304.500000, 2644.500000, 1035.000000, 10288.000000,
+    789.250000, 809.000000, 1111.250000, 834.000000, 1455.750000, 1331.250000, 610.500000, 225.500000,
+    385.000000, 546.500000, 2154.250000, 245.000000, 380.000000, 2115.250000, 1487.500000, 651.250000,
+    940.750000, 1627.750000, 216.750000, 224.750000, 3025.750000, 2137.000000, 239.250000, 394.000000,
+    358.250000, 1777.250000, 778.250000, 1807.750000, 444.750000, 2048.500000, 1740.250000, 260.000000,
+    668.000000, 2201.000000, 1888.750000, 2042.500000, 1163.250000, 1887.750000, 1121.750000, 267.500000,
+    213.250000, 787.500000, 605.250000, 237.250000, 3857.750000, 857.500000, 242.250000, 955.500000,
+    621.250000, 366.000000, 376.250000, 211.500000, 724.750000, 400.250000, 909.500000, 373.500000,
+    456.500000, 341.250000, 663.250000, 1046.250000, 4915.750000, 338.250000, 745.000000, 4246.750000,
+    6205.500000, 297.750000, 230.250000, 318.500000, 259.750000, 261.250000, 4571.250000, 421.000000,
+    254.000000, 7887.000000, 240.500000, 545.500000, 315.750000, 731.750000, 348.250000, 319.750000,
+    847.500000, 305.500000, 1327.250000, 480.500000, 398.750000, 2709.750000, 317.500000, 916.250000,
+    447.250000, 2226.500000, 701.500000, 260.250000, 812.250000, 408.250000, 770.250000, 8325.750000,
+    12528.000000, 247.500000, 5234.250000, 790.250000, 787.500000
+};
+# 6 "ADSD/Classifier.cpp" 2
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
-
-
-
 #pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=784
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
@@ -153959,14 +153989,15 @@ double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
 
 
 
- ap_fixed<8,7> x_local[16][784];
-#pragma HLS ARRAY_PARTITION variable=&x_local complete dim=1
-#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=8 dim=2
-
-
+#pragma HLS ARRAY_RESHAPE variable=&svs cyclic factor=16 dim=2
 #pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=16 dim=1
-#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=8 dim=2
+
+
+ ap_fixed<8,7> x_local[784];
+#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=16 dim=1
+
 #pragma HLS ARRAY_PARTITION variable=&alphas cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=&sv_norms cyclic factor=16 dim=1
 
 
  for (int k = 0; k < 16; k++) {
@@ -153977,74 +154008,89 @@ double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
 
 
 
+    ap_fixed<24,14> x_norm = 0;
 
     load_image_loop: for (int i = 0; i < 784; i++) {
-#pragma HLS PIPELINE
- ap_fixed<8,7> temp = x[i];
-        for (int k = 0; k < 16; k++) {
-#pragma HLS UNROLL
- x_local[k][i] = temp;
-        }
+#pragma HLS PIPELINE II=1
+
+ ap_fixed<8,7> val = x[i];
+        x_local[i] = val;
+
+
+        ap_fixed<16,14> sq;
+#pragma 
+ 
+{ _ssdm_RegionBegin("?DSP48_sq_Region_ADSD/Classifier.cpp:51:2");
+# 51 "ADSD/Classifier.cpp"
+sq = val * val;
+_ssdm_op_SpecResource(&sq, "?DSP48_sq_Region_ADSD/Classifier.cpp:51:2", "", "DSP48", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:51:2"); }
+# 51 "ADSD/Classifier.cpp"
+
+        x_norm += sq;
     }
 
 
 
 
+    classify_label2: for (int i = 0; i < 165; i += 16) {
 
-    classify_label2: for (int i = 0; i < 176; i += 16) {
-
-        ap_fixed<32,24> l2_acc[16];
-#pragma HLS ARRAY_PARTITION variable=&l2_acc complete dim=1
+        ap_fixed<32,16> dot_products[16];
+#pragma HLS ARRAY_PARTITION variable=&dot_products complete dim=1
 
  for(int init=0; init<16; init++) {
 #pragma HLS UNROLL
- l2_acc[init] = 0;
+ dot_products[init] = 0;
         }
-
-
-
-
 
         classify_label1: for (int j = 0; j < 784; j++) {
 #pragma HLS PIPELINE II=1
-#pragma HLS UNROLL factor=8
+#pragma HLS UNROLL factor=16
 
  for (int k = 0; k < 16; k++) {
 #pragma HLS UNROLL
-
  ap_fixed<8,7> xi = svs[i+k][j];
-                ap_fixed<8,7> xj = x_local[k][j];
-                ap_fixed<8,7> diff = xi - xj;
+                ap_fixed<8,7> xj = x_local[j];
 
 
 
-                ap_fixed<16,14> sq;
+
+                ap_fixed<16,14> prod;
 #pragma 
  
-{ _ssdm_RegionBegin("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2");
-# 84 "ADSD-Github-M/Classifier.cpp"
-sq = diff * diff;
-_ssdm_op_SpecResource(&sq, "?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2", "", "Mul_LUT", "", -1, "", "", "", "", "");
-_ssdm_RegionEnd("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2"); }
-# 84 "ADSD-Github-M/Classifier.cpp"
+{ _ssdm_RegionBegin("?DSP48_prod_Region_ADSD/Classifier.cpp:82:2");
+# 82 "ADSD/Classifier.cpp"
+prod = xi * xj;
+_ssdm_op_SpecResource(&prod, "?DSP48_prod_Region_ADSD/Classifier.cpp:82:2", "", "DSP48", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?DSP48_prod_Region_ADSD/Classifier.cpp:82:2"); }
+# 82 "ADSD/Classifier.cpp"
 
 
-                l2_acc[k] += sq;
+                dot_products[k] += prod;
             }
         }
 
 
+        Reconstruct_Loop: for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL factor=8
 
 
 
-        for (int k = 0; k < 16; k++) {
-#pragma HLS UNROLL
- const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2_acc[k]);
-            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+ ap_fixed<32,16> term1 = x_norm;
+                ap_fixed<32,16> term2 = sv_norms[i+k];
+                ap_fixed<32,16> term3 = dot_products[k];
+
+
+                ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
+
+                const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+                if(dist_sq < 0) dist_sq = 0;
+
+                ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+                partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+
         }
     }
-
 
     for (int k = 0; k < 16; k++) {
 #pragma HLS UNROLL

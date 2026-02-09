@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
 set SourceFlags {sc {} c {{} {}}}
-set DirectiveFile {C:/Users/josep/Documents/ADSD-Github-M/solution1/solution1.directive}
+set DirectiveFile {C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.directive}
 set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} cas {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

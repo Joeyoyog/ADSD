@@ -36,7 +36,7 @@ out_t compute_exp(x_t x){
         lut_t(0.000061035156325791221), lut_t(0.000030517578134473901)
     };
 
-    static const coef_t MLN2[13] = {
+    const coef_t MLN2[13] = {// removing static allows HLS to wire the constants directly into each of the 16 machines independently.
     		coef_t(0.0),
     		coef_t(0.6931471805599453),
     		coef_t(1.3862943611198906),

@@ -76,13 +76,13 @@ all: $(TARGET)
 
 $(ObjDir)/AcceleratorTB.o: ../../../AcceleratorTB.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../AcceleratorTB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/AcceleratorTB.d
 
 $(ObjDir)/CordicTB.o: ../../../CordicTB.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../CordicTB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/CordicTB.d
 
