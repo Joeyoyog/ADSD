@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module classify_sv_normspcA_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 28;
+parameter DWIDTH = 29;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 10;
 
@@ -47,7 +47,7 @@ module classify_sv_normspcA(
     ce0,
     q0);
 
-parameter DataWidth = 32'd28;
+parameter DataWidth = 32'd29;
 parameter AddressRange = 32'd10;
 parameter AddressWidth = 32'd4;
 input reset;

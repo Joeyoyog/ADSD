@@ -12,12 +12,12 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'mul' operation ('r.V', ADSD/Classifier.cpp:51) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:10:30.805+0000" type="Warning"/>
-        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'alloca' operation ('prod.V', ADSD/Classifier.cpp:80) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:10:27.946+0000" type="Warning"/>
-        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'mul' operation ('prod.V', ADSD/Classifier.cpp:82) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:10:27.927+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:58:57) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:10:21.122+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Reconstruct_Loop' (ADSD/Classifier.cpp:89:57) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:10:04.391+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:22:1) and reshape directive (ADSD/Classifier.cpp:21:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors." projectName="ADSD" solutionName="solution1" date="2026-02-09T18:09:30.221+0000" type="Warning"/>
+        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'mul' operation ('prod.V', ADSD/Classifier.cpp:78) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:59:25.671+0000" type="Warning"/>
+        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'alloca' operation ('prod.V', ADSD/Classifier.cpp:76) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:59:24.064+0000" type="Warning"/>
+        <logs message="WARNING: [SYN 201-303] Cannot apply core 'DSP48' on 'mul' operation ('r.V', ADSD/Classifier.cpp:47) due to incompatible operation." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:59:24.043+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:54:57) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:59:20.930+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:19:1) and reshape directive (ADSD/Classifier.cpp:18:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:58:39.454+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-3.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined." projectName="ADSD" solutionName="solution1" date="2026-02-09T20:58:26.378+0000" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

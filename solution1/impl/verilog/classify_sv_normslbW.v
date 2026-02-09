@@ -11,7 +11,7 @@ addr0, ce0, q0, clk);
 
 parameter DWIDTH = 28;
 parameter AWIDTH = 4;
-parameter MEM_SIZE = 10;
+parameter MEM_SIZE = 11;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -48,7 +48,7 @@ module classify_sv_normslbW(
     q0);
 
 parameter DataWidth = 32'd28;
-parameter AddressRange = 32'd10;
+parameter AddressRange = 32'd11;
 parameter AddressWidth = 32'd4;
 input reset;
 input clk;

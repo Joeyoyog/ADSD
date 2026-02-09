@@ -9,9 +9,9 @@
 (* rom_style = "distributed" *) module classify_sv_normsjbC_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 27;
+parameter DWIDTH = 30;
 parameter AWIDTH = 4;
-parameter MEM_SIZE = 10;
+parameter MEM_SIZE = 11;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,8 +47,8 @@ module classify_sv_normsjbC(
     ce0,
     q0);
 
-parameter DataWidth = 32'd27;
-parameter AddressRange = 32'd10;
+parameter DataWidth = 32'd30;
+parameter AddressRange = 32'd11;
 parameter AddressWidth = 32'd4;
 input reset;
 input clk;

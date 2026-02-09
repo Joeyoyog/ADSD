@@ -9,9 +9,9 @@
 (* rom_style = "distributed" *) module classify_sv_normsqcK_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 28;
+parameter DWIDTH = 29;
 parameter AWIDTH = 4;
-parameter MEM_SIZE = 11;
+parameter MEM_SIZE = 10;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,8 +47,8 @@ module classify_sv_normsqcK(
     ce0,
     q0);
 
-parameter DataWidth = 32'd28;
-parameter AddressRange = 32'd11;
+parameter DataWidth = 32'd29;
+parameter AddressRange = 32'd10;
 parameter AddressWidth = 32'd4;
 input reset;
 input clk;

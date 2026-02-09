@@ -82,11 +82,6 @@
 			<location>C:/Users/mathi/Documents/ADSD_ICL/ADSD/AcceleratorTB.cpp</location>
 		</link>
 		<link>
-			<name>testbench/CordicTB.cpp</name>
-			<type>1</type>
-			<location>C:/Users/mathi/Documents/ADSD_ICL/ADSD/CordicTB.cpp</location>
-		</link>
-		<link>
 			<name>testbench/ground_truth.h</name>
 			<type>1</type>
 			<location>C:/Users/mathi/Documents/ADSD_ICL/ADSD/ground_truth.h</location>

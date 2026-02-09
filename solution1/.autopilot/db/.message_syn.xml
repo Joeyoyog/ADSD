@@ -2,10 +2,10 @@
 <Messages>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;ADSD/Exp.cpp&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;ADSD/Classifier.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:01:25 . Memory (MB): peak = 102.461 ; gain = 46.453"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:01:25 . Memory (MB): peak = 102.461 ; gain = 46.453"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:02:16 . Memory (MB): peak = 102.523 ; gain = 46.180"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:02:16 . Memory (MB): peak = 102.523 ; gain = 46.180"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;32, 16, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&lt;&lt;&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:99)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;32, 16, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&lt;&lt;&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:94)."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:136)."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:135)."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:134)."/>
@@ -20,154 +20,94 @@
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:125)."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:111)."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;compute_exp&apos; (ADSD/Exp.cpp:110)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;compute_exp&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:104)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;33, 17, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::to_double&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:115)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:40 ; elapsed = 00:02:06 . Memory (MB): peak = 654.355 ; gain = 598.348"/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;compute_exp&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:99)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;33, 17, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::to_double&apos; into &apos;classify&apos; (ADSD/Classifier.cpp:109)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:42 ; elapsed = 00:02:58 . Memory (MB): peak = 654.574 ; gain = 598.230"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:41 ; elapsed = 00:02:07 . Memory (MB): peak = 654.355 ; gain = 598.348"/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;classify_label1&apos; (ADSD/Classifier.cpp:68) in function &apos;classify&apos; for pipelining."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (ADSD/Classifier.cpp:32) in function &apos;classify&apos; completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.1&apos; (ADSD/Classifier.cpp:63) in function &apos;classify&apos; completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;classify_label1&apos; (ADSD/Classifier.cpp:68) in function &apos;classify&apos; partially with a factor of 16."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.2.1&apos; (ADSD/Classifier.cpp:72) in function &apos;classify&apos; completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;Reconstruct_Loop&apos; (ADSD/Classifier.cpp:89) in function &apos;classify&apos; partially with a factor of 8."/>
-	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-4&apos; (ADSD/Classifier.cpp:110) in function &apos;classify&apos; completely."/>
-	<Message severity="WARNING" prefix="[XFORM 203-180]" key="XFORM_ARRAY_MULTIPLE_TRANSFORM_159" tag="SDX_ARRAY" content="Applying partition directive (ADSD/Classifier.cpp:22:1) and reshape directive (ADSD/Classifier.cpp:21:1) on the same variable &apos;svs.V&apos;  may lead to unexpected synthesis behaviors."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:42 ; elapsed = 00:02:58 . Memory (MB): peak = 654.574 ; gain = 598.230"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;classify_label1&apos; (ADSD/Classifier.cpp:66) in function &apos;classify&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Reconstruct_Loop&apos; (ADSD/Classifier.cpp:87) in function &apos;classify&apos; for pipelining."/>
+	<Message severity="WARNING" prefix="[XFORM 203-505]" key="XFORM_UNROLL_DEAD_PIPELINE_247" tag="" content="Ignored pipeline directive for loop &apos;Loop-3.3.1&apos; (ADSD/Exp.cpp:104) because its parent loop or function is pipelined."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (ADSD/Classifier.cpp:27) in function &apos;classify&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.1&apos; (ADSD/Classifier.cpp:59) in function &apos;classify&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;classify_label1&apos; (ADSD/Classifier.cpp:66) in function &apos;classify&apos; partially with a factor of 16."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.2.1&apos; (ADSD/Classifier.cpp:70) in function &apos;classify&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.3.1&apos; (ADSD/Exp.cpp:104) in function &apos;classify&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-4&apos; (ADSD/Classifier.cpp:104) in function &apos;classify&apos; completely."/>
+	<Message severity="WARNING" prefix="[XFORM 203-180]" key="XFORM_ARRAY_MULTIPLE_TRANSFORM_159" tag="SDX_ARRAY" content="Applying partition directive (ADSD/Classifier.cpp:19:1) and reshape directive (ADSD/Classifier.cpp:18:1) on the same variable &apos;svs.V&apos;  may lead to unexpected synthesis behaviors."/>
 	<Message severity="INFO" prefix="[XFORM 203-131]" key="XFORM_RESHAPE_STATUS_124" tag="" content="Reshaping array &apos;svs.V&apos;  in dimension 2 with a cyclic factor of 16."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;partial_sum.V&apos; (ADSD/Classifier.cpp:12) in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;svs.V&apos; in dimension 1 with a cyclic factor 16."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;x_local.V&apos; (ADSD/Classifier.cpp:25) in dimension 1 with a cyclic factor 16."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;x_local.V&apos; (ADSD/Classifier.cpp:21) in dimension 1 with a cyclic factor 16."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;alphas.V&apos;  in dimension 1 with a cyclic factor 16."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;sv_norms.V&apos;  in dimension 1 with a cyclic factor 16."/>
-	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;dot_products.V&apos; (ADSD/Classifier.cpp:60) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;dot_products.V&apos; (ADSD/Classifier.cpp:56) in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;MLN2&apos;  in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ATANH_LUT&apos;  in dimension 1 completely."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;Iteration_Schedule&apos;  in dimension 1 completely."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:96:56) to (ADSD/Exp.cpp:104:19) in function &apos;classify&apos;... converting 13 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:112:2) to (ADSD/Classifier.cpp:115:21) in function &apos;classify&apos;... converting 3 basic blocks."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Exp.cpp:108:26) to (ADSD/Exp.cpp:123:9) in function &apos;classify&apos;... converting 46 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:106:2) to (ADSD/Classifier.cpp:109:21) in function &apos;classify&apos;... converting 3 basic blocks."/>
 	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.13i23P.i4&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i19P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.17i32P.i5&apos; into &apos;classify&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.16[11 x i8]P.i32.i64&apos; into &apos;classify&apos;."/>
 	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;classify&apos; (ADSD/Classifier.cpp:7)...271 expression(s) balanced."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:02:50 . Memory (MB): peak = 654.355 ; gain = 598.348"/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;Reconstruct_Loop&apos; (ADSD/Classifier.cpp:89:57) in function &apos;classify&apos; : 
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:27 ; elapsed = 00:03:44 . Memory (MB): peak = 654.574 ; gain = 598.230"/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;classify_label2&apos; (ADSD/Classifier.cpp:54:57) in function &apos;classify&apos; : 
 
 more than one sub loop."/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;classify_label2&apos; (ADSD/Classifier.cpp:58:57) in function &apos;classify&apos; : 
-
-more than one sub loop."/>
-	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 784 on port &apos;gmem&apos; (ADSD/Classifier.cpp:45:26). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:45 ; elapsed = 00:03:14 . Memory (MB): peak = 654.355 ; gain = 598.348"/>
+	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 784 on port &apos;gmem&apos; (ADSD/Classifier.cpp:42:26). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:39 ; elapsed = 00:03:56 . Memory (MB): peak = 654.574 ; gain = 598.230"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;classify&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;classify&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
-	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;mul&apos; operation (&apos;prod.V&apos;, ADSD/Classifier.cpp:82) due to incompatible operation."/>
-	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;alloca&apos; operation (&apos;prod.V&apos;, ADSD/Classifier.cpp:80) due to incompatible operation."/>
-	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;mul&apos; operation (&apos;r.V&apos;, ADSD/Classifier.cpp:51) due to incompatible operation."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;mul&apos; operation (&apos;r.V&apos;, ADSD/Classifier.cpp:47) due to incompatible operation."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;alloca&apos; operation (&apos;prod.V&apos;, ADSD/Classifier.cpp:76) due to incompatible operation."/>
+	<Message severity="WARNING" prefix="[SYN 201-303]" key="PREPROC_CORE_ASSIGN_ILLEGAL_7" tag="" content="Cannot apply core &apos;DSP48&apos; on &apos;mul&apos; operation (&apos;prod.V&apos;, ADSD/Classifier.cpp:78) due to incompatible operation."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;load_image_loop&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;classify_label1&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.1&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.2&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.3&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.4&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.5&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.6&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.7&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop.8&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Reconstruct_Loop&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 20."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 200.821 seconds; current allocated memory: 302.215 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 10 loops out of a total 12 loops have been pipelined in this design."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 238.463 seconds; current allocated memory: 287.311 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 3 loops out of a total 4 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 8.458 seconds; current allocated memory: 314.898 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.332 seconds; current allocated memory: 296.384 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;classify&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;classify/gmem&apos; to &apos;m_axi&apos;."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;classify/x_V&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;classify&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_15&apos; to &apos;classify_sv_normsbkb&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_15&apos; to &apos;classify_alphas_Vcud&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_7&apos; to &apos;classify_sv_normsdEe&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_10&apos; to &apos;classify_alphas_VeOg&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_11&apos; to &apos;classify_alphas_VfYi&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_12&apos; to &apos;classify_alphas_Vg8j&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_13&apos; to &apos;classify_alphas_Vhbi&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_14&apos; to &apos;classify_alphas_Vibs&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_14&apos; to &apos;classify_sv_normsjbC&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_6&apos; to &apos;classify_sv_normskbM&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_5&apos; to &apos;classify_sv_normslbW&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_13&apos; to &apos;classify_sv_normsmb6&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_12&apos; to &apos;classify_sv_normsncg&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_4&apos; to &apos;classify_sv_normsocq&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_11&apos; to &apos;classify_sv_normspcA&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_3&apos; to &apos;classify_sv_normsqcK&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_2&apos; to &apos;classify_sv_normsrcU&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_10&apos; to &apos;classify_sv_normssc4&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_9&apos; to &apos;classify_sv_normstde&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_1&apos; to &apos;classify_sv_normsudo&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_0&apos; to &apos;classify_sv_normsvdy&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_8&apos; to &apos;classify_sv_normswdI&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_10&apos; to &apos;classify_alphas_Vbkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_11&apos; to &apos;classify_alphas_Vcud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_12&apos; to &apos;classify_alphas_VdEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_13&apos; to &apos;classify_alphas_VeOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_14&apos; to &apos;classify_alphas_VfYi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_alphas_V_15&apos; to &apos;classify_alphas_Vg8j&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_0&apos; to &apos;classify_sv_normshbi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_1&apos; to &apos;classify_sv_normsibs&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_2&apos; to &apos;classify_sv_normsjbC&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_3&apos; to &apos;classify_sv_normskbM&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_4&apos; to &apos;classify_sv_normslbW&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_5&apos; to &apos;classify_sv_normsmb6&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_6&apos; to &apos;classify_sv_normsncg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_7&apos; to &apos;classify_sv_normsocq&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_8&apos; to &apos;classify_sv_normspcA&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_9&apos; to &apos;classify_sv_normsqcK&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_10&apos; to &apos;classify_sv_normsrcU&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_11&apos; to &apos;classify_sv_normssc4&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_12&apos; to &apos;classify_sv_normstde&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_13&apos; to &apos;classify_sv_normsudo&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_14&apos; to &apos;classify_sv_normsvdy&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sv_norms_V_15&apos; to &apos;classify_sv_normswdI&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos; to AXI-Lite port control."/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_x_local_0_V&apos; to &apos;classify_x_local_xdS&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_x_local_1_V&apos; to &apos;classify_x_local_yd2&apos; due to the length limit 20"/>
@@ -186,53 +126,15 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_x_local_14_V&apos; to &apos;classify_x_local_Lf8&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_x_local_15_V&apos; to &apos;classify_x_local_Mgi&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_sitodp_64s_64_6_1&apos; to &apos;classify_sitodp_6Ngs&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_164_23_1_1&apos; to &apos;classify_mux_164_OgC&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_325_32_1_1&apos; to &apos;classify_mux_325_PgM&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_325_19_1_1&apos; to &apos;classify_mux_325_QgW&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_164_30_1_1&apos; to &apos;classify_mux_164_Rg6&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_164_8_1_1&apos; to &apos;classify_mux_164_Shg&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mul_mul_8s_22s_30_1_1&apos; to &apos;classify_mul_mul_Thq&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mul_mul_22s_8s_30_1_1&apos; to &apos;classify_mul_mul_UhA&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mul_mul_Thq&apos;: 6 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mul_mul_UhA&apos;: 2 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_164_OgC&apos;: 8 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_164_Rg6&apos;: 6 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_164_Shg&apos;: 7 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_325_PgM&apos;: 8 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_325_QgW&apos;: 16 instance(s)."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_164_32_1_1&apos; to &apos;classify_mux_164_OgC&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mux_164_23_1_1&apos; to &apos;classify_mux_164_PgM&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;classify_mul_mul_22s_8s_30_1_1&apos; to &apos;classify_mul_mul_QgW&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mul_mul_QgW&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_164_OgC&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_mux_164_PgM&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;classify_sitodp_6Ngs&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;classify&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 9.85 seconds; current allocated memory: 338.771 MB."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsbkb_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vcud_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsdEe_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_0_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_1_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_2_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_3_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_4_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_5_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_6_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_7_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_8_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_9_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_VeOg_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_VfYi_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vg8j_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vhbi_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vibs_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsjbC_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normskbM_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normslbW_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsmb6_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsncg_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsocq_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normspcA_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsqcK_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsrcU_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normssc4_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normstde_rom&apos; using distributed ROMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsudo_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 5.25 seconds; current allocated memory: 311.741 MB."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_0_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_1_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_2_rom&apos; using auto ROMs."/>
@@ -249,12 +151,42 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_13_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_14_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_svs_V_15_rom&apos; using auto ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_0_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_1_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_2_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_3_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_4_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_5_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_6_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_7_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_8_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_V_9_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vbkb_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vcud_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_VdEe_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_VeOg_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_VfYi_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_alphas_Vg8j_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normshbi_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsibs_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsjbC_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normskbM_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normslbW_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsmb6_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsncg_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsocq_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normspcA_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsqcK_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsrcU_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normssc4_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normstde_rom&apos; using distributed ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsudo_rom&apos; using distributed ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normsvdy_rom&apos; using distributed ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;classify_sv_normswdI_rom&apos; using distributed ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;classify_x_local_xdS_ram (RAM)&apos; using distributed RAMs."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:02:27 ; elapsed = 00:04:15 . Memory (MB): peak = 654.355 ; gain = 598.348"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:01:57 ; elapsed = 00:04:23 . Memory (MB): peak = 654.574 ; gain = 598.230"/>
 	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for classify."/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for classify."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for classify."/>
-	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 255.79 seconds; peak allocated memory: 338.771 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 262.863 seconds; peak allocated memory: 311.741 MB."/>
 </Messages>

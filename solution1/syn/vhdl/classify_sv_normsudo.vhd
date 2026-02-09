@@ -13,7 +13,7 @@ entity classify_sv_normsudo_rom is
     generic(
              DWIDTH     : integer := 28; 
              AWIDTH     : integer := 4; 
-             MEM_SIZE    : integer := 11
+             MEM_SIZE    : integer := 10
     ); 
     port (
           addr0      : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -29,12 +29,11 @@ architecture rtl of classify_sv_normsudo_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "0111000111100000000000000000", 1 => "0111001111111100000000000000", 
-    2 => "0011111010110100000000000000", 3 => "0001000001100000000000000000", 
-    4 => "0011001010010000000000000000", 5 => "0110010110111100000000000000", 
-    6 => "1000100110010000000000000000", 7 => "0001011011100000000000000000", 
-    8 => "0001001010011100000000000000", 9 => "0001001100011000000000000000", 
-    10 => "0000111101111000000000000000" );
+    0 => "0101001011100000000000000000", 1 => "1110010011010000000000000000", 
+    2 => "0011010110100100000000000000", 3 => "1010010101001000000000000000", 
+    4 => "1000010000110100000000000000", 5 => "1000000000001000000000000000", 
+    6 => "0011010110011000000000000000", 7 => "0001010100100100000000000000", 
+    8 => "0010110110111100000000000000", 9 => "0001100110000100000000000000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -74,7 +73,7 @@ use IEEE.std_logic_1164.all;
 entity classify_sv_normsudo is
     generic (
         DataWidth : INTEGER := 28;
-        AddressRange : INTEGER := 11;
+        AddressRange : INTEGER := 10;
         AddressWidth : INTEGER := 4);
     port (
         reset : IN STD_LOGIC;

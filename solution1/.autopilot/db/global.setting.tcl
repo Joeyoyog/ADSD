@@ -44,12 +44,12 @@ set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
 set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile {C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.directive}
-set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} cas {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} c {}}
+set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} c {} cas {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}

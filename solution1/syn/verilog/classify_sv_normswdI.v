@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module classify_sv_normswdI_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 29;
+parameter DWIDTH = 30;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 10;
 
@@ -47,7 +47,7 @@ module classify_sv_normswdI(
     ce0,
     q0);
 
-parameter DataWidth = 32'd29;
+parameter DataWidth = 32'd30;
 parameter AddressRange = 32'd10;
 parameter AddressWidth = 32'd4;
 input reset;

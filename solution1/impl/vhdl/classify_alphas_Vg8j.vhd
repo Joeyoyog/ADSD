@@ -29,8 +29,8 @@ architecture rtl of classify_alphas_Vg8j_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "11101", 1 to 2=> "11111", 3 => "11110", 4 => "11011", 5 => "10000", 
-    6 to 7=> "01001", 8 => "01111", 9 => "00011", 10 => "00000" );
+    0 => "11001", 1 => "11110", 2 to 3=> "11001", 4 => "00000", 5 => "11101", 
+    6 => "00000", 7 => "01001", 8 => "00001", 9 => "01001", 10 => "00000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";

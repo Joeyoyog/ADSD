@@ -153986,19 +153986,14 @@ _ssdm_SpecArrayPartition( partial_sum, 1, "COMPLETE", 0, "");
 
 
 
-
-
-
 _ssdm_SpecArrayReshape( &svs, 2,  "CYCLIC",  16, "");
 _ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 16, "");
-
 
  ap_fixed<8,7> x_local[784];
 _ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 16, "");
 
 _ssdm_SpecArrayPartition( &alphas, 1, "CYCLIC", 16, "");
 _ssdm_SpecArrayPartition( &sv_norms, 1, "CYCLIC", 16, "");
-
 
  for (int k = 0; k < 16; k++) {
 _ssdm_Unroll(0,0,0, "");
@@ -154011,21 +154006,22 @@ _ssdm_Unroll(0,0,0, "");
     ap_fixed<24,14> x_norm = 0;
 
     load_image_loop: for (int i = 0; i < 784; i++) {
+
+
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
  ap_fixed<8,7> val = x[i];
         x_local[i] = val;
 
-
         ap_fixed<16,14> sq;
 #pragma 
  
-{ _ssdm_RegionBegin("?DSP48_sq_Region_ADSD/Classifier.cpp:51:2");
-# 51 "ADSD/Classifier.cpp"
+{ _ssdm_RegionBegin("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2");
+# 47 "ADSD/Classifier.cpp"
 sq = val * val;
-_ssdm_op_SpecResource(&sq, "?DSP48_sq_Region_ADSD/Classifier.cpp:51:2", "", "DSP48", "", -1, "", "", "", "", "");
-_ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:51:2"); }
-# 51 "ADSD/Classifier.cpp"
+_ssdm_op_SpecResource(&sq, "?DSP48_sq_Region_ADSD/Classifier.cpp:47:2", "", "DSP48", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?DSP48_sq_Region_ADSD/Classifier.cpp:47:2"); }
+# 47 "ADSD/Classifier.cpp"
 
         x_norm += sq;
     }
@@ -154043,6 +154039,8 @@ _ssdm_Unroll(0,0,0, "");
  dot_products[init] = 0;
         }
 
+
+
         classify_label1: for (int j = 0; j < 784; j++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 _ssdm_Unroll(1, 0, 16, "");
@@ -154053,17 +154051,15 @@ _ssdm_Unroll(0,0,0, "");
                 ap_fixed<8,7> xj = x_local[j];
 
 
-
-
                 ap_fixed<16,14> prod;
 #pragma 
  
-{ _ssdm_RegionBegin("?DSP48_prod_Region_ADSD/Classifier.cpp:82:2");
-# 82 "ADSD/Classifier.cpp"
+{ _ssdm_RegionBegin("?DSP48_prod_Region_ADSD/Classifier.cpp:78:2");
+# 78 "ADSD/Classifier.cpp"
 prod = xi * xj;
-_ssdm_op_SpecResource(&prod, "?DSP48_prod_Region_ADSD/Classifier.cpp:82:2", "", "DSP48", "", -1, "", "", "", "", "");
-_ssdm_RegionEnd("?DSP48_prod_Region_ADSD/Classifier.cpp:82:2"); }
-# 82 "ADSD/Classifier.cpp"
+_ssdm_op_SpecResource(&prod, "?DSP48_prod_Region_ADSD/Classifier.cpp:78:2", "", "DSP48", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?DSP48_prod_Region_ADSD/Classifier.cpp:78:2"); }
+# 78 "ADSD/Classifier.cpp"
 
 
                 dot_products[k] += prod;
@@ -154071,24 +154067,22 @@ _ssdm_RegionEnd("?DSP48_prod_Region_ADSD/Classifier.cpp:82:2"); }
         }
 
 
+
+
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
-_ssdm_Unroll(1, 0, 8, "");
-
-
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
  ap_fixed<32,16> term1 = x_norm;
-                ap_fixed<32,16> term2 = sv_norms[i+k];
-                ap_fixed<32,16> term3 = dot_products[k];
+            ap_fixed<32,16> term2 = sv_norms[i+k];
+            ap_fixed<32,16> term3 = dot_products[k];
 
+            ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
 
-                ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
+            const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+            if(dist_sq < 0) dist_sq = 0;
 
-                const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-                if(dist_sq < 0) dist_sq = 0;
-
-                ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
-                partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
-
+            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
         }
     }
 

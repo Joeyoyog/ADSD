@@ -11,9 +11,9 @@ use ieee.std_logic_unsigned.all;
 
 entity classify_sv_normsqcK_rom is 
     generic(
-             DWIDTH     : integer := 28; 
+             DWIDTH     : integer := 29; 
              AWIDTH     : integer := 4; 
-             MEM_SIZE    : integer := 11
+             MEM_SIZE    : integer := 10
     ); 
     port (
           addr0      : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -29,12 +29,11 @@ architecture rtl of classify_sv_normsqcK_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "1000001000011000000000000000", 1 => "1000000101110000000000000000", 
-    2 => "1011100111110000000000000000", 3 => "1001100100100000000000000000", 
-    4 => "0011010000100000000000000000", 5 => "0000111000001100000000000000", 
-    6 => "0111111110101000000000000000", 7 => "0000110100111000000000000000", 
-    8 => "0001001111101000000000000000", 9 => "0001111000001000000000000000", 
-    10 => "0011000101100100000000000000" );
+    0 => "00001000000010100000000000000", 1 => "00011010000100000000000000000", 
+    2 => "01001101001010000000000000000", 3 => "10101101100010000000000000000", 
+    4 => "00010001000101000000000000000", 5 => "00110111100010100000000000000", 
+    6 => "00011000100111000000000000000", 7 => "00001010101010100000000000000", 
+    8 => "11110110011110000000000000000", 9 => "01000101100101000000000000000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -73,8 +72,8 @@ use IEEE.std_logic_1164.all;
 
 entity classify_sv_normsqcK is
     generic (
-        DataWidth : INTEGER := 28;
-        AddressRange : INTEGER := 11;
+        DataWidth : INTEGER := 29;
+        AddressRange : INTEGER := 10;
         AddressWidth : INTEGER := 4);
     port (
         reset : IN STD_LOGIC;

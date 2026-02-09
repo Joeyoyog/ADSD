@@ -22,7 +22,7 @@ using namespace sc_dt;
 struct classify_sv_normslbW_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 28;
-  static const unsigned AddressRange = 10;
+  static const unsigned AddressRange = 11;
   static const unsigned AddressWidth = 4;
 
 //latency = 1
@@ -39,16 +39,17 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(classify_sv_normslbW_ram) {
-        ram[0] = "0b0101110100101000000000000000";
-        ram[1] = "0b0010010010010100000000000000";
-        ram[2] = "0b1000101100000100000000000000";
-        ram[3] = "0b0010101011100000000000000000";
-        ram[4] = "0b0101001100110100000000000000";
-        ram[5] = "0b1000010110010000000000000000";
-        ram[6] = "0b0111010111111100000000000000";
-        ram[7] = "0b0001100100000100000000000000";
-        ram[8] = "0b0001000001010100000000000000";
-        ram[9] = "0b1010100101011100000000000000";
+        ram[0] = "0b0001111011101100000000000000";
+        ram[1] = "0b0011000100111000000000000000";
+        ram[2] = "0b0100110101010000000000000000";
+        ram[3] = "0b0101110110101000000000000000";
+        ram[4] = "0b0101101011111100000000000000";
+        ram[5] = "0b1011110100011100000000000000";
+        ram[6] = "0b0100100010110100000000000000";
+        ram[7] = "0b0010110101001100000000000000";
+        ram[8] = "0b0001000000111100000000000000";
+        ram[9] = "0b0001100011101100000000000000";
+        ram[10] = "0b0011000100111000000000000000";
 
 
 SC_METHOD(prc_write_0);
@@ -75,7 +76,7 @@ SC_MODULE(classify_sv_normslbW) {
 
 
 static const unsigned DataWidth = 28;
-static const unsigned AddressRange = 10;
+static const unsigned AddressRange = 11;
 static const unsigned AddressWidth = 4;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
