@@ -90,6 +90,8 @@ u64 XClassify_Get_return(XClassify *InstancePtr);
 
 void XClassify_Set_x_V(XClassify *InstancePtr, u32 Data);
 u32 XClassify_Get_x_V(XClassify *InstancePtr);
+void XClassify_Set_x_norm_in_V(XClassify *InstancePtr, u32 Data);
+u32 XClassify_Get_x_norm_in_V(XClassify *InstancePtr);
 
 void XClassify_InterruptGlobalEnable(XClassify *InstancePtr);
 void XClassify_InterruptGlobalDisable(XClassify *InstancePtr);

@@ -24386,7 +24386,7 @@ out_t compute_exp(x_t x);
 
 
 
-double classify(ap_uint<64> x[784/8]);
+double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in);
 # 2 "ADSD/Classifier.cpp" 2
 # 1 "ADSD/./svs.h" 1
 
@@ -153976,9 +153976,15 @@ const ap_fixed<32,16> sv_norms[165] = {
 # 6 "ADSD/Classifier.cpp" 2
 
 
+double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in) {_ssdm_SpecArrayDimSize(x, 98);
 
-double classify(ap_uint<64> x[784/8]) {_ssdm_SpecArrayDimSize(x, 98);
+
+
+
 _ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 98, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+
+
+_ssdm_op_SpecInterface(&x_norm_in, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 
  ap_fixed<32,16> sum = 0.0;
@@ -154001,8 +154007,11 @@ _ssdm_SpecArrayPartition( &sv_norms, 1, "CYCLIC", 16, "");
 _ssdm_Unroll(0,0,0, "");
  partial_sum[k] = 0;
     }
-# 41 "ADSD/Classifier.cpp"
-    ap_fixed<24,14> x_norm = 0;
+
+
+
+
+
 
     load_image_loop: for (int i = 0; i < 784 / 8; i++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
@@ -154013,18 +154022,12 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 _ssdm_Unroll(0,0,0, "");
 
 
-
-
  ap_fixed<8,7> val;
             val(7, 0) = packet.range(p*8 + 7, p*8);
 
             x_local[i*8 + p] = val;
 
 
-
-            ap_fixed<16,14> sq;
-            sq = val * val;
-            x_norm += sq;
         }
     }
 
@@ -154051,8 +154054,6 @@ _ssdm_Unroll(0,0,0, "");
                 ap_fixed<8,7> xj = x_local[j];
 
 
-
-
                 ap_fixed<16,14> prod;
                 prod = xi * xj;
 
@@ -154063,7 +154064,8 @@ _ssdm_Unroll(0,0,0, "");
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
- ap_fixed<32,16> term1 = x_norm;
+
+ ap_fixed<32,16> term1 = x_norm_in;
             ap_fixed<32,16> term2 = sv_norms[i+k];
             ap_fixed<32,16> term3 = dot_products[k];
 

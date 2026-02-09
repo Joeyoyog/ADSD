@@ -10,6 +10,16 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
+<name>x_norm_in_V</name>
+<CType>
+<TypeName>ap_fixed 24 14 5 3 0</TypeName>
+<TypeWidth>24</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>10</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
 <name>ap_return</name>
 <CType>
 <TypeName>double</TypeName>

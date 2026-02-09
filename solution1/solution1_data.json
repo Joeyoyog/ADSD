@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1109",
+    "Latency": "1108",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -626,6 +626,31 @@
               "reset_value": "0",
               "description": "Bit 31 to 0 Data signal of x_V"
             }]
+        },
+        {
+          "offset": "0x24",
+          "name": "x_norm_in_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of x_norm_in_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "24",
+              "name": "x_norm_in_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 23 to 0 Data signal of x_norm_in_V"
+            },
+            {
+              "offset": "24",
+              "width": "8",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
       "memories": "",
@@ -963,6 +988,14 @@
       "aximmInterfaceRef": "m_axi_gmem",
       "dataWidth": "32"
     },
+    "x_norm_in_V": {
+      "interfaceRef": "s_axi_control",
+      "dir": "in",
+      "offset": "36",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "control"
+    },
     "ap_return": {
       "interfaceRef": "s_axi_control",
       "dir": "out",
@@ -985,10 +1018,10 @@
     "Hierarchy": {"ModuleName": "classify"},
     "Metrics": {"classify": {
         "Latency": {
-          "LatencyBest": "1109",
-          "LatencyAvg": "1109",
-          "LatencyWorst": "1109",
-          "PipelineII": "1110",
+          "LatencyBest": "1108",
+          "LatencyAvg": "1108",
+          "LatencyWorst": "1108",
+          "PipelineII": "1109",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1001,9 +1034,9 @@
           {
             "Name": "load_image_loop",
             "TripCount": "98",
-            "Latency": "100",
+            "Latency": "99",
             "PipelineII": "1",
-            "PipelineDepth": "4"
+            "PipelineDepth": "3"
           },
           {
             "Name": "classify_label2",
@@ -1032,8 +1065,8 @@
         "Area": {
           "BRAM_18K": "120",
           "DSP48E": "1",
-          "FF": "10369",
-          "LUT": "28881"
+          "FF": "10237",
+          "LUT": "28304"
         }
       }}
   },
@@ -1044,7 +1077,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-02-09 22:14:49 +0000",
+    "Time": "2026-02-09 22:29:46 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

@@ -1,5 +1,8 @@
 set C_TypeInfoList {{ 
-"classify" : [[], {"return": [[], {"scalar": "double"}] }, [{"ExternC" : 0}], [ {"x": [[], {"array": ["0", [98]]}] }],[],""], 
+"classify" : [[], {"return": [[], {"scalar": "double"}] }, [{"ExternC" : 0}], [ {"x": [[], {"array": ["0", [98]]}] }, {"x_norm_in": [[],"1"] }],[],""], 
+"1": [ "ap_fixed<24, 14, 5, 3, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 24}}],[[], {"scalar": { "int": 14}}],[[], {"scalar": { "2": 5}}],[[], {"scalar": { "3": 3}}],[[], {"scalar": { "int": 0}}]],""]}}], 
+"3": [ "ap_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}], 
+"2": [ "ap_q_mode", {"enum": [[],[],[{"SC_RND":  {"scalar": "__integer__"}},{"SC_RND_ZERO":  {"scalar": "__integer__"}},{"SC_RND_MIN_INF":  {"scalar": "__integer__"}},{"SC_RND_INF":  {"scalar": "__integer__"}},{"SC_RND_CONV":  {"scalar": "__integer__"}},{"SC_TRN":  {"scalar": "__integer__"}},{"SC_TRN_ZERO":  {"scalar": "__integer__"}}],""]}], 
 "0": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}]
 }}
 set moduleName classify
@@ -18,10 +21,12 @@ set C_modelType { double 64 }
 set C_modelArgList {
 	{ gmem int 64 regular {axi_master 0}  }
 	{ x_V int 32 regular {axi_slave 0}  }
+	{ x_norm_in_V int 24 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 64, "direction" : "READONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "x.V","cData": "uint64","bit_use": { "low": 0,"up": 63},"offset": { "type": "dynamic","port_name": "x_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 97,"step" : 1}]}]}]} , 
  	{ "Name" : "x_V", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":28}, "offset_end" : {"in":35}} , 
+ 	{ "Name" : "x_norm_in_V", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 24, "direction" : "READONLY", "bitSlice":[{"low":0,"up":23,"cElement": [{"cName": "x_norm_in.V","cData": "int24","bit_use": { "low": 0,"up": 23},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":36}, "offset_end" : {"in":43}} , 
  	{ "Name" : "ap_return", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 64,"bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "return","cData": "double","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 1,"step" : 0}]}]}], "offset" : {"out":16}} ]}
 # RTL Port declarations: 
 set portNum 65
@@ -93,7 +98,7 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"classify","role":"start","value":"0","valid_bit":"0"},{"name":"classify","role":"continue","value":"0","valid_bit":"4"},{"name":"classify","role":"auto_start","value":"0","valid_bit":"7"},{"name":"x_V","role":"data","value":"28"}] },
+	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"classify","role":"start","value":"0","valid_bit":"0"},{"name":"classify","role":"continue","value":"0","valid_bit":"4"},{"name":"classify","role":"auto_start","value":"0","valid_bit":"7"},{"name":"x_V","role":"data","value":"28"},{"name":"x_norm_in_V","role":"data","value":"36"}] },
 	{ "name": "s_axi_control_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWVALID" } },
 	{ "name": "s_axi_control_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWREADY" } },
 	{ "name": "s_axi_control_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WVALID" } },
@@ -166,7 +171,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1109", "EstimateLatencyMax" : "1109",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1108", "EstimateLatencyMax" : "1108",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -179,6 +184,7 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "x_V", "Type" : "None", "Direction" : "I"},
+			{"Name" : "x_norm_in_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "svs_V_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_2", "Type" : "Memory", "Direction" : "I"},
@@ -304,6 +310,7 @@ set ArgLastReadFirstWriteLatency {
 	classify {
 		gmem {Type I LastRead 9 FirstWrite -1}
 		x_V {Type I LastRead 0 FirstWrite -1}
+		x_norm_in_V {Type I LastRead 0 FirstWrite -1}
 		svs_V_0 {Type I LastRead -1 FirstWrite -1}
 		svs_V_1 {Type I LastRead -1 FirstWrite -1}
 		svs_V_2 {Type I LastRead -1 FirstWrite -1}
@@ -356,8 +363,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1109", "Max" : "1109"}
-	, {"Name" : "Interval", "Min" : "1110", "Max" : "1110"}
+	{"Name" : "Latency", "Min" : "1108", "Max" : "1108"}
+	, {"Name" : "Interval", "Min" : "1109", "Max" : "1109"}
 ]}
 
 set PipelineEnableSignalInfo {[

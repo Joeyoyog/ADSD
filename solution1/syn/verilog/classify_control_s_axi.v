@@ -39,7 +39,8 @@ module classify_control_s_axi
     input  wire                          ap_ready,
     input  wire                          ap_idle,
     input  wire [63:0]                   ap_return,
-    output wire [31:0]                   x_V
+    output wire [31:0]                   x_V,
+    output wire [23:0]                   x_norm_in_V
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -67,25 +68,31 @@ module classify_control_s_axi
 // 0x1c : Data signal of x_V
 //        bit 31~0 - x_V[31:0] (Read/Write)
 // 0x20 : reserved
+// 0x24 : Data signal of x_norm_in_V
+//        bit 23~0 - x_norm_in_V[23:0] (Read/Write)
+//        others   - reserved
+// 0x28 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL     = 6'h00,
-    ADDR_GIE         = 6'h04,
-    ADDR_IER         = 6'h08,
-    ADDR_ISR         = 6'h0c,
-    ADDR_AP_RETURN_0 = 6'h10,
-    ADDR_AP_RETURN_1 = 6'h14,
-    ADDR_X_V_DATA_0  = 6'h1c,
-    ADDR_X_V_CTRL    = 6'h20,
-    WRIDLE           = 2'd0,
-    WRDATA           = 2'd1,
-    WRRESP           = 2'd2,
-    WRRESET          = 2'd3,
-    RDIDLE           = 2'd0,
-    RDDATA           = 2'd1,
-    RDRESET          = 2'd2,
+    ADDR_AP_CTRL            = 6'h00,
+    ADDR_GIE                = 6'h04,
+    ADDR_IER                = 6'h08,
+    ADDR_ISR                = 6'h0c,
+    ADDR_AP_RETURN_0        = 6'h10,
+    ADDR_AP_RETURN_1        = 6'h14,
+    ADDR_X_V_DATA_0         = 6'h1c,
+    ADDR_X_V_CTRL           = 6'h20,
+    ADDR_X_NORM_IN_V_DATA_0 = 6'h24,
+    ADDR_X_NORM_IN_V_CTRL   = 6'h28,
+    WRIDLE                  = 2'd0,
+    WRDATA                  = 2'd1,
+    WRRESP                  = 2'd2,
+    WRRESET                 = 2'd3,
+    RDIDLE                  = 2'd0,
+    RDDATA                  = 2'd1,
+    RDRESET                 = 2'd2,
     ADDR_BITS         = 6;
 
 //------------------------Local signal-------------------
@@ -111,6 +118,7 @@ localparam
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_ap_return;
     reg  [31:0]                   int_x_V = 'b0;
+    reg  [23:0]                   int_x_norm_in_V = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -227,6 +235,9 @@ always @(posedge ACLK) begin
                 ADDR_X_V_DATA_0: begin
                     rdata <= int_x_V[31:0];
                 end
+                ADDR_X_NORM_IN_V_DATA_0: begin
+                    rdata <= int_x_norm_in_V[23:0];
+                end
             endcase
         end
     end
@@ -234,9 +245,10 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt = int_gie & (|int_isr);
-assign ap_start  = int_ap_start;
-assign x_V       = int_x_V;
+assign interrupt   = int_gie & (|int_isr);
+assign ap_start    = int_ap_start;
+assign x_V         = int_x_V;
+assign x_norm_in_V = int_x_norm_in_V;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -350,6 +362,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_X_V_DATA_0)
             int_x_V[31:0] <= (WDATA[31:0] & wmask) | (int_x_V[31:0] & ~wmask);
+    end
+end
+
+// int_x_norm_in_V[23:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_x_norm_in_V[23:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_X_NORM_IN_V_DATA_0)
+            int_x_norm_in_V[23:0] <= (WDATA[31:0] & wmask) | (int_x_norm_in_V[23:0] & ~wmask);
     end
 end
 

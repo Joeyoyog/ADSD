@@ -12,10 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:70:57) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:14:25.393+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:21:1) and reshape directive (ADSD/Classifier.cpp:20:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:14:15.249+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-3.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:14:09.261+0000" type="Warning"/>
-        <logs message="WARNING: [SYNCHK 200-23] ADSD/Classifier.cpp:55: variable-indexed range selection may cause suboptimal QoR." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:14:08.931+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:66:57) in function 'classify' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:29:05.299+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:27:1) and reshape directive (ADSD/Classifier.cpp:26:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:28:50.954+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-3.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:28:43.066+0000" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] ADSD/Classifier.cpp:55: variable-indexed range selection may cause suboptimal QoR." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:28:42.572+0000" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

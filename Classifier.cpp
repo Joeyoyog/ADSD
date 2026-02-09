@@ -5,9 +5,15 @@
 #include "./sv_norms.h"
 #include "ap_int.h"
 
-// INPUT: Packed 64-bit integers (8 pixels per packet)
-double classify(ap_uint<64> x[IMG_SIZE/8]) {
+double classify(ap_uint<64> x[IMG_SIZE/8], ap_fixed<24,14> x_norm_in) {
+    // --------------------------------------------------------
+    // INTERFACE CONFIGURATION
+    // --------------------------------------------------------
+    // x: High-speed AXI Master for bulk data
     #pragma HLS INTERFACE m_axi port=x offset=slave bundle=gmem depth=98
+
+    // x_norm_in: Scalar input mapped to AXI-Lite registers (written by ARM)
+    #pragma HLS INTERFACE s_axilite port=x_norm_in bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
     ap_fixed<32,16> sum = 0.0;
@@ -32,14 +38,10 @@ double classify(ap_uint<64> x[IMG_SIZE/8]) {
     }
 
     // --------------------------------------------------------
-    // STEP 1: Load Image (Resource Optimized)
+    // STEP 1: Load Image Only (No Math)
     // --------------------------------------------------------
-    // FIX 2: Increased II to 2.
-    // This allows the hardware to reuse multipliers (processing 4 pixels/clock
-    // instead of 8), reducing area usage by ~50% for this block with minimal
-    // latency impact (~200 cycles vs 100).
-    ap_fixed<24,14> x_norm = 0;
-
+    // Since x_norm is pre-calculated, this loop ONLY unpacks data.
+    // This is purely memory bandwidth limited now.
     load_image_loop: for (int i = 0; i < IMG_SIZE / 8; i++) {
         #pragma HLS PIPELINE II=1
 
@@ -48,19 +50,13 @@ double classify(ap_uint<64> x[IMG_SIZE/8]) {
         for (int p = 0; p < 8; p++) {
             #pragma HLS UNROLL
 
-            // FIX 1: ACCURACY RESTORATION
-            // We interpret the bits "raw" instead of converting the integer value.
-            // This ensures 0x01 is read as 0.5 (fixed point), not 1.0.
+            // Explicit bit-copy (Accuracy Fix)
             ap_fixed<8,7> val;
             val(7, 0) = packet.range(p*8 + 7, p*8);
 
             x_local[i*8 + p] = val;
 
-            // FIX 3: REMOVED DSP FORCING
-            // Let HLS decide. 8-bit squaring is often cheaper in LUTs.
-            ap_fixed<16,14> sq;
-            sq = val * val;
-            x_norm += sq;
+            // REMOVED: x_norm calculation (Done in SW)
         }
     }
 
@@ -86,9 +82,7 @@ double classify(ap_uint<64> x[IMG_SIZE/8]) {
                 ap_fixed<8,7> xi = svs[i+k][j];
                 ap_fixed<8,7> xj = x_local[j];
 
-                // FIX 3: REMOVED DSP FORCING
-                // Removed "#pragma HLS RESOURCE ... DSP48".
-                // This prevents DSP over-utilization.
+                // LUT multiplication (Resource Optimized)
                 ap_fixed<16,14> prod;
                 prod = xi * xj;
 
@@ -99,7 +93,8 @@ double classify(ap_uint<64> x[IMG_SIZE/8]) {
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
             #pragma HLS PIPELINE II=1
 
-            ap_fixed<32,16> term1 = x_norm;
+            // Use the passed-in x_norm_in directly
+            ap_fixed<32,16> term1 = x_norm_in;
             ap_fixed<32,16> term2 = sv_norms[i+k];
             ap_fixed<32,16> term3 = dot_products[k];
 

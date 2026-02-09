@@ -103,6 +103,23 @@ u32 XClassify_Get_x_V(XClassify *InstancePtr) {
     return Data;
 }
 
+void XClassify_Set_x_norm_in_V(XClassify *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XClassify_WriteReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_X_NORM_IN_V_DATA, Data);
+}
+
+u32 XClassify_Get_x_norm_in_V(XClassify *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XClassify_ReadReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_X_NORM_IN_V_DATA);
+    return Data;
+}
+
 void XClassify_InterruptGlobalEnable(XClassify *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -4569,6 +4569,14 @@ x_V {
 	offset 28
 	offset_end 35
 }
+x_norm_in_V { 
+	dir I
+	width 24
+	depth 1
+	mode ap_none
+	offset 36
+	offset_end 43
+}
 }
 
 
