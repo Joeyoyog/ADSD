@@ -1,5 +1,5 @@
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp"
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 1
+# 1 "ADSD-Github-M/Classifier.cpp"
+# 1 "ADSD-Github-M/Classifier.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,8 +145,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 1
+# 1 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/Classifier.h" 1
 
 
 
@@ -24367,30 +24367,33 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 1
+# 5 "ADSD-Github-M/Classifier.h" 2
+# 1 "ADSD-Github-M/Exp.h" 1
 
 
 
 
 
 typedef ap_fixed<16,4> x_t;
-typedef ap_ufixed<22,1> out_t;
+typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 6 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
+# 6 "ADSD-Github-M/Classifier.h" 2
 
 
 
 
 
 double classify(ap_fixed<8,7> x[784]);
-# 2 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./svs.h" 1
+# 2 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./svs.h" 1
 
 
 
-ap_fixed<8,7> svs[] = {
+
+
+static const ap_fixed<8,7> svs[176][784] = {
+
 0.0,
 0.0,
 0.0,
@@ -153752,14 +153755,14 @@ ap_fixed<8,7> svs[] = {
 0.0,
 0.0,
 };
-# 3 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./bias.h" 1
-ap_fixed<8, 1> bias[] = {
+# 3 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./bias.h" 1
+static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./alphas.h" 1
-ap_fixed<8, 5> alphas[] = {
+# 4 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./alphas.h" 1
+static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
 -0.5,
@@ -153925,29 +153928,127 @@ ap_fixed<8, 5> alphas[] = {
 1.125,
 0.5,
 1.25,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
 };
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
+# 5 "ADSD-Github-M/Classifier.cpp" 2
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
+
+
+
+#pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=784
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+
  ap_fixed<32,16> sum = 0.0;
-
-    classify_label2:for (int i = 0; i < 165; i++) {
-
-        ap_fixed<32,24> l2Squared_fixed = 0;
-
-        classify_label1:for (int j = 0; j < 784; j++) {
-            ap_fixed<8,7> xi = svs[i * 784 + j];
-            ap_fixed<8,7> diff = xi - x[j];
+    ap_fixed<32,16> partial_sum[16];
+#pragma HLS ARRAY_PARTITION variable=&partial_sum complete dim=1
 
 
 
-            l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+
+
+
+
+ ap_fixed<8,7> x_local[16][784];
+#pragma HLS ARRAY_PARTITION variable=&x_local complete dim=1
+#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=8 dim=2
+
+
+#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=8 dim=2
+#pragma HLS ARRAY_PARTITION variable=&alphas cyclic factor=16 dim=1
+
+
+ for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ partial_sum[k] = 0;
+    }
+
+
+
+
+
+    load_image_loop: for (int i = 0; i < 784; i++) {
+#pragma HLS PIPELINE
+ ap_fixed<8,7> temp = x[i];
+        for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ x_local[k][i] = temp;
+        }
+    }
+
+
+
+
+
+    classify_label2: for (int i = 0; i < 176; i += 16) {
+
+        ap_fixed<32,24> l2_acc[16];
+#pragma HLS ARRAY_PARTITION variable=&l2_acc complete dim=1
+
+ for(int init=0; init<16; init++) {
+#pragma HLS UNROLL
+ l2_acc[init] = 0;
         }
 
 
-        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
-        sum += (ap_fixed<32,16>)(alphas[i] * K);
+
+
+
+        classify_label1: for (int j = 0; j < 784; j++) {
+#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL factor=8
+
+ for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+
+ ap_fixed<8,7> xi = svs[i+k][j];
+                ap_fixed<8,7> xj = x_local[k][j];
+                ap_fixed<8,7> diff = xi - xj;
+
+
+
+                ap_fixed<16,14> sq;
+#pragma 
+ 
+{ _ssdm_RegionBegin("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2");
+# 84 "ADSD-Github-M/Classifier.cpp"
+sq = diff * diff;
+_ssdm_op_SpecResource(&sq, "?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2", "", "Mul_LUT", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2"); }
+# 84 "ADSD-Github-M/Classifier.cpp"
+
+
+                l2_acc[k] += sq;
+            }
+        }
+
+
+
+
+
+        for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2_acc[k]);
+            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+        }
+    }
+
+
+    for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ sum += partial_sum[k];
     }
 
     return (double)(sum + bias[0]);

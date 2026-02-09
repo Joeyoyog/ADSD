@@ -4,7 +4,7 @@
 
 
 typedef ap_fixed<16,4>	x_t;
-typedef ap_ufixed<22,1>	out_t;
+typedef ap_ufixed<20,1>	out_t;
 
 out_t compute_exp(x_t x);
 //double compute_exp(double val);

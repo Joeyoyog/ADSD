@@ -55,7 +55,7 @@
         <value string="solution1"/>
     </name>
     <project>
-        <value string="SVM_Accelerator_HLS_Cordic_Optimized"/>
+        <value string="ADSD-Github-M"/>
     </project>
     <targetInfo>
         <TargetInfo value="xc7z020:clg484:-1"/>

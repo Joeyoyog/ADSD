@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>x_V</name>
+<name>gmem</name>
 <CType>
 <TypeName>ap_fixed 8 7 5 3 0</TypeName>
 <TypeWidth>8</TypeWidth>

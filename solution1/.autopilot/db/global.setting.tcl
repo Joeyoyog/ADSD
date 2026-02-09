@@ -15,7 +15,7 @@ set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
 set HasDSPModule 1
-set ResetLevelFlag 1
+set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
 set ResetRegisterFlag 0
@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp}}
+set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
 set SourceFlags {sc {} c {{} {}}}
-set DirectiveFile {C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/solution1.directive}
-set TBFiles {verilog {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} bc {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} vhdl {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} sc {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} cas {../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/AcceleratorTB.cpp ../../SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} c {}}
+set DirectiveFile {C:/Users/josep/Documents/ADSD-Github-M/solution1/solution1.directive}
+set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} cas {../test_data.txt ../test_data.h ../ground_truth.h ../CordicTB.cpp ../AcceleratorTB.cpp} c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

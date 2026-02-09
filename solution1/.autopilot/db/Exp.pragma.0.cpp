@@ -1,5 +1,5 @@
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp"
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 1
+# 1 "ADSD-Github-M/Exp.cpp"
+# 1 "ADSD-Github-M/Exp.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,8 +145,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 1
+# 1 "ADSD-Github-M/Exp.cpp" 2
+# 1 "ADSD-Github-M/Exp.h" 1
 
 
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 1
@@ -24366,101 +24366,153 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 4 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 2
+# 4 "ADSD-Github-M/Exp.h" 2
 
 
 typedef ap_fixed<16,4> x_t;
-typedef ap_ufixed<22,1> out_t;
+typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 2 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp" 2
+# 2 "ADSD-Github-M/Exp.cpp" 2
 
 
-typedef ap_fixed<32,8> acc_t;
-typedef ap_fixed<40,8> coef_t;
-
-typedef ap_fixed<40,2> lut_t;
+typedef ap_fixed<26,5> acc_t;
+typedef ap_fixed<23,5> coef_t;
+typedef ap_fixed<19,1> lut_t;
 
 
 static const coef_t LN2 = coef_t(0.6931471805599453);
 static const coef_t INV_LN2 = coef_t(1.4426950408889634);
-static const int Iteration_Schedule[] = {1,2,3,4,4,5,6,7,8,9,10,11,12,13,13,14,15};
-static const int Num_Iterations = sizeof(Iteration_Schedule)/sizeof(Iteration_Schedule[0]);
-
-static const lut_t ATANH_LUT[Num_Iterations] = {
-  lut_t(0.54930614433405489),
-  lut_t(0.25541281188299536),
-  lut_t(0.12565721414045303),
-  lut_t(0.062581571477003009),
-  lut_t(0.062581571477003009),
-  lut_t(0.031260178490666993),
-  lut_t(0.015626271752052213),
-  lut_t(0.0078126589515404212),
-  lut_t(0.0039062698683968262),
-  lut_t(0.0019531274835325502),
-  lut_t(0.00097656281044103594),
-  lut_t(0.00048828128880511288),
-  lut_t(0.00024414062985063861),
-  lut_t(0.000122070313106329793),
-  lut_t(0.000122070313106329793),
-  lut_t(0.000061035156325791221),
-  lut_t(0.000030517578134473901)
-
-};
-
 static const acc_t K_GAIN = acc_t(1.2074970675756439159);
-
 
 
 template<typename T>
 static int floor_to_int(T v) {
+#pragma HLS INLINE
  int iv = (int)v;
- if (v < 0 && v != (T)iv) iv -= 1;
- return iv;
+    if (v < 0 && v != (T)iv) iv -= 1;
+    return iv;
 }
 
 out_t compute_exp(x_t x){
- if (x < x_t(-8.0)) return out_t(0.0);
+
+#pragma HLS INLINE
 
 
- coef_t t = coef_t(x) * INV_LN2;
- int k = floor_to_int(t);
- if ( k < -12) k = -12;
-
- if (k > 0) k = 0;
- acc_t r = acc_t(x) - acc_t(k) * acc_t(LN2);
 
 
- acc_t X = K_GAIN;
- acc_t Y = 0.0;
- acc_t Z = r;
+ const int Iteration_Schedule[17] = {1,2,3,4,4,5,6,7,8,9,10,11,12,13,13,14,15};
+_ssdm_SpecConstant(Iteration_Schedule);
+# 29 "ADSD-Github-M/Exp.cpp"
 
-  compute_exp_label0:for (int n = 0; n < Num_Iterations; n++){
-#pragma HLS UNROLL
-# 63 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.cpp"
+    const lut_t ATANH_LUT[17] = {
+        lut_t(0.54930614433405489), lut_t(0.25541281188299536), lut_t(0.12565721414045303),
+        lut_t(0.062581571477003009), lut_t(0.062581571477003009), lut_t(0.031260178490666993),
+        lut_t(0.015626271752052213), lut_t(0.0078126589515404212), lut_t(0.0039062698683968262),
+        lut_t(0.0019531274835325502), lut_t(0.00097656281044103594), lut_t(0.00048828128880511288),
+        lut_t(0.00024414062985063861), lut_t(0.000122070313106329793), lut_t(0.000122070313106329793),
+        lut_t(0.000061035156325791221), lut_t(0.000030517578134473901)
+    };
+_ssdm_SpecConstant(ATANH_LUT);
+# 30 "ADSD-Github-M/Exp.cpp"
 
-  int i = Iteration_Schedule[n];
-  bool z_nonneg = (Z >= 0);
+
+    static const coef_t MLN2[13] = {
+      coef_t(0.0),
+      coef_t(0.6931471805599453),
+      coef_t(1.3862943611198906),
+      coef_t(2.0794415416798359),
+      coef_t(2.7725887222397811),
+      coef_t(3.4657359027997265),
+      coef_t(4.1588830833596718),
+      coef_t(4.8520302639196171),
+      coef_t(5.5451774444795625),
+      coef_t(6.2383246250395078),
+      coef_t(6.9314718055994530),
+      coef_t(7.6246189861593983),
+      coef_t(8.3177661667193436)
+    };
+_ssdm_SpecConstant(MLN2);
+# 39 "ADSD-Github-M/Exp.cpp"
 
 
-  acc_t Ysh = (Y >> i);
-  acc_t Xsh = (X >> i);
 
-  acc_t Xn, Yn, Zn;
-  if(z_nonneg) { Xn = X + Ysh;
+#pragma HLS ARRAY_PARTITION variable=&MLN2 complete dim=1
+#pragma HLS ARRAY_PARTITION variable=&ATANH_LUT complete dim=1
+#pragma HLS ARRAY_PARTITION variable=&Iteration_Schedule complete dim=1
 
-   Yn = Y + Xsh;
-   Zn = Z - ATANH_LUT[n];
 
-  } else {
-   Xn = X - Ysh;
-   Yn = Y - Xsh;
-   Zn = Z + ATANH_LUT[n];
-  }
+ coef_t u = coef_t(0) - coef_t(x);
 
-  X = Xn; Y = Yn; Z = Zn;
- }
- acc_t exp_r = X + Y;
- acc_t scaled = (k < 0) ? (exp_r >> (-k)) : (exp_r << k);
- return out_t(scaled);
+
+
+    int m = 0;
+
+    if (u > coef_t(0)) {
+
+
+            if (u <= MLN2[1]) m = 1;
+            else if (u <= MLN2[2]) m = 2;
+            else if (u <= MLN2[3]) m = 3;
+            else if (u <= MLN2[4]) m = 4;
+            else if (u <= MLN2[5]) m = 5;
+            else if (u <= MLN2[6]) m = 6;
+            else if (u <= MLN2[7]) m = 7;
+            else if (u <= MLN2[8]) m = 8;
+            else if (u <= MLN2[9]) m = 9;
+            else if (u <= MLN2[10]) m = 10;
+            else if (u <= MLN2[11]) m = 11;
+            else m = 12;
+        }
+
+
+
+    bool is_small = (x < x_t(-8.0));
+# 96 "ADSD-Github-M/Exp.cpp"
+    acc_t r = acc_t(x) + acc_t(MLN2[m]);
+
+
+    acc_t X = K_GAIN;
+    acc_t Y = 0.0;
+    acc_t Z = r;
+
+
+    for (int n = 0; n < 17; n++){
+
+#pragma HLS PIPELINE II=1
+ int i = Iteration_Schedule[n];
+        bool z_nonneg = (Z >= 0);
+
+        acc_t Ysh = (Y >> i);
+        acc_t Xsh = (X >> i);
+
+        acc_t Xn, Yn, Zn;
+        if(z_nonneg) {
+            Xn = X + Ysh; Yn = Y + Xsh; Zn = Z - ATANH_LUT[n];
+        } else {
+            Xn = X - Ysh; Yn = Y - Xsh; Zn = Z + ATANH_LUT[n];
+        }
+        X = Xn; Y = Yn; Z = Zn;
+    }
+    acc_t exp_r = X + Y;
+    acc_t scaled;
+        switch (m) {
+            case 0: scaled = exp_r; break;
+            case 1: scaled = (exp_r >> 1); break;
+            case 2: scaled = (exp_r >> 2); break;
+            case 3: scaled = (exp_r >> 3); break;
+            case 4: scaled = (exp_r >> 4); break;
+            case 5: scaled = (exp_r >> 5); break;
+            case 6: scaled = (exp_r >> 6); break;
+            case 7: scaled = (exp_r >> 7); break;
+            case 8: scaled = (exp_r >> 8); break;
+            case 9: scaled = (exp_r >> 9); break;
+            case 10: scaled = (exp_r >> 10); break;
+            case 11: scaled = (exp_r >> 11); break;
+            default: scaled = (exp_r >> 12); break;
+        }
+
+
+    return is_small ? out_t(0.0) : out_t(scaled);
+
 }

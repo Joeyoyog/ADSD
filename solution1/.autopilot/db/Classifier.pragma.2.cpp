@@ -1,5 +1,5 @@
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp"
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
+# 1 "C:/Users/josep/Documents/ADSD-Github-M/solution1/.autopilot/db/Classifier.pragma.1.cpp"
+# 1 "C:/Users/josep/Documents/ADSD-Github-M/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,9 +145,9 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/Users/josep/Documents/ADSD/SVM_Accelerator_HLS_Cordic_Optimized/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp"
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 1
+# 1 "C:/Users/josep/Documents/ADSD-Github-M/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
+# 1 "ADSD-Github-M/Classifier.cpp"
+# 1 "ADSD-Github-M/Classifier.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -293,8 +293,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 1
+# 1 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/Classifier.h" 1
 
 
 
@@ -24527,30 +24527,33 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Exp.h" 1
+# 5 "ADSD-Github-M/Classifier.h" 2
+# 1 "ADSD-Github-M/Exp.h" 1
 
 
 
 
 
 typedef ap_fixed<16,4> x_t;
-typedef ap_ufixed<22,1> out_t;
+typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 6 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.h" 2
+# 6 "ADSD-Github-M/Classifier.h" 2
 
 
 
 
 
 double classify(ap_fixed<8,7> x[784]);
-# 2 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./svs.h" 1
+# 2 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./svs.h" 1
 
 
 
-ap_fixed<8,7> svs[] = {
+
+
+static const ap_fixed<8,7> svs[176][784] = {
+
 0.0,
 0.0,
 0.0,
@@ -153912,14 +153915,14 @@ ap_fixed<8,7> svs[] = {
 0.0,
 0.0,
 };
-# 3 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./bias.h" 1
-ap_fixed<8, 1> bias[] = {
+# 3 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./bias.h" 1
+static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
-# 1 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/./alphas.h" 1
-ap_fixed<8, 5> alphas[] = {
+# 4 "ADSD-Github-M/Classifier.cpp" 2
+# 1 "ADSD-Github-M/./alphas.h" 1
+static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
 -0.5,
@@ -154085,29 +154088,127 @@ ap_fixed<8, 5> alphas[] = {
 1.125,
 0.5,
 1.25,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
 };
-# 5 "SVM_Accelerator_HLS_Cordic_GoodMSE_FixedPoint/Classifier.cpp" 2
+# 5 "ADSD-Github-M/Classifier.cpp" 2
 
 double classify(ap_fixed<8,7> x[784]) {_ssdm_SpecArrayDimSize(x, 784);
+
+
+
+_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 784, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+
  ap_fixed<32,16> sum = 0.0;
-
-    classify_label2:for (int i = 0; i < 165; i++) {
-
-        ap_fixed<32,24> l2Squared_fixed = 0;
-
-        classify_label1:for (int j = 0; j < 784; j++) {
-            ap_fixed<8,7> xi = svs[i * 784 + j];
-            ap_fixed<8,7> diff = xi - x[j];
+    ap_fixed<32,16> partial_sum[16];
+_ssdm_SpecArrayPartition( partial_sum, 1, "COMPLETE", 0, "");
 
 
 
-            l2Squared_fixed += (ap_fixed<22,14>)(diff * diff);
+
+
+
+
+ ap_fixed<8,7> x_local[16][784];
+_ssdm_SpecArrayPartition( x_local, 1, "COMPLETE", 0, "");
+_ssdm_SpecArrayPartition( x_local, 2, "CYCLIC", 8, "");
+
+
+_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 16, "");
+_ssdm_SpecArrayPartition( &svs, 2, "CYCLIC", 8, "");
+_ssdm_SpecArrayPartition( &alphas, 1, "CYCLIC", 16, "");
+
+
+ for (int k = 0; k < 16; k++) {
+_ssdm_Unroll(0,0,0, "");
+ partial_sum[k] = 0;
+    }
+
+
+
+
+
+    load_image_loop: for (int i = 0; i < 784; i++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ ap_fixed<8,7> temp = x[i];
+        for (int k = 0; k < 16; k++) {
+_ssdm_Unroll(0,0,0, "");
+ x_local[k][i] = temp;
+        }
+    }
+
+
+
+
+
+    classify_label2: for (int i = 0; i < 176; i += 16) {
+
+        ap_fixed<32,24> l2_acc[16];
+_ssdm_SpecArrayPartition( l2_acc, 1, "COMPLETE", 0, "");
+
+ for(int init=0; init<16; init++) {
+_ssdm_Unroll(0,0,0, "");
+ l2_acc[init] = 0;
         }
 
 
-        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2Squared_fixed);
-        sum += (ap_fixed<32,16>)(alphas[i] * K);
+
+
+
+        classify_label1: for (int j = 0; j < 784; j++) {
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+_ssdm_Unroll(1, 0, 8, "");
+
+ for (int k = 0; k < 16; k++) {
+_ssdm_Unroll(0,0,0, "");
+
+ ap_fixed<8,7> xi = svs[i+k][j];
+                ap_fixed<8,7> xj = x_local[k][j];
+                ap_fixed<8,7> diff = xi - xj;
+
+
+
+                ap_fixed<16,14> sq;
+#pragma
+
+{ _ssdm_RegionBegin("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2");
+# 84 "ADSD-Github-M/Classifier.cpp"
+sq = diff * diff;
+_ssdm_op_SpecResource(&sq, "?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2", "", "Mul_LUT", "", -1, "", "", "", "", "");
+_ssdm_RegionEnd("?Mul_LUT_sq_Region_ADSD-Github-M/Classifier.cpp:84:2"); }
+# 84 "ADSD-Github-M/Classifier.cpp"
+
+
+                l2_acc[k] += sq;
+            }
+        }
+
+
+
+
+
+        for (int k = 0; k < 16; k++) {
+_ssdm_Unroll(0,0,0, "");
+ const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * l2_acc[k]);
+            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
+        }
+    }
+
+
+    for (int k = 0; k < 16; k++) {
+_ssdm_Unroll(0,0,0, "");
+ sum += partial_sum[k];
     }
 
     return (double)(sum + bias[0]);
