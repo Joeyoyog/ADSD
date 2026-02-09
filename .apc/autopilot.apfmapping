@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="bias.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\bias.h"/>
-    <originFiles name="Classifier.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Classifier.cpp"/>
-    <originFiles name="Classifier.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Classifier.h"/>
-    <originFiles name="Exp.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Exp.cpp"/>
-    <originFiles name="Exp.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Exp.h"/>
-    <originFiles name="svs.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\svs.h"/>
-    <originFiles name="alphas.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\alphas.h"/>
+    <originFiles name="svs.h" path="C:\Users\josep\Documents\ADSD-Github-M\svs.h"/>
+    <originFiles name="bias.h" path="C:\Users\josep\Documents\ADSD-Github-M\bias.h"/>
+    <originFiles name="alphas.h" path="C:\Users\josep\Documents\ADSD-Github-M\alphas.h"/>
+    <originFiles name="Exp.h" path="C:\Users\josep\Documents\ADSD-Github-M\Exp.h"/>
+    <originFiles name="Exp.cpp" path="C:\Users\josep\Documents\ADSD-Github-M\Exp.cpp"/>
+    <originFiles name="Classifier.h" path="C:\Users\josep\Documents\ADSD-Github-M\Classifier.h"/>
+    <originFiles name="Classifier.cpp" path="C:\Users\josep\Documents\ADSD-Github-M\Classifier.cpp"/>
   </source>
   <testbench>
-    <originFiles name="test_data.txt" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\test_data.txt"/>
-    <originFiles name="test_data.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\test_data.h"/>
-    <originFiles name="ground_truth.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\ground_truth.h"/>
-    <originFiles name="CordicTB.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\CordicTB.cpp"/>
-    <originFiles name="AcceleratorTB.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\AcceleratorTB.cpp"/>
+    <originFiles name="test_data.txt" path="C:\Users\josep\Documents\ADSD-Github-M\test_data.txt"/>
+    <originFiles name="test_data.h" path="C:\Users\josep\Documents\ADSD-Github-M\test_data.h"/>
+    <originFiles name="ground_truth.h" path="C:\Users\josep\Documents\ADSD-Github-M\ground_truth.h"/>
+    <originFiles name="CordicTB.cpp" path="C:\Users\josep\Documents\ADSD-Github-M\CordicTB.cpp"/>
+    <originFiles name="AcceleratorTB.cpp" path="C:\Users\josep\Documents\ADSD-Github-M\AcceleratorTB.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

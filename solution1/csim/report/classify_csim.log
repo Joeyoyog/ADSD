@@ -1,15 +1,31 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../AcceleratorTB.cpp in debug mode
    Compiling ../../../CordicTB.cpp in debug mode
-   Compiling ../../../Classifier.cpp in debug mode
+   Compiling ../../../AcceleratorTB.cpp in debug mode
    Compiling ../../../Exp.cpp in debug mode
+   Compiling ../../../Classifier.cpp in debug mode
    Generating csim.exe
-Starting C-Simulation with 2601 images...
-Classification Accuracy: 0.981930
-Confusion Matrix (2601 test points):
-0.455594, 0.001153
-0.016917, 0.526336
-Test Passed!
+[x=0 (expect 1.0)]
+ x = 0.000000000000
+ y_hat = 1.000001907348633e+000
+ y_ref = 1.000000000000000e+000
+ err = -1.907348632812500e-006
+[x=-ln2 (expect0.5)]
+ x = -0.693147180560
+ y_hat = 4.999027252197266e-001
+ y_ref = 5.000000000000000e-001
+ err = 9.727478027343750e-005
+[x=-8 (expect ~3.354626e-4]
+ x = -8.000000000000
+ y_hat = 3.337860107421875e-004
+ y_ref = 3.354626279025119e-004
+ err = 1.676617160324353e-006
+Exp CORDIC verification over quantized uniform x in [-8,0]
+Samples N                  : 100000
+x_t frac bits              : 12 (step = 2^-12)
+MSE                        : 2.320900519040848e-011
+MSE upper 95% bound       : 2.363691587930020e-011
+MSE abs error              : 2.901018244261255e-005
+PASS: upper 95% MSE bound < 2.4e-11
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************
