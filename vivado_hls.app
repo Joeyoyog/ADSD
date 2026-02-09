@@ -1,10 +1,5 @@
 <project xmlns="com.autoesl.autopilot.project" name="ADSD-Github-M" top="classify">
-    <includePaths/>
-    <libraryPaths/>
-    <Simulation>
-        <SimFlow name="csim" clean="true" csimMode="0" lastCsimMode="0"/>
-    </Simulation>
-    <files xmlns="">
+    <files>
         <file name="../test_data.txt" sc="0" tb="1" cflags=" -Wno-unknown-pragmas -Wno-unknown-pragmas"/>
         <file name="../test_data.h" sc="0" tb="1" cflags=" -Wno-unknown-pragmas -Wno-unknown-pragmas"/>
         <file name="../ground_truth.h" sc="0" tb="1" cflags=" -Wno-unknown-pragmas -Wno-unknown-pragmas"/>
@@ -18,6 +13,11 @@
         <file name="ADSD-Github-M/Classifier.h" sc="0" tb="false" cflags=""/>
         <file name="ADSD-Github-M/Classifier.cpp" sc="0" tb="false" cflags=""/>
     </files>
+    <includePaths/>
+    <libraryPaths/>
+    <Simulation>
+        <SimFlow name="csim" clean="true" csimMode="0" lastCsimMode="0"/>
+    </Simulation>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
     </solutions>

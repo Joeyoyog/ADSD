@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../AcceleratorTB.cpp ../../../CordicTB.cpp ../../../Classifier.cpp ../../../Exp.cpp
+HLS_SOURCES = ../../../CordicTB.cpp ../../../AcceleratorTB.cpp ../../../Exp.cpp ../../../Classifier.cpp
 
 TARGET := csim.exe
 
@@ -74,26 +74,26 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/AcceleratorTB.o: ../../../AcceleratorTB.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../AcceleratorTB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/AcceleratorTB.d
-
 $(ObjDir)/CordicTB.o: ../../../CordicTB.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../CordicTB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/CordicTB.d
 
-$(ObjDir)/Classifier.o: ../../../Classifier.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../Classifier.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+$(ObjDir)/AcceleratorTB.o: ../../../AcceleratorTB.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../AcceleratorTB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/Classifier.d
+-include $(ObjDir)/AcceleratorTB.d
 
 $(ObjDir)/Exp.o: ../../../Exp.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../Exp.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/Exp.d
+
+$(ObjDir)/Classifier.o: ../../../Classifier.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../Classifier.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/Classifier.d

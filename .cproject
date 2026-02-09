@@ -98,6 +98,21 @@
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.603083779.64032417" name="ground_truth.h" rcbsApplicability="disable" resourcePath="testbench/ground_truth.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.603083779.928557370" name="test_data.h" rcbsApplicability="disable" resourcePath="testbench/test_data.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.603083779.2122708275" name="test_data.txt" rcbsApplicability="disable" resourcePath="testbench/test_data.txt" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.603083779.1204664480" name="AcceleratorTB.cpp" rcbsApplicability="disable" resourcePath="testbench/AcceleratorTB.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.580088521.636387946">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.580088521.636387946" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.580088521">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.1485328842" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.1134701665" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/josep/Documents"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.1183520107" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2111416452" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -192,6 +207,21 @@
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.433889301.1294430704" name="ground_truth.h" rcbsApplicability="disable" resourcePath="testbench/ground_truth.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.433889301.1305932709" name="test_data.h" rcbsApplicability="disable" resourcePath="testbench/test_data.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.433889301.1753719408" name="test_data.txt" rcbsApplicability="disable" resourcePath="testbench/test_data.txt" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.433889301.1569152543" name="AcceleratorTB.cpp" rcbsApplicability="disable" resourcePath="testbench/AcceleratorTB.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.321454080.600756769">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.321454080.600756769" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.321454080">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.1925508510" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.452508750" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="C:/Users/josep/Documents"/>
+								<listOptionValue builtIn="false" value="C:/Xilinx/Vivado/2018.2/win64/tools/systemc/include"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.1117950073" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1245891091" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
