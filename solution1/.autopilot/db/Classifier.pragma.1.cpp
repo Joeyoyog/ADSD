@@ -153976,66 +153976,36 @@ const ap_fixed<32,16> sv_norms[165] = {
 # 6 "ADSD/Classifier.cpp" 2
 
 
-double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in) {_ssdm_SpecArrayDimSize(x, 98);
+
+void load_data(ap_uint<64> x[784/8], ap_fixed<8,7> x_local[784]) {_ssdm_SpecArrayDimSize(x, 98);_ssdm_SpecArrayDimSize(x_local, 784);
+_ssdm_InlineSelf(2, "");
+
+ load_image_loop: for (int i = 0; i < 784 / 8; i++) {
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+ ap_uint<64> packet = x[i];
+        for (int p = 0; p < 8; p++) {
+_ssdm_Unroll(0,0,0, "");
+ ap_fixed<8,7> val;
+            val(7, 0) = packet.range(p*8 + 7, p*8);
+            x_local[i*8 + p] = val;
+        }
+    }
+}
 
 
-
-
-_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 98, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-
-
-_ssdm_op_SpecInterface(&x_norm_in, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+void compute_class(ap_fixed<8,7> x_local[784], ap_fixed<24,14> x_norm_in, double &result) {_ssdm_SpecArrayDimSize(x_local, 784);
+_ssdm_InlineSelf(2, "");
 
  ap_fixed<32,16> sum = 0.0;
     ap_fixed<32,16> partial_sum[16];
 _ssdm_SpecArrayPartition( partial_sum, 1, "COMPLETE", 0, "");
-
-
-
-
-_ssdm_SpecArrayReshape( &svs, 2,  "CYCLIC",  16, "");
-_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 16, "");
-
- ap_fixed<8,7> x_local[784];
-_ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 16, "");
-
-_ssdm_SpecArrayPartition( &alphas, 1, "CYCLIC", 16, "");
-_ssdm_SpecArrayPartition( &sv_norms, 1, "CYCLIC", 16, "");
 
  for (int k = 0; k < 16; k++) {
 _ssdm_Unroll(0,0,0, "");
  partial_sum[k] = 0;
     }
 
-
-
-
-
-
-    load_image_loop: for (int i = 0; i < 784 / 8; i++) {
-_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
-
- ap_uint<64> packet = x[i];
-
-        for (int p = 0; p < 8; p++) {
-_ssdm_Unroll(0,0,0, "");
-
-
- ap_fixed<8,7> val;
-            val(7, 0) = packet.range(p*8 + 7, p*8);
-
-            x_local[i*8 + p] = val;
-
-
-        }
-    }
-
-
-
-
     classify_label2: for (int i = 0; i < 165; i += 16) {
-
         ap_fixed<32,16> dot_products[16];
 _ssdm_SpecArrayPartition( dot_products, 1, "COMPLETE", 0, "");
 
@@ -154054,21 +154024,16 @@ _ssdm_Unroll(0,0,0, "");
                 ap_fixed<8,7> xj = x_local[j];
 
 
-                ap_fixed<16,14> prod;
-                prod = xi * xj;
-
+                ap_fixed<16,14> prod = xi * xj;
                 dot_products[k] += prod;
             }
         }
 
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
-
-
  ap_fixed<32,16> term1 = x_norm_in;
             ap_fixed<32,16> term2 = sv_norms[i+k];
             ap_fixed<32,16> term3 = dot_products[k];
-
             ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
 
             const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
@@ -154083,6 +154048,34 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 _ssdm_Unroll(0,0,0, "");
  sum += partial_sum[k];
     }
+    result = (double)(sum + bias[0]);
+}
 
-    return (double)(sum + bias[0]);
+
+double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in) {_ssdm_SpecArrayDimSize(x, 98);
+_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 98, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(&x_norm_in, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
+
+
+_ssdm_SpecArrayReshape( &svs, 2,  "CYCLIC",  16, "");
+_ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 16, "");
+_ssdm_SpecArrayPartition( &alphas, 1, "CYCLIC", 16, "");
+_ssdm_SpecArrayPartition( &sv_norms, 1, "CYCLIC", 16, "");
+
+
+
+
+ ap_fixed<8,7> x_local[784];
+_ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 16, "");
+
+
+_ssdm_op_SpecDataflowPipeline(-1, "");
+
+ double result;
+
+    load_data(x, x_local);
+    compute_class(x_local, x_norm_in, result);
+
+    return result;
 }

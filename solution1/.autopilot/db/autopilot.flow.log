@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1 opened at Mon Feb 09 22:26:27 +0000 2026
+INFO-FLOW: Workspace C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1 opened at Mon Feb 09 22:41:58 +0000 2026
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -47,10 +47,9 @@ Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds
 Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
 Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
 Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
-Command         ap_source done; 0.109 sec.
 Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.112 sec.
-Command     ap_source done; 0.112 sec.
+Command       ap_source done; 0.101 sec.
+Command     ap_source done; 0.101 sec.
 Execute     open_platform DefaultPlatform 
 Execute     import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
 Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
@@ -80,7 +79,7 @@ Execute       get_default_platform
 Execute     get_default_platform 
 Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Execute     config_chip_info -quiet -speed slow 
-Command   open_solution done; 0.241 sec.
+Command   open_solution done; 0.194 sec.
 Execute   set_part xc7z020clg484-1 -tool vivado 
 Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
 Execute       get_default_platform 
@@ -120,43 +119,43 @@ Execute       get_default_platform
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "ADSD/Exp.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E ADSD/Exp.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp
-Command       clang done; 0.725 sec.
+Command       clang done; 0.687 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp"  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/useless.bc
-Command       clang done; 1.06 sec.
+Command       clang done; 1.008 sec.
 INFO-FLOW: GCC PP time: 1 seconds per iteration
 INFO-FLOW: Setting directive 'UNROLL' 
 INFO-FLOW: Setting directive 'UNROLL' 
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp std=gnu++98 -directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.592 sec.
+Command       tidy_31 done; 0.551 sec.
 INFO-FLOW: CDT Preprocessing with tidy-3.1...
 Execute       tidy_31 xilinx-directive2pragma C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp std=gnu++98 -directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.json 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.json -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.593 sec.
+Command       tidy_31 done; 0.579 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Exp.pp.0.cpp.diag.yml C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Exp.pp.0.cpp.out.log 2> C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Exp.pp.0.cpp.err.log 
-Command       ap_eval done; 0.573 sec.
+Command       ap_eval done; 0.53 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 1.726 sec.
+Command       tidy_31 done; 1.587 sec.
 INFO-FLOW: tidy-3.1 time 2 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 1.178 sec.
+Command       tidy_31 done; 1.104 sec.
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.2.cpp" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.2.cpp
-Command       clang done; 0.678 sec.
+Command       clang done; 0.681 sec.
 Execute       get_default_platform 
 INFO-FLOW: Processing labels
 Execute       clang -src C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.bc" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.bc
-Command       clang done; 1.095 sec.
+Command       clang done; 1.106 sec.
 INFO: [HLS 200-10] Analyzing design file 'ADSD/Classifier.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -167,59 +166,59 @@ Execute       get_default_platform
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "ADSD/Classifier.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E ADSD/Classifier.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp
-Command       clang done; 0.761 sec.
+Command       clang done; 0.721 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp"  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/useless.bc
-Command       clang done; 7.901 sec.
-INFO-FLOW: GCC PP time: 8 seconds per iteration
+Command       clang done; 8.984 sec.
+INFO-FLOW: GCC PP time: 9 seconds per iteration
 INFO-FLOW: Setting directive 'UNROLL' 
 INFO-FLOW: Setting directive 'UNROLL' 
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp std=gnu++98 -directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 8.87 sec.
+Command       tidy_31 done; 8.825 sec.
 INFO-FLOW: CDT Preprocessing with tidy-3.1...
 Execute       tidy_31 xilinx-directive2pragma C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp std=gnu++98 -directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.json 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/solution1.json -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 8.921 sec.
+Command       tidy_31 done; 8.584 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Classifier.pp.0.cpp.diag.yml C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Classifier.pp.0.cpp.out.log 2> C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/xilinx-dataflow-lawyer.Classifier.pp.0.cpp.err.log 
-Command       ap_eval done; 7 sec.
+Command       ap_eval done; 8.768 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 20.287 sec.
+Command       tidy_31 done; 19.269 sec.
 INFO-FLOW: tidy-3.1 time 36 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 16.119 sec.
+Command       tidy_31 done; 10.846 sec.
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.2.cpp" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.2.cpp
-Command       clang done; 0.827 sec.
+Command       clang done; 0.777 sec.
 Execute       get_default_platform 
 INFO-FLOW: Processing labels
 Execute       clang -src C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.bc" 
 INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.bc
-Command       clang done; 10.031 sec.
+Command       clang done; 10.588 sec.
 INFO-FLOW: Linking Debug ...
 Execute       llvm-ld C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Exp.g.bc C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.g.bc -hls-opt -except-internalize classify -LC:/Xilinx/Vivado/2018.2/win64/lib -lhlsm -lhlsmc++ -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g 
-Command       llvm-ld done; 1.92 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:01:35 . Memory (MB): peak = 102.535 ; gain = 46.316
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:01:35 . Memory (MB): peak = 102.535 ; gain = 46.316
+Command       llvm-ld done; 1.818 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:01:31 . Memory (MB): peak = 102.484 ; gain = 45.820
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:01:31 . Memory (MB): peak = 102.484 ; gain = 45.820
 Execute       ::config_rtl 
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute         transform -promote-dbg-pointer C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.pp.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.pp.0.bc -f 
-Command         transform done; 0.882 sec.
+Command         transform done; 0.917 sec.
 Execute         llvm-ld C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LC:/Xilinx/Vivado/2018.2/win64/lib -lfloatconversion -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.0 
-Command         llvm-ld done; 1.318 sec.
+Command         llvm-ld done; 1.462 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top classify -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.0.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 16, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'classify' (ADSD/Classifier.cpp:101).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<32, 16, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'compute_class' (ADSD/Classifier.cpp:66).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:136).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:135).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:134).
@@ -234,105 +233,268 @@ INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:125).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:111).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<26, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'compute_exp' (ADSD/Exp.cpp:110).
-INFO: [XFORM 203-603] Inlining function 'compute_exp' into 'classify' (ADSD/Classifier.cpp:106).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<33, 17, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_double' into 'classify' (ADSD/Classifier.cpp:116).
-Command         transform done; 38.165 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:40 ; elapsed = 00:02:15 . Memory (MB): peak = 655.598 ; gain = 599.379
+INFO: [XFORM 203-603] Inlining function 'compute_exp' into 'compute_class' (ADSD/Classifier.cpp:71).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<33, 17, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_double' into 'compute_class' (ADSD/Classifier.cpp:80).
+Command         transform done; 40.906 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:43 ; elapsed = 00:02:14 . Memory (MB): peak = 656.117 ; gain = 599.453
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.1.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.2.prechk.bc -f 
-Command         transform done; 0.275 sec.
+Command         transform done; 0.272 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-WARNING: [SYNCHK 200-23] ADSD/Classifier.cpp:55: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-23] ADSD/Classifier.cpp:18: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-Command         transform done; 0.125 sec.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:41 ; elapsed = 00:02:16 . Memory (MB): peak = 655.598 ; gain = 599.379
+Command         transform done; 0.128 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:43 ; elapsed = 00:02:14 . Memory (MB): peak = 656.117 ; gain = 599.453
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.g.1.bc to C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.1.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'load_image_loop' (ADSD/Classifier.cpp:45) in function 'classify' for pipelining.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'classify_label1' (ADSD/Classifier.cpp:76) in function 'classify' for pipelining.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Reconstruct_Loop' (ADSD/Classifier.cpp:93) in function 'classify' for pipelining.
-WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-3.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (ADSD/Classifier.cpp:35) in function 'classify' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1' (ADSD/Classifier.cpp:50) in function 'classify' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1' (ADSD/Classifier.cpp:71) in function 'classify' completely.
-INFO: [XFORM 203-501] Unrolling loop 'classify_label1' (ADSD/Classifier.cpp:76) in function 'classify' partially with a factor of 16.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.2.1' (ADSD/Classifier.cpp:80) in function 'classify' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.3.1' (ADSD/Exp.cpp:104) in function 'classify' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-4' (ADSD/Classifier.cpp:111) in function 'classify' completely.
-WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:27:1) and reshape directive (ADSD/Classifier.cpp:26:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'classify_label1' (ADSD/Classifier.cpp:46) in function 'compute_class' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Reconstruct_Loop' (ADSD/Classifier.cpp:61) in function 'compute_class' for pipelining.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-2.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'load_image_loop' (ADSD/Classifier.cpp:12) in function 'load_data' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (ADSD/Classifier.cpp:32) in function 'compute_class' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1' (ADSD/Classifier.cpp:41) in function 'compute_class' completely.
+INFO: [XFORM 203-501] Unrolling loop 'classify_label1' (ADSD/Classifier.cpp:46) in function 'compute_class' partially with a factor of 16.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.2.1' (ADSD/Classifier.cpp:50) in function 'compute_class' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.3.1' (ADSD/Exp.cpp:104) in function 'compute_class' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3' (ADSD/Classifier.cpp:76) in function 'compute_class' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (ADSD/Classifier.cpp:15) in function 'load_data' completely.
+WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:91:1) and reshape directive (ADSD/Classifier.cpp:90:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors.
 INFO: [XFORM 203-131] Reshaping array 'svs.V'  in dimension 2 with a cyclic factor of 16.
-INFO: [XFORM 203-101] Partitioning array 'partial_sum.V' (ADSD/Classifier.cpp:20) in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'svs.V' in dimension 1 with a cyclic factor 16.
-INFO: [XFORM 203-101] Partitioning array 'x_local.V' (ADSD/Classifier.cpp:29) in dimension 1 with a cyclic factor 16.
 INFO: [XFORM 203-101] Partitioning array 'alphas.V'  in dimension 1 with a cyclic factor 16.
 INFO: [XFORM 203-101] Partitioning array 'sv_norms.V'  in dimension 1 with a cyclic factor 16.
-INFO: [XFORM 203-101] Partitioning array 'dot_products.V' (ADSD/Classifier.cpp:68) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_local.V' (ADSD/Classifier.cpp:98) in dimension 1 with a cyclic factor 16.
+INFO: [XFORM 203-101] Partitioning array 'partial_sum.V' (ADSD/Classifier.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dot_products.V' (ADSD/Classifier.cpp:38) in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'MLN2'  in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'ATANH_LUT'  in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'Iteration_Schedule'  in dimension 1 completely.
-Command         transform done; 17.967 sec.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[0].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[1].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[2].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[3].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[4].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[5].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[6].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[7].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[8].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[9].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[10].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[11].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[12].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[13].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[14].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'x_local[15].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'classify', detected/extracted 4 process function(s): 
+	 'load_data51'
+	 'compute_class'
+	 'Block__proc'
+	 '__ADSD/Classifier.cpp_line109_proc'.
+Command         transform done; 26.587 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (ADSD/Exp.cpp:108:26) to (ADSD/Exp.cpp:123:9) in function 'classify'... converting 46 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:113:2) to (ADSD/Classifier.cpp:116:21) in function 'classify'... converting 3 basic blocks.
-INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.13i23P.i4' into 'classify'.
-INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.16[11 x i8]P.i32.i64' into 'classify'.
-INFO: [XFORM 203-11] Balancing expressions in function 'classify' (ADSD/Classifier.cpp:8)...271 expression(s) balanced.
-Command         transform done; 2.448 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:01 ; elapsed = 00:02:36 . Memory (MB): peak = 655.598 ; gain = 599.379
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (ADSD/Exp.cpp:108:26) to (ADSD/Exp.cpp:123:9) in function 'compute_class'... converting 46 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (ADSD/Classifier.cpp:78:2) in function 'compute_class'... converting 3 basic blocks.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.13i23P.i4' into 'compute_class'.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.16[11 x i8]P.i32.i64' into 'compute_class'.
+INFO: [XFORM 203-11] Balancing expressions in function 'compute_class' (ADSD/Classifier.cpp:25)...271 expression(s) balanced.
+Command         transform done; 2.703 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:11 ; elapsed = 00:02:44 . Memory (MB): peak = 656.117 ; gain = 599.453
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.2.bc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:66:57) in function 'classify' : 
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:37:57) in function 'compute_class' : 
 
 more than one sub loop.
-INFO: [XFORM 203-811] Inferring multiple bus burst read of a total cumulative length 98 on port 'gmem' (ADSD/Classifier.cpp:48:27). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
-Command         transform done; 4.133 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:05 ; elapsed = 00:02:40 . Memory (MB): peak = 655.598 ; gain = 599.379
+WARNING: [XFORM 203-631] Renaming function '__ADSD/Classifier.cpp_line109_proc' to '__ADSD/Classifier.cp' 
+INFO: [XFORM 203-811] Inferring multiple bus burst read of a total cumulative length 98 on port 'x.V' (ADSD/Classifier.cpp:14:27). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+Command         transform done; 3.717 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:14 ; elapsed = 00:02:47 . Memory (MB): peak = 656.117 ; gain = 599.453
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 65.385 sec.
-Command     elaborate done; 159.433 sec.
+Command       opt_and_import_c done; 76.762 sec.
+Command     elaborate done; 166.644 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
 INFO: [HLS 200-10] Synthesizing 'classify' ...
 Execute       ap_set_top_model classify 
+WARNING: [SYN 201-103] Legalizing function name 'Block__proc' to 'Block_proc'.
+WARNING: [SYN 201-103] Legalizing function name '__ADSD/Classifier.cp' to 'p_ADSD_Classifier_cp'.
 Execute       get_model_list classify -filter all-wo-channel -topdown 
 Execute       preproc_iomode -model classify 
+Execute       preproc_iomode -model __ADSD/Classifier.cp 
+Execute       preproc_iomode -model Block__proc 
+Execute       preproc_iomode -model compute_class 
+Execute       preproc_iomode -model load_data51 
 Execute       get_model_list classify -filter all-wo-channel 
-INFO-FLOW: Model list for configure: classify
+INFO-FLOW: Model list for configure: load_data51 compute_class Block__proc __ADSD/Classifier.cp classify
+INFO-FLOW: Configuring Module : load_data51 ...
+Execute       set_default_model load_data51 
+Execute       apply_spec_resource_limit load_data51 
+INFO-FLOW: Configuring Module : compute_class ...
+Execute       set_default_model compute_class 
+Execute       apply_spec_resource_limit compute_class 
+INFO-FLOW: Configuring Module : Block__proc ...
+Execute       set_default_model Block__proc 
+Execute       apply_spec_resource_limit Block__proc 
+INFO-FLOW: Configuring Module : __ADSD/Classifier.cp ...
+Execute       set_default_model __ADSD/Classifier.cp 
+Execute       apply_spec_resource_limit __ADSD/Classifier.cp 
 INFO-FLOW: Configuring Module : classify ...
 Execute       set_default_model classify 
 Execute       apply_spec_resource_limit classify 
-INFO-FLOW: Model list for preprocess: classify
+INFO-FLOW: Model list for preprocess: load_data51 compute_class Block__proc __ADSD/Classifier.cp classify
+INFO-FLOW: Preprocessing Module: load_data51 ...
+Execute       set_default_model load_data51 
+Execute       cdfg_preprocess -model load_data51 
+Execute       rtl_gen_preprocess load_data51 
+INFO-FLOW: Preprocessing Module: compute_class ...
+Execute       set_default_model compute_class 
+Execute       cdfg_preprocess -model compute_class 
+Execute       rtl_gen_preprocess compute_class 
+INFO-FLOW: Preprocessing Module: Block__proc ...
+Execute       set_default_model Block__proc 
+Execute       cdfg_preprocess -model Block__proc 
+Execute       rtl_gen_preprocess Block__proc 
+INFO-FLOW: Preprocessing Module: __ADSD/Classifier.cp ...
+Execute       set_default_model __ADSD/Classifier.cp 
+Execute       cdfg_preprocess -model __ADSD/Classifier.cp 
+Execute       rtl_gen_preprocess __ADSD/Classifier.cp 
 INFO-FLOW: Preprocessing Module: classify ...
 Execute       set_default_model classify 
 Execute       cdfg_preprocess -model classify 
 Execute       rtl_gen_preprocess classify 
-INFO-FLOW: Model list for synthesis: classify
+INFO-FLOW: Model list for synthesis: load_data51 compute_class Block__proc __ADSD/Classifier.cp classify
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_data51' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model load_data51 
+Execute       schedule -model load_data51 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'load_image_loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.201 sec.
+INFO: [HLS 200-111]  Elapsed time: 167.869 seconds; current allocated memory: 308.883 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.sched.adb -f 
+INFO-FLOW: Finish scheduling load_data51.
+Execute       set_default_model load_data51 
+Execute       bind -model load_data51 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=load_data51
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.125 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.289 seconds; current allocated memory: 309.180 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.bind.adb -f 
+INFO-FLOW: Finish binding load_data51.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_class' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model compute_class 
+Execute       schedule -model compute_class 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'classify_label1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-61] Pipelining loop 'Reconstruct_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 20.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.99 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.212 seconds; current allocated memory: 315.579 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 2 loops out of a total 3 loops have been pipelined in this design.
+Command       report done; 0.992 sec.
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.sched.adb -f 
+Command       db_write done; 0.917 sec.
+INFO-FLOW: Finish scheduling compute_class.
+Execute       set_default_model compute_class 
+Execute       bind -model compute_class 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=compute_class
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.728 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.703 seconds; current allocated memory: 322.751 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.verbose.bind.rpt -verbose -f 
+Command       report done; 1.469 sec.
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.bind.adb -f 
+Command       db_write done; 2.133 sec.
+INFO-FLOW: Finish binding compute_class.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block__proc 
+Execute       schedule -model Block__proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.892 seconds; current allocated memory: 323.517 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Block__proc.
+Execute       set_default_model Block__proc 
+Execute       bind -model Block__proc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Block__proc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.115 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.264 seconds; current allocated memory: 323.537 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.bind.adb -f 
+INFO-FLOW: Finish binding Block__proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_ADSD_Classifier_cp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model __ADSD/Classifier.cp 
+Execute       schedule -model __ADSD/Classifier.cp 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.239 seconds; current allocated memory: 323.546 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.sched.adb -f 
+INFO-FLOW: Finish scheduling __ADSD/Classifier.cp.
+Execute       set_default_model __ADSD/Classifier.cp 
+Execute       bind -model __ADSD/Classifier.cp 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=__ADSD/Classifier.cp
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.117 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.284 seconds; current allocated memory: 323.574 MB.
+Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.bind.adb -f 
+INFO-FLOW: Finish binding __ADSD/Classifier.cp.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'classify' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       set_default_model classify 
 Execute       schedule -model classify 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'load_image_loop'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
-INFO: [SCHED 204-61] Pipelining loop 'classify_label1'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
-INFO: [SCHED 204-61] Pipelining loop 'Reconstruct_Loop'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 20.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 3.465 sec.
-INFO: [HLS 200-111]  Elapsed time: 163.877 seconds; current allocated memory: 281.219 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 323.657 MB.
 Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.verbose.sched.rpt -verbose -f 
-INFO: [HLS 200-434] Only 3 loops out of a total 4 loops have been pipelined in this design.
-Command       report done; 1.781 sec.
 Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.sched.adb -f 
-Command       db_write done; 1.476 sec.
 INFO-FLOW: Finish scheduling classify.
 Execute       set_default_model classify 
 Execute       bind -model classify 
@@ -344,17 +506,152 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.933 sec.
-INFO: [HLS 200-111]  Elapsed time: 4.282 seconds; current allocated memory: 288.636 MB.
+Command       bind done; 0.8 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.919 seconds; current allocated memory: 324.711 MB.
 Execute       report -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.verbose.bind.rpt -verbose -f 
-Command       report done; 2.431 sec.
+Command       report done; 0.54 sec.
 Execute       db_write -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.bind.adb -f 
-Command       db_write done; 2.043 sec.
 INFO-FLOW: Finish binding classify.
 Execute       get_model_list classify -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess load_data51 
+Execute       rtl_gen_preprocess compute_class 
+Execute       rtl_gen_preprocess Block__proc 
+Execute       rtl_gen_preprocess __ADSD/Classifier.cp 
 Execute       rtl_gen_preprocess classify 
-INFO-FLOW: Model list for RTL generation: classify
+INFO-FLOW: Model list for RTL generation: load_data51 compute_class Block__proc __ADSD/Classifier.cp classify
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_data51' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model load_data51 -vendor xilinx -mg_file C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_data51'.
+INFO: [HLS 200-111]  Elapsed time: 0.744 seconds; current allocated memory: 325.989 MB.
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
+Execute       gen_rtl load_data51 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/load_data51 -synmodules load_data51 compute_class Block__proc __ADSD/Classifier.cp classify 
+Execute       gen_rtl load_data51 -style xilinx -f -lang vhdl -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/vhdl/load_data51 
+Execute       gen_rtl load_data51 -style xilinx -f -lang vlog -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/verilog/load_data51 
+Execute       gen_tb_info load_data51 -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51 -p C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db 
+Execute       report -model load_data51 -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/load_data51_csynth.rpt -f 
+Execute       report -model load_data51 -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/load_data51_csynth.xml -f -x 
+Execute       report -model load_data51 -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.verbose.rpt -verbose -f 
+Execute       db_write -model load_data51 -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_class' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model compute_class -vendor xilinx -mg_file C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_0' to 'compute_class_svsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_1' to 'compute_class_svscud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_2' to 'compute_class_svsdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_3' to 'compute_class_svseOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_4' to 'compute_class_svsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_5' to 'compute_class_svsg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_6' to 'compute_class_svshbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_7' to 'compute_class_svsibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_8' to 'compute_class_svsjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_9' to 'compute_class_svskbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_10' to 'compute_class_svslbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_11' to 'compute_class_svsmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_12' to 'compute_class_svsncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_13' to 'compute_class_svsocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_14' to 'compute_class_svspcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_svs_V_15' to 'compute_class_svsqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_0' to 'compute_class_alprcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_136' to 'compute_class_alpsc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_243' to 'compute_class_alptde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_344' to 'compute_class_alpudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_445' to 'compute_class_alpvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_546' to 'compute_class_alpwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_647' to 'compute_class_alpxdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_748' to 'compute_class_alpyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_849' to 'compute_class_alpzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_950' to 'compute_class_alpAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1037' to 'compute_class_alpBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1138' to 'compute_class_alpCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1239' to 'compute_class_alpDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1340' to 'compute_class_alpEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1441' to 'compute_class_alpFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_alphas_V_1542' to 'compute_class_alpGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_0' to 'compute_class_sv_Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_1' to 'compute_class_sv_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_2' to 'compute_class_sv_JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_3' to 'compute_class_sv_KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_4' to 'compute_class_sv_Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_5' to 'compute_class_sv_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_6' to 'compute_class_sv_Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_7' to 'compute_class_sv_OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_8' to 'compute_class_sv_PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_9' to 'compute_class_sv_QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_10' to 'compute_class_sv_Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_11' to 'compute_class_sv_Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_12' to 'compute_class_sv_Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_13' to 'compute_class_sv_UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_14' to 'compute_class_sv_VhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'compute_class_sv_norms_V_15' to 'compute_class_sv_WhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_sitodp_64s_64_6_1' to 'classify_sitodp_6Xh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_mux_164_32_1_1' to 'classify_mux_164_Yie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_mux_164_23_1_1' to 'classify_mux_164_Zio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_mul_mul_22s_8s_30_1_1' to 'classify_mul_mul_0iy' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'classify_mul_mul_0iy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'classify_mux_164_Yie': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'classify_mux_164_Zio': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'classify_sitodp_6Xh4': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_class'.
+Command       create_rtl_model done; 2.842 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.403 seconds; current allocated memory: 339.975 MB.
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
+Execute       gen_rtl compute_class -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/compute_class -synmodules load_data51 compute_class Block__proc __ADSD/Classifier.cp classify 
+Execute       gen_rtl compute_class -style xilinx -f -lang vhdl -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/vhdl/compute_class 
+Execute       gen_rtl compute_class -style xilinx -f -lang vlog -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/verilog/compute_class 
+Execute       gen_tb_info compute_class -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class -p C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.418 sec.
+Execute       report -model compute_class -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/compute_class_csynth.rpt -f 
+Command       report done; 0.471 sec.
+Execute       report -model compute_class -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/compute_class_csynth.xml -f -x 
+Command       report done; 0.539 sec.
+Execute       report -model compute_class -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.verbose.rpt -verbose -f 
+Command       report done; 3.728 sec.
+Execute       db_write -model compute_class -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.adb -f 
+Command       db_write done; 2.298 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Block__proc -vendor xilinx -mg_file C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_proc'.
+INFO: [HLS 200-111]  Elapsed time: 9.985 seconds; current allocated memory: 344.143 MB.
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block__proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/Block_proc -synmodules load_data51 compute_class Block__proc __ADSD/Classifier.cp classify 
+Execute       gen_rtl Block__proc -style xilinx -f -lang vhdl -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/vhdl/Block_proc 
+Execute       gen_rtl Block__proc -style xilinx -f -lang vlog -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/verilog/Block_proc 
+Execute       gen_tb_info Block__proc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc -p C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db 
+Execute       report -model Block__proc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/Block_proc_csynth.rpt -f 
+Execute       report -model Block__proc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/Block_proc_csynth.xml -f -x 
+Execute       report -model Block__proc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.verbose.rpt -verbose -f 
+Execute       db_write -model Block__proc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.adb -f 
+Command       db_write done; 0.192 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_ADSD_Classifier_cp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model __ADSD/Classifier.cp -vendor xilinx -mg_file C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_ADSD_Classifier_cp'.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 344.278 MB.
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
+Execute       gen_rtl __ADSD/Classifier.cp -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/p_ADSD_Classifier_cp -synmodules load_data51 compute_class Block__proc __ADSD/Classifier.cp classify 
+Execute       gen_rtl __ADSD/Classifier.cp -style xilinx -f -lang vhdl -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/vhdl/p_ADSD_Classifier_cp 
+Execute       gen_rtl __ADSD/Classifier.cp -style xilinx -f -lang vlog -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/verilog/p_ADSD_Classifier_cp 
+Execute       gen_tb_info __ADSD/Classifier.cp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp -p C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db 
+Execute       report -model __ADSD/Classifier.cp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/p_ADSD_Classifier_cp_csynth.rpt -f 
+Execute       report -model __ADSD/Classifier.cp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/p_ADSD_Classifier_cp_csynth.xml -f -x 
+Execute       report -model __ADSD/Classifier.cp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.verbose.rpt -verbose -f 
+Execute       db_write -model __ADSD/Classifier.cp -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.adb -f 
+Command       db_write done; 0.207 sec.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'classify' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -365,249 +662,236 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'classify/gmem' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'classify/x_V' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'classify/x_norm_in_V' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'classify' to 's_axilite & ap_ctrl_hs'.
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_10' to 'classify_alphas_Vbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_11' to 'classify_alphas_Vcud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_12' to 'classify_alphas_VdEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_13' to 'classify_alphas_VeOg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_14' to 'classify_alphas_VfYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_alphas_V_15' to 'classify_alphas_Vg8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_0' to 'classify_sv_normshbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_1' to 'classify_sv_normsibs' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_2' to 'classify_sv_normsjbC' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_3' to 'classify_sv_normskbM' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_4' to 'classify_sv_normslbW' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_5' to 'classify_sv_normsmb6' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_6' to 'classify_sv_normsncg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_7' to 'classify_sv_normsocq' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_8' to 'classify_sv_normspcA' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_9' to 'classify_sv_normsqcK' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_10' to 'classify_sv_normsrcU' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_11' to 'classify_sv_normssc4' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_12' to 'classify_sv_normstde' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_13' to 'classify_sv_normsudo' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_14' to 'classify_sv_normsvdy' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sv_norms_V_15' to 'classify_sv_normswdI' due to the length limit 20
-INFO: [RTGEN 206-100] Bundling port 'return' and 'x_norm_in_V' to AXI-Lite port control.
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_0_V' to 'classify_x_local_xdS' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_1_V' to 'classify_x_local_yd2' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_2_V' to 'classify_x_local_zec' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_3_V' to 'classify_x_local_Aem' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_4_V' to 'classify_x_local_Bew' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_5_V' to 'classify_x_local_CeG' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_6_V' to 'classify_x_local_DeQ' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_7_V' to 'classify_x_local_Ee0' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_8_V' to 'classify_x_local_Ffa' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_9_V' to 'classify_x_local_Gfk' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_10_V' to 'classify_x_local_Hfu' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_11_V' to 'classify_x_local_IfE' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_12_V' to 'classify_x_local_JfO' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_13_V' to 'classify_x_local_KfY' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_14_V' to 'classify_x_local_Lf8' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_x_local_15_V' to 'classify_x_local_Mgi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_sitodp_64s_64_6_1' to 'classify_sitodp_6Ngs' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_mux_164_32_1_1' to 'classify_mux_164_OgC' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_mux_164_23_1_1' to 'classify_mux_164_PgM' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'classify_mul_mul_22s_8s_30_1_1' to 'classify_mul_mul_QgW' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'classify_mul_mul_QgW': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'classify_mux_164_OgC': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'classify_mux_164_PgM': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'classify_sitodp_6Ngs': 1 instance(s).
+INFO: [RTGEN 206-100] Bundling port 'return', 'x_V' and 'x_norm_in_V' to AXI-Lite port control.
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_0_V' to 'classify_x_local_1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_1_V' to 'classify_x_local_2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_2_V' to 'classify_x_local_3i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_3_V' to 'classify_x_local_4jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_4_V' to 'classify_x_local_5jm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_5_V' to 'classify_x_local_6jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_6_V' to 'classify_x_local_7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_7_V' to 'classify_x_local_8jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_8_V' to 'classify_x_local_9j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_9_V' to 'classify_x_local_bak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_10_V' to 'classify_x_local_bbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_11_V' to 'classify_x_local_bck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_12_V' to 'classify_x_local_bdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_13_V' to 'classify_x_local_bek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_14_V' to 'classify_x_local_bfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'classify_x_local_15_V' to 'classify_x_local_bgk' due to the length limit 20
 INFO: [RTGEN 206-100] Finished creating RTL model for 'classify'.
-Command       create_rtl_model done; 2.8 sec.
-INFO: [HLS 200-111]  Elapsed time: 7.461 seconds; current allocated memory: 303.983 MB.
+Command       create_rtl_model done; 0.803 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.216 seconds; current allocated memory: 346.614 MB.
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
-Execute       gen_rtl classify -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/classify -synmodules classify 
+Execute       gen_rtl classify -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/systemc/classify -synmodules load_data51 compute_class Block__proc __ADSD/Classifier.cp classify 
 Execute       gen_rtl classify -istop -style xilinx -f -lang vhdl -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/vhdl/classify 
-Command       gen_rtl done; 0.7 sec.
 Execute       gen_rtl classify -istop -style xilinx -f -lang vlog -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/verilog/classify 
-Command       gen_rtl done; 0.46 sec.
 Execute       export_constraint_db -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.constraint.tcl -f -tool general 
 Execute       report -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.design.xml -verbose -f -dv 
-Command       report done; 0.808 sec.
+Command       report done; 0.409 sec.
 Execute       report -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.sdaccel.xml -verbose -f -sdaccel 
-Command       report done; 0.919 sec.
 Execute       gen_tb_info classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify -p C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db 
 Execute       report -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/classify_csynth.rpt -f 
-Command       report done; 0.359 sec.
 Execute       report -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/syn/report/classify_csynth.xml -f -x 
-Command       report done; 0.29 sec.
 Execute       report -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.verbose.rpt -verbose -f 
-Command       report done; 2.863 sec.
+Command       report done; 0.579 sec.
 Execute       db_write -model classify -o C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.adb -f 
-Command       db_write done; 3.276 sec.
+Command       db_write done; 0.222 sec.
 Execute       sc_get_clocks classify 
 Execute       sc_get_portdomain classify 
-INFO-FLOW: Model list for RTL component generation: classify
+INFO-FLOW: Model list for RTL component generation: load_data51 compute_class Block__proc __ADSD/Classifier.cp classify
+INFO-FLOW: Handling components in module [load_data51] ... 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+INFO-FLOW: Handling components in module [compute_class] ... 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+INFO-FLOW: Found component classify_sitodp_6Xh4.
+INFO-FLOW: Append model classify_sitodp_6Xh4
+INFO-FLOW: Found component classify_mux_164_Yie.
+INFO-FLOW: Append model classify_mux_164_Yie
+INFO-FLOW: Found component classify_mux_164_Zio.
+INFO-FLOW: Append model classify_mux_164_Zio
+INFO-FLOW: Found component classify_mul_mul_0iy.
+INFO-FLOW: Append model classify_mul_mul_0iy
+INFO-FLOW: Found component compute_class_svsbkb.
+INFO-FLOW: Append model compute_class_svsbkb
+INFO-FLOW: Found component compute_class_svscud.
+INFO-FLOW: Append model compute_class_svscud
+INFO-FLOW: Found component compute_class_svsdEe.
+INFO-FLOW: Append model compute_class_svsdEe
+INFO-FLOW: Found component compute_class_svseOg.
+INFO-FLOW: Append model compute_class_svseOg
+INFO-FLOW: Found component compute_class_svsfYi.
+INFO-FLOW: Append model compute_class_svsfYi
+INFO-FLOW: Found component compute_class_svsg8j.
+INFO-FLOW: Append model compute_class_svsg8j
+INFO-FLOW: Found component compute_class_svshbi.
+INFO-FLOW: Append model compute_class_svshbi
+INFO-FLOW: Found component compute_class_svsibs.
+INFO-FLOW: Append model compute_class_svsibs
+INFO-FLOW: Found component compute_class_svsjbC.
+INFO-FLOW: Append model compute_class_svsjbC
+INFO-FLOW: Found component compute_class_svskbM.
+INFO-FLOW: Append model compute_class_svskbM
+INFO-FLOW: Found component compute_class_svslbW.
+INFO-FLOW: Append model compute_class_svslbW
+INFO-FLOW: Found component compute_class_svsmb6.
+INFO-FLOW: Append model compute_class_svsmb6
+INFO-FLOW: Found component compute_class_svsncg.
+INFO-FLOW: Append model compute_class_svsncg
+INFO-FLOW: Found component compute_class_svsocq.
+INFO-FLOW: Append model compute_class_svsocq
+INFO-FLOW: Found component compute_class_svspcA.
+INFO-FLOW: Append model compute_class_svspcA
+INFO-FLOW: Found component compute_class_svsqcK.
+INFO-FLOW: Append model compute_class_svsqcK
+INFO-FLOW: Found component compute_class_alprcU.
+INFO-FLOW: Append model compute_class_alprcU
+INFO-FLOW: Found component compute_class_alpsc4.
+INFO-FLOW: Append model compute_class_alpsc4
+INFO-FLOW: Found component compute_class_alptde.
+INFO-FLOW: Append model compute_class_alptde
+INFO-FLOW: Found component compute_class_alpudo.
+INFO-FLOW: Append model compute_class_alpudo
+INFO-FLOW: Found component compute_class_alpvdy.
+INFO-FLOW: Append model compute_class_alpvdy
+INFO-FLOW: Found component compute_class_alpwdI.
+INFO-FLOW: Append model compute_class_alpwdI
+INFO-FLOW: Found component compute_class_alpxdS.
+INFO-FLOW: Append model compute_class_alpxdS
+INFO-FLOW: Found component compute_class_alpyd2.
+INFO-FLOW: Append model compute_class_alpyd2
+INFO-FLOW: Found component compute_class_alpzec.
+INFO-FLOW: Append model compute_class_alpzec
+INFO-FLOW: Found component compute_class_alpAem.
+INFO-FLOW: Append model compute_class_alpAem
+INFO-FLOW: Found component compute_class_alpBew.
+INFO-FLOW: Append model compute_class_alpBew
+INFO-FLOW: Found component compute_class_alpCeG.
+INFO-FLOW: Append model compute_class_alpCeG
+INFO-FLOW: Found component compute_class_alpDeQ.
+INFO-FLOW: Append model compute_class_alpDeQ
+INFO-FLOW: Found component compute_class_alpEe0.
+INFO-FLOW: Append model compute_class_alpEe0
+INFO-FLOW: Found component compute_class_alpFfa.
+INFO-FLOW: Append model compute_class_alpFfa
+INFO-FLOW: Found component compute_class_alpGfk.
+INFO-FLOW: Append model compute_class_alpGfk
+INFO-FLOW: Found component compute_class_sv_Hfu.
+INFO-FLOW: Append model compute_class_sv_Hfu
+INFO-FLOW: Found component compute_class_sv_IfE.
+INFO-FLOW: Append model compute_class_sv_IfE
+INFO-FLOW: Found component compute_class_sv_JfO.
+INFO-FLOW: Append model compute_class_sv_JfO
+INFO-FLOW: Found component compute_class_sv_KfY.
+INFO-FLOW: Append model compute_class_sv_KfY
+INFO-FLOW: Found component compute_class_sv_Lf8.
+INFO-FLOW: Append model compute_class_sv_Lf8
+INFO-FLOW: Found component compute_class_sv_Mgi.
+INFO-FLOW: Append model compute_class_sv_Mgi
+INFO-FLOW: Found component compute_class_sv_Ngs.
+INFO-FLOW: Append model compute_class_sv_Ngs
+INFO-FLOW: Found component compute_class_sv_OgC.
+INFO-FLOW: Append model compute_class_sv_OgC
+INFO-FLOW: Found component compute_class_sv_PgM.
+INFO-FLOW: Append model compute_class_sv_PgM
+INFO-FLOW: Found component compute_class_sv_QgW.
+INFO-FLOW: Append model compute_class_sv_QgW
+INFO-FLOW: Found component compute_class_sv_Rg6.
+INFO-FLOW: Append model compute_class_sv_Rg6
+INFO-FLOW: Found component compute_class_sv_Shg.
+INFO-FLOW: Append model compute_class_sv_Shg
+INFO-FLOW: Found component compute_class_sv_Thq.
+INFO-FLOW: Append model compute_class_sv_Thq
+INFO-FLOW: Found component compute_class_sv_UhA.
+INFO-FLOW: Append model compute_class_sv_UhA
+INFO-FLOW: Found component compute_class_sv_VhK.
+INFO-FLOW: Append model compute_class_sv_VhK
+INFO-FLOW: Found component compute_class_sv_WhU.
+INFO-FLOW: Append model compute_class_sv_WhU
+INFO-FLOW: Handling components in module [Block_proc] ... 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [p_ADSD_Classifier_cp] ... 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
 INFO-FLOW: Handling components in module [classify] ... 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.compgen.tcl 
-INFO-FLOW: Found component classify_sitodp_6Ngs.
-INFO-FLOW: Append model classify_sitodp_6Ngs
-INFO-FLOW: Found component classify_mux_164_OgC.
-INFO-FLOW: Append model classify_mux_164_OgC
-INFO-FLOW: Found component classify_mux_164_PgM.
-INFO-FLOW: Append model classify_mux_164_PgM
-INFO-FLOW: Found component classify_mul_mul_QgW.
-INFO-FLOW: Append model classify_mul_mul_QgW
-INFO-FLOW: Found component classify_svs_V_0.
-INFO-FLOW: Append model classify_svs_V_0
-INFO-FLOW: Found component classify_svs_V_1.
-INFO-FLOW: Append model classify_svs_V_1
-INFO-FLOW: Found component classify_svs_V_2.
-INFO-FLOW: Append model classify_svs_V_2
-INFO-FLOW: Found component classify_svs_V_3.
-INFO-FLOW: Append model classify_svs_V_3
-INFO-FLOW: Found component classify_svs_V_4.
-INFO-FLOW: Append model classify_svs_V_4
-INFO-FLOW: Found component classify_svs_V_5.
-INFO-FLOW: Append model classify_svs_V_5
-INFO-FLOW: Found component classify_svs_V_6.
-INFO-FLOW: Append model classify_svs_V_6
-INFO-FLOW: Found component classify_svs_V_7.
-INFO-FLOW: Append model classify_svs_V_7
-INFO-FLOW: Found component classify_svs_V_8.
-INFO-FLOW: Append model classify_svs_V_8
-INFO-FLOW: Found component classify_svs_V_9.
-INFO-FLOW: Append model classify_svs_V_9
-INFO-FLOW: Found component classify_svs_V_10.
-INFO-FLOW: Append model classify_svs_V_10
-INFO-FLOW: Found component classify_svs_V_11.
-INFO-FLOW: Append model classify_svs_V_11
-INFO-FLOW: Found component classify_svs_V_12.
-INFO-FLOW: Append model classify_svs_V_12
-INFO-FLOW: Found component classify_svs_V_13.
-INFO-FLOW: Append model classify_svs_V_13
-INFO-FLOW: Found component classify_svs_V_14.
-INFO-FLOW: Append model classify_svs_V_14
-INFO-FLOW: Found component classify_svs_V_15.
-INFO-FLOW: Append model classify_svs_V_15
-INFO-FLOW: Found component classify_alphas_V_0.
-INFO-FLOW: Append model classify_alphas_V_0
-INFO-FLOW: Found component classify_alphas_V_1.
-INFO-FLOW: Append model classify_alphas_V_1
-INFO-FLOW: Found component classify_alphas_V_2.
-INFO-FLOW: Append model classify_alphas_V_2
-INFO-FLOW: Found component classify_alphas_V_3.
-INFO-FLOW: Append model classify_alphas_V_3
-INFO-FLOW: Found component classify_alphas_V_4.
-INFO-FLOW: Append model classify_alphas_V_4
-INFO-FLOW: Found component classify_alphas_V_5.
-INFO-FLOW: Append model classify_alphas_V_5
-INFO-FLOW: Found component classify_alphas_V_6.
-INFO-FLOW: Append model classify_alphas_V_6
-INFO-FLOW: Found component classify_alphas_V_7.
-INFO-FLOW: Append model classify_alphas_V_7
-INFO-FLOW: Found component classify_alphas_V_8.
-INFO-FLOW: Append model classify_alphas_V_8
-INFO-FLOW: Found component classify_alphas_V_9.
-INFO-FLOW: Append model classify_alphas_V_9
-INFO-FLOW: Found component classify_alphas_Vbkb.
-INFO-FLOW: Append model classify_alphas_Vbkb
-INFO-FLOW: Found component classify_alphas_Vcud.
-INFO-FLOW: Append model classify_alphas_Vcud
-INFO-FLOW: Found component classify_alphas_VdEe.
-INFO-FLOW: Append model classify_alphas_VdEe
-INFO-FLOW: Found component classify_alphas_VeOg.
-INFO-FLOW: Append model classify_alphas_VeOg
-INFO-FLOW: Found component classify_alphas_VfYi.
-INFO-FLOW: Append model classify_alphas_VfYi
-INFO-FLOW: Found component classify_alphas_Vg8j.
-INFO-FLOW: Append model classify_alphas_Vg8j
-INFO-FLOW: Found component classify_sv_normshbi.
-INFO-FLOW: Append model classify_sv_normshbi
-INFO-FLOW: Found component classify_sv_normsibs.
-INFO-FLOW: Append model classify_sv_normsibs
-INFO-FLOW: Found component classify_sv_normsjbC.
-INFO-FLOW: Append model classify_sv_normsjbC
-INFO-FLOW: Found component classify_sv_normskbM.
-INFO-FLOW: Append model classify_sv_normskbM
-INFO-FLOW: Found component classify_sv_normslbW.
-INFO-FLOW: Append model classify_sv_normslbW
-INFO-FLOW: Found component classify_sv_normsmb6.
-INFO-FLOW: Append model classify_sv_normsmb6
-INFO-FLOW: Found component classify_sv_normsncg.
-INFO-FLOW: Append model classify_sv_normsncg
-INFO-FLOW: Found component classify_sv_normsocq.
-INFO-FLOW: Append model classify_sv_normsocq
-INFO-FLOW: Found component classify_sv_normspcA.
-INFO-FLOW: Append model classify_sv_normspcA
-INFO-FLOW: Found component classify_sv_normsqcK.
-INFO-FLOW: Append model classify_sv_normsqcK
-INFO-FLOW: Found component classify_sv_normsrcU.
-INFO-FLOW: Append model classify_sv_normsrcU
-INFO-FLOW: Found component classify_sv_normssc4.
-INFO-FLOW: Append model classify_sv_normssc4
-INFO-FLOW: Found component classify_sv_normstde.
-INFO-FLOW: Append model classify_sv_normstde
-INFO-FLOW: Found component classify_sv_normsudo.
-INFO-FLOW: Append model classify_sv_normsudo
-INFO-FLOW: Found component classify_sv_normsvdy.
-INFO-FLOW: Append model classify_sv_normsvdy
-INFO-FLOW: Found component classify_sv_normswdI.
-INFO-FLOW: Append model classify_sv_normswdI
-INFO-FLOW: Found component classify_x_local_xdS.
-INFO-FLOW: Append model classify_x_local_xdS
+INFO-FLOW: Found component fifo_w24_d2_A.
+INFO-FLOW: Append model fifo_w24_d2_A
+INFO-FLOW: Found component fifo_w64_d2_A.
+INFO-FLOW: Append model fifo_w64_d2_A
+INFO-FLOW: Found component fifo_w64_d2_A.
+INFO-FLOW: Append model fifo_w64_d2_A
 INFO-FLOW: Found component classify_control_s_axi.
 INFO-FLOW: Append model classify_control_s_axi
 INFO-FLOW: Found component classify_gmem_m_axi.
 INFO-FLOW: Append model classify_gmem_m_axi
+INFO-FLOW: Append model load_data51
+INFO-FLOW: Append model compute_class
+INFO-FLOW: Append model Block_proc
+INFO-FLOW: Append model p_ADSD_Classifier_cp
 INFO-FLOW: Append model classify
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: classify_sitodp_6Ngs classify_mux_164_OgC classify_mux_164_PgM classify_mul_mul_QgW classify_svs_V_0 classify_svs_V_1 classify_svs_V_2 classify_svs_V_3 classify_svs_V_4 classify_svs_V_5 classify_svs_V_6 classify_svs_V_7 classify_svs_V_8 classify_svs_V_9 classify_svs_V_10 classify_svs_V_11 classify_svs_V_12 classify_svs_V_13 classify_svs_V_14 classify_svs_V_15 classify_alphas_V_0 classify_alphas_V_1 classify_alphas_V_2 classify_alphas_V_3 classify_alphas_V_4 classify_alphas_V_5 classify_alphas_V_6 classify_alphas_V_7 classify_alphas_V_8 classify_alphas_V_9 classify_alphas_Vbkb classify_alphas_Vcud classify_alphas_VdEe classify_alphas_VeOg classify_alphas_VfYi classify_alphas_Vg8j classify_sv_normshbi classify_sv_normsibs classify_sv_normsjbC classify_sv_normskbM classify_sv_normslbW classify_sv_normsmb6 classify_sv_normsncg classify_sv_normsocq classify_sv_normspcA classify_sv_normsqcK classify_sv_normsrcU classify_sv_normssc4 classify_sv_normstde classify_sv_normsudo classify_sv_normsvdy classify_sv_normswdI classify_x_local_xdS classify_control_s_axi classify_gmem_m_axi classify
-INFO-FLOW: To file: write model classify_sitodp_6Ngs
-INFO-FLOW: To file: write model classify_mux_164_OgC
-INFO-FLOW: To file: write model classify_mux_164_PgM
-INFO-FLOW: To file: write model classify_mul_mul_QgW
-INFO-FLOW: To file: write model classify_svs_V_0
-INFO-FLOW: To file: write model classify_svs_V_1
-INFO-FLOW: To file: write model classify_svs_V_2
-INFO-FLOW: To file: write model classify_svs_V_3
-INFO-FLOW: To file: write model classify_svs_V_4
-INFO-FLOW: To file: write model classify_svs_V_5
-INFO-FLOW: To file: write model classify_svs_V_6
-INFO-FLOW: To file: write model classify_svs_V_7
-INFO-FLOW: To file: write model classify_svs_V_8
-INFO-FLOW: To file: write model classify_svs_V_9
-INFO-FLOW: To file: write model classify_svs_V_10
-INFO-FLOW: To file: write model classify_svs_V_11
-INFO-FLOW: To file: write model classify_svs_V_12
-INFO-FLOW: To file: write model classify_svs_V_13
-INFO-FLOW: To file: write model classify_svs_V_14
-INFO-FLOW: To file: write model classify_svs_V_15
-INFO-FLOW: To file: write model classify_alphas_V_0
-INFO-FLOW: To file: write model classify_alphas_V_1
-INFO-FLOW: To file: write model classify_alphas_V_2
-INFO-FLOW: To file: write model classify_alphas_V_3
-INFO-FLOW: To file: write model classify_alphas_V_4
-INFO-FLOW: To file: write model classify_alphas_V_5
-INFO-FLOW: To file: write model classify_alphas_V_6
-INFO-FLOW: To file: write model classify_alphas_V_7
-INFO-FLOW: To file: write model classify_alphas_V_8
-INFO-FLOW: To file: write model classify_alphas_V_9
-INFO-FLOW: To file: write model classify_alphas_Vbkb
-INFO-FLOW: To file: write model classify_alphas_Vcud
-INFO-FLOW: To file: write model classify_alphas_VdEe
-INFO-FLOW: To file: write model classify_alphas_VeOg
-INFO-FLOW: To file: write model classify_alphas_VfYi
-INFO-FLOW: To file: write model classify_alphas_Vg8j
-INFO-FLOW: To file: write model classify_sv_normshbi
-INFO-FLOW: To file: write model classify_sv_normsibs
-INFO-FLOW: To file: write model classify_sv_normsjbC
-INFO-FLOW: To file: write model classify_sv_normskbM
-INFO-FLOW: To file: write model classify_sv_normslbW
-INFO-FLOW: To file: write model classify_sv_normsmb6
-INFO-FLOW: To file: write model classify_sv_normsncg
-INFO-FLOW: To file: write model classify_sv_normsocq
-INFO-FLOW: To file: write model classify_sv_normspcA
-INFO-FLOW: To file: write model classify_sv_normsqcK
-INFO-FLOW: To file: write model classify_sv_normsrcU
-INFO-FLOW: To file: write model classify_sv_normssc4
-INFO-FLOW: To file: write model classify_sv_normstde
-INFO-FLOW: To file: write model classify_sv_normsudo
-INFO-FLOW: To file: write model classify_sv_normsvdy
-INFO-FLOW: To file: write model classify_sv_normswdI
-INFO-FLOW: To file: write model classify_x_local_xdS
+INFO-FLOW: All models in this session: classify_sitodp_6Xh4 classify_mux_164_Yie classify_mux_164_Zio classify_mul_mul_0iy compute_class_svsbkb compute_class_svscud compute_class_svsdEe compute_class_svseOg compute_class_svsfYi compute_class_svsg8j compute_class_svshbi compute_class_svsibs compute_class_svsjbC compute_class_svskbM compute_class_svslbW compute_class_svsmb6 compute_class_svsncg compute_class_svsocq compute_class_svspcA compute_class_svsqcK compute_class_alprcU compute_class_alpsc4 compute_class_alptde compute_class_alpudo compute_class_alpvdy compute_class_alpwdI compute_class_alpxdS compute_class_alpyd2 compute_class_alpzec compute_class_alpAem compute_class_alpBew compute_class_alpCeG compute_class_alpDeQ compute_class_alpEe0 compute_class_alpFfa compute_class_alpGfk compute_class_sv_Hfu compute_class_sv_IfE compute_class_sv_JfO compute_class_sv_KfY compute_class_sv_Lf8 compute_class_sv_Mgi compute_class_sv_Ngs compute_class_sv_OgC compute_class_sv_PgM compute_class_sv_QgW compute_class_sv_Rg6 compute_class_sv_Shg compute_class_sv_Thq compute_class_sv_UhA compute_class_sv_VhK compute_class_sv_WhU fifo_w24_d2_A fifo_w64_d2_A fifo_w64_d2_A classify_control_s_axi classify_gmem_m_axi load_data51 compute_class Block_proc p_ADSD_Classifier_cp classify
+INFO-FLOW: To file: write model classify_sitodp_6Xh4
+INFO-FLOW: To file: write model classify_mux_164_Yie
+INFO-FLOW: To file: write model classify_mux_164_Zio
+INFO-FLOW: To file: write model classify_mul_mul_0iy
+INFO-FLOW: To file: write model compute_class_svsbkb
+INFO-FLOW: To file: write model compute_class_svscud
+INFO-FLOW: To file: write model compute_class_svsdEe
+INFO-FLOW: To file: write model compute_class_svseOg
+INFO-FLOW: To file: write model compute_class_svsfYi
+INFO-FLOW: To file: write model compute_class_svsg8j
+INFO-FLOW: To file: write model compute_class_svshbi
+INFO-FLOW: To file: write model compute_class_svsibs
+INFO-FLOW: To file: write model compute_class_svsjbC
+INFO-FLOW: To file: write model compute_class_svskbM
+INFO-FLOW: To file: write model compute_class_svslbW
+INFO-FLOW: To file: write model compute_class_svsmb6
+INFO-FLOW: To file: write model compute_class_svsncg
+INFO-FLOW: To file: write model compute_class_svsocq
+INFO-FLOW: To file: write model compute_class_svspcA
+INFO-FLOW: To file: write model compute_class_svsqcK
+INFO-FLOW: To file: write model compute_class_alprcU
+INFO-FLOW: To file: write model compute_class_alpsc4
+INFO-FLOW: To file: write model compute_class_alptde
+INFO-FLOW: To file: write model compute_class_alpudo
+INFO-FLOW: To file: write model compute_class_alpvdy
+INFO-FLOW: To file: write model compute_class_alpwdI
+INFO-FLOW: To file: write model compute_class_alpxdS
+INFO-FLOW: To file: write model compute_class_alpyd2
+INFO-FLOW: To file: write model compute_class_alpzec
+INFO-FLOW: To file: write model compute_class_alpAem
+INFO-FLOW: To file: write model compute_class_alpBew
+INFO-FLOW: To file: write model compute_class_alpCeG
+INFO-FLOW: To file: write model compute_class_alpDeQ
+INFO-FLOW: To file: write model compute_class_alpEe0
+INFO-FLOW: To file: write model compute_class_alpFfa
+INFO-FLOW: To file: write model compute_class_alpGfk
+INFO-FLOW: To file: write model compute_class_sv_Hfu
+INFO-FLOW: To file: write model compute_class_sv_IfE
+INFO-FLOW: To file: write model compute_class_sv_JfO
+INFO-FLOW: To file: write model compute_class_sv_KfY
+INFO-FLOW: To file: write model compute_class_sv_Lf8
+INFO-FLOW: To file: write model compute_class_sv_Mgi
+INFO-FLOW: To file: write model compute_class_sv_Ngs
+INFO-FLOW: To file: write model compute_class_sv_OgC
+INFO-FLOW: To file: write model compute_class_sv_PgM
+INFO-FLOW: To file: write model compute_class_sv_QgW
+INFO-FLOW: To file: write model compute_class_sv_Rg6
+INFO-FLOW: To file: write model compute_class_sv_Shg
+INFO-FLOW: To file: write model compute_class_sv_Thq
+INFO-FLOW: To file: write model compute_class_sv_UhA
+INFO-FLOW: To file: write model compute_class_sv_VhK
+INFO-FLOW: To file: write model compute_class_sv_WhU
+INFO-FLOW: To file: write model fifo_w24_d2_A
+INFO-FLOW: To file: write model fifo_w64_d2_A
+INFO-FLOW: To file: write model fifo_w64_d2_A
 INFO-FLOW: To file: write model classify_control_s_axi
 INFO-FLOW: To file: write model classify_gmem_m_axi
+INFO-FLOW: To file: write model load_data51
+INFO-FLOW: To file: write model compute_class
+INFO-FLOW: To file: write model Block_proc
+INFO-FLOW: To file: write model p_ADSD_Classifier_cp
 INFO-FLOW: To file: write model classify
 INFO-FLOW: Finished generating RTL model list.
 
@@ -637,70 +921,77 @@ Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/inte
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source done; 0.116 sec.
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
-Command           ap_source done; 0.175 sec.
+Command           ap_source done; 0.117 sec.
 Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.179 sec.
-Command       ap_source done; 0.179 sec.
+Command         ap_source done; 0.119 sec.
+Command       ap_source done; 0.12 sec.
 Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsbkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svscud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsdEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svseOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsfYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsg8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svshbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsjbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svskbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svslbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsmb6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsncg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsocq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svspcA_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_svsqcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alprcU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpsc4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alptde_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpudo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpvdy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpwdI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpxdS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpyd2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpzec_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpAem_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpBew_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpCeG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpDeQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpEe0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpFfa_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_alpGfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Hfu_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_IfE_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_JfO_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_KfY_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Lf8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Mgi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Ngs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_OgC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_PgM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_QgW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Rg6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Shg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_Thq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_UhA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_VhK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'compute_class_sv_WhU_rom' using distributed ROMs.
+Command       ap_source done; 2.882 sec.
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.compgen.tcl 
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_0_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_1_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_2_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_3_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_4_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_5_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_6_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_7_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_8_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_9_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_10_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_11_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_12_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_13_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_14_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_svs_V_15_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_0_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_1_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_2_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_3_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_4_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_5_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_6_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_7_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_8_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_V_9_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_Vbkb_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_Vcud_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_VdEe_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_VeOg_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_VfYi_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_alphas_Vg8j_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normshbi_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsibs_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsjbC_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normskbM_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normslbW_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsmb6_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsncg_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsocq_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normspcA_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsqcK_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsrcU_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normssc4_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normstde_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsudo_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normsvdy_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'classify_sv_normswdI_rom' using distributed ROMs.
-INFO: [RTMG 210-278] Implementing memory 'classify_x_local_xdS_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'classify_x_local_1iI_memcore_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'x_norm_in_V_c_U(fifo_w24_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'result_U(fifo_w64_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'result_load_loc_chan_U(fifo_w64_d2_A)' using Shift Registers.
 Execute         source ./control.slave.tcl 
 Execute         is_m_axi_addr64 
-Command       ap_source done; 3.898 sec.
+Command       ap_source done; 0.236 sec.
 Execute       get_config_sdx -target 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
 Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
@@ -723,12 +1014,11 @@ Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/inte
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source done; 0.109 sec.
 Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
-Command           ap_source done; 0.155 sec.
+Command           ap_source done; 0.121 sec.
 Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.159 sec.
-Command       ap_source done; 0.159 sec.
+Command         ap_source done; 0.123 sec.
+Command       ap_source done; 0.124 sec.
 Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.rtl_wrap.cfg.tcl 
@@ -737,10 +1027,22 @@ Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.tbgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.tbgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/load_data51.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/compute_class.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Block_proc.compgen.tcl 
+Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/p_ADSD_Classifier_cp.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.compgen.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/global.setting.tcl 
 Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/classify.constraint.tcl 
@@ -758,11 +1060,11 @@ Execute       source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/impl/misc/
 Execute       get_config_sdx -target 
 Execute       get_config_sdx -profile 
 Execute       ::config_rtl 
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:31 ; elapsed = 00:03:20 . Memory (MB): peak = 655.598 ; gain = 599.379
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:38 ; elapsed = 00:03:26 . Memory (MB): peak = 656.117 ; gain = 599.453
 INFO: [SYSC 207-301] Generating SystemC RTL for classify.
 INFO: [VHDL 208-304] Generating VHDL RTL for classify.
 INFO: [VLOG 209-307] Generating Verilog RTL for classify.
-Command     autosyn done; 39.92 sec.
-Command   csynth_design done; 199.358 sec.
-Command ap_source done; 199.712 sec.
+Command     autosyn done; 38.442 sec.
+Command   csynth_design done; 205.089 sec.
+Command ap_source done; 205.398 sec.
 Execute cleanup_all 

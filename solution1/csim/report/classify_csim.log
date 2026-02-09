@@ -1,12 +1,10 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../AcceleratorTB.cpp in debug mode
    Compiling ../../../Classifier.cpp in debug mode
    Generating csim.exe
-Starting C-Simulation with 2601 images...
+Starting C-Simulation with ARM Pre-processing...
 Classification Accuracy: 0.981930
-Confusion Matrix (2601 test points):
-0.455594, 0.001153
-0.016917, 0.526336
 Test Passed!
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************
