@@ -67,6 +67,17 @@ int main() {
     double accuracy = (double)correct / SIM_IMGS;
     printf("Classification Accuracy: %f\n", accuracy);
 
+    // Confusion Matrix
+    double CM[2][2] = {0, 0, 0, 0};
+    for (int i = 0; i < SIM_IMGS; i++) {
+        CM[ground_truth[i]][predictions[i]]++;
+    }
+
+    printf("Confusion Matrix (%d test points):\n", SIM_IMGS);
+    printf("%f, %f\n", CM[0][0]/SIM_IMGS, CM[0][1]/SIM_IMGS);
+    printf("%f, %f\n", CM[1][0]/SIM_IMGS, CM[1][1]/SIM_IMGS);
+
+
     // HLS TB Requirement
     if (accuracy > 0.95) {
         printf("Test Passed!\n");
