@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity classify_sitodp_6Xh4 is
     generic (
-        ID         : integer := 21;
+        ID         : integer := 26;
         NUM_STAGE  : integer := 6;
         din0_WIDTH : integer := 64;
         dout_WIDTH : integer := 64

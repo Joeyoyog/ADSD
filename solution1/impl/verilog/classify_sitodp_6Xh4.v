@@ -10,7 +10,7 @@
 
 module classify_sitodp_6Xh4
 #(parameter
-    ID         = 21,
+    ID         = 26,
     NUM_STAGE  = 6,
     din0_WIDTH = 64,
     dout_WIDTH = 64

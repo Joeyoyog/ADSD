@@ -24,27 +24,16 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of ap_return
-//        bit 31~0 - ap_return[31:0] (Read)
-// 0x14 : Data signal of ap_return
-//        bit 31~0 - ap_return[63:32] (Read)
-// 0x1c : Data signal of x_V
-//        bit 31~0 - x_V[31:0] (Read/Write)
-// 0x20 : reserved
-// 0x24 : Data signal of x_norm_in_V
+// 0x10 : Data signal of x_norm_in_V
 //        bit 23~0 - x_norm_in_V[23:0] (Read/Write)
 //        others   - reserved
-// 0x28 : reserved
+// 0x14 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XCLASSIFY_CONTROL_ADDR_AP_CTRL          0x00
 #define XCLASSIFY_CONTROL_ADDR_GIE              0x04
 #define XCLASSIFY_CONTROL_ADDR_IER              0x08
 #define XCLASSIFY_CONTROL_ADDR_ISR              0x0c
-#define XCLASSIFY_CONTROL_ADDR_AP_RETURN        0x10
-#define XCLASSIFY_CONTROL_BITS_AP_RETURN        64
-#define XCLASSIFY_CONTROL_ADDR_X_V_DATA         0x1c
-#define XCLASSIFY_CONTROL_BITS_X_V_DATA         32
-#define XCLASSIFY_CONTROL_ADDR_X_NORM_IN_V_DATA 0x24
+#define XCLASSIFY_CONTROL_ADDR_X_NORM_IN_V_DATA 0x10
 #define XCLASSIFY_CONTROL_BITS_X_NORM_IN_V_DATA 24
 

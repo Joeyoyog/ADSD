@@ -76,33 +76,6 @@ void XClassify_DisableAutoRestart(XClassify *InstancePtr) {
     XClassify_WriteReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-u64 XClassify_Get_return(XClassify *InstancePtr) {
-    u64 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XClassify_ReadReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_AP_RETURN);
-    Data += (u64)XClassify_ReadReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_AP_RETURN + 4) << 32;
-    return Data;
-}
-void XClassify_Set_x_V(XClassify *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XClassify_WriteReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_X_V_DATA, Data);
-}
-
-u32 XClassify_Get_x_V(XClassify *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XClassify_ReadReg(InstancePtr->Control_BaseAddress, XCLASSIFY_CONTROL_ADDR_X_V_DATA);
-    return Data;
-}
-
 void XClassify_Set_x_norm_in_V(XClassify *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

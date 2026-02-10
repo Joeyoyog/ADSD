@@ -24369,24 +24369,230 @@ inline bool operator!=(
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
 # 4 "ADSD/Classifier.h" 2
 
-# 1 "ADSD/Exp.h" 1
+
+
+
+# 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h" 1
+# 66 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h"
+# 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/etc/autopilot_enum.h" 1
+# 58 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/etc/autopilot_enum.h"
+enum SsdmDataTypes {
+    _ssdm_sc_int = 0,
+    _ssdm_c_int = _ssdm_sc_int,
+    _ssdm_sc_uint = 1,
+    _ssdm_c_uint = _ssdm_sc_uint,
+    _ssdm_sc_bigint = 2,
+    _ssdm_sc_biguint = 3,
+};
+
+
+
+enum SsdmPortTypes {
+    _ssdm_sc_in = 0,
+    _ssdm_sc_out = 1,
+    _ssdm_sc_inout = 2,
+    _ssdm_sc_in_clk,
+
+    _ssdm_fifo_in,
+    _ssdm_sc_fifo_in = _ssdm_fifo_in,
+    _ssdm_tlm_fifo_in = _ssdm_fifo_in,
+    _ssdm_fifo_out,
+    _ssdm_sc_fifo_out = _ssdm_fifo_out,
+    _ssdm_tlm_fifo_out = _ssdm_fifo_out,
+    _ssdm_fifo_inout,
+    _ssdm_sc_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_tlm_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_sc_bus,
+    _ssdm_hls_bus_port = _ssdm_sc_bus,
+    _ssdm_AXI4M_bus_port = _ssdm_sc_bus,
+    _ssdm_port_end,
+};
+
+
+
+enum SsdmProcessTypes {
+    _ssdm_method = 0,
+    _ssdm_sc_method = _ssdm_method,
+    _ssdm_thread = 1,
+    _ssdm_sc_thread = _ssdm_thread,
+    _ssdm_cthread = 2,
+    _ssdm_sc_cthread = _ssdm_cthread,
+    _ssdm_process_end,
+};
+
+
+
+enum SsdmSensitiveTypes {
+    _ssdm_sensitive = 0,
+    _ssdm_sensitive_pos,
+    _ssdm_sensitive_neg,
+    _ssdm_sensitive_reset0,
+    _ssdm_sensitive_reset1,
+    _ssdm_sensitive_end,
+};
+
+
+
+enum SsdmChannelTypes {
+    _ssdm_sc_sig,
+    _ssdm_fifo,
+    _ssdm_sc_fifo = _ssdm_fifo,
+    _ssdm_mem_fifo,
+    _ssdm_sc_mem_fifo = _ssdm_mem_fifo,
+};
+
+
+enum SsdmRegionTypes {
+    _ssdm_region_reset,
+    _ssdm_region_protocol,
+    _ssdm_region_pipeline,
+    _ssdm_region_parallel,
+};
+# 67 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h" 2
+
+
+namespace hls {
+# 78 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h"
+template<typename __STREAM_T__>
+class stream
+{
+  public:
+
+    inline __attribute__((always_inline)) stream() {
+    }
+
+    inline __attribute__((always_inline)) stream(const char* name) {
+    }
+
+
+  private:
+    inline __attribute__((always_inline)) stream(const stream< __STREAM_T__ >& chn):V(chn.V) {
+    }
+
+    inline __attribute__((always_inline)) stream& operator= (const stream< __STREAM_T__ >& chn) {
+        V = chn.V;
+        return *this;
+    }
+
+  public:
+
+    inline __attribute__((always_inline)) void operator >> (__STREAM_T__& rdata) {
+        read(rdata);
+    }
+
+    inline __attribute__((always_inline)) void operator << (const __STREAM_T__& wdata) {
+        write(wdata);
+    }
+
+
+  public:
+
+    inline __attribute__((always_inline)) bool empty() const {
+        bool tmp = _ssdm_StreamCanRead(&V);
+        return !tmp;
+    }
+
+    inline __attribute__((always_inline)) bool full() const {
+        bool tmp = _ssdm_StreamCanWrite(&V);
+        return !tmp;
+    }
+
+
+    inline __attribute__((always_inline)) void read(__STREAM_T__& dout) {
+
+        __STREAM_T__ tmp;
+        _ssdm_StreamRead(&V, &tmp);
+        dout = tmp;
+
+
+
+    }
+
+    inline __attribute__((always_inline)) __STREAM_T__ read() {
+
+        __STREAM_T__ tmp;
+        _ssdm_StreamRead(&V, &tmp);
+        return tmp;
 
 
 
 
 
-typedef ap_fixed<16,4> x_t;
-typedef ap_ufixed<20,1> out_t;
-
-out_t compute_exp(x_t x);
-# 5 "ADSD/Classifier.h" 2
+    }
 
 
+    inline __attribute__((always_inline)) bool read_nb(__STREAM_T__& dout) {
+        __STREAM_T__ tmp;
+        bool empty_n = _ssdm_StreamNbRead(&V, &tmp);
+        dout = tmp;
+        return empty_n;
+    }
+
+
+    inline __attribute__((always_inline)) void write(const __STREAM_T__& din) {
+
+        __STREAM_T__ tmp = din;
+        _ssdm_StreamWrite(&V, &tmp);
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) bool write_nb(const __STREAM_T__& din) {
+        __STREAM_T__ tmp = din;
+        bool full_n = _ssdm_StreamNbWrite(&V, &tmp);
+        return full_n;
+    }
+
+
+    inline __attribute__((always_inline)) unsigned size() {
+        unsigned size = _ssdm_StreamSize(&V);
+        return size;
+    }
+
+  public:
+    __STREAM_T__ V;
+};
+
+
+}
+# 8 "ADSD/Classifier.h" 2
+
+# 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h" 1
+# 88 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h"
+template<int D,int U,int TI,int TD>
+  struct ap_axis{
+    ap_int<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+
+template<int D,int U,int TI,int TD>
+  struct ap_axiu{
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+# 9 "ADSD/Classifier.h" 2
 
 
 
 
-double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in);
+
+
+typedef ap_axiu<64, 1, 1, 1> axis_t;
+
+
+void classify(hls::stream<axis_t> &in_stream, hls::stream<double> &out_stream, ap_fixed<24,14> x_norm_in);
 # 2 "ADSD/Classifier.cpp" 2
 # 1 "ADSD/./svs.h" 1
 
@@ -153975,107 +154181,99 @@ const ap_fixed<32,16> sv_norms[165] = {
 };
 # 6 "ADSD/Classifier.cpp" 2
 
+# 1 "ADSD/Exp.h" 1
 
 
-void load_data(ap_uint<64> x[784/8], ap_fixed<8,7> x_local[784]) {_ssdm_SpecArrayDimSize(x, 98);_ssdm_SpecArrayDimSize(x_local, 784);
-#pragma HLS INLINE off
-
- load_image_loop: for (int i = 0; i < 784 / 8; i++) {
-#pragma HLS PIPELINE II=1
- ap_uint<64> packet = x[i];
-        for (int p = 0; p < 8; p++) {
-#pragma HLS UNROLL
- ap_fixed<8,7> val;
-            val(7, 0) = packet.range(p*8 + 7, p*8);
-            x_local[i*8 + p] = val;
-        }
-    }
-}
 
 
-void compute_class(ap_fixed<8,7> x_local[784], ap_fixed<24,14> x_norm_in, double &result) {_ssdm_SpecArrayDimSize(x_local, 784);
-#pragma HLS INLINE off
 
- ap_fixed<32,16> sum = 0.0;
-    ap_fixed<32,16> partial_sum[16];
-#pragma HLS ARRAY_PARTITION variable=&partial_sum complete dim=1
+typedef ap_fixed<16,4> x_t;
+typedef ap_ufixed<20,1> out_t;
 
- for (int k = 0; k < 16; k++) {
-#pragma HLS UNROLL
- partial_sum[k] = 0;
-    }
-
-    classify_label2: for (int i = 0; i < 165; i += 16) {
-        ap_fixed<32,16> dot_products[16];
-#pragma HLS ARRAY_PARTITION variable=&dot_products complete dim=1
-
- for(int init=0; init<16; init++) {
-#pragma HLS UNROLL
- dot_products[init] = 0;
-        }
-
-        classify_label1: for (int j = 0; j < 784; j++) {
-#pragma HLS PIPELINE II=1
-#pragma HLS UNROLL factor=16
-
- for (int k = 0; k < 16; k++) {
-#pragma HLS UNROLL
- ap_fixed<8,7> xi = svs[i+k][j];
-                ap_fixed<8,7> xj = x_local[j];
+out_t compute_exp(x_t x);
+# 8 "ADSD/Classifier.cpp" 2
 
 
-                ap_fixed<16,14> prod = xi * xj;
-                dot_products[k] += prod;
-            }
-        }
-
-        Reconstruct_Loop: for (int k = 0; k < 16; k++) {
-#pragma HLS PIPELINE II=1
- ap_fixed<32,16> term1 = x_norm_in;
-            ap_fixed<32,16> term2 = sv_norms[i+k];
-            ap_fixed<32,16> term3 = dot_products[k];
-            ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
-
-            const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-            if(dist_sq < 0) dist_sq = 0;
-
-            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
-            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
-        }
-    }
-
-    for (int k = 0; k < 16; k++) {
-#pragma HLS UNROLL
- sum += partial_sum[k];
-    }
-    result = (double)(sum + bias[0]);
-}
 
 
-double classify(ap_uint<64> x[784/8], ap_fixed<24,14> x_norm_in) {_ssdm_SpecArrayDimSize(x, 98);
-#pragma HLS INTERFACE m_axi port=&x offset=slave bundle=gmem depth=98
+void classify(hls::stream<axis_t> &in_stream, hls::stream<double> &out_stream, ap_fixed<24,14> x_norm_in) {
+
+#pragma HLS INTERFACE axis port=&in_stream
+#pragma HLS INTERFACE axis port=&out_stream
 #pragma HLS INTERFACE s_axilite port=&x_norm_in bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
 
-#pragma HLS ARRAY_RESHAPE variable=&svs cyclic factor=16 dim=2
-#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=16 dim=1
-#pragma HLS ARRAY_PARTITION variable=&alphas cyclic factor=16 dim=1
-#pragma HLS ARRAY_PARTITION variable=&sv_norms cyclic factor=16 dim=1
+
+
+#pragma HLS ARRAY_PARTITION variable=&svs complete dim=1
+
+
+
+#pragma HLS ARRAY_PARTITION variable=&alphas complete dim=1
+#pragma HLS ARRAY_PARTITION variable=&sv_norms complete dim=1
+
+
+ ap_fixed<32,16> dot_products[176];
+#pragma HLS ARRAY_PARTITION variable=&dot_products complete dim=1
+
+
+ Init_Loop: for (int i = 0; i < 176; i++) {
+#pragma HLS UNROLL
+ dot_products[i] = 0;
+    }
+
+
+
+    Pixel_Loop: for (int j = 0; j < 784 / 8; j++) {
+#pragma HLS PIPELINE II=1
+
+ axis_t packet = in_stream.read();
+        ap_uint<64> data = packet.data;
+
+
+        for (int p = 0; p < 8; p++) {
+            ap_fixed<8,7> pixel;
+            pixel(7, 0) = data.range(p*8 + 7, p*8);
+            int global_idx = j*8 + p;
+
+
+            SV_Update_Loop: for (int i = 0; i < 176; i++) {
+#pragma HLS UNROLL
+
+
+
+ ap_fixed<8,7> w = svs[i][global_idx];
+                ap_fixed<16,14> prod = pixel * w;
+#pragma HLS BIND_OP variable=&prod op=mul impl=dsp
+
+ dot_products[i] += prod;
+            }
+        }
+    }
 
 
 
 
- ap_fixed<8,7> x_local[784];
-#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=16 dim=1
+    ap_fixed<32,16> final_sum = 0;
+
+    Reconstruct_Loop: for (int i = 0; i < 176; i++) {
+#pragma HLS PIPELINE II=1
 
 
-#pragma HLS DATAFLOW
+ ap_fixed<32,16> term1 = x_norm_in;
+        ap_fixed<32,16> term2 = sv_norms[i];
+        ap_fixed<32,16> term3 = dot_products[i];
+        ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
 
- double result;
+        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+        if(dist_sq < 0) dist_sq = 0;
 
-    load_data(x, x_local);
-    compute_class(x_local, x_norm_in, result);
 
-    return result;
+        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+
+        final_sum += (ap_fixed<32,16>)(alphas[i] * K);
+    }
+
+    out_stream.write((double)(final_sum + bias[0]));
 }

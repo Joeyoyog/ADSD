@@ -2,7 +2,9 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] '#pragma HLS BIND_OP variable=&amp;prod op=mul impl=dsp' is not a valid pragma.&#xD;&#xA;Pragma processor failed: &#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="ADSD" solutionName="solution1" date="2026-02-10T21:28:02.300+0000"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>
@@ -11,31 +13,7 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name '__ADSD/Classifier.cp' to 'p_ADSD_Classifier_cp'." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:45.192+0000" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block__proc' to 'Block_proc'." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:45.167+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-631] Renaming function '__ADSD/Classifier.cpp_line109_proc' to '__ADSD/Classifier.cp' " projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:43.592+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'classify_label2' (ADSD/Classifier.cpp:37:57) in function 'compute_class' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:43.073+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[15].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:38.027+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[14].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.991+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[13].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.960+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[12].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.923+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[11].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.893+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[10].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.863+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[9].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.821+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[8].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.784+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[7].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.763+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[6].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.731+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[5].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.692+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[4].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.671+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[3].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.637+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[2].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.597+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[1].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.572+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'x_local[0].V' should be updated in process function 'load_data51', otherwise it may not be synthesized correctly." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:37.542+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-180] Applying partition directive (ADSD/Classifier.cpp:91:1) and reshape directive (ADSD/Classifier.cpp:90:1) on the same variable 'svs.V'  may lead to unexpected synthesis behaviors." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:25.823+0000" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-2.3.1' (ADSD/Exp.cpp:104) because its parent loop or function is pipelined." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:12.405+0000" type="Warning"/>
-        <logs message="WARNING: [SYNCHK 200-23] ADSD/Classifier.cpp:18: variable-indexed range selection may cause suboptimal QoR." projectName="ADSD" solutionName="solution1" date="2026-02-09T22:44:11.970+0000" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

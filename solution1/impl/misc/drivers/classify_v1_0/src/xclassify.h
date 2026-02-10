@@ -86,10 +86,7 @@ u32 XClassify_IsIdle(XClassify *InstancePtr);
 u32 XClassify_IsReady(XClassify *InstancePtr);
 void XClassify_EnableAutoRestart(XClassify *InstancePtr);
 void XClassify_DisableAutoRestart(XClassify *InstancePtr);
-u64 XClassify_Get_return(XClassify *InstancePtr);
 
-void XClassify_Set_x_V(XClassify *InstancePtr, u32 Data);
-u32 XClassify_Get_x_V(XClassify *InstancePtr);
 void XClassify_Set_x_norm_in_V(XClassify *InstancePtr, u32 Data);
 u32 XClassify_Get_x_norm_in_V(XClassify *InstancePtr);
 

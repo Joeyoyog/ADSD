@@ -24479,8 +24479,8 @@ _ssdm_SpecConstant(MLN2);
 
 
     for (int n = 0; n < 17; n++){
+#pragma HLS UNROLL
 
-#pragma HLS PIPELINE II=1
  int i = Iteration_Schedule[n];
         bool z_nonneg = (Z >= 0);
 

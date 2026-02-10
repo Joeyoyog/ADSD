@@ -4,26 +4,36 @@
 #include "./alphas.h"
 #include "./sv_norms.h"
 #include "ap_int.h"
+#include "Exp.h" // Required for compute_exp
 
-// Sub-function: Loads data and unpacks bits
-void load_data(ap_uint<64> x[IMG_SIZE/8], ap_fixed<8,7> x_local[IMG_SIZE]) {
-    #pragma HLS INLINE off // Required for DATAFLOW
+// --------------------------------------------------------
+// LOAD DATA: Reads from AXI Stream
+// --------------------------------------------------------
+void load_data(hls::stream<axis_t> &in_stream, ap_fixed<8,7> x_local[IMG_SIZE]) {
+    #pragma HLS INLINE off
 
     load_image_loop: for (int i = 0; i < IMG_SIZE / 8; i++) {
         #pragma HLS PIPELINE II=1
-        ap_uint<64> packet = x[i];
+
+        // 1. Read the packet from the stream
+        axis_t packet = in_stream.read();
+        ap_uint<64> data = packet.data;
+
+        // 2. Unpack the 64-bit data into 8 pixels
         for (int p = 0; p < 8; p++) {
             #pragma HLS UNROLL
             ap_fixed<8,7> val;
-            val(7, 0) = packet.range(p*8 + 7, p*8);
+            val(7, 0) = data.range(p*8 + 7, p*8);
             x_local[i*8 + p] = val;
         }
     }
 }
 
-// Sub-function: Performs the classification
+// --------------------------------------------------------
+// COMPUTE CLASS: Your optimized logic (unchanged)
+// --------------------------------------------------------
 void compute_class(ap_fixed<8,7> x_local[IMG_SIZE], ap_fixed<24,14> x_norm_in, double &result) {
-    #pragma HLS INLINE off // Required for DATAFLOW
+    #pragma HLS INLINE off
 
     ap_fixed<32,16> sum = 0.0;
     ap_fixed<32,16> partial_sum[16];
@@ -80,9 +90,14 @@ void compute_class(ap_fixed<8,7> x_local[IMG_SIZE], ap_fixed<24,14> x_norm_in, d
     result = (double)(sum + bias[0]);
 }
 
-// TOP LEVEL FUNCTION
-double classify(ap_uint<64> x[IMG_SIZE/8], ap_fixed<24,14> x_norm_in) {
-    #pragma HLS INTERFACE m_axi port=x offset=slave bundle=gmem depth=98
+// --------------------------------------------------------
+// TOP LEVEL FUNCTION: Streaming Interface
+// --------------------------------------------------------
+void classify(hls::stream<axis_t> &in_stream, hls::stream<double> &out_stream, ap_fixed<24,14> x_norm_in) {
+    // AXI Stream Interfaces (No offset, No bundle)
+    #pragma HLS INTERFACE axis port=in_stream
+    #pragma HLS INTERFACE axis port=out_stream
+    // AXI Lite Control for scalar inputs and return
     #pragma HLS INTERFACE s_axilite port=x_norm_in bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
@@ -92,19 +107,18 @@ double classify(ap_uint<64> x[IMG_SIZE/8], ap_fixed<24,14> x_norm_in) {
     #pragma HLS ARRAY_PARTITION variable=alphas cyclic factor=16 dim=1
     #pragma HLS ARRAY_PARTITION variable=sv_norms cyclic factor=16 dim=1
 
-    // PING-PONG BUFFER
-    // HLS will automatically implement this as a Double Buffer (Ping-Pong)
-    // because it is used in a DATAFLOW region.
+    // PING-PONG BUFFER (Inferred by DATAFLOW)
     ap_fixed<8,7> x_local[IMG_SIZE];
     #pragma HLS ARRAY_PARTITION variable=x_local cyclic factor=16 dim=1
 
-    // DATAFLOW: Enables task parallelism
+    // DATAFLOW: Overlaps Loading and Computing
     #pragma HLS DATAFLOW
 
     double result;
 
-    load_data(x, x_local);
+    load_data(in_stream, x_local);
     compute_class(x_local, x_norm_in, result);
 
-    return result;
+    // Write result to output stream
+    out_stream.write(result);
 }
