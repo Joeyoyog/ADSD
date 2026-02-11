@@ -55,7 +55,7 @@ fifo_w64_d2_A
 fifo_w64_d2_A
 classify_control_s_axi
 classify_gmem_m_axi
-load_data51
+load_data48
 compute_class
 Block_proc
 p_ADSD_Classifier_cp

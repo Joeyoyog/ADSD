@@ -1,6 +1,8 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../AcceleratorTB.cpp in debug mode
+   Compiling ../../../Exp.cpp in debug mode
+   Compiling ../../../Classifier.cpp in debug mode
    Generating csim.exe
 Starting C-Simulation with ARM Pre-processing...
 Classification Accuracy: 0.981930

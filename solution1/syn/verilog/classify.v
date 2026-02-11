@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.750000,HLS_SYN_LAT=1108,HLS_SYN_TPT=1001,HLS_SYN_MEM=120,HLS_SYN_DSP=1,HLS_SYN_FF=10353,HLS_SYN_LUT=28514,HLS_VERSION=2018_2}" *)
+(* CORE_GENERATION_INFO="classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.832750,HLS_SYN_LAT=1064,HLS_SYN_TPT=957,HLS_SYN_MEM=120,HLS_SYN_DSP=1,HLS_SYN_FF=9948,HLS_SYN_LUT=29635,HLS_VERSION=2018_2}" *)
 
 module classify (
         s_axi_control_AWVALID,
@@ -224,171 +224,171 @@ wire   [7:0] x_local_14_V_i_q0;
 wire   [7:0] x_local_14_V_t_q0;
 wire   [7:0] x_local_15_V_i_q0;
 wire   [7:0] x_local_15_V_t_q0;
-wire    load_data51_U0_ap_start;
-wire    load_data51_U0_ap_done;
-wire    load_data51_U0_ap_continue;
-wire    load_data51_U0_ap_idle;
-wire    load_data51_U0_ap_ready;
-wire    load_data51_U0_m_axi_x_V_AWVALID;
-wire   [31:0] load_data51_U0_m_axi_x_V_AWADDR;
-wire   [0:0] load_data51_U0_m_axi_x_V_AWID;
-wire   [31:0] load_data51_U0_m_axi_x_V_AWLEN;
-wire   [2:0] load_data51_U0_m_axi_x_V_AWSIZE;
-wire   [1:0] load_data51_U0_m_axi_x_V_AWBURST;
-wire   [1:0] load_data51_U0_m_axi_x_V_AWLOCK;
-wire   [3:0] load_data51_U0_m_axi_x_V_AWCACHE;
-wire   [2:0] load_data51_U0_m_axi_x_V_AWPROT;
-wire   [3:0] load_data51_U0_m_axi_x_V_AWQOS;
-wire   [3:0] load_data51_U0_m_axi_x_V_AWREGION;
-wire   [0:0] load_data51_U0_m_axi_x_V_AWUSER;
-wire    load_data51_U0_m_axi_x_V_WVALID;
-wire   [63:0] load_data51_U0_m_axi_x_V_WDATA;
-wire   [7:0] load_data51_U0_m_axi_x_V_WSTRB;
-wire    load_data51_U0_m_axi_x_V_WLAST;
-wire   [0:0] load_data51_U0_m_axi_x_V_WID;
-wire   [0:0] load_data51_U0_m_axi_x_V_WUSER;
-wire    load_data51_U0_m_axi_x_V_ARVALID;
-wire   [31:0] load_data51_U0_m_axi_x_V_ARADDR;
-wire   [0:0] load_data51_U0_m_axi_x_V_ARID;
-wire   [31:0] load_data51_U0_m_axi_x_V_ARLEN;
-wire   [2:0] load_data51_U0_m_axi_x_V_ARSIZE;
-wire   [1:0] load_data51_U0_m_axi_x_V_ARBURST;
-wire   [1:0] load_data51_U0_m_axi_x_V_ARLOCK;
-wire   [3:0] load_data51_U0_m_axi_x_V_ARCACHE;
-wire   [2:0] load_data51_U0_m_axi_x_V_ARPROT;
-wire   [3:0] load_data51_U0_m_axi_x_V_ARQOS;
-wire   [3:0] load_data51_U0_m_axi_x_V_ARREGION;
-wire   [0:0] load_data51_U0_m_axi_x_V_ARUSER;
-wire    load_data51_U0_m_axi_x_V_RREADY;
-wire    load_data51_U0_m_axi_x_V_BREADY;
-wire   [5:0] load_data51_U0_x_local_0_V_address0;
-wire    load_data51_U0_x_local_0_V_ce0;
-wire    load_data51_U0_x_local_0_V_we0;
-wire   [7:0] load_data51_U0_x_local_0_V_d0;
-wire   [5:0] load_data51_U0_x_local_1_V_address0;
-wire    load_data51_U0_x_local_1_V_ce0;
-wire    load_data51_U0_x_local_1_V_we0;
-wire   [7:0] load_data51_U0_x_local_1_V_d0;
-wire   [5:0] load_data51_U0_x_local_2_V_address0;
-wire    load_data51_U0_x_local_2_V_ce0;
-wire    load_data51_U0_x_local_2_V_we0;
-wire   [7:0] load_data51_U0_x_local_2_V_d0;
-wire   [5:0] load_data51_U0_x_local_3_V_address0;
-wire    load_data51_U0_x_local_3_V_ce0;
-wire    load_data51_U0_x_local_3_V_we0;
-wire   [7:0] load_data51_U0_x_local_3_V_d0;
-wire   [5:0] load_data51_U0_x_local_4_V_address0;
-wire    load_data51_U0_x_local_4_V_ce0;
-wire    load_data51_U0_x_local_4_V_we0;
-wire   [7:0] load_data51_U0_x_local_4_V_d0;
-wire   [5:0] load_data51_U0_x_local_5_V_address0;
-wire    load_data51_U0_x_local_5_V_ce0;
-wire    load_data51_U0_x_local_5_V_we0;
-wire   [7:0] load_data51_U0_x_local_5_V_d0;
-wire   [5:0] load_data51_U0_x_local_6_V_address0;
-wire    load_data51_U0_x_local_6_V_ce0;
-wire    load_data51_U0_x_local_6_V_we0;
-wire   [7:0] load_data51_U0_x_local_6_V_d0;
-wire   [5:0] load_data51_U0_x_local_7_V_address0;
-wire    load_data51_U0_x_local_7_V_ce0;
-wire    load_data51_U0_x_local_7_V_we0;
-wire   [7:0] load_data51_U0_x_local_7_V_d0;
-wire   [5:0] load_data51_U0_x_local_8_V_address0;
-wire    load_data51_U0_x_local_8_V_ce0;
-wire    load_data51_U0_x_local_8_V_we0;
-wire   [7:0] load_data51_U0_x_local_8_V_d0;
-wire   [5:0] load_data51_U0_x_local_9_V_address0;
-wire    load_data51_U0_x_local_9_V_ce0;
-wire    load_data51_U0_x_local_9_V_we0;
-wire   [7:0] load_data51_U0_x_local_9_V_d0;
-wire   [5:0] load_data51_U0_x_local_10_V_address0;
-wire    load_data51_U0_x_local_10_V_ce0;
-wire    load_data51_U0_x_local_10_V_we0;
-wire   [7:0] load_data51_U0_x_local_10_V_d0;
-wire   [5:0] load_data51_U0_x_local_11_V_address0;
-wire    load_data51_U0_x_local_11_V_ce0;
-wire    load_data51_U0_x_local_11_V_we0;
-wire   [7:0] load_data51_U0_x_local_11_V_d0;
-wire   [5:0] load_data51_U0_x_local_12_V_address0;
-wire    load_data51_U0_x_local_12_V_ce0;
-wire    load_data51_U0_x_local_12_V_we0;
-wire   [7:0] load_data51_U0_x_local_12_V_d0;
-wire   [5:0] load_data51_U0_x_local_13_V_address0;
-wire    load_data51_U0_x_local_13_V_ce0;
-wire    load_data51_U0_x_local_13_V_we0;
-wire   [7:0] load_data51_U0_x_local_13_V_d0;
-wire   [5:0] load_data51_U0_x_local_14_V_address0;
-wire    load_data51_U0_x_local_14_V_ce0;
-wire    load_data51_U0_x_local_14_V_we0;
-wire   [7:0] load_data51_U0_x_local_14_V_d0;
-wire   [5:0] load_data51_U0_x_local_15_V_address0;
-wire    load_data51_U0_x_local_15_V_ce0;
-wire    load_data51_U0_x_local_15_V_we0;
-wire   [7:0] load_data51_U0_x_local_15_V_d0;
-wire   [23:0] load_data51_U0_x_norm_in_V_out_din;
-wire    load_data51_U0_x_norm_in_V_out_write;
+wire    load_data48_U0_ap_start;
+wire    load_data48_U0_ap_done;
+wire    load_data48_U0_ap_continue;
+wire    load_data48_U0_ap_idle;
+wire    load_data48_U0_ap_ready;
+wire    load_data48_U0_m_axi_x_V_AWVALID;
+wire   [31:0] load_data48_U0_m_axi_x_V_AWADDR;
+wire   [0:0] load_data48_U0_m_axi_x_V_AWID;
+wire   [31:0] load_data48_U0_m_axi_x_V_AWLEN;
+wire   [2:0] load_data48_U0_m_axi_x_V_AWSIZE;
+wire   [1:0] load_data48_U0_m_axi_x_V_AWBURST;
+wire   [1:0] load_data48_U0_m_axi_x_V_AWLOCK;
+wire   [3:0] load_data48_U0_m_axi_x_V_AWCACHE;
+wire   [2:0] load_data48_U0_m_axi_x_V_AWPROT;
+wire   [3:0] load_data48_U0_m_axi_x_V_AWQOS;
+wire   [3:0] load_data48_U0_m_axi_x_V_AWREGION;
+wire   [0:0] load_data48_U0_m_axi_x_V_AWUSER;
+wire    load_data48_U0_m_axi_x_V_WVALID;
+wire   [63:0] load_data48_U0_m_axi_x_V_WDATA;
+wire   [7:0] load_data48_U0_m_axi_x_V_WSTRB;
+wire    load_data48_U0_m_axi_x_V_WLAST;
+wire   [0:0] load_data48_U0_m_axi_x_V_WID;
+wire   [0:0] load_data48_U0_m_axi_x_V_WUSER;
+wire    load_data48_U0_m_axi_x_V_ARVALID;
+wire   [31:0] load_data48_U0_m_axi_x_V_ARADDR;
+wire   [0:0] load_data48_U0_m_axi_x_V_ARID;
+wire   [31:0] load_data48_U0_m_axi_x_V_ARLEN;
+wire   [2:0] load_data48_U0_m_axi_x_V_ARSIZE;
+wire   [1:0] load_data48_U0_m_axi_x_V_ARBURST;
+wire   [1:0] load_data48_U0_m_axi_x_V_ARLOCK;
+wire   [3:0] load_data48_U0_m_axi_x_V_ARCACHE;
+wire   [2:0] load_data48_U0_m_axi_x_V_ARPROT;
+wire   [3:0] load_data48_U0_m_axi_x_V_ARQOS;
+wire   [3:0] load_data48_U0_m_axi_x_V_ARREGION;
+wire   [0:0] load_data48_U0_m_axi_x_V_ARUSER;
+wire    load_data48_U0_m_axi_x_V_RREADY;
+wire    load_data48_U0_m_axi_x_V_BREADY;
+wire   [5:0] load_data48_U0_x_local_0_V_address0;
+wire    load_data48_U0_x_local_0_V_ce0;
+wire    load_data48_U0_x_local_0_V_we0;
+wire   [7:0] load_data48_U0_x_local_0_V_d0;
+wire   [5:0] load_data48_U0_x_local_1_V_address0;
+wire    load_data48_U0_x_local_1_V_ce0;
+wire    load_data48_U0_x_local_1_V_we0;
+wire   [7:0] load_data48_U0_x_local_1_V_d0;
+wire   [5:0] load_data48_U0_x_local_2_V_address0;
+wire    load_data48_U0_x_local_2_V_ce0;
+wire    load_data48_U0_x_local_2_V_we0;
+wire   [7:0] load_data48_U0_x_local_2_V_d0;
+wire   [5:0] load_data48_U0_x_local_3_V_address0;
+wire    load_data48_U0_x_local_3_V_ce0;
+wire    load_data48_U0_x_local_3_V_we0;
+wire   [7:0] load_data48_U0_x_local_3_V_d0;
+wire   [5:0] load_data48_U0_x_local_4_V_address0;
+wire    load_data48_U0_x_local_4_V_ce0;
+wire    load_data48_U0_x_local_4_V_we0;
+wire   [7:0] load_data48_U0_x_local_4_V_d0;
+wire   [5:0] load_data48_U0_x_local_5_V_address0;
+wire    load_data48_U0_x_local_5_V_ce0;
+wire    load_data48_U0_x_local_5_V_we0;
+wire   [7:0] load_data48_U0_x_local_5_V_d0;
+wire   [5:0] load_data48_U0_x_local_6_V_address0;
+wire    load_data48_U0_x_local_6_V_ce0;
+wire    load_data48_U0_x_local_6_V_we0;
+wire   [7:0] load_data48_U0_x_local_6_V_d0;
+wire   [5:0] load_data48_U0_x_local_7_V_address0;
+wire    load_data48_U0_x_local_7_V_ce0;
+wire    load_data48_U0_x_local_7_V_we0;
+wire   [7:0] load_data48_U0_x_local_7_V_d0;
+wire   [5:0] load_data48_U0_x_local_8_V_address0;
+wire    load_data48_U0_x_local_8_V_ce0;
+wire    load_data48_U0_x_local_8_V_we0;
+wire   [7:0] load_data48_U0_x_local_8_V_d0;
+wire   [5:0] load_data48_U0_x_local_9_V_address0;
+wire    load_data48_U0_x_local_9_V_ce0;
+wire    load_data48_U0_x_local_9_V_we0;
+wire   [7:0] load_data48_U0_x_local_9_V_d0;
+wire   [5:0] load_data48_U0_x_local_10_V_address0;
+wire    load_data48_U0_x_local_10_V_ce0;
+wire    load_data48_U0_x_local_10_V_we0;
+wire   [7:0] load_data48_U0_x_local_10_V_d0;
+wire   [5:0] load_data48_U0_x_local_11_V_address0;
+wire    load_data48_U0_x_local_11_V_ce0;
+wire    load_data48_U0_x_local_11_V_we0;
+wire   [7:0] load_data48_U0_x_local_11_V_d0;
+wire   [5:0] load_data48_U0_x_local_12_V_address0;
+wire    load_data48_U0_x_local_12_V_ce0;
+wire    load_data48_U0_x_local_12_V_we0;
+wire   [7:0] load_data48_U0_x_local_12_V_d0;
+wire   [5:0] load_data48_U0_x_local_13_V_address0;
+wire    load_data48_U0_x_local_13_V_ce0;
+wire    load_data48_U0_x_local_13_V_we0;
+wire   [7:0] load_data48_U0_x_local_13_V_d0;
+wire   [5:0] load_data48_U0_x_local_14_V_address0;
+wire    load_data48_U0_x_local_14_V_ce0;
+wire    load_data48_U0_x_local_14_V_we0;
+wire   [7:0] load_data48_U0_x_local_14_V_d0;
+wire   [5:0] load_data48_U0_x_local_15_V_address0;
+wire    load_data48_U0_x_local_15_V_ce0;
+wire    load_data48_U0_x_local_15_V_we0;
+wire   [7:0] load_data48_U0_x_local_15_V_d0;
+wire   [23:0] load_data48_U0_x_norm_in_V_out_din;
+wire    load_data48_U0_x_norm_in_V_out_write;
 wire    ap_channel_done_x_local_15_V;
-wire    load_data51_U0_x_local_15_V_full_n;
+wire    load_data48_U0_x_local_15_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_15_V;
 wire    ap_sync_channel_write_x_local_15_V;
 wire    ap_channel_done_x_local_14_V;
-wire    load_data51_U0_x_local_14_V_full_n;
+wire    load_data48_U0_x_local_14_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_14_V;
 wire    ap_sync_channel_write_x_local_14_V;
 wire    ap_channel_done_x_local_13_V;
-wire    load_data51_U0_x_local_13_V_full_n;
+wire    load_data48_U0_x_local_13_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_13_V;
 wire    ap_sync_channel_write_x_local_13_V;
 wire    ap_channel_done_x_local_12_V;
-wire    load_data51_U0_x_local_12_V_full_n;
+wire    load_data48_U0_x_local_12_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_12_V;
 wire    ap_sync_channel_write_x_local_12_V;
 wire    ap_channel_done_x_local_11_V;
-wire    load_data51_U0_x_local_11_V_full_n;
+wire    load_data48_U0_x_local_11_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_11_V;
 wire    ap_sync_channel_write_x_local_11_V;
 wire    ap_channel_done_x_local_10_V;
-wire    load_data51_U0_x_local_10_V_full_n;
+wire    load_data48_U0_x_local_10_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_10_V;
 wire    ap_sync_channel_write_x_local_10_V;
 wire    ap_channel_done_x_local_9_V;
-wire    load_data51_U0_x_local_9_V_full_n;
+wire    load_data48_U0_x_local_9_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_9_V;
 wire    ap_sync_channel_write_x_local_9_V;
 wire    ap_channel_done_x_local_8_V;
-wire    load_data51_U0_x_local_8_V_full_n;
+wire    load_data48_U0_x_local_8_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_8_V;
 wire    ap_sync_channel_write_x_local_8_V;
 wire    ap_channel_done_x_local_7_V;
-wire    load_data51_U0_x_local_7_V_full_n;
+wire    load_data48_U0_x_local_7_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_7_V;
 wire    ap_sync_channel_write_x_local_7_V;
 wire    ap_channel_done_x_local_6_V;
-wire    load_data51_U0_x_local_6_V_full_n;
+wire    load_data48_U0_x_local_6_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_6_V;
 wire    ap_sync_channel_write_x_local_6_V;
 wire    ap_channel_done_x_local_5_V;
-wire    load_data51_U0_x_local_5_V_full_n;
+wire    load_data48_U0_x_local_5_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_5_V;
 wire    ap_sync_channel_write_x_local_5_V;
 wire    ap_channel_done_x_local_4_V;
-wire    load_data51_U0_x_local_4_V_full_n;
+wire    load_data48_U0_x_local_4_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_4_V;
 wire    ap_sync_channel_write_x_local_4_V;
 wire    ap_channel_done_x_local_3_V;
-wire    load_data51_U0_x_local_3_V_full_n;
+wire    load_data48_U0_x_local_3_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_3_V;
 wire    ap_sync_channel_write_x_local_3_V;
 wire    ap_channel_done_x_local_2_V;
-wire    load_data51_U0_x_local_2_V_full_n;
+wire    load_data48_U0_x_local_2_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_2_V;
 wire    ap_sync_channel_write_x_local_2_V;
 wire    ap_channel_done_x_local_1_V;
-wire    load_data51_U0_x_local_1_V_full_n;
+wire    load_data48_U0_x_local_1_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_1_V;
 wire    ap_sync_channel_write_x_local_1_V;
 wire    ap_channel_done_x_local_0_V;
-wire    load_data51_U0_x_local_0_V_full_n;
+wire    load_data48_U0_x_local_0_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_0_V;
 wire    ap_sync_channel_write_x_local_0_V;
 wire    compute_class_U0_ap_start;
@@ -488,8 +488,8 @@ wire   [63:0] result_load_loc_chan_dout;
 wire    result_load_loc_chan_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-wire    load_data51_U0_start_full_n;
-wire    load_data51_U0_start_write;
+wire    load_data48_U0_start_full_n;
+wire    load_data48_U0_start_write;
 wire    compute_class_U0_start_full_n;
 wire    compute_class_U0_start_write;
 wire    Block_proc_U0_start_full_n;
@@ -621,21 +621,21 @@ classify_gmem_m_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .I_ARVALID(load_data51_U0_m_axi_x_V_ARVALID),
+    .I_ARVALID(load_data48_U0_m_axi_x_V_ARVALID),
     .I_ARREADY(gmem_ARREADY),
-    .I_ARADDR(load_data51_U0_m_axi_x_V_ARADDR),
-    .I_ARID(load_data51_U0_m_axi_x_V_ARID),
-    .I_ARLEN(load_data51_U0_m_axi_x_V_ARLEN),
-    .I_ARSIZE(load_data51_U0_m_axi_x_V_ARSIZE),
-    .I_ARLOCK(load_data51_U0_m_axi_x_V_ARLOCK),
-    .I_ARCACHE(load_data51_U0_m_axi_x_V_ARCACHE),
-    .I_ARQOS(load_data51_U0_m_axi_x_V_ARQOS),
-    .I_ARPROT(load_data51_U0_m_axi_x_V_ARPROT),
-    .I_ARUSER(load_data51_U0_m_axi_x_V_ARUSER),
-    .I_ARBURST(load_data51_U0_m_axi_x_V_ARBURST),
-    .I_ARREGION(load_data51_U0_m_axi_x_V_ARREGION),
+    .I_ARADDR(load_data48_U0_m_axi_x_V_ARADDR),
+    .I_ARID(load_data48_U0_m_axi_x_V_ARID),
+    .I_ARLEN(load_data48_U0_m_axi_x_V_ARLEN),
+    .I_ARSIZE(load_data48_U0_m_axi_x_V_ARSIZE),
+    .I_ARLOCK(load_data48_U0_m_axi_x_V_ARLOCK),
+    .I_ARCACHE(load_data48_U0_m_axi_x_V_ARCACHE),
+    .I_ARQOS(load_data48_U0_m_axi_x_V_ARQOS),
+    .I_ARPROT(load_data48_U0_m_axi_x_V_ARPROT),
+    .I_ARUSER(load_data48_U0_m_axi_x_V_ARUSER),
+    .I_ARBURST(load_data48_U0_m_axi_x_V_ARBURST),
+    .I_ARREGION(load_data48_U0_m_axi_x_V_ARREGION),
     .I_RVALID(gmem_RVALID),
-    .I_RREADY(load_data51_U0_m_axi_x_V_RREADY),
+    .I_RREADY(load_data48_U0_m_axi_x_V_RREADY),
     .I_RDATA(gmem_RDATA),
     .I_RID(gmem_RID),
     .I_RUSER(gmem_RUSER),
@@ -675,10 +675,10 @@ classify_x_local_1iI #(
 x_local_0_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_0_V_address0),
-    .i_ce0(load_data51_U0_x_local_0_V_ce0),
-    .i_we0(load_data51_U0_x_local_0_V_we0),
-    .i_d0(load_data51_U0_x_local_0_V_d0),
+    .i_address0(load_data48_U0_x_local_0_V_address0),
+    .i_ce0(load_data48_U0_x_local_0_V_ce0),
+    .i_we0(load_data48_U0_x_local_0_V_we0),
+    .i_d0(load_data48_U0_x_local_0_V_d0),
     .i_q0(x_local_0_V_i_q0),
     .t_address0(compute_class_U0_x_local_0_V_address0),
     .t_ce0(compute_class_U0_x_local_0_V_ce0),
@@ -700,10 +700,10 @@ classify_x_local_1iI #(
 x_local_1_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_1_V_address0),
-    .i_ce0(load_data51_U0_x_local_1_V_ce0),
-    .i_we0(load_data51_U0_x_local_1_V_we0),
-    .i_d0(load_data51_U0_x_local_1_V_d0),
+    .i_address0(load_data48_U0_x_local_1_V_address0),
+    .i_ce0(load_data48_U0_x_local_1_V_ce0),
+    .i_we0(load_data48_U0_x_local_1_V_we0),
+    .i_d0(load_data48_U0_x_local_1_V_d0),
     .i_q0(x_local_1_V_i_q0),
     .t_address0(compute_class_U0_x_local_1_V_address0),
     .t_ce0(compute_class_U0_x_local_1_V_ce0),
@@ -725,10 +725,10 @@ classify_x_local_1iI #(
 x_local_2_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_2_V_address0),
-    .i_ce0(load_data51_U0_x_local_2_V_ce0),
-    .i_we0(load_data51_U0_x_local_2_V_we0),
-    .i_d0(load_data51_U0_x_local_2_V_d0),
+    .i_address0(load_data48_U0_x_local_2_V_address0),
+    .i_ce0(load_data48_U0_x_local_2_V_ce0),
+    .i_we0(load_data48_U0_x_local_2_V_we0),
+    .i_d0(load_data48_U0_x_local_2_V_d0),
     .i_q0(x_local_2_V_i_q0),
     .t_address0(compute_class_U0_x_local_2_V_address0),
     .t_ce0(compute_class_U0_x_local_2_V_ce0),
@@ -750,10 +750,10 @@ classify_x_local_1iI #(
 x_local_3_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_3_V_address0),
-    .i_ce0(load_data51_U0_x_local_3_V_ce0),
-    .i_we0(load_data51_U0_x_local_3_V_we0),
-    .i_d0(load_data51_U0_x_local_3_V_d0),
+    .i_address0(load_data48_U0_x_local_3_V_address0),
+    .i_ce0(load_data48_U0_x_local_3_V_ce0),
+    .i_we0(load_data48_U0_x_local_3_V_we0),
+    .i_d0(load_data48_U0_x_local_3_V_d0),
     .i_q0(x_local_3_V_i_q0),
     .t_address0(compute_class_U0_x_local_3_V_address0),
     .t_ce0(compute_class_U0_x_local_3_V_ce0),
@@ -775,10 +775,10 @@ classify_x_local_1iI #(
 x_local_4_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_4_V_address0),
-    .i_ce0(load_data51_U0_x_local_4_V_ce0),
-    .i_we0(load_data51_U0_x_local_4_V_we0),
-    .i_d0(load_data51_U0_x_local_4_V_d0),
+    .i_address0(load_data48_U0_x_local_4_V_address0),
+    .i_ce0(load_data48_U0_x_local_4_V_ce0),
+    .i_we0(load_data48_U0_x_local_4_V_we0),
+    .i_d0(load_data48_U0_x_local_4_V_d0),
     .i_q0(x_local_4_V_i_q0),
     .t_address0(compute_class_U0_x_local_4_V_address0),
     .t_ce0(compute_class_U0_x_local_4_V_ce0),
@@ -800,10 +800,10 @@ classify_x_local_1iI #(
 x_local_5_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_5_V_address0),
-    .i_ce0(load_data51_U0_x_local_5_V_ce0),
-    .i_we0(load_data51_U0_x_local_5_V_we0),
-    .i_d0(load_data51_U0_x_local_5_V_d0),
+    .i_address0(load_data48_U0_x_local_5_V_address0),
+    .i_ce0(load_data48_U0_x_local_5_V_ce0),
+    .i_we0(load_data48_U0_x_local_5_V_we0),
+    .i_d0(load_data48_U0_x_local_5_V_d0),
     .i_q0(x_local_5_V_i_q0),
     .t_address0(compute_class_U0_x_local_5_V_address0),
     .t_ce0(compute_class_U0_x_local_5_V_ce0),
@@ -825,10 +825,10 @@ classify_x_local_1iI #(
 x_local_6_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_6_V_address0),
-    .i_ce0(load_data51_U0_x_local_6_V_ce0),
-    .i_we0(load_data51_U0_x_local_6_V_we0),
-    .i_d0(load_data51_U0_x_local_6_V_d0),
+    .i_address0(load_data48_U0_x_local_6_V_address0),
+    .i_ce0(load_data48_U0_x_local_6_V_ce0),
+    .i_we0(load_data48_U0_x_local_6_V_we0),
+    .i_d0(load_data48_U0_x_local_6_V_d0),
     .i_q0(x_local_6_V_i_q0),
     .t_address0(compute_class_U0_x_local_6_V_address0),
     .t_ce0(compute_class_U0_x_local_6_V_ce0),
@@ -850,10 +850,10 @@ classify_x_local_1iI #(
 x_local_7_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_7_V_address0),
-    .i_ce0(load_data51_U0_x_local_7_V_ce0),
-    .i_we0(load_data51_U0_x_local_7_V_we0),
-    .i_d0(load_data51_U0_x_local_7_V_d0),
+    .i_address0(load_data48_U0_x_local_7_V_address0),
+    .i_ce0(load_data48_U0_x_local_7_V_ce0),
+    .i_we0(load_data48_U0_x_local_7_V_we0),
+    .i_d0(load_data48_U0_x_local_7_V_d0),
     .i_q0(x_local_7_V_i_q0),
     .t_address0(compute_class_U0_x_local_7_V_address0),
     .t_ce0(compute_class_U0_x_local_7_V_ce0),
@@ -875,10 +875,10 @@ classify_x_local_1iI #(
 x_local_8_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_8_V_address0),
-    .i_ce0(load_data51_U0_x_local_8_V_ce0),
-    .i_we0(load_data51_U0_x_local_8_V_we0),
-    .i_d0(load_data51_U0_x_local_8_V_d0),
+    .i_address0(load_data48_U0_x_local_8_V_address0),
+    .i_ce0(load_data48_U0_x_local_8_V_ce0),
+    .i_we0(load_data48_U0_x_local_8_V_we0),
+    .i_d0(load_data48_U0_x_local_8_V_d0),
     .i_q0(x_local_8_V_i_q0),
     .t_address0(compute_class_U0_x_local_8_V_address0),
     .t_ce0(compute_class_U0_x_local_8_V_ce0),
@@ -900,10 +900,10 @@ classify_x_local_1iI #(
 x_local_9_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_9_V_address0),
-    .i_ce0(load_data51_U0_x_local_9_V_ce0),
-    .i_we0(load_data51_U0_x_local_9_V_we0),
-    .i_d0(load_data51_U0_x_local_9_V_d0),
+    .i_address0(load_data48_U0_x_local_9_V_address0),
+    .i_ce0(load_data48_U0_x_local_9_V_ce0),
+    .i_we0(load_data48_U0_x_local_9_V_we0),
+    .i_d0(load_data48_U0_x_local_9_V_d0),
     .i_q0(x_local_9_V_i_q0),
     .t_address0(compute_class_U0_x_local_9_V_address0),
     .t_ce0(compute_class_U0_x_local_9_V_ce0),
@@ -925,10 +925,10 @@ classify_x_local_1iI #(
 x_local_10_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_10_V_address0),
-    .i_ce0(load_data51_U0_x_local_10_V_ce0),
-    .i_we0(load_data51_U0_x_local_10_V_we0),
-    .i_d0(load_data51_U0_x_local_10_V_d0),
+    .i_address0(load_data48_U0_x_local_10_V_address0),
+    .i_ce0(load_data48_U0_x_local_10_V_ce0),
+    .i_we0(load_data48_U0_x_local_10_V_we0),
+    .i_d0(load_data48_U0_x_local_10_V_d0),
     .i_q0(x_local_10_V_i_q0),
     .t_address0(compute_class_U0_x_local_10_V_address0),
     .t_ce0(compute_class_U0_x_local_10_V_ce0),
@@ -950,10 +950,10 @@ classify_x_local_1iI #(
 x_local_11_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_11_V_address0),
-    .i_ce0(load_data51_U0_x_local_11_V_ce0),
-    .i_we0(load_data51_U0_x_local_11_V_we0),
-    .i_d0(load_data51_U0_x_local_11_V_d0),
+    .i_address0(load_data48_U0_x_local_11_V_address0),
+    .i_ce0(load_data48_U0_x_local_11_V_ce0),
+    .i_we0(load_data48_U0_x_local_11_V_we0),
+    .i_d0(load_data48_U0_x_local_11_V_d0),
     .i_q0(x_local_11_V_i_q0),
     .t_address0(compute_class_U0_x_local_11_V_address0),
     .t_ce0(compute_class_U0_x_local_11_V_ce0),
@@ -975,10 +975,10 @@ classify_x_local_1iI #(
 x_local_12_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_12_V_address0),
-    .i_ce0(load_data51_U0_x_local_12_V_ce0),
-    .i_we0(load_data51_U0_x_local_12_V_we0),
-    .i_d0(load_data51_U0_x_local_12_V_d0),
+    .i_address0(load_data48_U0_x_local_12_V_address0),
+    .i_ce0(load_data48_U0_x_local_12_V_ce0),
+    .i_we0(load_data48_U0_x_local_12_V_we0),
+    .i_d0(load_data48_U0_x_local_12_V_d0),
     .i_q0(x_local_12_V_i_q0),
     .t_address0(compute_class_U0_x_local_12_V_address0),
     .t_ce0(compute_class_U0_x_local_12_V_ce0),
@@ -1000,10 +1000,10 @@ classify_x_local_1iI #(
 x_local_13_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_13_V_address0),
-    .i_ce0(load_data51_U0_x_local_13_V_ce0),
-    .i_we0(load_data51_U0_x_local_13_V_we0),
-    .i_d0(load_data51_U0_x_local_13_V_d0),
+    .i_address0(load_data48_U0_x_local_13_V_address0),
+    .i_ce0(load_data48_U0_x_local_13_V_ce0),
+    .i_we0(load_data48_U0_x_local_13_V_we0),
+    .i_d0(load_data48_U0_x_local_13_V_d0),
     .i_q0(x_local_13_V_i_q0),
     .t_address0(compute_class_U0_x_local_13_V_address0),
     .t_ce0(compute_class_U0_x_local_13_V_ce0),
@@ -1025,10 +1025,10 @@ classify_x_local_1iI #(
 x_local_14_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_14_V_address0),
-    .i_ce0(load_data51_U0_x_local_14_V_ce0),
-    .i_we0(load_data51_U0_x_local_14_V_we0),
-    .i_d0(load_data51_U0_x_local_14_V_d0),
+    .i_address0(load_data48_U0_x_local_14_V_address0),
+    .i_ce0(load_data48_U0_x_local_14_V_ce0),
+    .i_we0(load_data48_U0_x_local_14_V_we0),
+    .i_d0(load_data48_U0_x_local_14_V_d0),
     .i_q0(x_local_14_V_i_q0),
     .t_address0(compute_class_U0_x_local_14_V_address0),
     .t_ce0(compute_class_U0_x_local_14_V_ce0),
@@ -1050,10 +1050,10 @@ classify_x_local_1iI #(
 x_local_15_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(load_data51_U0_x_local_15_V_address0),
-    .i_ce0(load_data51_U0_x_local_15_V_ce0),
-    .i_we0(load_data51_U0_x_local_15_V_we0),
-    .i_d0(load_data51_U0_x_local_15_V_d0),
+    .i_address0(load_data48_U0_x_local_15_V_address0),
+    .i_ce0(load_data48_U0_x_local_15_V_ce0),
+    .i_we0(load_data48_U0_x_local_15_V_we0),
+    .i_d0(load_data48_U0_x_local_15_V_d0),
     .i_q0(x_local_15_V_i_q0),
     .t_address0(compute_class_U0_x_local_15_V_address0),
     .t_ce0(compute_class_U0_x_local_15_V_ce0),
@@ -1068,128 +1068,128 @@ x_local_15_V_U(
     .t_read(compute_class_U0_ap_ready)
 );
 
-load_data51 load_data51_U0(
+load_data48 load_data48_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(load_data51_U0_ap_start),
-    .ap_done(load_data51_U0_ap_done),
-    .ap_continue(load_data51_U0_ap_continue),
-    .ap_idle(load_data51_U0_ap_idle),
-    .ap_ready(load_data51_U0_ap_ready),
-    .m_axi_x_V_AWVALID(load_data51_U0_m_axi_x_V_AWVALID),
+    .ap_start(load_data48_U0_ap_start),
+    .ap_done(load_data48_U0_ap_done),
+    .ap_continue(load_data48_U0_ap_continue),
+    .ap_idle(load_data48_U0_ap_idle),
+    .ap_ready(load_data48_U0_ap_ready),
+    .m_axi_x_V_AWVALID(load_data48_U0_m_axi_x_V_AWVALID),
     .m_axi_x_V_AWREADY(1'b0),
-    .m_axi_x_V_AWADDR(load_data51_U0_m_axi_x_V_AWADDR),
-    .m_axi_x_V_AWID(load_data51_U0_m_axi_x_V_AWID),
-    .m_axi_x_V_AWLEN(load_data51_U0_m_axi_x_V_AWLEN),
-    .m_axi_x_V_AWSIZE(load_data51_U0_m_axi_x_V_AWSIZE),
-    .m_axi_x_V_AWBURST(load_data51_U0_m_axi_x_V_AWBURST),
-    .m_axi_x_V_AWLOCK(load_data51_U0_m_axi_x_V_AWLOCK),
-    .m_axi_x_V_AWCACHE(load_data51_U0_m_axi_x_V_AWCACHE),
-    .m_axi_x_V_AWPROT(load_data51_U0_m_axi_x_V_AWPROT),
-    .m_axi_x_V_AWQOS(load_data51_U0_m_axi_x_V_AWQOS),
-    .m_axi_x_V_AWREGION(load_data51_U0_m_axi_x_V_AWREGION),
-    .m_axi_x_V_AWUSER(load_data51_U0_m_axi_x_V_AWUSER),
-    .m_axi_x_V_WVALID(load_data51_U0_m_axi_x_V_WVALID),
+    .m_axi_x_V_AWADDR(load_data48_U0_m_axi_x_V_AWADDR),
+    .m_axi_x_V_AWID(load_data48_U0_m_axi_x_V_AWID),
+    .m_axi_x_V_AWLEN(load_data48_U0_m_axi_x_V_AWLEN),
+    .m_axi_x_V_AWSIZE(load_data48_U0_m_axi_x_V_AWSIZE),
+    .m_axi_x_V_AWBURST(load_data48_U0_m_axi_x_V_AWBURST),
+    .m_axi_x_V_AWLOCK(load_data48_U0_m_axi_x_V_AWLOCK),
+    .m_axi_x_V_AWCACHE(load_data48_U0_m_axi_x_V_AWCACHE),
+    .m_axi_x_V_AWPROT(load_data48_U0_m_axi_x_V_AWPROT),
+    .m_axi_x_V_AWQOS(load_data48_U0_m_axi_x_V_AWQOS),
+    .m_axi_x_V_AWREGION(load_data48_U0_m_axi_x_V_AWREGION),
+    .m_axi_x_V_AWUSER(load_data48_U0_m_axi_x_V_AWUSER),
+    .m_axi_x_V_WVALID(load_data48_U0_m_axi_x_V_WVALID),
     .m_axi_x_V_WREADY(1'b0),
-    .m_axi_x_V_WDATA(load_data51_U0_m_axi_x_V_WDATA),
-    .m_axi_x_V_WSTRB(load_data51_U0_m_axi_x_V_WSTRB),
-    .m_axi_x_V_WLAST(load_data51_U0_m_axi_x_V_WLAST),
-    .m_axi_x_V_WID(load_data51_U0_m_axi_x_V_WID),
-    .m_axi_x_V_WUSER(load_data51_U0_m_axi_x_V_WUSER),
-    .m_axi_x_V_ARVALID(load_data51_U0_m_axi_x_V_ARVALID),
+    .m_axi_x_V_WDATA(load_data48_U0_m_axi_x_V_WDATA),
+    .m_axi_x_V_WSTRB(load_data48_U0_m_axi_x_V_WSTRB),
+    .m_axi_x_V_WLAST(load_data48_U0_m_axi_x_V_WLAST),
+    .m_axi_x_V_WID(load_data48_U0_m_axi_x_V_WID),
+    .m_axi_x_V_WUSER(load_data48_U0_m_axi_x_V_WUSER),
+    .m_axi_x_V_ARVALID(load_data48_U0_m_axi_x_V_ARVALID),
     .m_axi_x_V_ARREADY(gmem_ARREADY),
-    .m_axi_x_V_ARADDR(load_data51_U0_m_axi_x_V_ARADDR),
-    .m_axi_x_V_ARID(load_data51_U0_m_axi_x_V_ARID),
-    .m_axi_x_V_ARLEN(load_data51_U0_m_axi_x_V_ARLEN),
-    .m_axi_x_V_ARSIZE(load_data51_U0_m_axi_x_V_ARSIZE),
-    .m_axi_x_V_ARBURST(load_data51_U0_m_axi_x_V_ARBURST),
-    .m_axi_x_V_ARLOCK(load_data51_U0_m_axi_x_V_ARLOCK),
-    .m_axi_x_V_ARCACHE(load_data51_U0_m_axi_x_V_ARCACHE),
-    .m_axi_x_V_ARPROT(load_data51_U0_m_axi_x_V_ARPROT),
-    .m_axi_x_V_ARQOS(load_data51_U0_m_axi_x_V_ARQOS),
-    .m_axi_x_V_ARREGION(load_data51_U0_m_axi_x_V_ARREGION),
-    .m_axi_x_V_ARUSER(load_data51_U0_m_axi_x_V_ARUSER),
+    .m_axi_x_V_ARADDR(load_data48_U0_m_axi_x_V_ARADDR),
+    .m_axi_x_V_ARID(load_data48_U0_m_axi_x_V_ARID),
+    .m_axi_x_V_ARLEN(load_data48_U0_m_axi_x_V_ARLEN),
+    .m_axi_x_V_ARSIZE(load_data48_U0_m_axi_x_V_ARSIZE),
+    .m_axi_x_V_ARBURST(load_data48_U0_m_axi_x_V_ARBURST),
+    .m_axi_x_V_ARLOCK(load_data48_U0_m_axi_x_V_ARLOCK),
+    .m_axi_x_V_ARCACHE(load_data48_U0_m_axi_x_V_ARCACHE),
+    .m_axi_x_V_ARPROT(load_data48_U0_m_axi_x_V_ARPROT),
+    .m_axi_x_V_ARQOS(load_data48_U0_m_axi_x_V_ARQOS),
+    .m_axi_x_V_ARREGION(load_data48_U0_m_axi_x_V_ARREGION),
+    .m_axi_x_V_ARUSER(load_data48_U0_m_axi_x_V_ARUSER),
     .m_axi_x_V_RVALID(gmem_RVALID),
-    .m_axi_x_V_RREADY(load_data51_U0_m_axi_x_V_RREADY),
+    .m_axi_x_V_RREADY(load_data48_U0_m_axi_x_V_RREADY),
     .m_axi_x_V_RDATA(gmem_RDATA),
     .m_axi_x_V_RLAST(gmem_RLAST),
     .m_axi_x_V_RID(gmem_RID),
     .m_axi_x_V_RUSER(gmem_RUSER),
     .m_axi_x_V_RRESP(gmem_RRESP),
     .m_axi_x_V_BVALID(1'b0),
-    .m_axi_x_V_BREADY(load_data51_U0_m_axi_x_V_BREADY),
+    .m_axi_x_V_BREADY(load_data48_U0_m_axi_x_V_BREADY),
     .m_axi_x_V_BRESP(2'd0),
     .m_axi_x_V_BID(1'd0),
     .m_axi_x_V_BUSER(1'd0),
     .x_V_offset(x_V),
-    .x_local_0_V_address0(load_data51_U0_x_local_0_V_address0),
-    .x_local_0_V_ce0(load_data51_U0_x_local_0_V_ce0),
-    .x_local_0_V_we0(load_data51_U0_x_local_0_V_we0),
-    .x_local_0_V_d0(load_data51_U0_x_local_0_V_d0),
-    .x_local_1_V_address0(load_data51_U0_x_local_1_V_address0),
-    .x_local_1_V_ce0(load_data51_U0_x_local_1_V_ce0),
-    .x_local_1_V_we0(load_data51_U0_x_local_1_V_we0),
-    .x_local_1_V_d0(load_data51_U0_x_local_1_V_d0),
-    .x_local_2_V_address0(load_data51_U0_x_local_2_V_address0),
-    .x_local_2_V_ce0(load_data51_U0_x_local_2_V_ce0),
-    .x_local_2_V_we0(load_data51_U0_x_local_2_V_we0),
-    .x_local_2_V_d0(load_data51_U0_x_local_2_V_d0),
-    .x_local_3_V_address0(load_data51_U0_x_local_3_V_address0),
-    .x_local_3_V_ce0(load_data51_U0_x_local_3_V_ce0),
-    .x_local_3_V_we0(load_data51_U0_x_local_3_V_we0),
-    .x_local_3_V_d0(load_data51_U0_x_local_3_V_d0),
-    .x_local_4_V_address0(load_data51_U0_x_local_4_V_address0),
-    .x_local_4_V_ce0(load_data51_U0_x_local_4_V_ce0),
-    .x_local_4_V_we0(load_data51_U0_x_local_4_V_we0),
-    .x_local_4_V_d0(load_data51_U0_x_local_4_V_d0),
-    .x_local_5_V_address0(load_data51_U0_x_local_5_V_address0),
-    .x_local_5_V_ce0(load_data51_U0_x_local_5_V_ce0),
-    .x_local_5_V_we0(load_data51_U0_x_local_5_V_we0),
-    .x_local_5_V_d0(load_data51_U0_x_local_5_V_d0),
-    .x_local_6_V_address0(load_data51_U0_x_local_6_V_address0),
-    .x_local_6_V_ce0(load_data51_U0_x_local_6_V_ce0),
-    .x_local_6_V_we0(load_data51_U0_x_local_6_V_we0),
-    .x_local_6_V_d0(load_data51_U0_x_local_6_V_d0),
-    .x_local_7_V_address0(load_data51_U0_x_local_7_V_address0),
-    .x_local_7_V_ce0(load_data51_U0_x_local_7_V_ce0),
-    .x_local_7_V_we0(load_data51_U0_x_local_7_V_we0),
-    .x_local_7_V_d0(load_data51_U0_x_local_7_V_d0),
-    .x_local_8_V_address0(load_data51_U0_x_local_8_V_address0),
-    .x_local_8_V_ce0(load_data51_U0_x_local_8_V_ce0),
-    .x_local_8_V_we0(load_data51_U0_x_local_8_V_we0),
-    .x_local_8_V_d0(load_data51_U0_x_local_8_V_d0),
-    .x_local_9_V_address0(load_data51_U0_x_local_9_V_address0),
-    .x_local_9_V_ce0(load_data51_U0_x_local_9_V_ce0),
-    .x_local_9_V_we0(load_data51_U0_x_local_9_V_we0),
-    .x_local_9_V_d0(load_data51_U0_x_local_9_V_d0),
-    .x_local_10_V_address0(load_data51_U0_x_local_10_V_address0),
-    .x_local_10_V_ce0(load_data51_U0_x_local_10_V_ce0),
-    .x_local_10_V_we0(load_data51_U0_x_local_10_V_we0),
-    .x_local_10_V_d0(load_data51_U0_x_local_10_V_d0),
-    .x_local_11_V_address0(load_data51_U0_x_local_11_V_address0),
-    .x_local_11_V_ce0(load_data51_U0_x_local_11_V_ce0),
-    .x_local_11_V_we0(load_data51_U0_x_local_11_V_we0),
-    .x_local_11_V_d0(load_data51_U0_x_local_11_V_d0),
-    .x_local_12_V_address0(load_data51_U0_x_local_12_V_address0),
-    .x_local_12_V_ce0(load_data51_U0_x_local_12_V_ce0),
-    .x_local_12_V_we0(load_data51_U0_x_local_12_V_we0),
-    .x_local_12_V_d0(load_data51_U0_x_local_12_V_d0),
-    .x_local_13_V_address0(load_data51_U0_x_local_13_V_address0),
-    .x_local_13_V_ce0(load_data51_U0_x_local_13_V_ce0),
-    .x_local_13_V_we0(load_data51_U0_x_local_13_V_we0),
-    .x_local_13_V_d0(load_data51_U0_x_local_13_V_d0),
-    .x_local_14_V_address0(load_data51_U0_x_local_14_V_address0),
-    .x_local_14_V_ce0(load_data51_U0_x_local_14_V_ce0),
-    .x_local_14_V_we0(load_data51_U0_x_local_14_V_we0),
-    .x_local_14_V_d0(load_data51_U0_x_local_14_V_d0),
-    .x_local_15_V_address0(load_data51_U0_x_local_15_V_address0),
-    .x_local_15_V_ce0(load_data51_U0_x_local_15_V_ce0),
-    .x_local_15_V_we0(load_data51_U0_x_local_15_V_we0),
-    .x_local_15_V_d0(load_data51_U0_x_local_15_V_d0),
+    .x_local_0_V_address0(load_data48_U0_x_local_0_V_address0),
+    .x_local_0_V_ce0(load_data48_U0_x_local_0_V_ce0),
+    .x_local_0_V_we0(load_data48_U0_x_local_0_V_we0),
+    .x_local_0_V_d0(load_data48_U0_x_local_0_V_d0),
+    .x_local_1_V_address0(load_data48_U0_x_local_1_V_address0),
+    .x_local_1_V_ce0(load_data48_U0_x_local_1_V_ce0),
+    .x_local_1_V_we0(load_data48_U0_x_local_1_V_we0),
+    .x_local_1_V_d0(load_data48_U0_x_local_1_V_d0),
+    .x_local_2_V_address0(load_data48_U0_x_local_2_V_address0),
+    .x_local_2_V_ce0(load_data48_U0_x_local_2_V_ce0),
+    .x_local_2_V_we0(load_data48_U0_x_local_2_V_we0),
+    .x_local_2_V_d0(load_data48_U0_x_local_2_V_d0),
+    .x_local_3_V_address0(load_data48_U0_x_local_3_V_address0),
+    .x_local_3_V_ce0(load_data48_U0_x_local_3_V_ce0),
+    .x_local_3_V_we0(load_data48_U0_x_local_3_V_we0),
+    .x_local_3_V_d0(load_data48_U0_x_local_3_V_d0),
+    .x_local_4_V_address0(load_data48_U0_x_local_4_V_address0),
+    .x_local_4_V_ce0(load_data48_U0_x_local_4_V_ce0),
+    .x_local_4_V_we0(load_data48_U0_x_local_4_V_we0),
+    .x_local_4_V_d0(load_data48_U0_x_local_4_V_d0),
+    .x_local_5_V_address0(load_data48_U0_x_local_5_V_address0),
+    .x_local_5_V_ce0(load_data48_U0_x_local_5_V_ce0),
+    .x_local_5_V_we0(load_data48_U0_x_local_5_V_we0),
+    .x_local_5_V_d0(load_data48_U0_x_local_5_V_d0),
+    .x_local_6_V_address0(load_data48_U0_x_local_6_V_address0),
+    .x_local_6_V_ce0(load_data48_U0_x_local_6_V_ce0),
+    .x_local_6_V_we0(load_data48_U0_x_local_6_V_we0),
+    .x_local_6_V_d0(load_data48_U0_x_local_6_V_d0),
+    .x_local_7_V_address0(load_data48_U0_x_local_7_V_address0),
+    .x_local_7_V_ce0(load_data48_U0_x_local_7_V_ce0),
+    .x_local_7_V_we0(load_data48_U0_x_local_7_V_we0),
+    .x_local_7_V_d0(load_data48_U0_x_local_7_V_d0),
+    .x_local_8_V_address0(load_data48_U0_x_local_8_V_address0),
+    .x_local_8_V_ce0(load_data48_U0_x_local_8_V_ce0),
+    .x_local_8_V_we0(load_data48_U0_x_local_8_V_we0),
+    .x_local_8_V_d0(load_data48_U0_x_local_8_V_d0),
+    .x_local_9_V_address0(load_data48_U0_x_local_9_V_address0),
+    .x_local_9_V_ce0(load_data48_U0_x_local_9_V_ce0),
+    .x_local_9_V_we0(load_data48_U0_x_local_9_V_we0),
+    .x_local_9_V_d0(load_data48_U0_x_local_9_V_d0),
+    .x_local_10_V_address0(load_data48_U0_x_local_10_V_address0),
+    .x_local_10_V_ce0(load_data48_U0_x_local_10_V_ce0),
+    .x_local_10_V_we0(load_data48_U0_x_local_10_V_we0),
+    .x_local_10_V_d0(load_data48_U0_x_local_10_V_d0),
+    .x_local_11_V_address0(load_data48_U0_x_local_11_V_address0),
+    .x_local_11_V_ce0(load_data48_U0_x_local_11_V_ce0),
+    .x_local_11_V_we0(load_data48_U0_x_local_11_V_we0),
+    .x_local_11_V_d0(load_data48_U0_x_local_11_V_d0),
+    .x_local_12_V_address0(load_data48_U0_x_local_12_V_address0),
+    .x_local_12_V_ce0(load_data48_U0_x_local_12_V_ce0),
+    .x_local_12_V_we0(load_data48_U0_x_local_12_V_we0),
+    .x_local_12_V_d0(load_data48_U0_x_local_12_V_d0),
+    .x_local_13_V_address0(load_data48_U0_x_local_13_V_address0),
+    .x_local_13_V_ce0(load_data48_U0_x_local_13_V_ce0),
+    .x_local_13_V_we0(load_data48_U0_x_local_13_V_we0),
+    .x_local_13_V_d0(load_data48_U0_x_local_13_V_d0),
+    .x_local_14_V_address0(load_data48_U0_x_local_14_V_address0),
+    .x_local_14_V_ce0(load_data48_U0_x_local_14_V_ce0),
+    .x_local_14_V_we0(load_data48_U0_x_local_14_V_we0),
+    .x_local_14_V_d0(load_data48_U0_x_local_14_V_d0),
+    .x_local_15_V_address0(load_data48_U0_x_local_15_V_address0),
+    .x_local_15_V_ce0(load_data48_U0_x_local_15_V_ce0),
+    .x_local_15_V_we0(load_data48_U0_x_local_15_V_we0),
+    .x_local_15_V_d0(load_data48_U0_x_local_15_V_d0),
     .x_norm_in_V(x_norm_in_V),
-    .x_norm_in_V_out_din(load_data51_U0_x_norm_in_V_out_din),
+    .x_norm_in_V_out_din(load_data48_U0_x_norm_in_V_out_din),
     .x_norm_in_V_out_full_n(x_norm_in_V_c_full_n),
-    .x_norm_in_V_out_write(load_data51_U0_x_norm_in_V_out_write)
+    .x_norm_in_V_out_write(load_data48_U0_x_norm_in_V_out_write)
 );
 
 compute_class compute_class_U0(
@@ -1283,9 +1283,9 @@ fifo_w24_d2_A x_norm_in_V_c_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(load_data51_U0_x_norm_in_V_out_din),
+    .if_din(load_data48_U0_x_norm_in_V_out_din),
     .if_full_n(x_norm_in_V_c_full_n),
-    .if_write(load_data51_U0_x_norm_in_V_out_write),
+    .if_write(load_data48_U0_x_norm_in_V_out_write),
     .if_dout(x_norm_in_V_c_dout),
     .if_empty_n(x_norm_in_V_c_empty_n),
     .if_read(compute_class_U0_x_norm_in_V_read)
@@ -1321,7 +1321,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_0_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_0_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_0_V <= ap_sync_channel_write_x_local_0_V;
@@ -1333,7 +1333,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_10_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_10_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_10_V <= ap_sync_channel_write_x_local_10_V;
@@ -1345,7 +1345,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_11_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_11_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_11_V <= ap_sync_channel_write_x_local_11_V;
@@ -1357,7 +1357,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_12_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_12_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_12_V <= ap_sync_channel_write_x_local_12_V;
@@ -1369,7 +1369,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_13_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_13_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_13_V <= ap_sync_channel_write_x_local_13_V;
@@ -1381,7 +1381,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_14_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_14_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_14_V <= ap_sync_channel_write_x_local_14_V;
@@ -1393,7 +1393,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_15_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_15_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_15_V <= ap_sync_channel_write_x_local_15_V;
@@ -1405,7 +1405,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_1_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_1_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_1_V <= ap_sync_channel_write_x_local_1_V;
@@ -1417,7 +1417,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_2_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_2_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_2_V <= ap_sync_channel_write_x_local_2_V;
@@ -1429,7 +1429,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_3_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_3_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_3_V <= ap_sync_channel_write_x_local_3_V;
@@ -1441,7 +1441,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_4_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_4_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_4_V <= ap_sync_channel_write_x_local_4_V;
@@ -1453,7 +1453,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_5_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_5_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_5_V <= ap_sync_channel_write_x_local_5_V;
@@ -1465,7 +1465,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_6_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_6_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_6_V <= ap_sync_channel_write_x_local_6_V;
@@ -1477,7 +1477,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_7_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_7_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_7_V <= ap_sync_channel_write_x_local_7_V;
@@ -1489,7 +1489,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_8_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_8_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_8_V <= ap_sync_channel_write_x_local_8_V;
@@ -1501,7 +1501,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_x_local_9_V <= 1'b0;
     end else begin
-        if (((load_data51_U0_ap_done & load_data51_U0_ap_continue) == 1'b1)) begin
+        if (((load_data48_U0_ap_done & load_data48_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_9_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_9_V <= ap_sync_channel_write_x_local_9_V;
@@ -1521,85 +1521,85 @@ assign ap_channel_done_result = compute_class_U0_ap_done;
 
 assign ap_channel_done_result_load_loc_chan = Block_proc_U0_ap_done;
 
-assign ap_channel_done_x_local_0_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_0_V ^ 1'b1));
+assign ap_channel_done_x_local_0_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_0_V ^ 1'b1));
 
-assign ap_channel_done_x_local_10_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_10_V ^ 1'b1));
+assign ap_channel_done_x_local_10_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_10_V ^ 1'b1));
 
-assign ap_channel_done_x_local_11_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_11_V ^ 1'b1));
+assign ap_channel_done_x_local_11_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_11_V ^ 1'b1));
 
-assign ap_channel_done_x_local_12_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_12_V ^ 1'b1));
+assign ap_channel_done_x_local_12_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_12_V ^ 1'b1));
 
-assign ap_channel_done_x_local_13_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_13_V ^ 1'b1));
+assign ap_channel_done_x_local_13_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_13_V ^ 1'b1));
 
-assign ap_channel_done_x_local_14_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_14_V ^ 1'b1));
+assign ap_channel_done_x_local_14_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_14_V ^ 1'b1));
 
-assign ap_channel_done_x_local_15_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_15_V ^ 1'b1));
+assign ap_channel_done_x_local_15_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_15_V ^ 1'b1));
 
-assign ap_channel_done_x_local_1_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_1_V ^ 1'b1));
+assign ap_channel_done_x_local_1_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_1_V ^ 1'b1));
 
-assign ap_channel_done_x_local_2_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_2_V ^ 1'b1));
+assign ap_channel_done_x_local_2_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_2_V ^ 1'b1));
 
-assign ap_channel_done_x_local_3_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_3_V ^ 1'b1));
+assign ap_channel_done_x_local_3_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_3_V ^ 1'b1));
 
-assign ap_channel_done_x_local_4_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_4_V ^ 1'b1));
+assign ap_channel_done_x_local_4_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_4_V ^ 1'b1));
 
-assign ap_channel_done_x_local_5_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_5_V ^ 1'b1));
+assign ap_channel_done_x_local_5_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_5_V ^ 1'b1));
 
-assign ap_channel_done_x_local_6_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_6_V ^ 1'b1));
+assign ap_channel_done_x_local_6_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_6_V ^ 1'b1));
 
-assign ap_channel_done_x_local_7_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_7_V ^ 1'b1));
+assign ap_channel_done_x_local_7_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_7_V ^ 1'b1));
 
-assign ap_channel_done_x_local_8_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_8_V ^ 1'b1));
+assign ap_channel_done_x_local_8_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_8_V ^ 1'b1));
 
-assign ap_channel_done_x_local_9_V = (load_data51_U0_ap_done & (ap_sync_reg_channel_write_x_local_9_V ^ 1'b1));
+assign ap_channel_done_x_local_9_V = (load_data48_U0_ap_done & (ap_sync_reg_channel_write_x_local_9_V ^ 1'b1));
 
 assign ap_done = p_ADSD_Classifier_cp_U0_ap_done;
 
-assign ap_idle = (p_ADSD_Classifier_cp_U0_ap_idle & load_data51_U0_ap_idle & (result_load_loc_chan_empty_n ^ 1'b1) & (result_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_class_U0_ap_idle & Block_proc_U0_ap_idle);
+assign ap_idle = (p_ADSD_Classifier_cp_U0_ap_idle & load_data48_U0_ap_idle & (result_load_loc_chan_empty_n ^ 1'b1) & (result_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_class_U0_ap_idle & Block_proc_U0_ap_idle);
 
-assign ap_ready = load_data51_U0_ap_ready;
+assign ap_ready = load_data48_U0_ap_ready;
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign ap_sync_channel_write_x_local_0_V = ((load_data51_U0_x_local_0_V_full_n & ap_channel_done_x_local_0_V) | ap_sync_reg_channel_write_x_local_0_V);
+assign ap_sync_channel_write_x_local_0_V = ((load_data48_U0_x_local_0_V_full_n & ap_channel_done_x_local_0_V) | ap_sync_reg_channel_write_x_local_0_V);
 
-assign ap_sync_channel_write_x_local_10_V = ((load_data51_U0_x_local_10_V_full_n & ap_channel_done_x_local_10_V) | ap_sync_reg_channel_write_x_local_10_V);
+assign ap_sync_channel_write_x_local_10_V = ((load_data48_U0_x_local_10_V_full_n & ap_channel_done_x_local_10_V) | ap_sync_reg_channel_write_x_local_10_V);
 
-assign ap_sync_channel_write_x_local_11_V = ((load_data51_U0_x_local_11_V_full_n & ap_channel_done_x_local_11_V) | ap_sync_reg_channel_write_x_local_11_V);
+assign ap_sync_channel_write_x_local_11_V = ((load_data48_U0_x_local_11_V_full_n & ap_channel_done_x_local_11_V) | ap_sync_reg_channel_write_x_local_11_V);
 
-assign ap_sync_channel_write_x_local_12_V = ((load_data51_U0_x_local_12_V_full_n & ap_channel_done_x_local_12_V) | ap_sync_reg_channel_write_x_local_12_V);
+assign ap_sync_channel_write_x_local_12_V = ((load_data48_U0_x_local_12_V_full_n & ap_channel_done_x_local_12_V) | ap_sync_reg_channel_write_x_local_12_V);
 
-assign ap_sync_channel_write_x_local_13_V = ((load_data51_U0_x_local_13_V_full_n & ap_channel_done_x_local_13_V) | ap_sync_reg_channel_write_x_local_13_V);
+assign ap_sync_channel_write_x_local_13_V = ((load_data48_U0_x_local_13_V_full_n & ap_channel_done_x_local_13_V) | ap_sync_reg_channel_write_x_local_13_V);
 
-assign ap_sync_channel_write_x_local_14_V = ((load_data51_U0_x_local_14_V_full_n & ap_channel_done_x_local_14_V) | ap_sync_reg_channel_write_x_local_14_V);
+assign ap_sync_channel_write_x_local_14_V = ((load_data48_U0_x_local_14_V_full_n & ap_channel_done_x_local_14_V) | ap_sync_reg_channel_write_x_local_14_V);
 
-assign ap_sync_channel_write_x_local_15_V = ((load_data51_U0_x_local_15_V_full_n & ap_channel_done_x_local_15_V) | ap_sync_reg_channel_write_x_local_15_V);
+assign ap_sync_channel_write_x_local_15_V = ((load_data48_U0_x_local_15_V_full_n & ap_channel_done_x_local_15_V) | ap_sync_reg_channel_write_x_local_15_V);
 
-assign ap_sync_channel_write_x_local_1_V = ((load_data51_U0_x_local_1_V_full_n & ap_channel_done_x_local_1_V) | ap_sync_reg_channel_write_x_local_1_V);
+assign ap_sync_channel_write_x_local_1_V = ((load_data48_U0_x_local_1_V_full_n & ap_channel_done_x_local_1_V) | ap_sync_reg_channel_write_x_local_1_V);
 
-assign ap_sync_channel_write_x_local_2_V = ((load_data51_U0_x_local_2_V_full_n & ap_channel_done_x_local_2_V) | ap_sync_reg_channel_write_x_local_2_V);
+assign ap_sync_channel_write_x_local_2_V = ((load_data48_U0_x_local_2_V_full_n & ap_channel_done_x_local_2_V) | ap_sync_reg_channel_write_x_local_2_V);
 
-assign ap_sync_channel_write_x_local_3_V = ((load_data51_U0_x_local_3_V_full_n & ap_channel_done_x_local_3_V) | ap_sync_reg_channel_write_x_local_3_V);
+assign ap_sync_channel_write_x_local_3_V = ((load_data48_U0_x_local_3_V_full_n & ap_channel_done_x_local_3_V) | ap_sync_reg_channel_write_x_local_3_V);
 
-assign ap_sync_channel_write_x_local_4_V = ((load_data51_U0_x_local_4_V_full_n & ap_channel_done_x_local_4_V) | ap_sync_reg_channel_write_x_local_4_V);
+assign ap_sync_channel_write_x_local_4_V = ((load_data48_U0_x_local_4_V_full_n & ap_channel_done_x_local_4_V) | ap_sync_reg_channel_write_x_local_4_V);
 
-assign ap_sync_channel_write_x_local_5_V = ((load_data51_U0_x_local_5_V_full_n & ap_channel_done_x_local_5_V) | ap_sync_reg_channel_write_x_local_5_V);
+assign ap_sync_channel_write_x_local_5_V = ((load_data48_U0_x_local_5_V_full_n & ap_channel_done_x_local_5_V) | ap_sync_reg_channel_write_x_local_5_V);
 
-assign ap_sync_channel_write_x_local_6_V = ((load_data51_U0_x_local_6_V_full_n & ap_channel_done_x_local_6_V) | ap_sync_reg_channel_write_x_local_6_V);
+assign ap_sync_channel_write_x_local_6_V = ((load_data48_U0_x_local_6_V_full_n & ap_channel_done_x_local_6_V) | ap_sync_reg_channel_write_x_local_6_V);
 
-assign ap_sync_channel_write_x_local_7_V = ((load_data51_U0_x_local_7_V_full_n & ap_channel_done_x_local_7_V) | ap_sync_reg_channel_write_x_local_7_V);
+assign ap_sync_channel_write_x_local_7_V = ((load_data48_U0_x_local_7_V_full_n & ap_channel_done_x_local_7_V) | ap_sync_reg_channel_write_x_local_7_V);
 
-assign ap_sync_channel_write_x_local_8_V = ((load_data51_U0_x_local_8_V_full_n & ap_channel_done_x_local_8_V) | ap_sync_reg_channel_write_x_local_8_V);
+assign ap_sync_channel_write_x_local_8_V = ((load_data48_U0_x_local_8_V_full_n & ap_channel_done_x_local_8_V) | ap_sync_reg_channel_write_x_local_8_V);
 
-assign ap_sync_channel_write_x_local_9_V = ((load_data51_U0_x_local_9_V_full_n & ap_channel_done_x_local_9_V) | ap_sync_reg_channel_write_x_local_9_V);
+assign ap_sync_channel_write_x_local_9_V = ((load_data48_U0_x_local_9_V_full_n & ap_channel_done_x_local_9_V) | ap_sync_reg_channel_write_x_local_9_V);
 
 assign ap_sync_continue = 1'b1;
 
 assign ap_sync_done = p_ADSD_Classifier_cp_U0_ap_done;
 
-assign ap_sync_ready = load_data51_U0_ap_ready;
+assign ap_sync_ready = load_data48_U0_ap_ready;
 
 assign compute_class_U0_ap_continue = result_full_n;
 
@@ -1609,45 +1609,45 @@ assign compute_class_U0_start_full_n = 1'b1;
 
 assign compute_class_U0_start_write = 1'b0;
 
-assign load_data51_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V);
+assign load_data48_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V);
 
-assign load_data51_U0_ap_start = ap_start;
+assign load_data48_U0_ap_start = ap_start;
 
-assign load_data51_U0_start_full_n = 1'b1;
+assign load_data48_U0_start_full_n = 1'b1;
 
-assign load_data51_U0_start_write = 1'b0;
+assign load_data48_U0_start_write = 1'b0;
 
-assign load_data51_U0_x_local_0_V_full_n = x_local_0_V_i_full_n;
+assign load_data48_U0_x_local_0_V_full_n = x_local_0_V_i_full_n;
 
-assign load_data51_U0_x_local_10_V_full_n = x_local_10_V_i_full_n;
+assign load_data48_U0_x_local_10_V_full_n = x_local_10_V_i_full_n;
 
-assign load_data51_U0_x_local_11_V_full_n = x_local_11_V_i_full_n;
+assign load_data48_U0_x_local_11_V_full_n = x_local_11_V_i_full_n;
 
-assign load_data51_U0_x_local_12_V_full_n = x_local_12_V_i_full_n;
+assign load_data48_U0_x_local_12_V_full_n = x_local_12_V_i_full_n;
 
-assign load_data51_U0_x_local_13_V_full_n = x_local_13_V_i_full_n;
+assign load_data48_U0_x_local_13_V_full_n = x_local_13_V_i_full_n;
 
-assign load_data51_U0_x_local_14_V_full_n = x_local_14_V_i_full_n;
+assign load_data48_U0_x_local_14_V_full_n = x_local_14_V_i_full_n;
 
-assign load_data51_U0_x_local_15_V_full_n = x_local_15_V_i_full_n;
+assign load_data48_U0_x_local_15_V_full_n = x_local_15_V_i_full_n;
 
-assign load_data51_U0_x_local_1_V_full_n = x_local_1_V_i_full_n;
+assign load_data48_U0_x_local_1_V_full_n = x_local_1_V_i_full_n;
 
-assign load_data51_U0_x_local_2_V_full_n = x_local_2_V_i_full_n;
+assign load_data48_U0_x_local_2_V_full_n = x_local_2_V_i_full_n;
 
-assign load_data51_U0_x_local_3_V_full_n = x_local_3_V_i_full_n;
+assign load_data48_U0_x_local_3_V_full_n = x_local_3_V_i_full_n;
 
-assign load_data51_U0_x_local_4_V_full_n = x_local_4_V_i_full_n;
+assign load_data48_U0_x_local_4_V_full_n = x_local_4_V_i_full_n;
 
-assign load_data51_U0_x_local_5_V_full_n = x_local_5_V_i_full_n;
+assign load_data48_U0_x_local_5_V_full_n = x_local_5_V_i_full_n;
 
-assign load_data51_U0_x_local_6_V_full_n = x_local_6_V_i_full_n;
+assign load_data48_U0_x_local_6_V_full_n = x_local_6_V_i_full_n;
 
-assign load_data51_U0_x_local_7_V_full_n = x_local_7_V_i_full_n;
+assign load_data48_U0_x_local_7_V_full_n = x_local_7_V_i_full_n;
 
-assign load_data51_U0_x_local_8_V_full_n = x_local_8_V_i_full_n;
+assign load_data48_U0_x_local_8_V_full_n = x_local_8_V_i_full_n;
 
-assign load_data51_U0_x_local_9_V_full_n = x_local_9_V_i_full_n;
+assign load_data48_U0_x_local_9_V_full_n = x_local_9_V_i_full_n;
 
 assign p_ADSD_Classifier_cp_U0_ap_continue = 1'b1;
 

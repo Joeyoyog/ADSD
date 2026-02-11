@@ -1,9 +1,9 @@
 
 
 ================================================================
-== Vivado HLS Report for 'load_data51'
+== Vivado HLS Report for 'load_data48'
 ================================================================
-* Date:           Mon Feb  9 22:44:45 2026
+* Date:           Wed Feb 11 20:56:02 2026
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        ADSD
@@ -128,12 +128,12 @@ ST_6 : Operation 21 [2/7] (8.75ns)   --->   "%x_V_addr_rd_req = call i1 @_ssdm_o
 
 State 7 <SV = 6> <Delay = 8.75>
 ST_7 : Operation 22 [1/1] (0.00ns)   --->   "%x_norm_in_V_read = call i24 @_ssdm_op_Read.ap_auto.i24(i24 %x_norm_in_V)"   --->   Operation 22 'read' 'x_norm_in_V_read' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %x_norm_in_V_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 26 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.i24P(i24* %x_norm_in_V_out, i24 %x_norm_in_V_read)"   --->   Operation 26 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
-ST_7 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 28 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %x_V, [6 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 98, [5 x i8]* @p_str16, [6 x i8]* @p_str17, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 28 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 29 [1/7] (8.75ns)   --->   "%x_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %x_V_addr, i32 98)" [ADSD/Classifier.cpp:14]   --->   Operation 29 'readreq' 'x_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_7 : Operation 30 [1/1] (1.76ns)   --->   "br label %0" [ADSD/Classifier.cpp:12]   --->   Operation 30 'br' <Predicate = true> <Delay = 1.76>
 
@@ -166,9 +166,9 @@ ST_9 : Operation 53 [1/1] (0.00ns)   --->   "%p_Result_6_i_i = call i8 @_ssdm_op
 ST_9 : Operation 54 [1/1] (0.00ns)   --->   "%p_Result_7_i_i = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %packet_V, i32 56, i32 63)" [ADSD/Classifier.cpp:18]   --->   Operation 54 'partselect' 'p_Result_7_i_i' <Predicate = true> <Delay = 0.00>
 
 State 10 <SV = 9> <Delay = 2.32>
-ST_10 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str53) nounwind" [ADSD/Classifier.cpp:12]   --->   Operation 55 'specloopname' <Predicate = true> <Delay = 0.00>
-ST_10 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_2_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str53)" [ADSD/Classifier.cpp:12]   --->   Operation 56 'specregionbegin' 'tmp_2_i_i' <Predicate = true> <Delay = 0.00>
-ST_10 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [ADSD/Classifier.cpp:13]   --->   Operation 57 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str5) nounwind" [ADSD/Classifier.cpp:12]   --->   Operation 55 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_2_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str5)" [ADSD/Classifier.cpp:12]   --->   Operation 56 'specregionbegin' 'tmp_2_i_i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [ADSD/Classifier.cpp:13]   --->   Operation 57 'specpipeline' <Predicate = true> <Delay = 0.00>
 ST_10 : Operation 58 [1/1] (0.00ns)   --->   "%newIndex1_i_i = zext i6 %tmp_3_cast_i_i to i64" [ADSD/Classifier.cpp:12]   --->   Operation 58 'zext' 'newIndex1_i_i' <Predicate = true> <Delay = 0.00>
 ST_10 : Operation 59 [1/1] (0.00ns)   --->   "%x_local_0_V_addr = getelementptr [49 x i8]* %x_local_0_V, i64 0, i64 %newIndex1_i_i" [ADSD/Classifier.cpp:19]   --->   Operation 59 'getelementptr' 'x_local_0_V_addr' <Predicate = true> <Delay = 0.00>
 ST_10 : Operation 60 [1/1] (0.00ns)   --->   "%x_local_8_V_addr = getelementptr [49 x i8]* %x_local_8_V, i64 0, i64 %newIndex1_i_i" [ADSD/Classifier.cpp:19]   --->   Operation 60 'getelementptr' 'x_local_8_V_addr' <Predicate = true> <Delay = 0.00>
@@ -218,7 +218,7 @@ ST_10 : Operation 103 [1/1] (2.32ns)   --->   "store i8 %p_Result_7_i_i, i8* %x_
 ST_10 : Operation 104 [1/1] (0.00ns)   --->   "br label %9" [ADSD/Classifier.cpp:19]   --->   Operation 104 'br' <Predicate = (!tmp)> <Delay = 0.00>
 ST_10 : Operation 105 [1/1] (2.32ns)   --->   "store i8 %p_Result_7_i_i, i8* %x_local_15_V_addr, align 1" [ADSD/Classifier.cpp:19]   --->   Operation 105 'store' <Predicate = (tmp)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 49> <RAM>
 ST_10 : Operation 106 [1/1] (0.00ns)   --->   "br label %9" [ADSD/Classifier.cpp:19]   --->   Operation 106 'br' <Predicate = (tmp)> <Delay = 0.00>
-ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str53, i32 %tmp_2_i_i)" [ADSD/Classifier.cpp:21]   --->   Operation 107 'specregionend' 'empty_33' <Predicate = (!exitcond1_i_i)> <Delay = 0.00>
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%empty_35 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str5, i32 %tmp_2_i_i)" [ADSD/Classifier.cpp:21]   --->   Operation 107 'specregionend' 'empty_35' <Predicate = (!exitcond1_i_i)> <Delay = 0.00>
 ST_10 : Operation 108 [1/1] (0.00ns)   --->   "br label %0" [ADSD/Classifier.cpp:12]   --->   Operation 108 'br' <Predicate = (!exitcond1_i_i)> <Delay = 0.00>
 
 State 11 <SV = 8> <Delay = 0.00>

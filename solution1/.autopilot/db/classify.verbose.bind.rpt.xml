@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Mon Feb  9 22:44:56 2026
+<item name = "Date">Wed Feb 11 20:56:39 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.750, 1.25</column>
+<column name="ap_clk">10.00, 8.833, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1108, 1108, 1001, 1001, dataflow</column>
+<column name="">1064, 1064, 957, 957, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_compute_class_fu_244">compute_class, 1000, 1000, 1000, 1000, none</column>
-<column name="grp_load_data51_fu_361">load_data51, 107, 107, 107, 107, none</column>
-<column name="result_load_loc_chan_Block_proc_fu_404">Block_proc, 0, 0, 0, 0, none</column>
-<column name="tmp_p_ADSD_Classifier_cp_fu_410">p_ADSD_Classifier_cp, 0, 0, 0, 0, none</column>
+<column name="grp_compute_class_fu_242">compute_class, 956, 956, 956, 956, none</column>
+<column name="grp_load_data48_fu_359">load_data48, 107, 107, 107, 107, none</column>
+<column name="result_load_loc_chan_Block_proc_fu_402">Block_proc, 0, 0, 0, 0, none</column>
+<column name="tmp_p_ADSD_Classifier_cp_fu_408">p_ADSD_Classifier_cp, 0, 0, 0, 0, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

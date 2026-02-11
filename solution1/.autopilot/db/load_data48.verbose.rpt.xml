@@ -1,7 +1,7 @@
 <profile>
 
-<section name = "Vivado HLS Report for 'load_data51'" level="0">
-<item name = "Date">Mon Feb  9 22:44:57 2026
+<section name = "Vivado HLS Report for 'load_data48'" level="0">
+<item name = "Date">Wed Feb 11 20:56:42 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -78,10 +78,10 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_410_p2">+, 0, 0, 15, 7, 1</column>
+<column name="i_fu_408_p2">+, 0, 0, 15, 7, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_472">and, 0, 0, 2, 1, 1</column>
-<column name="exitcond1_i_i_fu_404_p2">icmp, 0, 0, 11, 7, 6</column>
+<column name="exitcond1_i_i_fu_402_p2">icmp, 0, 0, 11, 7, 6</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
@@ -94,7 +94,7 @@
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
 <column name="ap_sig_ioackin_m_axi_x_V_ARREADY">9, 2, 1, 2</column>
-<column name="i_i_i_reg_372">9, 2, 7, 14</column>
+<column name="i_i_i_reg_370">9, 2, 7, 14</column>
 <column name="x_V_blk_n_AR">9, 2, 1, 2</column>
 <column name="x_V_blk_n_R">9, 2, 1, 2</column>
 <column name="x_norm_in_V_out_blk_n">9, 2, 1, 2</column>
@@ -108,19 +108,19 @@
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_m_axi_x_V_ARREADY">1, 0, 1, 0</column>
-<column name="i_i_i_reg_372">7, 0, 7, 0</column>
-<column name="p_Result_1_i_i_reg_553">8, 0, 8, 0</column>
-<column name="p_Result_2_i_i_reg_559">8, 0, 8, 0</column>
-<column name="p_Result_3_i_i_reg_565">8, 0, 8, 0</column>
-<column name="p_Result_4_i_i_reg_571">8, 0, 8, 0</column>
-<column name="p_Result_5_i_i_reg_577">8, 0, 8, 0</column>
-<column name="p_Result_6_i_i_reg_583">8, 0, 8, 0</column>
-<column name="p_Result_7_i_i_reg_589">8, 0, 8, 0</column>
-<column name="tmp_1_reg_547">8, 0, 8, 0</column>
-<column name="tmp_3_cast_i_i_reg_542">6, 0, 6, 0</column>
-<column name="tmp_3_cast_i_i_reg_542_pp0_iter1_reg">6, 0, 6, 0</column>
-<column name="tmp_reg_538">1, 0, 1, 0</column>
-<column name="tmp_reg_538_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="i_i_i_reg_370">7, 0, 7, 0</column>
+<column name="p_Result_1_i_i_reg_551">8, 0, 8, 0</column>
+<column name="p_Result_2_i_i_reg_557">8, 0, 8, 0</column>
+<column name="p_Result_3_i_i_reg_563">8, 0, 8, 0</column>
+<column name="p_Result_4_i_i_reg_569">8, 0, 8, 0</column>
+<column name="p_Result_5_i_i_reg_575">8, 0, 8, 0</column>
+<column name="p_Result_6_i_i_reg_581">8, 0, 8, 0</column>
+<column name="p_Result_7_i_i_reg_587">8, 0, 8, 0</column>
+<column name="tmp_1_reg_545">8, 0, 8, 0</column>
+<column name="tmp_3_cast_i_i_reg_540">6, 0, 6, 0</column>
+<column name="tmp_3_cast_i_i_reg_540_pp0_iter1_reg">6, 0, 6, 0</column>
+<column name="tmp_reg_536">1, 0, 1, 0</column>
+<column name="tmp_reg_536_pp0_iter1_reg">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -130,13 +130,13 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
-<column name="ap_clk">in, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_rst">in, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_start">in, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_done">out, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_continue">in, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_idle">out, 1, ap_ctrl_hs, load_data51, return value</column>
-<column name="ap_ready">out, 1, ap_ctrl_hs, load_data51, return value</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, load_data48, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, load_data48, return value</column>
 <column name="m_axi_x_V_AWVALID">out, 1, m_axi, x_V, pointer</column>
 <column name="m_axi_x_V_AWREADY">in, 1, m_axi, x_V, pointer</column>
 <column name="m_axi_x_V_AWADDR">out, 32, m_axi, x_V, pointer</column>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Mon Feb  9 22:45:12 2026
+<item name = "Date">Wed Feb 11 20:57:22 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -15,22 +15,22 @@
 <section name = "" level="1">
 <item name = "Target clock period (ns)">10.00</item>
 <item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">8.750</item>
+<item name = "Estimated clock period (ns)">8.833</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1108, 1108, 1001, 1001, dataflow</column>
+<column name="">1064, 1064, 957, 957, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="compute_class_U0">compute_class, 1000, 1000, 1000, 1000, none</column>
-<column name="load_data51_U0">load_data51, 107, 107, 107, 107, none</column>
+<column name="compute_class_U0">compute_class, 956, 956, 956, 956, none</column>
+<column name="load_data48_U0">load_data48, 107, 107, 107, 107, none</column>
 <column name="Block_proc_U0">Block_proc, 0, 0, 0, 0, none</column>
 <column name="p_ADSD_Classifier_cp_U0">p_ADSD_Classifier_cp, 0, 0, 0, 0, none</column>
 </table>
@@ -51,12 +51,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 70</column>
 <column name="FIFO">0, -, 15, 188</column>
-<column name="Instance">120, 1, 10066, 28000</column>
+<column name="Instance">120, 1, 9661, 29121</column>
 <column name="Memory">0, -, 256, 112</column>
 <column name="Multiplexer">-, -, -, 144</column>
 <column name="Register">-, -, 16, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">42, ~0, 9, 53</specialColumn>
+<specialColumn name="Utilization (%)">42, ~0, 9, 55</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -66,8 +66,8 @@
 <column name="Block_proc_U0">Block_proc, 0, 0, 66, 20</column>
 <column name="classify_control_s_axi_U">classify_control_s_axi, 0, 0, 168, 280</column>
 <column name="classify_gmem_m_axi_U">classify_gmem_m_axi, 4, 0, 566, 766</column>
-<column name="compute_class_U0">compute_class, 116, 1, 9101, 26759</column>
-<column name="load_data51_U0">load_data51, 0, 0, 99, 155</column>
+<column name="compute_class_U0">compute_class, 116, 1, 8696, 27880</column>
+<column name="load_data48_U0">load_data48, 0, 0, 99, 155</column>
 <column name="p_ADSD_Classifier_cp_U0">p_ADSD_Classifier_cp, 0, 0, 66, 20</column>
 </table>
 </item>
@@ -122,7 +122,7 @@
 <column name="ap_channel_done_x_local_9_V">and, 0, 0, 2, 1, 1</column>
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
 <column name="compute_class_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="load_data51_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
+<column name="load_data48_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_0_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_10_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_11_V">or, 0, 0, 2, 1, 1</column>
@@ -262,7 +262,7 @@
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
 <column name="'x_local[0].V', ADSD/Classifier.cpp:98">alloca, 2.32, 2.32, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="">call, 3.63, 5.96, -, -, -, -, -, -, -, -, -, load_data51, -</column>
+<column name="">call, 3.63, 5.96, -, -, -, -, -, -, -, -, -, load_data48, -</column>
 </table>
 </item>
 </section>

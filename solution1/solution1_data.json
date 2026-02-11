@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1108",
+    "Latency": "1064",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -34,8 +34,8 @@
   },
   "Files": {
     "CSource": [
-      "..\/Exp.cpp",
-      "..\/Classifier.cpp"
+      "..\/Classifier.cpp",
+      "..\/Exp.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/Block_proc.vhd",
@@ -98,7 +98,7 @@
       "impl\/vhdl\/compute_class_svsqcK.vhd",
       "impl\/vhdl\/fifo_w24_d2_A.vhd",
       "impl\/vhdl\/fifo_w64_d2_A.vhd",
-      "impl\/vhdl\/load_data51.vhd",
+      "impl\/vhdl\/load_data48.vhd",
       "impl\/vhdl\/p_ADSD_Classifier_cp.vhd",
       "impl\/vhdl\/classify.vhd"
     ],
@@ -211,7 +211,7 @@
       "impl\/verilog\/compute_class_svsqcK_rom.dat",
       "impl\/verilog\/fifo_w24_d2_A.v",
       "impl\/verilog\/fifo_w64_d2_A.v",
-      "impl\/verilog\/load_data51.v",
+      "impl\/verilog\/load_data48.v",
       "impl\/verilog\/p_ADSD_Classifier_cp.v",
       "impl\/verilog\/classify.v"
     ],
@@ -1037,8 +1037,8 @@
           "InstanceName": "compute_class_U0"
         },
         {
-          "ModuleName": "load_data51",
-          "InstanceName": "load_data51_U0"
+          "ModuleName": "load_data48",
+          "InstanceName": "load_data48_U0"
         },
         {
           "ModuleName": "Block_proc",
@@ -1051,7 +1051,7 @@
       ]
     },
     "Metrics": {
-      "load_data51": {
+      "load_data48": {
         "Latency": {
           "LatencyBest": "107",
           "LatencyAvg": "107",
@@ -1081,24 +1081,24 @@
       },
       "compute_class": {
         "Latency": {
-          "LatencyBest": "1000",
-          "LatencyAvg": "1000",
-          "LatencyWorst": "1000",
-          "PipelineII": "1000",
+          "LatencyBest": "956",
+          "LatencyAvg": "956",
+          "LatencyWorst": "956",
+          "PipelineII": "956",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "8.833"
         },
         "Loops": [{
             "Name": "classify_label2",
             "TripCount": "11",
-            "Latency": "990",
+            "Latency": "946",
             "PipelineII": "",
-            "PipelineDepth": "90",
+            "PipelineDepth": "86",
             "Loops": [
               {
                 "Name": "classify_label1",
@@ -1110,17 +1110,17 @@
               {
                 "Name": "Reconstruct_Loop",
                 "TripCount": "16",
-                "Latency": "34",
+                "Latency": "30",
                 "PipelineII": "1",
-                "PipelineDepth": "20"
+                "PipelineDepth": "16"
               }
             ]
           }],
         "Area": {
           "BRAM_18K": "116",
           "DSP48E": "1",
-          "FF": "9101",
-          "LUT": "26759"
+          "FF": "8696",
+          "LUT": "27880"
         }
       },
       "Block_proc": {
@@ -1167,23 +1167,23 @@
       },
       "classify": {
         "Latency": {
-          "LatencyBest": "1108",
-          "LatencyAvg": "1108",
-          "LatencyWorst": "1108",
-          "PipelineII": "1001",
+          "LatencyBest": "1064",
+          "LatencyAvg": "1064",
+          "LatencyWorst": "1064",
+          "PipelineII": "957",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.750"
+          "Estimate": "8.833"
         },
         "Area": {
           "BRAM_18K": "120",
           "DSP48E": "1",
-          "FF": "10353",
-          "LUT": "28514"
+          "FF": "9948",
+          "LUT": "29635"
         }
       }
     }
@@ -1195,7 +1195,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-02-09 22:45:23 +0000",
+    "Time": "2026-02-11 20:57:48 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

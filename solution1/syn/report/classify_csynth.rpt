@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'classify'
 ================================================================
-* Date:           Mon Feb  9 22:45:12 2026
+* Date:           Wed Feb 11 20:57:22 2026
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        ADSD
@@ -20,29 +20,29 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     8.750|        1.25|
+    |ap_clk  |  10.00|     8.833|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
     * Summary: 
-    +------+------+------+------+----------+
-    |   Latency   |   Interval  | Pipeline |
-    |  min |  max |  min |  max |   Type   |
-    +------+------+------+------+----------+
-    |  1108|  1108|  1001|  1001| dataflow |
-    +------+------+------+------+----------+
+    +------+------+-----+-----+----------+
+    |   Latency   |  Interval | Pipeline |
+    |  min |  max | min | max |   Type   |
+    +------+------+-----+-----+----------+
+    |  1064|  1064|  957|  957| dataflow |
+    +------+------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
-        +-------------------------+----------------------+------+------+------+------+---------+
-        |                         |                      |   Latency   |   Interval  | Pipeline|
-        |         Instance        |        Module        |  min |  max |  min |  max |   Type  |
-        +-------------------------+----------------------+------+------+------+------+---------+
-        |compute_class_U0         |compute_class         |  1000|  1000|  1000|  1000|   none  |
-        |load_data51_U0           |load_data51           |   107|   107|   107|   107|   none  |
-        |Block_proc_U0            |Block_proc            |     0|     0|     0|     0|   none  |
-        |p_ADSD_Classifier_cp_U0  |p_ADSD_Classifier_cp  |     0|     0|     0|     0|   none  |
-        +-------------------------+----------------------+------+------+------+------+---------+
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                         |                      |  Latency  |  Interval | Pipeline|
+        |         Instance        |        Module        | min | max | min | max |   Type  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |compute_class_U0         |compute_class         |  956|  956|  956|  956|   none  |
+        |load_data48_U0           |load_data48           |  107|  107|  107|  107|   none  |
+        |Block_proc_U0            |Block_proc            |    0|    0|    0|    0|   none  |
+        |p_ADSD_Classifier_cp_U0  |p_ADSD_Classifier_cp  |    0|    0|    0|    0|   none  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
 
         * Loop: 
         N/A
@@ -59,16 +59,16 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       0|     70|
 |FIFO             |        0|      -|      15|    188|
-|Instance         |      120|      1|   10066|  28000|
+|Instance         |      120|      1|    9661|  29121|
 |Memory           |        0|      -|     256|    112|
 |Multiplexer      |        -|      -|       -|    144|
 |Register         |        -|      -|      16|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |      120|      1|   10353|  28514|
+|Total            |      120|      1|    9948|  29635|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       42|   ~0  |       9|     53|
+|Utilization (%)  |       42|   ~0  |       9|     55|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
@@ -79,11 +79,11 @@
     |Block_proc_U0             |Block_proc              |        0|      0|    66|     20|
     |classify_control_s_axi_U  |classify_control_s_axi  |        0|      0|   168|    280|
     |classify_gmem_m_axi_U     |classify_gmem_m_axi     |        4|      0|   566|    766|
-    |compute_class_U0          |compute_class           |      116|      1|  9101|  26759|
-    |load_data51_U0            |load_data51             |        0|      0|    99|    155|
+    |compute_class_U0          |compute_class           |      116|      1|  8696|  27880|
+    |load_data48_U0            |load_data48             |        0|      0|    99|    155|
     |p_ADSD_Classifier_cp_U0   |p_ADSD_Classifier_cp    |        0|      0|    66|     20|
     +--------------------------+------------------------+---------+-------+------+-------+
-    |Total                     |                        |      120|      1| 10066|  28000|
+    |Total                     |                        |      120|      1|  9661|  29121|
     +--------------------------+------------------------+---------+-------+------+-------+
 
     * DSP48: 
@@ -146,7 +146,7 @@
     |ap_channel_done_x_local_9_V         |    and   |      0|  0|   2|           1|           1|
     |ap_idle                             |    and   |      0|  0|   2|           1|           1|
     |compute_class_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
-    |load_data51_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |load_data48_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_x_local_0_V   |    or    |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_x_local_10_V  |    or    |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_x_local_11_V  |    or    |      0|  0|   2|           1|           1|

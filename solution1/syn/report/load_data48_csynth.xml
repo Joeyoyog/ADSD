@@ -8,7 +8,7 @@
 <unit>ns</unit>
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020clg484-1</Part>
-<TopModelName>load_data51</TopModelName>
+<TopModelName>load_data48</TopModelName>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
 </UserAssignments>
@@ -55,7 +55,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -66,7 +66,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -77,7 +77,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -88,7 +88,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -99,7 +99,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_continue</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -110,7 +110,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -121,7 +121,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>

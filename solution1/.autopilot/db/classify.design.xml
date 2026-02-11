@@ -7,22 +7,22 @@
 <Instance>
 <InstName>compute_class_U0</InstName>
 <ModuleName>compute_class</ModuleName>
-<ID>244</ID>
+<ID>242</ID>
 </Instance>
 <Instance>
-<InstName>load_data51_U0</InstName>
-<ModuleName>load_data51</ModuleName>
-<ID>361</ID>
+<InstName>load_data48_U0</InstName>
+<ModuleName>load_data48</ModuleName>
+<ID>359</ID>
 </Instance>
 <Instance>
 <InstName>Block_proc_U0</InstName>
 <ModuleName>Block_proc</ModuleName>
-<ID>404</ID>
+<ID>402</ID>
 </Instance>
 <Instance>
 <InstName>p_ADSD_Classifier_cp_U0</InstName>
 <ModuleName>p_ADSD_Classifier_cp</ModuleName>
-<ID>410</ID>
+<ID>408</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -30,7 +30,7 @@
 
 <ModuleInformation>
 <Module>
-<Name>load_data51</Name>
+<Name>load_data48</Name>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
@@ -65,7 +65,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -76,7 +76,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -87,7 +87,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -98,7 +98,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -109,7 +109,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_continue</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -120,7 +120,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -131,7 +131,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>load_data51</Object>
+<Object>load_data48</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1402,22 +1402,22 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>8.742</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.833</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>1000</Best-caseLatency>
-<Average-caseLatency>1000</Average-caseLatency>
-<Worst-caseLatency>1000</Worst-caseLatency>
-<PipelineInitiationInterval>1000</PipelineInitiationInterval>
+<Best-caseLatency>956</Best-caseLatency>
+<Average-caseLatency>956</Average-caseLatency>
+<Worst-caseLatency>956</Worst-caseLatency>
+<PipelineInitiationInterval>956</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <classify_label2>
 <Name>classify_label2</Name>
 <TripCount>11</TripCount>
-<Latency>990</Latency>
-<IterationLatency>90</IterationLatency>
-<PipelineDepth>90</PipelineDepth>
+<Latency>946</Latency>
+<IterationLatency>86</IterationLatency>
+<PipelineDepth>86</PipelineDepth>
 <classify_label1>
 <Name>classify_label1</Name>
 <TripCount>49</TripCount>
@@ -1428,9 +1428,9 @@
 <Reconstruct_Loop>
 <Name>Reconstruct_Loop</Name>
 <TripCount>16</TripCount>
-<Latency>34</Latency>
+<Latency>30</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>20</PipelineDepth>
+<PipelineDepth>16</PipelineDepth>
 </Reconstruct_Loop>
 </classify_label2>
 </SummaryOfLoopLatency>
@@ -1439,8 +1439,8 @@
 <Resources>
 <BRAM_18K>116</BRAM_18K>
 <DSP48E>1</DSP48E>
-<FF>9101</FF>
-<LUT>26759</LUT>
+<FF>8696</FF>
+<LUT>27880</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>
@@ -2353,14 +2353,14 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>8.750</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.833</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>1108</Best-caseLatency>
-<Average-caseLatency>1108</Average-caseLatency>
-<Worst-caseLatency>1108</Worst-caseLatency>
-<DataflowPipelineThroughput>1001</DataflowPipelineThroughput>
-<PipelineInitiationInterval>1001</PipelineInitiationInterval>
+<Best-caseLatency>1064</Best-caseLatency>
+<Average-caseLatency>1064</Average-caseLatency>
+<Worst-caseLatency>1064</Worst-caseLatency>
+<DataflowPipelineThroughput>957</DataflowPipelineThroughput>
+<PipelineInitiationInterval>957</PipelineInitiationInterval>
 <PipelineType>dataflow</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -2368,8 +2368,8 @@
 <Resources>
 <BRAM_18K>120</BRAM_18K>
 <DSP48E>1</DSP48E>
-<FF>10353</FF>
-<LUT>28514</LUT>
+<FF>9948</FF>
+<LUT>29635</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

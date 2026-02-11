@@ -1,4 +1,4 @@
-set moduleName load_data51
+set moduleName load_data48
 set isTaskLevelControl 1
 set isCombinational 0
 set isDatapathOnly 0
@@ -9,7 +9,7 @@ set isOneStateSeq 0
 set ProfileFlag 0
 set StallSigGenFlag 0
 set isEnableWaveformDebug 1
-set C_modelName {load_data51}
+set C_modelName {load_data48}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ x_V int 64 regular {axi_master 0}  }
@@ -304,7 +304,7 @@ set NewPortList {[
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
-		"CDFG" : "load_data51",
+		"CDFG" : "load_data48",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -345,7 +345,7 @@ set RtlHierarchyInfo {[
 
 
 set ArgLastReadFirstWriteLatency {
-	load_data51 {
+	load_data48 {
 		x_V {Type I LastRead 8 FirstWrite -1}
 		x_V_offset {Type I LastRead 0 FirstWrite -1}
 		x_local_0_V {Type O LastRead -1 FirstWrite 9}

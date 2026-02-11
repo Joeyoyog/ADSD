@@ -3,11 +3,11 @@
   <source>
     <originFiles name="svs.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\svs.h"/>
     <originFiles name="bias.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\bias.h"/>
-    <originFiles name="alphas.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\alphas.h"/>
     <originFiles name="Exp.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Exp.h"/>
     <originFiles name="Exp.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Exp.cpp"/>
     <originFiles name="Classifier.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Classifier.h"/>
     <originFiles name="Classifier.cpp" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\Classifier.cpp"/>
+    <originFiles name="alphas.h" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\alphas.h"/>
   </source>
   <testbench>
     <originFiles name="test_data.txt" path="C:\Users\mathi\Documents\ADSD_ICL\ADSD\test_data.txt"/>
