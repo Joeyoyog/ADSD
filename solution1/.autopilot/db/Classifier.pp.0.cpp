@@ -24592,8 +24592,13 @@ template<int D,int U,int TI,int TD>
 typedef ap_axiu<64, 1, 1, 1> axis_t;
 
 
-void classify(hls::stream<axis_t> &in_stream, hls::stream<double> &out_stream, ap_fixed<24,14> x_norm_in);
-# 2 "ADSD/Classifier.cpp" 2
+
+
+void classify(hls::stream<axis_t> &in_stream,
+              hls::stream<ap_fixed<32,16> > &out_stream,
+              ap_fixed<24,14> x_norm_in);
+# 1 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./svs.h" 1
 
 
@@ -153962,12 +153967,14 @@ static const ap_fixed<8,7> svs[176][784] = {
 0.0,
 0.0,
 };
-# 3 "ADSD/Classifier.cpp" 2
+# 2 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./bias.h" 1
 static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "ADSD/Classifier.cpp" 2
+# 3 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./alphas.h" 1
 static const ap_fixed<8, 5> alphas[] = {
 -0.125,
@@ -154147,7 +154154,8 @@ static const ap_fixed<8, 5> alphas[] = {
 0,
 0
 };
-# 5 "ADSD/Classifier.cpp" 2
+# 4 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./sv_norms.h" 1
 
 
@@ -154179,7 +154187,8 @@ const ap_fixed<32,16> sv_norms[165] = {
     447.250000, 2226.500000, 701.500000, 260.250000, 812.250000, 408.250000, 770.250000, 8325.750000,
     12528.000000, 247.500000, 5234.250000, 790.250000, 787.500000
 };
-# 6 "ADSD/Classifier.cpp" 2
+# 5 "ADSD/Classifier.cpp" 2
+
 
 # 1 "ADSD/Exp.h" 1
 
@@ -154191,89 +154200,126 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 8 "ADSD/Classifier.cpp" 2
+# 7 "ADSD/Classifier.cpp" 2
 
 
 
 
-void classify(hls::stream<axis_t> &in_stream, hls::stream<double> &out_stream, ap_fixed<24,14> x_norm_in) {
 
-#pragma HLS INTERFACE axis port=&in_stream
-#pragma HLS INTERFACE axis port=&out_stream
-#pragma HLS INTERFACE s_axilite port=&x_norm_in bundle=control
-#pragma HLS INTERFACE s_axilite port=return bundle=control
+void load_data(hls::stream<axis_t> &in_stream, ap_fixed<8,7> x_local[784]) {_ssdm_SpecArrayDimSize(x_local, 784);
+#pragma HLS INLINE off
 
-
-
-
-#pragma HLS ARRAY_PARTITION variable=&svs complete dim=1
-
-
-
-#pragma HLS ARRAY_PARTITION variable=&alphas complete dim=1
-#pragma HLS ARRAY_PARTITION variable=&sv_norms complete dim=1
-
-
- ap_fixed<32,16> dot_products[176];
-#pragma HLS ARRAY_PARTITION variable=&dot_products complete dim=1
-
-
- Init_Loop: for (int i = 0; i < 176; i++) {
-#pragma HLS UNROLL
- dot_products[i] = 0;
-    }
-
-
-
-    Pixel_Loop: for (int j = 0; j < 784 / 8; j++) {
+ load_image_loop: for (int i = 0; i < 784 / 8; i++) {
 #pragma HLS PIPELINE II=1
+
 
  axis_t packet = in_stream.read();
         ap_uint<64> data = packet.data;
 
-
         for (int p = 0; p < 8; p++) {
-            ap_fixed<8,7> pixel;
-            pixel(7, 0) = data.range(p*8 + 7, p*8);
-            int global_idx = j*8 + p;
-
-
-            SV_Update_Loop: for (int i = 0; i < 176; i++) {
 #pragma HLS UNROLL
+ ap_fixed<8,7> val;
+            val(7, 0) = data.range(p*8 + 7, p*8);
+            x_local[i*8 + p] = val;
+        }
+    }
+}
 
 
 
- ap_fixed<8,7> w = svs[i][global_idx];
-                ap_fixed<16,14> prod = pixel * w;
-#pragma HLS BIND_OP variable=&prod op=mul impl=dsp
 
- dot_products[i] += prod;
+void compute_class(ap_fixed<8,7> x_local[784], ap_fixed<24,14> x_norm_in, ap_fixed<32,16> &result) {_ssdm_SpecArrayDimSize(x_local, 784);
+#pragma HLS INLINE off
+
+ ap_fixed<32,16> sum = 0.0;
+    ap_fixed<32,16> partial_sum[16];
+#pragma HLS ARRAY_PARTITION variable=&partial_sum complete dim=1
+
+ for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ partial_sum[k] = 0;
+    }
+
+    classify_label2: for (int i = 0; i < 165; i += 16) {
+        ap_fixed<32,16> dot_products[16];
+#pragma HLS ARRAY_PARTITION variable=&dot_products complete dim=1
+
+ for(int init=0; init<16; init++) {
+#pragma HLS UNROLL
+ dot_products[init] = 0;
+        }
+
+        classify_label1: for (int j = 0; j < 784; j++) {
+#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL factor=16
+
+ for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ ap_fixed<8,7> xi = svs[i+k][j];
+                ap_fixed<8,7> xj = x_local[j];
+
+
+                ap_fixed<16,14> prod = xi * xj;
+                dot_products[k] += prod;
             }
+        }
+
+        Reconstruct_Loop: for (int k = 0; k < 16; k++) {
+#pragma HLS PIPELINE II=1
+ ap_fixed<32,16> term1 = x_norm_in;
+            ap_fixed<32,16> term2 = sv_norms[i+k];
+            ap_fixed<32,16> term3 = dot_products[k];
+            ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
+
+            const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
+            if(dist_sq < 0) dist_sq = 0;
+
+            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+            partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
         }
     }
 
-
-
-
-    ap_fixed<32,16> final_sum = 0;
-
-    Reconstruct_Loop: for (int i = 0; i < 176; i++) {
-#pragma HLS PIPELINE II=1
-
-
- ap_fixed<32,16> term1 = x_norm_in;
-        ap_fixed<32,16> term2 = sv_norms[i];
-        ap_fixed<32,16> term3 = dot_products[i];
-        ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
-
-        const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
-        if(dist_sq < 0) dist_sq = 0;
-
-
-        ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
-
-        final_sum += (ap_fixed<32,16>)(alphas[i] * K);
+    for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ sum += partial_sum[k];
     }
+    result = (ap_fixed<32,16>)(sum + bias[0]);
+}
 
-    out_stream.write((double)(final_sum + bias[0]));
+
+
+
+void classify(hls::stream<axis_t> &in_stream, ap_fixed<24,14> x_norm_in, ap_fixed<32,16> &result_out) {
+
+
+#pragma HLS INTERFACE axis port=&in_stream
+
+
+
+#pragma HLS INTERFACE s_axilite port=&result_out bundle=control
+
+#pragma HLS INTERFACE s_axilite port=&x_norm_in bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+
+
+#pragma HLS ARRAY_RESHAPE variable=&svs cyclic factor=16 dim=2
+#pragma HLS ARRAY_PARTITION variable=&svs cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=&alphas cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=&sv_norms cyclic factor=16 dim=1
+
+
+ ap_fixed<8,7> x_local[784];
+#pragma HLS ARRAY_PARTITION variable=&x_local cyclic factor=16 dim=1
+
+
+#pragma HLS DATAFLOW
+
+
+ ap_fixed<32,16> res_internal;
+
+    load_data(in_stream, x_local);
+    compute_class(x_local, x_norm_in, res_internal);
+
+
+    result_out = res_internal;
 }

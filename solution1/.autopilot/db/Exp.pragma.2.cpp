@@ -24537,143 +24537,92 @@ out_t compute_exp(x_t x);
 # 2 "ADSD/Exp.cpp" 2
 
 
-typedef ap_fixed<26,5> acc_t;
-typedef ap_fixed<23,5> coef_t;
-typedef ap_fixed<19,1> lut_t;
 
 
-static const coef_t LN2 = coef_t(0.6931471805599453);
-static const coef_t INV_LN2 = coef_t(1.4426950408889634);
-static const acc_t K_GAIN = acc_t(1.2074970675756439159);
+typedef ap_fixed<26,4, SC_TRN, SC_WRAP> acc_t;
+typedef ap_fixed<26,5, SC_TRN, SC_WRAP> coef_t;
+typedef ap_fixed<26,2, SC_TRN, SC_WRAP> lut_t;
 
 
-template<typename T>
-static int floor_to_int(T v) {
-_ssdm_InlineSelf(0, "");
- int iv = (int)v;
-    if (v < 0 && v != (T)iv) iv -= 1;
-    return iv;
-}
-
-out_t compute_exp(x_t x){
-
-_ssdm_InlineSelf(0, "");
-
-
-
-
- const int Iteration_Schedule[17] = {1,2,3,4,4,5,6,7,8,9,10,11,12,13,13,14,15};
-_ssdm_SpecConstant(Iteration_Schedule);
+static const acc_t K_GAIN = acc_t("1.2074970677601436");
 # 29 "ADSD/Exp.cpp"
+out_t compute_exp(x_t x) {
+_ssdm_InlineSelf(0, "");
 
-    const lut_t ATANH_LUT[17] = {
-        lut_t(0.54930614433405489), lut_t(0.25541281188299536), lut_t(0.12565721414045303),
-        lut_t(0.062581571477003009), lut_t(0.062581571477003009), lut_t(0.031260178490666993),
-        lut_t(0.015626271752052213), lut_t(0.0078126589515404212), lut_t(0.0039062698683968262),
-        lut_t(0.0019531274835325502), lut_t(0.00097656281044103594), lut_t(0.00048828128880511288),
-        lut_t(0.00024414062985063861), lut_t(0.000122070313106329793), lut_t(0.000122070313106329793),
-        lut_t(0.000061035156325791221), lut_t(0.000030517578134473901)
-    };
-_ssdm_SpecConstant(ATANH_LUT);
-# 30 "ADSD/Exp.cpp"
+_ssdm_op_SpecLatency(8, 8, "");
+
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
 
-    const coef_t MLN2[13] = {
-      coef_t(0.0),
-      coef_t(0.6931471805599453),
-      coef_t(1.3862943611198906),
-      coef_t(2.0794415416798359),
-      coef_t(2.7725887222397811),
-      coef_t(3.4657359027997265),
-      coef_t(4.1588830833596718),
-      coef_t(4.8520302639196171),
-      coef_t(5.5451774444795625),
-      coef_t(6.2383246250395078),
-      coef_t(6.9314718055994530),
-      coef_t(7.6246189861593983),
-      coef_t(8.3177661667193436)
+ static const coef_t MLN2[13] = {
+        "0.0", "0.69314718056", "1.38629436112", "2.07944154168",
+        "2.77258872224", "3.46573590280", "4.15888308336", "4.85203026392",
+        "5.54517744448", "6.23832462504", "6.93147180560", "7.62461898616", "8.31776616672"
     };
 _ssdm_SpecConstant(MLN2);
-# 39 "ADSD/Exp.cpp"
+# 37 "ADSD/Exp.cpp"
+
+_ssdm_SpecArrayPartition( &MLN2, 1, "COMPLETE", 0, "");
 
 
-
-_ssdm_SpecArrayPartition( MLN2, 1, "COMPLETE", 0, "");
-_ssdm_SpecArrayPartition( ATANH_LUT, 1, "COMPLETE", 0, "");
-_ssdm_SpecArrayPartition( Iteration_Schedule, 1, "COMPLETE", 0, "");
+ if (x < x_t(-8.0)) return out_t(0);
 
 
- coef_t u = coef_t(0) - coef_t(x);
+    coef_t u = coef_t(0) - coef_t(x);
 
 
-
-    int m = 0;
-
-    if (u > coef_t(0)) {
-
-
-            if (u <= MLN2[1]) m = 1;
+    ap_uint<4> m;
+    if (u <= MLN2[6]) {
+        if (u <= MLN2[3]) {
+            if (u <= MLN2[1]) m = (u > 0) ? 1 : 0;
             else if (u <= MLN2[2]) m = 2;
-            else if (u <= MLN2[3]) m = 3;
-            else if (u <= MLN2[4]) m = 4;
+            else m = 3;
+        } else {
+            if (u <= MLN2[4]) m = 4;
             else if (u <= MLN2[5]) m = 5;
-            else if (u <= MLN2[6]) m = 6;
-            else if (u <= MLN2[7]) m = 7;
+            else m = 6;
+        }
+    } else {
+        if (u <= MLN2[9]) {
+            if (u <= MLN2[7]) m = 7;
             else if (u <= MLN2[8]) m = 8;
-            else if (u <= MLN2[9]) m = 9;
-            else if (u <= MLN2[10]) m = 10;
+            else m = 9;
+        } else {
+            if (u <= MLN2[10]) m = 10;
             else if (u <= MLN2[11]) m = 11;
             else m = 12;
         }
-
-
-
-    bool is_small = (x < x_t(-8.0));
-# 96 "ADSD/Exp.cpp"
- acc_t r = acc_t(x) + acc_t(MLN2[m]);
+    }
 
 
     acc_t X = K_GAIN;
-    acc_t Y = 0.0;
-    acc_t Z = r;
+    acc_t Y = 0;
+    acc_t Z = acc_t(x) + acc_t(MLN2[m]);
 
 
-    for (int n = 0; n < 17; n++){
-_ssdm_Unroll(0,0,0, "");
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (1)); acc_t y_sh = (Y >> (1)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.5493061443340549")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.5493061443340549")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (2)); acc_t y_sh = (Y >> (2)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.2554128118829954")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.2554128118829954")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (3)); acc_t y_sh = (Y >> (3)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.1256572141404530")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.1256572141404530")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (4)); acc_t y_sh = (Y >> (4)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0625815714770030")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0625815714770030")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (4)); acc_t y_sh = (Y >> (4)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0625815714770030")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0625815714770030")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (5)); acc_t y_sh = (Y >> (5)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0312601784906670")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0312601784906670")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (6)); acc_t y_sh = (Y >> (6)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0156262717520522")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0156262717520522")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (7)); acc_t y_sh = (Y >> (7)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0078126589515404")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0078126589515404")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (8)); acc_t y_sh = (Y >> (8)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0039062698683968")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0039062698683968")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (9)); acc_t y_sh = (Y >> (9)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0019531274835326")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0019531274835326")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (10)); acc_t y_sh = (Y >> (10)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0009765628104410")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0009765628104410")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (11)); acc_t y_sh = (Y >> (11)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0004882812888051")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0004882812888051")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (12)); acc_t y_sh = (Y >> (12)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0002441406298506")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0002441406298506")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (13)); acc_t y_sh = (Y >> (13)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0001220703131063")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0001220703131063")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (13)); acc_t y_sh = (Y >> (13)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0001220703131063")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0001220703131063")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (14)); acc_t y_sh = (Y >> (14)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0000610351563258")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0000610351563258")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (15)); acc_t y_sh = (Y >> (15)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0000305175781345")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0000305175781345")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (16)); acc_t y_sh = (Y >> (16)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0000152587890637")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0000152587890637")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (17)); acc_t y_sh = (Y >> (17)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0000076293945314")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0000076293945314")); } } while(0);
+    do { bool z_neg = (Z < 0); acc_t x_sh = (X >> (18)); acc_t y_sh = (Y >> (18)); if (z_neg) { X -= y_sh; Y -= x_sh; Z += (lut_t("0.0000038146972656")); } else { X += y_sh; Y += x_sh; Z -= (lut_t("0.0000038146972656")); } } while(0);
 
- int i = Iteration_Schedule[n];
-        bool z_nonneg = (Z >= 0);
-
-        acc_t Ysh = (Y >> i);
-        acc_t Xsh = (X >> i);
-
-        acc_t Xn, Yn, Zn;
-        if(z_nonneg) {
-            Xn = X + Ysh; Yn = Y + Xsh; Zn = Z - ATANH_LUT[n];
-        } else {
-            Xn = X - Ysh; Yn = Y - Xsh; Zn = Z + ATANH_LUT[n];
-        }
-        X = Xn; Y = Yn; Z = Zn;
-    }
     acc_t exp_r = X + Y;
-    acc_t scaled;
-        switch (m) {
-            case 0: scaled = exp_r; break;
-            case 1: scaled = (exp_r >> 1); break;
-            case 2: scaled = (exp_r >> 2); break;
-            case 3: scaled = (exp_r >> 3); break;
-            case 4: scaled = (exp_r >> 4); break;
-            case 5: scaled = (exp_r >> 5); break;
-            case 6: scaled = (exp_r >> 6); break;
-            case 7: scaled = (exp_r >> 7); break;
-            case 8: scaled = (exp_r >> 8); break;
-            case 9: scaled = (exp_r >> 9); break;
-            case 10: scaled = (exp_r >> 10); break;
-            case 11: scaled = (exp_r >> 11); break;
-            default: scaled = (exp_r >> 12); break;
-        }
+    acc_t scaled = exp_r >> m;
 
-
-    return is_small ? out_t(0.0) : out_t(scaled);
-
+    return out_t(scaled);
 }

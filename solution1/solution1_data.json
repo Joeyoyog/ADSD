@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1101",
+    "Latency": "1038",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -34,18 +34,17 @@
   },
   "Files": {
     "CSource": [
-      "..\/Exp.cpp",
-      "..\/Classifier.cpp"
+      "..\/Classifier.cpp",
+      "..\/Exp.cpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/Block_proc42.vhd",
+      "impl\/vhdl\/Block_proc.vhd",
       "impl\/vhdl\/classify_control_s_axi.vhd",
-      "impl\/vhdl\/classify_mul_mul_0iy.vhd",
+      "impl\/vhdl\/classify_mul_mul_Zio.vhd",
+      "impl\/vhdl\/classify_mux_164_Xh4.vhd",
       "impl\/vhdl\/classify_mux_164_Yie.vhd",
-      "impl\/vhdl\/classify_mux_164_Zio.vhd",
-      "impl\/vhdl\/classify_sitodp_6Xh4.vhd",
-      "impl\/vhdl\/classify_x_local_1iI.vhd",
-      "impl\/vhdl\/classify_x_local_1iI_memcore.vhd",
+      "impl\/vhdl\/classify_x_local_0iy.vhd",
+      "impl\/vhdl\/classify_x_local_0iy_memcore.vhd",
       "impl\/vhdl\/compute_class.vhd",
       "impl\/vhdl\/compute_class_alpAem.vhd",
       "impl\/vhdl\/compute_class_alpBew.vhd",
@@ -96,19 +95,18 @@
       "impl\/vhdl\/compute_class_svspcA.vhd",
       "impl\/vhdl\/compute_class_svsqcK.vhd",
       "impl\/vhdl\/fifo_w24_d2_A.vhd",
-      "impl\/vhdl\/fifo_w64_d2_A.vhd",
-      "impl\/vhdl\/load_data59.vhd",
+      "impl\/vhdl\/fifo_w32_d2_A.vhd",
+      "impl\/vhdl\/load_data55.vhd",
       "impl\/vhdl\/classify.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/Block_proc42.v",
+      "impl\/verilog\/Block_proc.v",
       "impl\/verilog\/classify_control_s_axi.v",
-      "impl\/verilog\/classify_mul_mul_0iy.v",
+      "impl\/verilog\/classify_mul_mul_Zio.v",
+      "impl\/verilog\/classify_mux_164_Xh4.v",
       "impl\/verilog\/classify_mux_164_Yie.v",
-      "impl\/verilog\/classify_mux_164_Zio.v",
-      "impl\/verilog\/classify_sitodp_6Xh4.v",
-      "impl\/verilog\/classify_x_local_1iI.v",
-      "impl\/verilog\/classify_x_local_1iI_memcore.v",
+      "impl\/verilog\/classify_x_local_0iy.v",
+      "impl\/verilog\/classify_x_local_0iy_memcore.v",
       "impl\/verilog\/compute_class.v",
       "impl\/verilog\/compute_class_alpAem.v",
       "impl\/verilog\/compute_class_alpAem_rom.dat",
@@ -207,8 +205,8 @@
       "impl\/verilog\/compute_class_svsqcK.v",
       "impl\/verilog\/compute_class_svsqcK_rom.dat",
       "impl\/verilog\/fifo_w24_d2_A.v",
-      "impl\/verilog\/fifo_w64_d2_A.v",
-      "impl\/verilog\/load_data59.v",
+      "impl\/verilog\/fifo_w32_d2_A.v",
+      "impl\/verilog\/load_data55.v",
       "impl\/verilog\/classify.v"
     ],
     "SwDriver": [
@@ -221,23 +219,18 @@
       "impl\/misc\/drivers\/classify_v1_0\/src\/xclassify_linux.c",
       "impl\/misc\/drivers\/classify_v1_0\/src\/xclassify_sinit.c"
     ],
-    "Misc": ["impl\/misc\/logo.png"],
-    "Subcore": ["impl\/misc\/classify_ap_sitodp_4_no_dsp_64_ip.tcl"]
+    "Misc": ["impl\/misc\/logo.png"]
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
     "HasClockedDsp": false,
-    "IP": [{
-        "name": "classify_ap_sitodp_4_no_dsp_64",
-        "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 64 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name classify_ap_sitodp_4_no_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
-      }]
+    "IP": []
   },
   "Interfaces": {
     "ap_clk": {
       "type": "clock",
       "ctype": {"CLK": {"Type": "bool"}},
-      "buses": "s_axi_control in_stream out_stream_V",
+      "buses": "s_axi_control in_stream",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -295,21 +288,6 @@
     "interrupt": {
       "type": "interrupt",
       "ctype": {"INTERRUPT": {"Type": "bool"}}
-    },
-    "out_stream_V": {
-      "type": "axi4stream",
-      "mode": "master",
-      "port_prefix": "out_stream_V",
-      "has_tready": "1",
-      "ctype": {
-        "TDATA": {
-          "Type": "real float",
-          "Width": "64"
-        },
-        "TVALID": {"Type": "bool"},
-        "TREADY": {"Type": "bool"}
-      },
-      "port_width": {"TDATA": "64"}
     },
     "s_axi_control": {
       "type": "axi4lite",
@@ -499,6 +477,46 @@
               "description": "Reserved.  0s on read."
             }
           ]
+        },
+        {
+          "offset": "0x18",
+          "name": "result_out_V",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of result_out_V",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "result_out_V",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of result_out_V"
+            }]
+        },
+        {
+          "offset": "0x1c",
+          "name": "result_out_V_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of result_out_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "result_out_V_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal result_out_V_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
       "memories": "",
@@ -526,8 +544,8 @@
           "Width": "5"
         },
         "WDATA": {
-          "Type": "real fixed signed 10",
-          "Width": "24"
+          "Type": "real fixed signed 16",
+          "Width": "32"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -538,8 +556,8 @@
           "Width": "5"
         },
         "RDATA": {
-          "Type": "real fixed signed 10",
-          "Width": "24"
+          "Type": "real fixed signed 16",
+          "Width": "32"
         }
       },
       "data_width": "32",
@@ -673,18 +691,6 @@
     "in_stream_TREADY": {
       "dir": "out",
       "width": "1"
-    },
-    "out_stream_V_TDATA": {
-      "dir": "out",
-      "width": "64"
-    },
-    "out_stream_V_TVALID": {
-      "dir": "out",
-      "width": "1"
-    },
-    "out_stream_V_TREADY": {
-      "dir": "in",
-      "width": "1"
     }
   },
   "CPorts": {
@@ -695,6 +701,15 @@
       "statusOffset": "NA",
       "handshakeRef": "ap_none",
       "Object": "control"
+    },
+    "result_out_V": {
+      "interfaceRef": "s_axi_control",
+      "dir": "out",
+      "offset": "24",
+      "statusOffset": "28",
+      "handshakeRef": "ap_vld",
+      "Object": "control",
+      "firstOutLatency": "0"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_control",
@@ -728,11 +743,6 @@
     "in_stream_V_dest_V": {
       "interfaceRef": "in_stream",
       "dir": "in"
-    },
-    "out_stream_V": {
-      "interfaceRef": "out_stream_V",
-      "dir": "out",
-      "firstOutLatency": "0"
     }
   },
   "ModuleInfo": {
@@ -744,17 +754,17 @@
           "InstanceName": "compute_class_U0"
         },
         {
-          "ModuleName": "load_data59",
-          "InstanceName": "load_data59_U0"
+          "ModuleName": "load_data55",
+          "InstanceName": "load_data55_U0"
         },
         {
-          "ModuleName": "Block_proc42",
-          "InstanceName": "Block_proc42_U0"
+          "ModuleName": "Block_proc",
+          "InstanceName": "Block_proc_U0"
         }
       ]
     },
     "Metrics": {
-      "load_data59": {
+      "load_data55": {
         "Latency": {
           "LatencyBest": "100",
           "LatencyAvg": "100",
@@ -784,24 +794,24 @@
       },
       "compute_class": {
         "Latency": {
-          "LatencyBest": "1000",
-          "LatencyAvg": "1000",
-          "LatencyWorst": "1000",
-          "PipelineII": "1000",
+          "LatencyBest": "937",
+          "LatencyAvg": "937",
+          "LatencyWorst": "937",
+          "PipelineII": "937",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "9.599"
         },
         "Loops": [{
             "Name": "classify_label2",
             "TripCount": "11",
-            "Latency": "990",
+            "Latency": "935",
             "PipelineII": "",
-            "PipelineDepth": "90",
+            "PipelineDepth": "85",
             "Loops": [
               {
                 "Name": "classify_label1",
@@ -813,25 +823,25 @@
               {
                 "Name": "Reconstruct_Loop",
                 "TripCount": "16",
-                "Latency": "34",
+                "Latency": "29",
                 "PipelineII": "1",
-                "PipelineDepth": "20"
+                "PipelineDepth": "15"
               }
             ]
           }],
         "Area": {
           "BRAM_18K": "116",
           "DSP48E": "1",
-          "FF": "9101",
-          "LUT": "26759"
+          "FF": "7907",
+          "LUT": "27098"
         }
       },
-      "Block_proc42": {
+      "Block_proc": {
         "Latency": {
-          "LatencyBest": "1",
-          "LatencyAvg": "1",
-          "LatencyWorst": "1",
-          "PipelineII": "1",
+          "LatencyBest": "0",
+          "LatencyAvg": "0",
+          "LatencyWorst": "0",
+          "PipelineII": "0",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -841,31 +851,31 @@
           "Estimate": "0.000"
         },
         "Area": {
-          "FF": "135",
-          "LUT": "71",
+          "FF": "34",
+          "LUT": "20",
           "BRAM_18K": "0",
           "DSP48E": "0"
         }
       },
       "classify": {
         "Latency": {
-          "LatencyBest": "1101",
-          "LatencyAvg": "1101",
-          "LatencyWorst": "1101",
-          "PipelineII": "1001",
+          "LatencyBest": "1038",
+          "LatencyAvg": "1038",
+          "LatencyWorst": "1038",
+          "PipelineII": "938",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "9.599"
         },
         "Area": {
           "BRAM_18K": "116",
           "DSP48E": "1",
-          "FF": "9738",
-          "LUT": "27513"
+          "FF": "8481",
+          "LUT": "27833"
         }
       }
     }
@@ -877,7 +887,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-02-10 20:27:14 +0000",
+    "Time": "2026-02-13 10:45:19 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

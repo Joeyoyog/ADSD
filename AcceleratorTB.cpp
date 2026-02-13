@@ -3,6 +3,8 @@
 #include <fstream>
 #include <cstdio>
 #include <ap_int.h>
+#include <hls_stream.h> // Required for streams
+#include "ap_axi_sdata.h"
 
 #include "ground_truth.h"
 
@@ -17,41 +19,60 @@ int main() {
         return 1;
     }
 
-    ap_uint<64> x_packed[IMG_SIZE/8];
+    // CHANGE 1: Use HLS Stream instead of array
+    hls::stream<axis_t> in_stream;
+
+    // CHANGE 2: Result variable (passed by reference)
+    ap_fixed<32,16> result_out;
+
     int predictions[SIM_IMGS];
     int correct = 0;
     double temp_val_read;
 
-    printf("Starting C-Simulation with ARM Pre-processing...\n");
+    printf("Starting C-Simulation with Stream Interface & ARM Pre-processing...\n");
 
     for (int i = 0; i < SIM_IMGS; i++) {
 
         // --- ARM PRE-PROCESSING START ---
-        // We calculate the Norm HERE, in software.
         ap_fixed<24,14> calculated_norm = 0;
 
+        // Loop over packets (IMG_SIZE / 8)
         for (int j = 0; j < IMG_SIZE / 8; j++) {
-            ap_uint<64> packet = 0;
+            ap_uint<64> packet_data = 0;
 
+            // Loop over pixels in packet (8)
             for (int p = 0; p < 8; p++) {
                 if (inputFile >> temp_val_read) {
                     ap_fixed<8,7> pixel = (ap_fixed<8,7>)temp_val_read;
 
-                    // 1. Pack bits for FPGA
-                    packet.range(p*8 + 7, p*8) = pixel(7, 0);
+                    // 1. Pack bits
+                    packet_data.range(p*8 + 7, p*8) = pixel(7, 0);
 
                     // 2. ARM Calculation: Accumulate Square
-                    // The CPU does this extremely fast!
                     ap_fixed<16,14> sq = pixel * pixel;
                     calculated_norm += sq;
                 }
             }
-            x_packed[j] = packet;
+
+            // CHANGE 3: Write packet to Stream instead of Array
+            axis_t axis_packet;
+            axis_packet.data = packet_data;
+
+            // Optional: Set Side-Channels (Good practice for AXI Stream)
+            axis_packet.keep = -1; // Keep all bytes
+            axis_packet.strb = -1;
+            // TLAST: Asserted on the very last packet of the image
+            axis_packet.last = (j == (IMG_SIZE/8) - 1) ? 1 : 0;
+
+            in_stream.write(axis_packet);
         }
         // --- ARM PRE-PROCESSING END ---
 
-        // Call Hardware with BOTH packed data AND pre-calculated norm
-        double score = classify(x_packed, calculated_norm);
+        // CHANGE 4: Call Hardware with Stream and Reference Output
+        classify(in_stream, calculated_norm, result_out);
+
+        // Convert ap_fixed result to double for scoring
+        double score = (double)result_out;
 
         scoresF << score << std::endl;
 

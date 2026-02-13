@@ -5,17 +5,17 @@
 ############################################################
 open_project ADSD
 set_top classify
-add_files ADSD/Classifier.cpp
-add_files ADSD/Classifier.h
-add_files ADSD/Exp.cpp
-add_files ADSD/Exp.h
-add_files ADSD/alphas.h
-add_files ADSD/bias.h
 add_files ADSD/svs.h
-add_files -tb ADSD/AcceleratorTB.cpp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas"
-add_files -tb ADSD/ground_truth.h -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
-add_files -tb ADSD/test_data.h -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
-add_files -tb ADSD/test_data.txt -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files ADSD/bias.h
+add_files ADSD/Exp.h
+add_files ADSD/Exp.cpp
+add_files ADSD/Classifier.h
+add_files ADSD/Classifier.cpp
+add_files ADSD/alphas.h
+add_files -tb ADSD/test_data.txt -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb ADSD/test_data.h -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb ADSD/ground_truth.h -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb ADSD/AcceleratorTB.cpp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z020clg484-1} -tool vivado
 create_clock -period 10 -name default
@@ -23,4 +23,4 @@ source "./ADSD/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog

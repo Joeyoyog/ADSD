@@ -3,7 +3,7 @@
 #include "ap_fixed.h"
 #include "Classifier.h"
 
-static const ap_fixed<8,7> svs[NSV][IMG_SIZE] = {
+static const double svs[NSV][IMG_SIZE] = {
 0.0,
 0.0,
 0.0,

@@ -14,5 +14,7 @@ obj/AcceleratorTB.o: ../../../AcceleratorTB.cpp ../../../Classifier.h \
  C:/Xilinx/Vivado/2018.2/include/hls_half.h \
  C:/Xilinx/Vivado/2018.2/include/ap_common.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_special.h \
- C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h ../../../Exp.h \
- C:/Xilinx/Vivado/2018.2/include/ap_int.h ../../../ground_truth.h
+ C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h \
+ C:/Xilinx/Vivado/2018.2/include/ap_int.h \
+ C:/Xilinx/Vivado/2018.2/include/hls_stream.h \
+ C:/Xilinx/Vivado/2018.2/include/ap_axi_sdata.h ../../../ground_truth.h
