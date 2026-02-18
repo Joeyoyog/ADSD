@@ -1,14 +1,18 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../AcceleratorTB.cpp in debug mode
-   Compiling ../../../Exp.cpp in debug mode
    Compiling ../../../Classifier.cpp in debug mode
    Generating csim.exe
-Starting C-Simulation with Stream Interface & ARM Pre-processing...
+Starting Simulation: Batch Processing of 2601 images...
+Input Stream Filled. Calling HLS Core...
+HLS Execution Complete. verifying results...
+
+--- Results ---
 Classification Accuracy: 0.981930
-Confusion Matrix (2601 test points):
+Confusion Matrix:
 0.455594, 0.001153
 0.016917, 0.526336
+
 Test Passed!
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

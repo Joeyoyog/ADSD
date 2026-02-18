@@ -24,24 +24,15 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of x_norm_in_V
-//        bit 23~0 - x_norm_in_V[23:0] (Read/Write)
-//        others   - reserved
+// 0x10 : Data signal of num_images
+//        bit 31~0 - num_images[31:0] (Read/Write)
 // 0x14 : reserved
-// 0x18 : Data signal of result_out_V
-//        bit 31~0 - result_out_V[31:0] (Read)
-// 0x1c : Control signal of result_out_V
-//        bit 0  - result_out_V_ap_vld (Read/COR)
-//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XCLASSIFY_CONTROL_ADDR_AP_CTRL           0x00
-#define XCLASSIFY_CONTROL_ADDR_GIE               0x04
-#define XCLASSIFY_CONTROL_ADDR_IER               0x08
-#define XCLASSIFY_CONTROL_ADDR_ISR               0x0c
-#define XCLASSIFY_CONTROL_ADDR_X_NORM_IN_V_DATA  0x10
-#define XCLASSIFY_CONTROL_BITS_X_NORM_IN_V_DATA  24
-#define XCLASSIFY_CONTROL_ADDR_RESULT_OUT_V_DATA 0x18
-#define XCLASSIFY_CONTROL_BITS_RESULT_OUT_V_DATA 32
-#define XCLASSIFY_CONTROL_ADDR_RESULT_OUT_V_CTRL 0x1c
+#define XCLASSIFY_CONTROL_ADDR_AP_CTRL         0x00
+#define XCLASSIFY_CONTROL_ADDR_GIE             0x04
+#define XCLASSIFY_CONTROL_ADDR_IER             0x08
+#define XCLASSIFY_CONTROL_ADDR_ISR             0x0c
+#define XCLASSIFY_CONTROL_ADDR_NUM_IMAGES_DATA 0x10
+#define XCLASSIFY_CONTROL_BITS_NUM_IMAGES_DATA 32
 

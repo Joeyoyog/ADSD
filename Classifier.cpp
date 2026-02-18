@@ -7,15 +7,18 @@
 #include "Exp.h"
 
 // --------------------------------------------------------
-// LOAD DATA: Reads from AXI Stream (DMA Input)
+// STAGE 1: LOAD & CALC NORM
 // --------------------------------------------------------
-void load_data(hls::stream<axis_t> &in_stream, ap_fixed<8,7> x_local[IMG_SIZE]) {
+// We calculate the norm here because the CPU cannot send it
+// via AXI-Lite for every image during a continuous stream.
+ap_fixed<24,14> load_and_calc_norm(hls::stream<axis_t> &in_stream, ap_fixed<8,7> x_local[IMG_SIZE]) {
     #pragma HLS INLINE off
 
-    load_image_loop: for (int i = 0; i < IMG_SIZE / 8; i++) {
+    ap_fixed<24,14> calculated_norm = 0;
+
+    load_loop: for (int i = 0; i < IMG_SIZE / 8; i++) {
         #pragma HLS PIPELINE II=1
 
-        // Read packet (includes TLAST, KEEP, etc.)
         axis_t packet = in_stream.read();
         ap_uint<64> data = packet.data;
 
@@ -24,12 +27,16 @@ void load_data(hls::stream<axis_t> &in_stream, ap_fixed<8,7> x_local[IMG_SIZE]) 
             ap_fixed<8,7> val;
             val(7, 0) = data.range(p*8 + 7, p*8);
             x_local[i*8 + p] = val;
+
+            ap_fixed<16,14> sq = val * val;
+            calculated_norm += sq;
         }
     }
+    return calculated_norm;
 }
 
 // --------------------------------------------------------
-// COMPUTE CLASS: Your optimized logic (unchanged)
+// STAGE 2: COMPUTE CLASS (Logic Unchanged)
 // --------------------------------------------------------
 void compute_class(ap_fixed<8,7> x_local[IMG_SIZE], ap_fixed<24,14> x_norm_in, ap_fixed<32,16> &result) {
     #pragma HLS INLINE off
@@ -60,8 +67,6 @@ void compute_class(ap_fixed<8,7> x_local[IMG_SIZE], ap_fixed<24,14> x_norm_in, a
                 #pragma HLS UNROLL
                 ap_fixed<8,7> xi = svs[i+k][j];
                 ap_fixed<8,7> xj = x_local[j];
-
-                // Pure LUT multiplication
                 ap_fixed<16,14> prod = xi * xj;
                 dot_products[k] += prod;
             }
@@ -90,40 +95,51 @@ void compute_class(ap_fixed<8,7> x_local[IMG_SIZE], ap_fixed<24,14> x_norm_in, a
 }
 
 // --------------------------------------------------------
-// TOP LEVEL FUNCTION: Streaming Interface
+// TOP LEVEL: BATCH STREAMING
 // --------------------------------------------------------
 void classify(hls::stream<axis_t> &in_stream,
-              ap_fixed<24,14> x_norm_in,
-              ap_fixed<32,16> &result_out) {
+              hls::stream<result_pkt> &out_stream,
+              int num_images) {
+	//num_images = 2601;
 
-    // 1. INTERFACES
+    // INTERFACES
     #pragma HLS INTERFACE axis port=in_stream
-
-    // Map Scalar Input to AXI Lite
-    #pragma HLS INTERFACE s_axilite port=x_norm_in bundle=control
-
-    // Map Scalar Output to AXI Lite (This creates the 'result_out' register)
-    #pragma HLS INTERFACE s_axilite port=result_out bundle=control
-
+    #pragma HLS INTERFACE axis port=out_stream
+    #pragma HLS INTERFACE s_axilite port=num_images bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-    // ... (Keep your Array Partitions and Dataflow logic same as before) ...
+    // OPTIMIZATIONS
     #pragma HLS ARRAY_RESHAPE variable=svs cyclic factor=16 dim=2
     #pragma HLS ARRAY_PARTITION variable=svs cyclic factor=16 dim=1
     #pragma HLS ARRAY_PARTITION variable=alphas cyclic factor=16 dim=1
     #pragma HLS ARRAY_PARTITION variable=sv_norms cyclic factor=16 dim=1
 
-    ap_fixed<8,7> x_local[IMG_SIZE];
-    #pragma HLS ARRAY_PARTITION variable=x_local cyclic factor=16 dim=1
+	//num_images = 2601;
 
-    #pragma HLS DATAFLOW
+    // BATCH LOOP: Process N images without stopping
+    Batch_Loop: for (int n = 0; n < num_images; n++) {
+        #pragma HLS DATAFLOW
 
-    ap_fixed<32,16> res_internal;
+        ap_fixed<8,7> x_local[IMG_SIZE];
+        #pragma HLS ARRAY_PARTITION variable=x_local cyclic factor=16 dim=1
 
-    // Call your sub-functions
-    load_data(in_stream, x_local);
-    compute_class(x_local, x_norm_in, res_internal);
+        ap_fixed<24,14> internal_norm;
+        ap_fixed<32,16> res_internal;
 
-    // Assign final result to the output port
-    result_out = res_internal;
+        // 1. Load & Calc Norm
+        internal_norm = load_and_calc_norm(in_stream, x_local);
+
+        // 2. Compute
+        compute_class(x_local, internal_norm, res_internal);
+
+        // 3. Stream Output
+        result_pkt out_val;
+        out_val.data = res_internal;
+        out_val.keep = -1; // All bytes valid
+        out_val.strb = -1;
+        // Assert TLAST only on the very last image of the batch
+        out_val.last = (n == num_images - 1) ? 1 : 0;
+
+        out_stream.write(out_val);
+    }
 }

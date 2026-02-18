@@ -27,7 +27,13 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("in_stream_TLAST", 1, hls_in, 4, "axis", "in_data", 1),
 	Port_Property("in_stream_TID", 1, hls_in, 5, "axis", "in_data", 1),
 	Port_Property("in_stream_TDEST", 1, hls_in, 6, "axis", "in_data", 1),
+	Port_Property("out_stream_TDATA", 32, hls_out, 7, "axis", "out_data", 1),
+	Port_Property("out_stream_TKEEP", 1, hls_out, 8, "axis", "out_data", 1),
+	Port_Property("out_stream_TSTRB", 1, hls_out, 9, "axis", "out_data", 1),
+	Port_Property("out_stream_TLAST", 1, hls_out, 10, "axis", "out_data", 1),
 	Port_Property("in_stream_TVALID", 1, hls_in, 6, "axis", "in_vld", 1),
 	Port_Property("in_stream_TREADY", 1, hls_out, 6, "axis", "in_acc", 1),
+	Port_Property("out_stream_TVALID", 1, hls_out, 10, "axis", "out_vld", 1),
+	Port_Property("out_stream_TREADY", 1, hls_in, 10, "axis", "out_acc", 1),
 };
 const char* HLS_Design_Meta::dut_name = "classify";

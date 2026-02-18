@@ -87,10 +87,8 @@ u32 XClassify_IsReady(XClassify *InstancePtr);
 void XClassify_EnableAutoRestart(XClassify *InstancePtr);
 void XClassify_DisableAutoRestart(XClassify *InstancePtr);
 
-void XClassify_Set_x_norm_in_V(XClassify *InstancePtr, u32 Data);
-u32 XClassify_Get_x_norm_in_V(XClassify *InstancePtr);
-u32 XClassify_Get_result_out_V(XClassify *InstancePtr);
-u32 XClassify_Get_result_out_V_vld(XClassify *InstancePtr);
+void XClassify_Set_num_images(XClassify *InstancePtr, u32 Data);
+u32 XClassify_Get_num_images(XClassify *InstancePtr);
 
 void XClassify_InterruptGlobalEnable(XClassify *InstancePtr);
 void XClassify_InterruptGlobalDisable(XClassify *InstancePtr);

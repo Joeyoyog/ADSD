@@ -38,9 +38,7 @@ module classify_control_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [23:0]                   x_norm_in_V,
-    input  wire [31:0]                   result_out_V,
-    input  wire                          result_out_V_ap_vld
+    output wire [31:0]                   num_images
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -61,34 +59,26 @@ module classify_control_s_axi
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of x_norm_in_V
-//        bit 23~0 - x_norm_in_V[23:0] (Read/Write)
-//        others   - reserved
+// 0x10 : Data signal of num_images
+//        bit 31~0 - num_images[31:0] (Read/Write)
 // 0x14 : reserved
-// 0x18 : Data signal of result_out_V
-//        bit 31~0 - result_out_V[31:0] (Read)
-// 0x1c : Control signal of result_out_V
-//        bit 0  - result_out_V_ap_vld (Read/COR)
-//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL             = 5'h00,
-    ADDR_GIE                 = 5'h04,
-    ADDR_IER                 = 5'h08,
-    ADDR_ISR                 = 5'h0c,
-    ADDR_X_NORM_IN_V_DATA_0  = 5'h10,
-    ADDR_X_NORM_IN_V_CTRL    = 5'h14,
-    ADDR_RESULT_OUT_V_DATA_0 = 5'h18,
-    ADDR_RESULT_OUT_V_CTRL   = 5'h1c,
-    WRIDLE                   = 2'd0,
-    WRDATA                   = 2'd1,
-    WRRESP                   = 2'd2,
-    WRRESET                  = 2'd3,
-    RDIDLE                   = 2'd0,
-    RDDATA                   = 2'd1,
-    RDRESET                  = 2'd2,
+    ADDR_AP_CTRL           = 5'h00,
+    ADDR_GIE               = 5'h04,
+    ADDR_IER               = 5'h08,
+    ADDR_ISR               = 5'h0c,
+    ADDR_NUM_IMAGES_DATA_0 = 5'h10,
+    ADDR_NUM_IMAGES_CTRL   = 5'h14,
+    WRIDLE                 = 2'd0,
+    WRDATA                 = 2'd1,
+    WRRESP                 = 2'd2,
+    WRRESET                = 2'd3,
+    RDIDLE                 = 2'd0,
+    RDDATA                 = 2'd1,
+    RDRESET                = 2'd2,
     ADDR_BITS         = 5;
 
 //------------------------Local signal-------------------
@@ -112,9 +102,7 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [23:0]                   int_x_norm_in_V = 'b0;
-    reg  [31:0]                   int_result_out_V = 'b0;
-    reg                           int_result_out_V_ap_vld;
+    reg  [31:0]                   int_num_images = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -222,14 +210,8 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
-                ADDR_X_NORM_IN_V_DATA_0: begin
-                    rdata <= int_x_norm_in_V[23:0];
-                end
-                ADDR_RESULT_OUT_V_DATA_0: begin
-                    rdata <= int_result_out_V[31:0];
-                end
-                ADDR_RESULT_OUT_V_CTRL: begin
-                    rdata[0] <= int_result_out_V_ap_vld;
+                ADDR_NUM_IMAGES_DATA_0: begin
+                    rdata <= int_num_images[31:0];
                 end
             endcase
         end
@@ -238,9 +220,9 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt   = int_gie & (|int_isr);
-assign ap_start    = int_ap_start;
-assign x_norm_in_V = int_x_norm_in_V;
+assign interrupt  = int_gie & (|int_isr);
+assign ap_start   = int_ap_start;
+assign num_images = int_num_images;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -337,35 +319,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_x_norm_in_V[23:0]
+// int_num_images[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_x_norm_in_V[23:0] <= 0;
+        int_num_images[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_X_NORM_IN_V_DATA_0)
-            int_x_norm_in_V[23:0] <= (WDATA[31:0] & wmask) | (int_x_norm_in_V[23:0] & ~wmask);
-    end
-end
-
-// int_result_out_V
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_result_out_V <= 0;
-    else if (ACLK_EN) begin
-        if (result_out_V_ap_vld)
-            int_result_out_V <= result_out_V;
-    end
-end
-
-// int_result_out_V_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_result_out_V_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (result_out_V_ap_vld)
-            int_result_out_V_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_RESULT_OUT_V_CTRL)
-            int_result_out_V_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_NUM_IMAGES_DATA_0)
+            int_num_images[31:0] <= (WDATA[31:0] & wmask) | (int_num_images[31:0] & ~wmask);
     end
 end
 

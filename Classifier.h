@@ -9,15 +9,26 @@
 #define IMG_SIZE 784
 #define NSV 176
 
-// Define AXI Stream Packet
+
+// --------------------------------------------------------
+// DATA TYPES
+// --------------------------------------------------------
+// Input Stream: 64-bit width (8 pixels per cycle)
 typedef ap_axiu<64, 1, 1, 1> axis_t;
 
-// UPDATED SIGNATURE:
-// 1. in_stream (Stream Input)
-// 2. x_norm_in (Scalar Input)
-// 3. result_out (Scalar Output Reference)
+// Output Stream: 32-bit score + Control signals (Last, Keep, Strb)
+struct result_pkt {
+    ap_fixed<32,16> data;
+    ap_uint<1> keep;
+    ap_uint<1> strb;
+    ap_uint<1> last;
+};
+
+// --------------------------------------------------------
+// FUNCTION PROTOTYPE
+// --------------------------------------------------------
 void classify(hls::stream<axis_t> &in_stream,
-              ap_fixed<24,14> x_norm_in,
-              ap_fixed<32,16> &result_out);
+              hls::stream<result_pkt> &out_stream,
+              int num_images);
 
 #endif

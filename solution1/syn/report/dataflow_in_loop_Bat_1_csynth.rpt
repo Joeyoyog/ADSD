@@ -1,0 +1,285 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_in_loop_Bat_1'
+================================================================
+* Date:           Wed Feb 18 17:52:34 2026
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        ADSD
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.599|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+-----+-----+----------+
+    |   Latency   |  Interval | Pipeline |
+    |  min |  max | min | max |   Type   |
+    +------+------+-----+-----+----------+
+    |  1039|  1039|  938|  938| dataflow |
+    +------+------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------+--------------------------+-----+-----+-----+-----+---------+
+        |                             |                          |  Latency  |  Interval | Pipeline|
+        |           Instance          |          Module          | min | max | min | max |   Type  |
+        +-----------------------------+--------------------------+-----+-----+-----+-----+---------+
+        |compute_class_U0             |compute_class             |  937|  937|  937|  937|   none  |
+        |load_and_calc_norm_U0        |load_and_calc_norm        |  101|  101|  101|  101|   none  |
+        |p_ADSD_Classifier_cp_1_U0    |p_ADSD_Classifier_cp_1    |    0|    0|    0|    0|   none  |
+        |p_ADSD_Classifier_cp_U0      |p_ADSD_Classifier_cp      |    0|    0|    0|    0|   none  |
+        |dataflow_in_loop_Bat_2_U0    |dataflow_in_loop_Bat_2    |    0|    0|    0|    0|   none  |
+        |dataflow_in_loop_Bat_1_1_U0  |dataflow_in_loop_Bat_1_1  |    0|    0|    0|    0|   none  |
+        |p_ADSD_Classifier_cp_4_U0    |p_ADSD_Classifier_cp_4    |    0|    0|    0|    0|   none  |
+        |p_ADSD_Classifier_cp_3_U0    |p_ADSD_Classifier_cp_3    |    0|    0|    0|    0|   none  |
+        |p_ADSD_Classifier_cp_2_U0    |p_ADSD_Classifier_cp_2    |    0|    0|    0|    0|   none  |
+        +-----------------------------+--------------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    106|
+|FIFO             |        0|      -|      40|    220|
+|Instance         |      116|      1|    8234|  28015|
+|Memory           |        0|      -|     256|    112|
+|Multiplexer      |        -|      -|       -|    189|
+|Register         |        -|      -|      23|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |      116|      1|    8553|  28642|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       41|   ~0  |       8|     53|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+--------------------------+---------+-------+------+-------+
+    |           Instance          |          Module          | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-----------------------------+--------------------------+---------+-------+------+-------+
+    |compute_class_U0             |compute_class             |      116|      1|  7907|  27089|
+    |dataflow_in_loop_Bat_1_1_U0  |dataflow_in_loop_Bat_1_1  |        0|      0|     3|     38|
+    |dataflow_in_loop_Bat_2_U0    |dataflow_in_loop_Bat_2    |        0|      0|     3|     29|
+    |load_and_calc_norm_U0        |load_and_calc_norm        |        0|      0|   277|    744|
+    |p_ADSD_Classifier_cp_U0      |p_ADSD_Classifier_cp      |        0|      0|     3|     31|
+    |p_ADSD_Classifier_cp_1_U0    |p_ADSD_Classifier_cp_1    |        0|      0|     3|     42|
+    |p_ADSD_Classifier_cp_2_U0    |p_ADSD_Classifier_cp_2    |        0|      0|     2|     11|
+    |p_ADSD_Classifier_cp_3_U0    |p_ADSD_Classifier_cp_3    |        0|      0|     2|     11|
+    |p_ADSD_Classifier_cp_4_U0    |p_ADSD_Classifier_cp_4    |        0|      0|    34|     20|
+    +-----------------------------+--------------------------+---------+-------+------+-------+
+    |Total                        |                          |      116|      1|  8234|  28015|
+    +-----------------------------+--------------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |     Memory     |        Module        | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |x_local_0_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_1_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_2_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_3_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_4_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_5_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_6_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_7_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_8_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_9_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_10_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_11_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_12_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_13_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_14_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_15_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    +----------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |Total           |                      |        0| 256| 112|   784|  128|    32|        12544|
+    +----------------+----------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +------------------------+---------+---+----+------+-----+---------+
+    |          Name          | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------------------+---------+---+----+------+-----+---------+
+    |n_0_i_i_c1_U            |        0|  5|  24|     2|   12|       24|
+    |n_0_i_i_c_U             |        0|  5|  24|     2|   12|       24|
+    |op_V_assign1_channel_U  |        0|  5|  36|     2|   24|       48|
+    |res_internal_V_U        |        0|  5|  44|     2|   32|       64|
+    |tmp_data_V_U            |        0|  5|  44|     2|   32|       64|
+    |tmp_keep_V_U            |        0|  5|  16|     2|    1|        2|
+    |tmp_last_V_U            |        0|  5|  16|     2|    1|        2|
+    |tmp_strb_V_U            |        0|  5|  16|     2|    1|        2|
+    +------------------------+---------+---+----+------+-----+---------+
+    |Total                   |        0| 40| 220|    16|  115|      230|
+    +------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +--------------------------------------------+----------+-------+---+----+------------+------------+
+    |                Variable Name               | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------------------+----------+-------+---+----+------------+------------+
+    |dataflow_in_loop_Bat_2_U0_ap_ready_count    |     +    |      0|  0|  10|           2|           1|
+    |load_and_calc_norm_U0_ap_ready_count        |     +    |      0|  0|  10|           2|           1|
+    |ap_channel_done_op_V_assign1_channel        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_0_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_10_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_11_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_12_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_13_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_14_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_15_V                |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_1_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_2_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_3_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_4_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_5_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_6_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_7_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_8_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_local_9_V                 |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                                     |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_ready                               |    and   |      0|  0|   2|           1|           1|
+    |compute_class_U0_ap_start                   |    and   |      0|  0|   2|           1|           1|
+    |dataflow_in_loop_Bat_2_U0_ap_start          |    and   |      0|  0|   2|           1|           1|
+    |load_and_calc_norm_U0_ap_continue           |    and   |      0|  0|   2|           1|           1|
+    |load_and_calc_norm_U0_ap_start              |    and   |      0|  0|   2|           1|           1|
+    |p_ADSD_Classifier_cp_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_op_V_assign1_channel  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_0_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_10_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_11_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_12_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_13_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_14_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_15_V          |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_1_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_2_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_3_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_4_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_5_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_6_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_7_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_8_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_local_9_V           |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_dataflow_in_loop_Bat_2_U0_ap_ready  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_load_and_calc_norm_U0_ap_ready      |    or    |      0|  0|   2|           1|           1|
+    +--------------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                       |          |      0|  0| 106|          47|          45|
+    +--------------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |                      Name                      | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_op_V_assign1_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_0_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_10_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_11_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_12_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_13_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_14_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_15_V          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_1_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_2_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_3_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_4_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_5_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_6_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_7_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_8_V           |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_local_9_V           |   9|          2|    1|          2|
+    |ap_sync_reg_dataflow_in_loop_Bat_2_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_load_and_calc_norm_U0_ap_ready      |   9|          2|    1|          2|
+    |dataflow_in_loop_Bat_2_U0_ap_ready_count        |   9|          2|    2|          4|
+    |load_and_calc_norm_U0_ap_ready_count            |   9|          2|    2|          4|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                           | 189|         42|   23|         46|
+    +------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------+---+----+-----+-----------+
+    |                      Name                      | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_op_V_assign1_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_0_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_10_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_11_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_12_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_13_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_14_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_15_V          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_1_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_2_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_3_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_4_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_5_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_6_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_7_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_8_V           |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_local_9_V           |  1|   0|    1|          0|
+    |ap_sync_reg_dataflow_in_loop_Bat_2_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_load_and_calc_norm_U0_ap_ready      |  1|   0|    1|          0|
+    |dataflow_in_loop_Bat_2_U0_ap_ready_count        |  2|   0|    2|          0|
+    |load_and_calc_norm_U0_ap_ready_count            |  2|   0|    2|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+    |Total                                           | 23|   0|   23|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+------------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_start           |  in |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_done            | out |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_ready           | out |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_idle            | out |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|ap_continue        |  in |    1| ap_ctrl_hs | dataflow_in_loop_Bat.1 | return value |
+|in_stream_TDATA    |  in |   64|    axis    |   in_stream_V_data_V   |    pointer   |
+|in_stream_TKEEP    |  in |    8|    axis    |   in_stream_V_keep_V   |    pointer   |
+|in_stream_TSTRB    |  in |    8|    axis    |   in_stream_V_strb_V   |    pointer   |
+|in_stream_TUSER    |  in |    1|    axis    |   in_stream_V_user_V   |    pointer   |
+|in_stream_TLAST    |  in |    1|    axis    |   in_stream_V_last_V   |    pointer   |
+|in_stream_TID      |  in |    1|    axis    |    in_stream_V_id_V    |    pointer   |
+|in_stream_TDEST    |  in |    1|    axis    |   in_stream_V_dest_V   |    pointer   |
+|in_stream_TVALID   |  in |    1|    axis    |   in_stream_V_dest_V   |    pointer   |
+|in_stream_TREADY   | out |    1|    axis    |   in_stream_V_dest_V   |    pointer   |
+|n_0_i_i            |  in |   12|   ap_none  |         n_0_i_i        |    scalar    |
+|n_0_i_i_ap_vld     |  in |    1|   ap_none  |         n_0_i_i        |    scalar    |
+|out_stream_TDATA   | out |   32|    axis    |   out_stream_V_data_V  |    pointer   |
+|out_stream_TKEEP   | out |    1|    axis    |   out_stream_V_keep_V  |    pointer   |
+|out_stream_TSTRB   | out |    1|    axis    |   out_stream_V_strb_V  |    pointer   |
+|out_stream_TLAST   | out |    1|    axis    |   out_stream_V_last_V  |    pointer   |
+|out_stream_TVALID  | out |    1|    axis    |   out_stream_V_last_V  |    pointer   |
+|out_stream_TREADY  |  in |    1|    axis    |   out_stream_V_last_V  |    pointer   |
++-------------------+-----+-----+------------+------------------------+--------------+
+

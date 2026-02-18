@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Fri Feb 13 10:44:59 2026
+<item name = "Date">Wed Feb 18 17:52:12 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -24,20 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1038, 1038, 938, 938, dataflow</column>
+<column name="">2439842, 2439842, 2439842, 2439842, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_compute_class_fu_234">compute_class, 937, 937, 937, 937, none</column>
-<column name="grp_load_data55_fu_351">load_data55, 100, 100, 100, 100, none</column>
-<column name="StgValue_45_Block_proc_fu_388">Block_proc, 0, 0, 0, 0, none</column>
+<column name="grp_dataflow_in_loop_Bat_1_fu_176">dataflow_in_loop_Bat_1, 1039, 1039, 938, 938, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Batch_Loop">2439840, 2439840, 1041, -, -, 2601, no</column>
 </table>
 </item>
 </section>

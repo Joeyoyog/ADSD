@@ -14,28 +14,34 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>dataflow</PipelineType>
+<PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
 <EstimatedClockPeriod>9.599</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1038</Best-caseLatency>
-<Average-caseLatency>1038</Average-caseLatency>
-<Worst-caseLatency>1038</Worst-caseLatency>
-<DataflowPipelineThroughput>938</DataflowPipelineThroughput>
-<Interval-min>938</Interval-min>
-<Interval-max>938</Interval-max>
+<Best-caseLatency>2439842</Best-caseLatency>
+<Average-caseLatency>2439842</Average-caseLatency>
+<Worst-caseLatency>2439842</Worst-caseLatency>
+<Interval-min>2439843</Interval-min>
+<Interval-max>2439843</Interval-max>
 </SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<Batch_Loop>
+<TripCount>2601</TripCount>
+<Latency>2439840</Latency>
+<DataflowPipelineThroughput>938</DataflowPipelineThroughput>
+</Batch_Loop>
+</SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>116</BRAM_18K>
 <DSP48E>1</DSP48E>
-<FF>8481</FF>
-<LUT>27833</LUT>
+<FF>8653</FF>
+<LUT>28788</LUT>
 </Resources>
 <AvailableResources>
 <BRAM_18K>280</BRAM_18K>
@@ -49,7 +55,7 @@
 <RtlPorts>
 <name>s_axi_control_AWVALID</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -62,7 +68,7 @@
 <RtlPorts>
 <name>s_axi_control_AWREADY</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -75,7 +81,7 @@
 <RtlPorts>
 <name>s_axi_control_AWADDR</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -88,7 +94,7 @@
 <RtlPorts>
 <name>s_axi_control_WVALID</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -101,7 +107,7 @@
 <RtlPorts>
 <name>s_axi_control_WREADY</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -114,7 +120,7 @@
 <RtlPorts>
 <name>s_axi_control_WDATA</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -127,7 +133,7 @@
 <RtlPorts>
 <name>s_axi_control_WSTRB</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -140,7 +146,7 @@
 <RtlPorts>
 <name>s_axi_control_ARVALID</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -153,7 +159,7 @@
 <RtlPorts>
 <name>s_axi_control_ARREADY</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -166,7 +172,7 @@
 <RtlPorts>
 <name>s_axi_control_ARADDR</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -179,7 +185,7 @@
 <RtlPorts>
 <name>s_axi_control_RVALID</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -192,7 +198,7 @@
 <RtlPorts>
 <name>s_axi_control_RREADY</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -205,7 +211,7 @@
 <RtlPorts>
 <name>s_axi_control_RDATA</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -218,7 +224,7 @@
 <RtlPorts>
 <name>s_axi_control_RRESP</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -231,7 +237,7 @@
 <RtlPorts>
 <name>s_axi_control_BVALID</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -244,7 +250,7 @@
 <RtlPorts>
 <name>s_axi_control_BREADY</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -257,7 +263,7 @@
 <RtlPorts>
 <name>s_axi_control_BRESP</name>
 <Object>control</Object>
-<Type>pointer</Type>
+<Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -404,6 +410,78 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TDATA</name>
+<Object>out_stream_V_data_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TKEEP</name>
+<Object>out_stream_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TSTRB</name>
+<Object>out_stream_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TLAST</name>
+<Object>out_stream_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TVALID</name>
+<Object>out_stream_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>out_stream_TREADY</name>
+<Object>out_stream_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 <CType>int</CType>

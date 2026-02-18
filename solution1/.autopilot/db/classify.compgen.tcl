@@ -1,220 +1,5 @@
 # This script segment is generated automatically by AutoPilot
 
-# Memory (RAM/ROM)  definition:
-set ID 100
-set hasByteEnable 0
-set MemName classify_x_local_0iy_memcore
-set CoreName ap_simcore_mem
-set PortList { 2 3 }
-set DataWd 8
-set AddrRange 49
-set AddrWd 6
-set impl_style block
-set TrueReset 0
-set HasInitializer 0
-set IsROM 0
-set ROMData {}
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.322
-set ClkPeriod 10
-set RegisteredInput 0
-set memSimGenFunc ap_gen_simcore_mem
-set memImplGenFunc ::AESL_LIB_VIRTEX::xil_gen_RAM
-eval "set memGenArgs  { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-
-set Depth 2
-set FullThresh 0
-set CoreName ap_simcore_mem_df_channel
-set MemName classify_x_local_0iy
-if {${::AESL::PGuard_autocg_gen} || ${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem_df_channel] == "ap_gen_simcore_mem_df_channel"} {
-    eval "ap_gen_simcore_mem_df_channel { \
-    id ${ID} \
-    name ${MemName} \
-    memcorename ${MemName}_memcore \
-    corename ${CoreName} \
-    op mem_df_channel \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage} \
-    max_latency ${MaxLatency} \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    use_pre_full 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
-    depth ${Depth} \
-    full_thresh ${FullThresh} \
-    memSimGenFunc $memSimGenFunc\
-    memImplGenFunc $memImplGenFunc\
-    memGenArgs \{$memGenArgs\} \
-} "
-} else {
-puts "@W \[IMPL-105\] Cannot find ap_gen_simcore_mem_df_channel, check your platform lib"
-}
-}
-
-
-# FIFO definition:
-set ID 101
-set FifoName fifo_w24_d2_A
-set InstName x_norm_in_V_c_U
-set CoreName ap_simcore_fifo
-set NumOfStage 2
-set RegisteredInput 0
-set DualClock 0
-set Depth 2
-set DataWd 24
-set AddrWd 1
-set FullThresh 0
-set impl_style auto
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
-eval "ap_gen_simcore_fifo { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}    corename ${CoreName} \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0\
-    depth ${Depth} \
-    full_thresh ${FullThresh} \
-}"
-} else {
-puts "@W \[IMPL-106\] Cannot find ap_gen_simcore_fifo, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $FifoName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}
-    corename FIFO \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0 \
-    depth ${Depth} \
-    full_thresh ${FullThresh} \
-    style ${impl_style} \
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your platform lib"
-}
-}
-
-
-# FIFO definition:
-set ID 102
-set FifoName fifo_w32_d2_A
-set InstName res_internal_V_U
-set CoreName ap_simcore_fifo
-set NumOfStage 2
-set RegisteredInput 0
-set DualClock 0
-set Depth 2
-set DataWd 32
-set AddrWd 1
-set FullThresh 0
-set impl_style auto
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
-eval "ap_gen_simcore_fifo { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}    corename ${CoreName} \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0\
-    depth ${Depth} \
-    full_thresh ${FullThresh} \
-}"
-} else {
-puts "@W \[IMPL-106\] Cannot find ap_gen_simcore_fifo, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $FifoName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}
-    corename FIFO \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0 \
-    depth ${Depth} \
-    full_thresh ${FullThresh} \
-    style ${impl_style} \
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your platform lib"
-}
-}
-
-
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -227,21 +12,13 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-x_norm_in_V { 
+num_images { 
 	dir I
-	width 24
+	width 32
 	depth 1
 	mode ap_none
 	offset 16
 	offset_end 23
-}
-result_out_V { 
-	dir O
-	width 32
-	depth 1
-	mode ap_vld
-	offset 24
-	offset_end 31
 }
 }
 
@@ -250,7 +27,7 @@ result_out_V {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 103 \
+			id 137 \
 			corename classify_control_axilite \
 			name classify_control_s_axi \
 			ports {$port_control} \
@@ -270,7 +47,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 104 \
+    id 138 \
     name in_stream_V_data_V \
     reset_level 0 \
     sync_rst true \
@@ -289,7 +66,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 105 \
+    id 139 \
     name in_stream_V_keep_V \
     reset_level 0 \
     sync_rst true \
@@ -308,7 +85,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 106 \
+    id 140 \
     name in_stream_V_strb_V \
     reset_level 0 \
     sync_rst true \
@@ -327,7 +104,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 107 \
+    id 141 \
     name in_stream_V_user_V \
     reset_level 0 \
     sync_rst true \
@@ -346,7 +123,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 108 \
+    id 142 \
     name in_stream_V_last_V \
     reset_level 0 \
     sync_rst true \
@@ -365,7 +142,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 109 \
+    id 143 \
     name in_stream_V_id_V \
     reset_level 0 \
     sync_rst true \
@@ -384,7 +161,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 110 \
+    id 144 \
     name in_stream_V_dest_V \
     reset_level 0 \
     sync_rst true \
@@ -395,6 +172,82 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'in_stream_V_dest_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 145 \
+    name out_stream_V_data_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {out_stream} \
+    metadata {  } \
+    op interface \
+    ports { out_stream_TDATA { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_data_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 146 \
+    name out_stream_V_keep_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {out_stream} \
+    metadata {  } \
+    op interface \
+    ports { out_stream_TKEEP { O 1 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_keep_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 147 \
+    name out_stream_V_strb_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {out_stream} \
+    metadata {  } \
+    op interface \
+    ports { out_stream_TSTRB { O 1 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_strb_V'"
+}
+}
+
+
+# Native AXIS:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 148 \
+    name out_stream_V_last_V \
+    reset_level 0 \
+    sync_rst true \
+    corename {out_stream} \
+    metadata {  } \
+    op interface \
+    ports { out_stream_TLAST { O 1 vector } out_stream_TVALID { O 1 bit } out_stream_TREADY { I 1 bit } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_stream_V_last_V'"
 }
 }
 

@@ -28,7 +28,7 @@ set C_modelArgList {
 	{ x_local_13_V int 8 regular {array 49 { 1 3 } 1 1 }  }
 	{ x_local_14_V int 8 regular {array 49 { 1 3 } 1 1 }  }
 	{ x_local_15_V int 8 regular {array 49 { 1 3 } 1 1 }  }
-	{ x_norm_in_V int 24 regular {fifo 0}  }
+	{ p_read int 24 regular  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "x_local_0_V", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
@@ -47,10 +47,10 @@ set C_modelArgMapList {[
  	{ "Name" : "x_local_13_V", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "x_local_14_V", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "x_local_15_V", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "x_norm_in_V", "interface" : "fifo", "bitwidth" : 24, "direction" : "READONLY"} , 
+ 	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 24, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 32} ]}
 # RTL Port declarations: 
-set portNum 59
+set portNum 57
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -107,9 +107,7 @@ set portList {
 	{ x_local_15_V_address0 sc_out sc_lv 6 signal 15 } 
 	{ x_local_15_V_ce0 sc_out sc_logic 1 signal 15 } 
 	{ x_local_15_V_q0 sc_in sc_lv 8 signal 15 } 
-	{ x_norm_in_V_dout sc_in sc_lv 24 signal 16 } 
-	{ x_norm_in_V_empty_n sc_in sc_logic 1 signal 16 } 
-	{ x_norm_in_V_read sc_out sc_logic 1 signal 16 } 
+	{ p_read sc_in sc_lv 24 signal 16 } 
 	{ ap_return sc_out sc_lv 32 signal -1 } 
 }
 set NewPortList {[ 
@@ -168,9 +166,7 @@ set NewPortList {[
  	{ "name": "x_local_15_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "x_local_15_V", "role": "address0" }} , 
  	{ "name": "x_local_15_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "x_local_15_V", "role": "ce0" }} , 
  	{ "name": "x_local_15_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "x_local_15_V", "role": "q0" }} , 
- 	{ "name": "x_norm_in_V_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "x_norm_in_V", "role": "dout" }} , 
- 	{ "name": "x_norm_in_V_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "x_norm_in_V", "role": "empty_n" }} , 
- 	{ "name": "x_norm_in_V_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "x_norm_in_V", "role": "read" }} , 
+ 	{ "name": "p_read", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "p_read", "role": "default" }} , 
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -204,9 +200,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "x_local_13_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0"},
 			{"Name" : "x_local_14_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0"},
 			{"Name" : "x_local_15_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0"},
-			{"Name" : "x_norm_in_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0",
-				"BlockSignal" : [
-					{"Name" : "x_norm_in_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0"},
 			{"Name" : "svs_V_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_2", "Type" : "Memory", "Direction" : "I"},
@@ -224,21 +218,21 @@ set RtlHierarchyInfo {[
 			{"Name" : "svs_V_14", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_15", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "alphas_V_0", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_140", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_247", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_348", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_449", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_550", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_651", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_752", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_853", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_954", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1041", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1142", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1243", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1344", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1445", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "alphas_V_1546", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_143", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_250", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_351", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_452", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_553", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_654", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_755", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_856", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_957", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1044", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1145", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1246", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1347", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1448", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "alphas_V_1549", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "sv_norms_V_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "sv_norms_V_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "sv_norms_V_2", "Type" : "Memory", "Direction" : "I"},
@@ -272,21 +266,21 @@ set RtlHierarchyInfo {[
 	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.svs_V_14_U", "Parent" : "0"},
 	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.svs_V_15_U", "Parent" : "0"},
 	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_0_U", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_140_U", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_247_U", "Parent" : "0"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_348_U", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_449_U", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_550_U", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_651_U", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_752_U", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_853_U", "Parent" : "0"},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_954_U", "Parent" : "0"},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1041_U", "Parent" : "0"},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1142_U", "Parent" : "0"},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1243_U", "Parent" : "0"},
-	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1344_U", "Parent" : "0"},
-	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1445_U", "Parent" : "0"},
-	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1546_U", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_143_U", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_250_U", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_351_U", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_452_U", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_553_U", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_654_U", "Parent" : "0"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_755_U", "Parent" : "0"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_856_U", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_957_U", "Parent" : "0"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1044_U", "Parent" : "0"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1145_U", "Parent" : "0"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1246_U", "Parent" : "0"},
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1347_U", "Parent" : "0"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1448_U", "Parent" : "0"},
+	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.alphas_V_1549_U", "Parent" : "0"},
 	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_0_U", "Parent" : "0"},
 	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_1_U", "Parent" : "0"},
 	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_2_U", "Parent" : "0"},
@@ -303,10 +297,10 @@ set RtlHierarchyInfo {[
 	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_13_U", "Parent" : "0"},
 	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_14_U", "Parent" : "0"},
 	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sv_norms_V_15_U", "Parent" : "0"},
-	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Xh4_U26", "Parent" : "0"},
-	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Yie_U27", "Parent" : "0"},
-	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Xh4_U28", "Parent" : "0"},
-	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mul_mul_Zio_U29", "Parent" : "0"}]}
+	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Xh4_U28", "Parent" : "0"},
+	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Yie_U29", "Parent" : "0"},
+	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mux_164_Xh4_U30", "Parent" : "0"},
+	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_mul_mul_Zio_U31", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -327,7 +321,7 @@ set ArgLastReadFirstWriteLatency {
 		x_local_13_V {Type I LastRead 2 FirstWrite -1}
 		x_local_14_V {Type I LastRead 2 FirstWrite -1}
 		x_local_15_V {Type I LastRead 2 FirstWrite -1}
-		x_norm_in_V {Type I LastRead 0 FirstWrite -1}
+		p_read {Type I LastRead 0 FirstWrite -1}
 		svs_V_0 {Type I LastRead -1 FirstWrite -1}
 		svs_V_1 {Type I LastRead -1 FirstWrite -1}
 		svs_V_2 {Type I LastRead -1 FirstWrite -1}
@@ -345,21 +339,21 @@ set ArgLastReadFirstWriteLatency {
 		svs_V_14 {Type I LastRead -1 FirstWrite -1}
 		svs_V_15 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_0 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_140 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_247 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_348 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_449 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_550 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_651 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_752 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_853 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_954 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1041 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1142 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1243 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1344 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1445 {Type I LastRead -1 FirstWrite -1}
-		alphas_V_1546 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_143 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_250 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_351 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_452 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_553 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_654 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_755 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_856 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_957 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1044 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1145 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1246 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1347 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1448 {Type I LastRead -1 FirstWrite -1}
+		alphas_V_1549 {Type I LastRead -1 FirstWrite -1}
 		sv_norms_V_0 {Type I LastRead -1 FirstWrite -1}
 		sv_norms_V_1 {Type I LastRead -1 FirstWrite -1}
 		sv_norms_V_2 {Type I LastRead -1 FirstWrite -1}
@@ -406,5 +400,5 @@ set Spec2ImplPortList {
 	x_local_13_V { ap_memory {  { x_local_13_V_address0 mem_address 1 6 }  { x_local_13_V_ce0 mem_ce 1 1 }  { x_local_13_V_q0 mem_dout 0 8 } } }
 	x_local_14_V { ap_memory {  { x_local_14_V_address0 mem_address 1 6 }  { x_local_14_V_ce0 mem_ce 1 1 }  { x_local_14_V_q0 mem_dout 0 8 } } }
 	x_local_15_V { ap_memory {  { x_local_15_V_address0 mem_address 1 6 }  { x_local_15_V_ce0 mem_ce 1 1 }  { x_local_15_V_q0 mem_dout 0 8 } } }
-	x_norm_in_V { ap_fifo {  { x_norm_in_V_dout fifo_data 0 24 }  { x_norm_in_V_empty_n fifo_status 0 1 }  { x_norm_in_V_read fifo_update 1 1 } } }
+	p_read { ap_none {  { p_read in_data 0 24 } } }
 }
