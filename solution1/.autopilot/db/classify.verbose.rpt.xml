@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Wed Feb 18 17:52:37 2026
+<item name = "Date">Tue Feb 24 23:51:04 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">ADSD</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2439842, 2439842, 2439842, 2439842, none</column>
+<column name="">2413832, 2413832, 2413832, 2413832, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="dataflow_in_loop_Bat_1_U0">dataflow_in_loop_Bat_1, 1039, 1039, 938, 938, dataflow</column>
+<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 1029, 1029, 928, 928, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Batch_Loop">2439840, 2439840, 1041, -, -, 2601, no</column>
+<column name="- Batch_Loop">2413830, 2413830, 1031, -, -, 2601, no</column>
 </table>
 </item>
 </section>
@@ -51,12 +51,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 24</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">116, 1, 8627, 28746</column>
+<column name="Instance">116, 1, 8587, 28431</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18</column>
 <column name="Register">-, -, 26, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">41, ~0, 8, 54</specialColumn>
+<specialColumn name="Utilization (%)">41, ~0, 8, 53</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -64,7 +64,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="classify_control_s_axi_U">classify_control_s_axi, 0, 0, 74, 104</column>
-<column name="dataflow_in_loop_Bat_1_U0">dataflow_in_loop_Bat_1, 116, 1, 8553, 28642</column>
+<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 116, 1, 8513, 28327</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">

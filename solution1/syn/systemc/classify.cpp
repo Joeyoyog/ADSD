@@ -52,31 +52,31 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     classify_control_s_axi_U->ap_done(ap_done);
     classify_control_s_axi_U->ap_idle(ap_idle);
     classify_control_s_axi_U->num_images(num_images);
-    dataflow_in_loop_Bat_1_U0 = new dataflow_in_loop_Bat_1("dataflow_in_loop_Bat_1_U0");
-    dataflow_in_loop_Bat_1_U0->ap_clk(ap_clk);
-    dataflow_in_loop_Bat_1_U0->ap_rst(ap_rst_n_inv);
-    dataflow_in_loop_Bat_1_U0->in_stream_TDATA(in_stream_TDATA);
-    dataflow_in_loop_Bat_1_U0->in_stream_TKEEP(in_stream_TKEEP);
-    dataflow_in_loop_Bat_1_U0->in_stream_TSTRB(in_stream_TSTRB);
-    dataflow_in_loop_Bat_1_U0->in_stream_TUSER(in_stream_TUSER);
-    dataflow_in_loop_Bat_1_U0->in_stream_TLAST(in_stream_TLAST);
-    dataflow_in_loop_Bat_1_U0->in_stream_TID(in_stream_TID);
-    dataflow_in_loop_Bat_1_U0->in_stream_TDEST(in_stream_TDEST);
-    dataflow_in_loop_Bat_1_U0->n_0_i_i(loop_dataflow_input_count);
-    dataflow_in_loop_Bat_1_U0->out_stream_TDATA(dataflow_in_loop_Bat_1_U0_out_stream_TDATA);
-    dataflow_in_loop_Bat_1_U0->out_stream_TKEEP(dataflow_in_loop_Bat_1_U0_out_stream_TKEEP);
-    dataflow_in_loop_Bat_1_U0->out_stream_TSTRB(dataflow_in_loop_Bat_1_U0_out_stream_TSTRB);
-    dataflow_in_loop_Bat_1_U0->out_stream_TLAST(dataflow_in_loop_Bat_1_U0_out_stream_TLAST);
-    dataflow_in_loop_Bat_1_U0->n_0_i_i_ap_vld(ap_var_for_const1);
-    dataflow_in_loop_Bat_1_U0->in_stream_TVALID(in_stream_TVALID);
-    dataflow_in_loop_Bat_1_U0->in_stream_TREADY(dataflow_in_loop_Bat_1_U0_in_stream_TREADY);
-    dataflow_in_loop_Bat_1_U0->ap_start(dataflow_in_loop_Bat_1_U0_ap_start);
-    dataflow_in_loop_Bat_1_U0->out_stream_TVALID(dataflow_in_loop_Bat_1_U0_out_stream_TVALID);
-    dataflow_in_loop_Bat_1_U0->out_stream_TREADY(out_stream_TREADY);
-    dataflow_in_loop_Bat_1_U0->ap_done(dataflow_in_loop_Bat_1_U0_ap_done);
-    dataflow_in_loop_Bat_1_U0->ap_ready(dataflow_in_loop_Bat_1_U0_ap_ready);
-    dataflow_in_loop_Bat_1_U0->ap_idle(dataflow_in_loop_Bat_1_U0_ap_idle);
-    dataflow_in_loop_Bat_1_U0->ap_continue(dataflow_in_loop_Bat_1_U0_ap_continue);
+    dataflow_in_loop_Bat_U0 = new dataflow_in_loop_Bat("dataflow_in_loop_Bat_U0");
+    dataflow_in_loop_Bat_U0->ap_clk(ap_clk);
+    dataflow_in_loop_Bat_U0->ap_rst(ap_rst_n_inv);
+    dataflow_in_loop_Bat_U0->in_stream_TDATA(in_stream_TDATA);
+    dataflow_in_loop_Bat_U0->in_stream_TKEEP(in_stream_TKEEP);
+    dataflow_in_loop_Bat_U0->in_stream_TSTRB(in_stream_TSTRB);
+    dataflow_in_loop_Bat_U0->in_stream_TUSER(in_stream_TUSER);
+    dataflow_in_loop_Bat_U0->in_stream_TLAST(in_stream_TLAST);
+    dataflow_in_loop_Bat_U0->in_stream_TID(in_stream_TID);
+    dataflow_in_loop_Bat_U0->in_stream_TDEST(in_stream_TDEST);
+    dataflow_in_loop_Bat_U0->out_stream_TDATA(dataflow_in_loop_Bat_U0_out_stream_TDATA);
+    dataflow_in_loop_Bat_U0->out_stream_TKEEP(dataflow_in_loop_Bat_U0_out_stream_TKEEP);
+    dataflow_in_loop_Bat_U0->out_stream_TSTRB(dataflow_in_loop_Bat_U0_out_stream_TSTRB);
+    dataflow_in_loop_Bat_U0->out_stream_TLAST(dataflow_in_loop_Bat_U0_out_stream_TLAST);
+    dataflow_in_loop_Bat_U0->n_0_i_i(loop_dataflow_input_count);
+    dataflow_in_loop_Bat_U0->in_stream_TVALID(in_stream_TVALID);
+    dataflow_in_loop_Bat_U0->in_stream_TREADY(dataflow_in_loop_Bat_U0_in_stream_TREADY);
+    dataflow_in_loop_Bat_U0->n_0_i_i_ap_vld(ap_var_for_const1);
+    dataflow_in_loop_Bat_U0->out_stream_TVALID(dataflow_in_loop_Bat_U0_out_stream_TVALID);
+    dataflow_in_loop_Bat_U0->out_stream_TREADY(out_stream_TREADY);
+    dataflow_in_loop_Bat_U0->ap_done(dataflow_in_loop_Bat_U0_ap_done);
+    dataflow_in_loop_Bat_U0->ap_start(dataflow_in_loop_Bat_U0_ap_start);
+    dataflow_in_loop_Bat_U0->ap_ready(dataflow_in_loop_Bat_U0_ap_ready);
+    dataflow_in_loop_Bat_U0->ap_idle(dataflow_in_loop_Bat_U0_ap_idle);
+    dataflow_in_loop_Bat_U0->ap_continue(dataflow_in_loop_Bat_U0_ap_continue);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
@@ -87,7 +87,7 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( loop_dataflow_busy );
 
     SC_METHOD(thread_ap_idle);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_ap_idle );
+    sensitive << ( dataflow_in_loop_Bat_U0_ap_idle );
 
     SC_METHOD(thread_ap_ready);
     sensitive << ( loop_dataflow_input_count );
@@ -98,38 +98,38 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ap_sync_continue);
 
     SC_METHOD(thread_ap_sync_done);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_ap_done );
+    sensitive << ( dataflow_in_loop_Bat_U0_ap_done );
 
     SC_METHOD(thread_ap_sync_ready);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_ap_ready );
+    sensitive << ( dataflow_in_loop_Bat_U0_ap_ready );
 
-    SC_METHOD(thread_dataflow_in_loop_Bat_1_U0_ap_continue);
+    SC_METHOD(thread_dataflow_in_loop_Bat_U0_ap_continue);
 
-    SC_METHOD(thread_dataflow_in_loop_Bat_1_U0_ap_start);
+    SC_METHOD(thread_dataflow_in_loop_Bat_U0_ap_start);
     sensitive << ( loop_dataflow_enable );
     sensitive << ( loop_dataflow_input_count );
 
-    SC_METHOD(thread_dataflow_in_loop_Bat_1_U0_start_full_n);
+    SC_METHOD(thread_dataflow_in_loop_Bat_U0_start_full_n);
 
-    SC_METHOD(thread_dataflow_in_loop_Bat_1_U0_start_write);
+    SC_METHOD(thread_dataflow_in_loop_Bat_U0_start_write);
 
     SC_METHOD(thread_in_stream_TREADY);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_in_stream_TREADY );
+    sensitive << ( dataflow_in_loop_Bat_U0_in_stream_TREADY );
 
     SC_METHOD(thread_out_stream_TDATA);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_out_stream_TDATA );
+    sensitive << ( dataflow_in_loop_Bat_U0_out_stream_TDATA );
 
     SC_METHOD(thread_out_stream_TKEEP);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_out_stream_TKEEP );
+    sensitive << ( dataflow_in_loop_Bat_U0_out_stream_TKEEP );
 
     SC_METHOD(thread_out_stream_TLAST);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_out_stream_TLAST );
+    sensitive << ( dataflow_in_loop_Bat_U0_out_stream_TLAST );
 
     SC_METHOD(thread_out_stream_TSTRB);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_out_stream_TSTRB );
+    sensitive << ( dataflow_in_loop_Bat_U0_out_stream_TSTRB );
 
     SC_METHOD(thread_out_stream_TVALID);
-    sensitive << ( dataflow_in_loop_Bat_1_U0_out_stream_TVALID );
+    sensitive << ( dataflow_in_loop_Bat_U0_out_stream_TVALID );
 
     SC_THREAD(thread_hdltv_gen);
     sensitive << ( ap_clk.pos() );
@@ -193,17 +193,17 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_done, "ap_done");
     sc_trace(mVcdFile, ap_idle, "ap_idle");
     sc_trace(mVcdFile, num_images, "num_images");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_out_stream_TDATA, "dataflow_in_loop_Bat_1_U0_out_stream_TDATA");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_out_stream_TKEEP, "dataflow_in_loop_Bat_1_U0_out_stream_TKEEP");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_out_stream_TSTRB, "dataflow_in_loop_Bat_1_U0_out_stream_TSTRB");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_out_stream_TLAST, "dataflow_in_loop_Bat_1_U0_out_stream_TLAST");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_in_stream_TREADY, "dataflow_in_loop_Bat_1_U0_in_stream_TREADY");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_ap_start, "dataflow_in_loop_Bat_1_U0_ap_start");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_out_stream_TVALID, "dataflow_in_loop_Bat_1_U0_out_stream_TVALID");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_ap_done, "dataflow_in_loop_Bat_1_U0_ap_done");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_ap_ready, "dataflow_in_loop_Bat_1_U0_ap_ready");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_ap_idle, "dataflow_in_loop_Bat_1_U0_ap_idle");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_ap_continue, "dataflow_in_loop_Bat_1_U0_ap_continue");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TDATA, "dataflow_in_loop_Bat_U0_out_stream_TDATA");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TKEEP, "dataflow_in_loop_Bat_U0_out_stream_TKEEP");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TSTRB, "dataflow_in_loop_Bat_U0_out_stream_TSTRB");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TLAST, "dataflow_in_loop_Bat_U0_out_stream_TLAST");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_in_stream_TREADY, "dataflow_in_loop_Bat_U0_in_stream_TREADY");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TVALID, "dataflow_in_loop_Bat_U0_out_stream_TVALID");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_done, "dataflow_in_loop_Bat_U0_ap_done");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_start, "dataflow_in_loop_Bat_U0_ap_start");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_ready, "dataflow_in_loop_Bat_U0_ap_ready");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_idle, "dataflow_in_loop_Bat_U0_ap_idle");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_continue, "dataflow_in_loop_Bat_U0_ap_continue");
     sc_trace(mVcdFile, ap_sync_continue, "ap_sync_continue");
     sc_trace(mVcdFile, ap_sync_done, "ap_sync_done");
     sc_trace(mVcdFile, ap_sync_ready, "ap_sync_ready");
@@ -211,8 +211,8 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, loop_dataflow_input_count, "loop_dataflow_input_count");
     sc_trace(mVcdFile, loop_dataflow_output_count, "loop_dataflow_output_count");
     sc_trace(mVcdFile, loop_dataflow_busy, "loop_dataflow_busy");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_start_full_n, "dataflow_in_loop_Bat_1_U0_start_full_n");
-    sc_trace(mVcdFile, dataflow_in_loop_Bat_1_U0_start_write, "dataflow_in_loop_Bat_1_U0_start_write");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_start_full_n, "dataflow_in_loop_Bat_U0_start_full_n");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_start_write, "dataflow_in_loop_Bat_U0_start_write");
 #endif
 
     }
@@ -229,7 +229,7 @@ classify::~classify() {
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
     delete classify_control_s_axi_U;
-    delete dataflow_in_loop_Bat_1_U0;
+    delete dataflow_in_loop_Bat_U0;
 }
 
 void classify::thread_ap_var_for_const0() {
@@ -268,7 +268,7 @@ void classify::thread_ap_clk_no_reset_() {
              esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read()))) {
             loop_dataflow_input_count = ap_const_lv12_0;
         } else if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
-                    esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_1_U0_ap_ready.read()))) {
+                    esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_U0_ap_ready.read()))) {
             loop_dataflow_input_count = (!loop_dataflow_input_count.read().is_01() || !ap_const_lv12_1.is_01())? sc_lv<12>(): (sc_biguint<12>(loop_dataflow_input_count.read()) + sc_biguint<12>(ap_const_lv12_1));
         }
     }
@@ -277,7 +277,7 @@ void classify::thread_ap_clk_no_reset_() {
     } else {
         if (esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_output_count.read())) {
             loop_dataflow_output_count = ap_const_lv12_0;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_1_U0_ap_done.read())) {
+        } else if (esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_U0_ap_done.read())) {
             loop_dataflow_output_count = (!loop_dataflow_output_count.read().is_01() || !ap_const_lv12_1.is_01())? sc_lv<12>(): (sc_biguint<12>(loop_dataflow_output_count.read()) + sc_biguint<12>(ap_const_lv12_1));
         }
     }
@@ -293,7 +293,7 @@ void classify::thread_ap_done() {
 }
 
 void classify::thread_ap_idle() {
-    ap_idle = dataflow_in_loop_Bat_1_U0_ap_idle.read();
+    ap_idle = dataflow_in_loop_Bat_U0_ap_idle.read();
 }
 
 void classify::thread_ap_ready() {
@@ -313,56 +313,56 @@ void classify::thread_ap_sync_continue() {
 }
 
 void classify::thread_ap_sync_done() {
-    ap_sync_done = dataflow_in_loop_Bat_1_U0_ap_done.read();
+    ap_sync_done = dataflow_in_loop_Bat_U0_ap_done.read();
 }
 
 void classify::thread_ap_sync_ready() {
-    ap_sync_ready = dataflow_in_loop_Bat_1_U0_ap_ready.read();
+    ap_sync_ready = dataflow_in_loop_Bat_U0_ap_ready.read();
 }
 
-void classify::thread_dataflow_in_loop_Bat_1_U0_ap_continue() {
-    dataflow_in_loop_Bat_1_U0_ap_continue = ap_const_logic_1;
+void classify::thread_dataflow_in_loop_Bat_U0_ap_continue() {
+    dataflow_in_loop_Bat_U0_ap_continue = ap_const_logic_1;
 }
 
-void classify::thread_dataflow_in_loop_Bat_1_U0_ap_start() {
+void classify::thread_dataflow_in_loop_Bat_U0_ap_start() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
          !esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read()))) {
-        dataflow_in_loop_Bat_1_U0_ap_start = ap_const_logic_1;
+        dataflow_in_loop_Bat_U0_ap_start = ap_const_logic_1;
     } else {
-        dataflow_in_loop_Bat_1_U0_ap_start = ap_const_logic_0;
+        dataflow_in_loop_Bat_U0_ap_start = ap_const_logic_0;
     }
 }
 
-void classify::thread_dataflow_in_loop_Bat_1_U0_start_full_n() {
-    dataflow_in_loop_Bat_1_U0_start_full_n = ap_const_logic_1;
+void classify::thread_dataflow_in_loop_Bat_U0_start_full_n() {
+    dataflow_in_loop_Bat_U0_start_full_n = ap_const_logic_1;
 }
 
-void classify::thread_dataflow_in_loop_Bat_1_U0_start_write() {
-    dataflow_in_loop_Bat_1_U0_start_write = ap_const_logic_0;
+void classify::thread_dataflow_in_loop_Bat_U0_start_write() {
+    dataflow_in_loop_Bat_U0_start_write = ap_const_logic_0;
 }
 
 void classify::thread_in_stream_TREADY() {
-    in_stream_TREADY = dataflow_in_loop_Bat_1_U0_in_stream_TREADY.read();
+    in_stream_TREADY = dataflow_in_loop_Bat_U0_in_stream_TREADY.read();
 }
 
 void classify::thread_out_stream_TDATA() {
-    out_stream_TDATA = dataflow_in_loop_Bat_1_U0_out_stream_TDATA.read();
+    out_stream_TDATA = dataflow_in_loop_Bat_U0_out_stream_TDATA.read();
 }
 
 void classify::thread_out_stream_TKEEP() {
-    out_stream_TKEEP = dataflow_in_loop_Bat_1_U0_out_stream_TKEEP.read();
+    out_stream_TKEEP = dataflow_in_loop_Bat_U0_out_stream_TKEEP.read();
 }
 
 void classify::thread_out_stream_TLAST() {
-    out_stream_TLAST = dataflow_in_loop_Bat_1_U0_out_stream_TLAST.read();
+    out_stream_TLAST = dataflow_in_loop_Bat_U0_out_stream_TLAST.read();
 }
 
 void classify::thread_out_stream_TSTRB() {
-    out_stream_TSTRB = dataflow_in_loop_Bat_1_U0_out_stream_TSTRB.read();
+    out_stream_TSTRB = dataflow_in_loop_Bat_U0_out_stream_TSTRB.read();
 }
 
 void classify::thread_out_stream_TVALID() {
-    out_stream_TVALID = dataflow_in_loop_Bat_1_U0_out_stream_TVALID.read();
+    out_stream_TVALID = dataflow_in_loop_Bat_U0_out_stream_TVALID.read();
 }
 
 void classify::thread_hdltv_gen() {

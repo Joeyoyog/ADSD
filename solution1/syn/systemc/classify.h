@@ -11,7 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "dataflow_in_loop_Bat_1.h"
+#include "dataflow_in_loop_Bat.h"
 #include "classify_control_s_axi.h"
 
 namespace ap_rtl {
@@ -70,24 +70,24 @@ struct classify : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     classify_control_s_axi<C_S_AXI_CONTROL_ADDR_WIDTH,C_S_AXI_CONTROL_DATA_WIDTH>* classify_control_s_axi_U;
-    dataflow_in_loop_Bat_1* dataflow_in_loop_Bat_1_U0;
+    dataflow_in_loop_Bat* dataflow_in_loop_Bat_U0;
     sc_signal< sc_logic > ap_rst_n_inv;
     sc_signal< sc_logic > ap_start;
     sc_signal< sc_logic > ap_ready;
     sc_signal< sc_logic > ap_done;
     sc_signal< sc_logic > ap_idle;
     sc_signal< sc_lv<32> > num_images;
-    sc_signal< sc_lv<32> > dataflow_in_loop_Bat_1_U0_out_stream_TDATA;
-    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_1_U0_out_stream_TKEEP;
-    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_1_U0_out_stream_TSTRB;
-    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_1_U0_out_stream_TLAST;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_in_stream_TREADY;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_ap_start;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_out_stream_TVALID;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_ap_done;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_ap_ready;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_ap_idle;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_ap_continue;
+    sc_signal< sc_lv<32> > dataflow_in_loop_Bat_U0_out_stream_TDATA;
+    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TKEEP;
+    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TSTRB;
+    sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TLAST;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_in_stream_TREADY;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_out_stream_TVALID;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_done;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_start;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_ready;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_idle;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_continue;
     sc_signal< sc_logic > ap_sync_continue;
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
@@ -95,8 +95,8 @@ struct classify : public sc_module {
     sc_signal< sc_lv<12> > loop_dataflow_input_count;
     sc_signal< sc_lv<12> > loop_dataflow_output_count;
     sc_signal< sc_logic > loop_dataflow_busy;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_start_full_n;
-    sc_signal< sc_logic > dataflow_in_loop_Bat_1_U0_start_write;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_start_full_n;
+    sc_signal< sc_logic > dataflow_in_loop_Bat_U0_start_write;
     static const int C_S_AXI_DATA_WIDTH;
     static const int C_S_AXI_WSTRB_WIDTH;
     static const int C_S_AXI_ADDR_WIDTH;
@@ -119,10 +119,10 @@ struct classify : public sc_module {
     void thread_ap_sync_continue();
     void thread_ap_sync_done();
     void thread_ap_sync_ready();
-    void thread_dataflow_in_loop_Bat_1_U0_ap_continue();
-    void thread_dataflow_in_loop_Bat_1_U0_ap_start();
-    void thread_dataflow_in_loop_Bat_1_U0_start_full_n();
-    void thread_dataflow_in_loop_Bat_1_U0_start_write();
+    void thread_dataflow_in_loop_Bat_U0_ap_continue();
+    void thread_dataflow_in_loop_Bat_U0_ap_start();
+    void thread_dataflow_in_loop_Bat_U0_start_full_n();
+    void thread_dataflow_in_loop_Bat_U0_start_write();
     void thread_in_stream_TREADY();
     void thread_out_stream_TDATA();
     void thread_out_stream_TKEEP();

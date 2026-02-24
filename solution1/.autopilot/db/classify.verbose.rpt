@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'classify'
 ================================================================
-* Date:           Wed Feb 18 17:52:37 2026
+* Date:           Tue Feb 24 23:51:04 2026
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        ADSD
@@ -29,24 +29,24 @@
     |      Latency      |      Interval     | Pipeline|
     |   min   |   max   |   min   |   max   |   Type  |
     +---------+---------+---------+---------+---------+
-    |  2439842|  2439842|  2439842|  2439842|   none  |
+    |  2413832|  2413832|  2413832|  2413832|   none  |
     +---------+---------+---------+---------+---------+
 
     + Detail: 
         * Instance: 
-        +---------------------------+------------------------+------+------+-----+-----+----------+
-        |                           |                        |   Latency   |  Interval | Pipeline |
-        |          Instance         |         Module         |  min |  max | min | max |   Type   |
-        +---------------------------+------------------------+------+------+-----+-----+----------+
-        |dataflow_in_loop_Bat_1_U0  |dataflow_in_loop_Bat_1  |  1039|  1039|  938|  938| dataflow |
-        +---------------------------+------------------------+------+------+-----+-----+----------+
+        +-------------------------+----------------------+------+------+-----+-----+----------+
+        |                         |                      |   Latency   |  Interval | Pipeline |
+        |         Instance        |        Module        |  min |  max | min | max |   Type   |
+        +-------------------------+----------------------+------+------+-----+-----+----------+
+        |dataflow_in_loop_Bat_U0  |dataflow_in_loop_Bat  |  1029|  1029|  928|  928| dataflow |
+        +-------------------------+----------------------+------+------+-----+-----+----------+
 
         * Loop: 
         +--------------+---------+---------+----------+-----------+-----------+------+----------+
         |              |      Latency      | Iteration|  Initiation Interval  | Trip |          |
         |   Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- Batch_Loop  |  2439840|  2439840|      1041|          -|          -|  2601|    no    |
+        |- Batch_Loop  |  2413830|  2413830|      1031|          -|          -|  2601|    no    |
         +--------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -61,28 +61,28 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       0|     24|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |      116|      1|    8627|  28746|
+|Instance         |      116|      1|    8587|  28431|
 |Memory           |        -|      -|       -|      -|
 |Multiplexer      |        -|      -|       -|     18|
 |Register         |        -|      -|      26|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |      116|      1|    8653|  28788|
+|Total            |      116|      1|    8613|  28473|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       41|   ~0  |       8|     54|
+|Utilization (%)  |       41|   ~0  |       8|     53|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +---------------------------+------------------------+---------+-------+------+-------+
-    |          Instance         |         Module         | BRAM_18K| DSP48E|  FF  |  LUT  |
-    +---------------------------+------------------------+---------+-------+------+-------+
-    |classify_control_s_axi_U   |classify_control_s_axi  |        0|      0|    74|    104|
-    |dataflow_in_loop_Bat_1_U0  |dataflow_in_loop_Bat_1  |      116|      1|  8553|  28642|
-    +---------------------------+------------------------+---------+-------+------+-------+
-    |Total                      |                        |      116|      1|  8627|  28746|
-    +---------------------------+------------------------+---------+-------+------+-------+
+    +--------------------------+------------------------+---------+-------+------+-------+
+    |         Instance         |         Module         | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +--------------------------+------------------------+---------+-------+------+-------+
+    |classify_control_s_axi_U  |classify_control_s_axi  |        0|      0|    74|    104|
+    |dataflow_in_loop_Bat_U0   |dataflow_in_loop_Bat    |      116|      1|  8513|  28327|
+    +--------------------------+------------------------+---------+-------+------+-------+
+    |Total                     |                        |      116|      1|  8587|  28431|
+    +--------------------------+------------------------+---------+-------+------+-------+
 
     * DSP48: 
     N/A
@@ -215,41 +215,41 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.76>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %in_stream_V_data_V), !map !178"   --->   Operation 5 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %in_stream_V_keep_V), !map !184"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %in_stream_V_strb_V), !map !188"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_user_V), !map !192"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_last_V), !map !196"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_id_V), !map !200"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_dest_V), !map !204"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out_stream_V_data_V), !map !208"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_keep_V), !map !212"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_strb_V), !map !216"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_last_V), !map !220"   --->   Operation 15 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %num_images), !map !224"   --->   Operation 16 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %in_stream_V_data_V), !map !179"   --->   Operation 5 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %in_stream_V_keep_V), !map !185"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %in_stream_V_strb_V), !map !189"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_user_V), !map !193"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_last_V), !map !197"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_id_V), !map !201"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_dest_V), !map !205"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out_stream_V_data_V), !map !209"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_keep_V), !map !213"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_strb_V), !map !217"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_last_V), !map !221"   --->   Operation 15 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %num_images), !map !225"   --->   Operation 16 'specbitsmap' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @classify_str) nounwind"   --->   Operation 17 'spectopmodule' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, [5 x i8]* @p_str1546, i32 1, i32 1, [5 x i8]* @p_str1647, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35, [1 x i8]* @p_str35, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35) nounwind" [ADSD/Classifier.cpp:106]   --->   Operation 18 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V, [5 x i8]* @p_str1546, i32 1, i32 1, [5 x i8]* @p_str1647, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35, [1 x i8]* @p_str35, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35) nounwind" [ADSD/Classifier.cpp:107]   --->   Operation 19 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %num_images, [10 x i8]* @p_str1748, i32 0, i32 0, [1 x i8]* @p_str35, i32 0, i32 0, [8 x i8]* @p_str1849, [1 x i8]* @p_str35, [1 x i8]* @p_str35, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35) nounwind" [ADSD/Classifier.cpp:108]   --->   Operation 20 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1748, i32 0, i32 0, [1 x i8]* @p_str35, i32 0, i32 0, [8 x i8]* @p_str1849, [1 x i8]* @p_str35, [1 x i8]* @p_str35, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str35) nounwind" [ADSD/Classifier.cpp:109]   --->   Operation 21 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, [5 x i8]* @p_str15, i32 1, i32 1, [5 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [ADSD/Classifier.cpp:114]   --->   Operation 18 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V, [5 x i8]* @p_str15, i32 1, i32 1, [5 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [ADSD/Classifier.cpp:115]   --->   Operation 19 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %num_images, [10 x i8]* @p_str17, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [8 x i8]* @p_str18, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [ADSD/Classifier.cpp:116]   --->   Operation 20 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str17, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [8 x i8]* @p_str18, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [ADSD/Classifier.cpp:117]   --->   Operation 21 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 22 [1/1] (1.76ns)   --->   "br label %0"   --->   Operation 22 'br' <Predicate = true> <Delay = 1.76>
 
 State 2 <SV = 1> <Delay = 1.99>
 ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%n_0_i_i = phi i12 [ 0, %codeRepl ], [ %n, %1 ]"   --->   Operation 23 'phi' 'n_0_i_i' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 24 [1/1] (1.99ns)   --->   "%exitcond_i_i = icmp eq i12 %n_0_i_i, -1495" [ADSD/Classifier.cpp:120]   --->   Operation 24 'icmp' 'exitcond_i_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (1.99ns)   --->   "%exitcond_i_i = icmp eq i12 %n_0_i_i, -1495" [ADSD/Classifier.cpp:128]   --->   Operation 24 'icmp' 'exitcond_i_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2601, i64 2601, i64 2601)"   --->   Operation 25 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [21 x i8]* @dataflow_parent_loop, i12 %n_0_i_i, i12 -1495)" [ADSD/Classifier.cpp:120]   --->   Operation 26 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (1.54ns)   --->   "%n = add i12 %n_0_i_i, 1" [ADSD/Classifier.cpp:120]   --->   Operation 27 'add' 'n' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %exitcond_i_i, label %classify_.exit, label %1" [ADSD/Classifier.cpp:120]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop_Bat.1(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, i12 %n_0_i_i, i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V)" [ADSD/Classifier.cpp:120]   --->   Operation 29 'call' <Predicate = (!exitcond_i_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [21 x i8]* @dataflow_parent_loop, i12 %n_0_i_i, i12 -1495)" [ADSD/Classifier.cpp:128]   --->   Operation 26 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (1.54ns)   --->   "%n = add i12 %n_0_i_i, 1" [ADSD/Classifier.cpp:128]   --->   Operation 27 'add' 'n' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %exitcond_i_i, label %classify_.exit, label %1" [ADSD/Classifier.cpp:128]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop_Bat(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V, i12 %n_0_i_i)" [ADSD/Classifier.cpp:128]   --->   Operation 29 'call' <Predicate = (!exitcond_i_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str2051) nounwind" [ADSD/Classifier.cpp:120]   --->   Operation 30 'specloopname' <Predicate = (!exitcond_i_i)> <Delay = 0.00>
-ST_3 : Operation 31 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop_Bat.1(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, i12 %n_0_i_i, i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V)" [ADSD/Classifier.cpp:120]   --->   Operation 31 'call' <Predicate = (!exitcond_i_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 32 [1/1] (0.00ns)   --->   "br label %0" [ADSD/Classifier.cpp:120]   --->   Operation 32 'br' <Predicate = (!exitcond_i_i)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str20) nounwind" [ADSD/Classifier.cpp:128]   --->   Operation 30 'specloopname' <Predicate = (!exitcond_i_i)> <Delay = 0.00>
+ST_3 : Operation 31 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop_Bat(i64* %in_stream_V_data_V, i8* %in_stream_V_keep_V, i8* %in_stream_V_strb_V, i1* %in_stream_V_user_V, i1* %in_stream_V_last_V, i1* %in_stream_V_id_V, i1* %in_stream_V_dest_V, i32* %out_stream_V_data_V, i1* %out_stream_V_keep_V, i1* %out_stream_V_strb_V, i1* %out_stream_V_last_V, i12 %n_0_i_i)" [ADSD/Classifier.cpp:128]   --->   Operation 31 'call' <Predicate = (!exitcond_i_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "br label %0" [ADSD/Classifier.cpp:128]   --->   Operation 32 'br' <Predicate = (!exitcond_i_i)> <Delay = 0.00>
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 33 [1/1] (0.00ns)   --->   "ret void" [ADSD/Classifier.cpp:145]   --->   Operation 33 'ret' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "ret void" [ADSD/Classifier.cpp:138]   --->   Operation 33 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -291,22 +291,22 @@ Port [ svs_V_12]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; e
 Port [ svs_V_13]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
 Port [ svs_V_14]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
 Port [ svs_V_15]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_143]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_250]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_351]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_452]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_553]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_654]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_755]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_856]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_957]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1044]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1145]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1246]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1347]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1448]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
-Port [ alphas_V_1549]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_044]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_145]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_252]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_353]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_454]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_555]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_656]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_757]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_858]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_959]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1046]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1147]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1248]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1349]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1450]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ alphas_V_1551]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
 Port [ sv_norms_V_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
 Port [ sv_norms_V_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
 Port [ sv_norms_V_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
@@ -630,162 +630,162 @@ StgValue_33  (ret                 ) [ 00000]
 </bind>
 </comp>
 
-<comp id="56" class="1000" name="alphas_V_0">
+<comp id="56" class="1000" name="alphas_V_044">
 <pin_list>
 <pin id="57" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_0"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_044"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="58" class="1000" name="alphas_V_143">
+<comp id="58" class="1000" name="alphas_V_145">
 <pin_list>
 <pin id="59" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_143"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_145"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="60" class="1000" name="alphas_V_250">
+<comp id="60" class="1000" name="alphas_V_252">
 <pin_list>
 <pin id="61" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_250"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_252"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="62" class="1000" name="alphas_V_351">
+<comp id="62" class="1000" name="alphas_V_353">
 <pin_list>
 <pin id="63" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_351"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_353"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="64" class="1000" name="alphas_V_452">
+<comp id="64" class="1000" name="alphas_V_454">
 <pin_list>
 <pin id="65" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_452"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_454"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="66" class="1000" name="alphas_V_553">
+<comp id="66" class="1000" name="alphas_V_555">
 <pin_list>
 <pin id="67" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_553"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_555"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="68" class="1000" name="alphas_V_654">
+<comp id="68" class="1000" name="alphas_V_656">
 <pin_list>
 <pin id="69" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_654"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_656"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="70" class="1000" name="alphas_V_755">
+<comp id="70" class="1000" name="alphas_V_757">
 <pin_list>
 <pin id="71" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_755"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_757"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="72" class="1000" name="alphas_V_856">
+<comp id="72" class="1000" name="alphas_V_858">
 <pin_list>
 <pin id="73" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_856"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_858"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="74" class="1000" name="alphas_V_957">
+<comp id="74" class="1000" name="alphas_V_959">
 <pin_list>
 <pin id="75" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_957"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_959"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="76" class="1000" name="alphas_V_1044">
+<comp id="76" class="1000" name="alphas_V_1046">
 <pin_list>
 <pin id="77" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1044"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1046"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="78" class="1000" name="alphas_V_1145">
+<comp id="78" class="1000" name="alphas_V_1147">
 <pin_list>
 <pin id="79" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1145"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1147"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="80" class="1000" name="alphas_V_1246">
+<comp id="80" class="1000" name="alphas_V_1248">
 <pin_list>
 <pin id="81" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1246"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1248"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="82" class="1000" name="alphas_V_1347">
+<comp id="82" class="1000" name="alphas_V_1349">
 <pin_list>
 <pin id="83" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1347"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1349"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="84" class="1000" name="alphas_V_1448">
+<comp id="84" class="1000" name="alphas_V_1450">
 <pin_list>
 <pin id="85" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1448"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1450"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="86" class="1000" name="alphas_V_1549">
+<comp id="86" class="1000" name="alphas_V_1551">
 <pin_list>
 <pin id="87" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="alphas_V_1549"/><MemPortTyVec>1 </MemPortTyVec>
+<StgValue><ssdm name="alphas_V_1551"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -991,7 +991,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1546"/></StgValue>
+<StgValue><ssdm name="p_str15"/></StgValue>
 </bind>
 </comp>
 
@@ -1009,7 +1009,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="133" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1647"/></StgValue>
+<StgValue><ssdm name="p_str16"/></StgValue>
 </bind>
 </comp>
 
@@ -1027,7 +1027,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="137" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str35"/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -1036,7 +1036,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="139" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1748"/></StgValue>
+<StgValue><ssdm name="p_str17"/></StgValue>
 </bind>
 </comp>
 
@@ -1045,7 +1045,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="141" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1849"/></StgValue>
+<StgValue><ssdm name="p_str18"/></StgValue>
 </bind>
 </comp>
 
@@ -1126,7 +1126,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="159" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="dataflow_in_loop_Bat.1"/></StgValue>
+<StgValue><ssdm name="dataflow_in_loop_Bat"/></StgValue>
 </bind>
 </comp>
 
@@ -1144,7 +1144,7 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="163" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str2051"/></StgValue>
+<StgValue><ssdm name="p_str20"/></StgValue>
 </bind>
 </comp>
 
@@ -1172,7 +1172,7 @@ StgValue_33  (ret                 ) [ 00000]
 </bind>
 </comp>
 
-<comp id="176" class="1004" name="grp_dataflow_in_loop_Bat_1_fu_176">
+<comp id="176" class="1004" name="grp_dataflow_in_loop_Bat_fu_176">
 <pin_list>
 <pin id="177" dir="0" index="0" bw="0" slack="0"/>
 <pin id="178" dir="0" index="1" bw="64" slack="0"/>
@@ -1182,11 +1182,11 @@ StgValue_33  (ret                 ) [ 00000]
 <pin id="182" dir="0" index="5" bw="1" slack="0"/>
 <pin id="183" dir="0" index="6" bw="1" slack="0"/>
 <pin id="184" dir="0" index="7" bw="1" slack="0"/>
-<pin id="185" dir="0" index="8" bw="12" slack="0"/>
-<pin id="186" dir="0" index="9" bw="32" slack="0"/>
+<pin id="185" dir="0" index="8" bw="32" slack="0"/>
+<pin id="186" dir="0" index="9" bw="1" slack="0"/>
 <pin id="187" dir="0" index="10" bw="1" slack="0"/>
 <pin id="188" dir="0" index="11" bw="1" slack="0"/>
-<pin id="189" dir="0" index="12" bw="1" slack="0"/>
+<pin id="189" dir="0" index="12" bw="12" slack="0"/>
 <pin id="190" dir="0" index="13" bw="125" slack="0"/>
 <pin id="191" dir="0" index="14" bw="125" slack="0"/>
 <pin id="192" dir="0" index="15" bw="125" slack="0"/>
@@ -1312,15 +1312,15 @@ StgValue_33  (ret                 ) [ 00000]
 
 <net id="246"><net_src comp="12" pin="0"/><net_sink comp="176" pin=7"/></net>
 
-<net id="247"><net_src comp="168" pin="4"/><net_sink comp="176" pin=8"/></net>
+<net id="247"><net_src comp="14" pin="0"/><net_sink comp="176" pin=8"/></net>
 
-<net id="248"><net_src comp="14" pin="0"/><net_sink comp="176" pin=9"/></net>
+<net id="248"><net_src comp="16" pin="0"/><net_sink comp="176" pin=9"/></net>
 
-<net id="249"><net_src comp="16" pin="0"/><net_sink comp="176" pin=10"/></net>
+<net id="249"><net_src comp="18" pin="0"/><net_sink comp="176" pin=10"/></net>
 
-<net id="250"><net_src comp="18" pin="0"/><net_sink comp="176" pin=11"/></net>
+<net id="250"><net_src comp="20" pin="0"/><net_sink comp="176" pin=11"/></net>
 
-<net id="251"><net_src comp="20" pin="0"/><net_sink comp="176" pin=12"/></net>
+<net id="251"><net_src comp="168" pin="4"/><net_sink comp="176" pin=12"/></net>
 
 <net id="252"><net_src comp="24" pin="0"/><net_sink comp="176" pin=13"/></net>
 
@@ -1467,22 +1467,22 @@ StgValue_33  (ret                 ) [ 00000]
 	Port: classify : svs_V_13 | {2 3 }
 	Port: classify : svs_V_14 | {2 3 }
 	Port: classify : svs_V_15 | {2 3 }
-	Port: classify : alphas_V_0 | {2 3 }
-	Port: classify : alphas_V_143 | {2 3 }
-	Port: classify : alphas_V_250 | {2 3 }
-	Port: classify : alphas_V_351 | {2 3 }
-	Port: classify : alphas_V_452 | {2 3 }
-	Port: classify : alphas_V_553 | {2 3 }
-	Port: classify : alphas_V_654 | {2 3 }
-	Port: classify : alphas_V_755 | {2 3 }
-	Port: classify : alphas_V_856 | {2 3 }
-	Port: classify : alphas_V_957 | {2 3 }
-	Port: classify : alphas_V_1044 | {2 3 }
-	Port: classify : alphas_V_1145 | {2 3 }
-	Port: classify : alphas_V_1246 | {2 3 }
-	Port: classify : alphas_V_1347 | {2 3 }
-	Port: classify : alphas_V_1448 | {2 3 }
-	Port: classify : alphas_V_1549 | {2 3 }
+	Port: classify : alphas_V_044 | {2 3 }
+	Port: classify : alphas_V_145 | {2 3 }
+	Port: classify : alphas_V_252 | {2 3 }
+	Port: classify : alphas_V_353 | {2 3 }
+	Port: classify : alphas_V_454 | {2 3 }
+	Port: classify : alphas_V_555 | {2 3 }
+	Port: classify : alphas_V_656 | {2 3 }
+	Port: classify : alphas_V_757 | {2 3 }
+	Port: classify : alphas_V_858 | {2 3 }
+	Port: classify : alphas_V_959 | {2 3 }
+	Port: classify : alphas_V_1046 | {2 3 }
+	Port: classify : alphas_V_1147 | {2 3 }
+	Port: classify : alphas_V_1248 | {2 3 }
+	Port: classify : alphas_V_1349 | {2 3 }
+	Port: classify : alphas_V_1450 | {2 3 }
+	Port: classify : alphas_V_1551 | {2 3 }
 	Port: classify : sv_norms_V_0 | {2 3 }
 	Port: classify : sv_norms_V_1 | {2 3 }
 	Port: classify : sv_norms_V_2 | {2 3 }
@@ -1516,38 +1516,38 @@ StgValue_33  (ret                 ) [ 00000]
 ============================================================
 
 * Functional unit list:
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
-| Operation|          Functional Unit          |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
-|   call   | grp_dataflow_in_loop_Bat_1_fu_176 |    0    |    1    | 146.919 |  10417  |  27484  |
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
-|   icmp   |        exitcond_i_i_fu_300        |    0    |    0    |    0    |    0    |    13   |
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
-|    add   |              n_fu_306             |    0    |    0    |    0    |    0    |    12   |
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
-|   Total  |                                   |    0    |    1    | 146.919 |  10417  |  27509  |
-|----------|-----------------------------------|---------|---------|---------|---------|---------|
+|----------|---------------------------------|---------|---------|---------|---------|---------|
+| Operation|         Functional Unit         |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|---------------------------------|---------|---------|---------|---------|---------|
+|   call   | grp_dataflow_in_loop_Bat_fu_176 |    0    |    1    | 150.457 |  10384  |  27450  |
+|----------|---------------------------------|---------|---------|---------|---------|---------|
+|   icmp   |       exitcond_i_i_fu_300       |    0    |    0    |    0    |    0    |    13   |
+|----------|---------------------------------|---------|---------|---------|---------|---------|
+|    add   |             n_fu_306            |    0    |    0    |    0    |    0    |    12   |
+|----------|---------------------------------|---------|---------|---------|---------|---------|
+|   Total  |                                 |    0    |    1    | 150.457 |  10384  |  27475  |
+|----------|---------------------------------|---------|---------|---------|---------|---------|
 
 Memories:
 +-------------+--------+--------+--------+
 |             |  BRAM  |   FF   |   LUT  |
 +-------------+--------+--------+--------+
-|  alphas_V_0 |    0   |    7   |    2   |
-|alphas_V_1044|    0   |    6   |    2   |
-|alphas_V_1145|    0   |    7   |    2   |
-|alphas_V_1246|    0   |    5   |    1   |
-|alphas_V_1347|    0   |    5   |    1   |
-| alphas_V_143|    0   |    6   |    2   |
-|alphas_V_1448|    0   |    6   |    2   |
-|alphas_V_1549|    0   |    5   |    1   |
-| alphas_V_250|    0   |    6   |    2   |
-| alphas_V_351|    0   |    8   |    2   |
-| alphas_V_452|    0   |    6   |    2   |
-| alphas_V_553|    0   |    5   |    1   |
-| alphas_V_654|    0   |    5   |    1   |
-| alphas_V_755|    0   |    6   |    2   |
-| alphas_V_856|    0   |    5   |    1   |
-| alphas_V_957|    0   |    5   |    1   |
+| alphas_V_044|    0   |    7   |    2   |
+|alphas_V_1046|    0   |    6   |    2   |
+|alphas_V_1147|    0   |    7   |    2   |
+|alphas_V_1248|    0   |    5   |    1   |
+|alphas_V_1349|    0   |    5   |    1   |
+| alphas_V_145|    0   |    6   |    2   |
+|alphas_V_1450|    0   |    6   |    2   |
+|alphas_V_1551|    0   |    5   |    1   |
+| alphas_V_252|    0   |    6   |    2   |
+| alphas_V_353|    0   |    8   |    2   |
+| alphas_V_454|    0   |    6   |    2   |
+| alphas_V_555|    0   |    5   |    1   |
+| alphas_V_656|    0   |    5   |    1   |
+| alphas_V_757|    0   |    6   |    2   |
+| alphas_V_858|    0   |    5   |    1   |
+| alphas_V_959|    0   |    5   |    1   |
 | sv_norms_V_0|    0   |   30   |    6   |
 | sv_norms_V_1|    0   |   28   |    5   |
 |sv_norms_V_10|    0   |   28   |    5   |
@@ -1610,10 +1610,10 @@ Memories:
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    0   |    1   |   146  |  10417 |  27509 |
+|  Function |    0   |    1   |   150  |  10384 |  27475 |
 |   Memory  |   116  |    -   |    -   |   549  |   107  |
 |Multiplexer|    -   |    -   |    1   |    -   |    9   |
 |  Register |    -   |    -   |    -   |   25   |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |   116  |    1   |   148  |  10991 |  27625 |
+|   Total   |   116  |    1   |   152  |  10958 |  27591 |
 +-----------+--------+--------+--------+--------+--------+

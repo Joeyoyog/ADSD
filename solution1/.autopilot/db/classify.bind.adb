@@ -423,7 +423,7 @@
 						<name>exitcond_i_i</name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>120</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -438,7 +438,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>120</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -469,7 +469,7 @@
 						<name>n</name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>120</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -484,7 +484,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>120</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -515,7 +515,7 @@
 						<name></name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>120</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -530,7 +530,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>120</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -562,7 +562,7 @@
 						<name></name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>120</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -577,7 +577,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>120</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -667,7 +667,7 @@
 						<name></name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>120</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -682,7 +682,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>120</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -712,7 +712,7 @@
 						<name></name>
 						<fileName>ADSD/Classifier.cpp</fileName>
 						<fileDirectory>C:\Users\mathi\Documents\ADSD_ICL</fileDirectory>
-						<lineNumber>145</lineNumber>
+						<lineNumber>138</lineNumber>
 						<contextFuncName>classify</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -727,7 +727,7 @@
 											<first>ADSD/Classifier.cpp</first>
 											<second>classify</second>
 										</first>
-										<second>145</second>
+										<second>138</second>
 									</item>
 								</second>
 							</item>
@@ -826,7 +826,7 @@
 					<Obj>
 						<type>2</type>
 						<id>108</id>
-						<name>dataflow_in_loop_Bat_1</name>
+						<name>dataflow_in_loop_Bat</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -842,7 +842,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:dataflow_in_loop_Bat.1&gt;</content>
+				<content>&lt;constant:dataflow_in_loop_Bat&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
@@ -1091,35 +1091,35 @@
 			<item class_id_reference="20" object_id="_49">
 				<id>117</id>
 				<edge_type>1</edge_type>
-				<source_obj>80</source_obj>
+				<source_obj>8</source_obj>
 				<sink_obj>88</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_50">
 				<id>118</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
+				<source_obj>9</source_obj>
 				<sink_obj>88</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_51">
 				<id>119</id>
 				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
+				<source_obj>10</source_obj>
 				<sink_obj>88</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_52">
 				<id>120</id>
 				<edge_type>1</edge_type>
-				<source_obj>10</source_obj>
+				<source_obj>11</source_obj>
 				<sink_obj>88</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_53">
 				<id>121</id>
 				<edge_type>1</edge_type>
-				<source_obj>11</source_obj>
+				<source_obj>80</source_obj>
 				<sink_obj>88</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1518,8 +1518,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>2439842</mMinLatency>
-			<mMaxLatency>2439842</mMaxLatency>
+			<mMinLatency>2413832</mMinLatency>
+			<mMaxLatency>2413832</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -1563,8 +1563,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>2601</mMinTripCount>
 			<mMaxTripCount>2601</mMaxTripCount>
-			<mMinLatency>2439840</mMinLatency>
-			<mMaxLatency>2439840</mMaxLatency>
+			<mMinLatency>2413830</mMinLatency>
+			<mMaxLatency>2413830</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_110">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -1576,7 +1576,7 @@
 					<item_version>0</item_version>
 					<item class_id="26" tracking_level="1" version="0" object_id="_111">
 						<type>0</type>
-						<name>dataflow_in_loop_Bat_1_U0</name>
+						<name>dataflow_in_loop_Bat_U0</name>
 						<ssdmobj_id>88</ssdmobj_id>
 						<pins class_id="27" tracking_level="0" version="0">
 							<count>60</count>
@@ -1589,7 +1589,7 @@
 								</port>
 								<inst class_id="30" tracking_level="1" version="0" object_id="_114">
 									<type>0</type>
-									<name>dataflow_in_loop_Bat_1_U0</name>
+									<name>dataflow_in_loop_Bat_U0</name>
 									<ssdmobj_id>88</ssdmobj_id>
 								</inst>
 							</item>
@@ -1643,15 +1643,15 @@
 							</item>
 							<item class_id_reference="28" object_id="_127">
 								<port class_id_reference="29" object_id="_128">
-									<name>n_0_i_i</name>
+									<name>out_stream_V_data_V</name>
 									<dir>3</dir>
-									<type>0</type>
+									<type>1</type>
 								</port>
 								<inst class_id_reference="30" object_id_reference="_114"></inst>
 							</item>
 							<item class_id_reference="28" object_id="_129">
 								<port class_id_reference="29" object_id="_130">
-									<name>out_stream_V_data_V</name>
+									<name>out_stream_V_keep_V</name>
 									<dir>3</dir>
 									<type>1</type>
 								</port>
@@ -1659,7 +1659,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_131">
 								<port class_id_reference="29" object_id="_132">
-									<name>out_stream_V_keep_V</name>
+									<name>out_stream_V_strb_V</name>
 									<dir>3</dir>
 									<type>1</type>
 								</port>
@@ -1667,7 +1667,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_133">
 								<port class_id_reference="29" object_id="_134">
-									<name>out_stream_V_strb_V</name>
+									<name>out_stream_V_last_V</name>
 									<dir>3</dir>
 									<type>1</type>
 								</port>
@@ -1675,9 +1675,9 @@
 							</item>
 							<item class_id_reference="28" object_id="_135">
 								<port class_id_reference="29" object_id="_136">
-									<name>out_stream_V_last_V</name>
+									<name>n_0_i_i</name>
 									<dir>3</dir>
-									<type>1</type>
+									<type>0</type>
 								</port>
 								<inst class_id_reference="30" object_id_reference="_114"></inst>
 							</item>
@@ -1811,7 +1811,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_169">
 								<port class_id_reference="29" object_id="_170">
-									<name>alphas_V_0</name>
+									<name>alphas_V_044</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1819,7 +1819,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_171">
 								<port class_id_reference="29" object_id="_172">
-									<name>alphas_V_143</name>
+									<name>alphas_V_145</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1827,7 +1827,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_173">
 								<port class_id_reference="29" object_id="_174">
-									<name>alphas_V_250</name>
+									<name>alphas_V_252</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1835,7 +1835,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_175">
 								<port class_id_reference="29" object_id="_176">
-									<name>alphas_V_351</name>
+									<name>alphas_V_353</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1843,7 +1843,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_177">
 								<port class_id_reference="29" object_id="_178">
-									<name>alphas_V_452</name>
+									<name>alphas_V_454</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1851,7 +1851,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_179">
 								<port class_id_reference="29" object_id="_180">
-									<name>alphas_V_553</name>
+									<name>alphas_V_555</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1859,7 +1859,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_181">
 								<port class_id_reference="29" object_id="_182">
-									<name>alphas_V_654</name>
+									<name>alphas_V_656</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1867,7 +1867,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_183">
 								<port class_id_reference="29" object_id="_184">
-									<name>alphas_V_755</name>
+									<name>alphas_V_757</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1875,7 +1875,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_185">
 								<port class_id_reference="29" object_id="_186">
-									<name>alphas_V_856</name>
+									<name>alphas_V_858</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1883,7 +1883,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_187">
 								<port class_id_reference="29" object_id="_188">
-									<name>alphas_V_957</name>
+									<name>alphas_V_959</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1891,7 +1891,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_189">
 								<port class_id_reference="29" object_id="_190">
-									<name>alphas_V_1044</name>
+									<name>alphas_V_1046</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1899,7 +1899,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_191">
 								<port class_id_reference="29" object_id="_192">
-									<name>alphas_V_1145</name>
+									<name>alphas_V_1147</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1907,7 +1907,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_193">
 								<port class_id_reference="29" object_id="_194">
-									<name>alphas_V_1246</name>
+									<name>alphas_V_1248</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1915,7 +1915,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_195">
 								<port class_id_reference="29" object_id="_196">
-									<name>alphas_V_1347</name>
+									<name>alphas_V_1349</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1923,7 +1923,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_197">
 								<port class_id_reference="29" object_id="_198">
-									<name>alphas_V_1448</name>
+									<name>alphas_V_1450</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -1931,7 +1931,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_199">
 								<port class_id_reference="29" object_id="_200">
-									<name>alphas_V_1549</name>
+									<name>alphas_V_1551</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -2557,7 +2557,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item>
-			<first>grp_dataflow_in_loop_Bat_1_fu_176</first>
+			<first>grp_dataflow_in_loop_Bat_fu_176</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -2579,7 +2579,7 @@
 		<item_version>0</item_version>
 		<item class_id="60" tracking_level="0" version="0">
 			<first class_id="61" tracking_level="0" version="0">
-				<first>alphas_V_0</first>
+				<first>alphas_V_044</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2590,7 +2590,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1044</first>
+				<first>alphas_V_1046</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2601,7 +2601,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1145</first>
+				<first>alphas_V_1147</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2612,7 +2612,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1246</first>
+				<first>alphas_V_1248</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2623,7 +2623,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1347</first>
+				<first>alphas_V_1349</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2634,7 +2634,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_143</first>
+				<first>alphas_V_145</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2645,7 +2645,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1448</first>
+				<first>alphas_V_1450</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2656,7 +2656,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_1549</first>
+				<first>alphas_V_1551</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2667,7 +2667,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_250</first>
+				<first>alphas_V_252</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2678,7 +2678,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_351</first>
+				<first>alphas_V_353</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2689,7 +2689,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_452</first>
+				<first>alphas_V_454</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2700,7 +2700,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_553</first>
+				<first>alphas_V_555</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2711,7 +2711,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_654</first>
+				<first>alphas_V_656</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2722,7 +2722,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_755</first>
+				<first>alphas_V_757</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2733,7 +2733,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_856</first>
+				<first>alphas_V_858</first>
 				<second>100</second>
 			</first>
 			<second>
@@ -2744,7 +2744,7 @@
 		</item>
 		<item>
 			<first>
-				<first>alphas_V_957</first>
+				<first>alphas_V_959</first>
 				<second>100</second>
 			</first>
 			<second>

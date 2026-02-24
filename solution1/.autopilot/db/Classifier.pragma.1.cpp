@@ -24367,8 +24367,7 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 4 "ADSD/Classifier.h" 2
-
+# 5 "ADSD/Classifier.h" 2
 
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h" 1
 # 66 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h"
@@ -24555,8 +24554,7 @@ class stream
 
 
 }
-# 6 "ADSD/Classifier.h" 2
-
+# 7 "ADSD/Classifier.h" 2
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h" 1
 # 88 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h"
 template<int D,int U,int TI,int TD>
@@ -24580,7 +24578,7 @@ template<int D,int U,int TI,int TD>
     ap_uint<TI> id;
     ap_uint<TD> dest;
   };
-# 7 "ADSD/Classifier.h" 2
+# 8 "ADSD/Classifier.h" 2
 # 17 "ADSD/Classifier.h"
 typedef ap_axiu<64, 1, 1, 1> axis_t;
 
@@ -24598,7 +24596,8 @@ struct result_pkt {
 void classify(hls::stream<axis_t> &in_stream,
               hls::stream<result_pkt> &out_stream,
               int num_images);
-# 2 "ADSD/Classifier.cpp" 2
+# 1 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./svs.h" 1
 
 
@@ -153967,12 +153966,14 @@ static const ap_fixed<8,7> svs[176][784] = {
 0.0,
 0.0,
 };
-# 3 "ADSD/Classifier.cpp" 2
+# 2 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./bias.h" 1
 static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 4 "ADSD/Classifier.cpp" 2
+# 3 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./alphas.h" 1
 static const ap_fixed<8, 5> alphas[] = {
 -0.125,
@@ -154152,7 +154153,8 @@ static const ap_fixed<8, 5> alphas[] = {
 0,
 0
 };
-# 5 "ADSD/Classifier.cpp" 2
+# 4 "ADSD/Classifier.cpp" 2
+
 # 1 "ADSD/./sv_norms.h" 1
 
 
@@ -154184,7 +154186,8 @@ const ap_fixed<32,16> sv_norms[165] = {
     447.250000, 2226.500000, 701.500000, 260.250000, 812.250000, 408.250000, 770.250000, 8325.750000,
     12528.000000, 247.500000, 5234.250000, 790.250000, 787.500000
 };
-# 6 "ADSD/Classifier.cpp" 2
+# 5 "ADSD/Classifier.cpp" 2
+
 
 # 1 "ADSD/Exp.h" 1
 
@@ -154196,8 +154199,7 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 8 "ADSD/Classifier.cpp" 2
-
+# 7 "ADSD/Classifier.cpp" 2
 
 
 
@@ -154217,8 +154219,10 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
         for (int p = 0; p < 8; p++) {
 _ssdm_Unroll(0,0,0, "");
  ap_fixed<8,7> val;
-            val(7, 0) = data.range(p*8 + 7, p*8);
-            x_local[i*8 + p] = val;
+
+
+            val(7, 0) = data.range((p<<3) + 7, (p<<3));
+            x_local[(i<<3) + p] = val;
 
             ap_fixed<16,14> sq = val * val;
             calculated_norm += sq;
@@ -154230,7 +154234,8 @@ _ssdm_Unroll(0,0,0, "");
 
 
 
-void compute_class(ap_fixed<8,7> x_local[784], ap_fixed<24,14> x_norm_in, ap_fixed<32,16> &result) {_ssdm_SpecArrayDimSize(x_local, 784);
+void compute_and_output(ap_fixed<8,7> x_local[784], ap_fixed<24,14> x_norm_in,
+                        hls::stream<result_pkt> &out_stream, int n, int num_images) {_ssdm_SpecArrayDimSize(x_local, 784);
 _ssdm_InlineSelf(2, "");
 
  ap_fixed<32,16> sum = 0.0;
@@ -154266,15 +154271,17 @@ _ssdm_Unroll(0,0,0, "");
 
         Reconstruct_Loop: for (int k = 0; k < 16; k++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+
  ap_fixed<32,16> term1 = x_norm_in;
             ap_fixed<32,16> term2 = sv_norms[i+k];
             ap_fixed<32,16> term3 = dot_products[k];
             ap_fixed<32,16> dist_sq = term1 + term2 - (term3 << 1);
 
-            const ap_fixed<16,4> gamma = ap_fixed<16,4>(-0.001);
             if(dist_sq < 0) dist_sq = 0;
 
-            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(gamma * dist_sq);
+
+            ap_fixed<22,1> K = (ap_fixed<22,1>)compute_exp(-(dist_sq >> 10));
+
             partial_sum[k] += (ap_fixed<32,16>)(alphas[i+k] * K);
         }
     }
@@ -154283,7 +154290,14 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 _ssdm_Unroll(0,0,0, "");
  sum += partial_sum[k];
     }
-    result = (ap_fixed<32,16>)(sum + bias[0]);
+
+
+    result_pkt out_val;
+    out_val.data = (ap_fixed<32,16>)(sum + bias[0]);
+    out_val.keep = -1;
+    out_val.strb = -1;
+    out_val.last = (n == num_images - 1) ? 1 : 0;
+    out_stream.write(out_val);
 }
 
 
@@ -154293,13 +154307,10 @@ void classify(hls::stream<axis_t> &in_stream,
               hls::stream<result_pkt> &out_stream,
               int num_images) {
 
-
-
 _ssdm_op_SpecInterface(&in_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(&out_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(num_images, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
-
 
 _ssdm_SpecArrayReshape( &svs, 2,  "CYCLIC",  16, "");
 _ssdm_SpecArrayPartition( &svs, 1, "CYCLIC", 16, "");
@@ -154309,29 +154320,15 @@ _ssdm_SpecArrayPartition( &sv_norms, 1, "CYCLIC", 16, "");
  num_images = 2601;
 
 
+
     Batch_Loop: for (int n = 0; n < num_images; n++) {
 _ssdm_op_SpecDataflowPipeline(-1, "");
 
  ap_fixed<8,7> x_local[784];
 _ssdm_SpecArrayPartition( x_local, 1, "CYCLIC", 16, "");
 
- ap_fixed<24,14> internal_norm;
-        ap_fixed<32,16> res_internal;
+ ap_fixed<24,14> internal_norm = load_and_calc_norm(in_stream, x_local);
 
-
-        internal_norm = load_and_calc_norm(in_stream, x_local);
-
-
-        compute_class(x_local, internal_norm, res_internal);
-
-
-        result_pkt out_val;
-        out_val.data = res_internal;
-        out_val.keep = -1;
-        out_val.strb = -1;
-
-        out_val.last = (n == num_images - 1) ? 1 : 0;
-
-        out_stream.write(out_val);
+        compute_and_output(x_local, internal_norm, out_stream, n, num_images);
     }
 }
