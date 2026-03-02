@@ -1,10 +1,10 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Tue Feb 24 23:51:04 2026
+<item name = "Date">Mon Mar  2 02:59:41 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
-<item name = "Project">ADSD</item>
+<item name = "Project">MathieuHelpMe</item>
 <item name = "Solution">solution1</item>
 <item name = "Product family">zynq</item>
 <item name = "Target device">xc7z020clg484-1</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 9.599, 1.25</column>
+<column name="ap_clk">10.00, 8.742, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2413832, 2413832, 2413832, 2413832, none</column>
+<column name="">2270777, 2270777, 2270777, 2270777, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 1029, 1029, 928, 928, dataflow</column>
+<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 974, 974, 873, 873, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Batch_Loop">2413830, 2413830, 1031, -, -, 2601, no</column>
+<column name="- Batch_Loop">2270775, 2270775, 976, -, -, 2601, no</column>
 </table>
 </item>
 </section>
@@ -51,12 +51,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 24</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">116, 1, 8587, 28431</column>
+<column name="Instance">118, 2, 7976, 22935</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18</column>
 <column name="Register">-, -, 26, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">41, ~0, 8, 53</specialColumn>
+<specialColumn name="Utilization (%)">42, ~0, 7, 43</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -64,7 +64,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="classify_control_s_axi_U">classify_control_s_axi, 0, 0, 74, 104</column>
-<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 116, 1, 8513, 28327</column>
+<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 118, 2, 7902, 22831</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">

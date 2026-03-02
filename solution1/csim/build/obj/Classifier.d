@@ -17,6 +17,6 @@ obj/Classifier.o: ../../../Classifier.cpp ../../../Classifier.h \
  C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int.h \
  C:/Xilinx/Vivado/2018.2/include/hls_stream.h \
- C:/Xilinx/Vivado/2018.2/include/ap_axi_sdata.h ../../.././svs.h \
- ../../.././Classifier.h ../../.././bias.h ../../.././alphas.h \
- ../../.././sv_norms.h ../../../Exp.h
+ C:/Xilinx/Vivado/2018.2/include/ap_axi_sdata.h ../../.././svs_packed.h \
+ ../../.././bias.h ../../.././alphas.h ../../.././sv_norms_padded.h \
+ ../../../Exp.h

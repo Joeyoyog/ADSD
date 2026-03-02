@@ -6,16 +6,16 @@
 // ==============================================================
 
 
-#ifndef _dataflow_in_loop_0iy_H_
-#define _dataflow_in_loop_0iy_H_
+#ifndef _dataflow_in_loop_1iI_H_
+#define _dataflow_in_loop_1iI_H_
 
 #include <systemc>
 #include <iostream>
 #include <fstream>
 
-#include "dataflow_in_loop_0iy_memcore.h"
+#include "dataflow_in_loop_1iI_memcore.h"
 
-SC_MODULE(dataflow_in_loop_0iy) {
+SC_MODULE(dataflow_in_loop_1iI) {
     static const unsigned int DataWidth    = 8;
     static const unsigned int AddressRange = 32;
     static const unsigned int AddressWidth = 6;
@@ -59,7 +59,7 @@ protected:
     sc_core::sc_signal< sc_dt::sc_lv<AddressWidth+1> > memcore_iaddr;
     sc_core::sc_signal< sc_dt::sc_lv<AddressWidth+1> > memcore_taddr;
 
-    dataflow_in_loop_0iy_memcore* dataflow_in_loop_0iy_memcore_U;
+    dataflow_in_loop_1iI_memcore* dataflow_in_loop_1iI_memcore_U;
 
     void proc_memcore_addr();
 
@@ -78,25 +78,25 @@ protected:
     sc_core::sc_trace_file* m_trace_file;
 
 public:
-    ~dataflow_in_loop_0iy();
-    SC_CTOR(dataflow_in_loop_0iy) : m_trace_file(0) {
+    ~dataflow_in_loop_1iI();
+    SC_CTOR(dataflow_in_loop_1iI) : m_trace_file(0) {
         SC_METHOD(proc_memcore_addr);
         sensitive << i_address0 << t_address0 << iptr << tptr;
 
-        dataflow_in_loop_0iy_memcore_U = new dataflow_in_loop_0iy_memcore("dataflow_in_loop_0iy_memcore_U");
-        dataflow_in_loop_0iy_memcore_U->clk      ( clk );
-        dataflow_in_loop_0iy_memcore_U->reset    ( reset );
-        dataflow_in_loop_0iy_memcore_U->ce0      ( i_ce0 );
-        dataflow_in_loop_0iy_memcore_U->we0      ( i_we0 );
-        dataflow_in_loop_0iy_memcore_U->address0 ( memcore_iaddr );
-        dataflow_in_loop_0iy_memcore_U->d0       ( i_d0 );
-        dataflow_in_loop_0iy_memcore_U->q0       ( i_q0 );
+        dataflow_in_loop_1iI_memcore_U = new dataflow_in_loop_1iI_memcore("dataflow_in_loop_1iI_memcore_U");
+        dataflow_in_loop_1iI_memcore_U->clk      ( clk );
+        dataflow_in_loop_1iI_memcore_U->reset    ( reset );
+        dataflow_in_loop_1iI_memcore_U->ce0      ( i_ce0 );
+        dataflow_in_loop_1iI_memcore_U->we0      ( i_we0 );
+        dataflow_in_loop_1iI_memcore_U->address0 ( memcore_iaddr );
+        dataflow_in_loop_1iI_memcore_U->d0       ( i_d0 );
+        dataflow_in_loop_1iI_memcore_U->q0       ( i_q0 );
 
-        dataflow_in_loop_0iy_memcore_U->ce1      ( t_ce0 );
-        dataflow_in_loop_0iy_memcore_U->we1      ( t_we0 );
-        dataflow_in_loop_0iy_memcore_U->address1 ( memcore_taddr );
-        dataflow_in_loop_0iy_memcore_U->d1       ( t_d0 );
-        dataflow_in_loop_0iy_memcore_U->q1       ( t_q0 );
+        dataflow_in_loop_1iI_memcore_U->ce1      ( t_ce0 );
+        dataflow_in_loop_1iI_memcore_U->we1      ( t_we0 );
+        dataflow_in_loop_1iI_memcore_U->address1 ( memcore_taddr );
+        dataflow_in_loop_1iI_memcore_U->d1       ( t_d0 );
+        dataflow_in_loop_1iI_memcore_U->q1       ( t_q0 );
 
         // power-on initialization
         iptr    = 0;
@@ -137,7 +137,7 @@ public:
         // Trace Begin.
         const char* dump_vcd = std::getenv("AP_WRITE_VCD");
         if (dump_vcd) {
-            m_trace_file = sc_create_vcd_trace_file( "dataflow_in_loop_0iy.trace");
+            m_trace_file = sc_create_vcd_trace_file( "dataflow_in_loop_1iI.trace");
             // ports
             sc_trace(m_trace_file, clk,        "(port)clk");
             sc_trace(m_trace_file, reset,      "(port)reset");

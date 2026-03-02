@@ -3,10 +3,10 @@
 ================================================================
 == Vivado HLS Report for 'dataflow_in_loop_Bat'
 ================================================================
-* Date:           Tue Feb 24 23:51:02 2026
+* Date:           Mon Mar  2 02:59:40 2026
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
-* Project:        ADSD
+* Project:        MathieuHelpMe
 * Solution:       solution1
 * Product family: zynq
 * Target device:  xc7z020clg484-1
@@ -20,17 +20,17 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     9.599|        1.25|
+    |ap_clk  |  10.00|     8.742|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
     * Summary: 
-    +------+------+-----+-----+----------+
-    |   Latency   |  Interval | Pipeline |
-    |  min |  max | min | max |   Type   |
-    +------+------+-----+-----+----------+
-    |  1029|  1029|  928|  928| dataflow |
-    +------+------+-----+-----+----------+
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  974|  974|  873|  873| dataflow |
+    +-----+-----+-----+-----+----------+
 
     + Detail: 
         * Instance: 
@@ -38,7 +38,7 @@
         |                         |                      |  Latency  |  Interval | Pipeline|
         |         Instance        |        Module        | min | max | min | max |   Type  |
         +-------------------------+----------------------+-----+-----+-----+-----+---------+
-        |compute_and_output_U0    |compute_and_output    |  927|  927|  927|  927|   none  |
+        |compute_and_output_U0    |compute_and_output    |  872|  872|  872|  872|   none  |
         |load_and_calc_norm61_U0  |load_and_calc_norm61  |  101|  101|  101|  101|   none  |
         +-------------------------+----------------------+-----+-----+-----+-----+---------+
 
@@ -57,16 +57,16 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       0|     74|
 |FIFO             |        0|      -|      10|     60|
-|Instance         |      116|      1|    8230|  27928|
+|Instance         |      118|      2|    7619|  22432|
 |Memory           |        0|      -|     256|    112|
 |Multiplexer      |        -|      -|       -|    153|
 |Register         |        -|      -|      17|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |      116|      1|    8513|  28327|
+|Total            |      118|      2|    7902|  22831|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       41|   ~0  |       8|     53|
+|Utilization (%)  |       42|   ~0  |       7|     42|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
@@ -74,10 +74,10 @@
     +-------------------------+----------------------+---------+-------+------+-------+
     |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT  |
     +-------------------------+----------------------+---------+-------+------+-------+
-    |compute_and_output_U0    |compute_and_output    |      116|      1|  7953|  27175|
+    |compute_and_output_U0    |compute_and_output    |      118|      2|  7342|  21679|
     |load_and_calc_norm61_U0  |load_and_calc_norm61  |        0|      0|   277|    753|
     +-------------------------+----------------------+---------+-------+------+-------+
-    |Total                    |                      |      116|      1|  8230|  27928|
+    |Total                    |                      |      118|      2|  7619|  22432|
     +-------------------------+----------------------+---------+-------+------+-------+
 
     * DSP48: 
@@ -87,22 +87,22 @@
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
     |     Memory     |        Module        | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
-    |x_local_0_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_1_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_2_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_3_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_4_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_5_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_6_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_7_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_8_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_9_V_U   |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_10_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_11_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_12_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_13_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_14_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_15_V_U  |dataflow_in_loop_0iy  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_0_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_1_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_2_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_3_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_4_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_5_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_6_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_7_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_8_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_9_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_10_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_11_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_12_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_13_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_14_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_15_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
     |Total           |                      |        0| 256| 112|   784|  128|    32|        12544|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+

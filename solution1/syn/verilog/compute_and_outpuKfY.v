@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outpuKfY_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 28;
+parameter DWIDTH = 30;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 11;
 
@@ -47,7 +47,7 @@ module compute_and_outpuKfY(
     ce0,
     q0);
 
-parameter DataWidth = 32'd28;
+parameter DataWidth = 32'd30;
 parameter AddressRange = 32'd11;
 parameter AddressWidth = 32'd4;
 input reset;

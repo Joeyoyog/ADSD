@@ -1,5 +1,5 @@
-# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp"
-# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
+# 1 "C:/Users/josep/Documents/MathieuHelpMe/solution1/.autopilot/db/Classifier.pragma.1.cpp"
+# 1 "C:/Users/josep/Documents/MathieuHelpMe/solution1/.autopilot/db/Classifier.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -145,9 +145,9 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/Users/mathi/Documents/ADSD_ICL/ADSD/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
-# 1 "ADSD/Classifier.cpp"
-# 1 "ADSD/Classifier.cpp" 1
+# 1 "C:/Users/josep/Documents/MathieuHelpMe/solution1/.autopilot/db/Classifier.pragma.1.cpp" 2
+# 1 "MathieuHelpMe/Classifier.cpp"
+# 1 "MathieuHelpMe/Classifier.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -293,8 +293,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "ADSD/Classifier.cpp" 2
-# 1 "ADSD/Classifier.h" 1
+# 1 "MathieuHelpMe/Classifier.cpp" 2
+# 1 "MathieuHelpMe/Classifier.h" 1
 
 
 
@@ -24527,7 +24527,7 @@ inline bool operator!=(
 
 }
 # 62 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_fixed.h" 2
-# 5 "ADSD/Classifier.h" 2
+# 5 "MathieuHelpMe/Classifier.h" 2
 
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h" 1
 # 66 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\hls_stream.h"
@@ -24714,7 +24714,7 @@ class stream
 
 
 }
-# 7 "ADSD/Classifier.h" 2
+# 7 "MathieuHelpMe/Classifier.h" 2
 # 1 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h" 1
 # 88 "C:/Xilinx/Vivado/2018.2/common/technology/autopilot\\ap_axi_sdata.h"
 template<int D,int U,int TI,int TD>
@@ -24738,8 +24738,8 @@ template<int D,int U,int TI,int TD>
     ap_uint<TI> id;
     ap_uint<TD> dest;
   };
-# 8 "ADSD/Classifier.h" 2
-# 17 "ADSD/Classifier.h"
+# 8 "MathieuHelpMe/Classifier.h" 2
+# 17 "MathieuHelpMe/Classifier.h"
 typedef ap_axiu<64, 1, 1, 1> axis_t;
 
 
@@ -24756,15 +24756,15 @@ struct result_pkt {
 void classify(hls::stream<axis_t> &in_stream,
               hls::stream<result_pkt> &out_stream,
               int num_images);
-# 1 "ADSD/Classifier.cpp" 2
-
-# 1 "ADSD/./svs.h" 1
+# 2 "MathieuHelpMe/Classifier.cpp" 2
+# 1 "MathieuHelpMe/./svs.h" 1
 
 
 
 
 
 static const ap_fixed<8,7> svs[176][784] = {
+
 0.0,
 0.0,
 0.0,
@@ -154126,15 +154126,13 @@ static const ap_fixed<8,7> svs[176][784] = {
 0.0,
 0.0,
 };
-# 2 "ADSD/Classifier.cpp" 2
-
-# 1 "ADSD/./bias.h" 1
+# 3 "MathieuHelpMe/Classifier.cpp" 2
+# 1 "MathieuHelpMe/./bias.h" 1
 static const ap_fixed<8, 1> bias[] = {
 -0.1796875,
 };
-# 3 "ADSD/Classifier.cpp" 2
-
-# 1 "ADSD/./alphas.h" 1
+# 4 "MathieuHelpMe/Classifier.cpp" 2
+# 1 "MathieuHelpMe/./alphas.h" 1
 static const ap_fixed<8, 5> alphas[] = {
 -0.125,
 0.0,
@@ -154313,9 +154311,8 @@ static const ap_fixed<8, 5> alphas[] = {
 0,
 0
 };
-# 4 "ADSD/Classifier.cpp" 2
-
-# 1 "ADSD/./sv_norms.h" 1
+# 5 "MathieuHelpMe/Classifier.cpp" 2
+# 1 "MathieuHelpMe/./sv_norms.h" 1
 
 
 
@@ -154346,10 +154343,9 @@ const ap_fixed<32,16> sv_norms[165] = {
     447.250000, 2226.500000, 701.500000, 260.250000, 812.250000, 408.250000, 770.250000, 8325.750000,
     12528.000000, 247.500000, 5234.250000, 790.250000, 787.500000
 };
-# 5 "ADSD/Classifier.cpp" 2
+# 6 "MathieuHelpMe/Classifier.cpp" 2
 
-
-# 1 "ADSD/Exp.h" 1
+# 1 "MathieuHelpMe/Exp.h" 1
 
 
 
@@ -154359,8 +154355,7 @@ typedef ap_fixed<16,4> x_t;
 typedef ap_ufixed<20,1> out_t;
 
 out_t compute_exp(x_t x);
-# 7 "ADSD/Classifier.cpp" 2
-
+# 8 "MathieuHelpMe/Classifier.cpp" 2
 
 
 

@@ -1,105 +1,44 @@
 #include "Exp.h"
 #include "ap_int.h"
-#include "ap_fixed.h"
+#include "exp_lut.h"
 
-// Keep truncation + wrap to avoid extra rounding/sat logic (helps timing)
-typedef ap_fixed<26,4, AP_TRN, AP_WRAP> acc_t;
-typedef ap_fixed<26,5, AP_TRN, AP_WRAP> coef_t;
-typedef ap_fixed<26,2, AP_TRN, AP_WRAP> lut_t;
-
-// K for schedule: {1,2,3,4,4,5,6,7,8,9,10,11,12,13,13,14,15,16,17,18}
-static const acc_t K_GAIN = acc_t("1.2074970677601436");
-
-#define STEP(X, Y, Z, SH, A)                 \
-    do {                                     \
-        bool z_neg = (Z < 0);                \
-        acc_t x_sh = (X >> (SH));            \
-        acc_t y_sh = (Y >> (SH));            \
-        if (z_neg) {                         \
-            X -= y_sh;                       \
-            Y -= x_sh;                       \
-            Z += (A);                        \
-        } else {                             \
-            X += y_sh;                       \
-            Y += x_sh;                       \
-            Z -= (A);                        \
-        }                                    \
-    } while(0)
-
+// LUT-based exp approximation (linear interpolation)
+// x_t  = ap_fixed<16,4>  (Q4.12), valid input range [-8,0]
+// out_t= ap_ufixed<20,1> (Q1.19), output range [0,1]
 out_t compute_exp(x_t x) {
 #pragma HLS INLINE
-// Force the scheduler to *spread* work => shorter critical path per cycle
-#pragma HLS LATENCY min=8 max=8
-// Optional (throughput). If this causes issues in your Vivado HLS version, remove it.
-#pragma HLS PIPELINE II=1
 
-    // ln2 multiples for range reduction
-    static const coef_t MLN2[13] = {
-        "0.0", "0.69314718056", "1.38629436112", "2.07944154168",
-        "2.77258872224", "3.46573590280", "4.15888308336", "4.85203026392",
-        "5.54517744448", "6.23832462504", "6.93147180560", "7.62461898616", "8.31776616672"
-    };
-#pragma HLS ARRAY_PARTITION variable=MLN2 complete
-
-    // clamp small
+    // Match your clamp behaviour
     if (x < x_t(-8.0)) return out_t(0);
+    if (x >= x_t(0.0)) return out_t(1);
 
-    // u = -x in [0..8]
-    coef_t u = coef_t(0) - coef_t(x);
+    // u = x + 8 in [0,8)
+    x_t u = x + x_t(8.0);
 
-    // m = ceil(u/ln2) using comparator tree (fast, no multiply)
-    ap_uint<4> m;
-    if (u <= MLN2[6]) {
-        if (u <= MLN2[3]) {
-            if      (u <= MLN2[1]) m = (u > 0) ? 1 : 0;
-            else if (u <= MLN2[2]) m = 2;
-            else                   m = 3;
-        } else {
-            if      (u <= MLN2[4]) m = 4;
-            else if (u <= MLN2[5]) m = 5;
-            else                   m = 6;
-        }
-    } else {
-        if (u <= MLN2[9]) {
-            if      (u <= MLN2[7]) m = 7;
-            else if (u <= MLN2[8]) m = 8;
-            else                   m = 9;
-        } else {
-            if      (u <= MLN2[10]) m = 10;
-            else if (u <= MLN2[11]) m = 11;
-            else                    m = 12;
-        }
-    }
+    // Raw fixed-point bits (Q4.12). u is non-negative here.
+    ap_uint<16> u_raw = u.range(15,0);
 
-    // r = x + m*ln2  (brings input into about [0, ln2))
-    acc_t X = K_GAIN;
-    acc_t Y = 0;
-    acc_t Z = acc_t(x) + acc_t(MLN2[m]);
+    // Index into LUT: step = 8/EXP_LUT_N, implemented via shift
+    const ap_uint<16> idx = (ap_uint<16>)(u_raw >> EXP_LUT_SHIFT);
+    if (idx >= EXP_LUT_N) return out_t(1);   // safety for x very close to 0
 
-    // 20 CORDIC steps: shifts 1..18, with repeats at 4 and 13
-    STEP(X,Y,Z, 1,  lut_t("0.5493061443340549"));
-    STEP(X,Y,Z, 2,  lut_t("0.2554128118829954"));
-    STEP(X,Y,Z, 3,  lut_t("0.1256572141404530"));
-    STEP(X,Y,Z, 4,  lut_t("0.0625815714770030"));
-    STEP(X,Y,Z, 4,  lut_t("0.0625815714770030")); // repeat
-    STEP(X,Y,Z, 5,  lut_t("0.0312601784906670"));
-    STEP(X,Y,Z, 6,  lut_t("0.0156262717520522"));
-    STEP(X,Y,Z, 7,  lut_t("0.0078126589515404"));
-    STEP(X,Y,Z, 8,  lut_t("0.0039062698683968"));
-    STEP(X,Y,Z, 9,  lut_t("0.0019531274835326"));
-    STEP(X,Y,Z,10,  lut_t("0.0009765628104410"));
-    STEP(X,Y,Z,11,  lut_t("0.0004882812888051"));
-    STEP(X,Y,Z,12,  lut_t("0.0002441406298506"));
-    STEP(X,Y,Z,13,  lut_t("0.0001220703131063"));
-    STEP(X,Y,Z,13,  lut_t("0.0001220703131063")); // repeat
-    STEP(X,Y,Z,14,  lut_t("0.0000610351563258"));
-    STEP(X,Y,Z,15,  lut_t("0.0000305175781345"));
-    STEP(X,Y,Z,16,  lut_t("0.0000152587890637"));
-    STEP(X,Y,Z,17,  lut_t("0.0000076293945314"));
-    STEP(X,Y,Z,18,  lut_t("0.0000038146972656"));
+    // Fraction within LUT step: frac_raw in [0 .. 2^SHIFT-1]
+    const ap_uint<16> frac_raw = u_raw & ((1u << EXP_LUT_SHIFT) - 1u);
 
-    acc_t exp_r  = X + Y;
-    acc_t scaled = exp_r >> m;   // multiply by 2^{-m}
+    // Read packed (dy,y0): both in Q1.19 integer codes
+    exp_pair_t e = EXP_LUT[idx];
+    ap_uint<20> y0_raw = e.range(19,0);
+    ap_uint<20> dy_raw = e.range(39,20);
 
-    return out_t(scaled);
+    // Linear interpolation: y = y0 + dy * frac / 2^SHIFT
+    // prod width: 20+SHIFT <= 32 easily for SHIFT up to ~12
+    ap_uint<32> prod = (ap_uint<32>)dy_raw * (ap_uint<32>)frac_raw;
+    ap_uint<20> inc_raw = (ap_uint<20>)(prod >> EXP_LUT_SHIFT);
+
+    ap_uint<21> y_raw = (ap_uint<21>)y0_raw + (ap_uint<21>)inc_raw; // small headroom
+
+    out_t y;
+    y.range(19,0) = y_raw.range(19,0);
+    return y;
+    //return 0;
 }

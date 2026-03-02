@@ -1,10 +1,10 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dataflow_in_loop_Bat'" level="0">
-<item name = "Date">Tue Feb 24 23:50:50 2026
+<item name = "Date">Mon Mar  2 02:59:33 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
-<item name = "Project">ADSD</item>
+<item name = "Project">MathieuHelpMe</item>
 <item name = "Solution">solution1</item>
 <item name = "Product family">zynq</item>
 <item name = "Target device">xc7z020clg484-1</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 9.599, 1.25</column>
+<column name="ap_clk">10.00, 8.742, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1029, 1029, 928, 928, dataflow</column>
+<column name="">974, 974, 873, 873, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

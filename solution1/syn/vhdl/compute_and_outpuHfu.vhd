@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 
 entity compute_and_outpuHfu_rom is 
     generic(
-             DWIDTH     : integer := 30; 
+             DWIDTH     : integer := 5; 
              AWIDTH     : integer := 4; 
              MEM_SIZE    : integer := 11
     ); 
@@ -29,12 +29,8 @@ architecture rtl of compute_and_outpuHfu_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "000100100100110000000000000000", 1 => "000001000010010000000000000000", 
-    2 => "000000111101110100000000000000", 3 => "001101010010011000000000000000", 
-    4 => "000011000101010100000000000000", 5 => "000011101011001100000000000000", 
-    6 => "000010100111000000000000000000", 7 => "000010011011010100000000000000", 
-    8 => "011000001111011000000000000000", 9 => "000011010011111000000000000000", 
-    10 => "110000111100000000000000000000" );
+    0 => "11001", 1 => "11110", 2 to 3=> "11001", 4 => "00000", 5 => "11101", 
+    6 => "00000", 7 => "01001", 8 => "00001", 9 => "01001", 10 => "00000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -73,7 +69,7 @@ use IEEE.std_logic_1164.all;
 
 entity compute_and_outpuHfu is
     generic (
-        DataWidth : INTEGER := 30;
+        DataWidth : INTEGER := 5;
         AddressRange : INTEGER := 11;
         AddressWidth : INTEGER := 4);
     port (

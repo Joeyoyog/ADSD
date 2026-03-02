@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outpuzec_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 5;
+parameter DWIDTH = 6;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 11;
 
@@ -47,7 +47,7 @@ module compute_and_outpuzec(
     ce0,
     q0);
 
-parameter DataWidth = 32'd5;
+parameter DataWidth = 32'd6;
 parameter AddressRange = 32'd11;
 parameter AddressWidth = 32'd4;
 input reset;

@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outpuWhU_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 30;
+parameter DWIDTH = 27;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 10;
 
@@ -47,7 +47,7 @@ module compute_and_outpuWhU(
     ce0,
     q0);
 
-parameter DataWidth = 32'd30;
+parameter DataWidth = 32'd27;
 parameter AddressRange = 32'd10;
 parameter AddressWidth = 32'd4;
 input reset;

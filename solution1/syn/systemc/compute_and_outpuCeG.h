@@ -21,7 +21,7 @@ using namespace sc_dt;
 
 struct compute_and_outpuCeG_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 7;
+  static const unsigned DataWidth = 6;
   static const unsigned AddressRange = 11;
   static const unsigned AddressWidth = 4;
 
@@ -39,17 +39,17 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(compute_and_outpuCeG_ram) {
-        ram[0] = "0b1111001";
-        ram[1] = "0b1111111";
-        ram[2] = "0b1111010";
-        ram[3] = "0b1011000";
-        ram[4] = "0b1011110";
-        ram[5] = "0b0000000";
-        ram[6] = "0b0000011";
-        ram[7] = "0b0000111";
-        ram[8] = "0b0000100";
-        ram[9] = "0b0001100";
-        ram[10] = "0b0000000";
+        ram[0] = "0b111000";
+        ram[1] = "0b111110";
+        ram[2] = "0b111111";
+        ram[3] = "0b000000";
+        ram[4] = "0b111110";
+        ram[5] = "0b111111";
+        ram[6] = "0b000100";
+        ram[7] = "0b000001";
+        ram[8] = "0b010001";
+        ram[9] = "0b000001";
+        ram[10] = "0b000000";
 
 
 SC_METHOD(prc_write_0);
@@ -75,7 +75,7 @@ void prc_write_0()
 SC_MODULE(compute_and_outpuCeG) {
 
 
-static const unsigned DataWidth = 7;
+static const unsigned DataWidth = 6;
 static const unsigned AddressRange = 11;
 static const unsigned AddressWidth = 4;
 

@@ -7,7 +7,7 @@
 
 #ifndef __classify_mul_mul_Zio__HH__
 #define __classify_mul_mul_Zio__HH__
-#include "ACMP_smul_ss.h"
+#include "ACMP_smul_uu.h"
 #include <systemc>
 
 template<
@@ -23,12 +23,12 @@ SC_MODULE(classify_mul_mul_Zio) {
 
 
 
-    ACMP_smul_ss<ID, 1, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_smul_ss_U;
+    ACMP_smul_uu<ID, 1, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_smul_uu_U;
 
-    SC_CTOR(classify_mul_mul_Zio):  ACMP_smul_ss_U ("ACMP_smul_ss_U") {
-        ACMP_smul_ss_U.din0(din0);
-        ACMP_smul_ss_U.din1(din1);
-        ACMP_smul_ss_U.dout(dout);
+    SC_CTOR(classify_mul_mul_Zio):  ACMP_smul_uu_U ("ACMP_smul_uu_U") {
+        ACMP_smul_uu_U.din0(din0);
+        ACMP_smul_uu_U.din1(din1);
+        ACMP_smul_uu_U.dout(dout);
 
     }
 

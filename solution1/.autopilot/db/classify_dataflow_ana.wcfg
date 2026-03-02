@@ -240,6 +240,18 @@
                   <obj_property name="ObjectShortName">svs_V_15_ce0</obj_property>
                </wvobject>
             </wvobject>
+            <wvobject type="group" fp_name="EXP_LUT_V_group">
+               <obj_property name="label">EXP_LUT_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/EXP_LUT_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/EXP_LUT_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/EXP_LUT_V_ce0">
+                  <obj_property name="ElementShortName">EXP_LUT_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">EXP_LUT_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
             <wvobject type="group" fp_name="alphas_V_044_group">
                <obj_property name="label">alphas_V_044(PIPO)</obj_property>
                <obj_property name="DisplayName">label</obj_property>
@@ -1363,6 +1375,18 @@
                   <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/compute_and_output_U0/svs_V_15_ce0">
                      <obj_property name="ElementShortName">svs_V_15_ce0</obj_property>
                      <obj_property name="ObjectShortName">svs_V_15_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="EXP_LUT_V_group">
+                  <obj_property name="label">EXP_LUT_V(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/compute_and_output_U0/EXP_LUT_V_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/compute_and_output_U0/EXP_LUT_V_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_classify_top/AESL_inst_classify/dataflow_in_loop_Bat_U0/compute_and_output_U0/EXP_LUT_V_ce0">
+                     <obj_property name="ElementShortName">EXP_LUT_V_ce0</obj_property>
+                     <obj_property name="ObjectShortName">EXP_LUT_V_ce0</obj_property>
                   </wvobject>
                </wvobject>
                <wvobject type="group" fp_name="alphas_V_044_group">

@@ -15,4 +15,4 @@ obj/Exp.o: ../../../Exp.cpp ../../../Exp.h \
  C:/Xilinx/Vivado/2018.2/include/ap_common.h \
  C:/Xilinx/Vivado/2018.2/include/ap_int_special.h \
  C:/Xilinx/Vivado/2018.2/include/ap_fixed_special.h \
- C:/Xilinx/Vivado/2018.2/include/ap_int.h
+ C:/Xilinx/Vivado/2018.2/include/ap_int.h ../../../exp_lut.h

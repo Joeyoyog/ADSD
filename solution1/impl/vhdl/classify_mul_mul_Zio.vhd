@@ -5,23 +5,23 @@ use IEEE.numeric_std.all;
 
 entity classify_mul_mul_Zio_DSP48_0 is
 port (
-    a: in std_logic_vector(22 - 1 downto 0);
-    b: in std_logic_vector(8 - 1 downto 0);
-    p: out std_logic_vector(30 - 1 downto 0));
+    a: in std_logic_vector(12 - 1 downto 0);
+    b: in std_logic_vector(5 - 1 downto 0);
+    p: out std_logic_vector(17 - 1 downto 0));
 
 end entity;
 
 architecture behav of classify_mul_mul_Zio_DSP48_0 is
-    signal a_cvt: signed(22 - 1 downto 0);
-    signal b_cvt: signed(8 - 1 downto 0);
-    signal p_cvt: signed(30 - 1 downto 0);
+    signal a_cvt: unsigned(12 - 1 downto 0);
+    signal b_cvt: unsigned(5 - 1 downto 0);
+    signal p_cvt: unsigned(17 - 1 downto 0);
 
 
 begin
 
-    a_cvt <= signed(a);
-    b_cvt <= signed(b);
-    p_cvt <= signed (resize(unsigned (signed (a_cvt) * signed (b_cvt)), 30));
+    a_cvt <= unsigned(a);
+    b_cvt <= unsigned(b);
+    p_cvt <= unsigned (resize(unsigned (unsigned (a_cvt) * unsigned (b_cvt)), 17));
     p <= std_logic_vector(p_cvt);
 
 end architecture;

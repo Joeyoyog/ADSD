@@ -467,7 +467,7 @@ architecture behav of dataflow_in_loop_Bat is
     end component;
 
 
-    component dataflow_in_loop_0iy IS
+    component dataflow_in_loop_1iI IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -526,7 +526,7 @@ architecture behav of dataflow_in_loop_Bat is
 
 
 begin
-    x_local_0_V_U : component dataflow_in_loop_0iy
+    x_local_0_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -551,7 +551,7 @@ begin
         t_empty_n => x_local_0_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_1_V_U : component dataflow_in_loop_0iy
+    x_local_1_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -576,7 +576,7 @@ begin
         t_empty_n => x_local_1_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_2_V_U : component dataflow_in_loop_0iy
+    x_local_2_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -601,7 +601,7 @@ begin
         t_empty_n => x_local_2_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_3_V_U : component dataflow_in_loop_0iy
+    x_local_3_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -626,7 +626,7 @@ begin
         t_empty_n => x_local_3_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_4_V_U : component dataflow_in_loop_0iy
+    x_local_4_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -651,7 +651,7 @@ begin
         t_empty_n => x_local_4_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_5_V_U : component dataflow_in_loop_0iy
+    x_local_5_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -676,7 +676,7 @@ begin
         t_empty_n => x_local_5_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_6_V_U : component dataflow_in_loop_0iy
+    x_local_6_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -701,7 +701,7 @@ begin
         t_empty_n => x_local_6_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_7_V_U : component dataflow_in_loop_0iy
+    x_local_7_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -726,7 +726,7 @@ begin
         t_empty_n => x_local_7_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_8_V_U : component dataflow_in_loop_0iy
+    x_local_8_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -751,7 +751,7 @@ begin
         t_empty_n => x_local_8_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_9_V_U : component dataflow_in_loop_0iy
+    x_local_9_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -776,7 +776,7 @@ begin
         t_empty_n => x_local_9_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_10_V_U : component dataflow_in_loop_0iy
+    x_local_10_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -801,7 +801,7 @@ begin
         t_empty_n => x_local_10_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_11_V_U : component dataflow_in_loop_0iy
+    x_local_11_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -826,7 +826,7 @@ begin
         t_empty_n => x_local_11_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_12_V_U : component dataflow_in_loop_0iy
+    x_local_12_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -851,7 +851,7 @@ begin
         t_empty_n => x_local_12_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_13_V_U : component dataflow_in_loop_0iy
+    x_local_13_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -876,7 +876,7 @@ begin
         t_empty_n => x_local_13_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_14_V_U : component dataflow_in_loop_0iy
+    x_local_14_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -901,7 +901,7 @@ begin
         t_empty_n => x_local_14_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_15_V_U : component dataflow_in_loop_0iy
+    x_local_15_V_U : component dataflow_in_loop_1iI
     generic map (
         DataWidth => 8,
         AddressRange => 49,

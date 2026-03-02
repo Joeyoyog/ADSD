@@ -13,7 +13,7 @@
 
 #include "load_and_calc_norm61.h"
 #include "compute_and_output.h"
-#include "dataflow_in_loop_0iy.h"
+#include "dataflow_in_loop_1iI.h"
 #include "fifo_w12_d2_A.h"
 #include "fifo_w24_d2_A.h"
 
@@ -58,22 +58,22 @@ struct dataflow_in_loop_Bat : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    dataflow_in_loop_0iy* x_local_0_V_U;
-    dataflow_in_loop_0iy* x_local_1_V_U;
-    dataflow_in_loop_0iy* x_local_2_V_U;
-    dataflow_in_loop_0iy* x_local_3_V_U;
-    dataflow_in_loop_0iy* x_local_4_V_U;
-    dataflow_in_loop_0iy* x_local_5_V_U;
-    dataflow_in_loop_0iy* x_local_6_V_U;
-    dataflow_in_loop_0iy* x_local_7_V_U;
-    dataflow_in_loop_0iy* x_local_8_V_U;
-    dataflow_in_loop_0iy* x_local_9_V_U;
-    dataflow_in_loop_0iy* x_local_10_V_U;
-    dataflow_in_loop_0iy* x_local_11_V_U;
-    dataflow_in_loop_0iy* x_local_12_V_U;
-    dataflow_in_loop_0iy* x_local_13_V_U;
-    dataflow_in_loop_0iy* x_local_14_V_U;
-    dataflow_in_loop_0iy* x_local_15_V_U;
+    dataflow_in_loop_1iI* x_local_0_V_U;
+    dataflow_in_loop_1iI* x_local_1_V_U;
+    dataflow_in_loop_1iI* x_local_2_V_U;
+    dataflow_in_loop_1iI* x_local_3_V_U;
+    dataflow_in_loop_1iI* x_local_4_V_U;
+    dataflow_in_loop_1iI* x_local_5_V_U;
+    dataflow_in_loop_1iI* x_local_6_V_U;
+    dataflow_in_loop_1iI* x_local_7_V_U;
+    dataflow_in_loop_1iI* x_local_8_V_U;
+    dataflow_in_loop_1iI* x_local_9_V_U;
+    dataflow_in_loop_1iI* x_local_10_V_U;
+    dataflow_in_loop_1iI* x_local_11_V_U;
+    dataflow_in_loop_1iI* x_local_12_V_U;
+    dataflow_in_loop_1iI* x_local_13_V_U;
+    dataflow_in_loop_1iI* x_local_14_V_U;
+    dataflow_in_loop_1iI* x_local_15_V_U;
     load_and_calc_norm61* load_and_calc_norm61_U0;
     compute_and_output* compute_and_output_U0;
     fifo_w12_d2_A* n_0_i_i_c_U;

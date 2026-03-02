@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "2413832",
+    "Latency": "2270777",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -39,8 +39,8 @@
     ],
     "Vhdl": [
       "impl\/vhdl\/classify_control_s_axi.vhd",
+      "impl\/vhdl\/classify_mul_mul_0iy.vhd",
       "impl\/vhdl\/classify_mul_mul_Zio.vhd",
-      "impl\/vhdl\/classify_mux_164_Xh4.vhd",
       "impl\/vhdl\/classify_mux_164_Yie.vhd",
       "impl\/vhdl\/compute_and_outpuAem.vhd",
       "impl\/vhdl\/compute_and_outpuBew.vhd",
@@ -89,10 +89,11 @@
       "impl\/vhdl\/compute_and_outpuwdI.vhd",
       "impl\/vhdl\/compute_and_outpuWhU.vhd",
       "impl\/vhdl\/compute_and_outpuxdS.vhd",
+      "impl\/vhdl\/compute_and_outpuXh4.vhd",
       "impl\/vhdl\/compute_and_outpuyd2.vhd",
       "impl\/vhdl\/compute_and_outpuzec.vhd",
-      "impl\/vhdl\/dataflow_in_loop_0iy.vhd",
-      "impl\/vhdl\/dataflow_in_loop_0iy_memcore.vhd",
+      "impl\/vhdl\/dataflow_in_loop_1iI.vhd",
+      "impl\/vhdl\/dataflow_in_loop_1iI_memcore.vhd",
       "impl\/vhdl\/dataflow_in_loop_Bat.vhd",
       "impl\/vhdl\/fifo_w12_d2_A.vhd",
       "impl\/vhdl\/fifo_w24_d2_A.vhd",
@@ -101,8 +102,8 @@
     ],
     "Verilog": [
       "impl\/verilog\/classify_control_s_axi.v",
+      "impl\/verilog\/classify_mul_mul_0iy.v",
       "impl\/verilog\/classify_mul_mul_Zio.v",
-      "impl\/verilog\/classify_mux_164_Xh4.v",
       "impl\/verilog\/classify_mux_164_Yie.v",
       "impl\/verilog\/compute_and_outpuAem.v",
       "impl\/verilog\/compute_and_outpuAem_rom.dat",
@@ -197,12 +198,14 @@
       "impl\/verilog\/compute_and_outpuWhU_rom.dat",
       "impl\/verilog\/compute_and_outpuxdS.v",
       "impl\/verilog\/compute_and_outpuxdS_rom.dat",
+      "impl\/verilog\/compute_and_outpuXh4.v",
+      "impl\/verilog\/compute_and_outpuXh4_rom.dat",
       "impl\/verilog\/compute_and_outpuyd2.v",
       "impl\/verilog\/compute_and_outpuyd2_rom.dat",
       "impl\/verilog\/compute_and_outpuzec.v",
       "impl\/verilog\/compute_and_outpuzec_rom.dat",
-      "impl\/verilog\/dataflow_in_loop_0iy.v",
-      "impl\/verilog\/dataflow_in_loop_0iy_memcore.v",
+      "impl\/verilog\/dataflow_in_loop_1iI.v",
+      "impl\/verilog\/dataflow_in_loop_1iI_memcore.v",
       "impl\/verilog\/dataflow_in_loop_Bat.v",
       "impl\/verilog\/fifo_w12_d2_A.v",
       "impl\/verilog\/fifo_w24_d2_A.v",
@@ -814,24 +817,24 @@
       },
       "compute_and_output": {
         "Latency": {
-          "LatencyBest": "927",
-          "LatencyAvg": "927",
-          "LatencyWorst": "927",
-          "PipelineII": "927",
+          "LatencyBest": "872",
+          "LatencyAvg": "872",
+          "LatencyWorst": "872",
+          "PipelineII": "872",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "9.599"
+          "Estimate": "8.742"
         },
         "Loops": [{
             "Name": "classify_label2",
             "TripCount": "11",
-            "Latency": "924",
+            "Latency": "869",
             "PipelineII": "",
-            "PipelineDepth": "84",
+            "PipelineDepth": "79",
             "Loops": [
               {
                 "Name": "classify_label1",
@@ -843,66 +846,66 @@
               {
                 "Name": "Reconstruct_Loop",
                 "TripCount": "16",
-                "Latency": "28",
+                "Latency": "23",
                 "PipelineII": "1",
-                "PipelineDepth": "14"
+                "PipelineDepth": "9"
               }
             ]
           }],
         "Area": {
-          "BRAM_18K": "116",
-          "DSP48E": "1",
-          "FF": "7953",
-          "LUT": "27175"
+          "BRAM_18K": "118",
+          "DSP48E": "2",
+          "FF": "7342",
+          "LUT": "21679"
         }
       },
       "dataflow_in_loop_Bat": {
         "Latency": {
-          "LatencyBest": "1029",
-          "LatencyAvg": "1029",
-          "LatencyWorst": "1029",
-          "PipelineII": "928",
+          "LatencyBest": "974",
+          "LatencyAvg": "974",
+          "LatencyWorst": "974",
+          "PipelineII": "873",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "9.599"
+          "Estimate": "8.742"
         },
         "Area": {
-          "BRAM_18K": "116",
-          "DSP48E": "1",
-          "FF": "8513",
-          "LUT": "28327"
+          "BRAM_18K": "118",
+          "DSP48E": "2",
+          "FF": "7902",
+          "LUT": "22831"
         }
       },
       "classify": {
         "Latency": {
-          "LatencyBest": "2413832",
-          "LatencyAvg": "2413832",
-          "LatencyWorst": "2413832",
-          "PipelineII": "2413833",
+          "LatencyBest": "2270777",
+          "LatencyAvg": "2270777",
+          "LatencyWorst": "2270777",
+          "PipelineII": "2270778",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "9.599"
+          "Estimate": "8.742"
         },
         "Loops": [{
             "Name": "Batch_Loop",
             "TripCount": "2601",
-            "Latency": "2413830",
+            "Latency": "2270775",
             "PipelineII": "",
-            "PipelineDepth": "2413830"
+            "PipelineDepth": "2270775"
           }],
         "Area": {
-          "BRAM_18K": "116",
-          "DSP48E": "1",
-          "FF": "8613",
-          "LUT": "28473"
+          "BRAM_18K": "118",
+          "DSP48E": "2",
+          "FF": "8002",
+          "LUT": "22977"
         }
       }
     }
@@ -914,7 +917,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-02-24 23:51:14 +0000",
+    "Time": "2026-03-02 02:59:48 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

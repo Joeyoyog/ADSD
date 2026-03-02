@@ -8,7 +8,7 @@
 
 `timescale 1ns/1ps
 
-module dataflow_in_loop_0iy
+module dataflow_in_loop_1iI
 #(parameter
     DataWidth    = 8,
     AddressRange = 32,
@@ -53,7 +53,7 @@ wire [AddressWidth:0]   memcore_taddr;
 //------------------------Instantiation------------------
 assign memcore_iaddr = {i_address0, iptr};
 assign memcore_taddr = {t_address0, tptr};
-dataflow_in_loop_0iy_memcore dataflow_in_loop_0iy_memcore_U (
+dataflow_in_loop_1iI_memcore dataflow_in_loop_1iI_memcore_U (
     .clk      ( clk ),
     .reset    ( reset ),
     .ce0      ( i_ce0 ),

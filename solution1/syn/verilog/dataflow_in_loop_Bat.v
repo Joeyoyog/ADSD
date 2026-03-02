@@ -342,7 +342,7 @@ initial begin
 #0 ap_sync_reg_channel_write_x_local_0_V = 1'b0;
 end
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -367,7 +367,7 @@ x_local_0_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -392,7 +392,7 @@ x_local_1_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -417,7 +417,7 @@ x_local_2_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -442,7 +442,7 @@ x_local_3_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -467,7 +467,7 @@ x_local_4_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -492,7 +492,7 @@ x_local_5_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -517,7 +517,7 @@ x_local_6_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -542,7 +542,7 @@ x_local_7_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -567,7 +567,7 @@ x_local_8_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -592,7 +592,7 @@ x_local_9_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -617,7 +617,7 @@ x_local_10_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -642,7 +642,7 @@ x_local_11_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -667,7 +667,7 @@ x_local_12_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -692,7 +692,7 @@ x_local_13_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
@@ -717,7 +717,7 @@ x_local_14_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_0iy #(
+dataflow_in_loop_1iI #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))

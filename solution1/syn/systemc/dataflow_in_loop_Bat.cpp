@@ -20,7 +20,7 @@ const sc_lv<8> dataflow_in_loop_Bat::ap_const_lv8_0 = "00000000";
 const bool dataflow_in_loop_Bat::ap_const_boolean_1 = true;
 
 dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name), mVcdFile(0) {
-    x_local_0_V_U = new dataflow_in_loop_0iy("x_local_0_V_U");
+    x_local_0_V_U = new dataflow_in_loop_1iI("x_local_0_V_U");
     x_local_0_V_U->clk(ap_clk);
     x_local_0_V_U->reset(ap_rst);
     x_local_0_V_U->i_address0(load_and_calc_norm61_U0_x_local_0_V_address0);
@@ -39,7 +39,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_0_V_U->i_write(ap_channel_done_x_local_0_V);
     x_local_0_V_U->t_empty_n(x_local_0_V_t_empty_n);
     x_local_0_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_1_V_U = new dataflow_in_loop_0iy("x_local_1_V_U");
+    x_local_1_V_U = new dataflow_in_loop_1iI("x_local_1_V_U");
     x_local_1_V_U->clk(ap_clk);
     x_local_1_V_U->reset(ap_rst);
     x_local_1_V_U->i_address0(load_and_calc_norm61_U0_x_local_1_V_address0);
@@ -58,7 +58,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_1_V_U->i_write(ap_channel_done_x_local_1_V);
     x_local_1_V_U->t_empty_n(x_local_1_V_t_empty_n);
     x_local_1_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_2_V_U = new dataflow_in_loop_0iy("x_local_2_V_U");
+    x_local_2_V_U = new dataflow_in_loop_1iI("x_local_2_V_U");
     x_local_2_V_U->clk(ap_clk);
     x_local_2_V_U->reset(ap_rst);
     x_local_2_V_U->i_address0(load_and_calc_norm61_U0_x_local_2_V_address0);
@@ -77,7 +77,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_2_V_U->i_write(ap_channel_done_x_local_2_V);
     x_local_2_V_U->t_empty_n(x_local_2_V_t_empty_n);
     x_local_2_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_3_V_U = new dataflow_in_loop_0iy("x_local_3_V_U");
+    x_local_3_V_U = new dataflow_in_loop_1iI("x_local_3_V_U");
     x_local_3_V_U->clk(ap_clk);
     x_local_3_V_U->reset(ap_rst);
     x_local_3_V_U->i_address0(load_and_calc_norm61_U0_x_local_3_V_address0);
@@ -96,7 +96,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_3_V_U->i_write(ap_channel_done_x_local_3_V);
     x_local_3_V_U->t_empty_n(x_local_3_V_t_empty_n);
     x_local_3_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_4_V_U = new dataflow_in_loop_0iy("x_local_4_V_U");
+    x_local_4_V_U = new dataflow_in_loop_1iI("x_local_4_V_U");
     x_local_4_V_U->clk(ap_clk);
     x_local_4_V_U->reset(ap_rst);
     x_local_4_V_U->i_address0(load_and_calc_norm61_U0_x_local_4_V_address0);
@@ -115,7 +115,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_4_V_U->i_write(ap_channel_done_x_local_4_V);
     x_local_4_V_U->t_empty_n(x_local_4_V_t_empty_n);
     x_local_4_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_5_V_U = new dataflow_in_loop_0iy("x_local_5_V_U");
+    x_local_5_V_U = new dataflow_in_loop_1iI("x_local_5_V_U");
     x_local_5_V_U->clk(ap_clk);
     x_local_5_V_U->reset(ap_rst);
     x_local_5_V_U->i_address0(load_and_calc_norm61_U0_x_local_5_V_address0);
@@ -134,7 +134,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_5_V_U->i_write(ap_channel_done_x_local_5_V);
     x_local_5_V_U->t_empty_n(x_local_5_V_t_empty_n);
     x_local_5_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_6_V_U = new dataflow_in_loop_0iy("x_local_6_V_U");
+    x_local_6_V_U = new dataflow_in_loop_1iI("x_local_6_V_U");
     x_local_6_V_U->clk(ap_clk);
     x_local_6_V_U->reset(ap_rst);
     x_local_6_V_U->i_address0(load_and_calc_norm61_U0_x_local_6_V_address0);
@@ -153,7 +153,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_6_V_U->i_write(ap_channel_done_x_local_6_V);
     x_local_6_V_U->t_empty_n(x_local_6_V_t_empty_n);
     x_local_6_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_7_V_U = new dataflow_in_loop_0iy("x_local_7_V_U");
+    x_local_7_V_U = new dataflow_in_loop_1iI("x_local_7_V_U");
     x_local_7_V_U->clk(ap_clk);
     x_local_7_V_U->reset(ap_rst);
     x_local_7_V_U->i_address0(load_and_calc_norm61_U0_x_local_7_V_address0);
@@ -172,7 +172,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_7_V_U->i_write(ap_channel_done_x_local_7_V);
     x_local_7_V_U->t_empty_n(x_local_7_V_t_empty_n);
     x_local_7_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_8_V_U = new dataflow_in_loop_0iy("x_local_8_V_U");
+    x_local_8_V_U = new dataflow_in_loop_1iI("x_local_8_V_U");
     x_local_8_V_U->clk(ap_clk);
     x_local_8_V_U->reset(ap_rst);
     x_local_8_V_U->i_address0(load_and_calc_norm61_U0_x_local_8_V_address0);
@@ -191,7 +191,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_8_V_U->i_write(ap_channel_done_x_local_8_V);
     x_local_8_V_U->t_empty_n(x_local_8_V_t_empty_n);
     x_local_8_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_9_V_U = new dataflow_in_loop_0iy("x_local_9_V_U");
+    x_local_9_V_U = new dataflow_in_loop_1iI("x_local_9_V_U");
     x_local_9_V_U->clk(ap_clk);
     x_local_9_V_U->reset(ap_rst);
     x_local_9_V_U->i_address0(load_and_calc_norm61_U0_x_local_9_V_address0);
@@ -210,7 +210,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_9_V_U->i_write(ap_channel_done_x_local_9_V);
     x_local_9_V_U->t_empty_n(x_local_9_V_t_empty_n);
     x_local_9_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_10_V_U = new dataflow_in_loop_0iy("x_local_10_V_U");
+    x_local_10_V_U = new dataflow_in_loop_1iI("x_local_10_V_U");
     x_local_10_V_U->clk(ap_clk);
     x_local_10_V_U->reset(ap_rst);
     x_local_10_V_U->i_address0(load_and_calc_norm61_U0_x_local_10_V_address0);
@@ -229,7 +229,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_10_V_U->i_write(ap_channel_done_x_local_10_V);
     x_local_10_V_U->t_empty_n(x_local_10_V_t_empty_n);
     x_local_10_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_11_V_U = new dataflow_in_loop_0iy("x_local_11_V_U");
+    x_local_11_V_U = new dataflow_in_loop_1iI("x_local_11_V_U");
     x_local_11_V_U->clk(ap_clk);
     x_local_11_V_U->reset(ap_rst);
     x_local_11_V_U->i_address0(load_and_calc_norm61_U0_x_local_11_V_address0);
@@ -248,7 +248,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_11_V_U->i_write(ap_channel_done_x_local_11_V);
     x_local_11_V_U->t_empty_n(x_local_11_V_t_empty_n);
     x_local_11_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_12_V_U = new dataflow_in_loop_0iy("x_local_12_V_U");
+    x_local_12_V_U = new dataflow_in_loop_1iI("x_local_12_V_U");
     x_local_12_V_U->clk(ap_clk);
     x_local_12_V_U->reset(ap_rst);
     x_local_12_V_U->i_address0(load_and_calc_norm61_U0_x_local_12_V_address0);
@@ -267,7 +267,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_12_V_U->i_write(ap_channel_done_x_local_12_V);
     x_local_12_V_U->t_empty_n(x_local_12_V_t_empty_n);
     x_local_12_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_13_V_U = new dataflow_in_loop_0iy("x_local_13_V_U");
+    x_local_13_V_U = new dataflow_in_loop_1iI("x_local_13_V_U");
     x_local_13_V_U->clk(ap_clk);
     x_local_13_V_U->reset(ap_rst);
     x_local_13_V_U->i_address0(load_and_calc_norm61_U0_x_local_13_V_address0);
@@ -286,7 +286,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_13_V_U->i_write(ap_channel_done_x_local_13_V);
     x_local_13_V_U->t_empty_n(x_local_13_V_t_empty_n);
     x_local_13_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_14_V_U = new dataflow_in_loop_0iy("x_local_14_V_U");
+    x_local_14_V_U = new dataflow_in_loop_1iI("x_local_14_V_U");
     x_local_14_V_U->clk(ap_clk);
     x_local_14_V_U->reset(ap_rst);
     x_local_14_V_U->i_address0(load_and_calc_norm61_U0_x_local_14_V_address0);
@@ -305,7 +305,7 @@ dataflow_in_loop_Bat::dataflow_in_loop_Bat(sc_module_name name) : sc_module(name
     x_local_14_V_U->i_write(ap_channel_done_x_local_14_V);
     x_local_14_V_U->t_empty_n(x_local_14_V_t_empty_n);
     x_local_14_V_U->t_read(compute_and_output_U0_ap_ready);
-    x_local_15_V_U = new dataflow_in_loop_0iy("x_local_15_V_U");
+    x_local_15_V_U = new dataflow_in_loop_1iI("x_local_15_V_U");
     x_local_15_V_U->clk(ap_clk);
     x_local_15_V_U->reset(ap_rst);
     x_local_15_V_U->i_address0(load_and_calc_norm61_U0_x_local_15_V_address0);

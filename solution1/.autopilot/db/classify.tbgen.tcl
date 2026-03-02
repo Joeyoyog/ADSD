@@ -7,8 +7,8 @@ set C_TypeInfoList {{
 "7": [ "ap_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}], 
 "0": [ "stream<ap_axiu<64, 1, 1, 1> >", {"hls_type": {"stream": [[[[],"8"]],"3"]}}], 
 "8": [ "ap_axiu<64, 1, 1, 1>", {"struct": [[],[{"D":[[], {"scalar": { "int": 64}}]},{"U":[[], {"scalar": { "int": 1}}]},{"TI":[[], {"scalar": { "int": 1}}]},{"TD":[[], {"scalar": { "int": 1}}]}],[{ "data": [[], "9"]},{ "keep": [[], "10"]},{ "strb": [[], "10"]},{ "user": [[], "5"]},{ "last": [[], "5"]},{ "id": [[], "5"]},{ "dest": [[], "5"]}],""]}], 
-"9": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
 "10": [ "ap_uint<8>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 8}}]],""]}}], 
+"9": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
 "5": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}],
 "3": ["hls", ""]
 }}
@@ -135,7 +135,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "2413832", "EstimateLatencyMax" : "2413832",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "2270777", "EstimateLatencyMax" : "2270777",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -229,6 +229,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "svs_V_15", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "2", "SubInstance" : "dataflow_in_loop_Bat_U0", "Port" : "svs_V_15"}]},
+			{"Name" : "EXP_LUT_V", "Type" : "Memory", "Direction" : "I",
+				"SubConnect" : [
+					{"ID" : "2", "SubInstance" : "dataflow_in_loop_Bat_U0", "Port" : "EXP_LUT_V"}]},
 			{"Name" : "alphas_V_044", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "2", "SubInstance" : "dataflow_in_loop_Bat_U0", "Port" : "alphas_V_044"}]},
@@ -326,13 +329,13 @@ set RtlHierarchyInfo {[
 				"SubConnect" : [
 					{"ID" : "2", "SubInstance" : "dataflow_in_loop_Bat_U0", "Port" : "sv_norms_V_15"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.classify_control_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0", "Parent" : "0", "Child" : ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "73", "74"],
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0", "Parent" : "0", "Child" : ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "74", "75"],
 		"CDFG" : "dataflow_in_loop_Bat",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1029", "EstimateLatencyMax" : "1029",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "974", "EstimateLatencyMax" : "974",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -426,6 +429,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "svs_V_15", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "20", "SubInstance" : "compute_and_output_U0", "Port" : "svs_V_15"}]},
+			{"Name" : "EXP_LUT_V", "Type" : "Memory", "Direction" : "I",
+				"SubConnect" : [
+					{"ID" : "20", "SubInstance" : "compute_and_output_U0", "Port" : "EXP_LUT_V"}]},
 			{"Name" : "alphas_V_044", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "20", "SubInstance" : "compute_and_output_U0", "Port" : "alphas_V_044"}]},
@@ -578,16 +584,16 @@ set RtlHierarchyInfo {[
 			{"Name" : "x_local_14_V", "Type" : "Memory", "Direction" : "O", "DependentProc" : "20", "DependentChan" : "17"},
 			{"Name" : "x_local_15_V", "Type" : "Memory", "Direction" : "O", "DependentProc" : "20", "DependentChan" : "18"},
 			{"Name" : "n_0_i_i", "Type" : "None", "Direction" : "I"},
-			{"Name" : "n_0_i_i_out", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "20", "DependentChan" : "73",
+			{"Name" : "n_0_i_i_out", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "20", "DependentChan" : "74",
 				"BlockSignal" : [
 					{"Name" : "n_0_i_i_out_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0", "Parent" : "2", "Child" : ["21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72"],
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0", "Parent" : "2", "Child" : ["21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73"],
 		"CDFG" : "compute_and_output",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "927", "EstimateLatencyMax" : "927",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "872", "EstimateLatencyMax" : "872",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -611,14 +617,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "x_local_13_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "16"},
 			{"Name" : "x_local_14_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "17"},
 			{"Name" : "x_local_15_V", "Type" : "Memory", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "18"},
-			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "74"},
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "75"},
 			{"Name" : "out_stream_V_data_V", "Type" : "Axis", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "out_stream_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "out_stream_V_keep_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "out_stream_V_strb_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "out_stream_V_last_V", "Type" : "Axis", "Direction" : "O"},
-			{"Name" : "n_0_i_i", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "73",
+			{"Name" : "n_0_i_i", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "19", "DependentChan" : "74",
 				"BlockSignal" : [
 					{"Name" : "n_0_i_i_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "svs_V_0", "Type" : "Memory", "Direction" : "I"},
@@ -637,6 +643,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "svs_V_13", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_14", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "svs_V_15", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "EXP_LUT_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "alphas_V_044", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "alphas_V_145", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "alphas_V_252", "Type" : "Memory", "Direction" : "I"},
@@ -685,44 +692,45 @@ set RtlHierarchyInfo {[
 	{"ID" : "34", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.svs_V_13_U", "Parent" : "20"},
 	{"ID" : "35", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.svs_V_14_U", "Parent" : "20"},
 	{"ID" : "36", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.svs_V_15_U", "Parent" : "20"},
-	{"ID" : "37", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_044_U", "Parent" : "20"},
-	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_145_U", "Parent" : "20"},
-	{"ID" : "39", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_252_U", "Parent" : "20"},
-	{"ID" : "40", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_353_U", "Parent" : "20"},
-	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_454_U", "Parent" : "20"},
-	{"ID" : "42", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_555_U", "Parent" : "20"},
-	{"ID" : "43", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_656_U", "Parent" : "20"},
-	{"ID" : "44", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_757_U", "Parent" : "20"},
-	{"ID" : "45", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_858_U", "Parent" : "20"},
-	{"ID" : "46", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_959_U", "Parent" : "20"},
-	{"ID" : "47", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1046_U", "Parent" : "20"},
-	{"ID" : "48", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1147_U", "Parent" : "20"},
-	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1248_U", "Parent" : "20"},
-	{"ID" : "50", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1349_U", "Parent" : "20"},
-	{"ID" : "51", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1450_U", "Parent" : "20"},
-	{"ID" : "52", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1551_U", "Parent" : "20"},
-	{"ID" : "53", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_0_U", "Parent" : "20"},
-	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_1_U", "Parent" : "20"},
-	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_2_U", "Parent" : "20"},
-	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_3_U", "Parent" : "20"},
-	{"ID" : "57", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_4_U", "Parent" : "20"},
-	{"ID" : "58", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_5_U", "Parent" : "20"},
-	{"ID" : "59", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_6_U", "Parent" : "20"},
-	{"ID" : "60", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_7_U", "Parent" : "20"},
-	{"ID" : "61", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_8_U", "Parent" : "20"},
-	{"ID" : "62", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_9_U", "Parent" : "20"},
-	{"ID" : "63", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_10_U", "Parent" : "20"},
-	{"ID" : "64", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_11_U", "Parent" : "20"},
-	{"ID" : "65", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_12_U", "Parent" : "20"},
-	{"ID" : "66", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_13_U", "Parent" : "20"},
-	{"ID" : "67", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_14_U", "Parent" : "20"},
-	{"ID" : "68", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_15_U", "Parent" : "20"},
-	{"ID" : "69", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mux_164_Xh4_U26", "Parent" : "20"},
-	{"ID" : "70", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mux_164_Yie_U27", "Parent" : "20"},
-	{"ID" : "71", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mux_164_Xh4_U28", "Parent" : "20"},
-	{"ID" : "72", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mul_mul_Zio_U29", "Parent" : "20"},
-	{"ID" : "73", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.n_0_i_i_c_U", "Parent" : "2"},
-	{"ID" : "74", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.internal_norm_V_U", "Parent" : "2"}]}
+	{"ID" : "37", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.EXP_LUT_V_U", "Parent" : "20"},
+	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_044_U", "Parent" : "20"},
+	{"ID" : "39", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_145_U", "Parent" : "20"},
+	{"ID" : "40", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_252_U", "Parent" : "20"},
+	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_353_U", "Parent" : "20"},
+	{"ID" : "42", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_454_U", "Parent" : "20"},
+	{"ID" : "43", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_555_U", "Parent" : "20"},
+	{"ID" : "44", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_656_U", "Parent" : "20"},
+	{"ID" : "45", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_757_U", "Parent" : "20"},
+	{"ID" : "46", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_858_U", "Parent" : "20"},
+	{"ID" : "47", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_959_U", "Parent" : "20"},
+	{"ID" : "48", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1046_U", "Parent" : "20"},
+	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1147_U", "Parent" : "20"},
+	{"ID" : "50", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1248_U", "Parent" : "20"},
+	{"ID" : "51", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1349_U", "Parent" : "20"},
+	{"ID" : "52", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1450_U", "Parent" : "20"},
+	{"ID" : "53", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.alphas_V_1551_U", "Parent" : "20"},
+	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_0_U", "Parent" : "20"},
+	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_1_U", "Parent" : "20"},
+	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_2_U", "Parent" : "20"},
+	{"ID" : "57", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_3_U", "Parent" : "20"},
+	{"ID" : "58", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_4_U", "Parent" : "20"},
+	{"ID" : "59", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_5_U", "Parent" : "20"},
+	{"ID" : "60", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_6_U", "Parent" : "20"},
+	{"ID" : "61", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_7_U", "Parent" : "20"},
+	{"ID" : "62", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_8_U", "Parent" : "20"},
+	{"ID" : "63", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_9_U", "Parent" : "20"},
+	{"ID" : "64", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_10_U", "Parent" : "20"},
+	{"ID" : "65", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_11_U", "Parent" : "20"},
+	{"ID" : "66", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_12_U", "Parent" : "20"},
+	{"ID" : "67", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_13_U", "Parent" : "20"},
+	{"ID" : "68", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_14_U", "Parent" : "20"},
+	{"ID" : "69", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.sv_norms_V_15_U", "Parent" : "20"},
+	{"ID" : "70", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mux_164_Yie_U26", "Parent" : "20"},
+	{"ID" : "71", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mux_164_Yie_U27", "Parent" : "20"},
+	{"ID" : "72", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mul_mul_Zio_U28", "Parent" : "20"},
+	{"ID" : "73", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.compute_and_output_U0.classify_mul_mul_0iy_U29", "Parent" : "20"},
+	{"ID" : "74", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.n_0_i_i_c_U", "Parent" : "2"},
+	{"ID" : "75", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.dataflow_in_loop_Bat_U0.internal_norm_V_U", "Parent" : "2"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -755,6 +763,7 @@ set ArgLastReadFirstWriteLatency {
 		svs_V_13 {Type I LastRead -1 FirstWrite -1}
 		svs_V_14 {Type I LastRead -1 FirstWrite -1}
 		svs_V_15 {Type I LastRead -1 FirstWrite -1}
+		EXP_LUT_V {Type I LastRead -1 FirstWrite -1}
 		alphas_V_044 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_145 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_252 {Type I LastRead -1 FirstWrite -1}
@@ -816,6 +825,7 @@ set ArgLastReadFirstWriteLatency {
 		svs_V_13 {Type I LastRead -1 FirstWrite -1}
 		svs_V_14 {Type I LastRead -1 FirstWrite -1}
 		svs_V_15 {Type I LastRead -1 FirstWrite -1}
+		EXP_LUT_V {Type I LastRead -1 FirstWrite -1}
 		alphas_V_044 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_145 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_252 {Type I LastRead -1 FirstWrite -1}
@@ -913,6 +923,7 @@ set ArgLastReadFirstWriteLatency {
 		svs_V_13 {Type I LastRead -1 FirstWrite -1}
 		svs_V_14 {Type I LastRead -1 FirstWrite -1}
 		svs_V_15 {Type I LastRead -1 FirstWrite -1}
+		EXP_LUT_V {Type I LastRead -1 FirstWrite -1}
 		alphas_V_044 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_145 {Type I LastRead -1 FirstWrite -1}
 		alphas_V_252 {Type I LastRead -1 FirstWrite -1}
@@ -949,8 +960,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "2413832", "Max" : "2413832"}
-	, {"Name" : "Interval", "Min" : "2413833", "Max" : "2413833"}
+	{"Name" : "Latency", "Min" : "2270777", "Max" : "2270777"}
+	, {"Name" : "Interval", "Min" : "2270778", "Max" : "2270778"}
 ]}
 
 set PipelineEnableSignalInfo {[

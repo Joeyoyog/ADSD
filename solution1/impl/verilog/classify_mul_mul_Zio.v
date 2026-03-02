@@ -2,11 +2,11 @@
 `timescale 1 ns / 1 ps
 
   module classify_mul_mul_Zio_DSP48_0(a, b, p);
-input signed [22 - 1 : 0] a;
-input signed [8 - 1 : 0] b;
-output signed [30 - 1 : 0] p;
+input [12 - 1 : 0] a;
+input [5 - 1 : 0] b;
+output [17 - 1 : 0] p;
 
-assign p = $signed (a) * $signed (b);
+assign p = $unsigned (a) * $unsigned (b);
 
 endmodule
 

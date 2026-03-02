@@ -10,7 +10,7 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity dataflow_in_loop_0iy_memcore_ram is 
+entity dataflow_in_loop_1iI_memcore_ram is 
     generic(
             MEM_TYPE    : string := "distributed"; 
             DWIDTH     : integer := 8; 
@@ -33,7 +33,7 @@ entity dataflow_in_loop_0iy_memcore_ram is
 end entity; 
 
 
-architecture rtl of dataflow_in_loop_0iy_memcore_ram is 
+architecture rtl of dataflow_in_loop_1iI_memcore_ram is 
 
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 signal addr1_tmp : std_logic_vector(AWIDTH-1 downto 0); 
@@ -103,7 +103,7 @@ end rtl;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity dataflow_in_loop_0iy_memcore is
+entity dataflow_in_loop_1iI_memcore is
     generic (
         DataWidth : INTEGER := 8;
         AddressRange : INTEGER := 98;
@@ -123,8 +123,8 @@ entity dataflow_in_loop_0iy_memcore is
         q1 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture arch of dataflow_in_loop_0iy_memcore is
-    component dataflow_in_loop_0iy_memcore_ram is
+architecture arch of dataflow_in_loop_1iI_memcore is
+    component dataflow_in_loop_1iI_memcore_ram is
         port (
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
@@ -142,7 +142,7 @@ architecture arch of dataflow_in_loop_0iy_memcore is
 
 
 begin
-    dataflow_in_loop_0iy_memcore_ram_U :  component dataflow_in_loop_0iy_memcore_ram
+    dataflow_in_loop_1iI_memcore_ram_U :  component dataflow_in_loop_1iI_memcore_ram
     port map (
         clk => clk,
         addr0 => address0,
