@@ -24,10 +24,12 @@ port (
     out_stream_TKEEP : OUT STD_LOGIC_VECTOR (0 downto 0);
     out_stream_TSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
     out_stream_TLAST : OUT STD_LOGIC_VECTOR (0 downto 0);
-    n_0_i_i : IN STD_LOGIC_VECTOR (11 downto 0);
+    n : IN STD_LOGIC_VECTOR (30 downto 0);
+    num_images : IN STD_LOGIC_VECTOR (31 downto 0);
     in_stream_TVALID : IN STD_LOGIC;
     in_stream_TREADY : OUT STD_LOGIC;
-    n_0_i_i_ap_vld : IN STD_LOGIC;
+    n_ap_vld : IN STD_LOGIC;
+    num_images_ap_vld : IN STD_LOGIC;
     out_stream_TVALID : OUT STD_LOGIC;
     out_stream_TREADY : IN STD_LOGIC;
     ap_done : OUT STD_LOGIC;
@@ -78,145 +80,147 @@ architecture behav of dataflow_in_loop_Bat is
     signal x_local_14_V_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal x_local_15_V_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal x_local_15_V_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_ap_start : STD_LOGIC;
-    signal load_and_calc_norm61_U0_ap_done : STD_LOGIC;
-    signal load_and_calc_norm61_U0_ap_continue : STD_LOGIC;
-    signal load_and_calc_norm61_U0_ap_idle : STD_LOGIC;
-    signal load_and_calc_norm61_U0_ap_ready : STD_LOGIC;
-    signal load_and_calc_norm61_U0_in_stream_TREADY : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_0_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_0_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_0_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_0_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_1_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_1_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_1_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_1_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_2_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_2_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_2_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_2_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_3_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_3_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_3_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_3_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_4_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_4_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_4_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_4_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_5_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_5_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_5_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_5_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_6_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_6_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_6_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_6_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_7_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_7_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_7_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_7_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_8_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_8_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_8_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_8_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_9_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_9_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_9_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_9_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_10_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_10_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_10_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_10_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_11_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_11_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_11_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_11_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_12_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_12_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_12_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_12_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_13_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_13_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_13_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_13_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_14_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_14_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_14_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_14_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_x_local_15_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal load_and_calc_norm61_U0_x_local_15_V_ce0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_15_V_we0 : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_15_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal load_and_calc_norm61_U0_n_0_i_i_out_din : STD_LOGIC_VECTOR (11 downto 0);
-    signal load_and_calc_norm61_U0_n_0_i_i_out_write : STD_LOGIC;
-    signal load_and_calc_norm61_U0_ap_return : STD_LOGIC_VECTOR (23 downto 0);
+    signal load_and_calc_norm53_U0_ap_start : STD_LOGIC;
+    signal load_and_calc_norm53_U0_ap_done : STD_LOGIC;
+    signal load_and_calc_norm53_U0_ap_continue : STD_LOGIC;
+    signal load_and_calc_norm53_U0_ap_idle : STD_LOGIC;
+    signal load_and_calc_norm53_U0_ap_ready : STD_LOGIC;
+    signal load_and_calc_norm53_U0_in_stream_TREADY : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_0_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_0_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_0_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_0_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_1_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_1_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_1_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_1_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_2_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_2_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_2_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_2_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_3_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_3_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_3_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_3_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_4_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_4_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_4_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_4_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_5_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_5_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_5_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_5_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_6_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_6_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_6_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_6_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_7_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_7_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_7_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_7_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_8_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_8_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_8_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_8_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_9_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_9_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_9_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_9_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_10_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_10_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_10_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_10_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_11_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_11_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_11_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_11_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_12_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_12_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_12_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_12_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_13_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_13_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_13_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_13_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_14_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_14_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_14_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_14_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_x_local_15_V_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_x_local_15_V_ce0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_15_V_we0 : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_15_V_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal load_and_calc_norm53_U0_n_out_din : STD_LOGIC_VECTOR (30 downto 0);
+    signal load_and_calc_norm53_U0_n_out_write : STD_LOGIC;
+    signal load_and_calc_norm53_U0_num_images_out_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal load_and_calc_norm53_U0_num_images_out_write : STD_LOGIC;
+    signal load_and_calc_norm53_U0_ap_return : STD_LOGIC_VECTOR (23 downto 0);
     signal ap_channel_done_internal_norm_V : STD_LOGIC;
     signal internal_norm_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_internal_norm_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_internal_norm_V : STD_LOGIC;
     signal ap_channel_done_x_local_15_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_15_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_15_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_15_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_15_V : STD_LOGIC;
     signal ap_channel_done_x_local_14_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_14_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_14_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_14_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_14_V : STD_LOGIC;
     signal ap_channel_done_x_local_13_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_13_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_13_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_13_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_13_V : STD_LOGIC;
     signal ap_channel_done_x_local_12_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_12_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_12_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_12_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_12_V : STD_LOGIC;
     signal ap_channel_done_x_local_11_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_11_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_11_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_11_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_11_V : STD_LOGIC;
     signal ap_channel_done_x_local_10_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_10_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_10_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_10_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_10_V : STD_LOGIC;
     signal ap_channel_done_x_local_9_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_9_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_9_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_9_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_9_V : STD_LOGIC;
     signal ap_channel_done_x_local_8_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_8_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_8_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_8_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_8_V : STD_LOGIC;
     signal ap_channel_done_x_local_7_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_7_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_7_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_7_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_7_V : STD_LOGIC;
     signal ap_channel_done_x_local_6_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_6_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_6_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_6_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_6_V : STD_LOGIC;
     signal ap_channel_done_x_local_5_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_5_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_5_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_5_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_5_V : STD_LOGIC;
     signal ap_channel_done_x_local_4_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_4_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_4_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_4_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_4_V : STD_LOGIC;
     signal ap_channel_done_x_local_3_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_3_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_3_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_3_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_3_V : STD_LOGIC;
     signal ap_channel_done_x_local_2_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_2_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_2_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_2_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_2_V : STD_LOGIC;
     signal ap_channel_done_x_local_1_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_1_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_1_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_1_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_1_V : STD_LOGIC;
     signal ap_channel_done_x_local_0_V : STD_LOGIC;
-    signal load_and_calc_norm61_U0_x_local_0_V_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_x_local_0_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_0_V : STD_LOGIC := '0';
     signal ap_sync_channel_write_x_local_0_V : STD_LOGIC;
     signal compute_and_output_U0_ap_start : STD_LOGIC;
@@ -261,7 +265,8 @@ architecture behav of dataflow_in_loop_Bat is
     signal compute_and_output_U0_out_stream_TKEEP : STD_LOGIC_VECTOR (0 downto 0);
     signal compute_and_output_U0_out_stream_TSTRB : STD_LOGIC_VECTOR (0 downto 0);
     signal compute_and_output_U0_out_stream_TLAST : STD_LOGIC_VECTOR (0 downto 0);
-    signal compute_and_output_U0_n_0_i_i_read : STD_LOGIC;
+    signal compute_and_output_U0_n_read : STD_LOGIC;
+    signal compute_and_output_U0_num_images_read : STD_LOGIC;
     signal ap_sync_continue : STD_LOGIC;
     signal x_local_0_V_i_full_n : STD_LOGIC;
     signal x_local_0_V_t_empty_n : STD_LOGIC;
@@ -295,19 +300,22 @@ architecture behav of dataflow_in_loop_Bat is
     signal x_local_14_V_t_empty_n : STD_LOGIC;
     signal x_local_15_V_i_full_n : STD_LOGIC;
     signal x_local_15_V_t_empty_n : STD_LOGIC;
-    signal n_0_i_i_c_full_n : STD_LOGIC;
-    signal n_0_i_i_c_dout : STD_LOGIC_VECTOR (11 downto 0);
-    signal n_0_i_i_c_empty_n : STD_LOGIC;
+    signal n_c_full_n : STD_LOGIC;
+    signal n_c_dout : STD_LOGIC_VECTOR (30 downto 0);
+    signal n_c_empty_n : STD_LOGIC;
+    signal num_images_c_full_n : STD_LOGIC;
+    signal num_images_c_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal num_images_c_empty_n : STD_LOGIC;
     signal internal_norm_V_dout : STD_LOGIC_VECTOR (23 downto 0);
     signal internal_norm_V_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
-    signal load_and_calc_norm61_U0_start_full_n : STD_LOGIC;
-    signal load_and_calc_norm61_U0_start_write : STD_LOGIC;
+    signal load_and_calc_norm53_U0_start_full_n : STD_LOGIC;
+    signal load_and_calc_norm53_U0_start_write : STD_LOGIC;
     signal compute_and_output_U0_start_full_n : STD_LOGIC;
     signal compute_and_output_U0_start_write : STD_LOGIC;
 
-    component load_and_calc_norm61 IS
+    component load_and_calc_norm53 IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -389,10 +397,14 @@ architecture behav of dataflow_in_loop_Bat is
         x_local_15_V_ce0 : OUT STD_LOGIC;
         x_local_15_V_we0 : OUT STD_LOGIC;
         x_local_15_V_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        n_0_i_i : IN STD_LOGIC_VECTOR (11 downto 0);
-        n_0_i_i_out_din : OUT STD_LOGIC_VECTOR (11 downto 0);
-        n_0_i_i_out_full_n : IN STD_LOGIC;
-        n_0_i_i_out_write : OUT STD_LOGIC;
+        n : IN STD_LOGIC_VECTOR (30 downto 0);
+        num_images : IN STD_LOGIC_VECTOR (31 downto 0);
+        n_out_din : OUT STD_LOGIC_VECTOR (30 downto 0);
+        n_out_full_n : IN STD_LOGIC;
+        n_out_write : OUT STD_LOGIC;
+        num_images_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        num_images_out_full_n : IN STD_LOGIC;
+        num_images_out_write : OUT STD_LOGIC;
         ap_return : OUT STD_LOGIC_VECTOR (23 downto 0) );
     end component;
 
@@ -461,13 +473,16 @@ architecture behav of dataflow_in_loop_Bat is
         out_stream_TKEEP : OUT STD_LOGIC_VECTOR (0 downto 0);
         out_stream_TSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
         out_stream_TLAST : OUT STD_LOGIC_VECTOR (0 downto 0);
-        n_0_i_i_dout : IN STD_LOGIC_VECTOR (11 downto 0);
-        n_0_i_i_empty_n : IN STD_LOGIC;
-        n_0_i_i_read : OUT STD_LOGIC );
+        n_dout : IN STD_LOGIC_VECTOR (30 downto 0);
+        n_empty_n : IN STD_LOGIC;
+        n_read : OUT STD_LOGIC;
+        num_images_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        num_images_empty_n : IN STD_LOGIC;
+        num_images_read : OUT STD_LOGIC );
     end component;
 
 
-    component dataflow_in_loop_1iI IS
+    component dataflow_in_loop_bPq IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -494,16 +509,31 @@ architecture behav of dataflow_in_loop_Bat is
     end component;
 
 
-    component fifo_w12_d2_A IS
+    component fifo_w31_d2_A IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (11 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (30 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (11 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (30 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component fifo_w32_d2_A IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (31 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
@@ -526,7 +556,7 @@ architecture behav of dataflow_in_loop_Bat is
 
 
 begin
-    x_local_0_V_U : component dataflow_in_loop_1iI
+    x_local_0_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -534,10 +564,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_0_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_0_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_0_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_0_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_0_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_0_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_0_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_0_V_d0,
         i_q0 => x_local_0_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_0_V_address0,
         t_ce0 => compute_and_output_U0_x_local_0_V_ce0,
@@ -551,7 +581,7 @@ begin
         t_empty_n => x_local_0_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_1_V_U : component dataflow_in_loop_1iI
+    x_local_1_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -559,10 +589,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_1_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_1_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_1_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_1_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_1_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_1_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_1_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_1_V_d0,
         i_q0 => x_local_1_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_1_V_address0,
         t_ce0 => compute_and_output_U0_x_local_1_V_ce0,
@@ -576,7 +606,7 @@ begin
         t_empty_n => x_local_1_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_2_V_U : component dataflow_in_loop_1iI
+    x_local_2_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -584,10 +614,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_2_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_2_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_2_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_2_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_2_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_2_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_2_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_2_V_d0,
         i_q0 => x_local_2_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_2_V_address0,
         t_ce0 => compute_and_output_U0_x_local_2_V_ce0,
@@ -601,7 +631,7 @@ begin
         t_empty_n => x_local_2_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_3_V_U : component dataflow_in_loop_1iI
+    x_local_3_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -609,10 +639,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_3_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_3_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_3_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_3_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_3_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_3_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_3_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_3_V_d0,
         i_q0 => x_local_3_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_3_V_address0,
         t_ce0 => compute_and_output_U0_x_local_3_V_ce0,
@@ -626,7 +656,7 @@ begin
         t_empty_n => x_local_3_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_4_V_U : component dataflow_in_loop_1iI
+    x_local_4_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -634,10 +664,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_4_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_4_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_4_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_4_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_4_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_4_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_4_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_4_V_d0,
         i_q0 => x_local_4_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_4_V_address0,
         t_ce0 => compute_and_output_U0_x_local_4_V_ce0,
@@ -651,7 +681,7 @@ begin
         t_empty_n => x_local_4_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_5_V_U : component dataflow_in_loop_1iI
+    x_local_5_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -659,10 +689,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_5_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_5_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_5_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_5_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_5_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_5_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_5_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_5_V_d0,
         i_q0 => x_local_5_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_5_V_address0,
         t_ce0 => compute_and_output_U0_x_local_5_V_ce0,
@@ -676,7 +706,7 @@ begin
         t_empty_n => x_local_5_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_6_V_U : component dataflow_in_loop_1iI
+    x_local_6_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -684,10 +714,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_6_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_6_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_6_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_6_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_6_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_6_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_6_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_6_V_d0,
         i_q0 => x_local_6_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_6_V_address0,
         t_ce0 => compute_and_output_U0_x_local_6_V_ce0,
@@ -701,7 +731,7 @@ begin
         t_empty_n => x_local_6_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_7_V_U : component dataflow_in_loop_1iI
+    x_local_7_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -709,10 +739,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_7_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_7_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_7_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_7_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_7_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_7_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_7_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_7_V_d0,
         i_q0 => x_local_7_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_7_V_address0,
         t_ce0 => compute_and_output_U0_x_local_7_V_ce0,
@@ -726,7 +756,7 @@ begin
         t_empty_n => x_local_7_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_8_V_U : component dataflow_in_loop_1iI
+    x_local_8_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -734,10 +764,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_8_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_8_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_8_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_8_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_8_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_8_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_8_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_8_V_d0,
         i_q0 => x_local_8_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_8_V_address0,
         t_ce0 => compute_and_output_U0_x_local_8_V_ce0,
@@ -751,7 +781,7 @@ begin
         t_empty_n => x_local_8_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_9_V_U : component dataflow_in_loop_1iI
+    x_local_9_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -759,10 +789,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_9_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_9_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_9_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_9_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_9_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_9_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_9_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_9_V_d0,
         i_q0 => x_local_9_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_9_V_address0,
         t_ce0 => compute_and_output_U0_x_local_9_V_ce0,
@@ -776,7 +806,7 @@ begin
         t_empty_n => x_local_9_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_10_V_U : component dataflow_in_loop_1iI
+    x_local_10_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -784,10 +814,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_10_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_10_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_10_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_10_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_10_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_10_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_10_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_10_V_d0,
         i_q0 => x_local_10_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_10_V_address0,
         t_ce0 => compute_and_output_U0_x_local_10_V_ce0,
@@ -801,7 +831,7 @@ begin
         t_empty_n => x_local_10_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_11_V_U : component dataflow_in_loop_1iI
+    x_local_11_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -809,10 +839,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_11_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_11_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_11_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_11_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_11_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_11_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_11_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_11_V_d0,
         i_q0 => x_local_11_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_11_V_address0,
         t_ce0 => compute_and_output_U0_x_local_11_V_ce0,
@@ -826,7 +856,7 @@ begin
         t_empty_n => x_local_11_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_12_V_U : component dataflow_in_loop_1iI
+    x_local_12_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -834,10 +864,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_12_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_12_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_12_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_12_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_12_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_12_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_12_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_12_V_d0,
         i_q0 => x_local_12_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_12_V_address0,
         t_ce0 => compute_and_output_U0_x_local_12_V_ce0,
@@ -851,7 +881,7 @@ begin
         t_empty_n => x_local_12_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_13_V_U : component dataflow_in_loop_1iI
+    x_local_13_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -859,10 +889,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_13_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_13_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_13_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_13_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_13_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_13_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_13_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_13_V_d0,
         i_q0 => x_local_13_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_13_V_address0,
         t_ce0 => compute_and_output_U0_x_local_13_V_ce0,
@@ -876,7 +906,7 @@ begin
         t_empty_n => x_local_13_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_14_V_U : component dataflow_in_loop_1iI
+    x_local_14_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -884,10 +914,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_14_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_14_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_14_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_14_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_14_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_14_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_14_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_14_V_d0,
         i_q0 => x_local_14_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_14_V_address0,
         t_ce0 => compute_and_output_U0_x_local_14_V_ce0,
@@ -901,7 +931,7 @@ begin
         t_empty_n => x_local_14_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_15_V_U : component dataflow_in_loop_1iI
+    x_local_15_V_U : component dataflow_in_loop_bPq
     generic map (
         DataWidth => 8,
         AddressRange => 49,
@@ -909,10 +939,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => load_and_calc_norm61_U0_x_local_15_V_address0,
-        i_ce0 => load_and_calc_norm61_U0_x_local_15_V_ce0,
-        i_we0 => load_and_calc_norm61_U0_x_local_15_V_we0,
-        i_d0 => load_and_calc_norm61_U0_x_local_15_V_d0,
+        i_address0 => load_and_calc_norm53_U0_x_local_15_V_address0,
+        i_ce0 => load_and_calc_norm53_U0_x_local_15_V_ce0,
+        i_we0 => load_and_calc_norm53_U0_x_local_15_V_we0,
+        i_d0 => load_and_calc_norm53_U0_x_local_15_V_d0,
         i_q0 => x_local_15_V_i_q0,
         t_address0 => compute_and_output_U0_x_local_15_V_address0,
         t_ce0 => compute_and_output_U0_x_local_15_V_ce0,
@@ -926,93 +956,97 @@ begin
         t_empty_n => x_local_15_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    load_and_calc_norm61_U0 : component load_and_calc_norm61
+    load_and_calc_norm53_U0 : component load_and_calc_norm53
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        ap_start => load_and_calc_norm61_U0_ap_start,
-        ap_done => load_and_calc_norm61_U0_ap_done,
-        ap_continue => load_and_calc_norm61_U0_ap_continue,
-        ap_idle => load_and_calc_norm61_U0_ap_idle,
-        ap_ready => load_and_calc_norm61_U0_ap_ready,
+        ap_start => load_and_calc_norm53_U0_ap_start,
+        ap_done => load_and_calc_norm53_U0_ap_done,
+        ap_continue => load_and_calc_norm53_U0_ap_continue,
+        ap_idle => load_and_calc_norm53_U0_ap_idle,
+        ap_ready => load_and_calc_norm53_U0_ap_ready,
         in_stream_TDATA => in_stream_TDATA,
         in_stream_TVALID => in_stream_TVALID,
-        in_stream_TREADY => load_and_calc_norm61_U0_in_stream_TREADY,
+        in_stream_TREADY => load_and_calc_norm53_U0_in_stream_TREADY,
         in_stream_TKEEP => in_stream_TKEEP,
         in_stream_TSTRB => in_stream_TSTRB,
         in_stream_TUSER => in_stream_TUSER,
         in_stream_TLAST => in_stream_TLAST,
         in_stream_TID => in_stream_TID,
         in_stream_TDEST => in_stream_TDEST,
-        x_local_0_V_address0 => load_and_calc_norm61_U0_x_local_0_V_address0,
-        x_local_0_V_ce0 => load_and_calc_norm61_U0_x_local_0_V_ce0,
-        x_local_0_V_we0 => load_and_calc_norm61_U0_x_local_0_V_we0,
-        x_local_0_V_d0 => load_and_calc_norm61_U0_x_local_0_V_d0,
-        x_local_1_V_address0 => load_and_calc_norm61_U0_x_local_1_V_address0,
-        x_local_1_V_ce0 => load_and_calc_norm61_U0_x_local_1_V_ce0,
-        x_local_1_V_we0 => load_and_calc_norm61_U0_x_local_1_V_we0,
-        x_local_1_V_d0 => load_and_calc_norm61_U0_x_local_1_V_d0,
-        x_local_2_V_address0 => load_and_calc_norm61_U0_x_local_2_V_address0,
-        x_local_2_V_ce0 => load_and_calc_norm61_U0_x_local_2_V_ce0,
-        x_local_2_V_we0 => load_and_calc_norm61_U0_x_local_2_V_we0,
-        x_local_2_V_d0 => load_and_calc_norm61_U0_x_local_2_V_d0,
-        x_local_3_V_address0 => load_and_calc_norm61_U0_x_local_3_V_address0,
-        x_local_3_V_ce0 => load_and_calc_norm61_U0_x_local_3_V_ce0,
-        x_local_3_V_we0 => load_and_calc_norm61_U0_x_local_3_V_we0,
-        x_local_3_V_d0 => load_and_calc_norm61_U0_x_local_3_V_d0,
-        x_local_4_V_address0 => load_and_calc_norm61_U0_x_local_4_V_address0,
-        x_local_4_V_ce0 => load_and_calc_norm61_U0_x_local_4_V_ce0,
-        x_local_4_V_we0 => load_and_calc_norm61_U0_x_local_4_V_we0,
-        x_local_4_V_d0 => load_and_calc_norm61_U0_x_local_4_V_d0,
-        x_local_5_V_address0 => load_and_calc_norm61_U0_x_local_5_V_address0,
-        x_local_5_V_ce0 => load_and_calc_norm61_U0_x_local_5_V_ce0,
-        x_local_5_V_we0 => load_and_calc_norm61_U0_x_local_5_V_we0,
-        x_local_5_V_d0 => load_and_calc_norm61_U0_x_local_5_V_d0,
-        x_local_6_V_address0 => load_and_calc_norm61_U0_x_local_6_V_address0,
-        x_local_6_V_ce0 => load_and_calc_norm61_U0_x_local_6_V_ce0,
-        x_local_6_V_we0 => load_and_calc_norm61_U0_x_local_6_V_we0,
-        x_local_6_V_d0 => load_and_calc_norm61_U0_x_local_6_V_d0,
-        x_local_7_V_address0 => load_and_calc_norm61_U0_x_local_7_V_address0,
-        x_local_7_V_ce0 => load_and_calc_norm61_U0_x_local_7_V_ce0,
-        x_local_7_V_we0 => load_and_calc_norm61_U0_x_local_7_V_we0,
-        x_local_7_V_d0 => load_and_calc_norm61_U0_x_local_7_V_d0,
-        x_local_8_V_address0 => load_and_calc_norm61_U0_x_local_8_V_address0,
-        x_local_8_V_ce0 => load_and_calc_norm61_U0_x_local_8_V_ce0,
-        x_local_8_V_we0 => load_and_calc_norm61_U0_x_local_8_V_we0,
-        x_local_8_V_d0 => load_and_calc_norm61_U0_x_local_8_V_d0,
-        x_local_9_V_address0 => load_and_calc_norm61_U0_x_local_9_V_address0,
-        x_local_9_V_ce0 => load_and_calc_norm61_U0_x_local_9_V_ce0,
-        x_local_9_V_we0 => load_and_calc_norm61_U0_x_local_9_V_we0,
-        x_local_9_V_d0 => load_and_calc_norm61_U0_x_local_9_V_d0,
-        x_local_10_V_address0 => load_and_calc_norm61_U0_x_local_10_V_address0,
-        x_local_10_V_ce0 => load_and_calc_norm61_U0_x_local_10_V_ce0,
-        x_local_10_V_we0 => load_and_calc_norm61_U0_x_local_10_V_we0,
-        x_local_10_V_d0 => load_and_calc_norm61_U0_x_local_10_V_d0,
-        x_local_11_V_address0 => load_and_calc_norm61_U0_x_local_11_V_address0,
-        x_local_11_V_ce0 => load_and_calc_norm61_U0_x_local_11_V_ce0,
-        x_local_11_V_we0 => load_and_calc_norm61_U0_x_local_11_V_we0,
-        x_local_11_V_d0 => load_and_calc_norm61_U0_x_local_11_V_d0,
-        x_local_12_V_address0 => load_and_calc_norm61_U0_x_local_12_V_address0,
-        x_local_12_V_ce0 => load_and_calc_norm61_U0_x_local_12_V_ce0,
-        x_local_12_V_we0 => load_and_calc_norm61_U0_x_local_12_V_we0,
-        x_local_12_V_d0 => load_and_calc_norm61_U0_x_local_12_V_d0,
-        x_local_13_V_address0 => load_and_calc_norm61_U0_x_local_13_V_address0,
-        x_local_13_V_ce0 => load_and_calc_norm61_U0_x_local_13_V_ce0,
-        x_local_13_V_we0 => load_and_calc_norm61_U0_x_local_13_V_we0,
-        x_local_13_V_d0 => load_and_calc_norm61_U0_x_local_13_V_d0,
-        x_local_14_V_address0 => load_and_calc_norm61_U0_x_local_14_V_address0,
-        x_local_14_V_ce0 => load_and_calc_norm61_U0_x_local_14_V_ce0,
-        x_local_14_V_we0 => load_and_calc_norm61_U0_x_local_14_V_we0,
-        x_local_14_V_d0 => load_and_calc_norm61_U0_x_local_14_V_d0,
-        x_local_15_V_address0 => load_and_calc_norm61_U0_x_local_15_V_address0,
-        x_local_15_V_ce0 => load_and_calc_norm61_U0_x_local_15_V_ce0,
-        x_local_15_V_we0 => load_and_calc_norm61_U0_x_local_15_V_we0,
-        x_local_15_V_d0 => load_and_calc_norm61_U0_x_local_15_V_d0,
-        n_0_i_i => n_0_i_i,
-        n_0_i_i_out_din => load_and_calc_norm61_U0_n_0_i_i_out_din,
-        n_0_i_i_out_full_n => n_0_i_i_c_full_n,
-        n_0_i_i_out_write => load_and_calc_norm61_U0_n_0_i_i_out_write,
-        ap_return => load_and_calc_norm61_U0_ap_return);
+        x_local_0_V_address0 => load_and_calc_norm53_U0_x_local_0_V_address0,
+        x_local_0_V_ce0 => load_and_calc_norm53_U0_x_local_0_V_ce0,
+        x_local_0_V_we0 => load_and_calc_norm53_U0_x_local_0_V_we0,
+        x_local_0_V_d0 => load_and_calc_norm53_U0_x_local_0_V_d0,
+        x_local_1_V_address0 => load_and_calc_norm53_U0_x_local_1_V_address0,
+        x_local_1_V_ce0 => load_and_calc_norm53_U0_x_local_1_V_ce0,
+        x_local_1_V_we0 => load_and_calc_norm53_U0_x_local_1_V_we0,
+        x_local_1_V_d0 => load_and_calc_norm53_U0_x_local_1_V_d0,
+        x_local_2_V_address0 => load_and_calc_norm53_U0_x_local_2_V_address0,
+        x_local_2_V_ce0 => load_and_calc_norm53_U0_x_local_2_V_ce0,
+        x_local_2_V_we0 => load_and_calc_norm53_U0_x_local_2_V_we0,
+        x_local_2_V_d0 => load_and_calc_norm53_U0_x_local_2_V_d0,
+        x_local_3_V_address0 => load_and_calc_norm53_U0_x_local_3_V_address0,
+        x_local_3_V_ce0 => load_and_calc_norm53_U0_x_local_3_V_ce0,
+        x_local_3_V_we0 => load_and_calc_norm53_U0_x_local_3_V_we0,
+        x_local_3_V_d0 => load_and_calc_norm53_U0_x_local_3_V_d0,
+        x_local_4_V_address0 => load_and_calc_norm53_U0_x_local_4_V_address0,
+        x_local_4_V_ce0 => load_and_calc_norm53_U0_x_local_4_V_ce0,
+        x_local_4_V_we0 => load_and_calc_norm53_U0_x_local_4_V_we0,
+        x_local_4_V_d0 => load_and_calc_norm53_U0_x_local_4_V_d0,
+        x_local_5_V_address0 => load_and_calc_norm53_U0_x_local_5_V_address0,
+        x_local_5_V_ce0 => load_and_calc_norm53_U0_x_local_5_V_ce0,
+        x_local_5_V_we0 => load_and_calc_norm53_U0_x_local_5_V_we0,
+        x_local_5_V_d0 => load_and_calc_norm53_U0_x_local_5_V_d0,
+        x_local_6_V_address0 => load_and_calc_norm53_U0_x_local_6_V_address0,
+        x_local_6_V_ce0 => load_and_calc_norm53_U0_x_local_6_V_ce0,
+        x_local_6_V_we0 => load_and_calc_norm53_U0_x_local_6_V_we0,
+        x_local_6_V_d0 => load_and_calc_norm53_U0_x_local_6_V_d0,
+        x_local_7_V_address0 => load_and_calc_norm53_U0_x_local_7_V_address0,
+        x_local_7_V_ce0 => load_and_calc_norm53_U0_x_local_7_V_ce0,
+        x_local_7_V_we0 => load_and_calc_norm53_U0_x_local_7_V_we0,
+        x_local_7_V_d0 => load_and_calc_norm53_U0_x_local_7_V_d0,
+        x_local_8_V_address0 => load_and_calc_norm53_U0_x_local_8_V_address0,
+        x_local_8_V_ce0 => load_and_calc_norm53_U0_x_local_8_V_ce0,
+        x_local_8_V_we0 => load_and_calc_norm53_U0_x_local_8_V_we0,
+        x_local_8_V_d0 => load_and_calc_norm53_U0_x_local_8_V_d0,
+        x_local_9_V_address0 => load_and_calc_norm53_U0_x_local_9_V_address0,
+        x_local_9_V_ce0 => load_and_calc_norm53_U0_x_local_9_V_ce0,
+        x_local_9_V_we0 => load_and_calc_norm53_U0_x_local_9_V_we0,
+        x_local_9_V_d0 => load_and_calc_norm53_U0_x_local_9_V_d0,
+        x_local_10_V_address0 => load_and_calc_norm53_U0_x_local_10_V_address0,
+        x_local_10_V_ce0 => load_and_calc_norm53_U0_x_local_10_V_ce0,
+        x_local_10_V_we0 => load_and_calc_norm53_U0_x_local_10_V_we0,
+        x_local_10_V_d0 => load_and_calc_norm53_U0_x_local_10_V_d0,
+        x_local_11_V_address0 => load_and_calc_norm53_U0_x_local_11_V_address0,
+        x_local_11_V_ce0 => load_and_calc_norm53_U0_x_local_11_V_ce0,
+        x_local_11_V_we0 => load_and_calc_norm53_U0_x_local_11_V_we0,
+        x_local_11_V_d0 => load_and_calc_norm53_U0_x_local_11_V_d0,
+        x_local_12_V_address0 => load_and_calc_norm53_U0_x_local_12_V_address0,
+        x_local_12_V_ce0 => load_and_calc_norm53_U0_x_local_12_V_ce0,
+        x_local_12_V_we0 => load_and_calc_norm53_U0_x_local_12_V_we0,
+        x_local_12_V_d0 => load_and_calc_norm53_U0_x_local_12_V_d0,
+        x_local_13_V_address0 => load_and_calc_norm53_U0_x_local_13_V_address0,
+        x_local_13_V_ce0 => load_and_calc_norm53_U0_x_local_13_V_ce0,
+        x_local_13_V_we0 => load_and_calc_norm53_U0_x_local_13_V_we0,
+        x_local_13_V_d0 => load_and_calc_norm53_U0_x_local_13_V_d0,
+        x_local_14_V_address0 => load_and_calc_norm53_U0_x_local_14_V_address0,
+        x_local_14_V_ce0 => load_and_calc_norm53_U0_x_local_14_V_ce0,
+        x_local_14_V_we0 => load_and_calc_norm53_U0_x_local_14_V_we0,
+        x_local_14_V_d0 => load_and_calc_norm53_U0_x_local_14_V_d0,
+        x_local_15_V_address0 => load_and_calc_norm53_U0_x_local_15_V_address0,
+        x_local_15_V_ce0 => load_and_calc_norm53_U0_x_local_15_V_ce0,
+        x_local_15_V_we0 => load_and_calc_norm53_U0_x_local_15_V_we0,
+        x_local_15_V_d0 => load_and_calc_norm53_U0_x_local_15_V_d0,
+        n => n,
+        num_images => num_images,
+        n_out_din => load_and_calc_norm53_U0_n_out_din,
+        n_out_full_n => n_c_full_n,
+        n_out_write => load_and_calc_norm53_U0_n_out_write,
+        num_images_out_din => load_and_calc_norm53_U0_num_images_out_din,
+        num_images_out_full_n => num_images_c_full_n,
+        num_images_out_write => load_and_calc_norm53_U0_num_images_out_write,
+        ap_return => load_and_calc_norm53_U0_ap_return);
 
     compute_and_output_U0 : component compute_and_output
     port map (
@@ -1078,22 +1112,38 @@ begin
         out_stream_TKEEP => compute_and_output_U0_out_stream_TKEEP,
         out_stream_TSTRB => compute_and_output_U0_out_stream_TSTRB,
         out_stream_TLAST => compute_and_output_U0_out_stream_TLAST,
-        n_0_i_i_dout => n_0_i_i_c_dout,
-        n_0_i_i_empty_n => n_0_i_i_c_empty_n,
-        n_0_i_i_read => compute_and_output_U0_n_0_i_i_read);
+        n_dout => n_c_dout,
+        n_empty_n => n_c_empty_n,
+        n_read => compute_and_output_U0_n_read,
+        num_images_dout => num_images_c_dout,
+        num_images_empty_n => num_images_c_empty_n,
+        num_images_read => compute_and_output_U0_num_images_read);
 
-    n_0_i_i_c_U : component fifo_w12_d2_A
+    n_c_U : component fifo_w31_d2_A
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => load_and_calc_norm61_U0_n_0_i_i_out_din,
-        if_full_n => n_0_i_i_c_full_n,
-        if_write => load_and_calc_norm61_U0_n_0_i_i_out_write,
-        if_dout => n_0_i_i_c_dout,
-        if_empty_n => n_0_i_i_c_empty_n,
-        if_read => compute_and_output_U0_n_0_i_i_read);
+        if_din => load_and_calc_norm53_U0_n_out_din,
+        if_full_n => n_c_full_n,
+        if_write => load_and_calc_norm53_U0_n_out_write,
+        if_dout => n_c_dout,
+        if_empty_n => n_c_empty_n,
+        if_read => compute_and_output_U0_n_read);
+
+    num_images_c_U : component fifo_w32_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_num_images_out_din,
+        if_full_n => num_images_c_full_n,
+        if_write => load_and_calc_norm53_U0_num_images_out_write,
+        if_dout => num_images_c_dout,
+        if_empty_n => num_images_c_empty_n,
+        if_read => compute_and_output_U0_num_images_read);
 
     internal_norm_V_U : component fifo_w24_d2_A
     port map (
@@ -1101,7 +1151,7 @@ begin
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => load_and_calc_norm61_U0_ap_return,
+        if_din => load_and_calc_norm53_U0_ap_return,
         if_full_n => internal_norm_V_full_n,
         if_write => ap_channel_done_internal_norm_V,
         if_dout => internal_norm_V_dout,
@@ -1118,7 +1168,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_internal_norm_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_internal_norm_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_internal_norm_V <= ap_sync_channel_write_internal_norm_V;
@@ -1134,7 +1184,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_0_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_0_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_0_V <= ap_sync_channel_write_x_local_0_V;
@@ -1150,7 +1200,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_10_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_10_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_10_V <= ap_sync_channel_write_x_local_10_V;
@@ -1166,7 +1216,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_11_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_11_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_11_V <= ap_sync_channel_write_x_local_11_V;
@@ -1182,7 +1232,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_12_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_12_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_12_V <= ap_sync_channel_write_x_local_12_V;
@@ -1198,7 +1248,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_13_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_13_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_13_V <= ap_sync_channel_write_x_local_13_V;
@@ -1214,7 +1264,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_14_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_14_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_14_V <= ap_sync_channel_write_x_local_14_V;
@@ -1230,7 +1280,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_15_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_15_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_15_V <= ap_sync_channel_write_x_local_15_V;
@@ -1246,7 +1296,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_1_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_1_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_1_V <= ap_sync_channel_write_x_local_1_V;
@@ -1262,7 +1312,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_2_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_2_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_2_V <= ap_sync_channel_write_x_local_2_V;
@@ -1278,7 +1328,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_3_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_3_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_3_V <= ap_sync_channel_write_x_local_3_V;
@@ -1294,7 +1344,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_4_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_4_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_4_V <= ap_sync_channel_write_x_local_4_V;
@@ -1310,7 +1360,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_5_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_5_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_5_V <= ap_sync_channel_write_x_local_5_V;
@@ -1326,7 +1376,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_6_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_6_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_6_V <= ap_sync_channel_write_x_local_6_V;
@@ -1342,7 +1392,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_7_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_7_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_7_V <= ap_sync_channel_write_x_local_7_V;
@@ -1358,7 +1408,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_8_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_8_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_8_V <= ap_sync_channel_write_x_local_8_V;
@@ -1374,7 +1424,7 @@ begin
             if (ap_rst = '1') then
                 ap_sync_reg_channel_write_x_local_9_V <= ap_const_logic_0;
             else
-                if (((load_and_calc_norm61_U0_ap_done and load_and_calc_norm61_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_x_local_9_V <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_x_local_9_V <= ap_sync_channel_write_x_local_9_V;
@@ -1383,71 +1433,71 @@ begin
         end if;
     end process;
 
-    ap_channel_done_internal_norm_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_internal_norm_V xor ap_const_logic_1));
-    ap_channel_done_x_local_0_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_0_V xor ap_const_logic_1));
-    ap_channel_done_x_local_10_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_10_V xor ap_const_logic_1));
-    ap_channel_done_x_local_11_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_11_V xor ap_const_logic_1));
-    ap_channel_done_x_local_12_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_12_V xor ap_const_logic_1));
-    ap_channel_done_x_local_13_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_13_V xor ap_const_logic_1));
-    ap_channel_done_x_local_14_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_14_V xor ap_const_logic_1));
-    ap_channel_done_x_local_15_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_15_V xor ap_const_logic_1));
-    ap_channel_done_x_local_1_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_1_V xor ap_const_logic_1));
-    ap_channel_done_x_local_2_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_2_V xor ap_const_logic_1));
-    ap_channel_done_x_local_3_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_3_V xor ap_const_logic_1));
-    ap_channel_done_x_local_4_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_4_V xor ap_const_logic_1));
-    ap_channel_done_x_local_5_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_5_V xor ap_const_logic_1));
-    ap_channel_done_x_local_6_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_6_V xor ap_const_logic_1));
-    ap_channel_done_x_local_7_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_7_V xor ap_const_logic_1));
-    ap_channel_done_x_local_8_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_8_V xor ap_const_logic_1));
-    ap_channel_done_x_local_9_V <= (load_and_calc_norm61_U0_ap_done and (ap_sync_reg_channel_write_x_local_9_V xor ap_const_logic_1));
+    ap_channel_done_internal_norm_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_internal_norm_V xor ap_const_logic_1));
+    ap_channel_done_x_local_0_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_0_V xor ap_const_logic_1));
+    ap_channel_done_x_local_10_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_10_V xor ap_const_logic_1));
+    ap_channel_done_x_local_11_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_11_V xor ap_const_logic_1));
+    ap_channel_done_x_local_12_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_12_V xor ap_const_logic_1));
+    ap_channel_done_x_local_13_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_13_V xor ap_const_logic_1));
+    ap_channel_done_x_local_14_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_14_V xor ap_const_logic_1));
+    ap_channel_done_x_local_15_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_15_V xor ap_const_logic_1));
+    ap_channel_done_x_local_1_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_1_V xor ap_const_logic_1));
+    ap_channel_done_x_local_2_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_2_V xor ap_const_logic_1));
+    ap_channel_done_x_local_3_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_3_V xor ap_const_logic_1));
+    ap_channel_done_x_local_4_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_4_V xor ap_const_logic_1));
+    ap_channel_done_x_local_5_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_5_V xor ap_const_logic_1));
+    ap_channel_done_x_local_6_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_6_V xor ap_const_logic_1));
+    ap_channel_done_x_local_7_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_7_V xor ap_const_logic_1));
+    ap_channel_done_x_local_8_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_8_V xor ap_const_logic_1));
+    ap_channel_done_x_local_9_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_9_V xor ap_const_logic_1));
     ap_done <= compute_and_output_U0_ap_done;
-    ap_idle <= (load_and_calc_norm61_U0_ap_idle and (internal_norm_V_empty_n xor ap_const_logic_1) and (x_local_15_V_t_empty_n xor ap_const_logic_1) and (x_local_14_V_t_empty_n xor ap_const_logic_1) and (x_local_13_V_t_empty_n xor ap_const_logic_1) and (x_local_12_V_t_empty_n xor ap_const_logic_1) and (x_local_11_V_t_empty_n xor ap_const_logic_1) and (x_local_10_V_t_empty_n xor ap_const_logic_1) and (x_local_9_V_t_empty_n xor ap_const_logic_1) and (x_local_8_V_t_empty_n xor ap_const_logic_1) and (x_local_7_V_t_empty_n xor ap_const_logic_1) and (x_local_6_V_t_empty_n xor ap_const_logic_1) and (x_local_5_V_t_empty_n xor ap_const_logic_1) and (x_local_4_V_t_empty_n xor ap_const_logic_1) and (x_local_3_V_t_empty_n xor ap_const_logic_1) and (x_local_2_V_t_empty_n xor ap_const_logic_1) and (x_local_1_V_t_empty_n xor ap_const_logic_1) and (x_local_0_V_t_empty_n xor ap_const_logic_1) and compute_and_output_U0_ap_idle);
-    ap_ready <= load_and_calc_norm61_U0_ap_ready;
+    ap_idle <= (load_and_calc_norm53_U0_ap_idle and (internal_norm_V_empty_n xor ap_const_logic_1) and (x_local_15_V_t_empty_n xor ap_const_logic_1) and (x_local_14_V_t_empty_n xor ap_const_logic_1) and (x_local_13_V_t_empty_n xor ap_const_logic_1) and (x_local_12_V_t_empty_n xor ap_const_logic_1) and (x_local_11_V_t_empty_n xor ap_const_logic_1) and (x_local_10_V_t_empty_n xor ap_const_logic_1) and (x_local_9_V_t_empty_n xor ap_const_logic_1) and (x_local_8_V_t_empty_n xor ap_const_logic_1) and (x_local_7_V_t_empty_n xor ap_const_logic_1) and (x_local_6_V_t_empty_n xor ap_const_logic_1) and (x_local_5_V_t_empty_n xor ap_const_logic_1) and (x_local_4_V_t_empty_n xor ap_const_logic_1) and (x_local_3_V_t_empty_n xor ap_const_logic_1) and (x_local_2_V_t_empty_n xor ap_const_logic_1) and (x_local_1_V_t_empty_n xor ap_const_logic_1) and (x_local_0_V_t_empty_n xor ap_const_logic_1) and compute_and_output_U0_ap_idle);
+    ap_ready <= load_and_calc_norm53_U0_ap_ready;
     ap_sync_channel_write_internal_norm_V <= ((internal_norm_V_full_n and ap_channel_done_internal_norm_V) or ap_sync_reg_channel_write_internal_norm_V);
-    ap_sync_channel_write_x_local_0_V <= ((load_and_calc_norm61_U0_x_local_0_V_full_n and ap_channel_done_x_local_0_V) or ap_sync_reg_channel_write_x_local_0_V);
-    ap_sync_channel_write_x_local_10_V <= ((load_and_calc_norm61_U0_x_local_10_V_full_n and ap_channel_done_x_local_10_V) or ap_sync_reg_channel_write_x_local_10_V);
-    ap_sync_channel_write_x_local_11_V <= ((load_and_calc_norm61_U0_x_local_11_V_full_n and ap_channel_done_x_local_11_V) or ap_sync_reg_channel_write_x_local_11_V);
-    ap_sync_channel_write_x_local_12_V <= ((load_and_calc_norm61_U0_x_local_12_V_full_n and ap_channel_done_x_local_12_V) or ap_sync_reg_channel_write_x_local_12_V);
-    ap_sync_channel_write_x_local_13_V <= ((load_and_calc_norm61_U0_x_local_13_V_full_n and ap_channel_done_x_local_13_V) or ap_sync_reg_channel_write_x_local_13_V);
-    ap_sync_channel_write_x_local_14_V <= ((load_and_calc_norm61_U0_x_local_14_V_full_n and ap_channel_done_x_local_14_V) or ap_sync_reg_channel_write_x_local_14_V);
-    ap_sync_channel_write_x_local_15_V <= ((load_and_calc_norm61_U0_x_local_15_V_full_n and ap_channel_done_x_local_15_V) or ap_sync_reg_channel_write_x_local_15_V);
-    ap_sync_channel_write_x_local_1_V <= ((load_and_calc_norm61_U0_x_local_1_V_full_n and ap_channel_done_x_local_1_V) or ap_sync_reg_channel_write_x_local_1_V);
-    ap_sync_channel_write_x_local_2_V <= ((load_and_calc_norm61_U0_x_local_2_V_full_n and ap_channel_done_x_local_2_V) or ap_sync_reg_channel_write_x_local_2_V);
-    ap_sync_channel_write_x_local_3_V <= ((load_and_calc_norm61_U0_x_local_3_V_full_n and ap_channel_done_x_local_3_V) or ap_sync_reg_channel_write_x_local_3_V);
-    ap_sync_channel_write_x_local_4_V <= ((load_and_calc_norm61_U0_x_local_4_V_full_n and ap_channel_done_x_local_4_V) or ap_sync_reg_channel_write_x_local_4_V);
-    ap_sync_channel_write_x_local_5_V <= ((load_and_calc_norm61_U0_x_local_5_V_full_n and ap_channel_done_x_local_5_V) or ap_sync_reg_channel_write_x_local_5_V);
-    ap_sync_channel_write_x_local_6_V <= ((load_and_calc_norm61_U0_x_local_6_V_full_n and ap_channel_done_x_local_6_V) or ap_sync_reg_channel_write_x_local_6_V);
-    ap_sync_channel_write_x_local_7_V <= ((load_and_calc_norm61_U0_x_local_7_V_full_n and ap_channel_done_x_local_7_V) or ap_sync_reg_channel_write_x_local_7_V);
-    ap_sync_channel_write_x_local_8_V <= ((load_and_calc_norm61_U0_x_local_8_V_full_n and ap_channel_done_x_local_8_V) or ap_sync_reg_channel_write_x_local_8_V);
-    ap_sync_channel_write_x_local_9_V <= ((load_and_calc_norm61_U0_x_local_9_V_full_n and ap_channel_done_x_local_9_V) or ap_sync_reg_channel_write_x_local_9_V);
+    ap_sync_channel_write_x_local_0_V <= ((load_and_calc_norm53_U0_x_local_0_V_full_n and ap_channel_done_x_local_0_V) or ap_sync_reg_channel_write_x_local_0_V);
+    ap_sync_channel_write_x_local_10_V <= ((load_and_calc_norm53_U0_x_local_10_V_full_n and ap_channel_done_x_local_10_V) or ap_sync_reg_channel_write_x_local_10_V);
+    ap_sync_channel_write_x_local_11_V <= ((load_and_calc_norm53_U0_x_local_11_V_full_n and ap_channel_done_x_local_11_V) or ap_sync_reg_channel_write_x_local_11_V);
+    ap_sync_channel_write_x_local_12_V <= ((load_and_calc_norm53_U0_x_local_12_V_full_n and ap_channel_done_x_local_12_V) or ap_sync_reg_channel_write_x_local_12_V);
+    ap_sync_channel_write_x_local_13_V <= ((load_and_calc_norm53_U0_x_local_13_V_full_n and ap_channel_done_x_local_13_V) or ap_sync_reg_channel_write_x_local_13_V);
+    ap_sync_channel_write_x_local_14_V <= ((load_and_calc_norm53_U0_x_local_14_V_full_n and ap_channel_done_x_local_14_V) or ap_sync_reg_channel_write_x_local_14_V);
+    ap_sync_channel_write_x_local_15_V <= ((load_and_calc_norm53_U0_x_local_15_V_full_n and ap_channel_done_x_local_15_V) or ap_sync_reg_channel_write_x_local_15_V);
+    ap_sync_channel_write_x_local_1_V <= ((load_and_calc_norm53_U0_x_local_1_V_full_n and ap_channel_done_x_local_1_V) or ap_sync_reg_channel_write_x_local_1_V);
+    ap_sync_channel_write_x_local_2_V <= ((load_and_calc_norm53_U0_x_local_2_V_full_n and ap_channel_done_x_local_2_V) or ap_sync_reg_channel_write_x_local_2_V);
+    ap_sync_channel_write_x_local_3_V <= ((load_and_calc_norm53_U0_x_local_3_V_full_n and ap_channel_done_x_local_3_V) or ap_sync_reg_channel_write_x_local_3_V);
+    ap_sync_channel_write_x_local_4_V <= ((load_and_calc_norm53_U0_x_local_4_V_full_n and ap_channel_done_x_local_4_V) or ap_sync_reg_channel_write_x_local_4_V);
+    ap_sync_channel_write_x_local_5_V <= ((load_and_calc_norm53_U0_x_local_5_V_full_n and ap_channel_done_x_local_5_V) or ap_sync_reg_channel_write_x_local_5_V);
+    ap_sync_channel_write_x_local_6_V <= ((load_and_calc_norm53_U0_x_local_6_V_full_n and ap_channel_done_x_local_6_V) or ap_sync_reg_channel_write_x_local_6_V);
+    ap_sync_channel_write_x_local_7_V <= ((load_and_calc_norm53_U0_x_local_7_V_full_n and ap_channel_done_x_local_7_V) or ap_sync_reg_channel_write_x_local_7_V);
+    ap_sync_channel_write_x_local_8_V <= ((load_and_calc_norm53_U0_x_local_8_V_full_n and ap_channel_done_x_local_8_V) or ap_sync_reg_channel_write_x_local_8_V);
+    ap_sync_channel_write_x_local_9_V <= ((load_and_calc_norm53_U0_x_local_9_V_full_n and ap_channel_done_x_local_9_V) or ap_sync_reg_channel_write_x_local_9_V);
     ap_sync_continue <= ap_continue;
     ap_sync_done <= compute_and_output_U0_ap_done;
-    ap_sync_ready <= load_and_calc_norm61_U0_ap_ready;
+    ap_sync_ready <= load_and_calc_norm53_U0_ap_ready;
     compute_and_output_U0_ap_continue <= ap_continue;
     compute_and_output_U0_ap_start <= (x_local_9_V_t_empty_n and x_local_8_V_t_empty_n and x_local_7_V_t_empty_n and x_local_6_V_t_empty_n and x_local_5_V_t_empty_n and x_local_4_V_t_empty_n and x_local_3_V_t_empty_n and x_local_2_V_t_empty_n and x_local_1_V_t_empty_n and x_local_15_V_t_empty_n and x_local_14_V_t_empty_n and x_local_13_V_t_empty_n and x_local_12_V_t_empty_n and x_local_11_V_t_empty_n and x_local_10_V_t_empty_n and x_local_0_V_t_empty_n and internal_norm_V_empty_n);
     compute_and_output_U0_start_full_n <= ap_const_logic_1;
     compute_and_output_U0_start_write <= ap_const_logic_0;
-    in_stream_TREADY <= load_and_calc_norm61_U0_in_stream_TREADY;
-    load_and_calc_norm61_U0_ap_continue <= (ap_sync_channel_write_x_local_9_V and ap_sync_channel_write_x_local_8_V and ap_sync_channel_write_x_local_7_V and ap_sync_channel_write_x_local_6_V and ap_sync_channel_write_x_local_5_V and ap_sync_channel_write_x_local_4_V and ap_sync_channel_write_x_local_3_V and ap_sync_channel_write_x_local_2_V and ap_sync_channel_write_x_local_1_V and ap_sync_channel_write_x_local_15_V and ap_sync_channel_write_x_local_14_V and ap_sync_channel_write_x_local_13_V and ap_sync_channel_write_x_local_12_V and ap_sync_channel_write_x_local_11_V and ap_sync_channel_write_x_local_10_V and ap_sync_channel_write_x_local_0_V and ap_sync_channel_write_internal_norm_V);
-    load_and_calc_norm61_U0_ap_start <= ap_start;
-    load_and_calc_norm61_U0_start_full_n <= ap_const_logic_1;
-    load_and_calc_norm61_U0_start_write <= ap_const_logic_0;
-    load_and_calc_norm61_U0_x_local_0_V_full_n <= x_local_0_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_10_V_full_n <= x_local_10_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_11_V_full_n <= x_local_11_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_12_V_full_n <= x_local_12_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_13_V_full_n <= x_local_13_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_14_V_full_n <= x_local_14_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_15_V_full_n <= x_local_15_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_1_V_full_n <= x_local_1_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_2_V_full_n <= x_local_2_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_3_V_full_n <= x_local_3_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_4_V_full_n <= x_local_4_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_5_V_full_n <= x_local_5_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_6_V_full_n <= x_local_6_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_7_V_full_n <= x_local_7_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_8_V_full_n <= x_local_8_V_i_full_n;
-    load_and_calc_norm61_U0_x_local_9_V_full_n <= x_local_9_V_i_full_n;
+    in_stream_TREADY <= load_and_calc_norm53_U0_in_stream_TREADY;
+    load_and_calc_norm53_U0_ap_continue <= (ap_sync_channel_write_x_local_9_V and ap_sync_channel_write_x_local_8_V and ap_sync_channel_write_x_local_7_V and ap_sync_channel_write_x_local_6_V and ap_sync_channel_write_x_local_5_V and ap_sync_channel_write_x_local_4_V and ap_sync_channel_write_x_local_3_V and ap_sync_channel_write_x_local_2_V and ap_sync_channel_write_x_local_1_V and ap_sync_channel_write_x_local_15_V and ap_sync_channel_write_x_local_14_V and ap_sync_channel_write_x_local_13_V and ap_sync_channel_write_x_local_12_V and ap_sync_channel_write_x_local_11_V and ap_sync_channel_write_x_local_10_V and ap_sync_channel_write_x_local_0_V and ap_sync_channel_write_internal_norm_V);
+    load_and_calc_norm53_U0_ap_start <= ap_start;
+    load_and_calc_norm53_U0_start_full_n <= ap_const_logic_1;
+    load_and_calc_norm53_U0_start_write <= ap_const_logic_0;
+    load_and_calc_norm53_U0_x_local_0_V_full_n <= x_local_0_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_10_V_full_n <= x_local_10_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_11_V_full_n <= x_local_11_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_12_V_full_n <= x_local_12_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_13_V_full_n <= x_local_13_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_14_V_full_n <= x_local_14_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_15_V_full_n <= x_local_15_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_1_V_full_n <= x_local_1_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_2_V_full_n <= x_local_2_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_3_V_full_n <= x_local_3_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_4_V_full_n <= x_local_4_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_5_V_full_n <= x_local_5_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_6_V_full_n <= x_local_6_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_7_V_full_n <= x_local_7_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_8_V_full_n <= x_local_8_V_i_full_n;
+    load_and_calc_norm53_U0_x_local_9_V_full_n <= x_local_9_V_i_full_n;
     out_stream_TDATA <= compute_and_output_U0_out_stream_TDATA;
     out_stream_TKEEP <= compute_and_output_U0_out_stream_TKEEP;
     out_stream_TLAST <= compute_and_output_U0_out_stream_TLAST;

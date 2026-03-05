@@ -2,17 +2,18 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../AcceleratorTB.cpp in debug mode
    Compiling ../../../Classifier.cpp in debug mode
+   Compiling ../../../Exp.cpp in debug mode
    Generating csim.exe
 Starting Simulation: Batch Processing of 2601 images...
 Input Stream Filled. Calling HLS Core...
 HLS Execution Complete. verifying results...
 
 --- Results ---
-Classification Accuracy: 0.981930
+Classification Accuracy: 0.543253
 Confusion Matrix:
-0.455594, 0.001153
-0.016917, 0.526336
+0.000000, 0.456747
+0.000000, 0.543253
 
-Test Passed!
-INFO: [SIM 1] CSim done with 0 errors.
+Test Failed!
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 3] *************** CSIM finish ***************

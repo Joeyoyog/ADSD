@@ -81,6 +81,7 @@ struct classify : public sc_module {
     sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TKEEP;
     sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TSTRB;
     sc_signal< sc_lv<1> > dataflow_in_loop_Bat_U0_out_stream_TLAST;
+    sc_signal< sc_lv<31> > dataflow_in_loop_Bat_U0_n;
     sc_signal< sc_logic > dataflow_in_loop_Bat_U0_in_stream_TREADY;
     sc_signal< sc_logic > dataflow_in_loop_Bat_U0_out_stream_TVALID;
     sc_signal< sc_logic > dataflow_in_loop_Bat_U0_ap_done;
@@ -92,8 +93,8 @@ struct classify : public sc_module {
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
     sc_signal< sc_logic > loop_dataflow_enable;
-    sc_signal< sc_lv<12> > loop_dataflow_input_count;
-    sc_signal< sc_lv<12> > loop_dataflow_output_count;
+    sc_signal< sc_lv<32> > loop_dataflow_input_count;
+    sc_signal< sc_lv<32> > loop_dataflow_output_count;
     sc_signal< sc_logic > loop_dataflow_busy;
     sc_signal< sc_logic > dataflow_in_loop_Bat_U0_start_full_n;
     sc_signal< sc_logic > dataflow_in_loop_Bat_U0_start_write;
@@ -104,9 +105,7 @@ struct classify : public sc_module {
     static const sc_lv<32> ap_const_lv32_0;
     static const sc_lv<1> ap_const_lv1_0;
     static const bool ap_const_boolean_1;
-    static const sc_lv<12> ap_const_lv12_A29;
-    static const sc_lv<12> ap_const_lv12_0;
-    static const sc_lv<12> ap_const_lv12_1;
+    static const sc_lv<32> ap_const_lv32_1;
     static const sc_logic ap_const_logic_0;
     // Thread declarations
     void thread_ap_var_for_const0();
@@ -121,6 +120,7 @@ struct classify : public sc_module {
     void thread_ap_sync_ready();
     void thread_dataflow_in_loop_Bat_U0_ap_continue();
     void thread_dataflow_in_loop_Bat_U0_ap_start();
+    void thread_dataflow_in_loop_Bat_U0_n();
     void thread_dataflow_in_loop_Bat_U0_start_full_n();
     void thread_dataflow_in_loop_Bat_U0_start_write();
     void thread_in_stream_TREADY();

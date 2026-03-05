@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'compute_and_output'" level="0">
-<item name = "Date">Mon Mar  2 02:59:31 2026
+<item name = "Date">Wed Mar  4 18:28:41 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">MathieuHelpMe</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.742, 1.25</column>
+<column name="ap_clk">10.00, 8.847, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">872, 872, 872, 872, none</column>
+<column name="">406, 406, 406, 406, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,9 +35,9 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- classify_label2">869, 869, 79, -, -, 11, no</column>
-<column name=" + classify_label1">51, 51, 4, 1, 1, 49, yes</column>
-<column name=" + Reconstruct_Loop">23, 23, 9, 1, 1, 16, yes</column>
+<column name="- Loop 1">402, 402, 67, -, -, 6, no</column>
+<column name=" + Loop 1.1">51, 51, 4, 1, 1, 49, yes</column>
+<column name=" + Loop 1.2">10, 10, 8, 1, 1, 4, yes</column>
 </table>
 </item>
 </section>

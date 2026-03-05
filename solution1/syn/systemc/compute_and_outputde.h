@@ -21,9 +21,9 @@ using namespace sc_dt;
 
 struct compute_and_outputde_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 6;
-  static const unsigned AddressRange = 11;
-  static const unsigned AddressWidth = 4;
+  static const unsigned DataWidth = 4;
+  static const unsigned AddressRange = 6;
+  static const unsigned AddressWidth = 3;
 
 //latency = 1
 //input_reg = 1
@@ -39,17 +39,12 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(compute_and_outputde_ram) {
-        ram[0] = "0b000000";
-        ram[1] = "0b111101";
-        ram[2] = "0b111101";
-        ram[3] = "0b101110";
-        ram[4] = "0b111110";
-        ram[5] = "0b111100";
-        ram[6] = "0b111110";
-        ram[7] = "0b001111";
-        ram[8] = "0b000111";
-        ram[9] = "0b011100";
-        ram[10] = "0b000101";
+        ram[0] = "0b1100";
+        ram[1] = "0b1001";
+        ram[2] = "0b1100";
+        ram[3] = "0b1010";
+        ram[4] = "0b1101";
+        ram[5] = "0b1001";
 
 
 SC_METHOD(prc_write_0);
@@ -75,9 +70,9 @@ void prc_write_0()
 SC_MODULE(compute_and_outputde) {
 
 
-static const unsigned DataWidth = 6;
-static const unsigned AddressRange = 11;
-static const unsigned AddressWidth = 4;
+static const unsigned DataWidth = 4;
+static const unsigned AddressRange = 6;
+static const unsigned AddressWidth = 3;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

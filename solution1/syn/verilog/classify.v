@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.742000,HLS_SYN_LAT=2270777,HLS_SYN_TPT=none,HLS_SYN_MEM=118,HLS_SYN_DSP=2,HLS_SYN_FF=8002,HLS_SYN_LUT=22977,HLS_VERSION=2018_2}" *)
+(* CORE_GENERATION_INFO="classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.847000,HLS_SYN_LAT=1058711,HLS_SYN_TPT=none,HLS_SYN_MEM=136,HLS_SYN_DSP=16,HLS_SYN_FF=17329,HLS_SYN_LUT=49695,HLS_VERSION=2018_2}" *)
 
 module classify (
         s_axi_control_AWVALID,
@@ -101,6 +101,7 @@ wire   [31:0] dataflow_in_loop_Bat_U0_out_stream_TDATA;
 wire   [0:0] dataflow_in_loop_Bat_U0_out_stream_TKEEP;
 wire   [0:0] dataflow_in_loop_Bat_U0_out_stream_TSTRB;
 wire   [0:0] dataflow_in_loop_Bat_U0_out_stream_TLAST;
+wire   [30:0] dataflow_in_loop_Bat_U0_n;
 wire    dataflow_in_loop_Bat_U0_in_stream_TREADY;
 wire    dataflow_in_loop_Bat_U0_out_stream_TVALID;
 wire    dataflow_in_loop_Bat_U0_ap_done;
@@ -112,8 +113,8 @@ wire    ap_sync_continue;
 wire    ap_sync_done;
 wire    ap_sync_ready;
 reg    loop_dataflow_enable;
-reg   [11:0] loop_dataflow_input_count;
-reg   [11:0] loop_dataflow_output_count;
+reg   [31:0] loop_dataflow_input_count;
+reg   [31:0] loop_dataflow_output_count;
 reg    loop_dataflow_busy;
 wire    dataflow_in_loop_Bat_U0_start_full_n;
 wire    dataflow_in_loop_Bat_U0_start_write;
@@ -121,8 +122,8 @@ wire    dataflow_in_loop_Bat_U0_start_write;
 // power-on initialization
 initial begin
 #0 loop_dataflow_enable = 1'b0;
-#0 loop_dataflow_input_count = 12'd0;
-#0 loop_dataflow_output_count = 12'd0;
+#0 loop_dataflow_input_count = 32'd0;
+#0 loop_dataflow_output_count = 32'd0;
 #0 loop_dataflow_busy = 1'b0;
 end
 
@@ -172,10 +173,12 @@ dataflow_in_loop_Bat dataflow_in_loop_Bat_U0(
     .out_stream_TKEEP(dataflow_in_loop_Bat_U0_out_stream_TKEEP),
     .out_stream_TSTRB(dataflow_in_loop_Bat_U0_out_stream_TSTRB),
     .out_stream_TLAST(dataflow_in_loop_Bat_U0_out_stream_TLAST),
-    .n_0_i_i(loop_dataflow_input_count),
+    .n(dataflow_in_loop_Bat_U0_n),
+    .num_images(num_images),
     .in_stream_TVALID(in_stream_TVALID),
     .in_stream_TREADY(dataflow_in_loop_Bat_U0_in_stream_TREADY),
-    .n_0_i_i_ap_vld(1'b0),
+    .n_ap_vld(1'b0),
+    .num_images_ap_vld(1'b1),
     .out_stream_TVALID(dataflow_in_loop_Bat_U0_out_stream_TVALID),
     .out_stream_TREADY(out_stream_TREADY),
     .ap_done(dataflow_in_loop_Bat_U0_ap_done),
@@ -189,7 +192,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         loop_dataflow_busy <= 1'b0;
     end else begin
-        if ((loop_dataflow_output_count == 12'd2601)) begin
+        if ((num_images == loop_dataflow_output_count)) begin
             loop_dataflow_busy <= 1'b0;
         end else if ((ap_start == 1'b1)) begin
             loop_dataflow_busy <= 1'b1;
@@ -203,7 +206,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if (((loop_dataflow_enable == 1'b0) & (ap_start == 1'b1))) begin
             loop_dataflow_enable <= 1'b1;
-        end else if (((loop_dataflow_input_count == 12'd2601) & (loop_dataflow_enable == 1'b1))) begin
+        end else if (((num_images == loop_dataflow_input_count) & (loop_dataflow_enable == 1'b1))) begin
             loop_dataflow_enable <= 1'b0;
         end
     end
@@ -211,30 +214,30 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        loop_dataflow_input_count <= 12'd0;
+        loop_dataflow_input_count <= 32'd0;
     end else begin
-        if (((loop_dataflow_input_count == 12'd2601) & (loop_dataflow_enable == 1'b1))) begin
-            loop_dataflow_input_count <= 12'd0;
+        if (((num_images == loop_dataflow_input_count) & (loop_dataflow_enable == 1'b1))) begin
+            loop_dataflow_input_count <= 32'd0;
         end else if (((loop_dataflow_enable == 1'b1) & (dataflow_in_loop_Bat_U0_ap_ready == 1'b1))) begin
-            loop_dataflow_input_count <= (loop_dataflow_input_count + 12'd1);
+            loop_dataflow_input_count <= (loop_dataflow_input_count + 32'd1);
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        loop_dataflow_output_count <= 12'd0;
+        loop_dataflow_output_count <= 32'd0;
     end else begin
-        if ((loop_dataflow_output_count == 12'd2601)) begin
-            loop_dataflow_output_count <= 12'd0;
+        if ((num_images == loop_dataflow_output_count)) begin
+            loop_dataflow_output_count <= 32'd0;
         end else if ((dataflow_in_loop_Bat_U0_ap_done == 1'b1)) begin
-            loop_dataflow_output_count <= (loop_dataflow_output_count + 12'd1);
+            loop_dataflow_output_count <= (loop_dataflow_output_count + 32'd1);
         end
     end
 end
 
 always @ (*) begin
-    if (((loop_dataflow_output_count == 12'd2601) & (loop_dataflow_busy == 1'b1))) begin
+    if (((num_images == loop_dataflow_output_count) & (loop_dataflow_busy == 1'b1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -242,7 +245,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((loop_dataflow_input_count == 12'd2601)) begin
+    if ((num_images == loop_dataflow_input_count)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -250,7 +253,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~(loop_dataflow_input_count == 12'd2601) & (loop_dataflow_enable == 1'b1))) begin
+    if ((~(num_images == loop_dataflow_input_count) & (loop_dataflow_enable == 1'b1))) begin
         dataflow_in_loop_Bat_U0_ap_start = 1'b1;
     end else begin
         dataflow_in_loop_Bat_U0_ap_start = 1'b0;
@@ -270,6 +273,8 @@ assign ap_sync_done = dataflow_in_loop_Bat_U0_ap_done;
 assign ap_sync_ready = dataflow_in_loop_Bat_U0_ap_ready;
 
 assign dataflow_in_loop_Bat_U0_ap_continue = 1'b1;
+
+assign dataflow_in_loop_Bat_U0_n = loop_dataflow_input_count;
 
 assign dataflow_in_loop_Bat_U0_start_full_n = 1'b1;
 

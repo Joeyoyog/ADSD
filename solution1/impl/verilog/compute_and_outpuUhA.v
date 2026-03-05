@@ -9,9 +9,9 @@
 (* rom_style = "distributed" *) module compute_and_outpuUhA_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 29;
-parameter AWIDTH = 4;
-parameter MEM_SIZE = 10;
+parameter DWIDTH = 30;
+parameter AWIDTH = 3;
+parameter MEM_SIZE = 6;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,9 +47,9 @@ module compute_and_outpuUhA(
     ce0,
     q0);
 
-parameter DataWidth = 32'd29;
-parameter AddressRange = 32'd10;
-parameter AddressWidth = 32'd4;
+parameter DataWidth = 32'd30;
+parameter AddressRange = 32'd6;
+parameter AddressWidth = 32'd3;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

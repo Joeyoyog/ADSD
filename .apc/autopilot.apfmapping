@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="svs_packed.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_packed.h"/>
-    <originFiles name="svs.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs.h"/>
-    <originFiles name="sv_norms_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_padded.h"/>
-    <originFiles name="sv_norms.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms.h"/>
-    <originFiles name="bias.h" path="C:\Users\josep\Documents\MathieuHelpMe\bias.h"/>
-    <originFiles name="alphas.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas.h"/>
-    <originFiles name="Exp.h" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.h"/>
-    <originFiles name="Exp.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.cpp"/>
-    <originFiles name="Classifier.h" path="C:\Users\josep\Documents\MathieuHelpMe\Classifier.h"/>
     <originFiles name="Classifier.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\Classifier.cpp"/>
+    <originFiles name="Classifier.h" path="C:\Users\josep\Documents\MathieuHelpMe\Classifier.h"/>
+    <originFiles name="Exp.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.cpp"/>
+    <originFiles name="Exp.h" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.h"/>
+    <originFiles name="alphas.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas.h"/>
+    <originFiles name="bias.h" path="C:\Users\josep\Documents\MathieuHelpMe\bias.h"/>
+    <originFiles name="exp_lut.h" path="C:\Users\josep\Documents\MathieuHelpMe\exp_lut.h"/>
+    <originFiles name="sv_norms.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms.h"/>
+    <originFiles name="sv_norms_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_padded.h"/>
+    <originFiles name="svs.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs.h"/>
+    <originFiles name="svs_packed.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_packed.h"/>
+    <originFiles name="alphas_0.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas_0.h"/>
+    <originFiles name="alphas_1.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas_1.h"/>
+    <originFiles name="sv_norms_0.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_0.h"/>
+    <originFiles name="sv_norms_1.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_1.h"/>
+    <originFiles name="svs_0.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_0.h"/>
+    <originFiles name="svs_1.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_1.h"/>
   </source>
   <testbench>
-    <originFiles name="test_data.txt" path="C:\Users\josep\Documents\MathieuHelpMe\test_data.txt"/>
-    <originFiles name="test_data.h" path="C:\Users\josep\Documents\MathieuHelpMe\test_data.h"/>
-    <originFiles name="ground_truth.h" path="C:\Users\josep\Documents\MathieuHelpMe\ground_truth.h"/>
-    <originFiles name="CordicTB.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\CordicTB.cpp"/>
     <originFiles name="AcceleratorTB.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\AcceleratorTB.cpp"/>
+    <originFiles name="ground_truth.h" path="C:\Users\josep\Documents\MathieuHelpMe\ground_truth.h"/>
+    <originFiles name="test_data.h" path="C:\Users\josep\Documents\MathieuHelpMe\test_data.h"/>
+    <originFiles name="test_data.txt" path="C:\Users\josep\Documents\MathieuHelpMe\test_data.txt"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

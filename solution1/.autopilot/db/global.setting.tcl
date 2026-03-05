@@ -41,15 +41,15 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c {../Classifier.cpp ../Exp.cpp}}
+set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
 set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile {C:/Users/josep/Documents/MathieuHelpMe/solution1/solution1.directive}
-set TBFiles {verilog {../AcceleratorTB.cpp ../CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} bc {../AcceleratorTB.cpp ../CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} vhdl {../AcceleratorTB.cpp ../CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} sc {../AcceleratorTB.cpp ../CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} cas {../AcceleratorTB.cpp ../CordicTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} c {}}
+set TBFiles {verilog {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} bc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} sc {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} vhdl {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp} c {} cas {../test_data.txt ../test_data.h ../ground_truth.h ../AcceleratorTB.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}

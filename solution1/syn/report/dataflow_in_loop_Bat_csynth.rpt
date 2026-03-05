@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dataflow_in_loop_Bat'
 ================================================================
-* Date:           Mon Mar  2 02:59:40 2026
+* Date:           Wed Mar  4 18:29:02 2026
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        MathieuHelpMe
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     8.742|        1.25|
+    |ap_clk  |  10.00|     8.847|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline |
     | min | max | min | max |   Type   |
     +-----+-----+-----+-----+----------+
-    |  974|  974|  873|  873| dataflow |
+    |  508|  508|  407|  407| dataflow |
     +-----+-----+-----+-----+----------+
 
     + Detail: 
@@ -38,8 +38,8 @@
         |                         |                      |  Latency  |  Interval | Pipeline|
         |         Instance        |        Module        | min | max | min | max |   Type  |
         +-------------------------+----------------------+-----+-----+-----+-----+---------+
-        |compute_and_output_U0    |compute_and_output    |  872|  872|  872|  872|   none  |
-        |load_and_calc_norm61_U0  |load_and_calc_norm61  |  101|  101|  101|  101|   none  |
+        |compute_and_output_U0    |compute_and_output    |  406|  406|  406|  406|   none  |
+        |load_and_calc_norm53_U0  |load_and_calc_norm53  |  101|  101|  101|  101|   none  |
         +-------------------------+----------------------+-----+-----+-----+-----+---------+
 
         * Loop: 
@@ -56,29 +56,29 @@
 +-----------------+---------+-------+--------+-------+
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       0|     74|
-|FIFO             |        0|      -|      10|     60|
-|Instance         |      118|      2|    7619|  22432|
+|FIFO             |        0|      -|      15|    123|
+|Instance         |      136|     16|   16901|  49033|
 |Memory           |        0|      -|     256|    112|
 |Multiplexer      |        -|      -|       -|    153|
 |Register         |        -|      -|      17|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |      118|      2|    7902|  22831|
+|Total            |      136|     16|   17189|  49495|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       42|   ~0  |       7|     42|
+|Utilization (%)  |       48|      7|      16|     93|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +-------------------------+----------------------+---------+-------+------+-------+
-    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT  |
-    +-------------------------+----------------------+---------+-------+------+-------+
-    |compute_and_output_U0    |compute_and_output    |      118|      2|  7342|  21679|
-    |load_and_calc_norm61_U0  |load_and_calc_norm61  |        0|      0|   277|    753|
-    +-------------------------+----------------------+---------+-------+------+-------+
-    |Total                    |                      |      118|      2|  7619|  22432|
-    +-------------------------+----------------------+---------+-------+------+-------+
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |compute_and_output_U0    |compute_and_output    |      136|     16|  16624|  48271|
+    |load_and_calc_norm53_U0  |load_and_calc_norm53  |        0|      0|    277|    762|
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |Total                    |                      |      136|     16|  16901|  49033|
+    +-------------------------+----------------------+---------+-------+-------+-------+
 
     * DSP48: 
     N/A
@@ -87,22 +87,22 @@
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
     |     Memory     |        Module        | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
-    |x_local_0_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_1_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_2_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_3_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_4_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_5_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_6_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_7_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_8_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_9_V_U   |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_10_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_11_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_12_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_13_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_14_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
-    |x_local_15_V_U  |dataflow_in_loop_1iI  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_0_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_1_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_2_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_3_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_4_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_5_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_6_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_7_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_8_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_9_V_U   |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_10_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_11_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_12_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_13_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_14_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
+    |x_local_15_V_U  |dataflow_in_loop_bPq  |        0|  16|   7|    49|    8|     2|          784|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
     |Total           |                      |        0| 256| 112|   784|  128|    32|        12544|
     +----------------+----------------------+---------+----+----+------+-----+------+-------------+
@@ -112,9 +112,10 @@
     |        Name       | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
     +-------------------+---------+---+----+------+-----+---------+
     |internal_norm_V_U  |        0|  5|  36|     2|   24|       48|
-    |n_0_i_i_c_U        |        0|  5|  24|     2|   12|       24|
+    |n_c_U              |        0|  5|  43|     2|   31|       62|
+    |num_images_c_U     |        0|  5|  44|     2|   32|       64|
     +-------------------+---------+---+----+------+-----+---------+
-    |Total              |        0| 10|  60|     4|   36|       72|
+    |Total              |        0| 15| 123|     6|   87|      174|
     +-------------------+---------+---+----+------+-----+---------+
 
     * Expression: 
@@ -140,7 +141,7 @@
     |ap_channel_done_x_local_9_V            |    and   |      0|  0|   2|           1|           1|
     |ap_idle                                |    and   |      0|  0|   2|           1|           1|
     |compute_and_output_U0_ap_start         |    and   |      0|  0|   2|           1|           1|
-    |load_and_calc_norm61_U0_ap_continue    |    and   |      0|  0|   2|           1|           1|
+    |load_and_calc_norm53_U0_ap_continue    |    and   |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_internal_norm_V  |    or    |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_x_local_0_V      |    or    |      0|  0|   2|           1|           1|
     |ap_sync_channel_write_x_local_10_V     |    or    |      0|  0|   2|           1|           1|
@@ -243,7 +244,9 @@
 |out_stream_TLAST   | out |    1|    axis    |  out_stream_V_last_V |    pointer   |
 |out_stream_TVALID  | out |    1|    axis    |  out_stream_V_last_V |    pointer   |
 |out_stream_TREADY  |  in |    1|    axis    |  out_stream_V_last_V |    pointer   |
-|n_0_i_i            |  in |   12|   ap_none  |        n_0_i_i       |    scalar    |
-|n_0_i_i_ap_vld     |  in |    1|   ap_none  |        n_0_i_i       |    scalar    |
+|n                  |  in |   31|   ap_none  |           n          |    scalar    |
+|n_ap_vld           |  in |    1|   ap_none  |           n          |    scalar    |
+|num_images         |  in |   32|   ap_none  |      num_images      |    scalar    |
+|num_images_ap_vld  |  in |    1|   ap_none  |      num_images      |    scalar    |
 +-------------------+-----+-----+------------+----------------------+--------------+
 

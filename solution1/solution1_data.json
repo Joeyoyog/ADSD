@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "2270777",
+    "Latency": "1058711",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -34,17 +34,65 @@
   },
   "Files": {
     "CSource": [
-      "..\/Classifier.cpp",
-      "..\/Exp.cpp"
+      "..\/Exp.cpp",
+      "..\/Classifier.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/classify_control_s_axi.vhd",
-      "impl\/vhdl\/classify_mul_mul_0iy.vhd",
-      "impl\/vhdl\/classify_mul_mul_Zio.vhd",
-      "impl\/vhdl\/classify_mux_164_Yie.vhd",
+      "impl\/vhdl\/classify_mac_mulabOq.vhd",
+      "impl\/vhdl\/classify_mul_mul_bNq.vhd",
+      "impl\/vhdl\/classify_mux_164_bMq.vhd",
+      "impl\/vhdl\/classify_mux_1632bKp.vhd",
+      "impl\/vhdl\/classify_mux_1632bLp.vhd",
+      "impl\/vhdl\/compute_and_outpu0iy.vhd",
+      "impl\/vhdl\/compute_and_outpu1iI.vhd",
+      "impl\/vhdl\/compute_and_outpu2iS.vhd",
+      "impl\/vhdl\/compute_and_outpu3i2.vhd",
+      "impl\/vhdl\/compute_and_outpu4jc.vhd",
+      "impl\/vhdl\/compute_and_outpu5jm.vhd",
+      "impl\/vhdl\/compute_and_outpu6jw.vhd",
+      "impl\/vhdl\/compute_and_outpu7jG.vhd",
+      "impl\/vhdl\/compute_and_outpu8jQ.vhd",
+      "impl\/vhdl\/compute_and_outpu9j0.vhd",
       "impl\/vhdl\/compute_and_outpuAem.vhd",
+      "impl\/vhdl\/compute_and_outpubak.vhd",
+      "impl\/vhdl\/compute_and_outpubAo.vhd",
+      "impl\/vhdl\/compute_and_outpubbk.vhd",
+      "impl\/vhdl\/compute_and_outpubBo.vhd",
+      "impl\/vhdl\/compute_and_outpubck.vhd",
+      "impl\/vhdl\/compute_and_outpubCo.vhd",
+      "impl\/vhdl\/compute_and_outpubdk.vhd",
+      "impl\/vhdl\/compute_and_outpubDo.vhd",
+      "impl\/vhdl\/compute_and_outpubek.vhd",
+      "impl\/vhdl\/compute_and_outpubEo.vhd",
       "impl\/vhdl\/compute_and_outpuBew.vhd",
+      "impl\/vhdl\/compute_and_outpubfk.vhd",
+      "impl\/vhdl\/compute_and_outpubFp.vhd",
+      "impl\/vhdl\/compute_and_outpubgk.vhd",
+      "impl\/vhdl\/compute_and_outpubGp.vhd",
+      "impl\/vhdl\/compute_and_outpubhl.vhd",
+      "impl\/vhdl\/compute_and_outpubHp.vhd",
+      "impl\/vhdl\/compute_and_outpubil.vhd",
+      "impl\/vhdl\/compute_and_outpubIp.vhd",
+      "impl\/vhdl\/compute_and_outpubjl.vhd",
+      "impl\/vhdl\/compute_and_outpubJp.vhd",
       "impl\/vhdl\/compute_and_outpubkb.vhd",
+      "impl\/vhdl\/compute_and_outpubkl.vhd",
+      "impl\/vhdl\/compute_and_outpubll.vhd",
+      "impl\/vhdl\/compute_and_outpubml.vhd",
+      "impl\/vhdl\/compute_and_outpubnm.vhd",
+      "impl\/vhdl\/compute_and_outpubom.vhd",
+      "impl\/vhdl\/compute_and_outpubpm.vhd",
+      "impl\/vhdl\/compute_and_outpubqm.vhd",
+      "impl\/vhdl\/compute_and_outpubrm.vhd",
+      "impl\/vhdl\/compute_and_outpubsm.vhd",
+      "impl\/vhdl\/compute_and_outpubtn.vhd",
+      "impl\/vhdl\/compute_and_outpubun.vhd",
+      "impl\/vhdl\/compute_and_outpubvn.vhd",
+      "impl\/vhdl\/compute_and_outpubwn.vhd",
+      "impl\/vhdl\/compute_and_outpubxn.vhd",
+      "impl\/vhdl\/compute_and_outpubyn.vhd",
+      "impl\/vhdl\/compute_and_outpubzo.vhd",
       "impl\/vhdl\/compute_and_outpuCeG.vhd",
       "impl\/vhdl\/compute_and_outpucud.vhd",
       "impl\/vhdl\/compute_and_outpudEe.vhd",
@@ -91,26 +139,123 @@
       "impl\/vhdl\/compute_and_outpuxdS.vhd",
       "impl\/vhdl\/compute_and_outpuXh4.vhd",
       "impl\/vhdl\/compute_and_outpuyd2.vhd",
+      "impl\/vhdl\/compute_and_outpuYie.vhd",
       "impl\/vhdl\/compute_and_outpuzec.vhd",
-      "impl\/vhdl\/dataflow_in_loop_1iI.vhd",
-      "impl\/vhdl\/dataflow_in_loop_1iI_memcore.vhd",
+      "impl\/vhdl\/compute_and_outpuZio.vhd",
       "impl\/vhdl\/dataflow_in_loop_Bat.vhd",
-      "impl\/vhdl\/fifo_w12_d2_A.vhd",
+      "impl\/vhdl\/dataflow_in_loop_bPq.vhd",
+      "impl\/vhdl\/dataflow_in_loop_bPq_memcore.vhd",
       "impl\/vhdl\/fifo_w24_d2_A.vhd",
-      "impl\/vhdl\/load_and_calc_norm61.vhd",
+      "impl\/vhdl\/fifo_w31_d2_A.vhd",
+      "impl\/vhdl\/fifo_w32_d2_A.vhd",
+      "impl\/vhdl\/load_and_calc_norm53.vhd",
       "impl\/vhdl\/classify.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/classify_control_s_axi.v",
-      "impl\/verilog\/classify_mul_mul_0iy.v",
-      "impl\/verilog\/classify_mul_mul_Zio.v",
-      "impl\/verilog\/classify_mux_164_Yie.v",
+      "impl\/verilog\/classify_mac_mulabOq.v",
+      "impl\/verilog\/classify_mul_mul_bNq.v",
+      "impl\/verilog\/classify_mux_164_bMq.v",
+      "impl\/verilog\/classify_mux_1632bKp.v",
+      "impl\/verilog\/classify_mux_1632bLp.v",
+      "impl\/verilog\/compute_and_outpu0iy.v",
+      "impl\/verilog\/compute_and_outpu0iy_rom.dat",
+      "impl\/verilog\/compute_and_outpu1iI.v",
+      "impl\/verilog\/compute_and_outpu1iI_rom.dat",
+      "impl\/verilog\/compute_and_outpu2iS.v",
+      "impl\/verilog\/compute_and_outpu2iS_rom.dat",
+      "impl\/verilog\/compute_and_outpu3i2.v",
+      "impl\/verilog\/compute_and_outpu3i2_rom.dat",
+      "impl\/verilog\/compute_and_outpu4jc.v",
+      "impl\/verilog\/compute_and_outpu4jc_rom.dat",
+      "impl\/verilog\/compute_and_outpu5jm.v",
+      "impl\/verilog\/compute_and_outpu5jm_rom.dat",
+      "impl\/verilog\/compute_and_outpu6jw.v",
+      "impl\/verilog\/compute_and_outpu6jw_rom.dat",
+      "impl\/verilog\/compute_and_outpu7jG.v",
+      "impl\/verilog\/compute_and_outpu7jG_rom.dat",
+      "impl\/verilog\/compute_and_outpu8jQ.v",
+      "impl\/verilog\/compute_and_outpu8jQ_rom.dat",
+      "impl\/verilog\/compute_and_outpu9j0.v",
+      "impl\/verilog\/compute_and_outpu9j0_rom.dat",
       "impl\/verilog\/compute_and_outpuAem.v",
       "impl\/verilog\/compute_and_outpuAem_rom.dat",
+      "impl\/verilog\/compute_and_outpubak.v",
+      "impl\/verilog\/compute_and_outpubak_rom.dat",
+      "impl\/verilog\/compute_and_outpubAo.v",
+      "impl\/verilog\/compute_and_outpubAo_rom.dat",
+      "impl\/verilog\/compute_and_outpubbk.v",
+      "impl\/verilog\/compute_and_outpubbk_rom.dat",
+      "impl\/verilog\/compute_and_outpubBo.v",
+      "impl\/verilog\/compute_and_outpubBo_rom.dat",
+      "impl\/verilog\/compute_and_outpubck.v",
+      "impl\/verilog\/compute_and_outpubck_rom.dat",
+      "impl\/verilog\/compute_and_outpubCo.v",
+      "impl\/verilog\/compute_and_outpubCo_rom.dat",
+      "impl\/verilog\/compute_and_outpubdk.v",
+      "impl\/verilog\/compute_and_outpubdk_rom.dat",
+      "impl\/verilog\/compute_and_outpubDo.v",
+      "impl\/verilog\/compute_and_outpubDo_rom.dat",
+      "impl\/verilog\/compute_and_outpubek.v",
+      "impl\/verilog\/compute_and_outpubek_rom.dat",
+      "impl\/verilog\/compute_and_outpubEo.v",
+      "impl\/verilog\/compute_and_outpubEo_rom.dat",
       "impl\/verilog\/compute_and_outpuBew.v",
       "impl\/verilog\/compute_and_outpuBew_rom.dat",
+      "impl\/verilog\/compute_and_outpubfk.v",
+      "impl\/verilog\/compute_and_outpubfk_rom.dat",
+      "impl\/verilog\/compute_and_outpubFp.v",
+      "impl\/verilog\/compute_and_outpubFp_rom.dat",
+      "impl\/verilog\/compute_and_outpubgk.v",
+      "impl\/verilog\/compute_and_outpubgk_rom.dat",
+      "impl\/verilog\/compute_and_outpubGp.v",
+      "impl\/verilog\/compute_and_outpubGp_rom.dat",
+      "impl\/verilog\/compute_and_outpubhl.v",
+      "impl\/verilog\/compute_and_outpubhl_rom.dat",
+      "impl\/verilog\/compute_and_outpubHp.v",
+      "impl\/verilog\/compute_and_outpubHp_rom.dat",
+      "impl\/verilog\/compute_and_outpubil.v",
+      "impl\/verilog\/compute_and_outpubil_rom.dat",
+      "impl\/verilog\/compute_and_outpubIp.v",
+      "impl\/verilog\/compute_and_outpubIp_rom.dat",
+      "impl\/verilog\/compute_and_outpubjl.v",
+      "impl\/verilog\/compute_and_outpubjl_rom.dat",
+      "impl\/verilog\/compute_and_outpubJp.v",
+      "impl\/verilog\/compute_and_outpubJp_rom.dat",
       "impl\/verilog\/compute_and_outpubkb.v",
       "impl\/verilog\/compute_and_outpubkb_rom.dat",
+      "impl\/verilog\/compute_and_outpubkl.v",
+      "impl\/verilog\/compute_and_outpubkl_rom.dat",
+      "impl\/verilog\/compute_and_outpubll.v",
+      "impl\/verilog\/compute_and_outpubll_rom.dat",
+      "impl\/verilog\/compute_and_outpubml.v",
+      "impl\/verilog\/compute_and_outpubml_rom.dat",
+      "impl\/verilog\/compute_and_outpubnm.v",
+      "impl\/verilog\/compute_and_outpubnm_rom.dat",
+      "impl\/verilog\/compute_and_outpubom.v",
+      "impl\/verilog\/compute_and_outpubom_rom.dat",
+      "impl\/verilog\/compute_and_outpubpm.v",
+      "impl\/verilog\/compute_and_outpubpm_rom.dat",
+      "impl\/verilog\/compute_and_outpubqm.v",
+      "impl\/verilog\/compute_and_outpubqm_rom.dat",
+      "impl\/verilog\/compute_and_outpubrm.v",
+      "impl\/verilog\/compute_and_outpubrm_rom.dat",
+      "impl\/verilog\/compute_and_outpubsm.v",
+      "impl\/verilog\/compute_and_outpubsm_rom.dat",
+      "impl\/verilog\/compute_and_outpubtn.v",
+      "impl\/verilog\/compute_and_outpubtn_rom.dat",
+      "impl\/verilog\/compute_and_outpubun.v",
+      "impl\/verilog\/compute_and_outpubun_rom.dat",
+      "impl\/verilog\/compute_and_outpubvn.v",
+      "impl\/verilog\/compute_and_outpubvn_rom.dat",
+      "impl\/verilog\/compute_and_outpubwn.v",
+      "impl\/verilog\/compute_and_outpubwn_rom.dat",
+      "impl\/verilog\/compute_and_outpubxn.v",
+      "impl\/verilog\/compute_and_outpubxn_rom.dat",
+      "impl\/verilog\/compute_and_outpubyn.v",
+      "impl\/verilog\/compute_and_outpubyn_rom.dat",
+      "impl\/verilog\/compute_and_outpubzo.v",
+      "impl\/verilog\/compute_and_outpubzo_rom.dat",
       "impl\/verilog\/compute_and_outpuCeG.v",
       "impl\/verilog\/compute_and_outpuCeG_rom.dat",
       "impl\/verilog\/compute_and_outpucud.v",
@@ -202,14 +347,19 @@
       "impl\/verilog\/compute_and_outpuXh4_rom.dat",
       "impl\/verilog\/compute_and_outpuyd2.v",
       "impl\/verilog\/compute_and_outpuyd2_rom.dat",
+      "impl\/verilog\/compute_and_outpuYie.v",
+      "impl\/verilog\/compute_and_outpuYie_rom.dat",
       "impl\/verilog\/compute_and_outpuzec.v",
       "impl\/verilog\/compute_and_outpuzec_rom.dat",
-      "impl\/verilog\/dataflow_in_loop_1iI.v",
-      "impl\/verilog\/dataflow_in_loop_1iI_memcore.v",
+      "impl\/verilog\/compute_and_outpuZio.v",
+      "impl\/verilog\/compute_and_outpuZio_rom.dat",
       "impl\/verilog\/dataflow_in_loop_Bat.v",
-      "impl\/verilog\/fifo_w12_d2_A.v",
+      "impl\/verilog\/dataflow_in_loop_bPq.v",
+      "impl\/verilog\/dataflow_in_loop_bPq_memcore.v",
       "impl\/verilog\/fifo_w24_d2_A.v",
-      "impl\/verilog\/load_and_calc_norm61.v",
+      "impl\/verilog\/fifo_w31_d2_A.v",
+      "impl\/verilog\/fifo_w32_d2_A.v",
+      "impl\/verilog\/load_and_calc_norm53.v",
       "impl\/verilog\/classify.v"
     ],
     "SwDriver": [
@@ -750,22 +900,22 @@
     "out_stream_V_data_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "2"
+      "firstOutLatency": "3"
     },
     "out_stream_V_keep_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "2"
+      "firstOutLatency": "3"
     },
     "out_stream_V_strb_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "2"
+      "firstOutLatency": "3"
     },
     "out_stream_V_last_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "2"
+      "firstOutLatency": "3"
     }
   },
   "ModuleInfo": {
@@ -780,14 +930,14 @@
               "InstanceName": "compute_and_output_U0"
             },
             {
-              "ModuleName": "load_and_calc_norm61",
-              "InstanceName": "load_and_calc_norm61_U0"
+              "ModuleName": "load_and_calc_norm53",
+              "InstanceName": "load_and_calc_norm53_U0"
             }
           ]
         }]
     },
     "Metrics": {
-      "load_and_calc_norm61": {
+      "load_and_calc_norm53": {
         "Latency": {
           "LatencyBest": "101",
           "LatencyAvg": "101",
@@ -802,7 +952,7 @@
           "Estimate": "8.274"
         },
         "Loops": [{
-            "Name": "load_loop",
+            "Name": "Loop 1",
             "TripCount": "98",
             "Latency": "99",
             "PipelineII": "1",
@@ -811,101 +961,101 @@
         "Area": {
           "DSP48E": "0",
           "FF": "277",
-          "LUT": "753",
+          "LUT": "762",
           "BRAM_18K": "0"
         }
       },
       "compute_and_output": {
         "Latency": {
-          "LatencyBest": "872",
-          "LatencyAvg": "872",
-          "LatencyWorst": "872",
-          "PipelineII": "872",
+          "LatencyBest": "406",
+          "LatencyAvg": "406",
+          "LatencyWorst": "406",
+          "PipelineII": "406",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "8.847"
         },
         "Loops": [{
-            "Name": "classify_label2",
-            "TripCount": "11",
-            "Latency": "869",
+            "Name": "Loop 1",
+            "TripCount": "6",
+            "Latency": "402",
             "PipelineII": "",
-            "PipelineDepth": "79",
+            "PipelineDepth": "67",
             "Loops": [
               {
-                "Name": "classify_label1",
+                "Name": "Loop 1.1",
                 "TripCount": "49",
                 "Latency": "51",
                 "PipelineII": "1",
                 "PipelineDepth": "4"
               },
               {
-                "Name": "Reconstruct_Loop",
-                "TripCount": "16",
-                "Latency": "23",
+                "Name": "Loop 1.2",
+                "TripCount": "4",
+                "Latency": "10",
                 "PipelineII": "1",
-                "PipelineDepth": "9"
+                "PipelineDepth": "8"
               }
             ]
           }],
         "Area": {
-          "BRAM_18K": "118",
-          "DSP48E": "2",
-          "FF": "7342",
-          "LUT": "21679"
+          "BRAM_18K": "136",
+          "DSP48E": "16",
+          "FF": "16624",
+          "LUT": "48271"
         }
       },
       "dataflow_in_loop_Bat": {
         "Latency": {
-          "LatencyBest": "974",
-          "LatencyAvg": "974",
-          "LatencyWorst": "974",
-          "PipelineII": "873",
+          "LatencyBest": "508",
+          "LatencyAvg": "508",
+          "LatencyWorst": "508",
+          "PipelineII": "407",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "8.847"
         },
         "Area": {
-          "BRAM_18K": "118",
-          "DSP48E": "2",
-          "FF": "7902",
-          "LUT": "22831"
+          "BRAM_18K": "136",
+          "DSP48E": "16",
+          "FF": "17189",
+          "LUT": "49495"
         }
       },
       "classify": {
         "Latency": {
-          "LatencyBest": "2270777",
-          "LatencyAvg": "2270777",
-          "LatencyWorst": "2270777",
-          "PipelineII": "2270778",
+          "LatencyBest": "1058711",
+          "LatencyAvg": "1058711",
+          "LatencyWorst": "1058711",
+          "PipelineII": "1058712",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.742"
+          "Estimate": "8.847"
         },
         "Loops": [{
             "Name": "Batch_Loop",
             "TripCount": "2601",
-            "Latency": "2270775",
+            "Latency": "1058709",
             "PipelineII": "",
-            "PipelineDepth": "2270775"
+            "PipelineDepth": "1058709"
           }],
         "Area": {
-          "BRAM_18K": "118",
-          "DSP48E": "2",
-          "FF": "8002",
-          "LUT": "22977"
+          "BRAM_18K": "136",
+          "DSP48E": "16",
+          "FF": "17329",
+          "LUT": "49695"
         }
       }
     }
@@ -917,7 +1067,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-03-02 02:59:48 +0000",
+    "Time": "2026-03-04 18:29:16 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

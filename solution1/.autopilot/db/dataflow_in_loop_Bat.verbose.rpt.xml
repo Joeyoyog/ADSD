@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dataflow_in_loop_Bat'" level="0">
-<item name = "Date">Mon Mar  2 02:59:40 2026
+<item name = "Date">Wed Mar  4 18:29:02 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">MathieuHelpMe</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.742, 1.25</column>
+<column name="ap_clk">10.00, 8.847, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">974, 974, 873, 873, dataflow</column>
+<column name="">508, 508, 407, 407, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="compute_and_output_U0">compute_and_output, 872, 872, 872, 872, none</column>
-<column name="load_and_calc_norm61_U0">load_and_calc_norm61, 101, 101, 101, 101, none</column>
+<column name="compute_and_output_U0">compute_and_output, 406, 406, 406, 406, none</column>
+<column name="load_and_calc_norm53_U0">load_and_calc_norm53, 101, 101, 101, 101, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,21 +50,21 @@
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 74</column>
-<column name="FIFO">0, -, 10, 60</column>
-<column name="Instance">118, 2, 7619, 22432</column>
+<column name="FIFO">0, -, 15, 123</column>
+<column name="Instance">136, 16, 16901, 49033</column>
 <column name="Memory">0, -, 256, 112</column>
 <column name="Multiplexer">-, -, -, 153</column>
 <column name="Register">-, -, 17, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">42, ~0, 7, 42</specialColumn>
+<specialColumn name="Utilization (%)">48, 7, 16, 93</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="compute_and_output_U0">compute_and_output, 118, 2, 7342, 21679</column>
-<column name="load_and_calc_norm61_U0">load_and_calc_norm61, 0, 0, 277, 753</column>
+<column name="compute_and_output_U0">compute_and_output, 136, 16, 16624, 48271</column>
+<column name="load_and_calc_norm53_U0">load_and_calc_norm53, 0, 0, 277, 762</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -73,28 +73,29 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="x_local_0_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_1_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_2_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_3_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_4_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_5_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_6_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_7_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_8_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_9_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_10_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_11_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_12_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_13_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_14_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
-<column name="x_local_15_V_U">dataflow_in_loop_1iI, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_0_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_1_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_2_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_3_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_4_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_5_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_6_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_7_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_8_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_9_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_10_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_11_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_12_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_13_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_14_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
+<column name="x_local_15_V_U">dataflow_in_loop_bPq, 0, 16, 7, 49, 8, 2, 784</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
 <column name="internal_norm_V_U">0, 5, 36, 2, 24, 48</column>
-<column name="n_0_i_i_c_U">0, 5, 24, 2, 12, 24</column>
+<column name="n_c_U">0, 5, 43, 2, 31, 62</column>
+<column name="num_images_c_U">0, 5, 44, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
@@ -118,7 +119,7 @@
 <column name="ap_channel_done_x_local_9_V">and, 0, 0, 2, 1, 1</column>
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
 <column name="compute_and_output_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="load_and_calc_norm61_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
+<column name="load_and_calc_norm53_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_internal_norm_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_0_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_10_V">or, 0, 0, 2, 1, 1</column>
@@ -209,8 +210,10 @@
 <column name="out_stream_TLAST">out, 1, axis, out_stream_V_last_V, pointer</column>
 <column name="out_stream_TVALID">out, 1, axis, out_stream_V_last_V, pointer</column>
 <column name="out_stream_TREADY">in, 1, axis, out_stream_V_last_V, pointer</column>
-<column name="n_0_i_i">in, 12, ap_none, n_0_i_i, scalar</column>
-<column name="n_0_i_i_ap_vld">in, 1, ap_none, n_0_i_i, scalar</column>
+<column name="n">in, 31, ap_none, n, scalar</column>
+<column name="n_ap_vld">in, 1, ap_none, n, scalar</column>
+<column name="num_images">in, 32, ap_none, num_images, scalar</column>
+<column name="num_images_ap_vld">in, 1, ap_none, num_images, scalar</column>
 </table>
 </item>
 </section>

@@ -37,6 +37,11 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/.apc/.tb</location>
 		</link>
 		<link>
+			<name>.reference/ap_int.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vivado/2018.2/include/ap_int.h</location>
+		</link>
+		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/solution1/.tcls</location>
@@ -67,14 +72,39 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas.h</location>
 		</link>
 		<link>
+			<name>source/alphas_0.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_0.h</location>
+		</link>
+		<link>
+			<name>source/alphas_1.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_1.h</location>
+		</link>
+		<link>
 			<name>source/bias.h</name>
 			<type>1</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/bias.h</location>
 		</link>
 		<link>
+			<name>source/exp_lut.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/exp_lut.h</location>
+		</link>
+		<link>
 			<name>source/sv_norms.h</name>
 			<type>1</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms.h</location>
+		</link>
+		<link>
+			<name>source/sv_norms_0.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_0.h</location>
+		</link>
+		<link>
+			<name>source/sv_norms_1.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_1.h</location>
 		</link>
 		<link>
 			<name>source/sv_norms_padded.h</name>
@@ -87,6 +117,16 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/svs.h</location>
 		</link>
 		<link>
+			<name>source/svs_0.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_0.h</location>
+		</link>
+		<link>
+			<name>source/svs_1.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_1.h</location>
+		</link>
+		<link>
 			<name>source/svs_packed.h</name>
 			<type>1</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_packed.h</location>
@@ -95,11 +135,6 @@
 			<name>testbench/AcceleratorTB.cpp</name>
 			<type>1</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/AcceleratorTB.cpp</location>
-		</link>
-		<link>
-			<name>testbench/CordicTB.cpp</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/CordicTB.cpp</location>
 		</link>
 		<link>
 			<name>testbench/ground_truth.h</name>

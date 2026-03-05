@@ -21,10 +21,12 @@ module dataflow_in_loop_Bat (
         out_stream_TKEEP,
         out_stream_TSTRB,
         out_stream_TLAST,
-        n_0_i_i,
+        n,
+        num_images,
         in_stream_TVALID,
         in_stream_TREADY,
-        n_0_i_i_ap_vld,
+        n_ap_vld,
+        num_images_ap_vld,
         out_stream_TVALID,
         out_stream_TREADY,
         ap_done,
@@ -48,10 +50,12 @@ output  [31:0] out_stream_TDATA;
 output  [0:0] out_stream_TKEEP;
 output  [0:0] out_stream_TSTRB;
 output  [0:0] out_stream_TLAST;
-input  [11:0] n_0_i_i;
+input  [30:0] n;
+input  [31:0] num_images;
 input   in_stream_TVALID;
 output   in_stream_TREADY;
-input   n_0_i_i_ap_vld;
+input   n_ap_vld;
+input   num_images_ap_vld;
 output   out_stream_TVALID;
 input   out_stream_TREADY;
 output   ap_done;
@@ -92,145 +96,147 @@ wire   [7:0] x_local_14_V_i_q0;
 wire   [7:0] x_local_14_V_t_q0;
 wire   [7:0] x_local_15_V_i_q0;
 wire   [7:0] x_local_15_V_t_q0;
-wire    load_and_calc_norm61_U0_ap_start;
-wire    load_and_calc_norm61_U0_ap_done;
-wire    load_and_calc_norm61_U0_ap_continue;
-wire    load_and_calc_norm61_U0_ap_idle;
-wire    load_and_calc_norm61_U0_ap_ready;
-wire    load_and_calc_norm61_U0_in_stream_TREADY;
-wire   [5:0] load_and_calc_norm61_U0_x_local_0_V_address0;
-wire    load_and_calc_norm61_U0_x_local_0_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_0_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_0_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_1_V_address0;
-wire    load_and_calc_norm61_U0_x_local_1_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_1_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_1_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_2_V_address0;
-wire    load_and_calc_norm61_U0_x_local_2_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_2_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_2_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_3_V_address0;
-wire    load_and_calc_norm61_U0_x_local_3_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_3_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_3_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_4_V_address0;
-wire    load_and_calc_norm61_U0_x_local_4_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_4_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_4_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_5_V_address0;
-wire    load_and_calc_norm61_U0_x_local_5_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_5_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_5_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_6_V_address0;
-wire    load_and_calc_norm61_U0_x_local_6_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_6_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_6_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_7_V_address0;
-wire    load_and_calc_norm61_U0_x_local_7_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_7_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_7_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_8_V_address0;
-wire    load_and_calc_norm61_U0_x_local_8_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_8_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_8_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_9_V_address0;
-wire    load_and_calc_norm61_U0_x_local_9_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_9_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_9_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_10_V_address0;
-wire    load_and_calc_norm61_U0_x_local_10_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_10_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_10_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_11_V_address0;
-wire    load_and_calc_norm61_U0_x_local_11_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_11_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_11_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_12_V_address0;
-wire    load_and_calc_norm61_U0_x_local_12_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_12_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_12_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_13_V_address0;
-wire    load_and_calc_norm61_U0_x_local_13_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_13_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_13_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_14_V_address0;
-wire    load_and_calc_norm61_U0_x_local_14_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_14_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_14_V_d0;
-wire   [5:0] load_and_calc_norm61_U0_x_local_15_V_address0;
-wire    load_and_calc_norm61_U0_x_local_15_V_ce0;
-wire    load_and_calc_norm61_U0_x_local_15_V_we0;
-wire   [7:0] load_and_calc_norm61_U0_x_local_15_V_d0;
-wire   [11:0] load_and_calc_norm61_U0_n_0_i_i_out_din;
-wire    load_and_calc_norm61_U0_n_0_i_i_out_write;
-wire   [23:0] load_and_calc_norm61_U0_ap_return;
+wire    load_and_calc_norm53_U0_ap_start;
+wire    load_and_calc_norm53_U0_ap_done;
+wire    load_and_calc_norm53_U0_ap_continue;
+wire    load_and_calc_norm53_U0_ap_idle;
+wire    load_and_calc_norm53_U0_ap_ready;
+wire    load_and_calc_norm53_U0_in_stream_TREADY;
+wire   [5:0] load_and_calc_norm53_U0_x_local_0_V_address0;
+wire    load_and_calc_norm53_U0_x_local_0_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_0_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_0_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_1_V_address0;
+wire    load_and_calc_norm53_U0_x_local_1_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_1_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_1_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_2_V_address0;
+wire    load_and_calc_norm53_U0_x_local_2_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_2_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_2_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_3_V_address0;
+wire    load_and_calc_norm53_U0_x_local_3_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_3_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_3_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_4_V_address0;
+wire    load_and_calc_norm53_U0_x_local_4_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_4_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_4_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_5_V_address0;
+wire    load_and_calc_norm53_U0_x_local_5_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_5_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_5_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_6_V_address0;
+wire    load_and_calc_norm53_U0_x_local_6_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_6_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_6_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_7_V_address0;
+wire    load_and_calc_norm53_U0_x_local_7_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_7_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_7_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_8_V_address0;
+wire    load_and_calc_norm53_U0_x_local_8_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_8_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_8_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_9_V_address0;
+wire    load_and_calc_norm53_U0_x_local_9_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_9_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_9_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_10_V_address0;
+wire    load_and_calc_norm53_U0_x_local_10_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_10_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_10_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_11_V_address0;
+wire    load_and_calc_norm53_U0_x_local_11_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_11_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_11_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_12_V_address0;
+wire    load_and_calc_norm53_U0_x_local_12_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_12_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_12_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_13_V_address0;
+wire    load_and_calc_norm53_U0_x_local_13_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_13_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_13_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_14_V_address0;
+wire    load_and_calc_norm53_U0_x_local_14_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_14_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_14_V_d0;
+wire   [5:0] load_and_calc_norm53_U0_x_local_15_V_address0;
+wire    load_and_calc_norm53_U0_x_local_15_V_ce0;
+wire    load_and_calc_norm53_U0_x_local_15_V_we0;
+wire   [7:0] load_and_calc_norm53_U0_x_local_15_V_d0;
+wire   [30:0] load_and_calc_norm53_U0_n_out_din;
+wire    load_and_calc_norm53_U0_n_out_write;
+wire   [31:0] load_and_calc_norm53_U0_num_images_out_din;
+wire    load_and_calc_norm53_U0_num_images_out_write;
+wire   [23:0] load_and_calc_norm53_U0_ap_return;
 wire    ap_channel_done_internal_norm_V;
 wire    internal_norm_V_full_n;
 reg    ap_sync_reg_channel_write_internal_norm_V;
 wire    ap_sync_channel_write_internal_norm_V;
 wire    ap_channel_done_x_local_15_V;
-wire    load_and_calc_norm61_U0_x_local_15_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_15_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_15_V;
 wire    ap_sync_channel_write_x_local_15_V;
 wire    ap_channel_done_x_local_14_V;
-wire    load_and_calc_norm61_U0_x_local_14_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_14_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_14_V;
 wire    ap_sync_channel_write_x_local_14_V;
 wire    ap_channel_done_x_local_13_V;
-wire    load_and_calc_norm61_U0_x_local_13_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_13_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_13_V;
 wire    ap_sync_channel_write_x_local_13_V;
 wire    ap_channel_done_x_local_12_V;
-wire    load_and_calc_norm61_U0_x_local_12_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_12_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_12_V;
 wire    ap_sync_channel_write_x_local_12_V;
 wire    ap_channel_done_x_local_11_V;
-wire    load_and_calc_norm61_U0_x_local_11_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_11_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_11_V;
 wire    ap_sync_channel_write_x_local_11_V;
 wire    ap_channel_done_x_local_10_V;
-wire    load_and_calc_norm61_U0_x_local_10_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_10_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_10_V;
 wire    ap_sync_channel_write_x_local_10_V;
 wire    ap_channel_done_x_local_9_V;
-wire    load_and_calc_norm61_U0_x_local_9_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_9_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_9_V;
 wire    ap_sync_channel_write_x_local_9_V;
 wire    ap_channel_done_x_local_8_V;
-wire    load_and_calc_norm61_U0_x_local_8_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_8_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_8_V;
 wire    ap_sync_channel_write_x_local_8_V;
 wire    ap_channel_done_x_local_7_V;
-wire    load_and_calc_norm61_U0_x_local_7_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_7_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_7_V;
 wire    ap_sync_channel_write_x_local_7_V;
 wire    ap_channel_done_x_local_6_V;
-wire    load_and_calc_norm61_U0_x_local_6_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_6_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_6_V;
 wire    ap_sync_channel_write_x_local_6_V;
 wire    ap_channel_done_x_local_5_V;
-wire    load_and_calc_norm61_U0_x_local_5_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_5_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_5_V;
 wire    ap_sync_channel_write_x_local_5_V;
 wire    ap_channel_done_x_local_4_V;
-wire    load_and_calc_norm61_U0_x_local_4_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_4_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_4_V;
 wire    ap_sync_channel_write_x_local_4_V;
 wire    ap_channel_done_x_local_3_V;
-wire    load_and_calc_norm61_U0_x_local_3_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_3_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_3_V;
 wire    ap_sync_channel_write_x_local_3_V;
 wire    ap_channel_done_x_local_2_V;
-wire    load_and_calc_norm61_U0_x_local_2_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_2_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_2_V;
 wire    ap_sync_channel_write_x_local_2_V;
 wire    ap_channel_done_x_local_1_V;
-wire    load_and_calc_norm61_U0_x_local_1_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_1_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_1_V;
 wire    ap_sync_channel_write_x_local_1_V;
 wire    ap_channel_done_x_local_0_V;
-wire    load_and_calc_norm61_U0_x_local_0_V_full_n;
+wire    load_and_calc_norm53_U0_x_local_0_V_full_n;
 reg    ap_sync_reg_channel_write_x_local_0_V;
 wire    ap_sync_channel_write_x_local_0_V;
 wire    compute_and_output_U0_ap_start;
@@ -275,7 +281,8 @@ wire    compute_and_output_U0_out_stream_TVALID;
 wire   [0:0] compute_and_output_U0_out_stream_TKEEP;
 wire   [0:0] compute_and_output_U0_out_stream_TSTRB;
 wire   [0:0] compute_and_output_U0_out_stream_TLAST;
-wire    compute_and_output_U0_n_0_i_i_read;
+wire    compute_and_output_U0_n_read;
+wire    compute_and_output_U0_num_images_read;
 wire    ap_sync_continue;
 wire    x_local_0_V_i_full_n;
 wire    x_local_0_V_t_empty_n;
@@ -309,15 +316,18 @@ wire    x_local_14_V_i_full_n;
 wire    x_local_14_V_t_empty_n;
 wire    x_local_15_V_i_full_n;
 wire    x_local_15_V_t_empty_n;
-wire    n_0_i_i_c_full_n;
-wire   [11:0] n_0_i_i_c_dout;
-wire    n_0_i_i_c_empty_n;
+wire    n_c_full_n;
+wire   [30:0] n_c_dout;
+wire    n_c_empty_n;
+wire    num_images_c_full_n;
+wire   [31:0] num_images_c_dout;
+wire    num_images_c_empty_n;
 wire   [23:0] internal_norm_V_dout;
 wire    internal_norm_V_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-wire    load_and_calc_norm61_U0_start_full_n;
-wire    load_and_calc_norm61_U0_start_write;
+wire    load_and_calc_norm53_U0_start_full_n;
+wire    load_and_calc_norm53_U0_start_write;
 wire    compute_and_output_U0_start_full_n;
 wire    compute_and_output_U0_start_write;
 
@@ -342,17 +352,17 @@ initial begin
 #0 ap_sync_reg_channel_write_x_local_0_V = 1'b0;
 end
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_0_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_0_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_0_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_0_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_0_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_0_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_0_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_0_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_0_V_d0),
     .i_q0(x_local_0_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_0_V_address0),
     .t_ce0(compute_and_output_U0_x_local_0_V_ce0),
@@ -367,17 +377,17 @@ x_local_0_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_1_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_1_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_1_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_1_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_1_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_1_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_1_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_1_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_1_V_d0),
     .i_q0(x_local_1_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_1_V_address0),
     .t_ce0(compute_and_output_U0_x_local_1_V_ce0),
@@ -392,17 +402,17 @@ x_local_1_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_2_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_2_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_2_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_2_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_2_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_2_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_2_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_2_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_2_V_d0),
     .i_q0(x_local_2_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_2_V_address0),
     .t_ce0(compute_and_output_U0_x_local_2_V_ce0),
@@ -417,17 +427,17 @@ x_local_2_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_3_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_3_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_3_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_3_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_3_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_3_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_3_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_3_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_3_V_d0),
     .i_q0(x_local_3_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_3_V_address0),
     .t_ce0(compute_and_output_U0_x_local_3_V_ce0),
@@ -442,17 +452,17 @@ x_local_3_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_4_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_4_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_4_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_4_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_4_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_4_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_4_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_4_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_4_V_d0),
     .i_q0(x_local_4_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_4_V_address0),
     .t_ce0(compute_and_output_U0_x_local_4_V_ce0),
@@ -467,17 +477,17 @@ x_local_4_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_5_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_5_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_5_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_5_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_5_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_5_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_5_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_5_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_5_V_d0),
     .i_q0(x_local_5_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_5_V_address0),
     .t_ce0(compute_and_output_U0_x_local_5_V_ce0),
@@ -492,17 +502,17 @@ x_local_5_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_6_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_6_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_6_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_6_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_6_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_6_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_6_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_6_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_6_V_d0),
     .i_q0(x_local_6_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_6_V_address0),
     .t_ce0(compute_and_output_U0_x_local_6_V_ce0),
@@ -517,17 +527,17 @@ x_local_6_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_7_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_7_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_7_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_7_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_7_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_7_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_7_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_7_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_7_V_d0),
     .i_q0(x_local_7_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_7_V_address0),
     .t_ce0(compute_and_output_U0_x_local_7_V_ce0),
@@ -542,17 +552,17 @@ x_local_7_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_8_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_8_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_8_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_8_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_8_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_8_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_8_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_8_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_8_V_d0),
     .i_q0(x_local_8_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_8_V_address0),
     .t_ce0(compute_and_output_U0_x_local_8_V_ce0),
@@ -567,17 +577,17 @@ x_local_8_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_9_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_9_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_9_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_9_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_9_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_9_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_9_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_9_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_9_V_d0),
     .i_q0(x_local_9_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_9_V_address0),
     .t_ce0(compute_and_output_U0_x_local_9_V_ce0),
@@ -592,17 +602,17 @@ x_local_9_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_10_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_10_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_10_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_10_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_10_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_10_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_10_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_10_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_10_V_d0),
     .i_q0(x_local_10_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_10_V_address0),
     .t_ce0(compute_and_output_U0_x_local_10_V_ce0),
@@ -617,17 +627,17 @@ x_local_10_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_11_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_11_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_11_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_11_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_11_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_11_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_11_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_11_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_11_V_d0),
     .i_q0(x_local_11_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_11_V_address0),
     .t_ce0(compute_and_output_U0_x_local_11_V_ce0),
@@ -642,17 +652,17 @@ x_local_11_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_12_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_12_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_12_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_12_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_12_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_12_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_12_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_12_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_12_V_d0),
     .i_q0(x_local_12_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_12_V_address0),
     .t_ce0(compute_and_output_U0_x_local_12_V_ce0),
@@ -667,17 +677,17 @@ x_local_12_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_13_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_13_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_13_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_13_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_13_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_13_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_13_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_13_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_13_V_d0),
     .i_q0(x_local_13_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_13_V_address0),
     .t_ce0(compute_and_output_U0_x_local_13_V_ce0),
@@ -692,17 +702,17 @@ x_local_13_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_14_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_14_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_14_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_14_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_14_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_14_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_14_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_14_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_14_V_d0),
     .i_q0(x_local_14_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_14_V_address0),
     .t_ce0(compute_and_output_U0_x_local_14_V_ce0),
@@ -717,17 +727,17 @@ x_local_14_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_1iI #(
+dataflow_in_loop_bPq #(
     .DataWidth( 8 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 x_local_15_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(load_and_calc_norm61_U0_x_local_15_V_address0),
-    .i_ce0(load_and_calc_norm61_U0_x_local_15_V_ce0),
-    .i_we0(load_and_calc_norm61_U0_x_local_15_V_we0),
-    .i_d0(load_and_calc_norm61_U0_x_local_15_V_d0),
+    .i_address0(load_and_calc_norm53_U0_x_local_15_V_address0),
+    .i_ce0(load_and_calc_norm53_U0_x_local_15_V_ce0),
+    .i_we0(load_and_calc_norm53_U0_x_local_15_V_we0),
+    .i_d0(load_and_calc_norm53_U0_x_local_15_V_d0),
     .i_q0(x_local_15_V_i_q0),
     .t_address0(compute_and_output_U0_x_local_15_V_address0),
     .t_ce0(compute_and_output_U0_x_local_15_V_ce0),
@@ -742,92 +752,96 @@ x_local_15_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-load_and_calc_norm61 load_and_calc_norm61_U0(
+load_and_calc_norm53 load_and_calc_norm53_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(load_and_calc_norm61_U0_ap_start),
-    .ap_done(load_and_calc_norm61_U0_ap_done),
-    .ap_continue(load_and_calc_norm61_U0_ap_continue),
-    .ap_idle(load_and_calc_norm61_U0_ap_idle),
-    .ap_ready(load_and_calc_norm61_U0_ap_ready),
+    .ap_start(load_and_calc_norm53_U0_ap_start),
+    .ap_done(load_and_calc_norm53_U0_ap_done),
+    .ap_continue(load_and_calc_norm53_U0_ap_continue),
+    .ap_idle(load_and_calc_norm53_U0_ap_idle),
+    .ap_ready(load_and_calc_norm53_U0_ap_ready),
     .in_stream_TDATA(in_stream_TDATA),
     .in_stream_TVALID(in_stream_TVALID),
-    .in_stream_TREADY(load_and_calc_norm61_U0_in_stream_TREADY),
+    .in_stream_TREADY(load_and_calc_norm53_U0_in_stream_TREADY),
     .in_stream_TKEEP(in_stream_TKEEP),
     .in_stream_TSTRB(in_stream_TSTRB),
     .in_stream_TUSER(in_stream_TUSER),
     .in_stream_TLAST(in_stream_TLAST),
     .in_stream_TID(in_stream_TID),
     .in_stream_TDEST(in_stream_TDEST),
-    .x_local_0_V_address0(load_and_calc_norm61_U0_x_local_0_V_address0),
-    .x_local_0_V_ce0(load_and_calc_norm61_U0_x_local_0_V_ce0),
-    .x_local_0_V_we0(load_and_calc_norm61_U0_x_local_0_V_we0),
-    .x_local_0_V_d0(load_and_calc_norm61_U0_x_local_0_V_d0),
-    .x_local_1_V_address0(load_and_calc_norm61_U0_x_local_1_V_address0),
-    .x_local_1_V_ce0(load_and_calc_norm61_U0_x_local_1_V_ce0),
-    .x_local_1_V_we0(load_and_calc_norm61_U0_x_local_1_V_we0),
-    .x_local_1_V_d0(load_and_calc_norm61_U0_x_local_1_V_d0),
-    .x_local_2_V_address0(load_and_calc_norm61_U0_x_local_2_V_address0),
-    .x_local_2_V_ce0(load_and_calc_norm61_U0_x_local_2_V_ce0),
-    .x_local_2_V_we0(load_and_calc_norm61_U0_x_local_2_V_we0),
-    .x_local_2_V_d0(load_and_calc_norm61_U0_x_local_2_V_d0),
-    .x_local_3_V_address0(load_and_calc_norm61_U0_x_local_3_V_address0),
-    .x_local_3_V_ce0(load_and_calc_norm61_U0_x_local_3_V_ce0),
-    .x_local_3_V_we0(load_and_calc_norm61_U0_x_local_3_V_we0),
-    .x_local_3_V_d0(load_and_calc_norm61_U0_x_local_3_V_d0),
-    .x_local_4_V_address0(load_and_calc_norm61_U0_x_local_4_V_address0),
-    .x_local_4_V_ce0(load_and_calc_norm61_U0_x_local_4_V_ce0),
-    .x_local_4_V_we0(load_and_calc_norm61_U0_x_local_4_V_we0),
-    .x_local_4_V_d0(load_and_calc_norm61_U0_x_local_4_V_d0),
-    .x_local_5_V_address0(load_and_calc_norm61_U0_x_local_5_V_address0),
-    .x_local_5_V_ce0(load_and_calc_norm61_U0_x_local_5_V_ce0),
-    .x_local_5_V_we0(load_and_calc_norm61_U0_x_local_5_V_we0),
-    .x_local_5_V_d0(load_and_calc_norm61_U0_x_local_5_V_d0),
-    .x_local_6_V_address0(load_and_calc_norm61_U0_x_local_6_V_address0),
-    .x_local_6_V_ce0(load_and_calc_norm61_U0_x_local_6_V_ce0),
-    .x_local_6_V_we0(load_and_calc_norm61_U0_x_local_6_V_we0),
-    .x_local_6_V_d0(load_and_calc_norm61_U0_x_local_6_V_d0),
-    .x_local_7_V_address0(load_and_calc_norm61_U0_x_local_7_V_address0),
-    .x_local_7_V_ce0(load_and_calc_norm61_U0_x_local_7_V_ce0),
-    .x_local_7_V_we0(load_and_calc_norm61_U0_x_local_7_V_we0),
-    .x_local_7_V_d0(load_and_calc_norm61_U0_x_local_7_V_d0),
-    .x_local_8_V_address0(load_and_calc_norm61_U0_x_local_8_V_address0),
-    .x_local_8_V_ce0(load_and_calc_norm61_U0_x_local_8_V_ce0),
-    .x_local_8_V_we0(load_and_calc_norm61_U0_x_local_8_V_we0),
-    .x_local_8_V_d0(load_and_calc_norm61_U0_x_local_8_V_d0),
-    .x_local_9_V_address0(load_and_calc_norm61_U0_x_local_9_V_address0),
-    .x_local_9_V_ce0(load_and_calc_norm61_U0_x_local_9_V_ce0),
-    .x_local_9_V_we0(load_and_calc_norm61_U0_x_local_9_V_we0),
-    .x_local_9_V_d0(load_and_calc_norm61_U0_x_local_9_V_d0),
-    .x_local_10_V_address0(load_and_calc_norm61_U0_x_local_10_V_address0),
-    .x_local_10_V_ce0(load_and_calc_norm61_U0_x_local_10_V_ce0),
-    .x_local_10_V_we0(load_and_calc_norm61_U0_x_local_10_V_we0),
-    .x_local_10_V_d0(load_and_calc_norm61_U0_x_local_10_V_d0),
-    .x_local_11_V_address0(load_and_calc_norm61_U0_x_local_11_V_address0),
-    .x_local_11_V_ce0(load_and_calc_norm61_U0_x_local_11_V_ce0),
-    .x_local_11_V_we0(load_and_calc_norm61_U0_x_local_11_V_we0),
-    .x_local_11_V_d0(load_and_calc_norm61_U0_x_local_11_V_d0),
-    .x_local_12_V_address0(load_and_calc_norm61_U0_x_local_12_V_address0),
-    .x_local_12_V_ce0(load_and_calc_norm61_U0_x_local_12_V_ce0),
-    .x_local_12_V_we0(load_and_calc_norm61_U0_x_local_12_V_we0),
-    .x_local_12_V_d0(load_and_calc_norm61_U0_x_local_12_V_d0),
-    .x_local_13_V_address0(load_and_calc_norm61_U0_x_local_13_V_address0),
-    .x_local_13_V_ce0(load_and_calc_norm61_U0_x_local_13_V_ce0),
-    .x_local_13_V_we0(load_and_calc_norm61_U0_x_local_13_V_we0),
-    .x_local_13_V_d0(load_and_calc_norm61_U0_x_local_13_V_d0),
-    .x_local_14_V_address0(load_and_calc_norm61_U0_x_local_14_V_address0),
-    .x_local_14_V_ce0(load_and_calc_norm61_U0_x_local_14_V_ce0),
-    .x_local_14_V_we0(load_and_calc_norm61_U0_x_local_14_V_we0),
-    .x_local_14_V_d0(load_and_calc_norm61_U0_x_local_14_V_d0),
-    .x_local_15_V_address0(load_and_calc_norm61_U0_x_local_15_V_address0),
-    .x_local_15_V_ce0(load_and_calc_norm61_U0_x_local_15_V_ce0),
-    .x_local_15_V_we0(load_and_calc_norm61_U0_x_local_15_V_we0),
-    .x_local_15_V_d0(load_and_calc_norm61_U0_x_local_15_V_d0),
-    .n_0_i_i(n_0_i_i),
-    .n_0_i_i_out_din(load_and_calc_norm61_U0_n_0_i_i_out_din),
-    .n_0_i_i_out_full_n(n_0_i_i_c_full_n),
-    .n_0_i_i_out_write(load_and_calc_norm61_U0_n_0_i_i_out_write),
-    .ap_return(load_and_calc_norm61_U0_ap_return)
+    .x_local_0_V_address0(load_and_calc_norm53_U0_x_local_0_V_address0),
+    .x_local_0_V_ce0(load_and_calc_norm53_U0_x_local_0_V_ce0),
+    .x_local_0_V_we0(load_and_calc_norm53_U0_x_local_0_V_we0),
+    .x_local_0_V_d0(load_and_calc_norm53_U0_x_local_0_V_d0),
+    .x_local_1_V_address0(load_and_calc_norm53_U0_x_local_1_V_address0),
+    .x_local_1_V_ce0(load_and_calc_norm53_U0_x_local_1_V_ce0),
+    .x_local_1_V_we0(load_and_calc_norm53_U0_x_local_1_V_we0),
+    .x_local_1_V_d0(load_and_calc_norm53_U0_x_local_1_V_d0),
+    .x_local_2_V_address0(load_and_calc_norm53_U0_x_local_2_V_address0),
+    .x_local_2_V_ce0(load_and_calc_norm53_U0_x_local_2_V_ce0),
+    .x_local_2_V_we0(load_and_calc_norm53_U0_x_local_2_V_we0),
+    .x_local_2_V_d0(load_and_calc_norm53_U0_x_local_2_V_d0),
+    .x_local_3_V_address0(load_and_calc_norm53_U0_x_local_3_V_address0),
+    .x_local_3_V_ce0(load_and_calc_norm53_U0_x_local_3_V_ce0),
+    .x_local_3_V_we0(load_and_calc_norm53_U0_x_local_3_V_we0),
+    .x_local_3_V_d0(load_and_calc_norm53_U0_x_local_3_V_d0),
+    .x_local_4_V_address0(load_and_calc_norm53_U0_x_local_4_V_address0),
+    .x_local_4_V_ce0(load_and_calc_norm53_U0_x_local_4_V_ce0),
+    .x_local_4_V_we0(load_and_calc_norm53_U0_x_local_4_V_we0),
+    .x_local_4_V_d0(load_and_calc_norm53_U0_x_local_4_V_d0),
+    .x_local_5_V_address0(load_and_calc_norm53_U0_x_local_5_V_address0),
+    .x_local_5_V_ce0(load_and_calc_norm53_U0_x_local_5_V_ce0),
+    .x_local_5_V_we0(load_and_calc_norm53_U0_x_local_5_V_we0),
+    .x_local_5_V_d0(load_and_calc_norm53_U0_x_local_5_V_d0),
+    .x_local_6_V_address0(load_and_calc_norm53_U0_x_local_6_V_address0),
+    .x_local_6_V_ce0(load_and_calc_norm53_U0_x_local_6_V_ce0),
+    .x_local_6_V_we0(load_and_calc_norm53_U0_x_local_6_V_we0),
+    .x_local_6_V_d0(load_and_calc_norm53_U0_x_local_6_V_d0),
+    .x_local_7_V_address0(load_and_calc_norm53_U0_x_local_7_V_address0),
+    .x_local_7_V_ce0(load_and_calc_norm53_U0_x_local_7_V_ce0),
+    .x_local_7_V_we0(load_and_calc_norm53_U0_x_local_7_V_we0),
+    .x_local_7_V_d0(load_and_calc_norm53_U0_x_local_7_V_d0),
+    .x_local_8_V_address0(load_and_calc_norm53_U0_x_local_8_V_address0),
+    .x_local_8_V_ce0(load_and_calc_norm53_U0_x_local_8_V_ce0),
+    .x_local_8_V_we0(load_and_calc_norm53_U0_x_local_8_V_we0),
+    .x_local_8_V_d0(load_and_calc_norm53_U0_x_local_8_V_d0),
+    .x_local_9_V_address0(load_and_calc_norm53_U0_x_local_9_V_address0),
+    .x_local_9_V_ce0(load_and_calc_norm53_U0_x_local_9_V_ce0),
+    .x_local_9_V_we0(load_and_calc_norm53_U0_x_local_9_V_we0),
+    .x_local_9_V_d0(load_and_calc_norm53_U0_x_local_9_V_d0),
+    .x_local_10_V_address0(load_and_calc_norm53_U0_x_local_10_V_address0),
+    .x_local_10_V_ce0(load_and_calc_norm53_U0_x_local_10_V_ce0),
+    .x_local_10_V_we0(load_and_calc_norm53_U0_x_local_10_V_we0),
+    .x_local_10_V_d0(load_and_calc_norm53_U0_x_local_10_V_d0),
+    .x_local_11_V_address0(load_and_calc_norm53_U0_x_local_11_V_address0),
+    .x_local_11_V_ce0(load_and_calc_norm53_U0_x_local_11_V_ce0),
+    .x_local_11_V_we0(load_and_calc_norm53_U0_x_local_11_V_we0),
+    .x_local_11_V_d0(load_and_calc_norm53_U0_x_local_11_V_d0),
+    .x_local_12_V_address0(load_and_calc_norm53_U0_x_local_12_V_address0),
+    .x_local_12_V_ce0(load_and_calc_norm53_U0_x_local_12_V_ce0),
+    .x_local_12_V_we0(load_and_calc_norm53_U0_x_local_12_V_we0),
+    .x_local_12_V_d0(load_and_calc_norm53_U0_x_local_12_V_d0),
+    .x_local_13_V_address0(load_and_calc_norm53_U0_x_local_13_V_address0),
+    .x_local_13_V_ce0(load_and_calc_norm53_U0_x_local_13_V_ce0),
+    .x_local_13_V_we0(load_and_calc_norm53_U0_x_local_13_V_we0),
+    .x_local_13_V_d0(load_and_calc_norm53_U0_x_local_13_V_d0),
+    .x_local_14_V_address0(load_and_calc_norm53_U0_x_local_14_V_address0),
+    .x_local_14_V_ce0(load_and_calc_norm53_U0_x_local_14_V_ce0),
+    .x_local_14_V_we0(load_and_calc_norm53_U0_x_local_14_V_we0),
+    .x_local_14_V_d0(load_and_calc_norm53_U0_x_local_14_V_d0),
+    .x_local_15_V_address0(load_and_calc_norm53_U0_x_local_15_V_address0),
+    .x_local_15_V_ce0(load_and_calc_norm53_U0_x_local_15_V_ce0),
+    .x_local_15_V_we0(load_and_calc_norm53_U0_x_local_15_V_we0),
+    .x_local_15_V_d0(load_and_calc_norm53_U0_x_local_15_V_d0),
+    .n(n),
+    .num_images(num_images),
+    .n_out_din(load_and_calc_norm53_U0_n_out_din),
+    .n_out_full_n(n_c_full_n),
+    .n_out_write(load_and_calc_norm53_U0_n_out_write),
+    .num_images_out_din(load_and_calc_norm53_U0_num_images_out_din),
+    .num_images_out_full_n(num_images_c_full_n),
+    .num_images_out_write(load_and_calc_norm53_U0_num_images_out_write),
+    .ap_return(load_and_calc_norm53_U0_ap_return)
 );
 
 compute_and_output compute_and_output_U0(
@@ -893,22 +907,38 @@ compute_and_output compute_and_output_U0(
     .out_stream_TKEEP(compute_and_output_U0_out_stream_TKEEP),
     .out_stream_TSTRB(compute_and_output_U0_out_stream_TSTRB),
     .out_stream_TLAST(compute_and_output_U0_out_stream_TLAST),
-    .n_0_i_i_dout(n_0_i_i_c_dout),
-    .n_0_i_i_empty_n(n_0_i_i_c_empty_n),
-    .n_0_i_i_read(compute_and_output_U0_n_0_i_i_read)
+    .n_dout(n_c_dout),
+    .n_empty_n(n_c_empty_n),
+    .n_read(compute_and_output_U0_n_read),
+    .num_images_dout(num_images_c_dout),
+    .num_images_empty_n(num_images_c_empty_n),
+    .num_images_read(compute_and_output_U0_num_images_read)
 );
 
-fifo_w12_d2_A n_0_i_i_c_U(
+fifo_w31_d2_A n_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(load_and_calc_norm61_U0_n_0_i_i_out_din),
-    .if_full_n(n_0_i_i_c_full_n),
-    .if_write(load_and_calc_norm61_U0_n_0_i_i_out_write),
-    .if_dout(n_0_i_i_c_dout),
-    .if_empty_n(n_0_i_i_c_empty_n),
-    .if_read(compute_and_output_U0_n_0_i_i_read)
+    .if_din(load_and_calc_norm53_U0_n_out_din),
+    .if_full_n(n_c_full_n),
+    .if_write(load_and_calc_norm53_U0_n_out_write),
+    .if_dout(n_c_dout),
+    .if_empty_n(n_c_empty_n),
+    .if_read(compute_and_output_U0_n_read)
+);
+
+fifo_w32_d2_A num_images_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_num_images_out_din),
+    .if_full_n(num_images_c_full_n),
+    .if_write(load_and_calc_norm53_U0_num_images_out_write),
+    .if_dout(num_images_c_dout),
+    .if_empty_n(num_images_c_empty_n),
+    .if_read(compute_and_output_U0_num_images_read)
 );
 
 fifo_w24_d2_A internal_norm_V_U(
@@ -916,7 +946,7 @@ fifo_w24_d2_A internal_norm_V_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(load_and_calc_norm61_U0_ap_return),
+    .if_din(load_and_calc_norm53_U0_ap_return),
     .if_full_n(internal_norm_V_full_n),
     .if_write(ap_channel_done_internal_norm_V),
     .if_dout(internal_norm_V_dout),
@@ -928,7 +958,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_internal_norm_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_internal_norm_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_internal_norm_V <= ap_sync_channel_write_internal_norm_V;
@@ -940,7 +970,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_0_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_0_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_0_V <= ap_sync_channel_write_x_local_0_V;
@@ -952,7 +982,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_10_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_10_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_10_V <= ap_sync_channel_write_x_local_10_V;
@@ -964,7 +994,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_11_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_11_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_11_V <= ap_sync_channel_write_x_local_11_V;
@@ -976,7 +1006,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_12_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_12_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_12_V <= ap_sync_channel_write_x_local_12_V;
@@ -988,7 +1018,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_13_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_13_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_13_V <= ap_sync_channel_write_x_local_13_V;
@@ -1000,7 +1030,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_14_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_14_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_14_V <= ap_sync_channel_write_x_local_14_V;
@@ -1012,7 +1042,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_15_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_15_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_15_V <= ap_sync_channel_write_x_local_15_V;
@@ -1024,7 +1054,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_1_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_1_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_1_V <= ap_sync_channel_write_x_local_1_V;
@@ -1036,7 +1066,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_2_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_2_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_2_V <= ap_sync_channel_write_x_local_2_V;
@@ -1048,7 +1078,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_3_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_3_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_3_V <= ap_sync_channel_write_x_local_3_V;
@@ -1060,7 +1090,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_4_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_4_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_4_V <= ap_sync_channel_write_x_local_4_V;
@@ -1072,7 +1102,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_5_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_5_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_5_V <= ap_sync_channel_write_x_local_5_V;
@@ -1084,7 +1114,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_6_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_6_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_6_V <= ap_sync_channel_write_x_local_6_V;
@@ -1096,7 +1126,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_7_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_7_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_7_V <= ap_sync_channel_write_x_local_7_V;
@@ -1108,7 +1138,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_8_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_8_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_8_V <= ap_sync_channel_write_x_local_8_V;
@@ -1120,7 +1150,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_x_local_9_V <= 1'b0;
     end else begin
-        if (((load_and_calc_norm61_U0_ap_done & load_and_calc_norm61_U0_ap_continue) == 1'b1)) begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_x_local_9_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_x_local_9_V <= ap_sync_channel_write_x_local_9_V;
@@ -1128,85 +1158,85 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_channel_done_internal_norm_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_internal_norm_V ^ 1'b1));
+assign ap_channel_done_internal_norm_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_internal_norm_V ^ 1'b1));
 
-assign ap_channel_done_x_local_0_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_0_V ^ 1'b1));
+assign ap_channel_done_x_local_0_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_0_V ^ 1'b1));
 
-assign ap_channel_done_x_local_10_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_10_V ^ 1'b1));
+assign ap_channel_done_x_local_10_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_10_V ^ 1'b1));
 
-assign ap_channel_done_x_local_11_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_11_V ^ 1'b1));
+assign ap_channel_done_x_local_11_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_11_V ^ 1'b1));
 
-assign ap_channel_done_x_local_12_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_12_V ^ 1'b1));
+assign ap_channel_done_x_local_12_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_12_V ^ 1'b1));
 
-assign ap_channel_done_x_local_13_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_13_V ^ 1'b1));
+assign ap_channel_done_x_local_13_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_13_V ^ 1'b1));
 
-assign ap_channel_done_x_local_14_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_14_V ^ 1'b1));
+assign ap_channel_done_x_local_14_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_14_V ^ 1'b1));
 
-assign ap_channel_done_x_local_15_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_15_V ^ 1'b1));
+assign ap_channel_done_x_local_15_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_15_V ^ 1'b1));
 
-assign ap_channel_done_x_local_1_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_1_V ^ 1'b1));
+assign ap_channel_done_x_local_1_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_1_V ^ 1'b1));
 
-assign ap_channel_done_x_local_2_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_2_V ^ 1'b1));
+assign ap_channel_done_x_local_2_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_2_V ^ 1'b1));
 
-assign ap_channel_done_x_local_3_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_3_V ^ 1'b1));
+assign ap_channel_done_x_local_3_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_3_V ^ 1'b1));
 
-assign ap_channel_done_x_local_4_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_4_V ^ 1'b1));
+assign ap_channel_done_x_local_4_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_4_V ^ 1'b1));
 
-assign ap_channel_done_x_local_5_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_5_V ^ 1'b1));
+assign ap_channel_done_x_local_5_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_5_V ^ 1'b1));
 
-assign ap_channel_done_x_local_6_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_6_V ^ 1'b1));
+assign ap_channel_done_x_local_6_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_6_V ^ 1'b1));
 
-assign ap_channel_done_x_local_7_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_7_V ^ 1'b1));
+assign ap_channel_done_x_local_7_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_7_V ^ 1'b1));
 
-assign ap_channel_done_x_local_8_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_8_V ^ 1'b1));
+assign ap_channel_done_x_local_8_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_8_V ^ 1'b1));
 
-assign ap_channel_done_x_local_9_V = (load_and_calc_norm61_U0_ap_done & (ap_sync_reg_channel_write_x_local_9_V ^ 1'b1));
+assign ap_channel_done_x_local_9_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_9_V ^ 1'b1));
 
 assign ap_done = compute_and_output_U0_ap_done;
 
-assign ap_idle = (load_and_calc_norm61_U0_ap_idle & (internal_norm_V_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_and_output_U0_ap_idle);
+assign ap_idle = (load_and_calc_norm53_U0_ap_idle & (internal_norm_V_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_and_output_U0_ap_idle);
 
-assign ap_ready = load_and_calc_norm61_U0_ap_ready;
+assign ap_ready = load_and_calc_norm53_U0_ap_ready;
 
 assign ap_sync_channel_write_internal_norm_V = ((internal_norm_V_full_n & ap_channel_done_internal_norm_V) | ap_sync_reg_channel_write_internal_norm_V);
 
-assign ap_sync_channel_write_x_local_0_V = ((load_and_calc_norm61_U0_x_local_0_V_full_n & ap_channel_done_x_local_0_V) | ap_sync_reg_channel_write_x_local_0_V);
+assign ap_sync_channel_write_x_local_0_V = ((load_and_calc_norm53_U0_x_local_0_V_full_n & ap_channel_done_x_local_0_V) | ap_sync_reg_channel_write_x_local_0_V);
 
-assign ap_sync_channel_write_x_local_10_V = ((load_and_calc_norm61_U0_x_local_10_V_full_n & ap_channel_done_x_local_10_V) | ap_sync_reg_channel_write_x_local_10_V);
+assign ap_sync_channel_write_x_local_10_V = ((load_and_calc_norm53_U0_x_local_10_V_full_n & ap_channel_done_x_local_10_V) | ap_sync_reg_channel_write_x_local_10_V);
 
-assign ap_sync_channel_write_x_local_11_V = ((load_and_calc_norm61_U0_x_local_11_V_full_n & ap_channel_done_x_local_11_V) | ap_sync_reg_channel_write_x_local_11_V);
+assign ap_sync_channel_write_x_local_11_V = ((load_and_calc_norm53_U0_x_local_11_V_full_n & ap_channel_done_x_local_11_V) | ap_sync_reg_channel_write_x_local_11_V);
 
-assign ap_sync_channel_write_x_local_12_V = ((load_and_calc_norm61_U0_x_local_12_V_full_n & ap_channel_done_x_local_12_V) | ap_sync_reg_channel_write_x_local_12_V);
+assign ap_sync_channel_write_x_local_12_V = ((load_and_calc_norm53_U0_x_local_12_V_full_n & ap_channel_done_x_local_12_V) | ap_sync_reg_channel_write_x_local_12_V);
 
-assign ap_sync_channel_write_x_local_13_V = ((load_and_calc_norm61_U0_x_local_13_V_full_n & ap_channel_done_x_local_13_V) | ap_sync_reg_channel_write_x_local_13_V);
+assign ap_sync_channel_write_x_local_13_V = ((load_and_calc_norm53_U0_x_local_13_V_full_n & ap_channel_done_x_local_13_V) | ap_sync_reg_channel_write_x_local_13_V);
 
-assign ap_sync_channel_write_x_local_14_V = ((load_and_calc_norm61_U0_x_local_14_V_full_n & ap_channel_done_x_local_14_V) | ap_sync_reg_channel_write_x_local_14_V);
+assign ap_sync_channel_write_x_local_14_V = ((load_and_calc_norm53_U0_x_local_14_V_full_n & ap_channel_done_x_local_14_V) | ap_sync_reg_channel_write_x_local_14_V);
 
-assign ap_sync_channel_write_x_local_15_V = ((load_and_calc_norm61_U0_x_local_15_V_full_n & ap_channel_done_x_local_15_V) | ap_sync_reg_channel_write_x_local_15_V);
+assign ap_sync_channel_write_x_local_15_V = ((load_and_calc_norm53_U0_x_local_15_V_full_n & ap_channel_done_x_local_15_V) | ap_sync_reg_channel_write_x_local_15_V);
 
-assign ap_sync_channel_write_x_local_1_V = ((load_and_calc_norm61_U0_x_local_1_V_full_n & ap_channel_done_x_local_1_V) | ap_sync_reg_channel_write_x_local_1_V);
+assign ap_sync_channel_write_x_local_1_V = ((load_and_calc_norm53_U0_x_local_1_V_full_n & ap_channel_done_x_local_1_V) | ap_sync_reg_channel_write_x_local_1_V);
 
-assign ap_sync_channel_write_x_local_2_V = ((load_and_calc_norm61_U0_x_local_2_V_full_n & ap_channel_done_x_local_2_V) | ap_sync_reg_channel_write_x_local_2_V);
+assign ap_sync_channel_write_x_local_2_V = ((load_and_calc_norm53_U0_x_local_2_V_full_n & ap_channel_done_x_local_2_V) | ap_sync_reg_channel_write_x_local_2_V);
 
-assign ap_sync_channel_write_x_local_3_V = ((load_and_calc_norm61_U0_x_local_3_V_full_n & ap_channel_done_x_local_3_V) | ap_sync_reg_channel_write_x_local_3_V);
+assign ap_sync_channel_write_x_local_3_V = ((load_and_calc_norm53_U0_x_local_3_V_full_n & ap_channel_done_x_local_3_V) | ap_sync_reg_channel_write_x_local_3_V);
 
-assign ap_sync_channel_write_x_local_4_V = ((load_and_calc_norm61_U0_x_local_4_V_full_n & ap_channel_done_x_local_4_V) | ap_sync_reg_channel_write_x_local_4_V);
+assign ap_sync_channel_write_x_local_4_V = ((load_and_calc_norm53_U0_x_local_4_V_full_n & ap_channel_done_x_local_4_V) | ap_sync_reg_channel_write_x_local_4_V);
 
-assign ap_sync_channel_write_x_local_5_V = ((load_and_calc_norm61_U0_x_local_5_V_full_n & ap_channel_done_x_local_5_V) | ap_sync_reg_channel_write_x_local_5_V);
+assign ap_sync_channel_write_x_local_5_V = ((load_and_calc_norm53_U0_x_local_5_V_full_n & ap_channel_done_x_local_5_V) | ap_sync_reg_channel_write_x_local_5_V);
 
-assign ap_sync_channel_write_x_local_6_V = ((load_and_calc_norm61_U0_x_local_6_V_full_n & ap_channel_done_x_local_6_V) | ap_sync_reg_channel_write_x_local_6_V);
+assign ap_sync_channel_write_x_local_6_V = ((load_and_calc_norm53_U0_x_local_6_V_full_n & ap_channel_done_x_local_6_V) | ap_sync_reg_channel_write_x_local_6_V);
 
-assign ap_sync_channel_write_x_local_7_V = ((load_and_calc_norm61_U0_x_local_7_V_full_n & ap_channel_done_x_local_7_V) | ap_sync_reg_channel_write_x_local_7_V);
+assign ap_sync_channel_write_x_local_7_V = ((load_and_calc_norm53_U0_x_local_7_V_full_n & ap_channel_done_x_local_7_V) | ap_sync_reg_channel_write_x_local_7_V);
 
-assign ap_sync_channel_write_x_local_8_V = ((load_and_calc_norm61_U0_x_local_8_V_full_n & ap_channel_done_x_local_8_V) | ap_sync_reg_channel_write_x_local_8_V);
+assign ap_sync_channel_write_x_local_8_V = ((load_and_calc_norm53_U0_x_local_8_V_full_n & ap_channel_done_x_local_8_V) | ap_sync_reg_channel_write_x_local_8_V);
 
-assign ap_sync_channel_write_x_local_9_V = ((load_and_calc_norm61_U0_x_local_9_V_full_n & ap_channel_done_x_local_9_V) | ap_sync_reg_channel_write_x_local_9_V);
+assign ap_sync_channel_write_x_local_9_V = ((load_and_calc_norm53_U0_x_local_9_V_full_n & ap_channel_done_x_local_9_V) | ap_sync_reg_channel_write_x_local_9_V);
 
 assign ap_sync_continue = ap_continue;
 
 assign ap_sync_done = compute_and_output_U0_ap_done;
 
-assign ap_sync_ready = load_and_calc_norm61_U0_ap_ready;
+assign ap_sync_ready = load_and_calc_norm53_U0_ap_ready;
 
 assign compute_and_output_U0_ap_continue = ap_continue;
 
@@ -1216,47 +1246,47 @@ assign compute_and_output_U0_start_full_n = 1'b1;
 
 assign compute_and_output_U0_start_write = 1'b0;
 
-assign in_stream_TREADY = load_and_calc_norm61_U0_in_stream_TREADY;
+assign in_stream_TREADY = load_and_calc_norm53_U0_in_stream_TREADY;
 
-assign load_and_calc_norm61_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V & ap_sync_channel_write_internal_norm_V);
+assign load_and_calc_norm53_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V & ap_sync_channel_write_internal_norm_V);
 
-assign load_and_calc_norm61_U0_ap_start = ap_start;
+assign load_and_calc_norm53_U0_ap_start = ap_start;
 
-assign load_and_calc_norm61_U0_start_full_n = 1'b1;
+assign load_and_calc_norm53_U0_start_full_n = 1'b1;
 
-assign load_and_calc_norm61_U0_start_write = 1'b0;
+assign load_and_calc_norm53_U0_start_write = 1'b0;
 
-assign load_and_calc_norm61_U0_x_local_0_V_full_n = x_local_0_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_0_V_full_n = x_local_0_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_10_V_full_n = x_local_10_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_10_V_full_n = x_local_10_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_11_V_full_n = x_local_11_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_11_V_full_n = x_local_11_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_12_V_full_n = x_local_12_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_12_V_full_n = x_local_12_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_13_V_full_n = x_local_13_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_13_V_full_n = x_local_13_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_14_V_full_n = x_local_14_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_14_V_full_n = x_local_14_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_15_V_full_n = x_local_15_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_15_V_full_n = x_local_15_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_1_V_full_n = x_local_1_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_1_V_full_n = x_local_1_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_2_V_full_n = x_local_2_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_2_V_full_n = x_local_2_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_3_V_full_n = x_local_3_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_3_V_full_n = x_local_3_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_4_V_full_n = x_local_4_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_4_V_full_n = x_local_4_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_5_V_full_n = x_local_5_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_5_V_full_n = x_local_5_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_6_V_full_n = x_local_6_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_6_V_full_n = x_local_6_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_7_V_full_n = x_local_7_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_7_V_full_n = x_local_7_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_8_V_full_n = x_local_8_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_8_V_full_n = x_local_8_V_i_full_n;
 
-assign load_and_calc_norm61_U0_x_local_9_V_full_n = x_local_9_V_i_full_n;
+assign load_and_calc_norm53_U0_x_local_9_V_full_n = x_local_9_V_i_full_n;
 
 assign out_stream_TDATA = compute_and_output_U0_out_stream_TDATA;
 

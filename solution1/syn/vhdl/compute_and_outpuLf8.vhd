@@ -11,9 +11,9 @@ use ieee.std_logic_unsigned.all;
 
 entity compute_and_outpuLf8_rom is 
     generic(
-             DWIDTH     : integer := 28; 
-             AWIDTH     : integer := 4; 
-             MEM_SIZE    : integer := 11
+             DWIDTH     : integer := 26; 
+             AWIDTH     : integer := 3; 
+             MEM_SIZE    : integer := 6
     ); 
     port (
           addr0      : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -29,12 +29,9 @@ architecture rtl of compute_and_outpuLf8_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "1000001000011000000000000000", 1 => "1000000101110000000000000000", 
-    2 => "1011100111110000000000000000", 3 => "1001100100100000000000000000", 
-    4 => "0011010000100000000000000000", 5 => "0000111000001100000000000000", 
-    6 => "0111111110101000000000000000", 7 => "0000110100111000000000000000", 
-    8 => "0001001111101000000000000000", 9 => "0001111000001000000000000000", 
-    10 => "0011000101100100000000000000" );
+    0 => "01100010100000000000000000", 1 => "01000010111000000000000000", 
+    2 => "01011101011000000000000000", 3 => "01101001010000000000000000", 
+    4 => "11100101000100000000000000", 5 => "00000000000000000000000000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -73,9 +70,9 @@ use IEEE.std_logic_1164.all;
 
 entity compute_and_outpuLf8 is
     generic (
-        DataWidth : INTEGER := 28;
-        AddressRange : INTEGER := 11;
-        AddressWidth : INTEGER := 4);
+        DataWidth : INTEGER := 26;
+        AddressRange : INTEGER := 6;
+        AddressWidth : INTEGER := 3);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

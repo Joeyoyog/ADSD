@@ -1,0 +1,10 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vivado/2018.2/msys64/mingw64/bin/g++"
+   Compiling apatb_classify.cpp
+   Compiling Classifier.cpp_pre.cpp.tb.cpp
+cosim.tv.mk:68: recipe for target 'obj/Classifier.cpp_pre.cpp.tb.o' failed
+ERROR: [COSIM-317] C++ compile error.
+ERROR: [COSIM-321] EXE file generate failed.
+ERROR: [COSIM-321] EXE file generate failed.
+ERROR: [COSIM-331] Aborting co-simulation: C simulation failed, compilation errors.

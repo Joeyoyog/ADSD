@@ -19,9 +19,7 @@ const sc_logic classify::ap_const_logic_1 = sc_dt::Log_1;
 const sc_lv<32> classify::ap_const_lv32_0 = "00000000000000000000000000000000";
 const sc_lv<1> classify::ap_const_lv1_0 = "0";
 const bool classify::ap_const_boolean_1 = true;
-const sc_lv<12> classify::ap_const_lv12_A29 = "101000101001";
-const sc_lv<12> classify::ap_const_lv12_0 = "000000000000";
-const sc_lv<12> classify::ap_const_lv12_1 = "1";
+const sc_lv<32> classify::ap_const_lv32_1 = "1";
 const sc_logic classify::ap_const_logic_0 = sc_dt::Log_0;
 
 classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
@@ -66,10 +64,12 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dataflow_in_loop_Bat_U0->out_stream_TKEEP(dataflow_in_loop_Bat_U0_out_stream_TKEEP);
     dataflow_in_loop_Bat_U0->out_stream_TSTRB(dataflow_in_loop_Bat_U0_out_stream_TSTRB);
     dataflow_in_loop_Bat_U0->out_stream_TLAST(dataflow_in_loop_Bat_U0_out_stream_TLAST);
-    dataflow_in_loop_Bat_U0->n_0_i_i(loop_dataflow_input_count);
+    dataflow_in_loop_Bat_U0->n(dataflow_in_loop_Bat_U0_n);
+    dataflow_in_loop_Bat_U0->num_images(num_images);
     dataflow_in_loop_Bat_U0->in_stream_TVALID(in_stream_TVALID);
     dataflow_in_loop_Bat_U0->in_stream_TREADY(dataflow_in_loop_Bat_U0_in_stream_TREADY);
-    dataflow_in_loop_Bat_U0->n_0_i_i_ap_vld(ap_var_for_const1);
+    dataflow_in_loop_Bat_U0->n_ap_vld(ap_var_for_const1);
+    dataflow_in_loop_Bat_U0->num_images_ap_vld(ap_var_for_const0);
     dataflow_in_loop_Bat_U0->out_stream_TVALID(dataflow_in_loop_Bat_U0_out_stream_TVALID);
     dataflow_in_loop_Bat_U0->out_stream_TREADY(out_stream_TREADY);
     dataflow_in_loop_Bat_U0->ap_done(dataflow_in_loop_Bat_U0_ap_done);
@@ -83,6 +83,7 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_clk.pos() );
 
     SC_METHOD(thread_ap_done);
+    sensitive << ( num_images );
     sensitive << ( loop_dataflow_output_count );
     sensitive << ( loop_dataflow_busy );
 
@@ -90,6 +91,7 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( dataflow_in_loop_Bat_U0_ap_idle );
 
     SC_METHOD(thread_ap_ready);
+    sensitive << ( num_images );
     sensitive << ( loop_dataflow_input_count );
 
     SC_METHOD(thread_ap_rst_n_inv);
@@ -106,7 +108,11 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_dataflow_in_loop_Bat_U0_ap_continue);
 
     SC_METHOD(thread_dataflow_in_loop_Bat_U0_ap_start);
+    sensitive << ( num_images );
     sensitive << ( loop_dataflow_enable );
+    sensitive << ( loop_dataflow_input_count );
+
+    SC_METHOD(thread_dataflow_in_loop_Bat_U0_n);
     sensitive << ( loop_dataflow_input_count );
 
     SC_METHOD(thread_dataflow_in_loop_Bat_U0_start_full_n);
@@ -139,8 +145,8 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_THREAD(thread_ap_var_for_const1);
 
     loop_dataflow_enable = SC_LOGIC_0;
-    loop_dataflow_input_count = "000000000000";
-    loop_dataflow_output_count = "000000000000";
+    loop_dataflow_input_count = "00000000000000000000000000000000";
+    loop_dataflow_output_count = "00000000000000000000000000000000";
     loop_dataflow_busy = SC_LOGIC_0;
     static int apTFileNum = 0;
     stringstream apTFilenSS;
@@ -197,6 +203,7 @@ classify::classify(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TKEEP, "dataflow_in_loop_Bat_U0_out_stream_TKEEP");
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TSTRB, "dataflow_in_loop_Bat_U0_out_stream_TSTRB");
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TLAST, "dataflow_in_loop_Bat_U0_out_stream_TLAST");
+    sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_n, "dataflow_in_loop_Bat_U0_n");
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_in_stream_TREADY, "dataflow_in_loop_Bat_U0_in_stream_TREADY");
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_out_stream_TVALID, "dataflow_in_loop_Bat_U0_out_stream_TVALID");
     sc_trace(mVcdFile, dataflow_in_loop_Bat_U0_ap_done, "dataflow_in_loop_Bat_U0_ap_done");
@@ -244,7 +251,7 @@ void classify::thread_ap_clk_no_reset_() {
     if ( ap_rst_n_inv.read() == ap_const_logic_1) {
         loop_dataflow_busy = ap_const_logic_0;
     } else {
-        if (esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_output_count.read())) {
+        if (esl_seteq<1,32,32>(num_images.read(), loop_dataflow_output_count.read())) {
             loop_dataflow_busy = ap_const_logic_0;
         } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_start.read())) {
             loop_dataflow_busy = ap_const_logic_1;
@@ -257,34 +264,34 @@ void classify::thread_ap_clk_no_reset_() {
              esl_seteq<1,1,1>(ap_const_logic_1, ap_start.read()))) {
             loop_dataflow_enable = ap_const_logic_1;
         } else if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
-                    esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read()))) {
+                    esl_seteq<1,32,32>(num_images.read(), loop_dataflow_input_count.read()))) {
             loop_dataflow_enable = ap_const_logic_0;
         }
     }
     if ( ap_rst_n_inv.read() == ap_const_logic_1) {
-        loop_dataflow_input_count = ap_const_lv12_0;
+        loop_dataflow_input_count = ap_const_lv32_0;
     } else {
         if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
-             esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read()))) {
-            loop_dataflow_input_count = ap_const_lv12_0;
+             esl_seteq<1,32,32>(num_images.read(), loop_dataflow_input_count.read()))) {
+            loop_dataflow_input_count = ap_const_lv32_0;
         } else if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
                     esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_U0_ap_ready.read()))) {
-            loop_dataflow_input_count = (!loop_dataflow_input_count.read().is_01() || !ap_const_lv12_1.is_01())? sc_lv<12>(): (sc_biguint<12>(loop_dataflow_input_count.read()) + sc_biguint<12>(ap_const_lv12_1));
+            loop_dataflow_input_count = (!loop_dataflow_input_count.read().is_01() || !ap_const_lv32_1.is_01())? sc_lv<32>(): (sc_biguint<32>(loop_dataflow_input_count.read()) + sc_biguint<32>(ap_const_lv32_1));
         }
     }
     if ( ap_rst_n_inv.read() == ap_const_logic_1) {
-        loop_dataflow_output_count = ap_const_lv12_0;
+        loop_dataflow_output_count = ap_const_lv32_0;
     } else {
-        if (esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_output_count.read())) {
-            loop_dataflow_output_count = ap_const_lv12_0;
+        if (esl_seteq<1,32,32>(num_images.read(), loop_dataflow_output_count.read())) {
+            loop_dataflow_output_count = ap_const_lv32_0;
         } else if (esl_seteq<1,1,1>(ap_const_logic_1, dataflow_in_loop_Bat_U0_ap_done.read())) {
-            loop_dataflow_output_count = (!loop_dataflow_output_count.read().is_01() || !ap_const_lv12_1.is_01())? sc_lv<12>(): (sc_biguint<12>(loop_dataflow_output_count.read()) + sc_biguint<12>(ap_const_lv12_1));
+            loop_dataflow_output_count = (!loop_dataflow_output_count.read().is_01() || !ap_const_lv32_1.is_01())? sc_lv<32>(): (sc_biguint<32>(loop_dataflow_output_count.read()) + sc_biguint<32>(ap_const_lv32_1));
         }
     }
 }
 
 void classify::thread_ap_done() {
-    if ((esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_output_count.read()) && 
+    if ((esl_seteq<1,32,32>(num_images.read(), loop_dataflow_output_count.read()) && 
          esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_busy.read()))) {
         ap_done = ap_const_logic_1;
     } else {
@@ -297,7 +304,7 @@ void classify::thread_ap_idle() {
 }
 
 void classify::thread_ap_ready() {
-    if (esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read())) {
+    if (esl_seteq<1,32,32>(num_images.read(), loop_dataflow_input_count.read())) {
         ap_ready = ap_const_logic_1;
     } else {
         ap_ready = ap_const_logic_0;
@@ -326,11 +333,15 @@ void classify::thread_dataflow_in_loop_Bat_U0_ap_continue() {
 
 void classify::thread_dataflow_in_loop_Bat_U0_ap_start() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, loop_dataflow_enable.read()) && 
-         !esl_seteq<1,12,12>(ap_const_lv12_A29, loop_dataflow_input_count.read()))) {
+         !esl_seteq<1,32,32>(num_images.read(), loop_dataflow_input_count.read()))) {
         dataflow_in_loop_Bat_U0_ap_start = ap_const_logic_1;
     } else {
         dataflow_in_loop_Bat_U0_ap_start = ap_const_logic_0;
     }
+}
+
+void classify::thread_dataflow_in_loop_Bat_U0_n() {
+    dataflow_in_loop_Bat_U0_n =  (sc_lv<31>) (loop_dataflow_input_count.read());
 }
 
 void classify::thread_dataflow_in_loop_Bat_U0_start_full_n() {
