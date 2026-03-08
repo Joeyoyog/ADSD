@@ -29,7 +29,7 @@ architecture rtl of compute_and_outpuGfk_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "1001", 1 => "1110", 2 to 3=> "1001", 4 to 5=> "0000" );
+    0 => "1111", 1 => "1010", 2 => "1110", 3 => "1111", 4 to 5=> "0000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";

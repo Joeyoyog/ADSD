@@ -40,10 +40,10 @@ sc_lv<DataWidth> ram[AddressRange];
 
    SC_CTOR(compute_and_outpu2iS_ram) {
         ram[0] = "0b10101";
-        ram[1] = "0b01000";
-        ram[2] = "0b00101";
-        ram[3] = "0b01000";
-        ram[4] = "0b00010";
+        ram[1] = "0b11110";
+        ram[2] = "0b00011";
+        ram[3] = "0b01001";
+        ram[4] = "0b01101";
         ram[5] = "0b00000";
 
 

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dataflow_in_loop_Bat'" level="0">
-<item name = "Date">Wed Mar  4 18:28:49 2026
+<item name = "Date">Fri Mar  7 16:33:18 2014
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">MathieuHelpMe</item>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">508, 508, 407, 407, dataflow</column>
+<column name="">220, 508, 119, 407, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_compute_and_output_fu_344">compute_and_output, 406, 406, 406, 406, none</column>
-<column name="grp_load_and_calc_norm53_fu_569">load_and_calc_norm53, 101, 101, 101, 101, none</column>
+<column name="grp_compute_and_output_fu_344">compute_and_output, 118, 406, 118, 406, none</column>
+<column name="grp_load_and_calc_norm53_fu_619">load_and_calc_norm53, 101, 101, 101, 101, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

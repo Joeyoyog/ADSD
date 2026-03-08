@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outputde_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 4;
+parameter DWIDTH = 7;
 parameter AWIDTH = 3;
 parameter MEM_SIZE = 6;
 
@@ -47,7 +47,7 @@ module compute_and_outputde(
     ce0,
     q0);
 
-parameter DataWidth = 32'd4;
+parameter DataWidth = 32'd7;
 parameter AddressRange = 32'd6;
 parameter AddressWidth = 32'd3;
 input reset;

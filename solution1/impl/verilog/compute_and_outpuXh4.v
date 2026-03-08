@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outpuXh4_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 8;
+parameter DWIDTH = 28;
 parameter AWIDTH = 3;
 parameter MEM_SIZE = 6;
 
@@ -47,7 +47,7 @@ module compute_and_outpuXh4(
     ce0,
     q0);
 
-parameter DataWidth = 32'd8;
+parameter DataWidth = 32'd28;
 parameter AddressRange = 32'd6;
 parameter AddressWidth = 32'd3;
 input reset;

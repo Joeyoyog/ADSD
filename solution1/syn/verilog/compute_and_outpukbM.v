@@ -9,7 +9,7 @@
 (* rom_style = "distributed" *) module compute_and_outpukbM_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 29;
+parameter DWIDTH = 27;
 parameter AWIDTH = 3;
 parameter MEM_SIZE = 6;
 
@@ -47,7 +47,7 @@ module compute_and_outpukbM(
     ce0,
     q0);
 
-parameter DataWidth = 32'd29;
+parameter DataWidth = 32'd27;
 parameter AddressRange = 32'd6;
 parameter AddressWidth = 32'd3;
 input reset;

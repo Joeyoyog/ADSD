@@ -170,7 +170,257 @@ wire   [30:0] load_and_calc_norm53_U0_n_out_din;
 wire    load_and_calc_norm53_U0_n_out_write;
 wire   [31:0] load_and_calc_norm53_U0_num_images_out_din;
 wire    load_and_calc_norm53_U0_num_images_out_write;
-wire   [23:0] load_and_calc_norm53_U0_ap_return;
+wire   [23:0] load_and_calc_norm53_U0_ap_return_0;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_1;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_2;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_3;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_4;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_5;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_6;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_7;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_8;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_9;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_10;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_11;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_12;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_13;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_14;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_15;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_16;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_17;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_18;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_19;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_20;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_21;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_22;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_23;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_24;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_25;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_26;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_27;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_28;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_29;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_30;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_31;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_32;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_33;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_34;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_35;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_36;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_37;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_38;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_39;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_40;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_41;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_42;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_43;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_44;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_45;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_46;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_47;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_48;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_49;
+wire   [5:0] load_and_calc_norm53_U0_ap_return_50;
+wire    ap_channel_done_active_count_V;
+wire    active_count_V_full_n;
+reg    ap_sync_reg_channel_write_active_count_V;
+wire    ap_sync_channel_write_active_count_V;
+wire    ap_channel_done_active_groups_48_V;
+wire    active_groups_48_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_48_V;
+wire    ap_sync_channel_write_active_groups_48_V;
+wire    ap_channel_done_active_groups_47_V;
+wire    active_groups_47_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_47_V;
+wire    ap_sync_channel_write_active_groups_47_V;
+wire    ap_channel_done_active_groups_46_V;
+wire    active_groups_46_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_46_V;
+wire    ap_sync_channel_write_active_groups_46_V;
+wire    ap_channel_done_active_groups_45_V;
+wire    active_groups_45_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_45_V;
+wire    ap_sync_channel_write_active_groups_45_V;
+wire    ap_channel_done_active_groups_44_V;
+wire    active_groups_44_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_44_V;
+wire    ap_sync_channel_write_active_groups_44_V;
+wire    ap_channel_done_active_groups_43_V;
+wire    active_groups_43_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_43_V;
+wire    ap_sync_channel_write_active_groups_43_V;
+wire    ap_channel_done_active_groups_42_V;
+wire    active_groups_42_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_42_V;
+wire    ap_sync_channel_write_active_groups_42_V;
+wire    ap_channel_done_active_groups_41_V;
+wire    active_groups_41_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_41_V;
+wire    ap_sync_channel_write_active_groups_41_V;
+wire    ap_channel_done_active_groups_40_V;
+wire    active_groups_40_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_40_V;
+wire    ap_sync_channel_write_active_groups_40_V;
+wire    ap_channel_done_active_groups_39_V;
+wire    active_groups_39_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_39_V;
+wire    ap_sync_channel_write_active_groups_39_V;
+wire    ap_channel_done_active_groups_38_V;
+wire    active_groups_38_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_38_V;
+wire    ap_sync_channel_write_active_groups_38_V;
+wire    ap_channel_done_active_groups_37_V;
+wire    active_groups_37_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_37_V;
+wire    ap_sync_channel_write_active_groups_37_V;
+wire    ap_channel_done_active_groups_36_V;
+wire    active_groups_36_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_36_V;
+wire    ap_sync_channel_write_active_groups_36_V;
+wire    ap_channel_done_active_groups_35_V;
+wire    active_groups_35_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_35_V;
+wire    ap_sync_channel_write_active_groups_35_V;
+wire    ap_channel_done_active_groups_34_V;
+wire    active_groups_34_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_34_V;
+wire    ap_sync_channel_write_active_groups_34_V;
+wire    ap_channel_done_active_groups_33_V;
+wire    active_groups_33_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_33_V;
+wire    ap_sync_channel_write_active_groups_33_V;
+wire    ap_channel_done_active_groups_32_V;
+wire    active_groups_32_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_32_V;
+wire    ap_sync_channel_write_active_groups_32_V;
+wire    ap_channel_done_active_groups_31_V;
+wire    active_groups_31_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_31_V;
+wire    ap_sync_channel_write_active_groups_31_V;
+wire    ap_channel_done_active_groups_30_V;
+wire    active_groups_30_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_30_V;
+wire    ap_sync_channel_write_active_groups_30_V;
+wire    ap_channel_done_active_groups_29_V;
+wire    active_groups_29_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_29_V;
+wire    ap_sync_channel_write_active_groups_29_V;
+wire    ap_channel_done_active_groups_28_V;
+wire    active_groups_28_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_28_V;
+wire    ap_sync_channel_write_active_groups_28_V;
+wire    ap_channel_done_active_groups_27_V;
+wire    active_groups_27_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_27_V;
+wire    ap_sync_channel_write_active_groups_27_V;
+wire    ap_channel_done_active_groups_26_V;
+wire    active_groups_26_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_26_V;
+wire    ap_sync_channel_write_active_groups_26_V;
+wire    ap_channel_done_active_groups_25_V;
+wire    active_groups_25_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_25_V;
+wire    ap_sync_channel_write_active_groups_25_V;
+wire    ap_channel_done_active_groups_24_V;
+wire    active_groups_24_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_24_V;
+wire    ap_sync_channel_write_active_groups_24_V;
+wire    ap_channel_done_active_groups_23_V;
+wire    active_groups_23_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_23_V;
+wire    ap_sync_channel_write_active_groups_23_V;
+wire    ap_channel_done_active_groups_22_V;
+wire    active_groups_22_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_22_V;
+wire    ap_sync_channel_write_active_groups_22_V;
+wire    ap_channel_done_active_groups_21_V;
+wire    active_groups_21_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_21_V;
+wire    ap_sync_channel_write_active_groups_21_V;
+wire    ap_channel_done_active_groups_20_V;
+wire    active_groups_20_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_20_V;
+wire    ap_sync_channel_write_active_groups_20_V;
+wire    ap_channel_done_active_groups_19_V;
+wire    active_groups_19_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_19_V;
+wire    ap_sync_channel_write_active_groups_19_V;
+wire    ap_channel_done_active_groups_18_V;
+wire    active_groups_18_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_18_V;
+wire    ap_sync_channel_write_active_groups_18_V;
+wire    ap_channel_done_active_groups_17_V;
+wire    active_groups_17_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_17_V;
+wire    ap_sync_channel_write_active_groups_17_V;
+wire    ap_channel_done_active_groups_16_V;
+wire    active_groups_16_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_16_V;
+wire    ap_sync_channel_write_active_groups_16_V;
+wire    ap_channel_done_active_groups_15_V;
+wire    active_groups_15_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_15_V;
+wire    ap_sync_channel_write_active_groups_15_V;
+wire    ap_channel_done_active_groups_14_V;
+wire    active_groups_14_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_14_V;
+wire    ap_sync_channel_write_active_groups_14_V;
+wire    ap_channel_done_active_groups_13_V;
+wire    active_groups_13_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_13_V;
+wire    ap_sync_channel_write_active_groups_13_V;
+wire    ap_channel_done_active_groups_12_V;
+wire    active_groups_12_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_12_V;
+wire    ap_sync_channel_write_active_groups_12_V;
+wire    ap_channel_done_active_groups_11_V;
+wire    active_groups_11_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_11_V;
+wire    ap_sync_channel_write_active_groups_11_V;
+wire    ap_channel_done_active_groups_10_V;
+wire    active_groups_10_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_10_V;
+wire    ap_sync_channel_write_active_groups_10_V;
+wire    ap_channel_done_active_groups_9_V;
+wire    active_groups_9_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_9_V;
+wire    ap_sync_channel_write_active_groups_9_V;
+wire    ap_channel_done_active_groups_8_V;
+wire    active_groups_8_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_8_V;
+wire    ap_sync_channel_write_active_groups_8_V;
+wire    ap_channel_done_active_groups_7_V;
+wire    active_groups_7_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_7_V;
+wire    ap_sync_channel_write_active_groups_7_V;
+wire    ap_channel_done_active_groups_6_V;
+wire    active_groups_6_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_6_V;
+wire    ap_sync_channel_write_active_groups_6_V;
+wire    ap_channel_done_active_groups_5_V;
+wire    active_groups_5_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_5_V;
+wire    ap_sync_channel_write_active_groups_5_V;
+wire    ap_channel_done_active_groups_4_V;
+wire    active_groups_4_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_4_V;
+wire    ap_sync_channel_write_active_groups_4_V;
+wire    ap_channel_done_active_groups_3_V;
+wire    active_groups_3_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_3_V;
+wire    ap_sync_channel_write_active_groups_3_V;
+wire    ap_channel_done_active_groups_2_V;
+wire    active_groups_2_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_2_V;
+wire    ap_sync_channel_write_active_groups_2_V;
+wire    ap_channel_done_active_groups_1_V;
+wire    active_groups_1_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_1_V;
+wire    ap_sync_channel_write_active_groups_1_V;
+wire    ap_channel_done_active_groups_0_V;
+wire    active_groups_0_V_full_n;
+reg    ap_sync_reg_channel_write_active_groups_0_V;
+wire    ap_sync_channel_write_active_groups_0_V;
 wire    ap_channel_done_internal_norm_V;
 wire    internal_norm_V_full_n;
 reg    ap_sync_reg_channel_write_internal_norm_V;
@@ -324,6 +574,106 @@ wire   [31:0] num_images_c_dout;
 wire    num_images_c_empty_n;
 wire   [23:0] internal_norm_V_dout;
 wire    internal_norm_V_empty_n;
+wire   [5:0] active_groups_0_V_dout;
+wire    active_groups_0_V_empty_n;
+wire   [5:0] active_groups_1_V_dout;
+wire    active_groups_1_V_empty_n;
+wire   [5:0] active_groups_2_V_dout;
+wire    active_groups_2_V_empty_n;
+wire   [5:0] active_groups_3_V_dout;
+wire    active_groups_3_V_empty_n;
+wire   [5:0] active_groups_4_V_dout;
+wire    active_groups_4_V_empty_n;
+wire   [5:0] active_groups_5_V_dout;
+wire    active_groups_5_V_empty_n;
+wire   [5:0] active_groups_6_V_dout;
+wire    active_groups_6_V_empty_n;
+wire   [5:0] active_groups_7_V_dout;
+wire    active_groups_7_V_empty_n;
+wire   [5:0] active_groups_8_V_dout;
+wire    active_groups_8_V_empty_n;
+wire   [5:0] active_groups_9_V_dout;
+wire    active_groups_9_V_empty_n;
+wire   [5:0] active_groups_10_V_dout;
+wire    active_groups_10_V_empty_n;
+wire   [5:0] active_groups_11_V_dout;
+wire    active_groups_11_V_empty_n;
+wire   [5:0] active_groups_12_V_dout;
+wire    active_groups_12_V_empty_n;
+wire   [5:0] active_groups_13_V_dout;
+wire    active_groups_13_V_empty_n;
+wire   [5:0] active_groups_14_V_dout;
+wire    active_groups_14_V_empty_n;
+wire   [5:0] active_groups_15_V_dout;
+wire    active_groups_15_V_empty_n;
+wire   [5:0] active_groups_16_V_dout;
+wire    active_groups_16_V_empty_n;
+wire   [5:0] active_groups_17_V_dout;
+wire    active_groups_17_V_empty_n;
+wire   [5:0] active_groups_18_V_dout;
+wire    active_groups_18_V_empty_n;
+wire   [5:0] active_groups_19_V_dout;
+wire    active_groups_19_V_empty_n;
+wire   [5:0] active_groups_20_V_dout;
+wire    active_groups_20_V_empty_n;
+wire   [5:0] active_groups_21_V_dout;
+wire    active_groups_21_V_empty_n;
+wire   [5:0] active_groups_22_V_dout;
+wire    active_groups_22_V_empty_n;
+wire   [5:0] active_groups_23_V_dout;
+wire    active_groups_23_V_empty_n;
+wire   [5:0] active_groups_24_V_dout;
+wire    active_groups_24_V_empty_n;
+wire   [5:0] active_groups_25_V_dout;
+wire    active_groups_25_V_empty_n;
+wire   [5:0] active_groups_26_V_dout;
+wire    active_groups_26_V_empty_n;
+wire   [5:0] active_groups_27_V_dout;
+wire    active_groups_27_V_empty_n;
+wire   [5:0] active_groups_28_V_dout;
+wire    active_groups_28_V_empty_n;
+wire   [5:0] active_groups_29_V_dout;
+wire    active_groups_29_V_empty_n;
+wire   [5:0] active_groups_30_V_dout;
+wire    active_groups_30_V_empty_n;
+wire   [5:0] active_groups_31_V_dout;
+wire    active_groups_31_V_empty_n;
+wire   [5:0] active_groups_32_V_dout;
+wire    active_groups_32_V_empty_n;
+wire   [5:0] active_groups_33_V_dout;
+wire    active_groups_33_V_empty_n;
+wire   [5:0] active_groups_34_V_dout;
+wire    active_groups_34_V_empty_n;
+wire   [5:0] active_groups_35_V_dout;
+wire    active_groups_35_V_empty_n;
+wire   [5:0] active_groups_36_V_dout;
+wire    active_groups_36_V_empty_n;
+wire   [5:0] active_groups_37_V_dout;
+wire    active_groups_37_V_empty_n;
+wire   [5:0] active_groups_38_V_dout;
+wire    active_groups_38_V_empty_n;
+wire   [5:0] active_groups_39_V_dout;
+wire    active_groups_39_V_empty_n;
+wire   [5:0] active_groups_40_V_dout;
+wire    active_groups_40_V_empty_n;
+wire   [5:0] active_groups_41_V_dout;
+wire    active_groups_41_V_empty_n;
+wire   [5:0] active_groups_42_V_dout;
+wire    active_groups_42_V_empty_n;
+wire   [5:0] active_groups_43_V_dout;
+wire    active_groups_43_V_empty_n;
+wire   [5:0] active_groups_44_V_dout;
+wire    active_groups_44_V_empty_n;
+wire   [5:0] active_groups_45_V_dout;
+wire    active_groups_45_V_empty_n;
+wire   [5:0] active_groups_46_V_dout;
+wire    active_groups_46_V_empty_n;
+wire   [5:0] active_groups_47_V_dout;
+wire    active_groups_47_V_empty_n;
+wire   [5:0] active_groups_48_V_dout;
+wire    active_groups_48_V_empty_n;
+wire   [5:0] active_count_V_dout;
+wire    active_count_V_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
 wire    load_and_calc_norm53_U0_start_full_n;
@@ -333,6 +683,56 @@ wire    compute_and_output_U0_start_write;
 
 // power-on initialization
 initial begin
+#0 ap_sync_reg_channel_write_active_count_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_48_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_47_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_46_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_45_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_44_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_43_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_42_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_41_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_40_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_39_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_38_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_37_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_36_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_35_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_34_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_33_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_32_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_31_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_30_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_29_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_28_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_27_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_26_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_25_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_24_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_23_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_22_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_21_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_20_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_19_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_18_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_17_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_16_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_15_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_14_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_13_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_12_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_11_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_10_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_9_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_8_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_7_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_6_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_5_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_4_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_3_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_2_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_1_V = 1'b0;
+#0 ap_sync_reg_channel_write_active_groups_0_V = 1'b0;
 #0 ap_sync_reg_channel_write_internal_norm_V = 1'b0;
 #0 ap_sync_reg_channel_write_x_local_15_V = 1'b0;
 #0 ap_sync_reg_channel_write_x_local_14_V = 1'b0;
@@ -352,9 +752,9 @@ initial begin
 #0 ap_sync_reg_channel_write_x_local_0_V = 1'b0;
 end
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_0_V_U(
     .clk(ap_clk),
@@ -377,9 +777,9 @@ x_local_0_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_1_V_U(
     .clk(ap_clk),
@@ -402,9 +802,9 @@ x_local_1_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_2_V_U(
     .clk(ap_clk),
@@ -427,9 +827,9 @@ x_local_2_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_3_V_U(
     .clk(ap_clk),
@@ -452,9 +852,9 @@ x_local_3_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_4_V_U(
     .clk(ap_clk),
@@ -477,9 +877,9 @@ x_local_4_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_5_V_U(
     .clk(ap_clk),
@@ -502,9 +902,9 @@ x_local_5_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_6_V_U(
     .clk(ap_clk),
@@ -527,9 +927,9 @@ x_local_6_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_7_V_U(
     .clk(ap_clk),
@@ -552,9 +952,9 @@ x_local_7_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_8_V_U(
     .clk(ap_clk),
@@ -577,9 +977,9 @@ x_local_8_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_9_V_U(
     .clk(ap_clk),
@@ -602,9 +1002,9 @@ x_local_9_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_10_V_U(
     .clk(ap_clk),
@@ -627,9 +1027,9 @@ x_local_10_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_11_V_U(
     .clk(ap_clk),
@@ -652,9 +1052,9 @@ x_local_11_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_12_V_U(
     .clk(ap_clk),
@@ -677,9 +1077,9 @@ x_local_12_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_13_V_U(
     .clk(ap_clk),
@@ -702,9 +1102,9 @@ x_local_13_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_14_V_U(
     .clk(ap_clk),
@@ -727,9 +1127,9 @@ x_local_14_V_U(
     .t_read(compute_and_output_U0_ap_ready)
 );
 
-dataflow_in_loop_bPq #(
+dataflow_in_loop_bSr #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
+    .AddressRange( 50 ),
     .AddressWidth( 6 ))
 x_local_15_V_U(
     .clk(ap_clk),
@@ -841,7 +1241,57 @@ load_and_calc_norm53 load_and_calc_norm53_U0(
     .num_images_out_din(load_and_calc_norm53_U0_num_images_out_din),
     .num_images_out_full_n(num_images_c_full_n),
     .num_images_out_write(load_and_calc_norm53_U0_num_images_out_write),
-    .ap_return(load_and_calc_norm53_U0_ap_return)
+    .ap_return_0(load_and_calc_norm53_U0_ap_return_0),
+    .ap_return_1(load_and_calc_norm53_U0_ap_return_1),
+    .ap_return_2(load_and_calc_norm53_U0_ap_return_2),
+    .ap_return_3(load_and_calc_norm53_U0_ap_return_3),
+    .ap_return_4(load_and_calc_norm53_U0_ap_return_4),
+    .ap_return_5(load_and_calc_norm53_U0_ap_return_5),
+    .ap_return_6(load_and_calc_norm53_U0_ap_return_6),
+    .ap_return_7(load_and_calc_norm53_U0_ap_return_7),
+    .ap_return_8(load_and_calc_norm53_U0_ap_return_8),
+    .ap_return_9(load_and_calc_norm53_U0_ap_return_9),
+    .ap_return_10(load_and_calc_norm53_U0_ap_return_10),
+    .ap_return_11(load_and_calc_norm53_U0_ap_return_11),
+    .ap_return_12(load_and_calc_norm53_U0_ap_return_12),
+    .ap_return_13(load_and_calc_norm53_U0_ap_return_13),
+    .ap_return_14(load_and_calc_norm53_U0_ap_return_14),
+    .ap_return_15(load_and_calc_norm53_U0_ap_return_15),
+    .ap_return_16(load_and_calc_norm53_U0_ap_return_16),
+    .ap_return_17(load_and_calc_norm53_U0_ap_return_17),
+    .ap_return_18(load_and_calc_norm53_U0_ap_return_18),
+    .ap_return_19(load_and_calc_norm53_U0_ap_return_19),
+    .ap_return_20(load_and_calc_norm53_U0_ap_return_20),
+    .ap_return_21(load_and_calc_norm53_U0_ap_return_21),
+    .ap_return_22(load_and_calc_norm53_U0_ap_return_22),
+    .ap_return_23(load_and_calc_norm53_U0_ap_return_23),
+    .ap_return_24(load_and_calc_norm53_U0_ap_return_24),
+    .ap_return_25(load_and_calc_norm53_U0_ap_return_25),
+    .ap_return_26(load_and_calc_norm53_U0_ap_return_26),
+    .ap_return_27(load_and_calc_norm53_U0_ap_return_27),
+    .ap_return_28(load_and_calc_norm53_U0_ap_return_28),
+    .ap_return_29(load_and_calc_norm53_U0_ap_return_29),
+    .ap_return_30(load_and_calc_norm53_U0_ap_return_30),
+    .ap_return_31(load_and_calc_norm53_U0_ap_return_31),
+    .ap_return_32(load_and_calc_norm53_U0_ap_return_32),
+    .ap_return_33(load_and_calc_norm53_U0_ap_return_33),
+    .ap_return_34(load_and_calc_norm53_U0_ap_return_34),
+    .ap_return_35(load_and_calc_norm53_U0_ap_return_35),
+    .ap_return_36(load_and_calc_norm53_U0_ap_return_36),
+    .ap_return_37(load_and_calc_norm53_U0_ap_return_37),
+    .ap_return_38(load_and_calc_norm53_U0_ap_return_38),
+    .ap_return_39(load_and_calc_norm53_U0_ap_return_39),
+    .ap_return_40(load_and_calc_norm53_U0_ap_return_40),
+    .ap_return_41(load_and_calc_norm53_U0_ap_return_41),
+    .ap_return_42(load_and_calc_norm53_U0_ap_return_42),
+    .ap_return_43(load_and_calc_norm53_U0_ap_return_43),
+    .ap_return_44(load_and_calc_norm53_U0_ap_return_44),
+    .ap_return_45(load_and_calc_norm53_U0_ap_return_45),
+    .ap_return_46(load_and_calc_norm53_U0_ap_return_46),
+    .ap_return_47(load_and_calc_norm53_U0_ap_return_47),
+    .ap_return_48(load_and_calc_norm53_U0_ap_return_48),
+    .ap_return_49(load_and_calc_norm53_U0_ap_return_49),
+    .ap_return_50(load_and_calc_norm53_U0_ap_return_50)
 );
 
 compute_and_output compute_and_output_U0(
@@ -901,6 +1351,56 @@ compute_and_output compute_and_output_U0(
     .x_local_15_V_ce0(compute_and_output_U0_x_local_15_V_ce0),
     .x_local_15_V_q0(x_local_15_V_t_q0),
     .p_read(internal_norm_V_dout),
+    .active_groups_0_V_r(active_groups_0_V_dout),
+    .active_groups_1_V_r(active_groups_1_V_dout),
+    .active_groups_2_V_r(active_groups_2_V_dout),
+    .active_groups_3_V_r(active_groups_3_V_dout),
+    .active_groups_4_V_r(active_groups_4_V_dout),
+    .active_groups_5_V_r(active_groups_5_V_dout),
+    .active_groups_6_V_r(active_groups_6_V_dout),
+    .active_groups_7_V_r(active_groups_7_V_dout),
+    .active_groups_8_V_r(active_groups_8_V_dout),
+    .active_groups_9_V_r(active_groups_9_V_dout),
+    .active_groups_10_V_s(active_groups_10_V_dout),
+    .active_groups_11_V_s(active_groups_11_V_dout),
+    .active_groups_12_V_s(active_groups_12_V_dout),
+    .active_groups_13_V_s(active_groups_13_V_dout),
+    .active_groups_14_V_s(active_groups_14_V_dout),
+    .active_groups_15_V_s(active_groups_15_V_dout),
+    .active_groups_16_V_s(active_groups_16_V_dout),
+    .active_groups_17_V_s(active_groups_17_V_dout),
+    .active_groups_18_V_s(active_groups_18_V_dout),
+    .active_groups_19_V_s(active_groups_19_V_dout),
+    .active_groups_20_V_s(active_groups_20_V_dout),
+    .active_groups_21_V_s(active_groups_21_V_dout),
+    .active_groups_22_V_s(active_groups_22_V_dout),
+    .active_groups_23_V_s(active_groups_23_V_dout),
+    .active_groups_24_V_s(active_groups_24_V_dout),
+    .active_groups_25_V_s(active_groups_25_V_dout),
+    .active_groups_26_V_s(active_groups_26_V_dout),
+    .active_groups_27_V_s(active_groups_27_V_dout),
+    .active_groups_28_V_s(active_groups_28_V_dout),
+    .active_groups_29_V_s(active_groups_29_V_dout),
+    .active_groups_30_V_s(active_groups_30_V_dout),
+    .active_groups_31_V_s(active_groups_31_V_dout),
+    .active_groups_32_V_s(active_groups_32_V_dout),
+    .active_groups_33_V_s(active_groups_33_V_dout),
+    .active_groups_34_V_s(active_groups_34_V_dout),
+    .active_groups_35_V_s(active_groups_35_V_dout),
+    .active_groups_36_V_s(active_groups_36_V_dout),
+    .active_groups_37_V_s(active_groups_37_V_dout),
+    .active_groups_38_V_s(active_groups_38_V_dout),
+    .active_groups_39_V_s(active_groups_39_V_dout),
+    .active_groups_40_V_s(active_groups_40_V_dout),
+    .active_groups_41_V_s(active_groups_41_V_dout),
+    .active_groups_42_V_s(active_groups_42_V_dout),
+    .active_groups_43_V_s(active_groups_43_V_dout),
+    .active_groups_44_V_s(active_groups_44_V_dout),
+    .active_groups_45_V_s(active_groups_45_V_dout),
+    .active_groups_46_V_s(active_groups_46_V_dout),
+    .active_groups_47_V_s(active_groups_47_V_dout),
+    .active_groups_48_V_s(active_groups_48_V_dout),
+    .p_read50(active_count_V_dout),
     .out_stream_TDATA(compute_and_output_U0_out_stream_TDATA),
     .out_stream_TVALID(compute_and_output_U0_out_stream_TVALID),
     .out_stream_TREADY(out_stream_TREADY),
@@ -946,13 +1446,1263 @@ fifo_w24_d2_A internal_norm_V_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(load_and_calc_norm53_U0_ap_return),
+    .if_din(load_and_calc_norm53_U0_ap_return_0),
     .if_full_n(internal_norm_V_full_n),
     .if_write(ap_channel_done_internal_norm_V),
     .if_dout(internal_norm_V_dout),
     .if_empty_n(internal_norm_V_empty_n),
     .if_read(compute_and_output_U0_ap_ready)
 );
+
+fifo_w6_d2_A active_groups_0_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_1),
+    .if_full_n(active_groups_0_V_full_n),
+    .if_write(ap_channel_done_active_groups_0_V),
+    .if_dout(active_groups_0_V_dout),
+    .if_empty_n(active_groups_0_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_1_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_2),
+    .if_full_n(active_groups_1_V_full_n),
+    .if_write(ap_channel_done_active_groups_1_V),
+    .if_dout(active_groups_1_V_dout),
+    .if_empty_n(active_groups_1_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_2_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_3),
+    .if_full_n(active_groups_2_V_full_n),
+    .if_write(ap_channel_done_active_groups_2_V),
+    .if_dout(active_groups_2_V_dout),
+    .if_empty_n(active_groups_2_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_3_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_4),
+    .if_full_n(active_groups_3_V_full_n),
+    .if_write(ap_channel_done_active_groups_3_V),
+    .if_dout(active_groups_3_V_dout),
+    .if_empty_n(active_groups_3_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_4_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_5),
+    .if_full_n(active_groups_4_V_full_n),
+    .if_write(ap_channel_done_active_groups_4_V),
+    .if_dout(active_groups_4_V_dout),
+    .if_empty_n(active_groups_4_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_5_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_6),
+    .if_full_n(active_groups_5_V_full_n),
+    .if_write(ap_channel_done_active_groups_5_V),
+    .if_dout(active_groups_5_V_dout),
+    .if_empty_n(active_groups_5_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_6_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_7),
+    .if_full_n(active_groups_6_V_full_n),
+    .if_write(ap_channel_done_active_groups_6_V),
+    .if_dout(active_groups_6_V_dout),
+    .if_empty_n(active_groups_6_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_7_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_8),
+    .if_full_n(active_groups_7_V_full_n),
+    .if_write(ap_channel_done_active_groups_7_V),
+    .if_dout(active_groups_7_V_dout),
+    .if_empty_n(active_groups_7_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_8_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_9),
+    .if_full_n(active_groups_8_V_full_n),
+    .if_write(ap_channel_done_active_groups_8_V),
+    .if_dout(active_groups_8_V_dout),
+    .if_empty_n(active_groups_8_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_9_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_10),
+    .if_full_n(active_groups_9_V_full_n),
+    .if_write(ap_channel_done_active_groups_9_V),
+    .if_dout(active_groups_9_V_dout),
+    .if_empty_n(active_groups_9_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_10_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_11),
+    .if_full_n(active_groups_10_V_full_n),
+    .if_write(ap_channel_done_active_groups_10_V),
+    .if_dout(active_groups_10_V_dout),
+    .if_empty_n(active_groups_10_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_11_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_12),
+    .if_full_n(active_groups_11_V_full_n),
+    .if_write(ap_channel_done_active_groups_11_V),
+    .if_dout(active_groups_11_V_dout),
+    .if_empty_n(active_groups_11_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_12_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_13),
+    .if_full_n(active_groups_12_V_full_n),
+    .if_write(ap_channel_done_active_groups_12_V),
+    .if_dout(active_groups_12_V_dout),
+    .if_empty_n(active_groups_12_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_13_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_14),
+    .if_full_n(active_groups_13_V_full_n),
+    .if_write(ap_channel_done_active_groups_13_V),
+    .if_dout(active_groups_13_V_dout),
+    .if_empty_n(active_groups_13_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_14_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_15),
+    .if_full_n(active_groups_14_V_full_n),
+    .if_write(ap_channel_done_active_groups_14_V),
+    .if_dout(active_groups_14_V_dout),
+    .if_empty_n(active_groups_14_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_15_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_16),
+    .if_full_n(active_groups_15_V_full_n),
+    .if_write(ap_channel_done_active_groups_15_V),
+    .if_dout(active_groups_15_V_dout),
+    .if_empty_n(active_groups_15_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_16_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_17),
+    .if_full_n(active_groups_16_V_full_n),
+    .if_write(ap_channel_done_active_groups_16_V),
+    .if_dout(active_groups_16_V_dout),
+    .if_empty_n(active_groups_16_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_17_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_18),
+    .if_full_n(active_groups_17_V_full_n),
+    .if_write(ap_channel_done_active_groups_17_V),
+    .if_dout(active_groups_17_V_dout),
+    .if_empty_n(active_groups_17_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_18_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_19),
+    .if_full_n(active_groups_18_V_full_n),
+    .if_write(ap_channel_done_active_groups_18_V),
+    .if_dout(active_groups_18_V_dout),
+    .if_empty_n(active_groups_18_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_19_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_20),
+    .if_full_n(active_groups_19_V_full_n),
+    .if_write(ap_channel_done_active_groups_19_V),
+    .if_dout(active_groups_19_V_dout),
+    .if_empty_n(active_groups_19_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_20_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_21),
+    .if_full_n(active_groups_20_V_full_n),
+    .if_write(ap_channel_done_active_groups_20_V),
+    .if_dout(active_groups_20_V_dout),
+    .if_empty_n(active_groups_20_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_21_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_22),
+    .if_full_n(active_groups_21_V_full_n),
+    .if_write(ap_channel_done_active_groups_21_V),
+    .if_dout(active_groups_21_V_dout),
+    .if_empty_n(active_groups_21_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_22_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_23),
+    .if_full_n(active_groups_22_V_full_n),
+    .if_write(ap_channel_done_active_groups_22_V),
+    .if_dout(active_groups_22_V_dout),
+    .if_empty_n(active_groups_22_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_23_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_24),
+    .if_full_n(active_groups_23_V_full_n),
+    .if_write(ap_channel_done_active_groups_23_V),
+    .if_dout(active_groups_23_V_dout),
+    .if_empty_n(active_groups_23_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_24_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_25),
+    .if_full_n(active_groups_24_V_full_n),
+    .if_write(ap_channel_done_active_groups_24_V),
+    .if_dout(active_groups_24_V_dout),
+    .if_empty_n(active_groups_24_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_25_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_26),
+    .if_full_n(active_groups_25_V_full_n),
+    .if_write(ap_channel_done_active_groups_25_V),
+    .if_dout(active_groups_25_V_dout),
+    .if_empty_n(active_groups_25_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_26_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_27),
+    .if_full_n(active_groups_26_V_full_n),
+    .if_write(ap_channel_done_active_groups_26_V),
+    .if_dout(active_groups_26_V_dout),
+    .if_empty_n(active_groups_26_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_27_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_28),
+    .if_full_n(active_groups_27_V_full_n),
+    .if_write(ap_channel_done_active_groups_27_V),
+    .if_dout(active_groups_27_V_dout),
+    .if_empty_n(active_groups_27_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_28_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_29),
+    .if_full_n(active_groups_28_V_full_n),
+    .if_write(ap_channel_done_active_groups_28_V),
+    .if_dout(active_groups_28_V_dout),
+    .if_empty_n(active_groups_28_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_29_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_30),
+    .if_full_n(active_groups_29_V_full_n),
+    .if_write(ap_channel_done_active_groups_29_V),
+    .if_dout(active_groups_29_V_dout),
+    .if_empty_n(active_groups_29_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_30_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_31),
+    .if_full_n(active_groups_30_V_full_n),
+    .if_write(ap_channel_done_active_groups_30_V),
+    .if_dout(active_groups_30_V_dout),
+    .if_empty_n(active_groups_30_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_31_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_32),
+    .if_full_n(active_groups_31_V_full_n),
+    .if_write(ap_channel_done_active_groups_31_V),
+    .if_dout(active_groups_31_V_dout),
+    .if_empty_n(active_groups_31_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_32_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_33),
+    .if_full_n(active_groups_32_V_full_n),
+    .if_write(ap_channel_done_active_groups_32_V),
+    .if_dout(active_groups_32_V_dout),
+    .if_empty_n(active_groups_32_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_33_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_34),
+    .if_full_n(active_groups_33_V_full_n),
+    .if_write(ap_channel_done_active_groups_33_V),
+    .if_dout(active_groups_33_V_dout),
+    .if_empty_n(active_groups_33_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_34_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_35),
+    .if_full_n(active_groups_34_V_full_n),
+    .if_write(ap_channel_done_active_groups_34_V),
+    .if_dout(active_groups_34_V_dout),
+    .if_empty_n(active_groups_34_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_35_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_36),
+    .if_full_n(active_groups_35_V_full_n),
+    .if_write(ap_channel_done_active_groups_35_V),
+    .if_dout(active_groups_35_V_dout),
+    .if_empty_n(active_groups_35_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_36_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_37),
+    .if_full_n(active_groups_36_V_full_n),
+    .if_write(ap_channel_done_active_groups_36_V),
+    .if_dout(active_groups_36_V_dout),
+    .if_empty_n(active_groups_36_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_37_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_38),
+    .if_full_n(active_groups_37_V_full_n),
+    .if_write(ap_channel_done_active_groups_37_V),
+    .if_dout(active_groups_37_V_dout),
+    .if_empty_n(active_groups_37_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_38_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_39),
+    .if_full_n(active_groups_38_V_full_n),
+    .if_write(ap_channel_done_active_groups_38_V),
+    .if_dout(active_groups_38_V_dout),
+    .if_empty_n(active_groups_38_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_39_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_40),
+    .if_full_n(active_groups_39_V_full_n),
+    .if_write(ap_channel_done_active_groups_39_V),
+    .if_dout(active_groups_39_V_dout),
+    .if_empty_n(active_groups_39_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_40_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_41),
+    .if_full_n(active_groups_40_V_full_n),
+    .if_write(ap_channel_done_active_groups_40_V),
+    .if_dout(active_groups_40_V_dout),
+    .if_empty_n(active_groups_40_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_41_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_42),
+    .if_full_n(active_groups_41_V_full_n),
+    .if_write(ap_channel_done_active_groups_41_V),
+    .if_dout(active_groups_41_V_dout),
+    .if_empty_n(active_groups_41_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_42_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_43),
+    .if_full_n(active_groups_42_V_full_n),
+    .if_write(ap_channel_done_active_groups_42_V),
+    .if_dout(active_groups_42_V_dout),
+    .if_empty_n(active_groups_42_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_43_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_44),
+    .if_full_n(active_groups_43_V_full_n),
+    .if_write(ap_channel_done_active_groups_43_V),
+    .if_dout(active_groups_43_V_dout),
+    .if_empty_n(active_groups_43_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_44_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_45),
+    .if_full_n(active_groups_44_V_full_n),
+    .if_write(ap_channel_done_active_groups_44_V),
+    .if_dout(active_groups_44_V_dout),
+    .if_empty_n(active_groups_44_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_45_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_46),
+    .if_full_n(active_groups_45_V_full_n),
+    .if_write(ap_channel_done_active_groups_45_V),
+    .if_dout(active_groups_45_V_dout),
+    .if_empty_n(active_groups_45_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_46_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_47),
+    .if_full_n(active_groups_46_V_full_n),
+    .if_write(ap_channel_done_active_groups_46_V),
+    .if_dout(active_groups_46_V_dout),
+    .if_empty_n(active_groups_46_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_47_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_48),
+    .if_full_n(active_groups_47_V_full_n),
+    .if_write(ap_channel_done_active_groups_47_V),
+    .if_dout(active_groups_47_V_dout),
+    .if_empty_n(active_groups_47_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_groups_48_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_49),
+    .if_full_n(active_groups_48_V_full_n),
+    .if_write(ap_channel_done_active_groups_48_V),
+    .if_dout(active_groups_48_V_dout),
+    .if_empty_n(active_groups_48_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+fifo_w6_d2_A active_count_V_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(load_and_calc_norm53_U0_ap_return_50),
+    .if_full_n(active_count_V_full_n),
+    .if_write(ap_channel_done_active_count_V),
+    .if_dout(active_count_V_dout),
+    .if_empty_n(active_count_V_empty_n),
+    .if_read(compute_and_output_U0_ap_ready)
+);
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_count_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_count_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_count_V <= ap_sync_channel_write_active_count_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_0_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_0_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_0_V <= ap_sync_channel_write_active_groups_0_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_10_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_10_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_10_V <= ap_sync_channel_write_active_groups_10_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_11_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_11_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_11_V <= ap_sync_channel_write_active_groups_11_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_12_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_12_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_12_V <= ap_sync_channel_write_active_groups_12_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_13_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_13_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_13_V <= ap_sync_channel_write_active_groups_13_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_14_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_14_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_14_V <= ap_sync_channel_write_active_groups_14_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_15_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_15_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_15_V <= ap_sync_channel_write_active_groups_15_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_16_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_16_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_16_V <= ap_sync_channel_write_active_groups_16_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_17_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_17_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_17_V <= ap_sync_channel_write_active_groups_17_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_18_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_18_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_18_V <= ap_sync_channel_write_active_groups_18_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_19_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_19_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_19_V <= ap_sync_channel_write_active_groups_19_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_1_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_1_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_1_V <= ap_sync_channel_write_active_groups_1_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_20_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_20_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_20_V <= ap_sync_channel_write_active_groups_20_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_21_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_21_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_21_V <= ap_sync_channel_write_active_groups_21_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_22_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_22_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_22_V <= ap_sync_channel_write_active_groups_22_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_23_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_23_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_23_V <= ap_sync_channel_write_active_groups_23_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_24_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_24_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_24_V <= ap_sync_channel_write_active_groups_24_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_25_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_25_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_25_V <= ap_sync_channel_write_active_groups_25_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_26_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_26_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_26_V <= ap_sync_channel_write_active_groups_26_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_27_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_27_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_27_V <= ap_sync_channel_write_active_groups_27_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_28_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_28_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_28_V <= ap_sync_channel_write_active_groups_28_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_29_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_29_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_29_V <= ap_sync_channel_write_active_groups_29_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_2_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_2_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_2_V <= ap_sync_channel_write_active_groups_2_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_30_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_30_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_30_V <= ap_sync_channel_write_active_groups_30_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_31_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_31_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_31_V <= ap_sync_channel_write_active_groups_31_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_32_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_32_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_32_V <= ap_sync_channel_write_active_groups_32_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_33_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_33_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_33_V <= ap_sync_channel_write_active_groups_33_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_34_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_34_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_34_V <= ap_sync_channel_write_active_groups_34_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_35_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_35_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_35_V <= ap_sync_channel_write_active_groups_35_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_36_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_36_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_36_V <= ap_sync_channel_write_active_groups_36_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_37_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_37_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_37_V <= ap_sync_channel_write_active_groups_37_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_38_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_38_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_38_V <= ap_sync_channel_write_active_groups_38_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_39_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_39_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_39_V <= ap_sync_channel_write_active_groups_39_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_3_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_3_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_3_V <= ap_sync_channel_write_active_groups_3_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_40_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_40_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_40_V <= ap_sync_channel_write_active_groups_40_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_41_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_41_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_41_V <= ap_sync_channel_write_active_groups_41_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_42_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_42_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_42_V <= ap_sync_channel_write_active_groups_42_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_43_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_43_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_43_V <= ap_sync_channel_write_active_groups_43_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_44_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_44_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_44_V <= ap_sync_channel_write_active_groups_44_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_45_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_45_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_45_V <= ap_sync_channel_write_active_groups_45_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_46_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_46_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_46_V <= ap_sync_channel_write_active_groups_46_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_47_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_47_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_47_V <= ap_sync_channel_write_active_groups_47_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_48_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_48_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_48_V <= ap_sync_channel_write_active_groups_48_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_4_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_4_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_4_V <= ap_sync_channel_write_active_groups_4_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_5_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_5_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_5_V <= ap_sync_channel_write_active_groups_5_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_6_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_6_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_6_V <= ap_sync_channel_write_active_groups_6_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_7_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_7_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_7_V <= ap_sync_channel_write_active_groups_7_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_8_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_8_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_8_V <= ap_sync_channel_write_active_groups_8_V;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_active_groups_9_V <= 1'b0;
+    end else begin
+        if (((load_and_calc_norm53_U0_ap_done & load_and_calc_norm53_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_active_groups_9_V <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_active_groups_9_V <= ap_sync_channel_write_active_groups_9_V;
+        end
+    end
+end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
@@ -1158,6 +2908,106 @@ always @ (posedge ap_clk) begin
     end
 end
 
+assign ap_channel_done_active_count_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_count_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_0_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_0_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_10_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_10_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_11_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_11_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_12_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_12_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_13_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_13_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_14_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_14_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_15_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_15_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_16_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_16_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_17_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_17_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_18_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_18_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_19_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_19_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_1_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_1_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_20_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_20_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_21_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_21_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_22_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_22_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_23_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_23_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_24_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_24_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_25_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_25_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_26_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_26_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_27_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_27_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_28_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_28_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_29_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_29_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_2_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_2_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_30_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_30_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_31_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_31_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_32_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_32_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_33_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_33_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_34_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_34_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_35_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_35_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_36_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_36_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_37_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_37_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_38_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_38_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_39_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_39_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_3_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_3_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_40_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_40_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_41_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_41_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_42_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_42_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_43_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_43_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_44_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_44_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_45_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_45_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_46_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_46_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_47_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_47_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_48_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_48_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_4_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_4_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_5_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_5_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_6_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_6_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_7_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_7_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_8_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_8_V ^ 1'b1));
+
+assign ap_channel_done_active_groups_9_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_active_groups_9_V ^ 1'b1));
+
 assign ap_channel_done_internal_norm_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_internal_norm_V ^ 1'b1));
 
 assign ap_channel_done_x_local_0_V = (load_and_calc_norm53_U0_ap_done & (ap_sync_reg_channel_write_x_local_0_V ^ 1'b1));
@@ -1194,9 +3044,109 @@ assign ap_channel_done_x_local_9_V = (load_and_calc_norm53_U0_ap_done & (ap_sync
 
 assign ap_done = compute_and_output_U0_ap_done;
 
-assign ap_idle = (load_and_calc_norm53_U0_ap_idle & (internal_norm_V_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_and_output_U0_ap_idle);
+assign ap_idle = (load_and_calc_norm53_U0_ap_idle & (1'b1 ^ active_count_V_empty_n) & (1'b1 ^ active_groups_48_V_empty_n) & (1'b1 ^ active_groups_47_V_empty_n) & (1'b1 ^ active_groups_46_V_empty_n) & (1'b1 ^ active_groups_45_V_empty_n) & (1'b1 ^ active_groups_44_V_empty_n) & (1'b1 ^ active_groups_43_V_empty_n) & (1'b1 ^ active_groups_42_V_empty_n) & (1'b1 ^ active_groups_41_V_empty_n) & (1'b1 ^ active_groups_40_V_empty_n) & (1'b1 ^ active_groups_39_V_empty_n) & (1'b1 ^ active_groups_38_V_empty_n) & (1'b1 ^ active_groups_37_V_empty_n) & (1'b1 ^ active_groups_36_V_empty_n) & (1'b1 ^ active_groups_35_V_empty_n) & (1'b1 ^ active_groups_34_V_empty_n) & (1'b1 ^ active_groups_33_V_empty_n) & (1'b1 ^ active_groups_32_V_empty_n) & (1'b1 ^ active_groups_31_V_empty_n) & (1'b1 ^ active_groups_30_V_empty_n) & (1'b1 ^ active_groups_29_V_empty_n) & (1'b1 ^ active_groups_28_V_empty_n) & (1'b1 ^ active_groups_27_V_empty_n) & (1'b1 ^ active_groups_26_V_empty_n) & (1'b1 ^ active_groups_25_V_empty_n) & (1'b1 ^ active_groups_24_V_empty_n) & (1'b1 ^ active_groups_23_V_empty_n) & (1'b1 ^ active_groups_22_V_empty_n) & (1'b1 ^ active_groups_21_V_empty_n) & (1'b1 ^ active_groups_20_V_empty_n) & (1'b1 ^ active_groups_19_V_empty_n) & (1'b1 ^ active_groups_18_V_empty_n) & (1'b1 ^ active_groups_17_V_empty_n) & (1'b1 ^ active_groups_16_V_empty_n) & (1'b1 ^ active_groups_15_V_empty_n) & (1'b1 ^ active_groups_14_V_empty_n) & (1'b1 ^ active_groups_13_V_empty_n) & (1'b1 ^ active_groups_12_V_empty_n) & (1'b1 ^ active_groups_11_V_empty_n) & (1'b1 ^ active_groups_10_V_empty_n) & (1'b1 ^ active_groups_9_V_empty_n) & (1'b1 ^ active_groups_8_V_empty_n) & (1'b1 ^ active_groups_7_V_empty_n) & (1'b1 ^ active_groups_6_V_empty_n) & (1'b1 ^ active_groups_5_V_empty_n) & (1'b1 ^ active_groups_4_V_empty_n) & (1'b1 ^ active_groups_3_V_empty_n) & (1'b1 ^ active_groups_2_V_empty_n) & (1'b1 ^ active_groups_1_V_empty_n) & (1'b1 ^ active_groups_0_V_empty_n) & (internal_norm_V_empty_n ^ 1'b1) & (x_local_15_V_t_empty_n ^ 1'b1) & (x_local_14_V_t_empty_n ^ 1'b1) & (x_local_13_V_t_empty_n ^ 1'b1) & (x_local_12_V_t_empty_n ^ 1'b1) & (x_local_11_V_t_empty_n ^ 1'b1) & (x_local_10_V_t_empty_n ^ 1'b1) & (x_local_9_V_t_empty_n ^ 1'b1) & (x_local_8_V_t_empty_n ^ 1'b1) & (x_local_7_V_t_empty_n ^ 1'b1) & (x_local_6_V_t_empty_n ^ 1'b1) & (x_local_5_V_t_empty_n ^ 1'b1) & (x_local_4_V_t_empty_n ^ 1'b1) & (x_local_3_V_t_empty_n ^ 1'b1) & (x_local_2_V_t_empty_n ^ 1'b1) & (x_local_1_V_t_empty_n ^ 1'b1) & (x_local_0_V_t_empty_n ^ 1'b1) & compute_and_output_U0_ap_idle);
 
 assign ap_ready = load_and_calc_norm53_U0_ap_ready;
+
+assign ap_sync_channel_write_active_count_V = ((ap_channel_done_active_count_V & active_count_V_full_n) | ap_sync_reg_channel_write_active_count_V);
+
+assign ap_sync_channel_write_active_groups_0_V = ((ap_channel_done_active_groups_0_V & active_groups_0_V_full_n) | ap_sync_reg_channel_write_active_groups_0_V);
+
+assign ap_sync_channel_write_active_groups_10_V = ((ap_channel_done_active_groups_10_V & active_groups_10_V_full_n) | ap_sync_reg_channel_write_active_groups_10_V);
+
+assign ap_sync_channel_write_active_groups_11_V = ((ap_channel_done_active_groups_11_V & active_groups_11_V_full_n) | ap_sync_reg_channel_write_active_groups_11_V);
+
+assign ap_sync_channel_write_active_groups_12_V = ((ap_channel_done_active_groups_12_V & active_groups_12_V_full_n) | ap_sync_reg_channel_write_active_groups_12_V);
+
+assign ap_sync_channel_write_active_groups_13_V = ((ap_channel_done_active_groups_13_V & active_groups_13_V_full_n) | ap_sync_reg_channel_write_active_groups_13_V);
+
+assign ap_sync_channel_write_active_groups_14_V = ((ap_channel_done_active_groups_14_V & active_groups_14_V_full_n) | ap_sync_reg_channel_write_active_groups_14_V);
+
+assign ap_sync_channel_write_active_groups_15_V = ((ap_channel_done_active_groups_15_V & active_groups_15_V_full_n) | ap_sync_reg_channel_write_active_groups_15_V);
+
+assign ap_sync_channel_write_active_groups_16_V = ((ap_channel_done_active_groups_16_V & active_groups_16_V_full_n) | ap_sync_reg_channel_write_active_groups_16_V);
+
+assign ap_sync_channel_write_active_groups_17_V = ((ap_channel_done_active_groups_17_V & active_groups_17_V_full_n) | ap_sync_reg_channel_write_active_groups_17_V);
+
+assign ap_sync_channel_write_active_groups_18_V = ((ap_channel_done_active_groups_18_V & active_groups_18_V_full_n) | ap_sync_reg_channel_write_active_groups_18_V);
+
+assign ap_sync_channel_write_active_groups_19_V = ((ap_channel_done_active_groups_19_V & active_groups_19_V_full_n) | ap_sync_reg_channel_write_active_groups_19_V);
+
+assign ap_sync_channel_write_active_groups_1_V = ((ap_channel_done_active_groups_1_V & active_groups_1_V_full_n) | ap_sync_reg_channel_write_active_groups_1_V);
+
+assign ap_sync_channel_write_active_groups_20_V = ((ap_channel_done_active_groups_20_V & active_groups_20_V_full_n) | ap_sync_reg_channel_write_active_groups_20_V);
+
+assign ap_sync_channel_write_active_groups_21_V = ((ap_channel_done_active_groups_21_V & active_groups_21_V_full_n) | ap_sync_reg_channel_write_active_groups_21_V);
+
+assign ap_sync_channel_write_active_groups_22_V = ((ap_channel_done_active_groups_22_V & active_groups_22_V_full_n) | ap_sync_reg_channel_write_active_groups_22_V);
+
+assign ap_sync_channel_write_active_groups_23_V = ((ap_channel_done_active_groups_23_V & active_groups_23_V_full_n) | ap_sync_reg_channel_write_active_groups_23_V);
+
+assign ap_sync_channel_write_active_groups_24_V = ((ap_channel_done_active_groups_24_V & active_groups_24_V_full_n) | ap_sync_reg_channel_write_active_groups_24_V);
+
+assign ap_sync_channel_write_active_groups_25_V = ((ap_channel_done_active_groups_25_V & active_groups_25_V_full_n) | ap_sync_reg_channel_write_active_groups_25_V);
+
+assign ap_sync_channel_write_active_groups_26_V = ((ap_channel_done_active_groups_26_V & active_groups_26_V_full_n) | ap_sync_reg_channel_write_active_groups_26_V);
+
+assign ap_sync_channel_write_active_groups_27_V = ((ap_channel_done_active_groups_27_V & active_groups_27_V_full_n) | ap_sync_reg_channel_write_active_groups_27_V);
+
+assign ap_sync_channel_write_active_groups_28_V = ((ap_channel_done_active_groups_28_V & active_groups_28_V_full_n) | ap_sync_reg_channel_write_active_groups_28_V);
+
+assign ap_sync_channel_write_active_groups_29_V = ((ap_channel_done_active_groups_29_V & active_groups_29_V_full_n) | ap_sync_reg_channel_write_active_groups_29_V);
+
+assign ap_sync_channel_write_active_groups_2_V = ((ap_channel_done_active_groups_2_V & active_groups_2_V_full_n) | ap_sync_reg_channel_write_active_groups_2_V);
+
+assign ap_sync_channel_write_active_groups_30_V = ((ap_channel_done_active_groups_30_V & active_groups_30_V_full_n) | ap_sync_reg_channel_write_active_groups_30_V);
+
+assign ap_sync_channel_write_active_groups_31_V = ((ap_channel_done_active_groups_31_V & active_groups_31_V_full_n) | ap_sync_reg_channel_write_active_groups_31_V);
+
+assign ap_sync_channel_write_active_groups_32_V = ((ap_channel_done_active_groups_32_V & active_groups_32_V_full_n) | ap_sync_reg_channel_write_active_groups_32_V);
+
+assign ap_sync_channel_write_active_groups_33_V = ((ap_channel_done_active_groups_33_V & active_groups_33_V_full_n) | ap_sync_reg_channel_write_active_groups_33_V);
+
+assign ap_sync_channel_write_active_groups_34_V = ((ap_channel_done_active_groups_34_V & active_groups_34_V_full_n) | ap_sync_reg_channel_write_active_groups_34_V);
+
+assign ap_sync_channel_write_active_groups_35_V = ((ap_channel_done_active_groups_35_V & active_groups_35_V_full_n) | ap_sync_reg_channel_write_active_groups_35_V);
+
+assign ap_sync_channel_write_active_groups_36_V = ((ap_channel_done_active_groups_36_V & active_groups_36_V_full_n) | ap_sync_reg_channel_write_active_groups_36_V);
+
+assign ap_sync_channel_write_active_groups_37_V = ((ap_channel_done_active_groups_37_V & active_groups_37_V_full_n) | ap_sync_reg_channel_write_active_groups_37_V);
+
+assign ap_sync_channel_write_active_groups_38_V = ((ap_channel_done_active_groups_38_V & active_groups_38_V_full_n) | ap_sync_reg_channel_write_active_groups_38_V);
+
+assign ap_sync_channel_write_active_groups_39_V = ((ap_channel_done_active_groups_39_V & active_groups_39_V_full_n) | ap_sync_reg_channel_write_active_groups_39_V);
+
+assign ap_sync_channel_write_active_groups_3_V = ((ap_channel_done_active_groups_3_V & active_groups_3_V_full_n) | ap_sync_reg_channel_write_active_groups_3_V);
+
+assign ap_sync_channel_write_active_groups_40_V = ((ap_channel_done_active_groups_40_V & active_groups_40_V_full_n) | ap_sync_reg_channel_write_active_groups_40_V);
+
+assign ap_sync_channel_write_active_groups_41_V = ((ap_channel_done_active_groups_41_V & active_groups_41_V_full_n) | ap_sync_reg_channel_write_active_groups_41_V);
+
+assign ap_sync_channel_write_active_groups_42_V = ((ap_channel_done_active_groups_42_V & active_groups_42_V_full_n) | ap_sync_reg_channel_write_active_groups_42_V);
+
+assign ap_sync_channel_write_active_groups_43_V = ((ap_channel_done_active_groups_43_V & active_groups_43_V_full_n) | ap_sync_reg_channel_write_active_groups_43_V);
+
+assign ap_sync_channel_write_active_groups_44_V = ((ap_channel_done_active_groups_44_V & active_groups_44_V_full_n) | ap_sync_reg_channel_write_active_groups_44_V);
+
+assign ap_sync_channel_write_active_groups_45_V = ((ap_channel_done_active_groups_45_V & active_groups_45_V_full_n) | ap_sync_reg_channel_write_active_groups_45_V);
+
+assign ap_sync_channel_write_active_groups_46_V = ((ap_channel_done_active_groups_46_V & active_groups_46_V_full_n) | ap_sync_reg_channel_write_active_groups_46_V);
+
+assign ap_sync_channel_write_active_groups_47_V = ((ap_channel_done_active_groups_47_V & active_groups_47_V_full_n) | ap_sync_reg_channel_write_active_groups_47_V);
+
+assign ap_sync_channel_write_active_groups_48_V = ((ap_channel_done_active_groups_48_V & active_groups_48_V_full_n) | ap_sync_reg_channel_write_active_groups_48_V);
+
+assign ap_sync_channel_write_active_groups_4_V = ((ap_channel_done_active_groups_4_V & active_groups_4_V_full_n) | ap_sync_reg_channel_write_active_groups_4_V);
+
+assign ap_sync_channel_write_active_groups_5_V = ((ap_channel_done_active_groups_5_V & active_groups_5_V_full_n) | ap_sync_reg_channel_write_active_groups_5_V);
+
+assign ap_sync_channel_write_active_groups_6_V = ((ap_channel_done_active_groups_6_V & active_groups_6_V_full_n) | ap_sync_reg_channel_write_active_groups_6_V);
+
+assign ap_sync_channel_write_active_groups_7_V = ((ap_channel_done_active_groups_7_V & active_groups_7_V_full_n) | ap_sync_reg_channel_write_active_groups_7_V);
+
+assign ap_sync_channel_write_active_groups_8_V = ((ap_channel_done_active_groups_8_V & active_groups_8_V_full_n) | ap_sync_reg_channel_write_active_groups_8_V);
+
+assign ap_sync_channel_write_active_groups_9_V = ((ap_channel_done_active_groups_9_V & active_groups_9_V_full_n) | ap_sync_reg_channel_write_active_groups_9_V);
 
 assign ap_sync_channel_write_internal_norm_V = ((internal_norm_V_full_n & ap_channel_done_internal_norm_V) | ap_sync_reg_channel_write_internal_norm_V);
 
@@ -1240,7 +3190,7 @@ assign ap_sync_ready = load_and_calc_norm53_U0_ap_ready;
 
 assign compute_and_output_U0_ap_continue = ap_continue;
 
-assign compute_and_output_U0_ap_start = (x_local_9_V_t_empty_n & x_local_8_V_t_empty_n & x_local_7_V_t_empty_n & x_local_6_V_t_empty_n & x_local_5_V_t_empty_n & x_local_4_V_t_empty_n & x_local_3_V_t_empty_n & x_local_2_V_t_empty_n & x_local_1_V_t_empty_n & x_local_15_V_t_empty_n & x_local_14_V_t_empty_n & x_local_13_V_t_empty_n & x_local_12_V_t_empty_n & x_local_11_V_t_empty_n & x_local_10_V_t_empty_n & x_local_0_V_t_empty_n & internal_norm_V_empty_n);
+assign compute_and_output_U0_ap_start = (x_local_9_V_t_empty_n & x_local_8_V_t_empty_n & x_local_7_V_t_empty_n & x_local_6_V_t_empty_n & x_local_5_V_t_empty_n & x_local_4_V_t_empty_n & x_local_3_V_t_empty_n & x_local_2_V_t_empty_n & x_local_1_V_t_empty_n & x_local_15_V_t_empty_n & x_local_14_V_t_empty_n & x_local_13_V_t_empty_n & x_local_12_V_t_empty_n & x_local_11_V_t_empty_n & x_local_10_V_t_empty_n & x_local_0_V_t_empty_n & internal_norm_V_empty_n & active_groups_9_V_empty_n & active_groups_8_V_empty_n & active_groups_7_V_empty_n & active_groups_6_V_empty_n & active_groups_5_V_empty_n & active_groups_4_V_empty_n & active_groups_48_V_empty_n & active_groups_47_V_empty_n & active_groups_46_V_empty_n & active_groups_45_V_empty_n & active_groups_44_V_empty_n & active_groups_43_V_empty_n & active_groups_42_V_empty_n & active_groups_41_V_empty_n & active_groups_40_V_empty_n & active_groups_3_V_empty_n & active_groups_39_V_empty_n & active_groups_38_V_empty_n & active_groups_37_V_empty_n & active_groups_36_V_empty_n & active_groups_35_V_empty_n & active_groups_34_V_empty_n & active_groups_33_V_empty_n & active_groups_32_V_empty_n & active_groups_31_V_empty_n & active_groups_30_V_empty_n & active_groups_2_V_empty_n & active_groups_29_V_empty_n & active_groups_28_V_empty_n & active_groups_27_V_empty_n & active_groups_26_V_empty_n & active_groups_25_V_empty_n & active_groups_24_V_empty_n & active_groups_23_V_empty_n & active_groups_22_V_empty_n & active_groups_21_V_empty_n & active_groups_20_V_empty_n & active_groups_1_V_empty_n & active_groups_19_V_empty_n & active_groups_18_V_empty_n & active_groups_17_V_empty_n & active_groups_16_V_empty_n & active_groups_15_V_empty_n & active_groups_14_V_empty_n & active_groups_13_V_empty_n & active_groups_12_V_empty_n & active_groups_11_V_empty_n & active_groups_10_V_empty_n & active_groups_0_V_empty_n & active_count_V_empty_n);
 
 assign compute_and_output_U0_start_full_n = 1'b1;
 
@@ -1248,7 +3198,7 @@ assign compute_and_output_U0_start_write = 1'b0;
 
 assign in_stream_TREADY = load_and_calc_norm53_U0_in_stream_TREADY;
 
-assign load_and_calc_norm53_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V & ap_sync_channel_write_internal_norm_V);
+assign load_and_calc_norm53_U0_ap_continue = (ap_sync_channel_write_x_local_9_V & ap_sync_channel_write_x_local_8_V & ap_sync_channel_write_x_local_7_V & ap_sync_channel_write_x_local_6_V & ap_sync_channel_write_x_local_5_V & ap_sync_channel_write_x_local_4_V & ap_sync_channel_write_x_local_3_V & ap_sync_channel_write_x_local_2_V & ap_sync_channel_write_x_local_1_V & ap_sync_channel_write_x_local_15_V & ap_sync_channel_write_x_local_14_V & ap_sync_channel_write_x_local_13_V & ap_sync_channel_write_x_local_12_V & ap_sync_channel_write_x_local_11_V & ap_sync_channel_write_x_local_10_V & ap_sync_channel_write_x_local_0_V & ap_sync_channel_write_internal_norm_V & ap_sync_channel_write_active_groups_9_V & ap_sync_channel_write_active_groups_8_V & ap_sync_channel_write_active_groups_7_V & ap_sync_channel_write_active_groups_6_V & ap_sync_channel_write_active_groups_5_V & ap_sync_channel_write_active_groups_4_V & ap_sync_channel_write_active_groups_48_V & ap_sync_channel_write_active_groups_47_V & ap_sync_channel_write_active_groups_46_V & ap_sync_channel_write_active_groups_45_V & ap_sync_channel_write_active_groups_44_V & ap_sync_channel_write_active_groups_43_V & ap_sync_channel_write_active_groups_42_V & ap_sync_channel_write_active_groups_41_V & ap_sync_channel_write_active_groups_40_V & ap_sync_channel_write_active_groups_3_V & ap_sync_channel_write_active_groups_39_V & ap_sync_channel_write_active_groups_38_V & ap_sync_channel_write_active_groups_37_V & ap_sync_channel_write_active_groups_36_V & ap_sync_channel_write_active_groups_35_V & ap_sync_channel_write_active_groups_34_V & ap_sync_channel_write_active_groups_33_V & ap_sync_channel_write_active_groups_32_V & ap_sync_channel_write_active_groups_31_V & ap_sync_channel_write_active_groups_30_V & ap_sync_channel_write_active_groups_2_V & ap_sync_channel_write_active_groups_29_V & ap_sync_channel_write_active_groups_28_V & ap_sync_channel_write_active_groups_27_V & ap_sync_channel_write_active_groups_26_V & ap_sync_channel_write_active_groups_25_V & ap_sync_channel_write_active_groups_24_V & ap_sync_channel_write_active_groups_23_V & ap_sync_channel_write_active_groups_22_V & ap_sync_channel_write_active_groups_21_V & ap_sync_channel_write_active_groups_20_V & ap_sync_channel_write_active_groups_1_V & ap_sync_channel_write_active_groups_19_V & ap_sync_channel_write_active_groups_18_V & ap_sync_channel_write_active_groups_17_V & ap_sync_channel_write_active_groups_16_V & ap_sync_channel_write_active_groups_15_V & ap_sync_channel_write_active_groups_14_V & ap_sync_channel_write_active_groups_13_V & ap_sync_channel_write_active_groups_12_V & ap_sync_channel_write_active_groups_11_V & ap_sync_channel_write_active_groups_10_V & ap_sync_channel_write_active_groups_0_V & ap_sync_channel_write_active_count_V);
 
 assign load_and_calc_norm53_U0_ap_start = ap_start;
 

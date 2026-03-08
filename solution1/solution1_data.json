@@ -18,7 +18,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1058711",
+    "Latency": "309623",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -39,11 +39,14 @@
     ],
     "Vhdl": [
       "impl\/vhdl\/classify_control_s_axi.vhd",
-      "impl\/vhdl\/classify_mac_mulabOq.vhd",
-      "impl\/vhdl\/classify_mul_mul_bNq.vhd",
-      "impl\/vhdl\/classify_mux_164_bMq.vhd",
-      "impl\/vhdl\/classify_mux_1632bKp.vhd",
-      "impl\/vhdl\/classify_mux_1632bLp.vhd",
+      "impl\/vhdl\/classify_mac_mulabRq.vhd",
+      "impl\/vhdl\/classify_mul_mul_bQq.vhd",
+      "impl\/vhdl\/classify_mux_164_bPq.vhd",
+      "impl\/vhdl\/classify_mux_496_bMq.vhd",
+      "impl\/vhdl\/classify_mux_646_bkb.vhd",
+      "impl\/vhdl\/classify_mux_646_cud.vhd",
+      "impl\/vhdl\/classify_mux_1632bNq.vhd",
+      "impl\/vhdl\/classify_mux_1632bOq.vhd",
       "impl\/vhdl\/compute_and_outpu0iy.vhd",
       "impl\/vhdl\/compute_and_outpu1iI.vhd",
       "impl\/vhdl\/compute_and_outpu2iS.vhd",
@@ -76,9 +79,10 @@
       "impl\/vhdl\/compute_and_outpubIp.vhd",
       "impl\/vhdl\/compute_and_outpubjl.vhd",
       "impl\/vhdl\/compute_and_outpubJp.vhd",
-      "impl\/vhdl\/compute_and_outpubkb.vhd",
       "impl\/vhdl\/compute_and_outpubkl.vhd",
+      "impl\/vhdl\/compute_and_outpubKp.vhd",
       "impl\/vhdl\/compute_and_outpubll.vhd",
+      "impl\/vhdl\/compute_and_outpubLp.vhd",
       "impl\/vhdl\/compute_and_outpubml.vhd",
       "impl\/vhdl\/compute_and_outpubnm.vhd",
       "impl\/vhdl\/compute_and_outpubom.vhd",
@@ -94,7 +98,6 @@
       "impl\/vhdl\/compute_and_outpubyn.vhd",
       "impl\/vhdl\/compute_and_outpubzo.vhd",
       "impl\/vhdl\/compute_and_outpuCeG.vhd",
-      "impl\/vhdl\/compute_and_outpucud.vhd",
       "impl\/vhdl\/compute_and_outpudEe.vhd",
       "impl\/vhdl\/compute_and_outpuDeQ.vhd",
       "impl\/vhdl\/compute_and_outpuEe0.vhd",
@@ -143,8 +146,9 @@
       "impl\/vhdl\/compute_and_outpuzec.vhd",
       "impl\/vhdl\/compute_and_outpuZio.vhd",
       "impl\/vhdl\/dataflow_in_loop_Bat.vhd",
-      "impl\/vhdl\/dataflow_in_loop_bPq.vhd",
-      "impl\/vhdl\/dataflow_in_loop_bPq_memcore.vhd",
+      "impl\/vhdl\/dataflow_in_loop_bSr.vhd",
+      "impl\/vhdl\/dataflow_in_loop_bSr_memcore.vhd",
+      "impl\/vhdl\/fifo_w6_d2_A.vhd",
       "impl\/vhdl\/fifo_w24_d2_A.vhd",
       "impl\/vhdl\/fifo_w31_d2_A.vhd",
       "impl\/vhdl\/fifo_w32_d2_A.vhd",
@@ -153,11 +157,14 @@
     ],
     "Verilog": [
       "impl\/verilog\/classify_control_s_axi.v",
-      "impl\/verilog\/classify_mac_mulabOq.v",
-      "impl\/verilog\/classify_mul_mul_bNq.v",
-      "impl\/verilog\/classify_mux_164_bMq.v",
-      "impl\/verilog\/classify_mux_1632bKp.v",
-      "impl\/verilog\/classify_mux_1632bLp.v",
+      "impl\/verilog\/classify_mac_mulabRq.v",
+      "impl\/verilog\/classify_mul_mul_bQq.v",
+      "impl\/verilog\/classify_mux_164_bPq.v",
+      "impl\/verilog\/classify_mux_496_bMq.v",
+      "impl\/verilog\/classify_mux_646_bkb.v",
+      "impl\/verilog\/classify_mux_646_cud.v",
+      "impl\/verilog\/classify_mux_1632bNq.v",
+      "impl\/verilog\/classify_mux_1632bOq.v",
       "impl\/verilog\/compute_and_outpu0iy.v",
       "impl\/verilog\/compute_and_outpu0iy_rom.dat",
       "impl\/verilog\/compute_and_outpu1iI.v",
@@ -222,12 +229,14 @@
       "impl\/verilog\/compute_and_outpubjl_rom.dat",
       "impl\/verilog\/compute_and_outpubJp.v",
       "impl\/verilog\/compute_and_outpubJp_rom.dat",
-      "impl\/verilog\/compute_and_outpubkb.v",
-      "impl\/verilog\/compute_and_outpubkb_rom.dat",
       "impl\/verilog\/compute_and_outpubkl.v",
       "impl\/verilog\/compute_and_outpubkl_rom.dat",
+      "impl\/verilog\/compute_and_outpubKp.v",
+      "impl\/verilog\/compute_and_outpubKp_rom.dat",
       "impl\/verilog\/compute_and_outpubll.v",
       "impl\/verilog\/compute_and_outpubll_rom.dat",
+      "impl\/verilog\/compute_and_outpubLp.v",
+      "impl\/verilog\/compute_and_outpubLp_rom.dat",
       "impl\/verilog\/compute_and_outpubml.v",
       "impl\/verilog\/compute_and_outpubml_rom.dat",
       "impl\/verilog\/compute_and_outpubnm.v",
@@ -258,8 +267,6 @@
       "impl\/verilog\/compute_and_outpubzo_rom.dat",
       "impl\/verilog\/compute_and_outpuCeG.v",
       "impl\/verilog\/compute_and_outpuCeG_rom.dat",
-      "impl\/verilog\/compute_and_outpucud.v",
-      "impl\/verilog\/compute_and_outpucud_rom.dat",
       "impl\/verilog\/compute_and_outpudEe.v",
       "impl\/verilog\/compute_and_outpudEe_rom.dat",
       "impl\/verilog\/compute_and_outpuDeQ.v",
@@ -354,8 +361,9 @@
       "impl\/verilog\/compute_and_outpuZio.v",
       "impl\/verilog\/compute_and_outpuZio_rom.dat",
       "impl\/verilog\/dataflow_in_loop_Bat.v",
-      "impl\/verilog\/dataflow_in_loop_bPq.v",
-      "impl\/verilog\/dataflow_in_loop_bPq_memcore.v",
+      "impl\/verilog\/dataflow_in_loop_bSr.v",
+      "impl\/verilog\/dataflow_in_loop_bSr_memcore.v",
+      "impl\/verilog\/fifo_w6_d2_A.v",
       "impl\/verilog\/fifo_w24_d2_A.v",
       "impl\/verilog\/fifo_w31_d2_A.v",
       "impl\/verilog\/fifo_w32_d2_A.v",
@@ -960,17 +968,19 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "277",
-          "LUT": "762",
+          "FF": "681",
+          "LUT": "8162",
           "BRAM_18K": "0"
         }
       },
       "compute_and_output": {
         "Latency": {
-          "LatencyBest": "406",
-          "LatencyAvg": "406",
+          "LatencyBest": "118",
+          "LatencyAvg": "202",
           "LatencyWorst": "406",
-          "PipelineII": "406",
+          "PipelineIIMin": "118",
+          "PipelineIIMax": "406",
+          "PipelineII": "118 ~ 406",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -982,14 +992,20 @@
         "Loops": [{
             "Name": "Loop 1",
             "TripCount": "6",
-            "Latency": "402",
+            "LatencyMin": "114",
+            "LatencyMax": "402",
+            "Latency": "114 ~ 402",
             "PipelineII": "",
-            "PipelineDepth": "67",
+            "PipelineDepthMin": "19",
+            "PipelineDepthMax": "67",
+            "PipelineDepth": "19 ~ 67",
             "Loops": [
               {
                 "Name": "Loop 1.1",
-                "TripCount": "49",
-                "Latency": "51",
+                "TripCount": "",
+                "LatencyMin": "3",
+                "LatencyMax": "51",
+                "Latency": "3 ~ 51",
                 "PipelineII": "1",
                 "PipelineDepth": "4"
               },
@@ -1005,16 +1021,18 @@
         "Area": {
           "BRAM_18K": "136",
           "DSP48E": "16",
-          "FF": "16624",
-          "LUT": "48271"
+          "FF": "16623",
+          "LUT": "48336"
         }
       },
       "dataflow_in_loop_Bat": {
         "Latency": {
-          "LatencyBest": "508",
-          "LatencyAvg": "508",
+          "LatencyBest": "220",
+          "LatencyAvg": "304",
           "LatencyWorst": "508",
-          "PipelineII": "407",
+          "PipelineIIMin": "119",
+          "PipelineIIMax": "407",
+          "PipelineII": "119 ~ 407",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
@@ -1026,16 +1044,18 @@
         "Area": {
           "BRAM_18K": "136",
           "DSP48E": "16",
-          "FF": "17189",
-          "LUT": "49495"
+          "FF": "17892",
+          "LUT": "58510"
         }
       },
       "classify": {
         "Latency": {
-          "LatencyBest": "1058711",
-          "LatencyAvg": "1058711",
+          "LatencyBest": "309623",
+          "LatencyAvg": "528107",
           "LatencyWorst": "1058711",
-          "PipelineII": "1058712",
+          "PipelineIIMin": "309624",
+          "PipelineIIMax": "1058712",
+          "PipelineII": "309624 ~ 1058712",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1047,15 +1067,19 @@
         "Loops": [{
             "Name": "Batch_Loop",
             "TripCount": "2601",
-            "Latency": "1058709",
+            "LatencyMin": "309621",
+            "LatencyMax": "1058709",
+            "Latency": "309621 ~ 1058709",
             "PipelineII": "",
-            "PipelineDepth": "1058709"
+            "PipelineDepthMin": "309621",
+            "PipelineDepthMax": "1058709",
+            "PipelineDepth": "309621 ~ 1058709"
           }],
         "Area": {
           "BRAM_18K": "136",
           "DSP48E": "16",
-          "FF": "17329",
-          "LUT": "49695"
+          "FF": "18032",
+          "LUT": "58710"
         }
       }
     }
@@ -1067,7 +1091,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2026-03-04 18:29:16 +0000",
+    "Time": "2014-03-07 16:33:52 +0000",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

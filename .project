@@ -37,11 +37,6 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/ap_int.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado/2018.2/include/ap_int.h</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/josep/Documents/MathieuHelpMe/solution1/.tcls</location>
@@ -67,19 +62,14 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/Exp.h</location>
 		</link>
 		<link>
-			<name>source/alphas.h</name>
+			<name>source/alphas_0_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_0_padded.h</location>
 		</link>
 		<link>
-			<name>source/alphas_0.h</name>
+			<name>source/alphas_1_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_0.h</location>
-		</link>
-		<link>
-			<name>source/alphas_1.h</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_1.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_1_padded.h</location>
 		</link>
 		<link>
 			<name>source/bias.h</name>
@@ -92,44 +82,24 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/exp_lut.h</location>
 		</link>
 		<link>
-			<name>source/sv_norms.h</name>
+			<name>source/sv_norms_0_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_0_padded.h</location>
 		</link>
 		<link>
-			<name>source/sv_norms_0.h</name>
+			<name>source/sv_norms_1_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_0.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_1_padded.h</location>
 		</link>
 		<link>
-			<name>source/sv_norms_1.h</name>
+			<name>source/svs_0_p800.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_1.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_0_p800.h</location>
 		</link>
 		<link>
-			<name>source/sv_norms_padded.h</name>
+			<name>source/svs_1_p800.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_padded.h</location>
-		</link>
-		<link>
-			<name>source/svs.h</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs.h</location>
-		</link>
-		<link>
-			<name>source/svs_0.h</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_0.h</location>
-		</link>
-		<link>
-			<name>source/svs_1.h</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_1.h</location>
-		</link>
-		<link>
-			<name>source/svs_packed.h</name>
-			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_packed.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_1_p800.h</location>
 		</link>
 		<link>
 			<name>testbench/AcceleratorTB.cpp</name>

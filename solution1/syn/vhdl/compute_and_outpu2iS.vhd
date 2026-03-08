@@ -29,7 +29,7 @@ architecture rtl of compute_and_outpu2iS_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "10101", 1 => "01000", 2 => "00101", 3 => "01000", 4 => "00010", 
+    0 => "10101", 1 => "11110", 2 => "00011", 3 => "01001", 4 => "01101", 
     5 => "00000" );
 
 attribute syn_rom_style : string;

@@ -6,19 +6,19 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-module compute_and_outpubek_rom (
+(* rom_style = "distributed" *) module compute_and_outpubek_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 125;
-parameter AWIDTH = 9;
-parameter MEM_SIZE = 294;
+parameter DWIDTH = 6;
+parameter AWIDTH = 3;
+parameter MEM_SIZE = 6;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
 initial begin
     $readmemh("./compute_and_outpubek_rom.dat", ram);
@@ -47,9 +47,9 @@ module compute_and_outpubek(
     ce0,
     q0);
 
-parameter DataWidth = 32'd125;
-parameter AddressRange = 32'd294;
-parameter AddressWidth = 32'd9;
+parameter DataWidth = 32'd6;
+parameter AddressRange = 32'd6;
+parameter AddressWidth = 32'd3;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

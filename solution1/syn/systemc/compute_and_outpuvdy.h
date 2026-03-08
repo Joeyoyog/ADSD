@@ -39,12 +39,12 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(compute_and_outpuvdy_ram) {
-        ram[0] = "0b1011";
+        ram[0] = "0b1100";
         ram[1] = "0b1001";
-        ram[2] = "0b1011";
-        ram[3] = "0b1100";
-        ram[4] = "0b1110";
-        ram[5] = "0b0000";
+        ram[2] = "0b1100";
+        ram[3] = "0b1010";
+        ram[4] = "0b1101";
+        ram[5] = "0b1001";
 
 
 SC_METHOD(prc_write_0);

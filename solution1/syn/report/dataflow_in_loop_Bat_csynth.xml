@@ -21,11 +21,16 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>508</Best-caseLatency>
-<Average-caseLatency>508</Average-caseLatency>
+<Best-caseLatency>220</Best-caseLatency>
+<Average-caseLatency>304</Average-caseLatency>
 <Worst-caseLatency>508</Worst-caseLatency>
-<DataflowPipelineThroughput>407</DataflowPipelineThroughput>
-<Interval-min>407</Interval-min>
+<DataflowPipelineThroughput>
+<range>
+<min>119</min>
+<max>407</max>
+</range>
+</DataflowPipelineThroughput>
+<Interval-min>119</Interval-min>
 <Interval-max>407</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -34,8 +39,8 @@
 <Resources>
 <BRAM_18K>136</BRAM_18K>
 <DSP48E>16</DSP48E>
-<FF>17189</FF>
-<LUT>49495</LUT>
+<FF>17892</FF>
+<LUT>58510</LUT>
 </Resources>
 <AvailableResources>
 <BRAM_18K>280</BRAM_18K>

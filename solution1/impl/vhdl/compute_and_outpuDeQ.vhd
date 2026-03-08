@@ -29,7 +29,8 @@ architecture rtl of compute_and_outpuDeQ_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "1101", 1 to 2=> "1111", 3 => "1110", 4 => "1011", 5 => "0000" );
+    0 => "1000", 1 => "1110", 2 => "1111", 3 => "0000", 4 => "1110", 
+    5 => "0000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";

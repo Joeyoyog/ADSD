@@ -154,7 +154,257 @@ architecture behav of dataflow_in_loop_Bat is
     signal load_and_calc_norm53_U0_n_out_write : STD_LOGIC;
     signal load_and_calc_norm53_U0_num_images_out_din : STD_LOGIC_VECTOR (31 downto 0);
     signal load_and_calc_norm53_U0_num_images_out_write : STD_LOGIC;
-    signal load_and_calc_norm53_U0_ap_return : STD_LOGIC_VECTOR (23 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_0 : STD_LOGIC_VECTOR (23 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_1 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_2 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_3 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_4 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_5 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_6 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_7 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_8 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_9 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_10 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_11 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_12 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_13 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_14 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_15 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_16 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_17 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_18 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_19 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_20 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_21 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_22 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_23 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_24 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_25 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_26 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_27 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_28 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_29 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_30 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_31 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_32 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_33 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_34 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_35 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_36 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_37 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_38 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_39 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_40 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_41 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_42 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_43 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_44 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_45 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_46 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_47 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_48 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_49 : STD_LOGIC_VECTOR (5 downto 0);
+    signal load_and_calc_norm53_U0_ap_return_50 : STD_LOGIC_VECTOR (5 downto 0);
+    signal ap_channel_done_active_count_V : STD_LOGIC;
+    signal active_count_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_count_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_count_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_48_V : STD_LOGIC;
+    signal active_groups_48_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_48_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_48_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_47_V : STD_LOGIC;
+    signal active_groups_47_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_47_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_47_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_46_V : STD_LOGIC;
+    signal active_groups_46_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_46_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_46_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_45_V : STD_LOGIC;
+    signal active_groups_45_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_45_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_45_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_44_V : STD_LOGIC;
+    signal active_groups_44_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_44_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_44_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_43_V : STD_LOGIC;
+    signal active_groups_43_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_43_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_43_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_42_V : STD_LOGIC;
+    signal active_groups_42_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_42_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_42_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_41_V : STD_LOGIC;
+    signal active_groups_41_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_41_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_41_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_40_V : STD_LOGIC;
+    signal active_groups_40_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_40_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_40_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_39_V : STD_LOGIC;
+    signal active_groups_39_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_39_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_39_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_38_V : STD_LOGIC;
+    signal active_groups_38_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_38_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_38_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_37_V : STD_LOGIC;
+    signal active_groups_37_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_37_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_37_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_36_V : STD_LOGIC;
+    signal active_groups_36_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_36_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_36_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_35_V : STD_LOGIC;
+    signal active_groups_35_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_35_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_35_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_34_V : STD_LOGIC;
+    signal active_groups_34_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_34_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_34_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_33_V : STD_LOGIC;
+    signal active_groups_33_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_33_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_33_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_32_V : STD_LOGIC;
+    signal active_groups_32_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_32_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_32_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_31_V : STD_LOGIC;
+    signal active_groups_31_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_31_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_31_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_30_V : STD_LOGIC;
+    signal active_groups_30_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_30_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_30_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_29_V : STD_LOGIC;
+    signal active_groups_29_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_29_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_29_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_28_V : STD_LOGIC;
+    signal active_groups_28_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_28_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_28_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_27_V : STD_LOGIC;
+    signal active_groups_27_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_27_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_27_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_26_V : STD_LOGIC;
+    signal active_groups_26_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_26_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_26_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_25_V : STD_LOGIC;
+    signal active_groups_25_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_25_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_25_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_24_V : STD_LOGIC;
+    signal active_groups_24_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_24_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_24_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_23_V : STD_LOGIC;
+    signal active_groups_23_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_23_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_23_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_22_V : STD_LOGIC;
+    signal active_groups_22_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_22_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_22_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_21_V : STD_LOGIC;
+    signal active_groups_21_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_21_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_21_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_20_V : STD_LOGIC;
+    signal active_groups_20_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_20_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_20_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_19_V : STD_LOGIC;
+    signal active_groups_19_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_19_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_19_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_18_V : STD_LOGIC;
+    signal active_groups_18_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_18_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_18_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_17_V : STD_LOGIC;
+    signal active_groups_17_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_17_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_17_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_16_V : STD_LOGIC;
+    signal active_groups_16_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_16_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_16_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_15_V : STD_LOGIC;
+    signal active_groups_15_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_15_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_15_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_14_V : STD_LOGIC;
+    signal active_groups_14_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_14_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_14_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_13_V : STD_LOGIC;
+    signal active_groups_13_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_13_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_13_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_12_V : STD_LOGIC;
+    signal active_groups_12_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_12_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_12_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_11_V : STD_LOGIC;
+    signal active_groups_11_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_11_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_11_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_10_V : STD_LOGIC;
+    signal active_groups_10_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_10_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_10_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_9_V : STD_LOGIC;
+    signal active_groups_9_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_9_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_9_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_8_V : STD_LOGIC;
+    signal active_groups_8_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_8_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_8_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_7_V : STD_LOGIC;
+    signal active_groups_7_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_7_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_7_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_6_V : STD_LOGIC;
+    signal active_groups_6_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_6_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_6_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_5_V : STD_LOGIC;
+    signal active_groups_5_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_5_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_5_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_4_V : STD_LOGIC;
+    signal active_groups_4_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_4_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_4_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_3_V : STD_LOGIC;
+    signal active_groups_3_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_3_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_3_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_2_V : STD_LOGIC;
+    signal active_groups_2_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_2_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_2_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_1_V : STD_LOGIC;
+    signal active_groups_1_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_1_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_1_V : STD_LOGIC;
+    signal ap_channel_done_active_groups_0_V : STD_LOGIC;
+    signal active_groups_0_V_full_n : STD_LOGIC;
+    signal ap_sync_reg_channel_write_active_groups_0_V : STD_LOGIC := '0';
+    signal ap_sync_channel_write_active_groups_0_V : STD_LOGIC;
     signal ap_channel_done_internal_norm_V : STD_LOGIC;
     signal internal_norm_V_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_internal_norm_V : STD_LOGIC := '0';
@@ -308,6 +558,106 @@ architecture behav of dataflow_in_loop_Bat is
     signal num_images_c_empty_n : STD_LOGIC;
     signal internal_norm_V_dout : STD_LOGIC_VECTOR (23 downto 0);
     signal internal_norm_V_empty_n : STD_LOGIC;
+    signal active_groups_0_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_0_V_empty_n : STD_LOGIC;
+    signal active_groups_1_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_1_V_empty_n : STD_LOGIC;
+    signal active_groups_2_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_2_V_empty_n : STD_LOGIC;
+    signal active_groups_3_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_3_V_empty_n : STD_LOGIC;
+    signal active_groups_4_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_4_V_empty_n : STD_LOGIC;
+    signal active_groups_5_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_5_V_empty_n : STD_LOGIC;
+    signal active_groups_6_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_6_V_empty_n : STD_LOGIC;
+    signal active_groups_7_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_7_V_empty_n : STD_LOGIC;
+    signal active_groups_8_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_8_V_empty_n : STD_LOGIC;
+    signal active_groups_9_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_9_V_empty_n : STD_LOGIC;
+    signal active_groups_10_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_10_V_empty_n : STD_LOGIC;
+    signal active_groups_11_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_11_V_empty_n : STD_LOGIC;
+    signal active_groups_12_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_12_V_empty_n : STD_LOGIC;
+    signal active_groups_13_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_13_V_empty_n : STD_LOGIC;
+    signal active_groups_14_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_14_V_empty_n : STD_LOGIC;
+    signal active_groups_15_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_15_V_empty_n : STD_LOGIC;
+    signal active_groups_16_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_16_V_empty_n : STD_LOGIC;
+    signal active_groups_17_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_17_V_empty_n : STD_LOGIC;
+    signal active_groups_18_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_18_V_empty_n : STD_LOGIC;
+    signal active_groups_19_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_19_V_empty_n : STD_LOGIC;
+    signal active_groups_20_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_20_V_empty_n : STD_LOGIC;
+    signal active_groups_21_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_21_V_empty_n : STD_LOGIC;
+    signal active_groups_22_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_22_V_empty_n : STD_LOGIC;
+    signal active_groups_23_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_23_V_empty_n : STD_LOGIC;
+    signal active_groups_24_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_24_V_empty_n : STD_LOGIC;
+    signal active_groups_25_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_25_V_empty_n : STD_LOGIC;
+    signal active_groups_26_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_26_V_empty_n : STD_LOGIC;
+    signal active_groups_27_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_27_V_empty_n : STD_LOGIC;
+    signal active_groups_28_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_28_V_empty_n : STD_LOGIC;
+    signal active_groups_29_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_29_V_empty_n : STD_LOGIC;
+    signal active_groups_30_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_30_V_empty_n : STD_LOGIC;
+    signal active_groups_31_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_31_V_empty_n : STD_LOGIC;
+    signal active_groups_32_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_32_V_empty_n : STD_LOGIC;
+    signal active_groups_33_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_33_V_empty_n : STD_LOGIC;
+    signal active_groups_34_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_34_V_empty_n : STD_LOGIC;
+    signal active_groups_35_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_35_V_empty_n : STD_LOGIC;
+    signal active_groups_36_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_36_V_empty_n : STD_LOGIC;
+    signal active_groups_37_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_37_V_empty_n : STD_LOGIC;
+    signal active_groups_38_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_38_V_empty_n : STD_LOGIC;
+    signal active_groups_39_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_39_V_empty_n : STD_LOGIC;
+    signal active_groups_40_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_40_V_empty_n : STD_LOGIC;
+    signal active_groups_41_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_41_V_empty_n : STD_LOGIC;
+    signal active_groups_42_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_42_V_empty_n : STD_LOGIC;
+    signal active_groups_43_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_43_V_empty_n : STD_LOGIC;
+    signal active_groups_44_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_44_V_empty_n : STD_LOGIC;
+    signal active_groups_45_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_45_V_empty_n : STD_LOGIC;
+    signal active_groups_46_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_46_V_empty_n : STD_LOGIC;
+    signal active_groups_47_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_47_V_empty_n : STD_LOGIC;
+    signal active_groups_48_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_groups_48_V_empty_n : STD_LOGIC;
+    signal active_count_V_dout : STD_LOGIC_VECTOR (5 downto 0);
+    signal active_count_V_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
     signal load_and_calc_norm53_U0_start_full_n : STD_LOGIC;
@@ -405,7 +755,57 @@ architecture behav of dataflow_in_loop_Bat is
         num_images_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         num_images_out_full_n : IN STD_LOGIC;
         num_images_out_write : OUT STD_LOGIC;
-        ap_return : OUT STD_LOGIC_VECTOR (23 downto 0) );
+        ap_return_0 : OUT STD_LOGIC_VECTOR (23 downto 0);
+        ap_return_1 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_2 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_3 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_4 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_5 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_6 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_7 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_8 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_9 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_10 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_11 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_12 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_13 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_14 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_15 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_16 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_17 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_18 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_19 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_20 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_21 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_22 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_23 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_24 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_25 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_26 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_27 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_28 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_29 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_30 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_31 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_32 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_33 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_34 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_35 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_36 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_37 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_38 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_39 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_40 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_41 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_42 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_43 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_44 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_45 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_46 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_47 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_48 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_49 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        ap_return_50 : OUT STD_LOGIC_VECTOR (5 downto 0) );
     end component;
 
 
@@ -467,6 +867,56 @@ architecture behav of dataflow_in_loop_Bat is
         x_local_15_V_ce0 : OUT STD_LOGIC;
         x_local_15_V_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         p_read : IN STD_LOGIC_VECTOR (23 downto 0);
+        active_groups_0_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_1_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_2_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_3_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_4_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_5_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_6_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_7_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_8_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_9_V_r : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_10_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_11_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_12_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_13_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_14_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_15_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_16_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_17_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_18_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_19_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_20_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_21_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_22_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_23_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_24_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_25_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_26_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_27_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_28_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_29_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_30_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_31_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_32_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_33_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_34_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_35_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_36_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_37_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_38_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_39_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_40_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_41_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_42_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_43_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_44_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_45_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_46_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_47_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        active_groups_48_V_s : IN STD_LOGIC_VECTOR (5 downto 0);
+        p_read50 : IN STD_LOGIC_VECTOR (5 downto 0);
         out_stream_TDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
         out_stream_TVALID : OUT STD_LOGIC;
         out_stream_TREADY : IN STD_LOGIC;
@@ -482,7 +932,7 @@ architecture behav of dataflow_in_loop_Bat is
     end component;
 
 
-    component dataflow_in_loop_bPq IS
+    component dataflow_in_loop_bSr IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -554,12 +1004,27 @@ architecture behav of dataflow_in_loop_Bat is
     end component;
 
 
+    component fifo_w6_d2_A IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (5 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (5 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
 
 begin
-    x_local_0_V_U : component dataflow_in_loop_bPq
+    x_local_0_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -581,10 +1046,10 @@ begin
         t_empty_n => x_local_0_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_1_V_U : component dataflow_in_loop_bPq
+    x_local_1_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -606,10 +1071,10 @@ begin
         t_empty_n => x_local_1_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_2_V_U : component dataflow_in_loop_bPq
+    x_local_2_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -631,10 +1096,10 @@ begin
         t_empty_n => x_local_2_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_3_V_U : component dataflow_in_loop_bPq
+    x_local_3_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -656,10 +1121,10 @@ begin
         t_empty_n => x_local_3_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_4_V_U : component dataflow_in_loop_bPq
+    x_local_4_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -681,10 +1146,10 @@ begin
         t_empty_n => x_local_4_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_5_V_U : component dataflow_in_loop_bPq
+    x_local_5_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -706,10 +1171,10 @@ begin
         t_empty_n => x_local_5_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_6_V_U : component dataflow_in_loop_bPq
+    x_local_6_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -731,10 +1196,10 @@ begin
         t_empty_n => x_local_6_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_7_V_U : component dataflow_in_loop_bPq
+    x_local_7_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -756,10 +1221,10 @@ begin
         t_empty_n => x_local_7_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_8_V_U : component dataflow_in_loop_bPq
+    x_local_8_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -781,10 +1246,10 @@ begin
         t_empty_n => x_local_8_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_9_V_U : component dataflow_in_loop_bPq
+    x_local_9_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -806,10 +1271,10 @@ begin
         t_empty_n => x_local_9_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_10_V_U : component dataflow_in_loop_bPq
+    x_local_10_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -831,10 +1296,10 @@ begin
         t_empty_n => x_local_10_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_11_V_U : component dataflow_in_loop_bPq
+    x_local_11_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -856,10 +1321,10 @@ begin
         t_empty_n => x_local_11_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_12_V_U : component dataflow_in_loop_bPq
+    x_local_12_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -881,10 +1346,10 @@ begin
         t_empty_n => x_local_12_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_13_V_U : component dataflow_in_loop_bPq
+    x_local_13_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -906,10 +1371,10 @@ begin
         t_empty_n => x_local_13_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_14_V_U : component dataflow_in_loop_bPq
+    x_local_14_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -931,10 +1396,10 @@ begin
         t_empty_n => x_local_14_V_t_empty_n,
         t_read => compute_and_output_U0_ap_ready);
 
-    x_local_15_V_U : component dataflow_in_loop_bPq
+    x_local_15_V_U : component dataflow_in_loop_bSr
     generic map (
         DataWidth => 8,
-        AddressRange => 49,
+        AddressRange => 50,
         AddressWidth => 6)
     port map (
         clk => ap_clk,
@@ -1046,7 +1511,57 @@ begin
         num_images_out_din => load_and_calc_norm53_U0_num_images_out_din,
         num_images_out_full_n => num_images_c_full_n,
         num_images_out_write => load_and_calc_norm53_U0_num_images_out_write,
-        ap_return => load_and_calc_norm53_U0_ap_return);
+        ap_return_0 => load_and_calc_norm53_U0_ap_return_0,
+        ap_return_1 => load_and_calc_norm53_U0_ap_return_1,
+        ap_return_2 => load_and_calc_norm53_U0_ap_return_2,
+        ap_return_3 => load_and_calc_norm53_U0_ap_return_3,
+        ap_return_4 => load_and_calc_norm53_U0_ap_return_4,
+        ap_return_5 => load_and_calc_norm53_U0_ap_return_5,
+        ap_return_6 => load_and_calc_norm53_U0_ap_return_6,
+        ap_return_7 => load_and_calc_norm53_U0_ap_return_7,
+        ap_return_8 => load_and_calc_norm53_U0_ap_return_8,
+        ap_return_9 => load_and_calc_norm53_U0_ap_return_9,
+        ap_return_10 => load_and_calc_norm53_U0_ap_return_10,
+        ap_return_11 => load_and_calc_norm53_U0_ap_return_11,
+        ap_return_12 => load_and_calc_norm53_U0_ap_return_12,
+        ap_return_13 => load_and_calc_norm53_U0_ap_return_13,
+        ap_return_14 => load_and_calc_norm53_U0_ap_return_14,
+        ap_return_15 => load_and_calc_norm53_U0_ap_return_15,
+        ap_return_16 => load_and_calc_norm53_U0_ap_return_16,
+        ap_return_17 => load_and_calc_norm53_U0_ap_return_17,
+        ap_return_18 => load_and_calc_norm53_U0_ap_return_18,
+        ap_return_19 => load_and_calc_norm53_U0_ap_return_19,
+        ap_return_20 => load_and_calc_norm53_U0_ap_return_20,
+        ap_return_21 => load_and_calc_norm53_U0_ap_return_21,
+        ap_return_22 => load_and_calc_norm53_U0_ap_return_22,
+        ap_return_23 => load_and_calc_norm53_U0_ap_return_23,
+        ap_return_24 => load_and_calc_norm53_U0_ap_return_24,
+        ap_return_25 => load_and_calc_norm53_U0_ap_return_25,
+        ap_return_26 => load_and_calc_norm53_U0_ap_return_26,
+        ap_return_27 => load_and_calc_norm53_U0_ap_return_27,
+        ap_return_28 => load_and_calc_norm53_U0_ap_return_28,
+        ap_return_29 => load_and_calc_norm53_U0_ap_return_29,
+        ap_return_30 => load_and_calc_norm53_U0_ap_return_30,
+        ap_return_31 => load_and_calc_norm53_U0_ap_return_31,
+        ap_return_32 => load_and_calc_norm53_U0_ap_return_32,
+        ap_return_33 => load_and_calc_norm53_U0_ap_return_33,
+        ap_return_34 => load_and_calc_norm53_U0_ap_return_34,
+        ap_return_35 => load_and_calc_norm53_U0_ap_return_35,
+        ap_return_36 => load_and_calc_norm53_U0_ap_return_36,
+        ap_return_37 => load_and_calc_norm53_U0_ap_return_37,
+        ap_return_38 => load_and_calc_norm53_U0_ap_return_38,
+        ap_return_39 => load_and_calc_norm53_U0_ap_return_39,
+        ap_return_40 => load_and_calc_norm53_U0_ap_return_40,
+        ap_return_41 => load_and_calc_norm53_U0_ap_return_41,
+        ap_return_42 => load_and_calc_norm53_U0_ap_return_42,
+        ap_return_43 => load_and_calc_norm53_U0_ap_return_43,
+        ap_return_44 => load_and_calc_norm53_U0_ap_return_44,
+        ap_return_45 => load_and_calc_norm53_U0_ap_return_45,
+        ap_return_46 => load_and_calc_norm53_U0_ap_return_46,
+        ap_return_47 => load_and_calc_norm53_U0_ap_return_47,
+        ap_return_48 => load_and_calc_norm53_U0_ap_return_48,
+        ap_return_49 => load_and_calc_norm53_U0_ap_return_49,
+        ap_return_50 => load_and_calc_norm53_U0_ap_return_50);
 
     compute_and_output_U0 : component compute_and_output
     port map (
@@ -1106,6 +1621,56 @@ begin
         x_local_15_V_ce0 => compute_and_output_U0_x_local_15_V_ce0,
         x_local_15_V_q0 => x_local_15_V_t_q0,
         p_read => internal_norm_V_dout,
+        active_groups_0_V_r => active_groups_0_V_dout,
+        active_groups_1_V_r => active_groups_1_V_dout,
+        active_groups_2_V_r => active_groups_2_V_dout,
+        active_groups_3_V_r => active_groups_3_V_dout,
+        active_groups_4_V_r => active_groups_4_V_dout,
+        active_groups_5_V_r => active_groups_5_V_dout,
+        active_groups_6_V_r => active_groups_6_V_dout,
+        active_groups_7_V_r => active_groups_7_V_dout,
+        active_groups_8_V_r => active_groups_8_V_dout,
+        active_groups_9_V_r => active_groups_9_V_dout,
+        active_groups_10_V_s => active_groups_10_V_dout,
+        active_groups_11_V_s => active_groups_11_V_dout,
+        active_groups_12_V_s => active_groups_12_V_dout,
+        active_groups_13_V_s => active_groups_13_V_dout,
+        active_groups_14_V_s => active_groups_14_V_dout,
+        active_groups_15_V_s => active_groups_15_V_dout,
+        active_groups_16_V_s => active_groups_16_V_dout,
+        active_groups_17_V_s => active_groups_17_V_dout,
+        active_groups_18_V_s => active_groups_18_V_dout,
+        active_groups_19_V_s => active_groups_19_V_dout,
+        active_groups_20_V_s => active_groups_20_V_dout,
+        active_groups_21_V_s => active_groups_21_V_dout,
+        active_groups_22_V_s => active_groups_22_V_dout,
+        active_groups_23_V_s => active_groups_23_V_dout,
+        active_groups_24_V_s => active_groups_24_V_dout,
+        active_groups_25_V_s => active_groups_25_V_dout,
+        active_groups_26_V_s => active_groups_26_V_dout,
+        active_groups_27_V_s => active_groups_27_V_dout,
+        active_groups_28_V_s => active_groups_28_V_dout,
+        active_groups_29_V_s => active_groups_29_V_dout,
+        active_groups_30_V_s => active_groups_30_V_dout,
+        active_groups_31_V_s => active_groups_31_V_dout,
+        active_groups_32_V_s => active_groups_32_V_dout,
+        active_groups_33_V_s => active_groups_33_V_dout,
+        active_groups_34_V_s => active_groups_34_V_dout,
+        active_groups_35_V_s => active_groups_35_V_dout,
+        active_groups_36_V_s => active_groups_36_V_dout,
+        active_groups_37_V_s => active_groups_37_V_dout,
+        active_groups_38_V_s => active_groups_38_V_dout,
+        active_groups_39_V_s => active_groups_39_V_dout,
+        active_groups_40_V_s => active_groups_40_V_dout,
+        active_groups_41_V_s => active_groups_41_V_dout,
+        active_groups_42_V_s => active_groups_42_V_dout,
+        active_groups_43_V_s => active_groups_43_V_dout,
+        active_groups_44_V_s => active_groups_44_V_dout,
+        active_groups_45_V_s => active_groups_45_V_dout,
+        active_groups_46_V_s => active_groups_46_V_dout,
+        active_groups_47_V_s => active_groups_47_V_dout,
+        active_groups_48_V_s => active_groups_48_V_dout,
+        p_read50 => active_count_V_dout,
         out_stream_TDATA => compute_and_output_U0_out_stream_TDATA,
         out_stream_TVALID => compute_and_output_U0_out_stream_TVALID,
         out_stream_TREADY => out_stream_TREADY,
@@ -1151,15 +1716,1465 @@ begin
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => load_and_calc_norm53_U0_ap_return,
+        if_din => load_and_calc_norm53_U0_ap_return_0,
         if_full_n => internal_norm_V_full_n,
         if_write => ap_channel_done_internal_norm_V,
         if_dout => internal_norm_V_dout,
         if_empty_n => internal_norm_V_empty_n,
         if_read => compute_and_output_U0_ap_ready);
 
+    active_groups_0_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_1,
+        if_full_n => active_groups_0_V_full_n,
+        if_write => ap_channel_done_active_groups_0_V,
+        if_dout => active_groups_0_V_dout,
+        if_empty_n => active_groups_0_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_1_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_2,
+        if_full_n => active_groups_1_V_full_n,
+        if_write => ap_channel_done_active_groups_1_V,
+        if_dout => active_groups_1_V_dout,
+        if_empty_n => active_groups_1_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_2_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_3,
+        if_full_n => active_groups_2_V_full_n,
+        if_write => ap_channel_done_active_groups_2_V,
+        if_dout => active_groups_2_V_dout,
+        if_empty_n => active_groups_2_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_3_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_4,
+        if_full_n => active_groups_3_V_full_n,
+        if_write => ap_channel_done_active_groups_3_V,
+        if_dout => active_groups_3_V_dout,
+        if_empty_n => active_groups_3_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_4_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_5,
+        if_full_n => active_groups_4_V_full_n,
+        if_write => ap_channel_done_active_groups_4_V,
+        if_dout => active_groups_4_V_dout,
+        if_empty_n => active_groups_4_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_5_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_6,
+        if_full_n => active_groups_5_V_full_n,
+        if_write => ap_channel_done_active_groups_5_V,
+        if_dout => active_groups_5_V_dout,
+        if_empty_n => active_groups_5_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_6_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_7,
+        if_full_n => active_groups_6_V_full_n,
+        if_write => ap_channel_done_active_groups_6_V,
+        if_dout => active_groups_6_V_dout,
+        if_empty_n => active_groups_6_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_7_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_8,
+        if_full_n => active_groups_7_V_full_n,
+        if_write => ap_channel_done_active_groups_7_V,
+        if_dout => active_groups_7_V_dout,
+        if_empty_n => active_groups_7_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_8_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_9,
+        if_full_n => active_groups_8_V_full_n,
+        if_write => ap_channel_done_active_groups_8_V,
+        if_dout => active_groups_8_V_dout,
+        if_empty_n => active_groups_8_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_9_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_10,
+        if_full_n => active_groups_9_V_full_n,
+        if_write => ap_channel_done_active_groups_9_V,
+        if_dout => active_groups_9_V_dout,
+        if_empty_n => active_groups_9_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_10_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_11,
+        if_full_n => active_groups_10_V_full_n,
+        if_write => ap_channel_done_active_groups_10_V,
+        if_dout => active_groups_10_V_dout,
+        if_empty_n => active_groups_10_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_11_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_12,
+        if_full_n => active_groups_11_V_full_n,
+        if_write => ap_channel_done_active_groups_11_V,
+        if_dout => active_groups_11_V_dout,
+        if_empty_n => active_groups_11_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_12_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_13,
+        if_full_n => active_groups_12_V_full_n,
+        if_write => ap_channel_done_active_groups_12_V,
+        if_dout => active_groups_12_V_dout,
+        if_empty_n => active_groups_12_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_13_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_14,
+        if_full_n => active_groups_13_V_full_n,
+        if_write => ap_channel_done_active_groups_13_V,
+        if_dout => active_groups_13_V_dout,
+        if_empty_n => active_groups_13_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_14_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_15,
+        if_full_n => active_groups_14_V_full_n,
+        if_write => ap_channel_done_active_groups_14_V,
+        if_dout => active_groups_14_V_dout,
+        if_empty_n => active_groups_14_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_15_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_16,
+        if_full_n => active_groups_15_V_full_n,
+        if_write => ap_channel_done_active_groups_15_V,
+        if_dout => active_groups_15_V_dout,
+        if_empty_n => active_groups_15_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_16_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_17,
+        if_full_n => active_groups_16_V_full_n,
+        if_write => ap_channel_done_active_groups_16_V,
+        if_dout => active_groups_16_V_dout,
+        if_empty_n => active_groups_16_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_17_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_18,
+        if_full_n => active_groups_17_V_full_n,
+        if_write => ap_channel_done_active_groups_17_V,
+        if_dout => active_groups_17_V_dout,
+        if_empty_n => active_groups_17_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_18_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_19,
+        if_full_n => active_groups_18_V_full_n,
+        if_write => ap_channel_done_active_groups_18_V,
+        if_dout => active_groups_18_V_dout,
+        if_empty_n => active_groups_18_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_19_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_20,
+        if_full_n => active_groups_19_V_full_n,
+        if_write => ap_channel_done_active_groups_19_V,
+        if_dout => active_groups_19_V_dout,
+        if_empty_n => active_groups_19_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_20_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_21,
+        if_full_n => active_groups_20_V_full_n,
+        if_write => ap_channel_done_active_groups_20_V,
+        if_dout => active_groups_20_V_dout,
+        if_empty_n => active_groups_20_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_21_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_22,
+        if_full_n => active_groups_21_V_full_n,
+        if_write => ap_channel_done_active_groups_21_V,
+        if_dout => active_groups_21_V_dout,
+        if_empty_n => active_groups_21_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_22_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_23,
+        if_full_n => active_groups_22_V_full_n,
+        if_write => ap_channel_done_active_groups_22_V,
+        if_dout => active_groups_22_V_dout,
+        if_empty_n => active_groups_22_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_23_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_24,
+        if_full_n => active_groups_23_V_full_n,
+        if_write => ap_channel_done_active_groups_23_V,
+        if_dout => active_groups_23_V_dout,
+        if_empty_n => active_groups_23_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_24_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_25,
+        if_full_n => active_groups_24_V_full_n,
+        if_write => ap_channel_done_active_groups_24_V,
+        if_dout => active_groups_24_V_dout,
+        if_empty_n => active_groups_24_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_25_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_26,
+        if_full_n => active_groups_25_V_full_n,
+        if_write => ap_channel_done_active_groups_25_V,
+        if_dout => active_groups_25_V_dout,
+        if_empty_n => active_groups_25_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_26_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_27,
+        if_full_n => active_groups_26_V_full_n,
+        if_write => ap_channel_done_active_groups_26_V,
+        if_dout => active_groups_26_V_dout,
+        if_empty_n => active_groups_26_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_27_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_28,
+        if_full_n => active_groups_27_V_full_n,
+        if_write => ap_channel_done_active_groups_27_V,
+        if_dout => active_groups_27_V_dout,
+        if_empty_n => active_groups_27_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_28_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_29,
+        if_full_n => active_groups_28_V_full_n,
+        if_write => ap_channel_done_active_groups_28_V,
+        if_dout => active_groups_28_V_dout,
+        if_empty_n => active_groups_28_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_29_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_30,
+        if_full_n => active_groups_29_V_full_n,
+        if_write => ap_channel_done_active_groups_29_V,
+        if_dout => active_groups_29_V_dout,
+        if_empty_n => active_groups_29_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_30_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_31,
+        if_full_n => active_groups_30_V_full_n,
+        if_write => ap_channel_done_active_groups_30_V,
+        if_dout => active_groups_30_V_dout,
+        if_empty_n => active_groups_30_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_31_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_32,
+        if_full_n => active_groups_31_V_full_n,
+        if_write => ap_channel_done_active_groups_31_V,
+        if_dout => active_groups_31_V_dout,
+        if_empty_n => active_groups_31_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_32_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_33,
+        if_full_n => active_groups_32_V_full_n,
+        if_write => ap_channel_done_active_groups_32_V,
+        if_dout => active_groups_32_V_dout,
+        if_empty_n => active_groups_32_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_33_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_34,
+        if_full_n => active_groups_33_V_full_n,
+        if_write => ap_channel_done_active_groups_33_V,
+        if_dout => active_groups_33_V_dout,
+        if_empty_n => active_groups_33_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_34_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_35,
+        if_full_n => active_groups_34_V_full_n,
+        if_write => ap_channel_done_active_groups_34_V,
+        if_dout => active_groups_34_V_dout,
+        if_empty_n => active_groups_34_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_35_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_36,
+        if_full_n => active_groups_35_V_full_n,
+        if_write => ap_channel_done_active_groups_35_V,
+        if_dout => active_groups_35_V_dout,
+        if_empty_n => active_groups_35_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_36_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_37,
+        if_full_n => active_groups_36_V_full_n,
+        if_write => ap_channel_done_active_groups_36_V,
+        if_dout => active_groups_36_V_dout,
+        if_empty_n => active_groups_36_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_37_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_38,
+        if_full_n => active_groups_37_V_full_n,
+        if_write => ap_channel_done_active_groups_37_V,
+        if_dout => active_groups_37_V_dout,
+        if_empty_n => active_groups_37_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_38_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_39,
+        if_full_n => active_groups_38_V_full_n,
+        if_write => ap_channel_done_active_groups_38_V,
+        if_dout => active_groups_38_V_dout,
+        if_empty_n => active_groups_38_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_39_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_40,
+        if_full_n => active_groups_39_V_full_n,
+        if_write => ap_channel_done_active_groups_39_V,
+        if_dout => active_groups_39_V_dout,
+        if_empty_n => active_groups_39_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_40_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_41,
+        if_full_n => active_groups_40_V_full_n,
+        if_write => ap_channel_done_active_groups_40_V,
+        if_dout => active_groups_40_V_dout,
+        if_empty_n => active_groups_40_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_41_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_42,
+        if_full_n => active_groups_41_V_full_n,
+        if_write => ap_channel_done_active_groups_41_V,
+        if_dout => active_groups_41_V_dout,
+        if_empty_n => active_groups_41_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_42_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_43,
+        if_full_n => active_groups_42_V_full_n,
+        if_write => ap_channel_done_active_groups_42_V,
+        if_dout => active_groups_42_V_dout,
+        if_empty_n => active_groups_42_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_43_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_44,
+        if_full_n => active_groups_43_V_full_n,
+        if_write => ap_channel_done_active_groups_43_V,
+        if_dout => active_groups_43_V_dout,
+        if_empty_n => active_groups_43_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_44_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_45,
+        if_full_n => active_groups_44_V_full_n,
+        if_write => ap_channel_done_active_groups_44_V,
+        if_dout => active_groups_44_V_dout,
+        if_empty_n => active_groups_44_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_45_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_46,
+        if_full_n => active_groups_45_V_full_n,
+        if_write => ap_channel_done_active_groups_45_V,
+        if_dout => active_groups_45_V_dout,
+        if_empty_n => active_groups_45_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_46_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_47,
+        if_full_n => active_groups_46_V_full_n,
+        if_write => ap_channel_done_active_groups_46_V,
+        if_dout => active_groups_46_V_dout,
+        if_empty_n => active_groups_46_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_47_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_48,
+        if_full_n => active_groups_47_V_full_n,
+        if_write => ap_channel_done_active_groups_47_V,
+        if_dout => active_groups_47_V_dout,
+        if_empty_n => active_groups_47_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_groups_48_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_49,
+        if_full_n => active_groups_48_V_full_n,
+        if_write => ap_channel_done_active_groups_48_V,
+        if_dout => active_groups_48_V_dout,
+        if_empty_n => active_groups_48_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
+
+    active_count_V_U : component fifo_w6_d2_A
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => load_and_calc_norm53_U0_ap_return_50,
+        if_full_n => active_count_V_full_n,
+        if_write => ap_channel_done_active_count_V,
+        if_dout => active_count_V_dout,
+        if_empty_n => active_count_V_empty_n,
+        if_read => compute_and_output_U0_ap_ready);
 
 
+
+
+
+    ap_sync_reg_channel_write_active_count_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_count_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_count_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_count_V <= ap_sync_channel_write_active_count_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_0_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_0_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_0_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_0_V <= ap_sync_channel_write_active_groups_0_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_10_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_10_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_10_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_10_V <= ap_sync_channel_write_active_groups_10_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_11_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_11_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_11_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_11_V <= ap_sync_channel_write_active_groups_11_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_12_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_12_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_12_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_12_V <= ap_sync_channel_write_active_groups_12_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_13_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_13_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_13_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_13_V <= ap_sync_channel_write_active_groups_13_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_14_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_14_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_14_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_14_V <= ap_sync_channel_write_active_groups_14_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_15_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_15_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_15_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_15_V <= ap_sync_channel_write_active_groups_15_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_16_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_16_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_16_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_16_V <= ap_sync_channel_write_active_groups_16_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_17_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_17_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_17_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_17_V <= ap_sync_channel_write_active_groups_17_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_18_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_18_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_18_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_18_V <= ap_sync_channel_write_active_groups_18_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_19_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_19_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_19_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_19_V <= ap_sync_channel_write_active_groups_19_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_1_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_1_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_1_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_1_V <= ap_sync_channel_write_active_groups_1_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_20_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_20_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_20_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_20_V <= ap_sync_channel_write_active_groups_20_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_21_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_21_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_21_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_21_V <= ap_sync_channel_write_active_groups_21_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_22_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_22_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_22_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_22_V <= ap_sync_channel_write_active_groups_22_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_23_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_23_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_23_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_23_V <= ap_sync_channel_write_active_groups_23_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_24_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_24_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_24_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_24_V <= ap_sync_channel_write_active_groups_24_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_25_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_25_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_25_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_25_V <= ap_sync_channel_write_active_groups_25_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_26_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_26_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_26_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_26_V <= ap_sync_channel_write_active_groups_26_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_27_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_27_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_27_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_27_V <= ap_sync_channel_write_active_groups_27_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_28_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_28_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_28_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_28_V <= ap_sync_channel_write_active_groups_28_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_29_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_29_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_29_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_29_V <= ap_sync_channel_write_active_groups_29_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_2_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_2_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_2_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_2_V <= ap_sync_channel_write_active_groups_2_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_30_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_30_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_30_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_30_V <= ap_sync_channel_write_active_groups_30_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_31_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_31_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_31_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_31_V <= ap_sync_channel_write_active_groups_31_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_32_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_32_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_32_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_32_V <= ap_sync_channel_write_active_groups_32_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_33_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_33_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_33_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_33_V <= ap_sync_channel_write_active_groups_33_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_34_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_34_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_34_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_34_V <= ap_sync_channel_write_active_groups_34_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_35_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_35_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_35_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_35_V <= ap_sync_channel_write_active_groups_35_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_36_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_36_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_36_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_36_V <= ap_sync_channel_write_active_groups_36_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_37_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_37_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_37_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_37_V <= ap_sync_channel_write_active_groups_37_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_38_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_38_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_38_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_38_V <= ap_sync_channel_write_active_groups_38_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_39_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_39_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_39_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_39_V <= ap_sync_channel_write_active_groups_39_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_3_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_3_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_3_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_3_V <= ap_sync_channel_write_active_groups_3_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_40_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_40_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_40_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_40_V <= ap_sync_channel_write_active_groups_40_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_41_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_41_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_41_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_41_V <= ap_sync_channel_write_active_groups_41_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_42_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_42_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_42_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_42_V <= ap_sync_channel_write_active_groups_42_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_43_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_43_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_43_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_43_V <= ap_sync_channel_write_active_groups_43_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_44_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_44_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_44_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_44_V <= ap_sync_channel_write_active_groups_44_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_45_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_45_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_45_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_45_V <= ap_sync_channel_write_active_groups_45_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_46_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_46_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_46_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_46_V <= ap_sync_channel_write_active_groups_46_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_47_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_47_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_47_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_47_V <= ap_sync_channel_write_active_groups_47_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_48_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_48_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_48_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_48_V <= ap_sync_channel_write_active_groups_48_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_4_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_4_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_4_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_4_V <= ap_sync_channel_write_active_groups_4_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_5_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_5_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_5_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_5_V <= ap_sync_channel_write_active_groups_5_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_6_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_6_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_6_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_6_V <= ap_sync_channel_write_active_groups_6_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_7_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_7_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_7_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_7_V <= ap_sync_channel_write_active_groups_7_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_8_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_8_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_8_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_8_V <= ap_sync_channel_write_active_groups_8_V;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_channel_write_active_groups_9_V_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst = '1') then
+                ap_sync_reg_channel_write_active_groups_9_V <= ap_const_logic_0;
+            else
+                if (((load_and_calc_norm53_U0_ap_done and load_and_calc_norm53_U0_ap_continue) = ap_const_logic_1)) then 
+                    ap_sync_reg_channel_write_active_groups_9_V <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_channel_write_active_groups_9_V <= ap_sync_channel_write_active_groups_9_V;
+                end if; 
+            end if;
+        end if;
+    end process;
 
 
     ap_sync_reg_channel_write_internal_norm_V_assign_proc : process(ap_clk)
@@ -1433,6 +3448,56 @@ begin
         end if;
     end process;
 
+    ap_channel_done_active_count_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_count_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_0_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_0_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_10_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_10_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_11_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_11_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_12_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_12_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_13_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_13_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_14_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_14_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_15_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_15_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_16_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_16_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_17_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_17_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_18_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_18_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_19_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_19_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_1_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_1_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_20_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_20_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_21_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_21_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_22_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_22_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_23_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_23_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_24_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_24_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_25_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_25_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_26_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_26_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_27_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_27_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_28_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_28_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_29_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_29_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_2_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_2_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_30_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_30_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_31_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_31_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_32_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_32_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_33_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_33_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_34_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_34_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_35_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_35_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_36_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_36_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_37_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_37_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_38_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_38_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_39_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_39_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_3_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_3_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_40_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_40_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_41_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_41_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_42_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_42_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_43_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_43_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_44_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_44_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_45_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_45_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_46_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_46_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_47_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_47_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_48_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_48_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_4_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_4_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_5_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_5_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_6_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_6_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_7_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_7_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_8_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_8_V xor ap_const_logic_1));
+    ap_channel_done_active_groups_9_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_active_groups_9_V xor ap_const_logic_1));
     ap_channel_done_internal_norm_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_internal_norm_V xor ap_const_logic_1));
     ap_channel_done_x_local_0_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_0_V xor ap_const_logic_1));
     ap_channel_done_x_local_10_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_10_V xor ap_const_logic_1));
@@ -1451,8 +3516,58 @@ begin
     ap_channel_done_x_local_8_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_8_V xor ap_const_logic_1));
     ap_channel_done_x_local_9_V <= (load_and_calc_norm53_U0_ap_done and (ap_sync_reg_channel_write_x_local_9_V xor ap_const_logic_1));
     ap_done <= compute_and_output_U0_ap_done;
-    ap_idle <= (load_and_calc_norm53_U0_ap_idle and (internal_norm_V_empty_n xor ap_const_logic_1) and (x_local_15_V_t_empty_n xor ap_const_logic_1) and (x_local_14_V_t_empty_n xor ap_const_logic_1) and (x_local_13_V_t_empty_n xor ap_const_logic_1) and (x_local_12_V_t_empty_n xor ap_const_logic_1) and (x_local_11_V_t_empty_n xor ap_const_logic_1) and (x_local_10_V_t_empty_n xor ap_const_logic_1) and (x_local_9_V_t_empty_n xor ap_const_logic_1) and (x_local_8_V_t_empty_n xor ap_const_logic_1) and (x_local_7_V_t_empty_n xor ap_const_logic_1) and (x_local_6_V_t_empty_n xor ap_const_logic_1) and (x_local_5_V_t_empty_n xor ap_const_logic_1) and (x_local_4_V_t_empty_n xor ap_const_logic_1) and (x_local_3_V_t_empty_n xor ap_const_logic_1) and (x_local_2_V_t_empty_n xor ap_const_logic_1) and (x_local_1_V_t_empty_n xor ap_const_logic_1) and (x_local_0_V_t_empty_n xor ap_const_logic_1) and compute_and_output_U0_ap_idle);
+    ap_idle <= (load_and_calc_norm53_U0_ap_idle and (ap_const_logic_1 xor active_count_V_empty_n) and (ap_const_logic_1 xor active_groups_48_V_empty_n) and (ap_const_logic_1 xor active_groups_47_V_empty_n) and (ap_const_logic_1 xor active_groups_46_V_empty_n) and (ap_const_logic_1 xor active_groups_45_V_empty_n) and (ap_const_logic_1 xor active_groups_44_V_empty_n) and (ap_const_logic_1 xor active_groups_43_V_empty_n) and (ap_const_logic_1 xor active_groups_42_V_empty_n) and (ap_const_logic_1 xor active_groups_41_V_empty_n) and (ap_const_logic_1 xor active_groups_40_V_empty_n) and (ap_const_logic_1 xor active_groups_39_V_empty_n) and (ap_const_logic_1 xor active_groups_38_V_empty_n) and (ap_const_logic_1 xor active_groups_37_V_empty_n) and (ap_const_logic_1 xor active_groups_36_V_empty_n) and (ap_const_logic_1 xor active_groups_35_V_empty_n) and (ap_const_logic_1 xor active_groups_34_V_empty_n) and (ap_const_logic_1 xor active_groups_33_V_empty_n) and (ap_const_logic_1 xor active_groups_32_V_empty_n) and (ap_const_logic_1 xor active_groups_31_V_empty_n) and (ap_const_logic_1 xor active_groups_30_V_empty_n) and (ap_const_logic_1 xor active_groups_29_V_empty_n) and (ap_const_logic_1 xor active_groups_28_V_empty_n) and (ap_const_logic_1 xor active_groups_27_V_empty_n) and (ap_const_logic_1 xor active_groups_26_V_empty_n) and (ap_const_logic_1 xor active_groups_25_V_empty_n) and (ap_const_logic_1 xor active_groups_24_V_empty_n) and (ap_const_logic_1 xor active_groups_23_V_empty_n) and (ap_const_logic_1 xor active_groups_22_V_empty_n) and (ap_const_logic_1 xor active_groups_21_V_empty_n) and (ap_const_logic_1 xor active_groups_20_V_empty_n) and (ap_const_logic_1 xor active_groups_19_V_empty_n) and (ap_const_logic_1 xor active_groups_18_V_empty_n) and (ap_const_logic_1 xor active_groups_17_V_empty_n) and (ap_const_logic_1 xor active_groups_16_V_empty_n) and (ap_const_logic_1 xor active_groups_15_V_empty_n) and (ap_const_logic_1 xor active_groups_14_V_empty_n) and (ap_const_logic_1 xor active_groups_13_V_empty_n) and (ap_const_logic_1 xor active_groups_12_V_empty_n) and (ap_const_logic_1 xor active_groups_11_V_empty_n) and (ap_const_logic_1 xor active_groups_10_V_empty_n) and (ap_const_logic_1 xor active_groups_9_V_empty_n) and (ap_const_logic_1 xor active_groups_8_V_empty_n) and (ap_const_logic_1 xor active_groups_7_V_empty_n) and (ap_const_logic_1 xor active_groups_6_V_empty_n) and (ap_const_logic_1 xor active_groups_5_V_empty_n) and (ap_const_logic_1 xor active_groups_4_V_empty_n) and (ap_const_logic_1 xor active_groups_3_V_empty_n) and (ap_const_logic_1 xor active_groups_2_V_empty_n) and (ap_const_logic_1 xor active_groups_1_V_empty_n) and (ap_const_logic_1 xor active_groups_0_V_empty_n) and (internal_norm_V_empty_n xor ap_const_logic_1) and (x_local_15_V_t_empty_n xor ap_const_logic_1) and (x_local_14_V_t_empty_n xor ap_const_logic_1) and (x_local_13_V_t_empty_n xor ap_const_logic_1) and (x_local_12_V_t_empty_n xor ap_const_logic_1) and (x_local_11_V_t_empty_n xor ap_const_logic_1) and (x_local_10_V_t_empty_n xor ap_const_logic_1) and (x_local_9_V_t_empty_n xor ap_const_logic_1) and (x_local_8_V_t_empty_n xor ap_const_logic_1) and (x_local_7_V_t_empty_n xor ap_const_logic_1) and (x_local_6_V_t_empty_n xor ap_const_logic_1) and (x_local_5_V_t_empty_n xor ap_const_logic_1) and (x_local_4_V_t_empty_n xor ap_const_logic_1) and (x_local_3_V_t_empty_n xor ap_const_logic_1) and (x_local_2_V_t_empty_n xor ap_const_logic_1) and (x_local_1_V_t_empty_n xor ap_const_logic_1) and (x_local_0_V_t_empty_n xor ap_const_logic_1) and compute_and_output_U0_ap_idle);
     ap_ready <= load_and_calc_norm53_U0_ap_ready;
+    ap_sync_channel_write_active_count_V <= ((ap_channel_done_active_count_V and active_count_V_full_n) or ap_sync_reg_channel_write_active_count_V);
+    ap_sync_channel_write_active_groups_0_V <= ((ap_channel_done_active_groups_0_V and active_groups_0_V_full_n) or ap_sync_reg_channel_write_active_groups_0_V);
+    ap_sync_channel_write_active_groups_10_V <= ((ap_channel_done_active_groups_10_V and active_groups_10_V_full_n) or ap_sync_reg_channel_write_active_groups_10_V);
+    ap_sync_channel_write_active_groups_11_V <= ((ap_channel_done_active_groups_11_V and active_groups_11_V_full_n) or ap_sync_reg_channel_write_active_groups_11_V);
+    ap_sync_channel_write_active_groups_12_V <= ((ap_channel_done_active_groups_12_V and active_groups_12_V_full_n) or ap_sync_reg_channel_write_active_groups_12_V);
+    ap_sync_channel_write_active_groups_13_V <= ((ap_channel_done_active_groups_13_V and active_groups_13_V_full_n) or ap_sync_reg_channel_write_active_groups_13_V);
+    ap_sync_channel_write_active_groups_14_V <= ((ap_channel_done_active_groups_14_V and active_groups_14_V_full_n) or ap_sync_reg_channel_write_active_groups_14_V);
+    ap_sync_channel_write_active_groups_15_V <= ((ap_channel_done_active_groups_15_V and active_groups_15_V_full_n) or ap_sync_reg_channel_write_active_groups_15_V);
+    ap_sync_channel_write_active_groups_16_V <= ((ap_channel_done_active_groups_16_V and active_groups_16_V_full_n) or ap_sync_reg_channel_write_active_groups_16_V);
+    ap_sync_channel_write_active_groups_17_V <= ((ap_channel_done_active_groups_17_V and active_groups_17_V_full_n) or ap_sync_reg_channel_write_active_groups_17_V);
+    ap_sync_channel_write_active_groups_18_V <= ((ap_channel_done_active_groups_18_V and active_groups_18_V_full_n) or ap_sync_reg_channel_write_active_groups_18_V);
+    ap_sync_channel_write_active_groups_19_V <= ((ap_channel_done_active_groups_19_V and active_groups_19_V_full_n) or ap_sync_reg_channel_write_active_groups_19_V);
+    ap_sync_channel_write_active_groups_1_V <= ((ap_channel_done_active_groups_1_V and active_groups_1_V_full_n) or ap_sync_reg_channel_write_active_groups_1_V);
+    ap_sync_channel_write_active_groups_20_V <= ((ap_channel_done_active_groups_20_V and active_groups_20_V_full_n) or ap_sync_reg_channel_write_active_groups_20_V);
+    ap_sync_channel_write_active_groups_21_V <= ((ap_channel_done_active_groups_21_V and active_groups_21_V_full_n) or ap_sync_reg_channel_write_active_groups_21_V);
+    ap_sync_channel_write_active_groups_22_V <= ((ap_channel_done_active_groups_22_V and active_groups_22_V_full_n) or ap_sync_reg_channel_write_active_groups_22_V);
+    ap_sync_channel_write_active_groups_23_V <= ((ap_channel_done_active_groups_23_V and active_groups_23_V_full_n) or ap_sync_reg_channel_write_active_groups_23_V);
+    ap_sync_channel_write_active_groups_24_V <= ((ap_channel_done_active_groups_24_V and active_groups_24_V_full_n) or ap_sync_reg_channel_write_active_groups_24_V);
+    ap_sync_channel_write_active_groups_25_V <= ((ap_channel_done_active_groups_25_V and active_groups_25_V_full_n) or ap_sync_reg_channel_write_active_groups_25_V);
+    ap_sync_channel_write_active_groups_26_V <= ((ap_channel_done_active_groups_26_V and active_groups_26_V_full_n) or ap_sync_reg_channel_write_active_groups_26_V);
+    ap_sync_channel_write_active_groups_27_V <= ((ap_channel_done_active_groups_27_V and active_groups_27_V_full_n) or ap_sync_reg_channel_write_active_groups_27_V);
+    ap_sync_channel_write_active_groups_28_V <= ((ap_channel_done_active_groups_28_V and active_groups_28_V_full_n) or ap_sync_reg_channel_write_active_groups_28_V);
+    ap_sync_channel_write_active_groups_29_V <= ((ap_channel_done_active_groups_29_V and active_groups_29_V_full_n) or ap_sync_reg_channel_write_active_groups_29_V);
+    ap_sync_channel_write_active_groups_2_V <= ((ap_channel_done_active_groups_2_V and active_groups_2_V_full_n) or ap_sync_reg_channel_write_active_groups_2_V);
+    ap_sync_channel_write_active_groups_30_V <= ((ap_channel_done_active_groups_30_V and active_groups_30_V_full_n) or ap_sync_reg_channel_write_active_groups_30_V);
+    ap_sync_channel_write_active_groups_31_V <= ((ap_channel_done_active_groups_31_V and active_groups_31_V_full_n) or ap_sync_reg_channel_write_active_groups_31_V);
+    ap_sync_channel_write_active_groups_32_V <= ((ap_channel_done_active_groups_32_V and active_groups_32_V_full_n) or ap_sync_reg_channel_write_active_groups_32_V);
+    ap_sync_channel_write_active_groups_33_V <= ((ap_channel_done_active_groups_33_V and active_groups_33_V_full_n) or ap_sync_reg_channel_write_active_groups_33_V);
+    ap_sync_channel_write_active_groups_34_V <= ((ap_channel_done_active_groups_34_V and active_groups_34_V_full_n) or ap_sync_reg_channel_write_active_groups_34_V);
+    ap_sync_channel_write_active_groups_35_V <= ((ap_channel_done_active_groups_35_V and active_groups_35_V_full_n) or ap_sync_reg_channel_write_active_groups_35_V);
+    ap_sync_channel_write_active_groups_36_V <= ((ap_channel_done_active_groups_36_V and active_groups_36_V_full_n) or ap_sync_reg_channel_write_active_groups_36_V);
+    ap_sync_channel_write_active_groups_37_V <= ((ap_channel_done_active_groups_37_V and active_groups_37_V_full_n) or ap_sync_reg_channel_write_active_groups_37_V);
+    ap_sync_channel_write_active_groups_38_V <= ((ap_channel_done_active_groups_38_V and active_groups_38_V_full_n) or ap_sync_reg_channel_write_active_groups_38_V);
+    ap_sync_channel_write_active_groups_39_V <= ((ap_channel_done_active_groups_39_V and active_groups_39_V_full_n) or ap_sync_reg_channel_write_active_groups_39_V);
+    ap_sync_channel_write_active_groups_3_V <= ((ap_channel_done_active_groups_3_V and active_groups_3_V_full_n) or ap_sync_reg_channel_write_active_groups_3_V);
+    ap_sync_channel_write_active_groups_40_V <= ((ap_channel_done_active_groups_40_V and active_groups_40_V_full_n) or ap_sync_reg_channel_write_active_groups_40_V);
+    ap_sync_channel_write_active_groups_41_V <= ((ap_channel_done_active_groups_41_V and active_groups_41_V_full_n) or ap_sync_reg_channel_write_active_groups_41_V);
+    ap_sync_channel_write_active_groups_42_V <= ((ap_channel_done_active_groups_42_V and active_groups_42_V_full_n) or ap_sync_reg_channel_write_active_groups_42_V);
+    ap_sync_channel_write_active_groups_43_V <= ((ap_channel_done_active_groups_43_V and active_groups_43_V_full_n) or ap_sync_reg_channel_write_active_groups_43_V);
+    ap_sync_channel_write_active_groups_44_V <= ((ap_channel_done_active_groups_44_V and active_groups_44_V_full_n) or ap_sync_reg_channel_write_active_groups_44_V);
+    ap_sync_channel_write_active_groups_45_V <= ((ap_channel_done_active_groups_45_V and active_groups_45_V_full_n) or ap_sync_reg_channel_write_active_groups_45_V);
+    ap_sync_channel_write_active_groups_46_V <= ((ap_channel_done_active_groups_46_V and active_groups_46_V_full_n) or ap_sync_reg_channel_write_active_groups_46_V);
+    ap_sync_channel_write_active_groups_47_V <= ((ap_channel_done_active_groups_47_V and active_groups_47_V_full_n) or ap_sync_reg_channel_write_active_groups_47_V);
+    ap_sync_channel_write_active_groups_48_V <= ((ap_channel_done_active_groups_48_V and active_groups_48_V_full_n) or ap_sync_reg_channel_write_active_groups_48_V);
+    ap_sync_channel_write_active_groups_4_V <= ((ap_channel_done_active_groups_4_V and active_groups_4_V_full_n) or ap_sync_reg_channel_write_active_groups_4_V);
+    ap_sync_channel_write_active_groups_5_V <= ((ap_channel_done_active_groups_5_V and active_groups_5_V_full_n) or ap_sync_reg_channel_write_active_groups_5_V);
+    ap_sync_channel_write_active_groups_6_V <= ((ap_channel_done_active_groups_6_V and active_groups_6_V_full_n) or ap_sync_reg_channel_write_active_groups_6_V);
+    ap_sync_channel_write_active_groups_7_V <= ((ap_channel_done_active_groups_7_V and active_groups_7_V_full_n) or ap_sync_reg_channel_write_active_groups_7_V);
+    ap_sync_channel_write_active_groups_8_V <= ((ap_channel_done_active_groups_8_V and active_groups_8_V_full_n) or ap_sync_reg_channel_write_active_groups_8_V);
+    ap_sync_channel_write_active_groups_9_V <= ((ap_channel_done_active_groups_9_V and active_groups_9_V_full_n) or ap_sync_reg_channel_write_active_groups_9_V);
     ap_sync_channel_write_internal_norm_V <= ((internal_norm_V_full_n and ap_channel_done_internal_norm_V) or ap_sync_reg_channel_write_internal_norm_V);
     ap_sync_channel_write_x_local_0_V <= ((load_and_calc_norm53_U0_x_local_0_V_full_n and ap_channel_done_x_local_0_V) or ap_sync_reg_channel_write_x_local_0_V);
     ap_sync_channel_write_x_local_10_V <= ((load_and_calc_norm53_U0_x_local_10_V_full_n and ap_channel_done_x_local_10_V) or ap_sync_reg_channel_write_x_local_10_V);
@@ -1474,11 +3589,11 @@ begin
     ap_sync_done <= compute_and_output_U0_ap_done;
     ap_sync_ready <= load_and_calc_norm53_U0_ap_ready;
     compute_and_output_U0_ap_continue <= ap_continue;
-    compute_and_output_U0_ap_start <= (x_local_9_V_t_empty_n and x_local_8_V_t_empty_n and x_local_7_V_t_empty_n and x_local_6_V_t_empty_n and x_local_5_V_t_empty_n and x_local_4_V_t_empty_n and x_local_3_V_t_empty_n and x_local_2_V_t_empty_n and x_local_1_V_t_empty_n and x_local_15_V_t_empty_n and x_local_14_V_t_empty_n and x_local_13_V_t_empty_n and x_local_12_V_t_empty_n and x_local_11_V_t_empty_n and x_local_10_V_t_empty_n and x_local_0_V_t_empty_n and internal_norm_V_empty_n);
+    compute_and_output_U0_ap_start <= (x_local_9_V_t_empty_n and x_local_8_V_t_empty_n and x_local_7_V_t_empty_n and x_local_6_V_t_empty_n and x_local_5_V_t_empty_n and x_local_4_V_t_empty_n and x_local_3_V_t_empty_n and x_local_2_V_t_empty_n and x_local_1_V_t_empty_n and x_local_15_V_t_empty_n and x_local_14_V_t_empty_n and x_local_13_V_t_empty_n and x_local_12_V_t_empty_n and x_local_11_V_t_empty_n and x_local_10_V_t_empty_n and x_local_0_V_t_empty_n and internal_norm_V_empty_n and active_groups_9_V_empty_n and active_groups_8_V_empty_n and active_groups_7_V_empty_n and active_groups_6_V_empty_n and active_groups_5_V_empty_n and active_groups_4_V_empty_n and active_groups_48_V_empty_n and active_groups_47_V_empty_n and active_groups_46_V_empty_n and active_groups_45_V_empty_n and active_groups_44_V_empty_n and active_groups_43_V_empty_n and active_groups_42_V_empty_n and active_groups_41_V_empty_n and active_groups_40_V_empty_n and active_groups_3_V_empty_n and active_groups_39_V_empty_n and active_groups_38_V_empty_n and active_groups_37_V_empty_n and active_groups_36_V_empty_n and active_groups_35_V_empty_n and active_groups_34_V_empty_n and active_groups_33_V_empty_n and active_groups_32_V_empty_n and active_groups_31_V_empty_n and active_groups_30_V_empty_n and active_groups_2_V_empty_n and active_groups_29_V_empty_n and active_groups_28_V_empty_n and active_groups_27_V_empty_n and active_groups_26_V_empty_n and active_groups_25_V_empty_n and active_groups_24_V_empty_n and active_groups_23_V_empty_n and active_groups_22_V_empty_n and active_groups_21_V_empty_n and active_groups_20_V_empty_n and active_groups_1_V_empty_n and active_groups_19_V_empty_n and active_groups_18_V_empty_n and active_groups_17_V_empty_n and active_groups_16_V_empty_n and active_groups_15_V_empty_n and active_groups_14_V_empty_n and active_groups_13_V_empty_n and active_groups_12_V_empty_n and active_groups_11_V_empty_n and active_groups_10_V_empty_n and active_groups_0_V_empty_n and active_count_V_empty_n);
     compute_and_output_U0_start_full_n <= ap_const_logic_1;
     compute_and_output_U0_start_write <= ap_const_logic_0;
     in_stream_TREADY <= load_and_calc_norm53_U0_in_stream_TREADY;
-    load_and_calc_norm53_U0_ap_continue <= (ap_sync_channel_write_x_local_9_V and ap_sync_channel_write_x_local_8_V and ap_sync_channel_write_x_local_7_V and ap_sync_channel_write_x_local_6_V and ap_sync_channel_write_x_local_5_V and ap_sync_channel_write_x_local_4_V and ap_sync_channel_write_x_local_3_V and ap_sync_channel_write_x_local_2_V and ap_sync_channel_write_x_local_1_V and ap_sync_channel_write_x_local_15_V and ap_sync_channel_write_x_local_14_V and ap_sync_channel_write_x_local_13_V and ap_sync_channel_write_x_local_12_V and ap_sync_channel_write_x_local_11_V and ap_sync_channel_write_x_local_10_V and ap_sync_channel_write_x_local_0_V and ap_sync_channel_write_internal_norm_V);
+    load_and_calc_norm53_U0_ap_continue <= (ap_sync_channel_write_x_local_9_V and ap_sync_channel_write_x_local_8_V and ap_sync_channel_write_x_local_7_V and ap_sync_channel_write_x_local_6_V and ap_sync_channel_write_x_local_5_V and ap_sync_channel_write_x_local_4_V and ap_sync_channel_write_x_local_3_V and ap_sync_channel_write_x_local_2_V and ap_sync_channel_write_x_local_1_V and ap_sync_channel_write_x_local_15_V and ap_sync_channel_write_x_local_14_V and ap_sync_channel_write_x_local_13_V and ap_sync_channel_write_x_local_12_V and ap_sync_channel_write_x_local_11_V and ap_sync_channel_write_x_local_10_V and ap_sync_channel_write_x_local_0_V and ap_sync_channel_write_internal_norm_V and ap_sync_channel_write_active_groups_9_V and ap_sync_channel_write_active_groups_8_V and ap_sync_channel_write_active_groups_7_V and ap_sync_channel_write_active_groups_6_V and ap_sync_channel_write_active_groups_5_V and ap_sync_channel_write_active_groups_4_V and ap_sync_channel_write_active_groups_48_V and ap_sync_channel_write_active_groups_47_V and ap_sync_channel_write_active_groups_46_V and ap_sync_channel_write_active_groups_45_V and ap_sync_channel_write_active_groups_44_V and ap_sync_channel_write_active_groups_43_V and ap_sync_channel_write_active_groups_42_V and ap_sync_channel_write_active_groups_41_V and ap_sync_channel_write_active_groups_40_V and ap_sync_channel_write_active_groups_3_V and ap_sync_channel_write_active_groups_39_V and ap_sync_channel_write_active_groups_38_V and ap_sync_channel_write_active_groups_37_V and ap_sync_channel_write_active_groups_36_V and ap_sync_channel_write_active_groups_35_V and ap_sync_channel_write_active_groups_34_V and ap_sync_channel_write_active_groups_33_V and ap_sync_channel_write_active_groups_32_V and ap_sync_channel_write_active_groups_31_V and ap_sync_channel_write_active_groups_30_V and ap_sync_channel_write_active_groups_2_V and ap_sync_channel_write_active_groups_29_V and ap_sync_channel_write_active_groups_28_V and ap_sync_channel_write_active_groups_27_V and ap_sync_channel_write_active_groups_26_V and ap_sync_channel_write_active_groups_25_V and ap_sync_channel_write_active_groups_24_V and ap_sync_channel_write_active_groups_23_V and ap_sync_channel_write_active_groups_22_V and ap_sync_channel_write_active_groups_21_V and ap_sync_channel_write_active_groups_20_V and ap_sync_channel_write_active_groups_1_V and ap_sync_channel_write_active_groups_19_V and ap_sync_channel_write_active_groups_18_V and ap_sync_channel_write_active_groups_17_V and ap_sync_channel_write_active_groups_16_V and ap_sync_channel_write_active_groups_15_V and ap_sync_channel_write_active_groups_14_V and ap_sync_channel_write_active_groups_13_V and ap_sync_channel_write_active_groups_12_V and ap_sync_channel_write_active_groups_11_V and ap_sync_channel_write_active_groups_10_V and ap_sync_channel_write_active_groups_0_V and ap_sync_channel_write_active_count_V);
     load_and_calc_norm53_U0_ap_start <= ap_start;
     load_and_calc_norm53_U0_start_full_n <= ap_const_logic_1;
     load_and_calc_norm53_U0_start_write <= ap_const_logic_0;
