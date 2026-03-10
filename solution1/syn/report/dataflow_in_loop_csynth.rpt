@@ -1,0 +1,177 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_in_loop'
+================================================================
+* Date:           Tue Mar 10 04:32:06 2026
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        MathieuHelpMe
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.742|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  352|  352|  286|  286| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                         |                      |  Latency  |  Interval | Pipeline|
+        |         Instance        |        Module        | min | max | min | max |   Type  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |compute_and_output_U0    |compute_and_output    |  285|  285|  285|  285|   none  |
+        |load_and_calc_norm51_U0  |load_and_calc_norm51  |   66|   66|   66|   66|   none  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     14|
+|FIFO             |        0|      -|      15|    123|
+|Instance         |      176|     32|   15677|  48069|
+|Memory           |        4|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|     18|
+|Register         |        -|      -|       2|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |      180|     32|   15694|  48224|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       64|     14|      14|     90|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |compute_and_output_U0    |compute_and_output    |      176|     32|  15219|  46710|
+    |load_and_calc_norm51_U0  |load_and_calc_norm51  |        0|      0|    458|   1359|
+    +-------------------------+----------------------+---------+-------+-------+-------+
+    |Total                    |                      |      176|     32|  15677|  48069|
+    +-------------------------+----------------------+---------+-------+-------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory   |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |x_pack_V_U  |dataflow_in_loop_bAo  |        4|  0|   0|    31|  128|     2|         7936|
+    +------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total       |                      |        4|  0|   0|    31|  128|     2|         7936|
+    +------------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +-------------------+---------+---+----+------+-----+---------+
+    |        Name       | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-------------------+---------+---+----+------+-----+---------+
+    |internal_norm_V_U  |        0|  5|  36|     2|   24|       48|
+    |n_c_U              |        0|  5|  43|     2|   31|       62|
+    |num_images_c_U     |        0|  5|  44|     2|   32|       64|
+    +-------------------+---------+---+----+------+-----+---------+
+    |Total              |        0| 15| 123|     6|   87|      174|
+    +-------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +---------------------------------------+----------+-------+---+----+------------+------------+
+    |             Variable Name             | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------+----------+-------+---+----+------------+------------+
+    |ap_channel_done_internal_norm_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_x_pack_V               |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                                |    and   |      0|  0|   2|           1|           1|
+    |compute_and_output_U0_ap_start         |    and   |      0|  0|   2|           1|           1|
+    |load_and_calc_norm51_U0_ap_continue    |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_internal_norm_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_x_pack_V         |    or    |      0|  0|   2|           1|           1|
+    +---------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                  |          |      0|  0|  14|           7|           7|
+    +---------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |                    Name                   | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_internal_norm_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_x_pack_V         |   9|          2|    1|          2|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |Total                                      |  18|          4|    2|          4|
+    +-------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+---+----+-----+-----------+
+    |                    Name                   | FF| LUT| Bits| Const Bits|
+    +-------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_internal_norm_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_x_pack_V         |  1|   0|    1|          0|
+    +-------------------------------------------+---+----+-----+-----------+
+    |Total                                      |  2|   0|    2|          0|
+    +-------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+---------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_done            | out |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_start           |  in |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_ready           | out |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_idle            | out |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|ap_continue        |  in |    1| ap_ctrl_hs |   dataflow_in_loop  | return value |
+|in_stream_TDATA    |  in |   64|    axis    |  in_stream_V_data_V |    pointer   |
+|in_stream_TKEEP    |  in |    8|    axis    |  in_stream_V_keep_V |    pointer   |
+|in_stream_TSTRB    |  in |    8|    axis    |  in_stream_V_strb_V |    pointer   |
+|in_stream_TUSER    |  in |    1|    axis    |  in_stream_V_user_V |    pointer   |
+|in_stream_TLAST    |  in |    1|    axis    |  in_stream_V_last_V |    pointer   |
+|in_stream_TID      |  in |    1|    axis    |   in_stream_V_id_V  |    pointer   |
+|in_stream_TDEST    |  in |    1|    axis    |  in_stream_V_dest_V |    pointer   |
+|in_stream_TVALID   |  in |    1|    axis    |  in_stream_V_dest_V |    pointer   |
+|in_stream_TREADY   | out |    1|    axis    |  in_stream_V_dest_V |    pointer   |
+|out_stream_TDATA   | out |   32|    axis    | out_stream_V_data_V |    pointer   |
+|out_stream_TKEEP   | out |    1|    axis    | out_stream_V_keep_V |    pointer   |
+|out_stream_TSTRB   | out |    1|    axis    | out_stream_V_strb_V |    pointer   |
+|out_stream_TLAST   | out |    1|    axis    | out_stream_V_last_V |    pointer   |
+|out_stream_TVALID  | out |    1|    axis    | out_stream_V_last_V |    pointer   |
+|out_stream_TREADY  |  in |    1|    axis    | out_stream_V_last_V |    pointer   |
+|n                  |  in |   31|   ap_none  |          n          |    scalar    |
+|n_ap_vld           |  in |    1|   ap_none  |          n          |    scalar    |
+|num_images         |  in |   32|   ap_none  |      num_images     |    scalar    |
+|num_images_ap_vld  |  in |    1|   ap_none  |      num_images     |    scalar    |
++-------------------+-----+-----+------------+---------------------+--------------+
+

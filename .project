@@ -64,12 +64,12 @@
 		<link>
 			<name>source/alphas_0_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_0_padded.h</location>
+			<location>C:/Users/josep/Documents/Cropping/generated_hls/alphas_0_padded.h</location>
 		</link>
 		<link>
 			<name>source/alphas_1_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/alphas_1_padded.h</location>
+			<location>C:/Users/josep/Documents/Cropping/generated_hls/alphas_1_padded.h</location>
 		</link>
 		<link>
 			<name>source/bias.h</name>
@@ -82,24 +82,29 @@
 			<location>C:/Users/josep/Documents/MathieuHelpMe/exp_lut.h</location>
 		</link>
 		<link>
+			<name>source/sv_dataset_config.h</name>
+			<type>1</type>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_dataset_config.h</location>
+		</link>
+		<link>
 			<name>source/sv_norms_0_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_0_padded.h</location>
+			<location>C:/Users/josep/Documents/Cropping/generated_hls/sv_norms_0_padded.h</location>
 		</link>
 		<link>
 			<name>source/sv_norms_1_padded.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/sv_norms_1_padded.h</location>
+			<location>C:/Users/josep/Documents/Cropping/generated_hls/sv_norms_1_padded.h</location>
 		</link>
 		<link>
-			<name>source/svs_0_p800.h</name>
+			<name>source/svs0_pack_p496.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_0_p800.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs0_pack_p496.h</location>
 		</link>
 		<link>
-			<name>source/svs_1_p800.h</name>
+			<name>source/svs1_pack_p496.h</name>
 			<type>1</type>
-			<location>C:/Users/josep/Documents/MathieuHelpMe/svs_1_p800.h</location>
+			<location>C:/Users/josep/Documents/MathieuHelpMe/svs1_pack_p496.h</location>
 		</link>
 		<link>
 			<name>testbench/AcceleratorTB.cpp</name>

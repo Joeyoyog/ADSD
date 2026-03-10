@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'classify'" level="0">
-<item name = "Date">Fri Mar  7 16:33:36 2014
+<item name = "Date">Tue Mar 10 04:32:07 2026
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">MathieuHelpMe</item>
@@ -15,26 +15,26 @@
 <section name = "" level="1">
 <item name = "Target clock period (ns)">10.00</item>
 <item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">8.847</item>
+<item name = "Estimated clock period (ns)">8.742</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">309623, 1058711, 309623, 1058711, none</column>
+<column name="">743955, 743955, 743955, 743955, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 220, 508, 119, 407, dataflow</column>
+<column name="dataflow_in_loop_U0">dataflow_in_loop, 352, 352, 286, 286, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Batch_Loop">309621, 1058709, 222 ~ 510, -, -, 2601, no</column>
+<column name="- Loop 1">743953, 743953, 354, -, -, 2601, no</column>
 </table>
 </item>
 </section>
@@ -49,12 +49,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 78</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">136, 16, 17966, 58614</column>
+<column name="Instance">180, 32, 15768, 48328</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18</column>
 <column name="Register">-, -, 66, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">48, 7, 16, 110</specialColumn>
+<specialColumn name="Utilization (%)">64, 14, 14, 91</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -62,7 +62,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="classify_control_s_axi_U">classify_control_s_axi, 0, 0, 74, 104</column>
-<column name="dataflow_in_loop_Bat_U0">dataflow_in_loop_Bat, 136, 16, 17892, 58510</column>
+<column name="dataflow_in_loop_U0">dataflow_in_loop, 180, 32, 15694, 48224</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -147,8 +147,8 @@
 <item name = "Max Delay">2.52</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'n'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;n&apos;, MathieuHelpMe/Classifier.cpp:229</column>
-<column name="'n', MathieuHelpMe/Classifier.cpp:229">add, 2.52, 2.52, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'n'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;n&apos;, MathieuHelpMe/Classifier.cpp:172</column>
+<column name="'n', MathieuHelpMe/Classifier.cpp:172">add, 2.52, 2.52, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

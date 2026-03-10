@@ -22,8 +22,8 @@ using namespace sc_dt;
 struct compute_and_outpuWhU_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 30;
-  static const unsigned AddressRange = 6;
-  static const unsigned AddressWidth = 3;
+  static const unsigned AddressRange = 12;
+  static const unsigned AddressWidth = 4;
 
 //latency = 1
 //input_reg = 1
@@ -39,12 +39,18 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(compute_and_outpuWhU_ram) {
-        ram[0] = "0b000010100111000000000000000000";
-        ram[1] = "0b000010011011010100000000000000";
-        ram[2] = "0b011000001111011000000000000000";
-        ram[3] = "0b000011010011111000000000000000";
-        ram[4] = "0b110000111100000000000000000000";
-        ram[5] = "0b000000000000000000000000000000";
+        ram[0] = "0b000100101110101100000000000000";
+        ram[1] = "0b000000111101111100000000000000";
+        ram[2] = "0b000100110100011000000000000000";
+        ram[3] = "0b000010011001110100000000000000";
+        ram[4] = "0b000011011111100100000000000000";
+        ram[5] = "0b000001010101100000000000000000";
+        ram[6] = "0b000001011010100100000000000000";
+        ram[7] = "0b101000001100000000000000000000";
+        ram[8] = "0b000000111000011000000000000000";
+        ram[9] = "0b000010100010110100000000000000";
+        ram[10] = "0b000000000000000000000000000000";
+        ram[11] = "0b000000000000000000000000000000";
 
 
 SC_METHOD(prc_write_0);
@@ -71,8 +77,8 @@ SC_MODULE(compute_and_outpuWhU) {
 
 
 static const unsigned DataWidth = 30;
-static const unsigned AddressRange = 6;
-static const unsigned AddressWidth = 3;
+static const unsigned AddressRange = 12;
+static const unsigned AddressWidth = 4;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

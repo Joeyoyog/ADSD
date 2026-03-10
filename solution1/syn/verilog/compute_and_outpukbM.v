@@ -6,19 +6,19 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-(* rom_style = "distributed" *) module compute_and_outpukbM_rom (
+(* rom_style = "block" *) module compute_and_outpukbM_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 27;
-parameter AWIDTH = 3;
-parameter MEM_SIZE = 6;
+parameter DWIDTH = 126;
+parameter AWIDTH = 8;
+parameter MEM_SIZE = 186;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+(* ram_style = "block" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
 initial begin
     $readmemh("./compute_and_outpukbM_rom.dat", ram);
@@ -47,9 +47,9 @@ module compute_and_outpukbM(
     ce0,
     q0);
 
-parameter DataWidth = 32'd27;
-parameter AddressRange = 32'd6;
-parameter AddressWidth = 32'd3;
+parameter DataWidth = 32'd126;
+parameter AddressRange = 32'd186;
+parameter AddressWidth = 32'd8;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

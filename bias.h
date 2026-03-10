@@ -1,3 +1,3 @@
-static const ap_fixed<8, 1> bias[] = {
--0.1796875,
+static const ap_fixed<32, 16> bias[] = {
+-5.022,
 };

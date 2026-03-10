@@ -22,8 +22,8 @@ using namespace sc_dt;
 struct compute_and_outpubdk_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 6;
-  static const unsigned AddressRange = 6;
-  static const unsigned AddressWidth = 3;
+  static const unsigned AddressRange = 12;
+  static const unsigned AddressWidth = 4;
 
 //latency = 1
 //input_reg = 1
@@ -39,12 +39,18 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(compute_and_outpubdk_ram) {
-        ram[0] = "0b111110";
-        ram[1] = "0b001111";
-        ram[2] = "0b000111";
-        ram[3] = "0b011100";
-        ram[4] = "0b000101";
-        ram[5] = "0b000000";
+        ram[0] = "0b111111";
+        ram[1] = "0b111111";
+        ram[2] = "0b000100";
+        ram[3] = "0b011111";
+        ram[4] = "0b000001";
+        ram[5] = "0b011000";
+        ram[6] = "0b010001";
+        ram[7] = "0b000110";
+        ram[8] = "0b000001";
+        ram[9] = "0b001001";
+        ram[10] = "0b000000";
+        ram[11] = "0b000000";
 
 
 SC_METHOD(prc_write_0);
@@ -71,8 +77,8 @@ SC_MODULE(compute_and_outpubdk) {
 
 
 static const unsigned DataWidth = 6;
-static const unsigned AddressRange = 6;
-static const unsigned AddressWidth = 3;
+static const unsigned AddressRange = 12;
+static const unsigned AddressWidth = 4;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

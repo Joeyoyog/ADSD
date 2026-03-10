@@ -1,4 +1,3 @@
-
 #include "Classifier.h"
 #include <iostream>
 #include <fstream>
@@ -32,36 +31,71 @@ int main() {
     // --------------------------------------------------------
     // PHASE 1: PREPARE INPUT STREAM (CPU -> DMA Sim)
     // --------------------------------------------------------
-    // In a real system, this happens in chunks (double buffering).
-    // In the testbench, we fill the stream with ALL images to verify the HLS logic.
-
     double temp_val_read;
+    double img_buffer[28][28];
 
     for (int i = 0; i < SIM_IMGS; i++) {
-        // Loop over packets (IMG_SIZE / 8)
-        for (int j = 0; j < IMG_SIZE / 8; j++) {
-            ap_uint<64> packet_data = 0;
-
-            // Loop over pixels in packet (8)
-            for (int p = 0; p < 8; p++) {
-                if (inputFile >> temp_val_read) {
-                    // Mimic the CPU Pre-processing: Double -> Fixed Point
-                    ap_fixed<8,7> pixel = (ap_fixed<8,7>)temp_val_read;
-
-                    // Pack bits into 64-bit word
-                    packet_data.range(p*8 + 7, p*8) = pixel(7, 0);
+        // 1. Read the full 28x28 image from the fixed text file
+        for (int r = 0; r < 28; r++) {
+            for (int c = 0; c < 28; c++) {
+                if (!(inputFile >> img_buffer[r][c])) {
+                    printf("Error: Reached EOF unexpectedly at image %d\n", i);
+                    return 1;
                 }
             }
+        }
 
-            // Create Packet
-            axis_t axis_packet;
-            axis_packet.data = packet_data;
-            axis_packet.keep = -1;
-            axis_packet.strb = -1;
-            // TLAST is asserted on the last packet of *each* image
-            axis_packet.last = (j == (IMG_SIZE/8) - 1) ? 1 : 0;
+        // 2. Extract the inner 22x22 and pack it into the AXI Stream
+        ap_uint<64> packet_data = 0;
+        int pixel_count = 0;
+        int packet_count = 0;
+        const int TOTAL_PACKETS = 496 / 8; // 62 packets per image (484 pixels + 12 pad pixels)
 
-            in_stream.write(axis_packet);
+        // Crop 3 rows/cols from every side (start at 3, end at 24)
+        for (int r = 3; r < 25; r++) {
+            for (int c = 3; c < 25; c++) {
+
+                ap_fixed<8,7> pixel = (ap_fixed<8,7>)img_buffer[r][c];
+
+                // Pack pixel into the 64-bit word (8 pixels per word)
+                int p_idx = pixel_count % 8;
+                packet_data.range(p_idx*8 + 7, p_idx*8) = pixel(7, 0);
+                pixel_count++;
+
+                // When we have 8 pixels, send the packet
+                if (pixel_count % 8 == 0) {
+                    axis_t axis_packet;
+                    axis_packet.data = packet_data;
+                    axis_packet.keep = -1;
+                    axis_packet.strb = -1;
+                    // TLAST is asserted on the 62nd packet of the image
+                    axis_packet.last = (packet_count == TOTAL_PACKETS - 1) ? 1 : 0;
+
+                    in_stream.write(axis_packet);
+
+                    packet_data = 0; // Reset for next packet
+                    packet_count++;
+                }
+            }
+        }
+
+        // 3. Pad the remaining 12 pixels to reach 496 pixels (exactly 31 128-bit words)
+        while (packet_count < TOTAL_PACKETS) {
+            ap_fixed<8,7> pixel = 0; // Zero padding
+            int p_idx = pixel_count % 8;
+            packet_data.range(p_idx*8 + 7, p_idx*8) = pixel(7, 0);
+            pixel_count++;
+
+            if (pixel_count % 8 == 0) {
+                axis_t axis_packet;
+                axis_packet.data = packet_data;
+                axis_packet.keep = -1;
+                axis_packet.strb = -1;
+                axis_packet.last = (packet_count == TOTAL_PACKETS - 1) ? 1 : 0;
+                in_stream.write(axis_packet);
+                packet_data = 0;
+                packet_count++;
+            }
         }
     }
     inputFile.close();
@@ -139,4 +173,3 @@ int main() {
         return 1;
     }
 }
-

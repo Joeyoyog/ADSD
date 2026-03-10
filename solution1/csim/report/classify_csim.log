@@ -9,10 +9,10 @@ Input Stream Filled. Calling HLS Core...
 HLS Execution Complete. verifying results...
 
 --- Results ---
-Classification Accuracy: 0.975394
+Classification Accuracy: 0.989619
 Confusion Matrix:
-0.452518, 0.004229
-0.020377, 0.522876
+0.455210, 0.001538
+0.008843, 0.534410
 
 Test Passed!
 INFO: [SIM 1] CSim done with 0 errors.

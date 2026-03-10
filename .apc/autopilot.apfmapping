@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="sv_norms_1_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_1_padded.h"/>
-    <originFiles name="sv_norms_0_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_norms_0_padded.h"/>
+    <originFiles name="svs1_pack_p496.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs1_pack_p496.h"/>
+    <originFiles name="svs0_pack_p496.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs0_pack_p496.h"/>
+    <originFiles name="sv_norms_1_padded.h" path="C:\Users\josep\Documents\Cropping\generated_hls\sv_norms_1_padded.h"/>
+    <originFiles name="sv_norms_0_padded.h" path="C:\Users\josep\Documents\Cropping\generated_hls\sv_norms_0_padded.h"/>
+    <originFiles name="sv_dataset_config.h" path="C:\Users\josep\Documents\MathieuHelpMe\sv_dataset_config.h"/>
     <originFiles name="exp_lut.h" path="C:\Users\josep\Documents\MathieuHelpMe\exp_lut.h"/>
     <originFiles name="bias.h" path="C:\Users\josep\Documents\MathieuHelpMe\bias.h"/>
-    <originFiles name="alphas_1_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas_1_padded.h"/>
-    <originFiles name="alphas_0_padded.h" path="C:\Users\josep\Documents\MathieuHelpMe\alphas_0_padded.h"/>
+    <originFiles name="alphas_1_padded.h" path="C:\Users\josep\Documents\Cropping\generated_hls\alphas_1_padded.h"/>
+    <originFiles name="alphas_0_padded.h" path="C:\Users\josep\Documents\Cropping\generated_hls\alphas_0_padded.h"/>
     <originFiles name="Exp.h" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.h"/>
     <originFiles name="Exp.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\Exp.cpp"/>
     <originFiles name="Classifier.h" path="C:\Users\josep\Documents\MathieuHelpMe\Classifier.h"/>
     <originFiles name="Classifier.cpp" path="C:\Users\josep\Documents\MathieuHelpMe\Classifier.cpp"/>
-    <originFiles name="svs_0_p800.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_0_p800.h"/>
-    <originFiles name="svs_1_p800.h" path="C:\Users\josep\Documents\MathieuHelpMe\svs_1_p800.h"/>
   </source>
   <testbench>
     <originFiles name="test_data.txt" path="C:\Users\josep\Documents\MathieuHelpMe\test_data.txt"/>

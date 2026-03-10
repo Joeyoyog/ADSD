@@ -55,7 +55,7 @@ end;
 architecture behav of classify is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.847000,HLS_SYN_LAT=528107,HLS_SYN_TPT=none,HLS_SYN_MEM=136,HLS_SYN_DSP=16,HLS_SYN_FF=18032,HLS_SYN_LUT=58710,HLS_VERSION=2018_2}";
+    "classify,hls_ip_2018_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.742000,HLS_SYN_LAT=743955,HLS_SYN_TPT=none,HLS_SYN_MEM=180,HLS_SYN_DSP=32,HLS_SYN_FF=15834,HLS_SYN_LUT=48424,HLS_VERSION=2018_2}";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_S_AXI_WSTRB_WIDTH : INTEGER range 63 downto 0 := 4;
     constant C_S_AXI_ADDR_WIDTH : INTEGER range 63 downto 0 := 20;
@@ -72,18 +72,18 @@ architecture behav of classify is
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
     signal num_images : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_Bat_U0_out_stream_TDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_Bat_U0_out_stream_TKEEP : STD_LOGIC_VECTOR (0 downto 0);
-    signal dataflow_in_loop_Bat_U0_out_stream_TSTRB : STD_LOGIC_VECTOR (0 downto 0);
-    signal dataflow_in_loop_Bat_U0_out_stream_TLAST : STD_LOGIC_VECTOR (0 downto 0);
-    signal dataflow_in_loop_Bat_U0_n : STD_LOGIC_VECTOR (30 downto 0);
-    signal dataflow_in_loop_Bat_U0_in_stream_TREADY : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_out_stream_TVALID : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_ap_done : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_ap_start : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_ap_ready : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_ap_idle : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_ap_continue : STD_LOGIC;
+    signal dataflow_in_loop_U0_out_stream_TDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_U0_out_stream_TKEEP : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_U0_out_stream_TSTRB : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_U0_out_stream_TLAST : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_U0_n : STD_LOGIC_VECTOR (30 downto 0);
+    signal dataflow_in_loop_U0_in_stream_TREADY : STD_LOGIC;
+    signal dataflow_in_loop_U0_out_stream_TVALID : STD_LOGIC;
+    signal dataflow_in_loop_U0_ap_done : STD_LOGIC;
+    signal dataflow_in_loop_U0_ap_start : STD_LOGIC;
+    signal dataflow_in_loop_U0_ap_ready : STD_LOGIC;
+    signal dataflow_in_loop_U0_ap_idle : STD_LOGIC;
+    signal dataflow_in_loop_U0_ap_continue : STD_LOGIC;
     signal ap_sync_continue : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
@@ -91,10 +91,10 @@ architecture behav of classify is
     signal loop_dataflow_input_count : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal loop_dataflow_output_count : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal loop_dataflow_busy : STD_LOGIC := '0';
-    signal dataflow_in_loop_Bat_U0_start_full_n : STD_LOGIC;
-    signal dataflow_in_loop_Bat_U0_start_write : STD_LOGIC;
+    signal dataflow_in_loop_U0_start_full_n : STD_LOGIC;
+    signal dataflow_in_loop_U0_start_write : STD_LOGIC;
 
-    component dataflow_in_loop_Bat IS
+    component dataflow_in_loop IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -193,7 +193,7 @@ begin
         ap_idle => ap_idle,
         num_images => num_images);
 
-    dataflow_in_loop_Bat_U0 : component dataflow_in_loop_Bat
+    dataflow_in_loop_U0 : component dataflow_in_loop
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
@@ -204,23 +204,23 @@ begin
         in_stream_TLAST => in_stream_TLAST,
         in_stream_TID => in_stream_TID,
         in_stream_TDEST => in_stream_TDEST,
-        out_stream_TDATA => dataflow_in_loop_Bat_U0_out_stream_TDATA,
-        out_stream_TKEEP => dataflow_in_loop_Bat_U0_out_stream_TKEEP,
-        out_stream_TSTRB => dataflow_in_loop_Bat_U0_out_stream_TSTRB,
-        out_stream_TLAST => dataflow_in_loop_Bat_U0_out_stream_TLAST,
-        n => dataflow_in_loop_Bat_U0_n,
+        out_stream_TDATA => dataflow_in_loop_U0_out_stream_TDATA,
+        out_stream_TKEEP => dataflow_in_loop_U0_out_stream_TKEEP,
+        out_stream_TSTRB => dataflow_in_loop_U0_out_stream_TSTRB,
+        out_stream_TLAST => dataflow_in_loop_U0_out_stream_TLAST,
+        n => dataflow_in_loop_U0_n,
         num_images => num_images,
         in_stream_TVALID => in_stream_TVALID,
-        in_stream_TREADY => dataflow_in_loop_Bat_U0_in_stream_TREADY,
+        in_stream_TREADY => dataflow_in_loop_U0_in_stream_TREADY,
         n_ap_vld => ap_const_logic_0,
         num_images_ap_vld => ap_const_logic_1,
-        out_stream_TVALID => dataflow_in_loop_Bat_U0_out_stream_TVALID,
+        out_stream_TVALID => dataflow_in_loop_U0_out_stream_TVALID,
         out_stream_TREADY => out_stream_TREADY,
-        ap_done => dataflow_in_loop_Bat_U0_ap_done,
-        ap_start => dataflow_in_loop_Bat_U0_ap_start,
-        ap_ready => dataflow_in_loop_Bat_U0_ap_ready,
-        ap_idle => dataflow_in_loop_Bat_U0_ap_idle,
-        ap_continue => dataflow_in_loop_Bat_U0_ap_continue);
+        ap_done => dataflow_in_loop_U0_ap_done,
+        ap_start => dataflow_in_loop_U0_ap_start,
+        ap_ready => dataflow_in_loop_U0_ap_ready,
+        ap_idle => dataflow_in_loop_U0_ap_idle,
+        ap_continue => dataflow_in_loop_U0_ap_continue);
 
 
 
@@ -266,7 +266,7 @@ begin
             else
                 if (((num_images = loop_dataflow_input_count) and (loop_dataflow_enable = ap_const_logic_1))) then 
                     loop_dataflow_input_count <= ap_const_lv32_0;
-                elsif (((loop_dataflow_enable = ap_const_logic_1) and (dataflow_in_loop_Bat_U0_ap_ready = ap_const_logic_1))) then 
+                elsif (((loop_dataflow_enable = ap_const_logic_1) and (dataflow_in_loop_U0_ap_ready = ap_const_logic_1))) then 
                     loop_dataflow_input_count <= std_logic_vector(unsigned(loop_dataflow_input_count) + unsigned(ap_const_lv32_1));
                 end if; 
             end if;
@@ -282,7 +282,7 @@ begin
             else
                 if ((num_images = loop_dataflow_output_count)) then 
                     loop_dataflow_output_count <= ap_const_lv32_0;
-                elsif ((dataflow_in_loop_Bat_U0_ap_done = ap_const_logic_1)) then 
+                elsif ((dataflow_in_loop_U0_ap_done = ap_const_logic_1)) then 
                     loop_dataflow_output_count <= std_logic_vector(unsigned(loop_dataflow_output_count) + unsigned(ap_const_lv32_1));
                 end if; 
             end if;
@@ -299,7 +299,7 @@ begin
         end if; 
     end process;
 
-    ap_idle <= dataflow_in_loop_Bat_U0_ap_idle;
+    ap_idle <= dataflow_in_loop_U0_ap_idle;
 
     ap_ready_assign_proc : process(num_images, loop_dataflow_input_count)
     begin
@@ -317,26 +317,26 @@ begin
     end process;
 
     ap_sync_continue <= ap_const_logic_1;
-    ap_sync_done <= dataflow_in_loop_Bat_U0_ap_done;
-    ap_sync_ready <= dataflow_in_loop_Bat_U0_ap_ready;
-    dataflow_in_loop_Bat_U0_ap_continue <= ap_const_logic_1;
+    ap_sync_done <= dataflow_in_loop_U0_ap_done;
+    ap_sync_ready <= dataflow_in_loop_U0_ap_ready;
+    dataflow_in_loop_U0_ap_continue <= ap_const_logic_1;
 
-    dataflow_in_loop_Bat_U0_ap_start_assign_proc : process(num_images, loop_dataflow_enable, loop_dataflow_input_count)
+    dataflow_in_loop_U0_ap_start_assign_proc : process(num_images, loop_dataflow_enable, loop_dataflow_input_count)
     begin
         if ((not((num_images = loop_dataflow_input_count)) and (loop_dataflow_enable = ap_const_logic_1))) then 
-            dataflow_in_loop_Bat_U0_ap_start <= ap_const_logic_1;
+            dataflow_in_loop_U0_ap_start <= ap_const_logic_1;
         else 
-            dataflow_in_loop_Bat_U0_ap_start <= ap_const_logic_0;
+            dataflow_in_loop_U0_ap_start <= ap_const_logic_0;
         end if; 
     end process;
 
-    dataflow_in_loop_Bat_U0_n <= loop_dataflow_input_count(31 - 1 downto 0);
-    dataflow_in_loop_Bat_U0_start_full_n <= ap_const_logic_1;
-    dataflow_in_loop_Bat_U0_start_write <= ap_const_logic_0;
-    in_stream_TREADY <= dataflow_in_loop_Bat_U0_in_stream_TREADY;
-    out_stream_TDATA <= dataflow_in_loop_Bat_U0_out_stream_TDATA;
-    out_stream_TKEEP <= dataflow_in_loop_Bat_U0_out_stream_TKEEP;
-    out_stream_TLAST <= dataflow_in_loop_Bat_U0_out_stream_TLAST;
-    out_stream_TSTRB <= dataflow_in_loop_Bat_U0_out_stream_TSTRB;
-    out_stream_TVALID <= dataflow_in_loop_Bat_U0_out_stream_TVALID;
+    dataflow_in_loop_U0_n <= loop_dataflow_input_count(31 - 1 downto 0);
+    dataflow_in_loop_U0_start_full_n <= ap_const_logic_1;
+    dataflow_in_loop_U0_start_write <= ap_const_logic_0;
+    in_stream_TREADY <= dataflow_in_loop_U0_in_stream_TREADY;
+    out_stream_TDATA <= dataflow_in_loop_U0_out_stream_TDATA;
+    out_stream_TKEEP <= dataflow_in_loop_U0_out_stream_TKEEP;
+    out_stream_TLAST <= dataflow_in_loop_U0_out_stream_TLAST;
+    out_stream_TSTRB <= dataflow_in_loop_U0_out_stream_TSTRB;
+    out_stream_TVALID <= dataflow_in_loop_U0_out_stream_TVALID;
 end behav;

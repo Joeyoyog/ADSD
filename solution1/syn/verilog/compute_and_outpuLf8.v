@@ -9,9 +9,9 @@
 (* rom_style = "distributed" *) module compute_and_outpuLf8_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 28;
-parameter AWIDTH = 3;
-parameter MEM_SIZE = 6;
+parameter DWIDTH = 6;
+parameter AWIDTH = 4;
+parameter MEM_SIZE = 12;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,9 +47,9 @@ module compute_and_outpuLf8(
     ce0,
     q0);
 
-parameter DataWidth = 32'd28;
-parameter AddressRange = 32'd6;
-parameter AddressWidth = 32'd3;
+parameter DataWidth = 32'd6;
+parameter AddressRange = 32'd12;
+parameter AddressWidth = 32'd4;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

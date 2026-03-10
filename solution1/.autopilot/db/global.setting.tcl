@@ -41,7 +41,7 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c {../Exp.cpp ../Classifier.cpp}}
+set SourceFiles {sc {} c {../Classifier.cpp ../Exp.cpp}}
 set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile {C:/Users/josep/Documents/MathieuHelpMe/solution1/solution1.directive}
 set TBFiles {verilog {../AcceleratorTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} bc {../AcceleratorTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} sc {../AcceleratorTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} vhdl {../AcceleratorTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt} c {} cas {../AcceleratorTB.cpp ../ground_truth.h ../test_data.h ../test_data.txt}}
